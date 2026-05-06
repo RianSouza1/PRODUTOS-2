@@ -10,7 +10,7 @@ const APP_DATA = {
     // CONFIGURAÇÕES GLOBAIS DA PÁGINA
     // ----------------------------------------------------------------------
     config: {
-        brandName: "Tai-chi Bundle", // Nome que vai no header
+        brandName: "Bible Guide & Workbook", // Nome que vai no header
 
         // Contato Oficial (100% via E-mail)
         contactEmail: "trinityag01@gmail.com",
@@ -24,44 +24,8 @@ const APP_DATA = {
     // ----------------------------------------------------------------------
     // 1. VÍDEOS (Video Course)
     // ----------------------------------------------------------------------
-    videos: [
-        {
-            id: "v1",
-            title: "Complete Tai Chi Workout",
-            duration: "Mobility and Strength (40 min)",
-            videoUrl: "materials/40 MIN COMPLETE TAI CHI WORKOUT - Joint Mobility, Stretching and Strengthening.mp4"
-        },
-        {
-            id: "v2",
-            title: "Qigong Daily Routine",
-            duration: "20 Minutes",
-            videoUrl: "materials/Qigong Full 20-Minute Daily Routine.mp4"
-        },
-        {
-            id: "v3",
-            title: "Home Practice 1",
-            duration: "Essential Movements",
-            videoUrl: "materials/ssstik.io_1773003104856.mp4"
-        },
-        {
-            id: "v4",
-            title: "Home Practice 2",
-            duration: "Fluidity and Balance",
-            videoUrl: "materials/ssstik.io_@daouniverse_1773003116780.mp4"
-        },
-        {
-            id: "v5",
-            title: "Home Practice 3",
-            duration: "Posture",
-            videoUrl: "materials/ssstik.io_@vwangstunts_1773003132956.mp4"
-        },
-        {
-            id: "v6",
-            title: "Home Practice 4",
-            duration: "Breath Control",
-            videoUrl: "materials/ssstik.io_@vwangstunts_1773003194965.mp4"
-        }
-    ],
+    videos: [],
+
 
     // ----------------------------------------------------------------------
     // 2. LIVROS (Materiais Complementares / E-books)
