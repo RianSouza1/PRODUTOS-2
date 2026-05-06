@@ -21,7 +21,7 @@ jobs:
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
-          key: ${{ secrets.VPS_KEY }}
+          key: ${{ secrets.VPS_SECRET }}
           script: |
             sudo mkdir -p /var/www/storeinfocus.com/bible1
             sudo mkdir -p /var/www/storeinfocus.com/bible1-members
@@ -32,7 +32,7 @@ jobs:
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
-          key: ${{ secrets.VPS_KEY }}
+          key: ${{ secrets.VPS_SECRET }}
           source: "bible1/*"
           target: "/var/www/storeinfocus.com/bible1"
           strip_components: 1
@@ -42,7 +42,7 @@ jobs:
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
-          key: ${{ secrets.VPS_KEY }}
+          key: ${{ secrets.VPS_SECRET }}
           source: "bible1-members/*"
           target: "/var/www/storeinfocus.com/bible1-members"
           strip_components: 1
