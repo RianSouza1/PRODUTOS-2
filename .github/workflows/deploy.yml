@@ -1,0 +1,48 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'bible1/**'
+      - 'bible1-members/**'
+      - '.github/workflows/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Prepare VPS Directories for Deployments
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_KEY }}
+          script: |
+            sudo mkdir -p /var/www/storeinfocus.com/bible1
+            sudo mkdir -p /var/www/storeinfocus.com/bible1-members
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com || true
+
+      - name: Deploy 'bible1' to storeinfocus.com/bible1 VPS
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_KEY }}
+          source: "bible1/*"
+          target: "/var/www/storeinfocus.com/bible1"
+          strip_components: 1
+
+      - name: Deploy 'bible1-members' to storeinfocus.com/bible1-members VPS
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_KEY }}
+          source: "bible1-members/*"
+          target: "/var/www/storeinfocus.com/bible1-members"
+          strip_components: 1
