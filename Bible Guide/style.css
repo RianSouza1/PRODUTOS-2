@@ -52,7 +52,7 @@ body {
 /* ================== STICKY COUNTDOWN ================== */
 .top-warning-bar {
     background-color: var(--red-alert);
-    color: #fff;
+    color: #ffffff;
     text-align: center;
     padding: 14px 20px;
     font-size: 1.15rem;
@@ -90,8 +90,8 @@ body {
 }
 
 .time-card {
-    background: #fff;
-    color: #000;
+    background: #ffffff;
+    color: #000000;
     font-weight: 900;
     font-size: 1.4rem;
     padding: 4px 10px;
@@ -101,7 +101,7 @@ body {
 
 .time-sep {
     font-weight: bold;
-    color: #fff;
+    color: #ffffff;
     font-size: 1.4rem;
     margin-top: -18px; /* Offset to center vertically with numbers */
 }
@@ -115,14 +115,14 @@ body {
 .main-headline {
     font-size: 2.8rem;
     line-height: 1.25;
-    color: #ffffff;
+    color: var(--text-main);
     margin-bottom: 1.5rem;
     font-weight: 800;
 }
 
 .sub-headline {
     font-size: 1.25rem;
-    color: #cbd5e1;
+    color: var(--text-main);
     max-width: 800px;
     margin: 0 auto 2.5rem;
     font-weight: 400;
@@ -140,14 +140,14 @@ body {
 .b1g3-title {
     font-size: 2.3rem;
     font-weight: 900;
-    color: #ffffff;
+    color: var(--text-main);
     margin-bottom: 0.8rem;
     font-family: 'Inter', sans-serif;
 }
 
 .b1g3-subtitle {
     font-size: 1.25rem;
-    color: #f8fafc;
+    color: var(--text-main);
     margin-bottom: 2rem;
     max-width: 400px;
     margin-left: auto;
@@ -191,7 +191,7 @@ body {
 }
 
 .b1g3-price-final {
-    color: #ffffff;
+    color: var(--text-main);
     font-size: 1.6rem;
     font-weight: 800;
 }
@@ -215,7 +215,7 @@ body {
 
 .cta-box h3 {
     font-size: 2rem;
-    color: #ffffff;
+    color: var(--text-main);
     margin-bottom: 0.5rem;
     font-weight: 800;
 }
@@ -239,13 +239,13 @@ body {
 .price-container .current-price {
     font-size: 4rem;
     font-weight: 900;
-    color: #ffffff;
+    color: var(--text-main);
     line-height: 1;
 }
 
 .price-container .savings {
     font-size: 1.25rem;
-    color: #94a3b8;
+    color: var(--text-muted);
     margin-top: 0.5rem;
 }
 
@@ -254,7 +254,7 @@ body {
 }
 
 .price-container .savings strong {
-    color: #ffffff;
+    color: var(--text-main);
     font-weight: 700;
     margin-left: 8px;
 }
@@ -285,7 +285,7 @@ body {
 
 .guarantee-text {
     font-size: 0.95rem;
-    color: #94a3b8;
+    color: var(--text-muted);
     margin-top: 1rem;
     display: flex;
     align-items: center;
@@ -300,13 +300,13 @@ body {
 }
 
 .text-section h2 {
-    color: #ffffff;
+    color: var(--text-main);
 }
 
 .text-section p {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
-    color: #cbd5e1;
+    color: var(--text-main);
 }
 
 .divider {
@@ -335,7 +335,7 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 16px;
-    color: #f8fafc;
+    color: var(--text-main);
 }
 
 .benefits-list li:last-child {
@@ -353,14 +353,14 @@ body {
 .bundle-section {
     padding: 4rem 0;
     background-color: var(--bg-dark);
-    color: #fff;
+    color: var(--text-main);
     text-align: center;
 }
 
 .bundle-section h2 {
     font-size: 2.8rem;
     margin-bottom: 1.5rem;
-    color: #fff;
+    color: var(--text-main);
 }
 
 .bundle-image {
@@ -385,7 +385,7 @@ body {
 }
 
 .testimonial-card {
-    background: #ffffff;
+    background: var(--bg-light);
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5);
@@ -405,7 +405,7 @@ body {
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
-    background-color: #cbd5e1;
+    background-color: var(--text-main);
 }
 
 .testimonial-author-info {
@@ -459,7 +459,7 @@ body {
     font-size: 9rem;
     font-weight: 900;
     font-family: 'Montserrat', sans-serif;
-    color: #ffffff;
+    color: var(--text-main);
     line-height: 1;
     margin-bottom: 0.5rem;
     letter-spacing: -2px;
@@ -469,7 +469,7 @@ body {
     font-size: 4.5rem;
     font-weight: 900;
     font-family: 'Montserrat', sans-serif;
-    color: #ffffff;
+    color: var(--text-main);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -487,7 +487,7 @@ body {
        background-position: center;
        background-blend-mode: overlay;
     */
-    color: #ffffff;
+    color: var(--text-main);
     overflow: hidden;
 }
 
