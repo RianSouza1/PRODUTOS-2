@@ -7,6 +7,8 @@ on:
     paths:
       - 'bible1/**'
       - 'bible1-members/**'
+      - 'bible1-es/**'
+      - 'bible1-it/**'
       - '.github/workflows/**'
 
 jobs:
@@ -25,6 +27,8 @@ jobs:
           script: |
             sudo mkdir -p /var/www/storeinfocus.com/bible1
             sudo mkdir -p /var/www/storeinfocus.com/bible1-members
+            sudo mkdir -p /var/www/storeinfocus.com/bible1-es
+            sudo mkdir -p /var/www/storeinfocus.com/bible1-it
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com || true
 
       - name: Deploy 'bible1' to storeinfocus.com/bible1 VPS
@@ -45,4 +49,24 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "bible1-members/*"
           target: "/var/www/storeinfocus.com/bible1-members"
+          strip_components: 1
+
+      - name: Deploy 'bible1-es' to storeinfocus.com/bible1-es VPS
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "bible1-es/*"
+          target: "/var/www/storeinfocus.com/bible1-es"
+          strip_components: 1
+
+      - name: Deploy 'bible1-it' to storeinfocus.com/bible1-it VPS
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "bible1-it/*"
+          target: "/var/www/storeinfocus.com/bible1-it"
           strip_components: 1
