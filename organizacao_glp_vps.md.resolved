@@ -1,0 +1,145 @@
+# 🗂️ Organização VPS — GLP / TAICHI Workspace
+
+## 🌐 Domínios Ativos na VPS
+
+| Domínio | Produto Principal |
+|---------|-----------------|
+| `trynaturallife.blog` | Tai Chi (EN raiz) |
+| `gentlemobility.blog` | Tai Chi VSL / EN |
+| `naturalmethods.blog` | GLP-1 |
+| `vieactive.blog` | Tai Chi FR |
+| `storeinfocus.com` | Gentle Mobility + Wall Pilates + Bible1 |
+
+---
+
+## 📦 Catálogo Completo de Páginas
+
+---
+
+### 🥋 TAI CHI
+
+| Pasta | URL na VPS | Idioma | Status |
+|-------|-----------|--------|--------|
+| `tai-chi/` | `trynaturallife.blog` (raiz) | EN | ✅ No ar |
+| `Taichi-enew/` | `gentlemobility.blog/1` | EN (nova VSL) | ✅ No ar |
+| `Taichi-enew-2/` | `gentlemobility.blog/2` | EN (nova VSL v2) | ✅ No ar |
+| `Tai-chi-pand/` | `trynaturallife.blog/Tai-chi-pand` | EN | ✅ No ar |
+| `taichi-fr/` | `vieactive.blog/fr` | FR | ✅ No ar |
+| `taichi-fr-01/` | `vieactive.blog/01` | FR | ✅ No ar |
+
+> **Pixels:** `1454868916147604` + `1255686932763800`  
+> **Funis:** OTO, OTO2-yes/no, down2, page0, thank-you
+
+---
+
+### 💊 GLP-1
+
+| Pasta | URL na VPS | Idioma | Status |
+|-------|-----------|--------|--------|
+| `GLP-1/` | `naturalmethods.blog` (raiz) | EN | ✅ No ar |
+| `GLP-1-01/` | `naturalmethods.blog/01` | EN | ✅ No ar |
+| `glp-1-modern/` | *(pendente deploy)* | EN | ⬜ Pendente |
+| `german/` | `naturalmethods.blog/german` | DE | ✅ No ar |
+| `german-products/` | `naturalmethods.blog/german-products` | DE | ✅ No ar |
+| `natural-healing/` | `naturalmethods.blog/natural` | EN | ✅ No ar |
+
+> **Pixels GLP-1:** `1915171839124928` / `1818233232196553` / `1607078487168569`
+
+---
+
+### 🧘 WALL PILATES — `storeinfocus.com/wall/`
+
+| Pasta | URL na VPS | Idioma | Autor | Status |
+|-------|-----------|--------|-------|--------|
+| `wall-en/` | `storeinfocus.com/wall/en` | 🇺🇸 EN | Sarah Kinsman | ✅ No ar |
+| `wall-es/` | `storeinfocus.com/wall/es` | 🇪🇸 ES | Sara Kinsman | ✅ No ar |
+| `wall-fr/` | `storeinfocus.com/wall/fr` | 🇫🇷 FR | Sarah Kinsman | ✅ No ar |
+| `wall-de/` | `storeinfocus.com/wall/de` | 🇩🇪 DE | Sarah Kinsman | ✅ No ar |
+| `wall-it/` | `storeinfocus.com/wall/it` | 🇮🇹 IT | Sarah Parente | ✅ No ar |
+| `wall-pt/` | `storeinfocus.com/wall/pt` | 🇵🇹 PT | Sarah Parente | ✅ No ar |
+
+> **Checkout:** `pay.hotmart.com/X104547537N?checkoutMode=10`  
+> **Pixel Meta:** `830224686766443` | **UTMify:** `69c734f2a7f3af58104edc35`
+
+---
+
+### 🚶 GENTLE MOBILITY — `storeinfocus.com/`
+
+| Pasta | URL na VPS | Idioma | Status |
+|-------|-----------|--------|--------|
+| `gentlemobility-modern/` | `storeinfocus.com` (raiz) | EN | ✅ No ar |
+| `gentlemobility-modern-english/` | `storeinfocus.com/english` | EN | ✅ No ar |
+| `gentlemobility-modern-copy/` | `storeinfocus.com/es` | ES | ✅ No ar |
+| `gentlemobility-modern-copy-2/` | `storeinfocus.com/es2` | ES v2 | ✅ No ar |
+| `gentlemobility-modern-bg/` | `storeinfocus.com/bulg` | BG | ✅ No ar |
+| `spanish-products/` | `storeinfocus.com/productses` | ES (membros) | ✅ No ar |
+| `portugal-products/` | `storeinfocus.com/portugal-products` | PT (membros) | ✅ No ar |
+| `italy-products/` | `storeinfocus.com/italy-products` | IT (membros) | ✅ No ar |
+| `port/` | `storeinfocus.com/port` | PT | ✅ No ar |
+| `italy/` | `storeinfocus.com/italy` | IT | ✅ No ar |
+
+> **Versões em desenvolvimento (sem deploy):**  
+> `gentlemobility-modern-de/`, `gentlemobility-modern-pl/`, `gentlemobility-modern-sv/`, `gentlemobility-modern-tr/`, `gentlemobility-modern-es-rmkt/`, `gentlemobility-modern-en-cartpanda/`, `gentlemobility-modern-en-digistore/`
+
+---
+
+### 📖 BIBLE1 — `storeinfocus.com/bible1`
+
+| Pasta | URL na VPS | Idioma | Status |
+|-------|-----------|--------|--------|
+| `bible1/` | `storeinfocus.com/bible1` | EN | ✅ No ar |
+| `bible1-members/` | `storeinfocus.com/bible1-members` | EN | ✅ No ar |
+
+---
+
+### 🥗 FODMAP — `storeinfocus.com/fodmaps`
+
+| Pasta | URL na VPS | Idioma | Status |
+|-------|-----------|--------|--------|
+| `fodmap/` | `storeinfocus.com/fodmaps` | EN | ✅ No ar |
+| `fodmap-es/` | *(pendente)* | ES | ⬜ Pendente |
+| `fodmap-fr/` | *(pendente)* | FR | ⬜ Pendente |
+
+---
+
+### 🔄 FUNIS / UPSELLS / DOWNSELLS
+
+| Pasta | URL na VPS | Descrição | Status |
+|-------|-----------|-----------|--------|
+| `upsell-1/` | `gentlemobility.blog/up01` | Upsell 1 | ✅ No ar |
+| `upsell-1-2/` | `gentlemobility.blog/up02` | Upsell 2 | ✅ No ar |
+| `downsell-1/` | `gentlemobility.blog/ds01` | Downsell 1 | ✅ No ar |
+| `downsell-1-2/` | `gentlemobility.blog/ds02` | Downsell 2 | ✅ No ar |
+| `products/` | `trynaturallife.blog/products` | Área de membros | ✅ No ar |
+| `vieactive-root/` | `vieactive.blog` (raiz) | Funil FR | ✅ No ar |
+| `vieactive-products/` | `vieactive.blog/products` | Membros FR | ✅ No ar |
+
+---
+
+## ⬜ Pendentes de Deploy (não no deploy.yml)
+
+| Pasta | Produto | Observação |
+|-------|---------|------------|
+| `glp-1-modern/` | GLP-1 | Nova versão modernizada |
+| `fodmap-es/` | FODMAP | Versão espanhol |
+| `fodmap-fr/` | FODMAP | Versão francês |
+| `gentlemobility-modern-de/` | Gentle Mobility | Versão alemão |
+| `gentlemobility-modern-pl/` | Gentle Mobility | Versão polonês |
+| `gentlemobility-modern-sv/` | Gentle Mobility | Versão sueco |
+| `gentlemobility-modern-tr/` | Gentle Mobility | Versão turco |
+| `gentlemobility-modern-es-rmkt/` | Gentle Mobility | ES Remarketing |
+| `gentlemobility-modern-en-cartpanda/` | Gentle Mobility | EN CartPanda |
+| `gentlemobility-modern-en-digistore/` | Gentle Mobility | EN Digistore |
+| `Chair - ES/` | Chair | ES |
+| `Wall Pilates - EN/` | Wall Pilates | Versão EN alternativa |
+
+---
+
+## 💡 Regras de Boas Práticas (GLP)
+
+1. **Sufixos de idioma:** `-de`, `-es`, `-fr`, `-it`, `-pt`, `-pl`, `-sv`, `-tr`, `-bg`
+2. **CSS compartilhado:** variantes herdam do produto base
+3. **Imagens locais:** sempre na pasta `images/` de cada projeto
+4. **Testar local:** `python3 -m http.server 8080` antes de qualquer push
+5. **Deploy automático:** adicionar no `deploy.yml` antes de fazer push
+6. **Não usar nomes com espaços** em novas pastas (ex: usar `chair-es` e não `Chair - ES`)
