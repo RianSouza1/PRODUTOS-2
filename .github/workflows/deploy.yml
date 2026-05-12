@@ -9,6 +9,13 @@ on:
       - 'bible1-members/**'
       - 'bible1-es/**'
       - 'bible1-it/**'
+      - 'systematic-theology/**'
+      - 'systematic-theology-es/**'
+      - 'systematic-theology-it/**'
+      - 'systematic-theology-pt/**'
+      - 'prosperity/**'
+      - 'prosperity-es/**'
+      - 'prosperity-fr/**'
       - '.github/workflows/**'
 
 jobs:
@@ -29,9 +36,18 @@ jobs:
             sudo mkdir -p /var/www/storeinfocus.com/bible1-members
             sudo mkdir -p /var/www/storeinfocus.com/bible1-es
             sudo mkdir -p /var/www/storeinfocus.com/bible1-it
+            sudo mkdir -p /var/www/storeinfocus.com/systematic-theology
+            sudo mkdir -p /var/www/storeinfocus.com/systematic-theology-es
+            sudo mkdir -p /var/www/storeinfocus.com/systematic-theology-it
+            sudo mkdir -p /var/www/storeinfocus.com/systematic-theology-pt
+            sudo mkdir -p /var/www/storeinfocus.com/prosperity
+            sudo mkdir -p /var/www/storeinfocus.com/prosperity-es
+            sudo mkdir -p /var/www/storeinfocus.com/prosperity-fr
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com || true
 
-      - name: Deploy 'bible1' to storeinfocus.com/bible1 VPS
+      # ── BIBLE1 ────────────────────────────────────────────────────────────────
+
+      - name: Deploy 'bible1' to storeinfocus.com/bible1
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -41,7 +57,7 @@ jobs:
           target: "/var/www/storeinfocus.com/bible1"
           strip_components: 1
 
-      - name: Deploy 'bible1-members' to storeinfocus.com/bible1-members VPS
+      - name: Deploy 'bible1-members' to storeinfocus.com/bible1-members
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -51,7 +67,7 @@ jobs:
           target: "/var/www/storeinfocus.com/bible1-members"
           strip_components: 1
 
-      - name: Deploy 'bible1-es' to storeinfocus.com/bible1-es VPS
+      - name: Deploy 'bible1-es' to storeinfocus.com/bible1-es
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -61,7 +77,7 @@ jobs:
           target: "/var/www/storeinfocus.com/bible1-es"
           strip_components: 1
 
-      - name: Deploy 'bible1-it' to storeinfocus.com/bible1-it VPS
+      - name: Deploy 'bible1-it' to storeinfocus.com/bible1-it
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -69,4 +85,78 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "bible1-it/*"
           target: "/var/www/storeinfocus.com/bible1-it"
+          strip_components: 1
+
+      # ── SYSTEMATIC THEOLOGY ───────────────────────────────────────────────────
+
+      - name: Deploy 'systematic-theology' to storeinfocus.com/systematic-theology
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "systematic-theology/*"
+          target: "/var/www/storeinfocus.com/systematic-theology"
+          strip_components: 1
+
+      - name: Deploy 'systematic-theology-es' to storeinfocus.com/systematic-theology-es
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "systematic-theology-es/*"
+          target: "/var/www/storeinfocus.com/systematic-theology-es"
+          strip_components: 1
+
+      - name: Deploy 'systematic-theology-it' to storeinfocus.com/systematic-theology-it
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "systematic-theology-it/*"
+          target: "/var/www/storeinfocus.com/systematic-theology-it"
+          strip_components: 1
+
+      - name: Deploy 'systematic-theology-pt' to storeinfocus.com/systematic-theology-pt
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "systematic-theology-pt/*"
+          target: "/var/www/storeinfocus.com/systematic-theology-pt"
+          strip_components: 1
+
+      # ── PROSPERITY ────────────────────────────────────────────────────────────
+
+      - name: Deploy 'prosperity' to storeinfocus.com/prosperity
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "prosperity/*"
+          target: "/var/www/storeinfocus.com/prosperity"
+          strip_components: 1
+
+      - name: Deploy 'prosperity-es' to storeinfocus.com/prosperity-es
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "prosperity-es/*"
+          target: "/var/www/storeinfocus.com/prosperity-es"
+          strip_components: 1
+
+      - name: Deploy 'prosperity-fr' to storeinfocus.com/prosperity-fr
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "prosperity-fr/*"
+          target: "/var/www/storeinfocus.com/prosperity-fr"
           strip_components: 1
