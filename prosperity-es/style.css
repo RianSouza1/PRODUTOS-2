@@ -6,8 +6,8 @@
     --bg-darker: #021a0d;
     --red-alert: #ef4444;
     --red-alert-dark: #b91c1c;
-    --text-main: #f0fdf4;
-    --text-muted: #bbf7d0;
+    --text-main: #ffffff;
+    --text-muted: #ffffff;
     --bg-light: #ffffff;
     --accent-gold: #f59e0b;
     --accent-gold-hover: #d97706;
@@ -122,7 +122,7 @@ body {
 
 .sub-headline {
     font-size: 1.25rem;
-    color: #cbd5e1;
+    color: #ffffff;
     max-width: 800px;
     margin: 0 auto 2.5rem;
     font-weight: 400;
@@ -147,7 +147,7 @@ body {
 
 .b1g3-subtitle {
     font-size: 1.25rem;
-    color: #f8fafc;
+    color: #ffffff;
     margin-bottom: 2rem;
     max-width: 400px;
     margin-left: auto;
@@ -306,7 +306,7 @@ body {
 .text-section p {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
-    color: #cbd5e1;
+    color: #ffffff;
 }
 
 .divider {
@@ -335,7 +335,7 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 16px;
-    color: #f8fafc;
+    color: #ffffff;
 }
 
 .benefits-list li:last-child {
@@ -405,7 +405,7 @@ body {
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
-    background-color: #cbd5e1;
+    background-color: #ffffff;
 }
 
 .testimonial-author-info {
