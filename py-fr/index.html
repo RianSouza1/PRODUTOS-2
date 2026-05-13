@@ -52,7 +52,7 @@
 <div class="current-price">19,90 $</div>
 <div class="savings"><s>59,70 $</s> <strong>Économisez 70%</strong></div>
 </div>
-<a class="btn-buy-now" href="https://pay.hotmart.com/O105806058X" onclick="fbq('track', 'InitiateCheckout');">ACHETER MAINTENANT</a>
+<a class="btn-buy-now" href="https://pay.hotmart.com/O105806058X">ACHETER MAINTENANT</a>
 <div class="guarantee-text">
 <i data-lucide="shield-check" style="color: #4ade80; width: 16px;"></i> Paiement 100% sécurisé • Accès numérique immédiat
 </div>
@@ -139,7 +139,7 @@
 <div class="current-price">19,90 $</div>
 <div class="savings"><s>59,70 $</s> <strong>Économisez 70%</strong></div>
 </div>
-<a class="btn-buy-now" href="https://pay.hotmart.com/O105806058X" onclick="fbq('track', 'InitiateCheckout');">ACHETER MAINTENANT</a>
+<a class="btn-buy-now" href="https://pay.hotmart.com/O105806058X">ACHETER MAINTENANT</a>
 </div>
 </div>
 </section>
@@ -154,7 +154,7 @@
 <p style="font-size: 1.3rem; line-height: 1.6; margin-bottom: 1.5rem; color: var(--text-main); font-weight: 600;">
 <span style="font-size: 1.4rem;">👉</span> Offrez à votre esprit la clarté, les outils et la pratique quotidienne dont il a besoin pour attirer la paix, la santé et une prospérité véritable dans votre vie.
 </p>
-<a class="bold italic" href="https://pay.hotmart.com/O105806058X" onclick="fbq('track', 'InitiateCheckout');" style="font-size: 1.5rem; color: #ffffff; background: var(--red-alert); display: inline-block; padding: 12px 24px; border-radius: 6px; box-shadow: 0 6px 20px rgba(239,68,68,0.4); text-decoration: none; width: 100%; max-width: 450px;">
+<a class="bold italic" href="https://pay.hotmart.com/O105806058X" style="font-size: 1.5rem; color: #ffffff; background: var(--red-alert); display: inline-block; padding: 12px 24px; border-radius: 6px; box-shadow: 0 6px 20px rgba(239,68,68,0.4); text-decoration: none; width: 100%; max-width: 450px;">
     ACHETER MAINTENANT
 </a>
 </div>
@@ -206,6 +206,26 @@
         const iv=setInterval(()=>{if(t<=0){clearInterval(iv);return;}t--;h.innerText=String(Math.floor(t/3600)).padStart(2,'0');m.innerText=String(Math.floor((t%3600)/60)).padStart(2,'0');s.innerText=String(t%60).padStart(2,'0');},1000);
     }
     startTimer();
+</script>
+
+<script>
+    // FB Pixel IC Fix
+    document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            if (e.ctrlKey || e.metaKey || e.button === 1) {
+                if (typeof fbq === 'function') { fbq('track', 'InitiateCheckout'); }
+                return;
+            }
+            e.preventDefault();
+            var targetUrl = this.href;
+            if (typeof fbq === 'function') {
+                fbq('track', 'InitiateCheckout');
+            }
+            setTimeout(function() {
+                window.location.href = targetUrl;
+            }, 500);
+        });
+    });
 </script>
 </body>
 </html>
