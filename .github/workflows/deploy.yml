@@ -13,9 +13,9 @@ on:
       - 'sc-es/**'
       - 'sc-it/**'
       - 'sc-pt/**'
-      - 'prosperity/**'
-      - 'prosperity-es/**'
-      - 'prosperity-fr/**'
+      - 'py/**'
+      - 'py-es/**'
+      - 'py-fr/**'
       - '.github/workflows/**'
 
 jobs:
@@ -40,9 +40,9 @@ jobs:
             sudo mkdir -p /var/www/storeinfocus.com/sc-es
             sudo mkdir -p /var/www/storeinfocus.com/sc-it
             sudo mkdir -p /var/www/storeinfocus.com/sc-pt
-            sudo mkdir -p /var/www/storeinfocus.com/prosperity
-            sudo mkdir -p /var/www/storeinfocus.com/prosperity-es
-            sudo mkdir -p /var/www/storeinfocus.com/prosperity-fr
+            sudo mkdir -p /var/www/storeinfocus.com/py
+            sudo mkdir -p /var/www/storeinfocus.com/py-es
+            sudo mkdir -p /var/www/storeinfocus.com/py-fr
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com || true
 
       # ── BIBLE1 ────────────────────────────────────────────────────────────────
@@ -131,32 +131,32 @@ jobs:
 
       # ── PROSPERITY ────────────────────────────────────────────────────────────
 
-      - name: Deploy 'prosperity' to storeinfocus.com/prosperity
+      - name: Deploy 'py' to storeinfocus.com/py
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "prosperity/*"
-          target: "/var/www/storeinfocus.com/prosperity"
+          source: "py/*"
+          target: "/var/www/storeinfocus.com/py"
           strip_components: 1
 
-      - name: Deploy 'prosperity-es' to storeinfocus.com/prosperity-es
+      - name: Deploy 'py-es' to storeinfocus.com/py-es
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "prosperity-es/*"
-          target: "/var/www/storeinfocus.com/prosperity-es"
+          source: "py-es/*"
+          target: "/var/www/storeinfocus.com/py-es"
           strip_components: 1
 
-      - name: Deploy 'prosperity-fr' to storeinfocus.com/prosperity-fr
+      - name: Deploy 'py-fr' to storeinfocus.com/py-fr
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "prosperity-fr/*"
-          target: "/var/www/storeinfocus.com/prosperity-fr"
+          source: "py-fr/*"
+          target: "/var/www/storeinfocus.com/py-fr"
           strip_components: 1
