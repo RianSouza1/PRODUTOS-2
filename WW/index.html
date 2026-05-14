@@ -360,6 +360,37 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="apple-touch-icon" href="https://prime-library.com/wp-content/uploads/2025/12/cropped-fav-180x180.png">
 <meta name="msapplication-TileImage" content="https://prime-library.com/wp-content/uploads/2025/12/cropped-fav-270x270.png">
 <script src="https://prime-library.com/wp-includes/js/wp-emoji-release.min.js?ver=6.9.4" defer=""></script><style>img { max-width: 100% !important; height: auto !important; }</style>
+
+<style>
+@media (max-width: 768px) {
+    img, .wp-block-image img, figure img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    .wp-block-columns {
+        flex-direction: column !important;
+    }
+    .wp-block-column {
+        flex-basis: 100% !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .wp-block-group {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    body {
+        overflow-x: hidden !important;
+    }
+    .ip-countdown-sticky .countdown-cards {
+        transform: scale(0.8);
+    }
+}
+</style>
+
 </head>
 
 <body>
@@ -597,7 +628,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<figure class="wp-block-image alignfull size-full" id="&lt;a-href=&quot;-target-image&quot;&gt;-----&lt;img-src=&quot;path/to/source/image.jpg&quot;-alt=&quot;Source-Image&quot;&gt;-&lt;/a&gt;"><img style="max-width: 800px !important; margin: 0 auto !important; display: block !important;" fetchpriority="high" decoding="async" width="1080" height="1080" src="Imagens/img1.webp" alt="" class="wp-image-189488"></figure>
+<figure class="wp-block-image alignfull size-full" id="&lt;a-href=&quot;-target-image&quot;&gt;-----&lt;img-src=&quot;path/to/source/image.jpg&quot;-alt=&quot;Source-Image&quot;&gt;-&lt;/a&gt;"><img style="width: 100% !important; max-width: 800px !important; margin: 0 auto !important; display: block !important;" fetchpriority="high" decoding="async" width="1080" height="1080" src="Imagens/img1.webp" alt="" class="wp-image-189488"></figure>
 
 
 
@@ -635,7 +666,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<figure class="wp-block-image alignfull size-large"><img style="max-width: 800px !important; margin: 0 auto !important; display: block !important;" decoding="async" width="1024" height="587" src="Imagens/img2.webp" alt="" class="wp-image-189492"></figure>
+<figure class="wp-block-image alignfull size-large"><img style="width: 100% !important; max-width: 800px !important; margin: 0 auto !important; display: block !important;" decoding="async" width="1024" height="587" src="Imagens/img2.webp" alt="" class="wp-image-189492"></figure>
 
 
 
@@ -751,7 +782,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<figure class="wp-block-image alignfull size-full"><img style="max-width: 800px !important; margin: 0 auto !important; display: block !important;" decoding="async" width="970" height="600" src="Imagens/img2.webp" alt="" class="wp-image-189493"></figure>
+<figure class="wp-block-image alignfull size-full"><img style="width: 100% !important; max-width: 800px !important; margin: 0 auto !important; display: block !important;" decoding="async" width="970" height="600" src="Imagens/img2.webp" alt="" class="wp-image-189493"></figure>
 
 
 
@@ -856,7 +887,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<figure class="wp-block-image alignfull size-full"><img style="max-width: 800px !important; margin: 0 auto !important; display: block !important;" loading="lazy" decoding="async" width="1000" height="433" src="Imagens/img3.webp" alt="" class="wp-image-189494"></figure>
+<figure class="wp-block-image alignfull size-full"><img style="width: 100% !important; max-width: 800px !important; margin: 0 auto !important; display: block !important;" loading="lazy" decoding="async" width="1000" height="433" src="Imagens/img3.webp" alt="" class="wp-image-189494"></figure>
 
 
 
@@ -868,11 +899,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<figure class="wp-block-image alignfull size-full has-custom-border"><img loading="lazy" decoding="async" width="2400" height="900" src="https://prime-library.com/wp-content/uploads/2025/12/70off-1.jpg" alt="" class="wp-image-189495" style="border-style:none;border-width:0px; max-width: 800px !important; margin: 0 auto !important; display: block !important;"></figure>
+<figure class="wp-block-image alignfull size-full has-custom-border"><img loading="lazy" decoding="async" width="2400" height="900" src="https://prime-library.com/wp-content/uploads/2025/12/70off-1.jpg" alt="" class="wp-image-189495" style="border-style:none;border-width:0px; width: 100% !important; max-width: 800px !important; margin: 0 auto !important; display: block !important;"></figure>
 
 
 
-<figure class="wp-block-image alignfull size-full" id="&lt;img-id=&quot;target-image&quot;-src=&quot;path/to/target/image.jpg&quot;-alt=&quot;Target-Image&quot;&gt;"><img style="max-width: 800px !important; margin: 0 auto !important; display: block !important;" loading="lazy" decoding="async" width="1080" height="1080" src="Imagens/img1.webp" alt="" class="wp-image-189496"></figure>
+<figure class="wp-block-image alignfull size-full" id="&lt;img-id=&quot;target-image&quot;-src=&quot;path/to/target/image.jpg&quot;-alt=&quot;Target-Image&quot;&gt;"><img style="width: 100% !important; max-width: 800px !important; margin: 0 auto !important; display: block !important;" loading="lazy" decoding="async" width="1080" height="1080" src="Imagens/img1.webp" alt="" class="wp-image-189496"></figure>
 
 
 
