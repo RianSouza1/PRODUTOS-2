@@ -498,6 +498,16 @@ html, body {
     padding: 0 !important;
 }
 
+
+/* Fix long words breaking on mobile */
+html, body, p, h1, h2, h3, h4, h5, h6, strong, em {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    -webkit-hyphens: auto !important;
+    hyphens: auto !important;
+}
+
 /* === MOBILE === */
 @media (max-width: 767px) {
     .entry-content.wp-block-post-content {
@@ -757,7 +767,7 @@ html, body {
 
 
 <div class="entry-content wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained" bis_skin_checked="1">
-<div style="height:40px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
 
 
 
@@ -769,7 +779,7 @@ html, body {
 
 
 
-<p class="has-text-align-center has-medium-font-size">What if the only thing standing between you and beautiful, handcrafted wood projects… was the <em>right guidance</em>?</p>
+<p class="has-text-align-center has-medium-font-size">Was wäre, wenn das Einzige, was zwischen Ihnen und wunderschönen, handgefertigten Holzprojekten steht... die <em>richtige Anleitung</em> wäre?</p>
 
 
 
@@ -907,7 +917,7 @@ html, body {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><strong>But the truth is diﬀerent:</strong></p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><strong>Aber die Wahrheit sieht anders aus:</strong></p>
 
 
 
@@ -915,7 +925,7 @@ html, body {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">With <strong>clear step-by-step instructions</strong>, <strong>simple beginner-friendly projects</strong>, and <strong>zero</strong> <strong>guesswork</strong>, anyone can build stunning, functional wood pieces — even if you’ve never touched a saw before.</p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">Mit <strong>klaren Schritt-für-Schritt-Anleitungen</strong>, <strong>einfachen anfängerfreundlichen Projekten</strong> und <strong>ohne Rätselraten</strong> kann jeder atemberaubende, funktionale Holzstücke bauen – selbst wenn Sie noch nie eine Säge in der Hand hatten.</p>
 
 
 
@@ -1095,7 +1105,7 @@ html, body {
 
 
 
-<p class="has-text-align-center" style="margin-top:0;margin-right:var(--wp--preset--spacing--60);margin-bottom:0;margin-left:var(--wp--preset--spacing--60)"><strong>This bundle was created for people who feel stuck, intimidated, or unsure where to begin.</strong></p>
+<p class="has-text-align-center" style="margin-top:0;margin-right:var(--wp--preset--spacing--60);margin-bottom:0;margin-left:var(--wp--preset--spacing--60)"><strong>Dieses Paket wurde für Menschen entwickelt, die sich festgefahren, eingeschüchtert oder unsicher fühlen, wo sie anfangen sollen.</strong></p>
 
 
 
@@ -1135,7 +1145,7 @@ html, body {
 
 
 
-<p class="has-text-align-center has-large-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><strong>Why wait? </strong></p>
+<p class="has-text-align-center has-large-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><strong>Warum warten? </strong></p>
 
 
 
@@ -1155,7 +1165,7 @@ html, body {
 
 
 
-<p class="has-text-align-center has-medium-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">You’re buying a skill… a hobby… a way to relax… and a new sense of pride every time you build something real.</p>
+<p class="has-text-align-center has-medium-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">Sie kaufen eine Fähigkeit... ein Hobby... eine Möglichkeit zur Entspannung... und ein neues Gefühl von Stolz jedes Mal, wenn Sie etwas Echtes bauen.</p>
 
 
 
@@ -1345,7 +1355,7 @@ html, body {
 
 
 <footer style="background: #604020; color: #ffffff; text-align: center; padding: 2.5rem 1rem; font-size: 0.9rem;">
-<div style="width: 100%; max-width: 850px; margin: 0 auto; padding: 0 20px;">
+<div style="width: 100%; max-width: 850px; margin: 0 auto; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center;">
 <h4 style="font-weight: bold; margin-bottom: 0.5rem; color: #ffffff; font-size: 1.2rem;">Holzbearbeitung Bibliothek</h4>
 <p style="color: #ffffff; margin-bottom: 1rem;">© Alle Rechte vorbehalten.</p>
 <p style="margin-top: 1rem;">
