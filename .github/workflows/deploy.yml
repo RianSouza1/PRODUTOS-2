@@ -17,6 +17,7 @@ on:
       - 'py-es/**'
       - 'py-fr/**'
       - 'WW/**'
+      - 'ww-de/**'
       - '.github/workflows/**'
 
 jobs:
@@ -46,6 +47,7 @@ jobs:
             sudo mkdir -p /var/www/storeinfocus.com/py-fr
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com || true
             sudo mkdir -p /var/www/skillvault.blog/ww
+            sudo mkdir -p /var/www/skillvault.blog/ww-de
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog || true
 
       # ── BIBLE1 ────────────────────────────────────────────────────────────────
@@ -174,4 +176,14 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "WW/*"
           target: "/var/www/skillvault.blog/ww"
+          strip_components: 1
+
+      - name: Deploy 'ww-de' to skillvault.blog/ww-de
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "ww-de/*"
+          target: "/var/www/skillvault.blog/ww-de"
           strip_components: 1
