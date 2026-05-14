@@ -1,0 +1,19 @@
+name: Run Certbot
+
+on:
+  push:
+    paths:
+      - '.github/workflows/certbot.yml'
+
+jobs:
+  certbot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Certbot and Run
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo certbot --nginx -d skillvault.blog -d www.skillvault.blog --non-interactive --agree-tos -m trinityag01@gmail.com --redirect
