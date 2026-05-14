@@ -1,5 +1,6 @@
 <html lang="en-US">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- UTMify Tracker -->
 <script
@@ -364,8 +365,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
 <style>
 /* ── WW GLOBAL RESET & BASE ─────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
@@ -505,6 +504,124 @@ img.emoji, img.wp-smiley {
         word-break: break-word !important;
     }
     p { font-size: 1rem !important; }
+}
+</style>
+
+<style id="ww-custom-fixes">
+/* ====== VIEWPORT & OVERFLOW ====== */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* ====== CONTENT IMAGES: responsive without breaking desktop ====== */
+.wp-block-image img {
+    width: 100%;
+    height: auto;
+}
+.wp-block-image img[style*="max-width: 800px !important"] {
+    max-width: 800px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Keep emoji images as inline icons */
+img.emoji, img.wp-smiley {
+    width: 1em !important;
+    height: 1em !important;
+    max-width: 1em !important;
+    display: inline !important;
+    margin: 0 0.07em !important;
+    vertical-align: -0.1em !important;
+}
+
+/* ====== 70% OFF HTML BANNER ====== */
+.ww-huge-offer-banner {
+    background: #8c4c3a;
+    border: 10px solid #604020;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.ww-huge-offer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+.ww-huge-offer-title {
+    font-family: 'Montserrat', 'Arial Black', sans-serif;
+    font-size: 8rem;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+    letter-spacing: -3px;
+}
+.ww-huge-offer-subtitle {
+    font-family: 'Montserrat', 'Arial Black', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -1px;
+}
+
+/* ====== MOBILE ONLY ====== */
+@media (max-width: 767px) {
+    /* Remove horizontal scrollbar */
+    .wp-block-group,
+    .wp-block-columns,
+    .wp-site-blocks,
+    .entry-content,
+    .wp-block-post-content {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        box-sizing: border-box !important;
+    }
+    .wp-block-column {
+        flex-basis: 100% !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .wp-block-columns {
+        flex-direction: column !important;
+    }
+
+    /* Countdown bar */
+    .ip-countdown-sticky {
+        flex-wrap: wrap !important;
+        padding: 8px 10px !important;
+        font-size: 0.8rem !important;
+    }
+    #ip-countdown-6a0471b9e9ba6 {
+        transform: scale(0.85);
+        transform-origin: center;
+    }
+
+    /* Buttons full-width */
+    .wp-block-button__link {
+        width: 100% !important;
+        display: block !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+    }
+    .wp-container-core-buttons-is-layout-db7e7d63 {
+        width: 100% !important;
+    }
+
+    /* 70off banner */
+    .ww-huge-offer-title { font-size: 4.5rem !important; letter-spacing: -1px !important; }
+    .ww-huge-offer-subtitle { font-size: 2rem !important; }
+    .ww-huge-offer-inner { padding: 2rem 1rem !important; }
+
+    /* General text */
+    h1 { font-size: 1.8rem !important; }
+    h2 { font-size: 1.5rem !important; }
+    p  { font-size: 1rem !important; }
 }
 </style>
 </head>
@@ -898,7 +1015,7 @@ img.emoji, img.wp-smiley {
 
 
 
-<figure class="wp-block-image alignfull size-full"><img style="width: 100% !important; max-width: 800px !important; margin: 0 auto !important; display: block !important;" decoding="async" width="970" height="600" src="Imagens/img2.webp" alt="" class="wp-image-189493"></figure>
+
 
 
 
@@ -923,7 +1040,7 @@ img.emoji, img.wp-smiley {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--50);margin-left:var(--wp--preset--spacing--50)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>50 Step-by-Step Woodworking Projects</strong> perfect for beginners</p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--50);margin-left:var(--wp--preset--spacing--50)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>500 Step-by-Step Woodworking Projects</strong> perfect for beginners</p>
 
 
 
