@@ -16,4 +16,19 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
           script: |
+            cat << 'EOF' > /tmp/skillvault.blog
+            server {
+                listen 80;
+                server_name skillvault.blog www.skillvault.blog;
+                root /var/www/skillvault.blog;
+                index index.html index.htm;
+            
+                location / {
+                    try_files $uri $uri/ =404;
+                }
+            }
+            EOF
+            sudo mv /tmp/skillvault.blog /etc/nginx/sites-available/skillvault.blog
+            sudo ln -sf /etc/nginx/sites-available/skillvault.blog /etc/nginx/sites-enabled/
+            sudo systemctl reload nginx
             sudo certbot --nginx -d skillvault.blog -d www.skillvault.blog --non-interactive --agree-tos -m trinityag01@gmail.com --redirect
