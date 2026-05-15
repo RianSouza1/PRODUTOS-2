@@ -20,6 +20,7 @@ on:
       - 'ww-de/**'
       - 'mw-de/**'
       - 'mw/**'
+      - 'beekeeping/**'
       - '.github/workflows/**'
 
 jobs:
@@ -52,6 +53,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/ww-de
             sudo mkdir -p /var/www/skillvault.blog/mw-de
             sudo mkdir -p /var/www/skillvault.blog/mw
+            sudo mkdir -p /var/www/skillvault.blog/beekeeping
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog || true
 
       # ── BIBLE1 ────────────────────────────────────────────────────────────────
@@ -210,4 +212,14 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "mw/*"
           target: "/var/www/skillvault.blog/mw"
+          strip_components: 1
+
+      - name: Deploy 'beekeeping' to skillvault.blog/beekeeping
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "beekeeping/*"
+          target: "/var/www/skillvault.blog/beekeeping"
           strip_components: 1
