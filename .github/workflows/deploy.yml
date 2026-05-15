@@ -20,7 +20,8 @@ on:
       - 'ww-de/**'
       - 'mw-de/**'
       - 'mw/**'
-      - 'beekeeping/**'
+      - 'bkp/**'
+      - 'bkp-de/**'
       - '.github/workflows/**'
 
 jobs:
@@ -54,6 +55,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/mw-de
             sudo mkdir -p /var/www/skillvault.blog/mw
             sudo mkdir -p /var/www/skillvault.blog/bkp
+            sudo mkdir -p /var/www/skillvault.blog/bkp-de
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog || true
 
       # ── BIBLE1 ────────────────────────────────────────────────────────────────
@@ -214,12 +216,22 @@ jobs:
           target: "/var/www/skillvault.blog/mw"
           strip_components: 1
 
-      - name: Deploy 'beekeeping' to skillvault.blog/bkp
+      - name: Deploy 'bkp' to skillvault.blog/bkp
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "beekeeping/*"
+          source: "bkp/*"
           target: "/var/www/skillvault.blog/bkp"
+          strip_components: 1
+
+      - name: Deploy 'bkp-de' to skillvault.blog/bkp-de
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "bkp-de/*"
+          target: "/var/www/skillvault.blog/bkp-de"
           strip_components: 1
