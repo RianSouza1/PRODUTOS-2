@@ -1102,21 +1102,126 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<figure class="wp-block-gallery aligncenter has-nested-images columns-1 is-cropped wp-block-gallery-2 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-full has-custom-border is-style-default"><img loading="lazy" decoding="async" width="2000" height="2200" data-id="189766" src="https://atlas-library.com/wp-content/uploads/2025/12/1-4.jpg" alt="" class="wp-image-189766" style="border-style:none;border-width:0px;box-shadow:var(--wp--preset--shadow--natural)" srcset="https://atlas-library.com/wp-content/uploads/2025/12/1-4.jpg 2000w, https://atlas-library.com/wp-content/uploads/2025/12/1-4-273x300.jpg 273w, https://atlas-library.com/wp-content/uploads/2025/12/1-4-931x1024.jpg 931w, https://atlas-library.com/wp-content/uploads/2025/12/1-4-768x845.jpg 768w, https://atlas-library.com/wp-content/uploads/2025/12/1-4-1396x1536.jpg 1396w, https://atlas-library.com/wp-content/uploads/2025/12/1-4-1862x2048.jpg 1862w, https://atlas-library.com/wp-content/uploads/2025/12/1-4-60x66.jpg 60w, https://atlas-library.com/wp-content/uploads/2025/12/1-4-600x660.jpg 600w" sizes="auto, (max-width: 2000px) 100vw, 2000px"></figure>
 
+<style>
+/* Testimonial styles */
+.testimonials-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
 
+.testimonial-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
 
-<figure class="wp-block-image size-full has-custom-border"><img loading="lazy" decoding="async" width="2000" height="2200" data-id="189767" src="https://atlas-library.com/wp-content/uploads/2025/12/2-4.jpg" alt="" class="wp-image-189767" style="border-style:none;border-width:0px;box-shadow:var(--wp--preset--shadow--natural)" srcset="https://atlas-library.com/wp-content/uploads/2025/12/2-4.jpg 2000w, https://atlas-library.com/wp-content/uploads/2025/12/2-4-273x300.jpg 273w, https://atlas-library.com/wp-content/uploads/2025/12/2-4-931x1024.jpg 931w, https://atlas-library.com/wp-content/uploads/2025/12/2-4-768x845.jpg 768w, https://atlas-library.com/wp-content/uploads/2025/12/2-4-1396x1536.jpg 1396w, https://atlas-library.com/wp-content/uploads/2025/12/2-4-1862x2048.jpg 1862w, https://atlas-library.com/wp-content/uploads/2025/12/2-4-60x66.jpg 60w, https://atlas-library.com/wp-content/uploads/2025/12/2-4-600x660.jpg 600w" sizes="auto, (max-width: 2000px) 100vw, 2000px"></figure>
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
 
+.testimonial-author-info {
+    display: flex;
+    flex-direction: column;
+}
 
+.testimonial-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
 
-<figure class="wp-block-image size-full has-custom-border is-style-default"><img loading="lazy" decoding="async" width="2000" height="2200" data-id="189768" src="https://atlas-library.com/wp-content/uploads/2025/12/3-4.jpg" alt="" class="wp-image-189768" style="border-style:none;border-width:0px;border-radius:0px;box-shadow:var(--wp--preset--shadow--natural)" srcset="https://atlas-library.com/wp-content/uploads/2025/12/3-4.jpg 2000w, https://atlas-library.com/wp-content/uploads/2025/12/3-4-273x300.jpg 273w, https://atlas-library.com/wp-content/uploads/2025/12/3-4-931x1024.jpg 931w, https://atlas-library.com/wp-content/uploads/2025/12/3-4-768x845.jpg 768w, https://atlas-library.com/wp-content/uploads/2025/12/3-4-1396x1536.jpg 1396w, https://atlas-library.com/wp-content/uploads/2025/12/3-4-1862x2048.jpg 1862w, https://atlas-library.com/wp-content/uploads/2025/12/3-4-60x66.jpg 60w, https://atlas-library.com/wp-content/uploads/2025/12/3-4-600x660.jpg 600w" sizes="auto, (max-width: 2000px) 100vw, 2000px"></figure>
+.verified-buyer {
+    color: #4caf50;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
 
+.testimonial-stars {
+    color: #f5b301;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
 
+.testimonial-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #111;
+}
 
-<figure class="wp-block-image size-full has-custom-border is-style-default"><img loading="lazy" decoding="async" width="2000" height="2200" data-id="189769" src="https://atlas-library.com/wp-content/uploads/2025/12/4-4.jpg" alt="" class="wp-image-189769" style="border-style:none;border-width:0px;border-radius:0px;box-shadow:var(--wp--preset--shadow--natural)" srcset="https://atlas-library.com/wp-content/uploads/2025/12/4-4.jpg 2000w, https://atlas-library.com/wp-content/uploads/2025/12/4-4-273x300.jpg 273w, https://atlas-library.com/wp-content/uploads/2025/12/4-4-931x1024.jpg 931w, https://atlas-library.com/wp-content/uploads/2025/12/4-4-768x845.jpg 768w, https://atlas-library.com/wp-content/uploads/2025/12/4-4-1396x1536.jpg 1396w, https://atlas-library.com/wp-content/uploads/2025/12/4-4-1862x2048.jpg 1862w, https://atlas-library.com/wp-content/uploads/2025/12/4-4-60x66.jpg 60w, https://atlas-library.com/wp-content/uploads/2025/12/4-4-600x660.jpg 600w" sizes="auto, (max-width: 2000px) 100vw, 2000px"></figure>
-</figure>
+.testimonial-text {
+    color: #444;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+</style>
+
+<div class="testimonials-section">
+    <!-- Testimonial 1 -->
+    <div class="testimonial-card">
+        <div class="testimonial-header">
+            <div class="testimonial-author-info">
+                <span class="testimonial-name">John D.</span>
+                <span class="verified-buyer">✅ Verified Buyer</span>
+            </div>
+        </div>
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-title">"Incredible resource for beginners."</div>
+        <div class="testimonial-text">"I was terrified of getting stung and making mistakes, but this bundle broke everything down so simply. My first hive is thriving, and I'm already planning to add a second one!"</div>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="testimonial-card">
+        <div class="testimonial-header">
+            <div class="testimonial-author-info">
+                <span class="testimonial-name">Mark T.</span>
+                <span class="verified-buyer">✅ Verified Buyer</span>
+            </div>
+        </div>
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-title">"A must-have for anyone interested in bees."</div>
+        <div class="testimonial-text">"The step-by-step first year guide is exactly what I needed. It takes all the guesswork out of beekeeping. Highly recommend to anyone wanting to start this hobby."</div>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="testimonial-card">
+        <div class="testimonial-header">
+            <div class="testimonial-author-info">
+                <span class="testimonial-name">Emily R.</span>
+                <span class="verified-buyer">✅ Verified Buyer</span>
+            </div>
+        </div>
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-title">"Saved me so much money and time."</div>
+        <div class="testimonial-text">"I almost spent hundreds on the wrong equipment before reading this. The gear guide alone is worth the price. I feel so much more confident handling my bees now."</div>
+    </div>
+
+    <!-- Testimonial 4 -->
+    <div class="testimonial-card">
+        <div class="testimonial-header">
+            <div class="testimonial-author-info">
+                <span class="testimonial-name">Sarah L.</span>
+                <span class="verified-buyer">✅ Verified Buyer</span>
+            </div>
+        </div>
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-title">"The bonus mead guide is fantastic!"</div>
+        <div class="testimonial-text">"Not only did I learn how to properly care for my bees, but the bonus on making mead at home was a huge plus. We are already enjoying our first batch!"</div>
+    </div>
+</div>
+
 
 
 
