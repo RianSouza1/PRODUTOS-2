@@ -554,11 +554,53 @@ document.addEventListener('DOMContentLoaded', function () {
 </span>
 
 
+
 <script type="text/javascript">
+    function initIPCountdown(id) {
+        let container = document.getElementById(id);
+        if (!container) return;
+        
+        let totalSeconds = 1 * 3600 + 15 * 60; // 1 hour, 15 mins default
+        let savedTime = localStorage.getItem(id + '_timer');
+        if (savedTime) {
+            totalSeconds = parseInt(savedTime, 10);
+            if (totalSeconds <= 0) totalSeconds = 15 * 60;
+        }
+        
+        let hTens = container.querySelector('.hours-tens');
+        let hOnes = container.querySelector('.hours-ones');
+        let mTens = container.querySelector('.minutes-tens');
+        let mOnes = container.querySelector('.minutes-ones');
+        let sTens = container.querySelector('.seconds-tens');
+        let sOnes = container.querySelector('.seconds-ones');
+        
+        setInterval(() => {
+            if (totalSeconds <= 0) totalSeconds = 15 * 60;
+            totalSeconds--;
+            localStorage.setItem(id + '_timer', totalSeconds);
+            
+            let h = Math.floor(totalSeconds / 3600);
+            let m = Math.floor((totalSeconds % 3600) / 60);
+            let s = totalSeconds % 60;
+            
+            let hStr = h.toString().padStart(2, '0');
+            let mStr = m.toString().padStart(2, '0');
+            let sStr = s.toString().padStart(2, '0');
+            
+            if (hTens) hTens.innerText = hStr[0];
+            if (hOnes) hOnes.innerText = hStr[1];
+            if (mTens) mTens.innerText = mStr[0];
+            if (mOnes) mOnes.innerText = mStr[1];
+            if (sTens) sTens.innerText = sStr[0];
+            if (sOnes) sOnes.innerText = sStr[1];
+        }, 1000);
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         initIPCountdown('ip-countdown-6a0725cad2e3e');
     });
-</script></p>
+</script>
+</p>
 
 
 <div class="entry-content wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained" bis_skin_checked="1">
@@ -1183,4 +1225,15 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 </script>
 
 
-<div class="widget_shopping_cart_live_region screen-reader-text" role="status" bis_skin_checked="1"></div></body></html>
+<div class="widget_shopping_cart_live_region screen-reader-text" role="status" bis_skin_checked="1"></div>
+<footer style="background: #222222; color: #ffffff; text-align: center; padding: 2.5rem 1rem; font-size: 0.9rem;">
+<div style="width: 100%; max-width: 850px; margin: 0 auto; padding: 0 20px;">
+<h4 style="font-weight: bold; margin-bottom: 0.5rem; color: #ffffff; font-size: 1.2rem;">Beekeeping Projects</h4>
+<p style="color: #ffffff; margin-bottom: 1rem;">© All rights reserved.</p>
+<p style="margin-top: 1rem;">
+<a href="mailto:trinityag01@gmail.com" style="color: #ffffff; text-decoration: none;">Contact Us</a>
+</p>
+</div>
+</footer>
+
+</body></html>
