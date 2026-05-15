@@ -17,8 +17,8 @@ on:
       - 'py-es/**'
       - 'py-fr/**'
       - 'WW/**'
-      - 'ww-de/**'
-      - 'metalon/**'
+      - 'mw-de/**'
+      - 'mw/**'
       - '.github/workflows/**'
 
 jobs:
@@ -48,8 +48,8 @@ jobs:
             sudo mkdir -p /var/www/storeinfocus.com/py-fr
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com || true
             sudo mkdir -p /var/www/skillvault.blog/ww
-            sudo mkdir -p /var/www/skillvault.blog/ww-de
-            sudo mkdir -p /var/www/skillvault.blog/metalon
+            sudo mkdir -p /var/www/skillvault.blog/mw-de
+            sudo mkdir -p /var/www/skillvault.blog/mw
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog || true
 
       # ── BIBLE1 ────────────────────────────────────────────────────────────────
@@ -180,22 +180,22 @@ jobs:
           target: "/var/www/skillvault.blog/ww"
           strip_components: 1
 
-      - name: Deploy 'ww-de' to skillvault.blog/ww-de
+      - name: Deploy 'mw-de' to skillvault.blog/mw-de
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "ww-de/*"
-          target: "/var/www/skillvault.blog/ww-de"
+          source: "mw-de/*"
+          target: "/var/www/skillvault.blog/mw-de"
           strip_components: 1
 
-      - name: Deploy 'metalon' to skillvault.blog/metalon
+      - name: Deploy 'mw' to skillvault.blog/mw
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "metalon/*"
-          target: "/var/www/skillvault.blog/metalon"
+          source: "mw/*"
+          target: "/var/www/skillvault.blog/mw"
           strip_components: 1
