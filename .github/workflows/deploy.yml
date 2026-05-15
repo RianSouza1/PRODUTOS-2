@@ -17,6 +17,7 @@ on:
       - 'py-es/**'
       - 'py-fr/**'
       - 'WW/**'
+      - 'ww-de/**'
       - 'mw-de/**'
       - 'mw/**'
       - '.github/workflows/**'
@@ -48,6 +49,7 @@ jobs:
             sudo mkdir -p /var/www/storeinfocus.com/py-fr
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com || true
             sudo mkdir -p /var/www/skillvault.blog/ww
+            sudo mkdir -p /var/www/skillvault.blog/ww-de
             sudo mkdir -p /var/www/skillvault.blog/mw-de
             sudo mkdir -p /var/www/skillvault.blog/mw
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog || true
@@ -168,7 +170,7 @@ jobs:
           target: "/var/www/storeinfocus.com/py-fr"
           strip_components: 1
 
-      # ── WOODWORKING ───────────────────────────────────────────────────────────
+      # ── WOODWORKING ───────────────────────────────────────────────────────────────
 
       - name: Deploy 'WW' to skillvault.blog/ww
         uses: appleboy/scp-action@v0.1.4
@@ -178,6 +180,16 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "WW/*"
           target: "/var/www/skillvault.blog/ww"
+          strip_components: 1
+
+      - name: Deploy 'ww-de' to skillvault.blog/ww-de
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "ww-de/*"
+          target: "/var/www/skillvault.blog/ww-de"
           strip_components: 1
 
       - name: Deploy 'mw-de' to skillvault.blog/mw-de
