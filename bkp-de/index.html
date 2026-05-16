@@ -596,9 +596,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+            initIPCountdown('ip-countdown-6a0725cad2e3e');
+        });
+    } else {
         initIPCountdown('ip-countdown-6a0725cad2e3e');
-    });
+    }
 </script>
 </p>
 
