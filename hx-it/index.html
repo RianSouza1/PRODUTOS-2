@@ -560,11 +560,11 @@ document.addEventListener('DOMContentLoaded', function () {
         let container = document.getElementById(id);
         if (!container) return;
         
-        let totalSeconds = 1 * 3600 + 15 * 60; // 1 hour, 15 mins default
+        let totalSeconds = 10 * 60;
         let savedTime = localStorage.getItem(id + '_timer');
         if (savedTime) {
             totalSeconds = parseInt(savedTime, 10);
-            if (totalSeconds <= 0) totalSeconds = 15 * 60;
+            if (totalSeconds <= 0) totalSeconds = 10 * 60;
         }
         
         let hTens = container.querySelector('.hours-tens');
@@ -575,7 +575,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let sOnes = container.querySelector('.seconds-ones');
         
         setInterval(() => {
-            if (totalSeconds <= 0) totalSeconds = 15 * 60;
+            if (totalSeconds <= 0) totalSeconds = 10 * 60;
             totalSeconds--;
             localStorage.setItem(id + '_timer', totalSeconds);
             
