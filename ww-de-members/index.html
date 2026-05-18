@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Controle de Cache para Web App Simples -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+
+    <title>Members Area</title>
+
+    <!-- Fontes Otimizadas para Leitura: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Ícones Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- App Styles -->
+    <link rel="stylesheet" href="core.css?v=5">
+</head>
+
+<body>
+
+    <!-- Ícone flutuante de ajuda (Opcional gerado por JS) -->
+    <div id="floating-help-container"></div>
+
+    <div class="app-container">
+        <!-- Header Fixo -->
+        <header class="app-header">
+            <div class="header-logo">
+                <img src="assets/logo.png" alt="Logo" id="brand-logo" onerror="this.style.display='none'">
+                <h1 id="brand-title"></h1>
+            </div>
+        </header>
+
+        <!-- Root onde o JavaScript vai injetar as telas dinamicamente -->
+        <main id="app-root" class="main-content">
+            <!-- Loader nativo simples enquanto o JS processa a rota -->
+            <div class="loader-container">
+                <i data-lucide="loader-2" class="spin-icon"></i>
+            </div>
+        </main>
+
+        <!-- Navegação Inferior (Mobile/Desktop Adaptative) -->
+        <nav class="bottom-tab-bar" id="main-nav">
+            <a href="#livros" class="tab-item" data-tab="livros">
+                <i data-lucide="book-open"></i>
+                <span>Bücher</span>
+            </a>
+            <a href="#contato" class="tab-item" data-tab="contato">
+                <i data-lucide="message-square"></i>
+                <span>Kontakt</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Dados do respectivo produto/curso (ISOLADO) -->
+    <script src="data.js?v=26"></script>
+
+    <!-- Lógica Core do App (COMPARTILHADO) -->
+    <script src="app.js?v=26"></script>
+
+</body>
+
+</html>

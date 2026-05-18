@@ -24,7 +24,21 @@ const APP_DATA = {
     // ----------------------------------------------------------------------
     // 1. VÍDEOS (Video Course)
     // ----------------------------------------------------------------------
-    videos: [],
+    videos: [
+        {
+            id: "v1",
+            title: "Tai Chi - Class 1 (Fundamentals)",
+            duration: "15 min",
+            // Coloque apenas o ID do vídeo do Youtube (Exemplo: se o link é youtube.com/watch?v=dQw4w9WgXcQ, o ID é dQw4w9WgXcQ)
+            youtubeId: "vBngA4Fv86o" 
+        },
+        {
+            id: "v2",
+            title: "Tai Chi - Class 2 (Breathing)",
+            duration: "12 min",
+            youtubeId: "cEQZEMAuK1c" 
+        }
+    ],
 
 
     // ----------------------------------------------------------------------

@@ -35,6 +35,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Inject YouTube Iframe API globally
+  if (!document.getElementById("yt-api-script")) {
+    const tag = document.createElement('script');
+    tag.id = "yt-api-script";
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  }
+  window.activeYtPlayer = null; // Guardar a instância ativa do player
+
+
   function initGlobalConfig() {
     if (APP_DATA.config) {
       brandTitle.innerText = APP_DATA.config.brandName || "Área de Membros";
@@ -394,6 +405,15 @@ document.addEventListener("DOMContentLoaded", () => {
             <!-- Corpo do Vídeo (Só aparece se estiver ativo) -->
       ${isPlaying ? `
               <div class="play-item-body" style="padding: 0 16px 16px 16px; animation: slideDown 0.3s ease;">
+                 ${vid.youtubeId ? `
+                 <div style="border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <div id="yt-player-${vid.id}" style="width: 100%; height: 260px; pointer-events: none;"></div>
+                    <div style="display: flex; justify-content: center; gap: 20px; padding: 12px; background: var(--bg-body); border-top: 1px solid var(--border-light);">
+                        <button onclick="if(window.activeYtPlayer) window.activeYtPlayer.playVideo()" style="background:var(--primary); color:white; border:none; border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"><i data-lucide="play" style="width: 20px; height: 20px; margin-left: 2px;"></i></button>
+                        <button onclick="if(window.activeYtPlayer) window.activeYtPlayer.pauseVideo()" style="background:var(--primary-light); color:var(--primary); border:none; border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer;"><i data-lucide="pause" style="width: 20px; height: 20px;"></i></button>
+                    </div>
+                 </div>
+                 ` : `
                  <video 
                     src="${vidSrc}" 
                     controls 
@@ -402,6 +422,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     controlsList="nodownload" 
                     style="width: 100%; max-height: 260px; display: block; object-fit: contain; border-radius: 12px; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                  </video>
+                 `}
               </div>
             ` : ''
         }
@@ -411,6 +432,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
     playlistEl.innerHTML = playlistHtml;
     renderIcons();
+
+    // Inicializar YouTube Player caso o vídeo ativo tenha youtubeId
+    const activeVidObj = videosArray.find(v => v.id === activeVideoId);
+    if (activeVidObj && activeVidObj.youtubeId) {
+        const initYT = () => {
+            if (window.activeYtPlayer && typeof window.activeYtPlayer.destroy === 'function') {
+                window.activeYtPlayer.destroy();
+            }
+            window.activeYtPlayer = new YT.Player(`yt-player-${activeVidObj.id}`, {
+                videoId: activeVidObj.youtubeId,
+                playerVars: {
+                    'controls': 0, // Esconde os controles
+                    'disablekb': 1,
+                    'modestbranding': 1,
+                    'rel': 0,
+                    'showinfo': 0,
+                    'fs': 0,
+                    'playsinline': 1
+                },
+                events: {
+                    'onReady': (event) => { 
+                        // Autoplay nem sempre funciona sem interação, mas tentamos
+                        event.target.playVideo(); 
+                    }
+                }
+            });
+        };
+        
+        if (window.YT && window.YT.Player) {
+            initYT();
+        } else {
+            const checkYT = setInterval(() => {
+                if (window.YT && window.YT.Player) {
+                    clearInterval(checkYT);
+                    initYT();
+                }
+            }, 100);
+        }
+    }
 
     // Adicionar comportamentos de clique na lista
     const listHeaders = playlistEl.querySelectorAll(".play-item-header");
