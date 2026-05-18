@@ -1,4 +1,4 @@
-<html lang="de-DE">
+<html lang="en-US">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,7 +11,7 @@
 ></script>
 <!-- UTMify Pixel -->
 <script>
-  window.pixelId = "6a0646fe7c0b5d56e14f0a19";
+  window.pixelId = "6a07be84d557cbe5d7cd7cef";
   var a = document.createElement("script");
   a.setAttribute("async", "");
   a.setAttribute("defer", "");
@@ -22,7 +22,7 @@
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="max-image-preview:large">
-<title>Imkerei-Projekte</title>
+<title>Projets Apicoles</title>
 <link rel="dns-prefetch" href="//www.googletagmanager.com">
 <link rel="alternate" type="application/rss+xml" title="Atlas Library » Feed" href="https://atlas-library.com/feed/">
 <link rel="alternate" type="application/rss+xml" title="Atlas Library » Comments Feed" href="https://atlas-library.com/comments/feed/">
@@ -376,9 +376,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <body class="wp-singular page-template page-template-beekeeping page page-id-189750 wp-embed-responsive wp-theme-twentytwentyfour theme-twentytwentyfour woocommerce-uses-block-theme woocommerce-block-theme-has-button-styles woocommerce-js" __processed_d690f9a7-4c58-4c51-aca9-d6b2eb36f362__="true" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJlbmFibGVkIiwiRkFDRUJPT0siOiJlbmFibGVkIiwiVFdJVFRFUiI6ImVuYWJsZWQiLCJSRURESVQiOiJlbmFibGVkIiwiUElOVEVSRVNUIjoiZW5hYmxlZCIsIklOU1RBR1JBTSI6ImVuYWJsZWQiLCJUSUtUT0siOiJkaXNhYmxlZCIsIkxJTktFRElOIjoiZW5hYmxlZCIsIkNPTkZJRyI6ImRpc2FibGVkIn0sInZlcnNpb24iOiIyLjAuNDciLCJzY29yZSI6MjAwNDcwfV0=">
 
-<a class="skip-link screen-reader-text" id="wp-skip-link" href="#wp--skip-link--target">Skip to content</a><div class="wp-site-blocks" bis_skin_checked="1">
+<a class="skip-link screen-reader-text" id="wp-skip-link" href="#wp--skip-link--target">Passer au contenu</a><div class="wp-site-blocks" bis_skin_checked="1">
 <main class="wp-block-group has-base-2-color has-text-color has-background has-link-color wp-elements-3ee49a5864e67e9fc3f7e2a983da997b is-layout-flow wp-block-group-is-layout-flow" style="background-color:#ffc907" id="wp--skip-link--target">
-<p class="has-text-align-center ip-countdown-sticky has-background" style="background-color:#e42628"><strong><img draggable="false" role="img" class="emoji" alt="⏰" src="https://s.w.org/images/core/emoji/17.0.2/svg/23f0.svg"> LETZTE STUNDEN – 70% RABATT ENDET IN</strong> <br>
+<p class="has-text-align-center ip-countdown-sticky has-background" style="background-color:#e42628"><strong><img draggable="false" role="img" class="emoji" alt="⏰" src="https://s.w.org/images/core/emoji/17.0.2/svg/23f0.svg"> DERNIÈRES HEURES – 70% DE RÉDUCTION SE TERMINE DANS</strong> <br>
 <!-- Debug: Label margin top: 8px, bottom: 0px -->
 <style id="ip-countdown-style-ip-countdown-6a0725cad2e3e-1778853322">
     #ip-countdown-6a0725cad2e3e {
@@ -556,15 +556,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <script type="text/javascript">
-    function initIPCountdown(id) {
+    function initLocalCountdown(id) {
         let container = document.getElementById(id);
         if (!container) return;
         
-        let totalSeconds = 1 * 3600 + 15 * 60; // 1 hour, 15 mins default
+        let totalSeconds = 10 * 60;
         let savedTime = localStorage.getItem(id + '_timer');
         if (savedTime) {
             totalSeconds = parseInt(savedTime, 10);
-            if (totalSeconds <= 0) totalSeconds = 15 * 60;
+            if (totalSeconds <= 0) totalSeconds = 10 * 60;
         }
         
         let hTens = container.querySelector('.hours-tens');
@@ -575,7 +575,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let sOnes = container.querySelector('.seconds-ones');
         
         setInterval(() => {
-            if (totalSeconds <= 0) totalSeconds = 15 * 60;
+            if (totalSeconds <= 0) totalSeconds = 10 * 60;
             totalSeconds--;
             localStorage.setItem(id + '_timer', totalSeconds);
             
@@ -596,9 +596,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
-        initIPCountdown('ip-countdown-6a0725cad2e3e');
-    });
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+            initLocalCountdown('ip-countdown-6a0725cad2e3e');
+        });
+    } else {
+        initLocalCountdown('ip-countdown-6a0725cad2e3e');
+    }
 </script>
 </p>
 
@@ -608,7 +612,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center has-system-sans-serif-font-family has-x-large-font-size"><strong><em>Träumen Sie davon, Ihren eigenen Bienenstock im Garten anzulegen, fühlen sich aber überfordert von der Angst, alles falsch zu machen?</em></strong></p>
+<p class="has-text-align-center has-system-sans-serif-font-family has-x-large-font-size"><strong><em>Rêvez-vous de créer votre propre ruche de jardin, mais vous sentez-vous submergé par la peur de tout gâcher ?</em></strong></p>
 
 
 
@@ -616,7 +620,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center has-medium-font-size"><strong>Sie sind nicht allein.&nbsp;</strong></p>
+<p class="has-text-align-center has-medium-font-size"><strong>Vous n'êtes pas seul.&nbsp;</strong></p>
 
 
 
@@ -624,7 +628,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center has-medium-font-size">Tausende von Anfängern sind begeistert von der Imkerei... bis sie feststellen, dass sie keine Ahnung haben, wo sie anfangen sollen, welche Ausrüstung sie kaufen müssen oder wie sie ihre Bienen gesund und produktiv halten können.</p>
+<p class="has-text-align-center has-medium-font-size">Des milliers de débutants sont enthousiasmés par l'apiculture... jusqu'à ce qu'ils réalisent qu'ils n'ont aucune idée par où commencer, quel équipement acheter ou comment garder leurs abeilles en bonne santé et productives.</p>
 
 
 
@@ -632,11 +636,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<figure class="wp-block-image alignfull size-full" id="&lt;a-href=&quot;-target-image&quot;&gt;-----&lt;img-src=&quot;path/to/source/image.jpg&quot;-alt=&quot;Source-Image&quot;&gt;-&lt;/a&gt;"><img fetchpriority="high" decoding="async" width="1080" height="1080" src="img1al.webp" alt="" class="wp-image-189760"></figure>
+<figure class="wp-block-image alignfull size-full" id="&lt;a-href=&quot;-target-image&quot;&gt;-----&lt;img-src=&quot;path/to/source/image.jpg&quot;-alt=&quot;Source-Image&quot;&gt;-&lt;/a&gt;"><img fetchpriority="high" decoding="async" width="1080" height="1080" src="img1.webp" alt="" class="wp-image-189760"></figure>
 
 
 
-<p class="has-text-align-center has-x-large-font-size" style="margin-right:0;margin-left:0"><strong><strong>Imkern für Anfänger + 2 BONI</strong></strong></p>
+<p class="has-text-align-center has-x-large-font-size" style="margin-right:0;margin-left:0"><strong><strong>L'Apiculture pour les Débutants + 2 BONUS</strong></strong></p>
 
 
 
@@ -644,7 +648,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center has-medium-font-size"><strong>€19,90 </strong><mark style="background-color:rgba(0, 0, 0, 0);color:#e42628" class="has-inline-color"><s>€59,70</s> </mark> <strong>Sie sparen 70%</strong></p>
+<p class="has-text-align-center has-medium-font-size"><strong>$19.90 </strong><mark style="background-color:rgba(0, 0, 0, 0);color:#e42628" class="has-inline-color"><s>$59.70</s> </mark> <strong>Vous Économisez 70%</strong></p>
 
 
 
@@ -653,7 +657,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <div class="wp-block-buttons has-custom-font-size has-medium-font-size is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-db7e7d63 wp-block-buttons-is-layout-flex" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:var(--wp--preset--spacing--10)" bis_skin_checked="1">
-<div class="wp-block-button has-custom-width wp-block-button__width-75" bis_skin_checked="1"><a class="wp-block-button__link has-background wp-element-button" href="https://pay.hotmart.com/H105848913T?checkoutMode=10" style="border-radius:20px;background-color:#4caf50;box-shadow:var(--wp--preset--shadow--natural)"><strong>JETZT KAUFEN</strong></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-75" bis_skin_checked="1"><a class="wp-block-button__link has-background wp-element-button" href="https://pay.hotmart.com/F105867088H?checkoutMode=10" style="border-radius:20px;background-color:#4caf50;box-shadow:var(--wp--preset--shadow--natural)"><strong>ACHETER MAINTENANT</strong></a></div>
 </div>
 
 
@@ -662,59 +666,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center has-large-font-size"><strong><strong>1 KAUFEN, 3 BEKOMMEN</strong></strong></p>
+<p class="has-text-align-center has-large-font-size"><strong><strong>ACHETEZ 1 OBTENEZ 3</strong></strong></p>
 
 
 
-<p class="has-text-align-center has-medium-font-size">Nur für kurze Zeit erhalten Sie Folgendes:</p>
+<p class="has-text-align-center has-medium-font-size">Pour un temps limité seulement, voici ce que vous obtiendrez :</p>
 
 
 
-<figure class="wp-block-image alignfull size-large"><img decoding="async" width="1024" height="587" src="img2al.webp" alt="" class="wp-image-189761"></figure>
-
-
-
-<hr class="wp-block-separator has-text-color has-base-2-color has-alpha-channel-opacity has-base-2-background-color has-background is-style-wide">
-
-
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
-
-
-
-<p class="has-text-align-center has-large-font-size"><strong><em><em>Warum klingt dieses Angebot zu gut, um wahr zu sein?</em></em></strong></p>
-
-
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
-
-
-
-<p class="has-text-align-center has-medium-font-size"><strong>Wir verstehen es — drei Bestseller zum Preis von einem sieht man nicht alle Tage. </strong></p>
-
-
-
-<div style="height:10px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
-
-
-
-<p class="has-text-align-center has-medium-font-size">Hier ist die einfache Wahrheit: Einmal im Jahr, etwa zu dieser Jahreszeit, veranstalten wir ein besonderes Leser-Event, um unserem Publikum zu danken und unsere beliebtesten Sammlungen leichter zugänglich zu machen. </p>
-
-
-
-<div style="height:10px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
-
-
-
-<p class="has-text-align-center has-medium-font-size">Da wir alles direkt verwalten – vom Druck bis zur Auslieferung – können wir auf Einzelhandelsaufschläge verzichten und das gesamte Paket (normalerweise 59,70 €) für nur 19,90 € anbieten. </p>
-
-
-
-<div style="height:10px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
-
-
-
-<p class="has-text-align-center has-medium-font-size"><strong>Wenn das Event endet, kehren die Preise zum Normaltarif zurück.</strong></p>
+<figure class="wp-block-image alignfull size-large"><img decoding="async" width="1024" height="587" src="img2.webp" alt="" class="wp-image-189761"></figure>
 
 
 
@@ -726,7 +686,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center has-large-font-size"><strong>Was wäre, wenn das Einzige, was zwischen Ihnen und einem florierenden Bienenstock steht, die richtige Schritt-für-Schritt-Anleitung ist?</strong></p>
+<p class="has-text-align-center has-large-font-size"><strong><em><em>Pourquoi cette offre semble-t-elle trop belle pour être vraie ?</em></em></strong></p>
+
+
+
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
+
+
+
+<p class="has-text-align-center has-medium-font-size"><strong>Nous comprenons — trois livres à succès pour le prix d'un, ce n'est pas quelque chose que l'on voit tous les jours. </strong></p>
 
 
 
@@ -734,7 +702,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center"><img draggable="false" role="img" class="emoji" alt="❌" src="https://s.w.org/images/core/emoji/17.0.2/svg/274c.svg"> Denn die Wahrheit ist: <strong>Sie brauchen keine Erfahrung. Sie brauchen keine besonderen Fähigkeiten.</strong></p>
+<p class="has-text-align-center has-medium-font-size">Voici la simple vérité : une fois par an, vers cette saison, nous organisons un événement spécial pour les lecteurs afin de remercier notre public et de rendre nos collections les plus populaires plus faciles d'accès. </p>
+
+
+
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
+
+
+
+<p class="has-text-align-center has-medium-font-size">Parce que nous gérons tout directement — de l'impression à l'exécution — nous pouvons éviter les marges de vente au détail et offrir le pack complet (normalement 59,70 $) pour seulement 19,90 $. </p>
+
+
+
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
+
+
+
+<p class="has-text-align-center has-medium-font-size"><strong>Lorsque l'événement se termine, les prix reviennent à la normale.</strong></p>
+
+
+
+<hr class="wp-block-separator has-text-color has-base-2-color has-alpha-channel-opacity has-base-2-background-color has-background is-style-wide">
+
+
+
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
+
+
+
+<p class="has-text-align-center has-large-font-size"><strong>Et si la seule chose qui vous séparait d'une ruche florissante était les bons conseils étape par étape ?</strong></p>
+
+
+
+<div style="height:10px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
+
+
+
+<p class="has-text-align-center"><img draggable="false" role="img" class="emoji" alt="❌" src="https://s.w.org/images/core/emoji/17.0.2/svg/274c.svg"> Parce que la vérité est : <strong>vous n'avez pas besoin d'expérience. Vous n'avez pas besoin de compétences particulières.</strong></p>
 
 
 
@@ -746,7 +750,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">Sie brauchen nur einen klaren, anfängerfreundlichen Leitfaden, der Sie von der Verwirrung zur Sicherheit führt.</p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">Vous avez juste besoin d'une feuille de route claire et conviviale pour les débutants qui vous fait passer de la confusion à la confiance.</p>
 
 
 
@@ -754,7 +758,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">Die Imkerei fühlt sich nur schwer an, wenn Sie versuchen, zufällige YouTube-Videos, veraltete Tipps und widersprüchliche Ratschläge zusammenzusetzen. Dann passieren Fehler – abgestorbene Völker, verschwendetes Geld, Stiche, Frustration und aufgegebene Träume.</p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">L'apiculture ne semble difficile que lorsque vous essayez de rassembler des vidéos YouTube aléatoires, des conseils obsolètes et des avis contradictoires. C'est à ce moment-là que des erreurs se produisent — colonies mortes, argent gaspillé, piqûres, frustration et rêves abandonnés.</p>
 
 
 
@@ -762,7 +766,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><strong>Aber mit der richtigen Grundlage wird das Imkern einfach, sicher und unglaublich</strong> <strong>lohnend.</strong></p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><strong>Mais avec les bonnes bases, l'apiculture devient simple, sûre et incroyablement</strong> <strong>gratifiant.</strong></p>
 
 
 
@@ -770,7 +774,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center">Genau aus diesem Grund wurde dieses <strong>3-Bücher-Paket</strong> entwickelt: um Sie Schritt für Schritt von der ersten Einrichtung des Bienenstocks bis zur Honigernte, der Vorbeugung von Krankheiten, der Aufzucht starker Völker und sogar der Herstellung Ihres eigenen hausgemachten Mets zu begleiten.</p>
+<p class="has-text-align-center">C'est exactement pourquoi ce <strong>Pack de 3 Livres</strong> a été créé : pour vous guider pas à pas depuis votre toute première installation de ruche jusqu'à la récolte du miel, la prévention des maladies, l'élevage de colonies fortes, et même la fabrication de votre propre hydromel maison.</p>
 
 
 
@@ -778,7 +782,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center">Dieses Paket lehrt Sie nicht nur das Imkern — <strong>es lässt Sie sich darin verlieben.</strong></p>
+<p class="has-text-align-center">Ce pack ne vous enseigne pas seulement l'apiculture — <strong>cela vous fait en tomber amoureux.</strong></p>
 
 
 
@@ -786,7 +790,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<figure class="wp-block-image alignfull size-full"><img decoding="async" width="2300" height="1700" src="img3al.webp" alt="" class="wp-image-189762"></figure>
+<figure class="wp-block-image alignfull size-full"><img decoding="async" width="2300" height="1700" src="img3.webp" alt="" class="wp-image-189762"></figure>
 
 
 
@@ -799,7 +803,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center has-x-large-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><img draggable="false" role="img" class="emoji" alt="📚" src="https://s.w.org/images/core/emoji/17.0.2/svg/1f4da.svg"> <strong><strong><strong><strong>In diesem Paket entdecken Sie:</strong></strong></strong></strong></p>
+<p class="has-text-align-center has-x-large-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><img draggable="false" role="img" class="emoji" alt="📚" src="https://s.w.org/images/core/emoji/17.0.2/svg/1f4da.svg"> <strong><strong><strong><strong>À l'intérieur du pack, vous découvrirez :</strong></strong></strong></strong></p>
 
 
 
@@ -811,7 +815,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--50);margin-left:var(--wp--preset--spacing--50)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Wie man den richtigen Bienenstock, die Werkzeuge und die Bienenart auswählt,</strong> ohne zu viel Geld auszugeben</p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--50);margin-left:var(--wp--preset--spacing--50)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Comment choisir la bonne ruche, les outils et l'espèce d'abeille</strong> sans trop dépenser</p>
 
 
 
@@ -823,7 +827,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Einen kompletten Schritt-für-Schritt-Plan für das erste Jahr,</strong> damit Sie immer genau wissen, was zu tun ist</p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Un plan complet étape par étape pour la première année</strong> pour que vous sachiez toujours exactement quoi faire</p>
 
 
 
@@ -835,7 +839,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Wie Sie Ihren Bienenstock sicher inspizieren,</strong> mithilfe der enthaltenen Inspektions-Checkliste</p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Comment inspecter votre ruche en toute confiance</strong> en utilisant la liste de contrôle d'inspection incluse</p>
 
 
 
@@ -847,7 +851,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Methoden der Honigernte</strong> für saubere, sichere und köstliche Ergebnisse</p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Méthodes de récolte du miel</strong> pour des résultats propres, sûrs et délicieux</p>
 
 
 
@@ -859,7 +863,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Bewährte Methoden für die Imkerei im eigenen Garten,</strong> speziell für kleine Flächen</p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Meilleures pratiques de l'apiculture de jardin</strong> pour les petits espaces</p>
 
 
 
@@ -871,7 +875,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Einen kompletten Anfängerleitfaden zur Herstellung von Met</strong> mit einfachen Rezepten</p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Un guide complet pour les débutants pour fabriquer votre propre hydromel</strong> avec des recettes simples</p>
 
 
 
@@ -883,7 +887,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<figure class="wp-block-image alignfull size-full"><img loading="lazy" decoding="async" width="970" height="600" src="img4al.webp" alt="" class="wp-image-189763"></figure>
+<figure class="wp-block-image alignfull size-full"><img loading="lazy" decoding="async" width="970" height="600" src="img4.webp" alt="" class="wp-image-189763"></figure>
 
 
 
@@ -899,11 +903,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<figure class="wp-block-image alignfull size-full" id="&lt;img-id=&quot;target-image&quot;-src=&quot;path/to/target/image.jpg&quot;-alt=&quot;Target-Image&quot;&gt;"><img loading="lazy" decoding="async" width="1080" height="1080" src="img1al.webp" alt="" class="wp-image-189765"></figure>
+<figure class="wp-block-image alignfull size-full" id="&lt;img-id=&quot;target-image&quot;-src=&quot;path/to/target/image.jpg&quot;-alt=&quot;Target-Image&quot;&gt;"><img loading="lazy" decoding="async" width="1080" height="1080" src="img1.webp" alt="" class="wp-image-189765"></figure>
 
 
 
-<p class="has-text-align-center has-base-2-color has-text-color has-link-color has-x-large-font-size wp-elements-e60d75775100f21461faed3e358f15e6" style="border-style:none;border-width:0px;margin-right:var(--wp--preset--spacing--50);margin-left:var(--wp--preset--spacing--50)"><strong><strong>Imkern für Anfänger + 2 BONI</strong></strong></p>
+<p class="has-text-align-center has-base-2-color has-text-color has-link-color has-x-large-font-size wp-elements-e60d75775100f21461faed3e358f15e6" style="border-style:none;border-width:0px;margin-right:var(--wp--preset--spacing--50);margin-left:var(--wp--preset--spacing--50)"><strong><strong>L'Apiculture pour les Débutants + 2 BONUS</strong></strong></p>
 
 
 
@@ -911,7 +915,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center has-base-2-color has-text-color has-link-color has-medium-font-size wp-elements-7003bcde27bc23ea52682d84de419f2f"><strong>€19,90 </strong><mark style="background-color:rgba(0, 0, 0, 0);color:#e42628" class="has-inline-color"><s>€59,70</s></mark> <strong>Sie sparen 70%</strong></p>
+<p class="has-text-align-center has-base-2-color has-text-color has-link-color has-medium-font-size wp-elements-7003bcde27bc23ea52682d84de419f2f"><strong>$19.90 </strong><mark style="background-color:rgba(0, 0, 0, 0);color:#e42628" class="has-inline-color"><s>$59.70</s></mark> <strong>Vous Économisez 70%</strong></p>
 
 
 
@@ -924,7 +928,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <div class="wp-block-buttons has-custom-font-size has-medium-font-size is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-db7e7d63 wp-block-buttons-is-layout-flex" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:var(--wp--preset--spacing--10)" bis_skin_checked="1">
-<div class="wp-block-button has-custom-width wp-block-button__width-75" bis_skin_checked="1"><a class="wp-block-button__link has-background wp-element-button" href="https://pay.hotmart.com/H105848913T?checkoutMode=10" style="border-radius:20px;background-color:#4caf50;box-shadow:var(--wp--preset--shadow--natural)"><strong>JETZT KAUFEN</strong></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-75" bis_skin_checked="1"><a class="wp-block-button__link has-background wp-element-button" href="https://pay.hotmart.com/F105867088H?checkoutMode=10" style="border-radius:20px;background-color:#4caf50;box-shadow:var(--wp--preset--shadow--natural)"><strong>ACHETER MAINTENANT</strong></a></div>
 </div>
 
 
@@ -933,7 +937,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center" style="margin-top:0;margin-right:var(--wp--preset--spacing--60);margin-bottom:0;margin-left:var(--wp--preset--spacing--60)"><strong>Wenn Sie schon immer mit der Imkerei beginnen wollten, sich aber überfordert, unsicher oder ängstlich fühlten, etwas falsch zu machen, beseitigt dieses Paket jedes Hindernis auf Ihrem Weg.</strong></p>
+<p class="has-text-align-center" style="margin-top:0;margin-right:var(--wp--preset--spacing--60);margin-bottom:0;margin-left:var(--wp--preset--spacing--60)"><strong>Si vous vouliez commencer l'apiculture mais que vous vous sentiez dépassé, incertain ou effrayé de faire quelque chose de mal, ce pack élimine tous les obstacles sur votre chemin.</strong></p>
 
 
 
@@ -941,7 +945,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center has-large-font-size" style="margin-top:0;margin-right:var(--wp--preset--spacing--60);margin-bottom:0;margin-left:var(--wp--preset--spacing--60)"><strong><em>Es bietet Ihnen:</em></strong></p>
+<p class="has-text-align-center has-large-font-size" style="margin-top:0;margin-right:var(--wp--preset--spacing--60);margin-bottom:0;margin-left:var(--wp--preset--spacing--60)"><strong><em>Il vous donne :</em></strong></p>
 
 
 
@@ -949,19 +953,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--50);margin-left:var(--wp--preset--spacing--50)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Sicherheit</strong></p>
-
-
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
-
-
-
-<div style="height:0px;width:0px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
-
-
-
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Klarheit</strong></p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--50);margin-left:var(--wp--preset--spacing--50)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Confiance</strong></p>
 
 
 
@@ -973,15 +965,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Einen bewährten Schritt-für-Schritt-Weg</strong></p>
-
-
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
-
-
-
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--50);margin-left:var(--wp--preset--spacing--50)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Werkzeuge, um Anfängerfehler zu vermeiden</strong></p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Clarté</strong></p>
 
 
 
@@ -993,7 +977,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Die Freude, eigenen Honig zu produzieren</strong></p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Un chemin éprouvé étape par étape</strong></p>
+
+
+
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
+
+
+
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--50);margin-left:var(--wp--preset--spacing--50)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Des outils pour éviter les erreurs de débutant</strong></p>
 
 
 
@@ -1005,7 +997,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Und sogar den Nervenkitzel, eigenen Met herzustellen</strong></p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>La joie de produire votre propre miel</strong></p>
+
+
+
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
+
+
+
+<div style="height:0px;width:0px" aria-hidden="true" class="wp-block-spacer" bis_skin_checked="1"></div>
+
+
+
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><img draggable="false" role="img" class="emoji" alt="✅" src="https://s.w.org/images/core/emoji/17.0.2/svg/2705.svg"> <strong>Et même le frisson de fabriquer votre propre hydromel</strong></p>
 
 
 
@@ -1021,7 +1025,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">Genau jetzt, während es <strong>70% RABATT</strong>gibt, erhalten Sie <strong>drei komplette Ratgeber zum Preis von einem —</strong> ein Angebot, das nicht lange hält. Sofortiger direkter digitaler Download (Nach Abschluss der Zahlung haben Sie sofort die Möglichkeit, die Produkte von der Kaufbestätigungsseite herunterzuladen, und Sie erhalten kurz darauf auch eine Download-E-Mail).</p>
+<p class="has-text-align-center" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">En ce moment, alors qu'il est <strong>70% OFF</strong>, you’re getting <strong>trois guides complets pour le prix d'un —</strong> une offre qui ne durera pas. Téléchargement numérique direct et instantané (Après avoir effectué le paiement, vous aurez immédiatement la possibilité de télécharger le(s) produit(s) à partir de la page d'achat finale et vous recevrez également un e-mail de téléchargement peu de temps après).</p>
 
 
 
@@ -1053,7 +1057,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center has-large-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><strong>Warum noch warten? </strong></p>
+<p class="has-text-align-center has-large-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><strong>Pourquoi attendre ? </strong></p>
 
 
 
@@ -1065,7 +1069,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center has-medium-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><strong>Die Imkerei muss nicht verwirrend sein. Sie kann einfach, freudig und tief lohnend sein... wenn man mit der richtigen Anleitung beginnt.</strong></p>
+<p class="has-text-align-center has-medium-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><strong>L'apiculture ne doit pas être compliquée. Cela peut être simple, joyeux et profondément gratifiant... lorsque vous commencez avec les bons conseils.</strong></p>
 
 
 
@@ -1073,7 +1077,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center has-large-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><strong>Sichern Sie sich noch heute Ihr Paket mit 70% RABATT und werden Sie endlich der Imker, der Sie schon immer sein wollten.</strong></p>
+<p class="has-text-align-center has-large-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><strong>Saisissez votre pack à 70 % de réduction aujourd'hui et devenez enfin l'apiculteur que vous avez toujours voulu être.</strong></p>
 
 
 
@@ -1093,12 +1097,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<p class="has-text-align-center has-medium-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><strong><strong><em><strong>Jetzt bestellen </strong>und sparen Sie 70%, bevor dieses zeitlich begrenzte Angebot verschwindet.&nbsp;</em></strong></strong></p>
+<p class="has-text-align-center has-medium-font-size" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><strong><strong><em><strong>Commandez maintenant </strong>et économisez 70 % avant que cette offre d'une durée limitée ne disparaisse.&nbsp;</em></strong></strong></p>
 </div>
 
 
 
-<p class="has-text-align-center has-large-font-size" style="border-radius:0px"><em><em>Was die Leute über uns sagen</em> :</em></p>
+<p class="has-text-align-center has-large-font-size" style="border-radius:0px"><em><em>Voici ce que les gens disent de nous</em> :</em></p>
 
 
 
@@ -1174,12 +1178,12 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="testimonial-header">
             <div class="testimonial-author-info">
                 <span class="testimonial-name">John D.</span>
-                <span class="verified-buyer">✅ Verifizierter Käufer</span>
+                <span class="verified-buyer">✅ Verified Buyer</span>
             </div>
         </div>
         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-        <div class="testimonial-title">"Incredible resource for beginners."</div>
-        <div class="testimonial-text">"I was terrified of getting stung and making mistakes, but this bundle broke everything down so simply. My first hive is thriving, and I'm already planning to add a second one!"</div>
+        <div class="testimonial-title">"Ressource incroyable pour les débutants."</div>
+        <div class="testimonial-text">"J'étais terrifié à l'idée de me faire piquer et de faire des erreurs, mais ce pack a tout expliqué si simplement. Ma première ruche est florissante et je prévois déjà d'en ajouter une deuxième !"</div>
     </div>
 
     <!-- Testimonial 2 -->
@@ -1187,12 +1191,12 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="testimonial-header">
             <div class="testimonial-author-info">
                 <span class="testimonial-name">Mark T.</span>
-                <span class="verified-buyer">✅ Verifizierter Käufer</span>
+                <span class="verified-buyer">✅ Verified Buyer</span>
             </div>
         </div>
         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-        <div class="testimonial-title">"A must-have for anyone interested in bees."</div>
-        <div class="testimonial-text">"The step-by-step first year guide is exactly what I needed. It takes all the guesswork out of beekeeping. Highly recommend to anyone wanting to start this hobby."</div>
+        <div class="testimonial-title">"Un incontournable pour tous ceux qui s'intéressent aux abeilles."</div>
+        <div class="testimonial-text">"Le guide étape par étape de la première année est exactement ce dont j'avais besoin. Il élimine toutes les incertitudes de l'apiculture. Je le recommande vivement à tous ceux qui souhaitent se lancer dans ce passe-temps."</div>
     </div>
 
     <!-- Testimonial 3 -->
@@ -1200,12 +1204,12 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="testimonial-header">
             <div class="testimonial-author-info">
                 <span class="testimonial-name">Emily R.</span>
-                <span class="verified-buyer">✅ Verifizierter Käufer</span>
+                <span class="verified-buyer">✅ Verified Buyer</span>
             </div>
         </div>
         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-        <div class="testimonial-title">"Saved me so much money and time."</div>
-        <div class="testimonial-text">"I almost spent hundreds on the wrong equipment before reading this. The gear guide alone is worth the price. I feel so much more confident handling my bees now."</div>
+        <div class="testimonial-title">"M'a fait gagner tellement d'argent et de temps."</div>
+        <div class="testimonial-text">"J'ai failli dépenser des centaines de dollars dans le mauvais équipement avant de lire ceci. Le guide du matériel vaut à lui seul le prix. Je me sens beaucoup plus en confiance pour m'occuper de mes abeilles maintenant."</div>
     </div>
 
     <!-- Testimonial 4 -->
@@ -1213,12 +1217,12 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="testimonial-header">
             <div class="testimonial-author-info">
                 <span class="testimonial-name">Sarah L.</span>
-                <span class="verified-buyer">✅ Verifizierter Käufer</span>
+                <span class="verified-buyer">✅ Verified Buyer</span>
             </div>
         </div>
         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-        <div class="testimonial-title">"The bonus mead guide is fantastic!"</div>
-        <div class="testimonial-text">"Not only did I learn how to properly care for my bees, but the bonus on making mead at home was a huge plus. We are already enjoying our first batch!"</div>
+        <div class="testimonial-title">"Le guide bonus sur l'hydromel est fantastique !"</div>
+        <div class="testimonial-text">"Non seulement j'ai appris à bien m'occuper de mes abeilles, mais le bonus sur la fabrication de l'hydromel à la maison était un énorme plus. Nous profitons déjà de notre premier lot !"</div>
     </div>
 </div>
 
@@ -1282,7 +1286,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		skipLink.classList.add( 'skip-link', 'screen-reader-text' );
 		skipLink.id = 'wp-skip-link';
 		skipLink.href = '#' + skipLinkTargetID;
-		skipLink.innerText = 'Skip to content';
+		skipLink.innerText = 'Passer au contenu';
 
 		// Inject the skip link.
 		sibling.parentElement.insertBefore( skipLink, sibling );
@@ -1319,10 +1323,10 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 <div class="widget_shopping_cart_live_region screen-reader-text" role="status" bis_skin_checked="1"></div>
 <footer style="background: #222222; color: #ffffff; text-align: center; padding: 2.5rem 1rem; font-size: 0.9rem;">
 <div style="width: 100%; max-width: 850px; margin: 0 auto; padding: 0 20px;">
-<h4 style="font-weight: bold; margin-bottom: 0.5rem; color: #ffffff; font-size: 1.2rem;">Imkerei-Projekte</h4>
-<p style="color: #ffffff; margin-bottom: 1rem;">© Alle Rechte vorbehalten.</p>
+<h4 style="font-weight: bold; margin-bottom: 0.5rem; color: #ffffff; font-size: 1.2rem;">Projets Apicoles</h4>
+<p style="color: #ffffff; margin-bottom: 1rem;">© All rights reserved.</p>
 <p style="margin-top: 1rem;">
-<a href="mailto:trinityag01@gmail.com" style="color: #ffffff; text-decoration: none;">Kontaktiere uns</a>
+<a href="mailto:trinityag01@gmail.com" style="color: #ffffff; text-decoration: none;">Contactez-nous</a>
 </p>
 </div>
 </footer>
