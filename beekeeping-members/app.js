@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card">
            <div class="premium-badge-wrapper">
               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">PDF • Digitaler Download</span>
+              <span class="premium-format">PDF • Digital Download</span>
            </div>
            
            <div class="premium-cover-container">
@@ -281,10 +281,10 @@ document.addEventListener("DOMContentLoaded", () => {
               
               <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: 1.5rem;">
                  <a href="${bk.downloadUrl}" target="_blank" class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: var(--primary); color: #FFF;">
-                    <i data-lucide="book-open"></i> Jetzt lesen
+                    <i data-lucide="book-open"></i> Read Now
                  </a>
                  <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
-                    <i data-lucide="download"></i> PDF herunterladen
+                    <i data-lucide="download"></i> Download PDF
                  </a>
               </div>
            </div>
@@ -294,17 +294,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Ihre Materialien</h1><p>Tippen Sie unten auf die Sammlung, um den Inhalt anzuzeigen.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Your Materials</h1><p>Tap a collection below to view its content.</p></div></div>
           
           
           <div class="list-container">
-            ${booksHTML || '<p>Derzeit sind keine Materialien registriert.</p>'}
+            ${booksHTML || '<p>No materials registered yet.</p>'}
           </div>
         </div>
       `;
   }
 
-  // TELA: OTHER PRODUCTS
+  // SCREEN: OTHER PRODUCTS
   function renderOutrosProdutos() {
     const prodsHTML = APP_DATA.otherProducts.map(prod => {
       // Create features checklist HTML
@@ -318,7 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card">
            <div class="premium-badge-wrapper">
               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">Online-Zugang</span>
+              <span class="premium-format">Online Access</span>
            </div>
            
            <div class="premium-cover-container">
@@ -332,7 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ${featuresHTML}
               
               <a href="${prod.linkUrl}" target="_blank" class="premium-btn">
-                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Mehr erfahren'}
+                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Learn More'}
               </a>
            </div>
         </div>
@@ -341,23 +341,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Weitere Programme</h1><p>Entdecken Sie weitere Materialien.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>More Programs</h1><p>Discover additional materials.</p></div></div>
           
           
           <div class="list-container">
-            ${prodsHTML || '<p>Weitere Neuigkeiten folgen in Kürze!</p>'}
+            ${prodsHTML || '<p>More updates coming soon!</p>'}
           </div>
         </div>
       `;
   }
 
-  // TELA: CONTACT (100% Nativa E-mail)
+  // SCREEN: CONTACT
   function renderContato() {
     const mailHref = mountMailTo();
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Support</h1><p>Ihre Zufriedenheit ist unsere Priorität.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Support</h1><p>Your satisfaction is our priority.</p></div></div>
           
   
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
@@ -365,9 +365,9 @@ document.addEventListener("DOMContentLoaded", () => {
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
              </div>
              
-             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Nachricht senden</h3>
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Send a Message</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                Kopieren Sie die untenstehende Adresse und senden Sie uns eine E-Mail mit Ihrer Frage. Unser Team wird so schnell wie möglich antworten.
+                Copy the address below and send us an email with your question. Our team will respond as soon as possible.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
@@ -379,32 +379,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ----------------------------------------------------------------------
-  // 4. MÓDULO COMPLEXO: RENDERIZADOR DE VIDEOS
+  // 4. COMPLEX MODULE: VIDEO RENDERER
   // ----------------------------------------------------------------------
   function renderVideos() {
     const allVideos = APP_DATA.videos || [];
     const safeVideo = allVideos.find(v => v.id === currentVideoId) || allVideos[0] || null;
 
-    // Render do Layout (Sem Top Player, apenas a Playlist Sanduíche)
+    // Layout Render (No Top Player, only Sandwich Playlist)
     rootEl.innerHTML = `
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Ihre Kurse</h1><p>Bleiben Sie mit Ihren Online-Kursen auf dem Laufenden</p></div></div>
+        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Your Courses</h1><p>Stay up to date with your online courses</p></div></div>
 
         <div id="video-playlist-items">
-          <!-- JS Injeta Aulas Aqui -->
+          <!-- JS Injects Lessons Here -->
         </div>
       </div>
         </div>
       `;
 
-    // Atualizar lista da Playlist
+    // Update Playlist List
     if (safeVideo) {
       attachPlaylistEvents(allVideos, safeVideo.id);
     }
   }
 
-  // Função global para iniciar o Play (Nativo HTML5)
+  // Global function to start Play (HTML5 Native)
   window.startCustomPlay = function (wrapper, videoSrc) {
     if (wrapper.classList.contains('is-playing')) return;
 
@@ -423,11 +423,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     wrapper.classList.add('is-playing');
 
-    // Força o Autoplay Programático para o usuário não precisar clicar 2 vezes (1 no banner, 1 no player)
+    // Force Programmatic Autoplay so the user doesn't have to click twice
     setTimeout(() => {
       const player = document.getElementById('main-native-player');
       if (player) {
-        player.play().catch(e => console.log('Autoplay preventivo nativo:', e));
+        player.play().catch(e => console.log('Native autoplay prevented:', e));
       }
     }, 100);
   };
@@ -436,7 +436,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const playlistEl = document.getElementById("video-playlist-items");
     if (!playlistEl) return;
 
-    // Montar a árvore HTML (Sanduíche/Accordion)
+    // Assemble HTML tree (Sandwich/Accordion)
     const playlistHtml = videosArray.map((vid, index) => {
       const isPlaying = vid.id === activeVideoId;
       const vidSrc = vid.videoUrl || vid.embedUrl;
@@ -444,11 +444,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="card-bloco play-item glass-panel ${isPlaying ? 'active-play' : ''}" style="margin-bottom:16px; display:flex; flex-direction:column; padding:0; overflow:hidden;" data-video-id="${vid.id}">
             
-            <!-- Cabeçalho Clicável -->
+            <!-- Clickable Header -->
             <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit;">
               <div style="display:flex; flex-direction:column; justify-content:center; flex:1">
                  <h4 style="margin:0 0 4px; font-size:1.1rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}">${vid.title}</h4>
-                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Vollständiger Kurs'}</p>
+                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Full Course'}</p>
               </div>
               ${isPlaying
           ? '<i data-lucide="chevron-down" style="color:var(--primary); align-self:center;"></i>'

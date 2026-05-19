@@ -1,14 +1,14 @@
-/**
+﻿/**
  * APP CORE ENGINE
- * ÁREA DE MEMBROS (Mobile First & Senior Friendly)
- * Nenhuma alteração de conteúdo ou curso deve ocorrer aqui. 
+ * ÃREA DE MEMBROS (Mobile First & Senior Friendly)
+ * Nenhuma alteraÃ§Ã£o de conteÃºdo ou curso deve ocorrer aqui. 
  * Apenas em data.js
  */
 
 document.addEventListener("DOMContentLoaded", () => {
 
   // ----------------------------------------------------------------------
-  // 0. REFERÊNCIAS DO DOM ENCAPSULADAS
+  // 0. REFERÃŠNCIAS DO DOM ENCAPSULADAS
   // ----------------------------------------------------------------------
   const rootEl = document.getElementById("app-root");
   const brandTitle = document.getElementById("brand-title");
@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const floatingHelp = document.getElementById("floating-help-container");
   const tabItems = document.querySelectorAll(".tab-item");
 
-  // Variável para armazenar qual ID de vídeo foi escolhido para tocar
+  // VariÃ¡vel para armazenar qual ID de vÃ­deo foi escolhido para tocar
   let currentVideoId = APP_DATA.videos.length > 0 ? APP_DATA.videos[0].id : null;
 
   // ----------------------------------------------------------------------
-  // 1. INICIALIZAÇÃO DA BASE (Header e Global Settings)
+  // 1. INICIALIZAÃ‡ÃƒO DA BASE (Header e Global Settings)
   // ----------------------------------------------------------------------
   initGlobalConfig();
   handleRouting();
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Ouvinte para trocar a rota cada vez que o hash (url/#tela) mudar.
   window.addEventListener("hashchange", handleRouting);
 
-  // Re-renderizar ícones Lucide sempre que novas views surgirem
+  // Re-renderizar Ã­cones Lucide sempre que novas views surgirem
   function renderIcons() {
     if (window.lucide) {
       lucide.createIcons();
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   }
-  window.activeYtPlayer = null; // Guardar a instância ativa do player
+  window.activeYtPlayer = null; // Guardar a instÃ¢ncia ativa do player
 
   // Fullscreen CSS injections
   if (!document.getElementById("fullscreen-css")) {
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "Área de Membros";
+      brandTitle.innerText = APP_DATA.config.brandName || "Ãrea de Membros";
     }
   }
 
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ----------------------------------------------------------------------
-  // 2. SISTEMA DE ROTEAMENTO SPA (O "Coração" da navegação)
+  // 2. SISTEMA DE ROTEAMENTO SPA (O "CoraÃ§Ã£o" da navegaÃ§Ã£o)
   // ----------------------------------------------------------------------
   function handleRouting() {
     // 2.1 Verifica a rota atual. Se vazio, joga para #home
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2.3 Destacar Aba Inferior Ativa
     updateBottomNavBar(currentHash);
 
-    // 2.4 Controlar Opções Flutuantes exclusivas de Telas Internas
+    // 2.4 Controlar OpÃ§Ãµes Flutuantes exclusivas de Telas Internas
     togglePersistentElements(currentHash);
 
     // 2.5 Injetar a view correta dentro da main
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderContato();
         break;
       default:
-        renderHome(); // Prevenção de Rota Perdida (Sênior Friendly)
+        renderHome(); // PrevenÃ§Ã£o de Rota Perdida (SÃªnior Friendly)
         break;
     }
 
@@ -186,14 +186,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function togglePersistentElements(hash) {
-    // Regra 1: Na Home, o bottomNav não deve aparecer para não distrair
+    // Regra 1: Na Home, o bottomNav nÃ£o deve aparecer para nÃ£o distrair
     if (hash === "#home") {
       bottomNav.classList.add('hidden-on-home');
     } else {
       bottomNav.classList.remove('hidden-on-home');
     }
 
-    // Regra 2: Ocultar Botão Flutuante de Ajuda APENAS se estiver na aba do menu Contato
+    // Regra 2: Ocultar BotÃ£o Flutuante de Ajuda APENAS se estiver na aba do menu Contato
     const fBtn = floatingHelp.querySelector('.floating-help-btn');
     if (fBtn) {
       if (hash === "#contato" || hash === "#home") {
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Benvenuto, Membro</h1><p>A cosa vorresti accedere oggi?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Benvenuto, Membro</h1><p>Cosa vorresti consultare oggi?</p></div></div>
           
   
           <div class="home-grid">
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
   }
 
-  // TELA: LIBRI (Materiais tipo Bundle)
+  // TELA: BOOKS (Materiais tipo Bundle)
   function renderLivros() {
     const booksHTML = APP_DATA.books.map(bk => {
       // Create features checklist HTML
@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card">
            <div class="premium-badge-wrapper">
               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">PDF • Download Digitale</span>
+              <span class="premium-format">PDF â€¢ Digital Download</span>
            </div>
            
            <div class="premium-cover-container">
@@ -284,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <i data-lucide="book-open"></i> Leggi ora
                  </a>
                  <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
-                    <i data-lucide="download"></i> Scarica il PDF
+                    <i data-lucide="download"></i> Scarica PDF
                  </a>
               </div>
            </div>
@@ -294,17 +294,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>I tuoi Materiali</h1><p>Tocca la collezione qui sotto per vedere il contenuto.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>I Tuoi Materiali</h1><p>Tocca una collezione qui sotto per vederne il contenuto.</p></div></div>
           
           
           <div class="list-container">
-            ${booksHTML || '<p>Nessun materiale attualmente registrato.</p>'}
+            ${booksHTML || '<p>Nessun materiale registrato al momento.</p>'}
           </div>
         </div>
       `;
   }
 
-  // TELA: OTHER PRODUCTS
+  // SCREEN: OTHER PRODUCTS
   function renderOutrosProdutos() {
     const prodsHTML = APP_DATA.otherProducts.map(prod => {
       // Create features checklist HTML
@@ -318,7 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card">
            <div class="premium-badge-wrapper">
               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">Online-Zugang</span>
+              <span class="premium-format">Accesso online</span>
            </div>
            
            <div class="premium-cover-container">
@@ -341,17 +341,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Altri Programmi</h1><p>Scopri altri materiali.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Altri Programmi</h1><p>Scopri materiali aggiuntivi.</p></div></div>
           
           
           <div class="list-container">
-            ${prodsHTML || '<p>Altre novità in arrivo presto!</p>'}
+            ${prodsHTML || '<p>Altre novità in arrivo!</p>'}
           </div>
         </div>
       `;
   }
 
-  // TELA: CONTATTO (100% Nativa E-mail)
+  // SCREEN: CONTACT
   function renderContato() {
     const mailHref = mountMailTo();
 
@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
              
              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Invia un messaggio</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                Copia l'indirizzo sottostante e inviaci un'email con la tua domanda. Il nostro team ti risponderà il prima possibile.
+                Copia l'indirizzo qui sotto e inviaci un'e-mail con la tua domanda. Il nostro team risponderà il prima possibile.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
@@ -379,32 +379,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ----------------------------------------------------------------------
-  // 4. MÓDULO COMPLEXO: RENDERIZADOR DE VIDEO
+  // 4. COMPLEX MODULE: VIDEO RENDERER
   // ----------------------------------------------------------------------
   function renderVideos() {
     const allVideos = APP_DATA.videos || [];
     const safeVideo = allVideos.find(v => v.id === currentVideoId) || allVideos[0] || null;
 
-    // Render do Layout (Sem Top Player, apenas a Playlist Sanduíche)
+    // Layout Render (No Top Player, only Sandwich Playlist)
     rootEl.innerHTML = `
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>I tuoi Corsi</h1><p>Rimani aggiornato con i tuoi corsi online</p></div></div>
+        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>I Tuoi Corsi</h1><p>Rimani aggiornato con i tuoi corsi online</p></div></div>
 
         <div id="video-playlist-items">
-          <!-- JS Injeta Aulas Aqui -->
+          <!-- JS Injects Lessons Here -->
         </div>
       </div>
         </div>
       `;
 
-    // Atualizar lista da Playlist
+    // Update Playlist List
     if (safeVideo) {
       attachPlaylistEvents(allVideos, safeVideo.id);
     }
   }
 
-  // Função global para iniciar o Play (Nativo HTML5)
+  // Global function to start Play (HTML5 Native)
   window.startCustomPlay = function (wrapper, videoSrc) {
     if (wrapper.classList.contains('is-playing')) return;
 
@@ -423,11 +423,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     wrapper.classList.add('is-playing');
 
-    // Força o Autoplay Programático para o usuário não precisar clicar 2 vezes (1 no banner, 1 no player)
+    // Force Programmatic Autoplay so the user doesn't have to click twice
     setTimeout(() => {
       const player = document.getElementById('main-native-player');
       if (player) {
-        player.play().catch(e => console.log('Autoplay preventivo nativo:', e));
+        player.play().catch(e => console.log('Native autoplay prevented:', e));
       }
     }, 100);
   };
@@ -436,7 +436,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const playlistEl = document.getElementById("video-playlist-items");
     if (!playlistEl) return;
 
-    // Montar a árvore HTML (Sanduíche/Accordion)
+    // Assemble HTML tree (Sandwich/Accordion)
     const playlistHtml = videosArray.map((vid, index) => {
       const isPlaying = vid.id === activeVideoId;
       const vidSrc = vid.videoUrl || vid.embedUrl;
@@ -444,7 +444,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="card-bloco play-item glass-panel ${isPlaying ? 'active-play' : ''}" style="margin-bottom:16px; display:flex; flex-direction:column; padding:0; overflow:hidden;" data-video-id="${vid.id}">
             
-            <!-- Cabeçalho Clicável -->
+            <!-- Clickable Header -->
             <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit;">
               <div style="display:flex; flex-direction:column; justify-content:center; flex:1">
                  <h4 style="margin:0 0 4px; font-size:1.1rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}">${vid.title}</h4>
@@ -455,7 +455,7 @@ document.addEventListener("DOMContentLoaded", () => {
           : '<i data-lucide="play-circle" style="opacity:0.5; align-self:center;"></i>'}
             </a>
             
-            <!-- Corpo do Vídeo (Só aparece se estiver ativo) -->
+            <!-- Corpo do VÃ­deo (SÃ³ aparece se estiver ativo) -->
       ${isPlaying ? `
               <div class="play-item-body" style="padding: 0 16px 16px 16px; animation: slideDown 0.3s ease;">
                  ${vid.iframeUrl ? `
@@ -492,7 +492,7 @@ document.addEventListener("DOMContentLoaded", () => {
     playlistEl.innerHTML = playlistHtml;
     renderIcons();
 
-    // Inicializar YouTube Player caso o vídeo ativo tenha youtubeId
+    // Inicializar YouTube Player caso o vÃ­deo ativo tenha youtubeId
     const activeVidObj = videosArray.find(v => v.id === activeVideoId);
     if (activeVidObj && activeVidObj.youtubeId) {
         const initYT = () => {
@@ -502,17 +502,17 @@ document.addEventListener("DOMContentLoaded", () => {
             window.activeYtPlayer = new YT.Player(`yt-player-${activeVidObj.id}`, {
                 videoId: activeVidObj.youtubeId,
                 playerVars: {
-                    'controls': 0, // Esconde a barra nativa, usamos apenas os nossos botões
+                    'controls': 0, // Esconde a barra nativa, usamos apenas os nossos botÃµes
                     'disablekb': 1,
                     'modestbranding': 1,
                     'rel': 0,
                     'showinfo': 0,
-                    'fs': 0, // Desativa botão fullscreen nativo, usamos o nosso
+                    'fs': 0, // Desativa botÃ£o fullscreen nativo, usamos o nosso
                     'playsinline': 1
                 },
                 events: {
                     'onReady': (event) => { 
-                        // Autoplay nem sempre funciona sem interação, mas tentamos
+                        // Autoplay nem sempre funciona sem interaÃ§Ã£o, mas tentamos
                         event.target.playVideo(); 
                     },
                     'onStateChange': (event) => {
@@ -564,3 +564,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+

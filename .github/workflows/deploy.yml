@@ -24,6 +24,12 @@ on:
       - 'bkp-de/**'
       - 'hx-fr/**'
       - 'hx-it/**'
+      - 'beekeeping-members/**'
+      - 'beekeeping-de-members/**'
+      - 'beekeeping-fr-members/**'
+      - 'beekeeping-it-members/**'
+      - 'beekeeping-es-members/**'
+      - 'beekeeping-pt-members/**'
       - '.github/workflows/**'
 
 jobs:
@@ -60,6 +66,12 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/bkp-de
             sudo mkdir -p /var/www/skillvault.blog/hx-fr
             sudo mkdir -p /var/www/skillvault.blog/hx-it
+            sudo mkdir -p /var/www/skillvault.blog/bkp-m
+            sudo mkdir -p /var/www/skillvault.blog/bkp-de-m
+            sudo mkdir -p /var/www/skillvault.blog/hx-fr-m
+            sudo mkdir -p /var/www/skillvault.blog/hx-it-m
+            sudo mkdir -p /var/www/skillvault.blog/hx-es-m
+            sudo mkdir -p /var/www/skillvault.blog/hx-pt-m
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog || true
 
       # ── BIBLE1 ────────────────────────────────────────────────────────────────
@@ -258,4 +270,66 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "hx-it/*"
           target: "/var/www/skillvault.blog/hx-it"
+          strip_components: 1
+
+      # ── BEEKEEPING MEMBERS AREAS ────────────────────────────────────────────
+
+      - name: Deploy 'beekeeping-members' to skillvault.blog/bkp-m
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "beekeeping-members/*"
+          target: "/var/www/skillvault.blog/bkp-m"
+          strip_components: 1
+
+      - name: Deploy 'beekeeping-de-members' to skillvault.blog/bkp-de-m
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "beekeeping-de-members/*"
+          target: "/var/www/skillvault.blog/bkp-de-m"
+          strip_components: 1
+
+      - name: Deploy 'beekeeping-fr-members' to skillvault.blog/hx-fr-m
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "beekeeping-fr-members/*"
+          target: "/var/www/skillvault.blog/hx-fr-m"
+          strip_components: 1
+
+      - name: Deploy 'beekeeping-it-members' to skillvault.blog/hx-it-m
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "beekeeping-it-members/*"
+          target: "/var/www/skillvault.blog/hx-it-m"
+          strip_components: 1
+
+      - name: Deploy 'beekeeping-es-members' to skillvault.blog/hx-es-m
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "beekeeping-es-members/*"
+          target: "/var/www/skillvault.blog/hx-es-m"
+          strip_components: 1
+
+      - name: Deploy 'beekeeping-pt-members' to skillvault.blog/hx-pt-m
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "beekeeping-pt-members/*"
+          target: "/var/www/skillvault.blog/hx-pt-m"
           strip_components: 1

@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Welcome, Member</h1><p>What would you like to access today?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Willkommen, Mitglied</h1><p>Was möchten Sie heute ansehen?</p></div></div>
           
   
           <div class="home-grid">
@@ -222,8 +222,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="book-open"></i>
               </div>
               <div>
-                 <div class="home-block-title">BOOKS</div>
-                 <div class="home-block-subtitle">Books and PDF Materials</div>
+                 <div class="home-block-title">BÜCHER</div>
+                 <div class="home-block-subtitle">Bücher und PDF-Materialien</div>
               </div>
             </a>
             
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
               <div>
                  <div class="home-block-title">VIDEOS</div>
-                 <div class="home-block-subtitle">Your Video Courses</div>
+                 <div class="home-block-subtitle">Ihre Videokurse</div>
               </div>
             </a>
   
@@ -242,8 +242,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="message-square"></i>
               </div>
               <div>
-                 <div class="home-block-title">CONTACT</div>
-                 <div class="home-block-subtitle">Help and Support</div>
+                 <div class="home-block-title">KONTAKT</div>
+                 <div class="home-block-subtitle">Hilfe und Support</div>
               </div>
             </a>
   

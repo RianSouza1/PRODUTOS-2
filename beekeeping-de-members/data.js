@@ -203,32 +203,47 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "Imkern für Anfänger",
-            description: "Alles, was Sie wissen müssen, um mit der Imkerei zu beginnen: von der Auswahl Ihres ersten Bienenstocks bis zur Ernte von goldenem Honig.",
+            title: "Bienenhaltung für Alle",
+            description: "Der umfassende Leitfaden für einfaches und ertragreiches Imkern — vom Aufbau Ihres ersten Bienenstocks bis zur erfolgreichen Honigernte.",
             badgeText: "HAUPTBUCH",
             badgeColor: "#E5A817",
             features: [
                 "Aufbau & Standort des Bienenstocks",
                 "Saisonaler Pflegekalender",
-                "Leitfaden zur Honigernte"
+                "Rentable Honigproduktion"
             ],
-            downloadUrl: "materials/Beekeeping_for_Beginners.pdf",
-            coverImage: "assets/covers/book_taichi_seniors_light_v2.jpg",
+            downloadUrl: "materials/AL01 Bienenhaltung-fur-alle-einfach-und-ertragreich-imkern.pdf",
+            coverImage: "assets/covers/bienenhaltung.png",
             buttonText: "Buch herunterladen"
         },
         {
             id: "b2",
-            title: "Natürliche Honigrezepte",
-            description: "30 köstliche Rezepte mit Ihrem eigenen Honig — von Hautpflege bis zur Gourmetküche.",
-            badgeText: "BONUS",
+            title: "Imkergrundkurs — Das Buch",
+            description: "Der komplette Grundkurs für angehende Imker — Schritt für Schritt zum eigenen Bienenvolk mit fundiertem Fachwissen.",
+            badgeText: "KURS",
             badgeColor: "#6B8F3C",
             features: [
-                "Süße & herzhafte Rezepte",
-                "Hautpflege auf Honigbasis",
-                "Tipps zur Haltbarmachung"
+                "Grundlagen der Bienenpflege",
+                "Völkerführung für Anfänger",
+                "Krankheiten & Schädlingsbekämpfung"
             ],
-            downloadUrl: "materials/Natural_Honey_Recipes.pdf",
-            coverImage: "assets/covers/book_taichi_weightloss_light.jpg",
+            downloadUrl: "materials/AL02 -Imkergrundkurs-das-Buch.pdf",
+            coverImage: "assets/covers/imkergrundkurs.png",
+            buttonText: "Kurs herunterladen"
+        },
+        {
+            id: "b3",
+            title: "Met selber machen für Anfänger",
+            description: "Lernen Sie die uralte Kunst des Honigweins — einfache Rezepte, die Sie mit Ihrem eigenen Honig zu Hause nachmachen können.",
+            badgeText: "BONUS",
+            badgeColor: "#B45309",
+            features: [
+                "Traditionelle Met-Rezepte",
+                "Gärungstechniken Schritt für Schritt",
+                "Geschmacksvariationen & Tipps"
+            ],
+            downloadUrl: "materials/AL03 - Met-selber-machen-fur-Anfanger.pdf",
+            coverImage: "assets/covers/met_selber_machen.png",
             buttonText: "Bonus herunterladen"
         }
     ],

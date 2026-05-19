@@ -131,33 +131,63 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "Beekeeping for Beginners",
-            description: "Everything you need to start your beekeeping journey: from choosing your first hive to harvesting golden honey.",
+            title: "Beekeeping for All",
+            description: "The complete guide to simple and profitable beekeeping — from setting up your first hive to managing a thriving apiary year-round.",
             badgeText: "MAIN BOOK",
             badgeColor: "#E5A817",
             features: [
-                "Hive Setup & Placement",
-                "Seasonal Care Calendar",
-                "Honey Harvesting Guide"
+                "Complete Hive Setup Guide",
+                "Seasonal Management Calendar",
+                "Profitable Honey Production"
             ],
-            downloadUrl: "materials/Beekeeping_for_Beginners.pdf",
-            coverImage: "assets/covers/book_taichi_seniors_light_v2.jpg",
+            downloadUrl: "materials/ENG 01-Beekeeping-for-All (1).pdf",
+            coverImage: "assets/covers/beekeeping_for_all.png",
             buttonText: "Download Book"
         },
         {
             id: "b2",
-            title: "Natural Honey Recipes",
-            description: "30 delicious recipes using your own homemade honey — from skincare to gourmet cooking.",
-            badgeText: "BONUS",
+            title: "The Backyard Beekeeper",
+            description: "Your essential guide to home beekeeping — learn how to keep bees in your backyard safely and successfully.",
+            badgeText: "GUIDE",
             badgeColor: "#6B8F3C",
             features: [
-                "Sweet & Savory Recipes",
-                "Honey-Based Skincare",
-                "Preservation Tips"
+                "Backyard Hive Placement",
+                "Beginner-Friendly Methods",
+                "Colony Health & Maintenance"
             ],
-            downloadUrl: "materials/Natural_Honey_Recipes.pdf",
-            coverImage: "assets/covers/book_taichi_weightloss_light.jpg",
+            downloadUrl: "materials/ENG 02 -The-Backyard-Beekeepers.pdf",
+            coverImage: "assets/covers/backyard_beekeepers.png",
+            buttonText: "Download Guide"
+        },
+        {
+            id: "b3",
+            title: "Backyard Mead Making",
+            description: "Learn the ancient art of crafting honey wine at home — step-by-step recipes using your own harvested honey.",
+            badgeText: "BONUS",
+            badgeColor: "#B45309",
+            features: [
+                "Traditional Mead Recipes",
+                "Fermentation Techniques",
+                "Flavor Variations & Tips"
+            ],
+            downloadUrl: "materials/ENG 03-BackyardMeadMaking-pdf.pdf",
+            coverImage: "assets/covers/mead_making.png",
             buttonText: "Download Bonus"
+        },
+        {
+            id: "b4",
+            title: "Beekeeping Made Easy",
+            description: "A simplified approach to beekeeping by Marcus Williams — practical tips and tricks for beginners who want results fast.",
+            badgeText: "EXTRA",
+            badgeColor: "#059669",
+            features: [
+                "Quick-Start Methods",
+                "Common Mistakes to Avoid",
+                "Practical Tips & Tricks"
+            ],
+            downloadUrl: "materials/ENG 04-Beekeeping-Made-Easy-by-Marcus-Williams.pdf",
+            coverImage: "assets/covers/beekeeping_made_easy.png",
+            buttonText: "Download Extra"
         }
     ],
 

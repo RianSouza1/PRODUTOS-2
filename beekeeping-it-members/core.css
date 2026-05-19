@@ -1,5 +1,5 @@
-/* =========================================================================
-   CORE STYLES - ÁREA DE MEMBROS (Mobile First & Senior Friendly)
+﻿/* =========================================================================
+   CORE STYLES - ÃREA DE MEMBROS (Mobile First & Senior Friendly)
    ========================================================================= */
 
 :root {
@@ -14,14 +14,14 @@
     --primary: #D97706;
     --primary-hover: #B45309;
     --primary-light: rgba(217, 119, 6, 0.1);
-    /* Fundo sútil dourado */
+    /* Fundo sÃºtil dourado */
 
-    /* Feedback Visual Secundário */
+    /* Feedback Visual SecundÃ¡rio */
     --secondary: #4ade80;
     --success: #6BE59E;
     --success-bg: rgba(107, 229, 158, 0.15);
 
-    /* Espaçamentos Marginais e Z-Index */
+    /* EspaÃ§amentos Marginais e Z-Index */
     --safe-padding: 1.5rem;
     --nav-height: 70px;
     --z-nav: 100;
@@ -34,7 +34,7 @@
     --font-family: 'Outfit', system-ui, -apple-system, sans-serif;
 }
 
-/* Reset e Box-Sizing Básico */
+/* Reset e Box-Sizing BÃ¡sico */
 * {
     margin: 0;
     padding: 0;
@@ -129,11 +129,11 @@ body {
     overflow: hidden;
 }
 
-/* Área Central de Conteúdo */
+/* Ãrea Central de ConteÃºdo */
 .main-content {
     flex: 1;
     overflow-y: auto;
-    /* Afastar do Bottom bar apenas nas telas internas (Home não tem bottom bar) */
+    /* Afastar do Bottom bar apenas nas telas internas (Home nÃ£o tem bottom bar) */
     -webkit-overflow-scrolling: touch;
     position: relative;
     /* Fundo da main acompanhando a page */
@@ -145,7 +145,7 @@ body {
 }
 
 /* =========================================================================
-   NAVEGAÇÃO BOTTOM (MOBILE FIRST)
+   NAVEGAÃ‡ÃƒO BOTTOM (MOBILE FIRST)
    ========================================================================= */
 .bottom-tab-bar {
     position: fixed;
@@ -235,7 +235,7 @@ body {
     /* Fallback */
 }
 
-/* O "Pôster" Falso Antes do Play */
+/* O "PÃ´ster" Falso Antes do Play */
 .custom-player-overlay {
     position: absolute;
     inset: 0;
@@ -298,7 +298,7 @@ body {
     pointer-events: none;
 }
 
-/* Estado de Exibição (Quando clicado!) */
+/* Estado de ExibiÃ§Ã£o (Quando clicado!) */
 .custom-player-wrapper.is-playing .custom-player-overlay {
     opacity: 0;
     pointer-events: none;
@@ -307,15 +307,15 @@ body {
 
 .custom-player-wrapper.is-playing .custom-player-iframe-container iframe {
     pointer-events: auto;
-    /* Reativa os cliques nativos pra tocar e pausar no Iframe invisível */
+    /* Reativa os cliques nativos pra tocar e pausar no Iframe invisÃ­vel */
 }
 
 
 /* =========================================================================
-   ELEMENTOS DE FEEDBACK (Ex: Básico e Ocultos)
+   ELEMENTOS DE FEEDBACK (Ex: BÃ¡sico e Ocultos)
    ========================================================================= */
 /* =========================================================================
-   TELAS / VIEWS DINÂMICAS
+   TELAS / VIEWS DINÃ‚MICAS
    ========================================================================= */
 .page-view {
     padding: var(--safe-padding);
@@ -334,7 +334,7 @@ body {
     }
 }
 
-/* Títulos das Views */
+/* TÃ­tulos das Views */
 .view-title {
     font-size: 1.5rem;
     font-weight: 700;
@@ -350,10 +350,10 @@ body {
 }
 
 /* =========================================================================
-   COMPONENTES COMUNS (Botões, Cards)
+   COMPONENTES COMUNS (BotÃµes, Cards)
    ========================================================================= */
 
-/* Botão de Ação Massivo Padrão */
+/* BotÃ£o de AÃ§Ã£o Massivo PadrÃ£o */
 .btn-mestre {
     display: flex;
     align-items: center;
@@ -364,7 +364,7 @@ body {
     background: var(--primary);
     /* Gold / Tan */
     color: #FFFFFF;
-    /* Texto em verde escuro para altíssimo contraste */
+    /* Texto em verde escuro para altÃ­ssimo contraste */
     border: none;
     border-radius: 16px;
     font-size: 1.15rem;
@@ -373,7 +373,7 @@ body {
     text-decoration: none;
     transition: all 0.2s ease;
     box-shadow: 0 4px 16px rgba(255, 215, 0, 0.2);
-    /* Sombra difusa da cor primária */
+    /* Sombra difusa da cor primÃ¡ria */
 }
 
 .btn-mestre:active,
@@ -395,7 +395,7 @@ body {
     background: var(--primary-light);
 }
 
-/* Cartões Base (Livros, Produtos, etc) */
+/* CartÃµes Base (Livros, Produtos, etc) */
 .card-bloco {
     background-color: var(--bg-card);
     border: 1px solid var(--border-light);
@@ -570,7 +570,7 @@ body {
 }
 
 /* =========================================================================
-   TELA DE VIDEOS (Layout Específico)
+   TELA DE VIDEOS (Layout EspecÃ­fico)
    ========================================================================= */
 .video-player-container {
     width: 100%;
@@ -653,10 +653,10 @@ body {
 
 .playlist-item.playing .pl-icon {
     display: none;
-    /* Oculta o ícone padrao para mostrar o custom "In Play" se precisarmos via JS */
+    /* Oculta o Ã­cone padrao para mostrar o custom "In Play" se precisarmos via JS */
 }
 
-/* Elemento Injetado no JS como "Em Exibição" */
+/* Elemento Injetado no JS como "Em ExibiÃ§Ã£o" */
 .is-playing-badge {
     background: var(--primary);
     color: #FFFFFF;
@@ -689,7 +689,7 @@ body {
         flex-direction: row;
     }
 
-    /* O Header vira invisível/Inutil caso tenhamos a Navbar Lateral */
+    /* O Header vira invisÃ­vel/Inutil caso tenhamos a Navbar Lateral */
     .app-header {
         display: none;
     }
@@ -714,7 +714,7 @@ body {
     }
 
     .bottom-tab-bar::before {
-        content: "ÁREA DO ALUNO";
+        content: "AREA MEMBRI";
         font-size: 0.8rem;
         font-weight: 700;
         color: #94A3B8;
@@ -724,7 +724,7 @@ body {
         letter-spacing: 1px;
     }
 
-    /* Os itens da tab viram botões horizontais longos na sidebar */
+    /* Os itens da tab viram botÃµes horizontais longos na sidebar */
     .tab-item {
         width: calc(100% - 2rem);
         flex-direction: row;
@@ -743,7 +743,7 @@ body {
         background-color: var(--primary-light);
     }
 
-    /* Ajuste da Área Central no Desktop */
+    /* Ajuste da Ãrea Central no Desktop */
     .main-content {
         padding: 3rem;
         padding-bottom: 3rem;
@@ -765,7 +765,7 @@ body {
         width: calc(50% - 0.5rem);
     }
 
-    /* Tela de Vídeo em modo Split Layout */
+    /* Tela de VÃ­deo em modo Split Layout */
     .split-video-view {
         display: flex;
         gap: 3rem;
@@ -774,7 +774,7 @@ body {
 
     .split-left {
         flex: 2;
-        /* 66% para o vídeo */
+        /* 66% para o vÃ­deo */
         position: sticky;
         top: 3rem;
     }
@@ -796,7 +796,7 @@ body {
     }
 }
 
-/* Correção de chaves finais */
+/* CorreÃ§Ã£o de chaves finais */
 /* End of CSS patch */
 /* Force CSS Flush */
 
@@ -1068,7 +1068,7 @@ body {
 
 
 /* =========================================================================
-   BEEKEEPING THEME OVERRIDES — Honey Gold & Nature
+   BEEKEEPING THEME OVERRIDES â€” Honey Gold & Nature
    ========================================================================= */
 :root {
     --bg-main: #111a0e;
@@ -1145,3 +1145,5 @@ html, body {
     color: #111a0e;
     box-shadow: 0 4px 20px rgba(229, 168, 23, 0.45);
 }
+
+
