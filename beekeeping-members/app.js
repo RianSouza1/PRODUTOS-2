@@ -52,23 +52,31 @@ document.addEventListener("DOMContentLoaded", () => {
       style.textContent = `
           .video-wrapper-container:fullscreen {
               background: #000 !important;
-              display: flex;
+              display: flex !important;
               flex-direction: column;
               justify-content: center;
+              width: 100vw !important;
+              height: 100vh !important;
           }
-          .video-wrapper-container:fullscreen > div[id^="yt-player-"] {
+          .video-wrapper-container:fullscreen .yt-16-9-wrapper {
+              padding-bottom: 0 !important;
               height: calc(100vh - 68px) !important;
               flex-grow: 1;
+              position: relative;
           }
           .video-wrapper-container:-webkit-full-screen {
               background: #000 !important;
-              display: flex;
+              display: flex !important;
               flex-direction: column;
               justify-content: center;
+              width: 100vw !important;
+              height: 100vh !important;
           }
-          .video-wrapper-container:-webkit-full-screen > div[id^="yt-player-"] {
+          .video-wrapper-container:-webkit-full-screen .yt-16-9-wrapper {
+              padding-bottom: 0 !important;
               height: calc(100vh - 68px) !important;
               flex-grow: 1;
+              position: relative;
           }
       `;
       document.head.appendChild(style);
@@ -91,6 +99,17 @@ document.addEventListener("DOMContentLoaded", () => {
               document.webkitExitFullscreen();
           } else if (document.msExitFullscreen) {
               document.msExitFullscreen();
+          }
+      }
+  };
+
+  window.toggleYtPlayPause = function() {
+      if(window.activeYtPlayer && typeof window.activeYtPlayer.getPlayerState === 'function') {
+          const state = window.activeYtPlayer.getPlayerState();
+          if (state === 1) { // 1 = playing
+              window.activeYtPlayer.pauseVideo();
+          } else {
+              window.activeYtPlayer.playVideo();
           }
       }
   };
@@ -371,11 +390,6 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
         <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Ihre Kurse</h1><p>Bleiben Sie mit Ihren Online-Kursen auf dem Laufenden</p></div></div>
-        
-        <div style="background-color: rgba(255, 215, 0, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
-           <i data-lucide="clock" style="width: 20px; height: 20px; flex-shrink: 0; color: #D97706;"></i>
-           <span>Nächstes Update in 5 Tagen</span>
-        </div>
 
         <div id="video-playlist-items">
           <!-- JS Injeta Aulas Aqui -->
@@ -444,12 +458,17 @@ document.addEventListener("DOMContentLoaded", () => {
             <!-- Corpo do Vídeo (Só aparece se estiver ativo) -->
       ${isPlaying ? `
               <div class="play-item-body" style="padding: 0 16px 16px 16px; animation: slideDown 0.3s ease;">
-                 ${vid.youtubeId ? `
-                 <div id="video-container-${vid.id}" class="video-wrapper-container" style="border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                    <div id="yt-player-${vid.id}" style="width: 100%; height: 260px; pointer-events: none;"></div>
-                    <div style="display: flex; justify-content: center; gap: 20px; padding: 12px; background: var(--bg-body); border-top: 1px solid var(--border-light);">
-                        <button onclick="if(window.activeYtPlayer) window.activeYtPlayer.playVideo()" style="background:var(--primary); color:white; border:none; border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"><i data-lucide="play" style="width: 20px; height: 20px; margin-left: 2px;"></i></button>
-                        <button onclick="if(window.activeYtPlayer) window.activeYtPlayer.pauseVideo()" style="background:var(--primary-light); color:var(--primary); border:none; border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer;"><i data-lucide="pause" style="width: 20px; height: 20px;"></i></button>
+                 ${vid.iframeUrl ? `
+                 <div class="video-wrapper-container" style="border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); padding-bottom: 56.25%; position: relative;">
+                    <iframe src="${vid.iframeUrl}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                 </div>
+                 ` : vid.youtubeId ? `
+                 <div id="video-container-${vid.id}" class="video-wrapper-container" style="border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; flex-direction: column;">
+                    <div class="yt-16-9-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; flex-shrink: 0;">
+                        <div id="yt-player-${vid.id}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: center; gap: 20px; padding: 12px; background: var(--bg-body); border-top: 1px solid var(--border-light); flex-shrink: 0;">
+                        <button id="yt-play-pause-btn" onclick="window.toggleYtPlayPause()" style="background:var(--primary-light); color:var(--primary); border:none; border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"><i data-lucide="pause" style="width: 20px; height: 20px;"></i></button>
                         <button onclick="window.toggleCustomFullscreen('video-container-${vid.id}')" style="background:var(--bg-body); color:var(--text-dark); border: 1px solid var(--border-light); border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer;"><i data-lucide="maximize" style="width: 20px; height: 20px;"></i></button>
                     </div>
                  </div>
@@ -495,6 +514,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     'onReady': (event) => { 
                         // Autoplay nem sempre funciona sem interação, mas tentamos
                         event.target.playVideo(); 
+                    },
+                    'onStateChange': (event) => {
+                        const btn = document.getElementById('yt-play-pause-btn');
+                        if (!btn) return;
+                        if (event.data === 1) { // Playing
+                            btn.innerHTML = '<i data-lucide="pause" style="width: 20px; height: 20px;"></i>';
+                            btn.style.background = 'var(--primary-light)';
+                            btn.style.color = 'var(--primary)';
+                        } else { // Paused or other
+                            btn.innerHTML = '<i data-lucide="play" style="width: 20px; height: 20px; margin-left: 2px;"></i>';
+                            btn.style.background = 'var(--primary)';
+                            btn.style.color = 'white';
+                        }
+                        if(window.lucide) window.lucide.createIcons();
                     }
                 }
             });
