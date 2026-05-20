@@ -22,6 +22,8 @@ on:
       - 'mw/**'
       - 'bkp/**'
       - 'bkp-de/**'
+      - 'bkp-es/**'
+      - 'bkp-pt/**'
       - 'hx-fr/**'
       - 'hx-it/**'
       - 'beekeeping-members/**'
@@ -67,6 +69,8 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/mw
             sudo mkdir -p /var/www/skillvault.blog/bkp
             sudo mkdir -p /var/www/skillvault.blog/bkp-de
+            sudo mkdir -p /var/www/skillvault.blog/bkp-es
+            sudo mkdir -p /var/www/skillvault.blog/bkp-pt
             sudo mkdir -p /var/www/skillvault.blog/hx-fr
             sudo mkdir -p /var/www/skillvault.blog/hx-it
             sudo mkdir -p /var/www/skillvault.blog/bkp-m
@@ -256,6 +260,26 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "bkp-de/*"
           target: "/var/www/skillvault.blog/bkp-de"
+          strip_components: 1
+
+      - name: Deploy 'bkp-es' to skillvault.blog/bkp-es
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "bkp-es/*"
+          target: "/var/www/skillvault.blog/bkp-es"
+          strip_components: 1
+
+      - name: Deploy 'bkp-pt' to skillvault.blog/bkp-pt
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "bkp-pt/*"
+          target: "/var/www/skillvault.blog/bkp-pt"
           strip_components: 1
 
       - name: Deploy 'hx-fr' to skillvault.blog/hx-fr
