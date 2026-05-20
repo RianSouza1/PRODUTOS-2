@@ -33,7 +33,7 @@ const APP_DATA = {
                 "Techniques de récolte du miel"
             ],
             downloadUrl: "materials/FR 01 - Labeille-et-la-ruche-Alain-Pe-ricard-Z.pdf",
-            coverImage: "assets/covers/beekeeping_for_all.png",
+            coverImage: "assets/covers/l_abeille_et_la_ruche.png",
             buttonText: "Télécharger le livre"
         },
         {
@@ -48,7 +48,7 @@ const APP_DATA = {
                 "Techniques d'élevage des reines"
             ],
             downloadUrl: "materials/FR 02-manuel-populaire-apiculture-2.pdf",
-            coverImage: "assets/covers/backyard_beekeepers.png",
+            coverImage: "assets/covers/manuel_populaire_apiculture.png",
             buttonText: "Télécharger le manuel"
         },
         {
@@ -63,7 +63,7 @@ const APP_DATA = {
                 "Illustrations et schémas utiles"
             ],
             downloadUrl: "materials/FR 03.pdf",
-            coverImage: "assets/covers/mead_making.png",
+            coverImage: "assets/covers/guide_pratique_apiculteur.png",
             buttonText: "Télécharger le guide"
         },
         {
@@ -78,7 +78,7 @@ const APP_DATA = {
                 "Gestion professionnelle du rucher"
             ],
             downloadUrl: "materials/FR04.pdf",
-            coverImage: "assets/covers/beekeeping_made_easy.png",
+            coverImage: "assets/covers/apiculture_avancee.png",
             buttonText: "Télécharger l'extra"
         }
     ],

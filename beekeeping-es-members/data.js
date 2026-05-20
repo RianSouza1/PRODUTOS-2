@@ -46,7 +46,7 @@ const APP_DATA = {
                 "Producción rentable de miel"
             ],
             downloadUrl: "materials/placeholder.pdf",
-            coverImage: "assets/covers/beekeeping_for_all.png",
+            coverImage: "assets/covers/apicultura_para_todos.png",
             buttonText: "Descargar libro"
         },
         {
@@ -61,7 +61,7 @@ const APP_DATA = {
                 "Salud y mantenimiento de la colonia"
             ],
             downloadUrl: "materials/placeholder.pdf",
-            coverImage: "assets/covers/backyard_beekeepers.png",
+            coverImage: "assets/covers/el_apicultor_de_jardin.png",
             buttonText: "Descargar guía"
         },
         {
@@ -76,7 +76,7 @@ const APP_DATA = {
                 "Variaciones de sabor y consejos"
             ],
             downloadUrl: "materials/placeholder.pdf",
-            coverImage: "assets/covers/mead_making.png",
+            coverImage: "assets/covers/elaboracion_de_hidromiel.png",
             buttonText: "Descargar bonus"
         },
         {
@@ -91,7 +91,7 @@ const APP_DATA = {
                 "Consejos y trucos prácticos"
             ],
             downloadUrl: "materials/placeholder.pdf",
-            coverImage: "assets/covers/beekeeping_made_easy.png",
+            coverImage: "assets/covers/apicultura_facil.png",
             buttonText: "Descargar extra"
         }
     ],

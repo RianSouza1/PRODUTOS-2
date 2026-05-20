@@ -464,7 +464,7 @@ document.addEventListener("DOMContentLoaded", () => {
                  </div>
                  ` : vid.youtubeId ? `
                  <div id="video-container-${vid.id}" class="video-wrapper-container" style="border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; flex-direction: column;">
-                    <div class="yt-16-9-wrapper" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; flex-shrink: 0;">
+                    <div class="yt-16-9-wrapper" onclick="window.toggleYtPlayPause()" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; flex-shrink: 0; cursor: pointer;">
                         <div id="yt-player-${vid.id}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></div>
                     </div>
                     <div style="display: flex; justify-content: center; gap: 20px; padding: 12px; background: var(--bg-body); border-top: 1px solid var(--border-light); flex-shrink: 0;">
@@ -488,6 +488,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     autoplay 
                     playsinline 
                     controlsList="nodownload" 
+                    onclick="this.paused ? this.play() : this.pause();"
                     style="width: 100%; max-height: 260px; display: block; object-fit: contain; border-radius: 12px; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                  </video>
                  `}

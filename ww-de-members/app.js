@@ -372,11 +372,6 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
         <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Ihre Kurse</h1><p>Bleiben Sie mit Ihren Online-Kursen auf dem Laufenden</p></div></div>
         
-        <div style="background-color: rgba(255, 215, 0, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
-           <i data-lucide="clock" style="width: 20px; height: 20px; flex-shrink: 0; color: #D97706;"></i>
-           <span>Nächstes Update in 5 Tagen</span>
-        </div>
-
         <div id="video-playlist-items">
           <!-- JS Injeta Aulas Aqui -->
         </div>
@@ -469,6 +464,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     autoplay 
                     playsinline 
                     controlsList="nodownload" 
+                    onclick="this.paused ? this.play() : this.pause();"
                     style="width: 100%; max-height: 260px; display: block; object-fit: contain; border-radius: 12px; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                  </video>
                  `}

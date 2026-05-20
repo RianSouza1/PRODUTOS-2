@@ -478,6 +478,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     autoplay 
                     playsinline 
                     controlsList="nodownload" 
+                    onclick="this.paused ? this.play() : this.pause();"
                     style="width: 100%; max-height: 260px; display: block; object-fit: contain; border-radius: 12px; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                  </video>
                  `}

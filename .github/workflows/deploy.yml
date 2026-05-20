@@ -30,6 +30,9 @@ on:
       - 'beekeeping-it-members/**'
       - 'beekeeping-es-members/**'
       - 'beekeeping-pt-members/**'
+      - 'ww-members/**'
+      - 'ww-de-members/**'
+      - 'metalon-members/**'
       - '.github/workflows/**'
 
 jobs:
@@ -72,6 +75,9 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/hx-it-m
             sudo mkdir -p /var/www/skillvault.blog/hx-es-m
             sudo mkdir -p /var/www/skillvault.blog/hx-pt-m
+            sudo mkdir -p /var/www/skillvault.blog/ww-m
+            sudo mkdir -p /var/www/skillvault.blog/ww-de-m
+            sudo mkdir -p /var/www/skillvault.blog/mw-m
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog || true
 
       # ── BIBLE1 ────────────────────────────────────────────────────────────────
@@ -333,3 +339,38 @@ jobs:
           source: "beekeeping-pt-members/*"
           target: "/var/www/skillvault.blog/hx-pt-m"
           strip_components: 1
+
+      # ── WOODWORKING MEMBERS AREAS ───────────────────────────────────────────
+
+      - name: Deploy 'ww-members' to skillvault.blog/ww-m
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "ww-members/*"
+          target: "/var/www/skillvault.blog/ww-m"
+          strip_components: 1
+
+      - name: Deploy 'ww-de-members' to skillvault.blog/ww-de-m
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "ww-de-members/*"
+          target: "/var/www/skillvault.blog/ww-de-m"
+          strip_components: 1
+
+      # ── METALWORKING MEMBERS AREAS ──────────────────────────────────────────
+
+      - name: Deploy 'metalon-members' to skillvault.blog/mw-m
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "metalon-members/*"
+          target: "/var/www/skillvault.blog/mw-m"
+          strip_components: 1
+
