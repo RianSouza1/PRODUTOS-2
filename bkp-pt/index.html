@@ -560,11 +560,13 @@ document.addEventListener('DOMContentLoaded', function () {
         let container = document.getElementById(id);
         if (!container) return;
         
-        let totalSeconds = 1 * 3600 + 15 * 60; // 1 hour, 15 mins default
+        let totalSeconds = 1 * 3600 + 47 * 60 + 8; // 1 hour, 47 mins, 8 secs default (matches initial HTML)
         let savedTime = localStorage.getItem(id + '_timer');
         if (savedTime) {
-            totalSeconds = parseInt(savedTime, 10);
-            if (totalSeconds <= 0) totalSeconds = 15 * 60;
+            let parsed = parseInt(savedTime, 10);
+            if (!isNaN(parsed) && parsed > 0) {
+                totalSeconds = parsed;
+            }
         }
         
         let hTens = container.querySelector('.hours-tens');
@@ -574,11 +576,10 @@ document.addEventListener('DOMContentLoaded', function () {
         let sTens = container.querySelector('.seconds-tens');
         let sOnes = container.querySelector('.seconds-ones');
         
-        setInterval(() => {
-            if (totalSeconds <= 0) totalSeconds = 15 * 60;
-            totalSeconds--;
-            localStorage.setItem(id + '_timer', totalSeconds);
-            
+        function updateTimer() {
+            if (totalSeconds <= 0) {
+                totalSeconds = 1 * 3600 + 47 * 60 + 8;
+            }
             let h = Math.floor(totalSeconds / 3600);
             let m = Math.floor((totalSeconds % 3600) / 60);
             let s = totalSeconds % 60;
@@ -593,6 +594,14 @@ document.addEventListener('DOMContentLoaded', function () {
             if (mOnes) mOnes.innerText = mStr[1];
             if (sTens) sTens.innerText = sStr[0];
             if (sOnes) sOnes.innerText = sStr[1];
+        }
+        
+        updateTimer();
+        
+        setInterval(() => {
+            totalSeconds--;
+            localStorage.setItem(id + '_timer', totalSeconds);
+            updateTimer();
         }, 1000);
     }
 
@@ -1294,11 +1303,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	
 //# sourceURL=wp-block-template-skip-link-js-after
 </script>
-<script id="ip-countdown-script-js-extra">
-var ip_countdown_ajax = {"ajax_url":"https://atlas-library.com/wp-admin/admin-ajax.php","nonce":"54f4803992"};
-//# sourceURL=ip-countdown-script-js-extra
-</script>
-<script src="https://atlas-library.com/wp-content/plugins/ip-countdown-by-niro/assets/countdown.js?ver=1.0.0" id="ip-countdown-script-js"></script>
+
 <script id="wpcot-frontend-js-extra">
 var wpcot_vars = {"wc_ajax_url":"/?wc-ajax=%%endpoint%%","a_nonce":"94f5dd282f","r_nonce":"c4ae46d46f","user_id":"0","click_again":"no"};
 //# sourceURL=wpcot-frontend-js-extra
