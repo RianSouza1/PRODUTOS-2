@@ -966,3 +966,178 @@ body {
 .app-header {
     background: rgba(255, 255, 255, 0.9) !important;
 }
+
+
+/* =========================================================================
+   PRE-PAGE WELCOME SCREEN
+   ========================================================================= */
+.pre-page-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.6s ease;
+    overflow: hidden;
+}
+
+.pre-page-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.pre-page-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+    max-width: 480px;
+    animation: preFadeIn 0.8s ease;
+}
+
+@keyframes preFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.pre-page-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+}
+
+.pre-page-content h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.pre-page-content p {
+    font-size: 1rem;
+    opacity: 0.85;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.pre-page-features {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.pre-page-features span {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-weight: 500;
+    backdrop-filter: blur(8px);
+}
+
+.pre-page-content button {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 14px 36px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.pre-page-content button:hover {
+    transform: scale(1.04);
+}
+
+.pre-page-content button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================================
+   WOODWORKING THEME OVERRIDES — Warm Wood Tones
+   ========================================================================= */
+:root {
+    --bg-main: #1a120b;
+    --bg-card: #2a1f14;
+    --text-dark: #f5ebe0;
+    --text-muted: #c4a882;
+    --border-light: rgba(196, 168, 130, 0.15);
+    --primary: #C68B3E;
+    --primary-hover: #A0712F;
+    --primary-light: rgba(198, 139, 62, 0.12);
+    --secondary: #8B6F47;
+    --success: #6BE59E;
+    --success-bg: rgba(107, 229, 158, 0.15);
+    --bg-body: #1a120b;
+}
+
+html, body {
+    background-color: var(--bg-main);
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(198, 139, 62, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(139, 111, 71, 0.04) 0%, transparent 40%);
+}
+
+.main-content {
+    background-color: var(--bg-main);
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(198, 139, 62, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(139, 111, 71, 0.04) 0%, transparent 40%);
+}
+
+.app-header {
+    background: rgba(26, 18, 11, 0.97) !important;
+}
+
+.app-header::before {
+    background: linear-gradient(90deg, #C68B3E, #E8C98A, #C68B3E);
+}
+
+.bottom-tab-bar {
+    background: rgba(26, 18, 11, 0.97);
+}
+
+.hero-card {
+    background: linear-gradient(135deg, #C68B3E, #8B6F47);
+    box-shadow: 0 8px 24px rgba(198, 139, 62, 0.35);
+}
+
+/* Pre-page Woodworking */
+.pre-page-overlay {
+    color: #f5ebe0;
+}
+.pre-page-bg {
+    background: linear-gradient(135deg, #1a120b 0%, #2a1f14 40%, #3d2b18 100%);
+}
+.pre-page-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 25% 25%, rgba(198, 139, 62, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(139, 111, 71, 0.1) 0%, transparent 50%);
+}
+.pre-page-features span {
+    background: rgba(198, 139, 62, 0.15);
+    border: 1px solid rgba(198, 139, 62, 0.25);
+    color: #E8C98A;
+}
+.pre-page-content button {
+    background: linear-gradient(135deg, #C68B3E, #E8C98A);
+    color: #1a120b;
+    box-shadow: 0 4px 20px rgba(198, 139, 62, 0.4);
+}
