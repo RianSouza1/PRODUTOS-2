@@ -413,6 +413,15 @@ document.addEventListener("DOMContentLoaded", () => {
                         <button onclick="if(window.activeYtPlayer) window.activeYtPlayer.pauseVideo()" style="background:var(--primary-light); color:var(--primary); border:none; border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer;"><i data-lucide="pause" style="width: 20px; height: 20px;"></i></button>
                     </div>
                  </div>
+                 ` : (vidSrc && (vidSrc.includes('tynk.ai') || vidSrc.includes('iframe') || !vidSrc.match(/\.(mp4|webm|ogg|mov)(\?.*)?$/i))) ? `
+                 <iframe 
+                    src="${vidSrc}" 
+                    frameborder="0" 
+                    scrolling="no"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen 
+                    style="width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; border: none; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                 </iframe>
                  ` : `
                  <video 
                     src="${vidSrc}" 
