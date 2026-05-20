@@ -532,19 +532,19 @@ document.addEventListener('DOMContentLoaded', function () {
     <span class="countdown-cards ">
                     <span class="time-group">
                 <span class="time-card hours-tens">0</span>
-                <span class="time-card hours-ones">1</span>
+                <span class="time-card hours-ones">0</span>
                 <span class="time-label">hh</span>
             </span>
             <span class="time-separator">:</span>
                 <span class="time-group">
-            <span class="time-card minutes-tens">4</span>
-            <span class="time-card minutes-ones">7</span>
+            <span class="time-card minutes-tens">1</span>
+            <span class="time-card minutes-ones">0</span>
             <span class="time-label">mm</span>
         </span>
         <span class="time-separator">:</span>
         <span class="time-group">
             <span class="time-card seconds-tens">0</span>
-            <span class="time-card seconds-ones">8</span>
+            <span class="time-card seconds-ones">0</span>
             <span class="time-label">ss</span>
         </span>
     </span>
@@ -560,7 +560,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let container = document.getElementById(id);
         if (!container) return;
         
-        let totalSeconds = 1 * 3600 + 47 * 60 + 8; // 1 hour, 47 mins, 8 secs default (matches initial HTML)
+        let totalSeconds = 10 * 60; // 10 minutes default (matches initial HTML)
         let savedTime = localStorage.getItem(id + '_timer');
         if (savedTime) {
             let parsed = parseInt(savedTime, 10);
@@ -578,7 +578,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         function updateTimer() {
             if (totalSeconds <= 0) {
-                totalSeconds = 1 * 3600 + 47 * 60 + 8;
+                totalSeconds = 10 * 60;
             }
             let h = Math.floor(totalSeconds / 3600);
             let m = Math.floor((totalSeconds % 3600) / 60);
