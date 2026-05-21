@@ -235,8 +235,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // TELA: BOOKS (Materiais tipo Bundle)
   function renderLivros() {
-    const booksHTML = APP_DATA.books.map(bk => {
-      // Create features checklist HTML
+    const featuredBooks = APP_DATA.books.slice(0, 3);
+    const compactBooks = APP_DATA.books.slice(3);
+
+    const featuredHTML = featuredBooks.map(bk => {
       const featuresHTML = bk.features
         ? `<ul class="premium-checklist">
       ${bk.features.map(f => `<li><i data-lucide="check-square" style="color:#10B981; width:16px; height:16px;"></i> <span>${f}</span></li>`).join('')}
@@ -269,17 +271,42 @@ document.addEventListener("DOMContentLoaded", () => {
                  </a>
               </div>
            </div>
-        </div >
+        </div>
       `;
     }).join('');
+
+    let compactHTML = '';
+    if (compactBooks.length > 0) {
+      compactHTML = `
+      <h2 class="section-divider-title">Weitere Pläne & Projekte</h2>
+      <div class="compact-book-list">
+        ${compactBooks.map(bk => `
+          <div class="compact-book-card">
+            <div class="compact-book-info">
+              <h4 class="compact-book-title">${bk.title}</h4>
+              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'Pläne'}</span>
+            </div>
+            <div class="compact-book-actions">
+              <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Jetzt lesen">
+                <i data-lucide="book-open"></i>
+              </a>
+              <a href="${bk.downloadUrl}" download class="compact-action-btn btn-download" title="Herunterladen">
+                <i data-lucide="download"></i>
+              </a>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+      `;
+    }
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
           <div class="hero-card glass-panel"><div class="hero-text"><h1>Ihre Materialien</h1><p>Tippen Sie unten auf die Sammlung, um den Inhalt anzuzeigen.</p></div></div>
           
-          
           <div class="list-container">
-            ${booksHTML || '<p>Derzeit sind keine Materialien registriert.</p>'}
+            ${featuredHTML || '<p>Derzeit sind keine Materialien registriert.</p>'}
+            ${compactHTML}
           </div>
         </div>
       `;

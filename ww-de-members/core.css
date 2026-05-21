@@ -1141,3 +1141,109 @@ html, body {
     color: #1a120b;
     box-shadow: 0 4px 20px rgba(198, 139, 62, 0.4);
 }
+
+/* =========================================================================
+   COMPACT BOOK LIST STYLES (For 4th book onwards)
+   ========================================================================= */
+.section-divider-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem 0;
+    color: var(--primary);
+    border-bottom: 2px solid var(--border-light);
+    padding-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.compact-book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+.compact-book-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.compact-book-card:hover {
+    border-color: rgba(198, 139, 62, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.compact-book-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.compact-book-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.compact-book-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: #FFF;
+    width: fit-content;
+}
+
+.compact-book-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.compact-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.compact-action-btn.btn-read {
+    background: var(--primary-light);
+    color: var(--primary);
+    border: 1px solid rgba(198, 139, 62, 0.3);
+}
+
+.compact-action-btn.btn-read:active {
+    background: var(--primary);
+    color: #FFF;
+    transform: scale(0.95);
+}
+
+.compact-action-btn.btn-download {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-light);
+}
+
+.compact-action-btn.btn-download:active {
+    background: var(--border-light);
+    transform: scale(0.95);
+}

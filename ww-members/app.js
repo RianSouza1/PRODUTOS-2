@@ -235,8 +235,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // TELA: BOOKS (Materiais tipo Bundle)
   function renderLivros() {
-    const booksHTML = APP_DATA.books.map(bk => {
-      // Create features checklist HTML
+    const featuredBooks = APP_DATA.books.slice(0, 3);
+    const compactBooks = APP_DATA.books.slice(3);
+
+    const featuredHTML = featuredBooks.map(bk => {
       const featuresHTML = bk.features
         ? `<ul class="premium-checklist">
       ${bk.features.map(f => `<li><i data-lucide="check-square" style="color:#10B981; width:16px; height:16px;"></i> <span>${f}</span></li>`).join('')}
@@ -247,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card">
            <div class="premium-badge-wrapper">
               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">PDF • Digitaler Download</span>
+              <span class="premium-format">PDF • Digital Download</span>
            </div>
            
            <div class="premium-cover-container">
@@ -262,24 +264,49 @@ document.addEventListener("DOMContentLoaded", () => {
               
               <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: 1.5rem;">
                  <a href="${bk.downloadUrl}" target="_blank" class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: var(--primary); color: #FFF;">
-                    <i data-lucide="book-open"></i> Jetzt lesen
+                    <i data-lucide="book-open"></i> Read Now
                  </a>
                  <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
-                    <i data-lucide="download"></i> PDF herunterladen
+                    <i data-lucide="download"></i> Download PDF
                  </a>
               </div>
            </div>
-        </div >
+        </div>
       `;
     }).join('');
 
+    let compactHTML = '';
+    if (compactBooks.length > 0) {
+      compactHTML = `
+      <h2 class="section-divider-title">Additional Plans & Projects</h2>
+      <div class="compact-book-list">
+        ${compactBooks.map(bk => `
+          <div class="compact-book-card">
+            <div class="compact-book-info">
+              <h4 class="compact-book-title">${bk.title}</h4>
+              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'Plans'}</span>
+            </div>
+            <div class="compact-book-actions">
+              <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Read Now">
+                <i data-lucide="book-open"></i>
+              </a>
+              <a href="${bk.downloadUrl}" download class="compact-action-btn btn-download" title="Download PDF">
+                <i data-lucide="download"></i>
+              </a>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+      `;
+    }
+
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Ihre Materialien</h1><p>Tippen Sie unten auf die Sammlung, um den Inhalt anzuzeigen.</p></div></div>
-          
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Your Materials</h1><p>Tap a collection below to view and download your books.</p></div></div>
           
           <div class="list-container">
-            ${booksHTML || '<p>Derzeit sind keine Materialien registriert.</p>'}
+            ${featuredHTML || '<p>No materials are currently registered.</p>'}
+            ${compactHTML}
           </div>
         </div>
       `;
@@ -299,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card">
            <div class="premium-badge-wrapper">
               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">Online-Zugang</span>
+              <span class="premium-format">Online Access</span>
            </div>
            
            <div class="premium-cover-container">
@@ -313,20 +340,20 @@ document.addEventListener("DOMContentLoaded", () => {
               ${featuresHTML}
               
               <a href="${prod.linkUrl}" target="_blank" class="premium-btn">
-                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Mehr erfahren'}
+                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Learn More'}
               </a>
            </div>
-        </div>
+         </div>
       `;
     }).join('');
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Weitere Programme</h1><p>Entdecken Sie weitere Materialien.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Other Programs</h1><p>Discover more programs and materials.</p></div></div>
           
           
           <div class="list-container">
-            ${prodsHTML || '<p>Weitere Neuigkeiten folgen in Kürze!</p>'}
+            ${prodsHTML || '<p>More updates coming soon!</p>'}
           </div>
         </div>
       `;
@@ -338,7 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Support</h1><p>Ihre Zufriedenheit ist unsere Priorität.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Support</h1><p>Your satisfaction is our priority.</p></div></div>
           
   
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
@@ -346,9 +373,9 @@ document.addEventListener("DOMContentLoaded", () => {
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
              </div>
              
-             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Nachricht senden</h3>
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Send a Message</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                Kopieren Sie die untenstehende Adresse und senden Sie uns eine E-Mail mit Ihrer Frage. Unser Team wird so schnell wie möglich antworten.
+                Copy the email address below and send us your question. Our support team will reply as soon as possible.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
@@ -370,11 +397,11 @@ document.addEventListener("DOMContentLoaded", () => {
     rootEl.innerHTML = `
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Ihre Kurse</h1><p>Bleiben Sie mit Ihren Online-Kursen auf dem Laufenden</p></div></div>
+        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Your Courses</h1><p>Stay up to date with your online woodworking courses</p></div></div>
         
         <div style="background-color: rgba(255, 215, 0, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
            <i data-lucide="clock" style="width: 20px; height: 20px; flex-shrink: 0; color: #D97706;"></i>
-           <span>Nächstes Update in 5 Tagen</span>
+           <span>New updates coming soon</span>
         </div>
 
         <div id="video-playlist-items">
@@ -434,7 +461,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit;">
               <div style="display:flex; flex-direction:column; justify-content:center; flex:1">
                  <h4 style="margin:0 0 4px; font-size:1.1rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}">${vid.title}</h4>
-                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Vollständiger Kurs'}</p>
+                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Full Course'}</p>
               </div>
               ${isPlaying
           ? '<i data-lucide="chevron-down" style="color:var(--primary); align-self:center;"></i>'

@@ -43,6 +43,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          lfs: true
 
       - name: Prepare VPS Directories for Deployments
         uses: appleboy/ssh-action@v0.1.10

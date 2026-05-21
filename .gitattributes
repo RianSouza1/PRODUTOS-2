@@ -1,0 +1,8 @@
+ww-de-members/materials/510_Bastelplaene_Teil1.pdf filter=lfs diff=lfs merge=lfs -text
+ww-de-members/materials/510_Bastelplaene_Teil2.pdf filter=lfs diff=lfs merge=lfs -text
+ww-de-members/materials/Holzbearbeitungsplaene_1600_Seiten.pdf filter=lfs diff=lfs merge=lfs -text
+ww-members/materials/176_Woodworking_Projects.pdf filter=lfs diff=lfs merge=lfs -text
+ww-members/materials/510_Craft_Plans_Part1.pdf filter=lfs diff=lfs merge=lfs -text
+ww-members/materials/510_Craft_Plans_Part2.pdf filter=lfs diff=lfs merge=lfs -text
+ww-members/materials/Woodworking_Plans_1600_Pages.pdf filter=lfs diff=lfs merge=lfs -text
+ww-members/materials/Woodworking_Plans_Projects.pdf filter=lfs diff=lfs merge=lfs -text
