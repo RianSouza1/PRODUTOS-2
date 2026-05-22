@@ -1096,21 +1096,124 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<figure class="wp-block-gallery aligncenter has-nested-images columns-1 is-cropped wp-block-gallery-2 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-full has-custom-border is-style-default"><img loading="lazy" decoding="async" width="2000" height="2200" data-id="219541" src="images/1-1.jpg" alt="" class="wp-image-219541" style="border-style:none;border-width:0px;box-shadow:var(--wp--preset--shadow--natural)" srcset="images/1-1.jpg 2000w, images/1-1-273x300.jpg 273w, images/1-1-931x1024.jpg 931w, images/1-1-768x845.jpg 768w, images/1-1-1396x1536.jpg 1396w, images/1-1-1862x2048.jpg 1862w, images/1-1-60x66.jpg 60w, images/1-1-320x352.jpg 320w, images/1-1-600x660.jpg 600w" sizes="auto, (max-width: 2000px) 100vw, 2000px" /></figure>
+<style>
+/* Testimonial styles */
+.testimonials-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
 
+.testimonial-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
 
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
 
-<figure class="wp-block-image size-full has-custom-border"><img loading="lazy" decoding="async" width="2000" height="2200" data-id="219542" src="images/2-1.jpg" alt="" class="wp-image-219542" style="border-style:none;border-width:0px;box-shadow:var(--wp--preset--shadow--natural)" srcset="images/2-1.jpg 2000w, images/2-1-273x300.jpg 273w, images/2-1-931x1024.jpg 931w, images/2-1-768x845.jpg 768w, images/2-1-1396x1536.jpg 1396w, images/2-1-1862x2048.jpg 1862w, images/2-1-60x66.jpg 60w, images/2-1-320x352.jpg 320w, images/2-1-600x660.jpg 600w" sizes="auto, (max-width: 2000px) 100vw, 2000px" /></figure>
+.testimonial-author-info {
+    display: flex;
+    flex-direction: column;
+}
 
+.testimonial-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
 
+.verified-buyer {
+    color: #4caf50;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
 
-<figure class="wp-block-image size-full has-custom-border is-style-default"><img loading="lazy" decoding="async" width="2000" height="2200" data-id="219543" src="images/3-1.jpg" alt="" class="wp-image-219543" style="border-style:none;border-width:0px;border-radius:0px;box-shadow:var(--wp--preset--shadow--natural)" srcset="images/3-1.jpg 2000w, images/3-1-273x300.jpg 273w, images/3-1-931x1024.jpg 931w, images/3-1-768x845.jpg 768w, images/3-1-1396x1536.jpg 1396w, images/3-1-1862x2048.jpg 1862w, images/3-1-60x66.jpg 60w, images/3-1-320x352.jpg 320w, images/3-1-600x660.jpg 600w" sizes="auto, (max-width: 2000px) 100vw, 2000px" /></figure>
+.testimonial-stars {
+    color: #f5b301;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
 
+.testimonial-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #111;
+}
 
+.testimonial-text {
+    color: #444;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+</style>
 
-<figure class="wp-block-image size-full has-custom-border is-style-default"><img loading="lazy" decoding="async" width="2000" height="2200" data-id="219544" src="images/4-1.jpg" alt="" class="wp-image-219544" style="border-style:none;border-width:0px;border-radius:0px;box-shadow:var(--wp--preset--shadow--natural)" srcset="images/4-1.jpg 2000w, images/4-1-273x300.jpg 273w, images/4-1-931x1024.jpg 931w, images/4-1-768x845.jpg 768w, images/4-1-1396x1536.jpg 1396w, images/4-1-1862x2048.jpg 1862w, images/4-1-60x66.jpg 60w, images/4-1-320x352.jpg 320w, images/4-1-600x660.jpg 600w" sizes="auto, (max-width: 2000px) 100vw, 2000px" /></figure>
-</figure>
+<div class="testimonials-section">
+    <!-- Testimonial 1 -->
+    <div class="testimonial-card">
+        <div class="testimonial-header">
+            <div class="testimonial-author-info">
+                <span class="testimonial-name">John D.</span>
+                <span class="verified-buyer">✅ Verified Buyer</span>
+            </div>
+        </div>
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-title">"Incredible resource for beginners."</div>
+        <div class="testimonial-text">"I was terrified of formulas and making mistakes at work, but this bundle broke everything down so simply. My weekly reporting now takes me minutes instead of hours, and I finally feel confident using Excel!"</div>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="testimonial-card">
+        <div class="testimonial-header">
+            <div class="testimonial-author-info">
+                <span class="testimonial-name">Mark T.</span>
+                <span class="verified-buyer">✅ Verified Buyer</span>
+            </div>
+        </div>
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-title">"A must-have for anyone working with data."</div>
+        <div class="testimonial-text">"The 7-day starter roadmap is exactly what I needed. It takes all the guesswork out of complex features like Pivot Tables and VLOOKUP. Highly recommend to anyone wanting to boost their productivity."</div>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="testimonial-card">
+        <div class="testimonial-header">
+            <div class="testimonial-author-info">
+                <span class="testimonial-name">Emily R.</span>
+                <span class="verified-buyer">✅ Verified Buyer</span>
+            </div>
+        </div>
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-title">"Saved me so much money and time."</div>
+        <div class="testimonial-text">"I almost spent hundreds on an expensive online course before buying this. The formula reference guide alone is worth the price. I feel so much more comfortable working with spreadsheets now."</div>
+    </div>
+
+    <!-- Testimonial 4 -->
+    <div class="testimonial-card">
+        <div class="testimonial-header">
+            <div class="testimonial-author-info">
+                <span class="testimonial-name">Sarah L.</span>
+                <span class="verified-buyer">✅ Verified Buyer</span>
+            </div>
+        </div>
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <div class="testimonial-title">"The advanced workbook exercises are fantastic!"</div>
+        <div class="testimonial-text">"Not only did I learn the basics, but the step-by-step advanced exercises were a huge plus. My boss has already noticed how much faster and more accurate my spreadsheets are!"</div>
+    </div>
+</div>
 
 
 
@@ -1122,19 +1225,13 @@ document.addEventListener('DOMContentLoaded', function () {
 </div></main>
 
 
-<footer class="wp-block-template-part">
-<div class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
-<div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-3a88641f wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:30%">
-<div class="wp-block-group is-vertical is-layout-flex wp-container-core-group-is-layout-831b2db5 wp-block-group-is-layout-flex"><p class="wp-block-site-title has-medium-font-size"><a href="https://atlas-library.com" target="_self" rel="home">Atlas Library</a></p>
-
-<p class="wp-block-site-tagline has-small-font-size">Atlas Library</p></div>
-</div>
-
-
-
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:50%"><nav class="has-text-color has-contrast-color items-justified-center is-vertical wp-block-navigation is-content-justification-center is-layout-flex wp-container-core-navigation-is-layout-bc18b00a wp-block-navigation-is-layout-flex" aria-label="Navigation"><ul class="wp-block-navigation__container has-text-color has-contrast-color items-justified-center is-vertical wp-block-navigation"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="https://atlas-library.com/contact-us/"><span class="wp-block-navigation-item__label">Contact Us</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="https://atlas-library.com/privacy-policy-2/"><span class="wp-block-navigation-item__label">Privacy Policy</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="https://atlas-library.com/refund-and-returns-policy/"><span class="wp-block-navigation-item__label">Refund and Returns Policy</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="https://atlas-library.com/terms-conditions/"><span class="wp-block-navigation-item__label">Terms &amp; Conditions</span></a></li></ul></nav></div>
-</div>
+<footer style="background: #222222; color: #ffffff; text-align: center; padding: 2.5rem 1rem; font-size: 0.9rem;">
+<div style="width: 100%; max-width: 850px; margin: 0 auto; padding: 0 20px;">
+<h4 style="font-weight: bold; margin-bottom: 0.5rem; color: #ffffff; font-size: 1.2rem;">Excel Mastery</h4>
+<p style="color: #ffffff; margin-bottom: 1rem;">© All rights reserved.</p>
+<p style="margin-top: 1rem;">
+<a href="mailto:trinityag01@gmail.com" style="color: #ffffff; text-decoration: none;">Contact Us</a>
+</p>
 </div>
 </footer></div>
 <script type="speculationrules">
