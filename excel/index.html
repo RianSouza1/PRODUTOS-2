@@ -4,7 +4,7 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name='robots' content='max-image-preview:large' />
-<title>Excel &#8211; Atlas Library</title>
+<title>Excel Mastery Bundle 2026 – Master Spreadsheets Fast</title>
 <link rel='dns-prefetch' href='//www.googletagmanager.com' />
 <link rel="alternate" type="application/rss+xml" title="Atlas Library &raquo; Feed" href="https://atlas-library.com/feed/" />
 <link rel="alternate" type="application/rss+xml" title="Atlas Library &raquo; Comments Feed" href="https://atlas-library.com/comments/feed/" />
@@ -325,10 +325,7 @@ document.addEventListener('DOMContentLoaded', function () {
 @font-face{font-family:Cardo;font-style:italic;font-weight:400;font-display:fallback;src:url('fonts/cardo_italic_400.woff2') format('woff2');}
 @font-face{font-family:Cardo;font-style:normal;font-weight:700;font-display:fallback;src:url('fonts/cardo_normal_700.woff2') format('woff2');}
 </style>
-<link rel="icon" href="images/cropped-fav-32x32.png" sizes="32x32" />
-<link rel="icon" href="images/cropped-fav-192x192.png" sizes="192x192" />
-<link rel="apple-touch-icon" href="images/cropped-fav-180x180.png" />
-<meta name="msapplication-TileImage" content="images/cropped-fav-270x270.png" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
 </head>
 
 <body class="wp-singular page-template page-template-excel-atlas page page-id-219315 wp-embed-responsive wp-theme-twentytwentyfour theme-twentytwentyfour woocommerce-uses-block-theme woocommerce-block-theme-has-button-styles woocommerce-no-js">
@@ -515,9 +512,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function () {
+    function initIPCountdown(id) {
+        let container = document.getElementById(id);
+        if (!container) return;
+        
+        let totalSeconds = 1 * 3600 + 15 * 60; // 1 hour, 15 mins default
+        let savedTime = localStorage.getItem(id + '_timer');
+        if (savedTime) {
+            totalSeconds = parseInt(savedTime, 10);
+            if (totalSeconds <= 0) totalSeconds = 15 * 60;
+        }
+        
+        let hTens = container.querySelector('.hours-tens');
+        let hOnes = container.querySelector('.hours-ones');
+        let mTens = container.querySelector('.minutes-tens');
+        let mOnes = container.querySelector('.minutes-ones');
+        let sTens = container.querySelector('.seconds-tens');
+        let sOnes = container.querySelector('.seconds-ones');
+        
+        setInterval(() => {
+            if (totalSeconds <= 0) totalSeconds = 15 * 60;
+            totalSeconds--;
+            localStorage.setItem(id + '_timer', totalSeconds);
+            
+            let h = Math.floor(totalSeconds / 3600);
+            let m = Math.floor((totalSeconds % 3600) / 60);
+            let s = totalSeconds % 60;
+            
+            let hStr = h.toString().padStart(2, '0');
+            let mStr = m.toString().padStart(2, '0');
+            let sStr = s.toString().padStart(2, '0');
+            
+            if (hTens) hTens.innerText = hStr[0];
+            if (hOnes) hOnes.innerText = hStr[1];
+            if (mTens) mTens.innerText = mStr[0];
+            if (mOnes) mOnes.innerText = mStr[1];
+            if (sTens) sTens.innerText = sStr[0];
+            if (sOnes) sOnes.innerText = sStr[1];
+        }, 1000);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+            initIPCountdown('ip-countdown-6a10623dc156d');
+        });
+    } else {
         initIPCountdown('ip-countdown-6a10623dc156d');
-    });
+    }
 </script></strong></p>
 
 
@@ -1216,12 +1257,6 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 
-
-<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
-
-
-
-<p class="wp-block-paragraph"></p>
 </div></main>
 
 
