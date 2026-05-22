@@ -37,6 +37,9 @@ on:
       - 'ww-members/**'
       - 'ww-de-members/**'
       - 'metalon-members/**'
+      - 'excel/**'
+      - 'excel-plans-fr/**'
+      - 'excel-plans-de/**'
       - '.github/workflows/**'
 
 jobs:
@@ -88,6 +91,9 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/ww-m
             sudo mkdir -p /var/www/skillvault.blog/ww-de-m
             sudo mkdir -p /var/www/skillvault.blog/mw-m
+            sudo mkdir -p /var/www/skillvault.blog/excel
+            sudo mkdir -p /var/www/skillvault.blog/excel-plans-fr
+            sudo mkdir -p /var/www/skillvault.blog/excel-plans-de
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog || true
 
       # ── BIBLE1 ────────────────────────────────────────────────────────────────
@@ -423,4 +429,37 @@ jobs:
           source: "metalon-members/*"
           target: "/var/www/skillvault.blog/mw-m"
           strip_components: 1
+
+      # ── EXCEL ───────────────────────────────────────────────────────────────────
+
+      - name: Deploy 'excel' to skillvault.blog/excel
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "excel/*"
+          target: "/var/www/skillvault.blog/excel"
+          strip_components: 1
+
+      - name: Deploy 'excel-plans-fr' to skillvault.blog/excel-plans-fr
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "excel-plans-fr/*"
+          target: "/var/www/skillvault.blog/excel-plans-fr"
+          strip_components: 1
+
+      - name: Deploy 'excel-plans-de' to skillvault.blog/excel-plans-de
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "excel-plans-de/*"
+          target: "/var/www/skillvault.blog/excel-plans-de"
+          strip_components: 1
+
 
