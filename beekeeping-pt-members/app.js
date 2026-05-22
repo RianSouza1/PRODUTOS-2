@@ -1,4 +1,4 @@
-﻿/**
+/**
  * APP CORE ENGINE
  * ÃREA DE MEMBROS (Mobile First & Senior Friendly)
  * Nenhuma alteraÃ§Ã£o de conteÃºdo ou curso deve ocorrer aqui. 
@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card">
            <div class="premium-badge-wrapper">
               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">PDF â€¢ Digital Download</span>
+              <span class="premium-format">PDF • Descarregamento Digital</span>
            </div>
            
            <div class="premium-cover-container">
@@ -357,7 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Support</h1><p>A sua satisfação é a nossa prioridade.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Suporte</h1><p>A sua satisfação é a nossa prioridade.</p></div></div>
           
   
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
@@ -389,7 +389,17 @@ document.addEventListener("DOMContentLoaded", () => {
     rootEl.innerHTML = `
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Os Seus Cursos</h1><p>Mantenha-se atualizado com os seus cursos online</p></div></div>
+        <div class="hero-card glass-panel" style="margin-top:-24px;">
+          <div class="hero-text">
+            <h1>Os Seus Cursos</h1>
+            <p style="margin-bottom: 12px;">Playlist organizada em 3 módulos sequenciais:</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <span style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(4px); padding: 4px 10px; border-radius: 100px; font-size: 0.8rem; font-weight: 600; color: #FFF; border: 1px solid rgba(255, 255, 255, 0.25);">🐝 Meliponicultura (Aulas 1-10)</span>
+              <span style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(4px); padding: 4px 10px; border-radius: 100px; font-size: 0.8rem; font-weight: 600; color: #FFF; border: 1px solid rgba(255, 255, 255, 0.25);">🍷 Hidromel (Aulas 11-93)</span>
+              <span style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(4px); padding: 4px 10px; border-radius: 100px; font-size: 0.8rem; font-weight: 600; color: #FFF; border: 1px solid rgba(255, 255, 255, 0.25);">🇪🇸 Espanhol (Aulas 94-110)</span>
+            </div>
+          </div>
+        </div>
 
         <div id="video-playlist-items">
           <!-- JS Injects Lessons Here -->
