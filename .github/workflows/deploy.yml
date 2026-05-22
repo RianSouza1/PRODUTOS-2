@@ -18,8 +18,8 @@ on:
       - 'py-fr/**'
       - 'WW/**'
       - 'ww-de/**'
-      - 'ww-fr/**'
-      - 'ww-it/**'
+      - 'ww-plans-fr/**'
+      - 'ww-plans-it/**'
       - 'mw-de/**'
       - 'mw/**'
       - 'bkp/**'
@@ -69,8 +69,8 @@ jobs:
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com || true
             sudo mkdir -p /var/www/skillvault.blog/ww
             sudo mkdir -p /var/www/skillvault.blog/ww-de
-            sudo mkdir -p /var/www/skillvault.blog/ww-fr
-            sudo mkdir -p /var/www/skillvault.blog/ww-it
+            sudo mkdir -p /var/www/skillvault.blog/ww-plans-fr
+            sudo mkdir -p /var/www/skillvault.blog/ww-plans-it
             sudo mkdir -p /var/www/skillvault.blog/mw-de
             sudo mkdir -p /var/www/skillvault.blog/mw
             sudo mkdir -p /var/www/skillvault.blog/bkp
@@ -228,24 +228,24 @@ jobs:
           target: "/var/www/skillvault.blog/ww-de"
           strip_components: 1
 
-      - name: Deploy 'ww-fr' to skillvault.blog/ww-fr
+      - name: Deploy 'ww-plans-fr' to skillvault.blog/ww-plans-fr
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "ww-fr/*"
-          target: "/var/www/skillvault.blog/ww-fr"
+          source: "ww-plans-fr/*"
+          target: "/var/www/skillvault.blog/ww-plans-fr"
           strip_components: 1
 
-      - name: Deploy 'ww-it' to skillvault.blog/ww-it
+      - name: Deploy 'ww-plans-it' to skillvault.blog/ww-plans-it
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "ww-it/*"
-          target: "/var/www/skillvault.blog/ww-it"
+          source: "ww-plans-it/*"
+          target: "/var/www/skillvault.blog/ww-plans-it"
           strip_components: 1
 
       - name: Deploy 'mw-de' to skillvault.blog/mw-de
