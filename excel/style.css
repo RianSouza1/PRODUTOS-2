@@ -476,7 +476,7 @@ body {
 }
 
 .huge-offer-title {
-    font-size: 9rem;
+    font-size: 10rem;
     font-weight: 900;
     font-family: 'Montserrat', sans-serif;
     color: #ffffff;
@@ -486,7 +486,7 @@ body {
 }
 
 .huge-offer-subtitle {
-    font-size: 4.5rem;
+    font-size: 5.2rem;
     font-weight: 900;
     font-family: 'Montserrat', sans-serif;
     color: #ffffff;
@@ -501,12 +501,6 @@ body {
     position: relative;
     padding: 3rem 20px;
     background-color: var(--bg-dark);
-    /* In a real scenario, you can add the sunset background image here:
-       background-image: url('images/sunset-bg.jpg');
-       background-size: cover;
-       background-position: center;
-       background-blend-mode: overlay;
-    */
     color: #ffffff;
     overflow: hidden;
 }
@@ -647,11 +641,11 @@ body {
     }
     
     .huge-offer-title {
-        font-size: 4rem;
+        font-size: 4.4rem;
     }
     
     .huge-offer-subtitle {
-        font-size: 1.8rem;
+        font-size: 2.1rem;
     }
     
     .transform-title {

@@ -461,5 +461,3 @@ jobs:
           source: "excel-plans-de/*"
           target: "/var/www/skillvault.blog/excel-plans-de"
           strip_components: 1
-
-

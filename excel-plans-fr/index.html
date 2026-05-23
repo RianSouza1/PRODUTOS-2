@@ -1,282 +1,35 @@
 <!DOCTYPE html>
-
-<html dir="ltr" lang="fr-FR">
+<html lang="fr">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="max-image-preview:large" name="robots"/>
-<title>La Masterclass Excel – Modèles, Formules &amp; Tableaux de bord</title>
-
-<link href="https://atlas-library.com/feed/" rel="alternate" title="Atlas Library » Feed" type="application/rss+xml"/>
-<link href="https://atlas-library.com/comments/feed/" rel="alternate" title="Atlas Library » Comments Feed" type="application/rss+xml"/>
-<link href="https://atlas-library.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fatlas-library.com%2Fexcel%2F" rel="alternate" title="oEmbed (JSON)" type="application/json+oembed"/>
-<link href="https://atlas-library.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fatlas-library.com%2Fexcel%2F&amp;format=xml" rel="alternate" title="oEmbed (XML)" type="text/xml+oembed"/>
-<style id="wp-img-auto-sizes-contain-inline-css">
-img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
-/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
-</style>
-
-<style id="wp-block-paragraph-inline-css">
-.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
-/*# sourceURL=https://atlas-library.com/wp-includes/blocks/paragraph/style.min.css */
-</style>
-<style id="wp-block-spacer-inline-css">
-.wp-block-spacer{clear:both}
-/*# sourceURL=https://atlas-library.com/wp-includes/blocks/spacer/style.min.css */
-</style>
-<style id="wp-block-image-inline-css">
-.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:#5a5a5a40;border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto #5a5a5a40;outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:#5a5a5a40;border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .wp-lightbox-close-button{align-items:center;cursor:pointer;display:flex;font-family:inherit;gap:8px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 4px;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .wp-lightbox-close-button:focus,.wp-lightbox-overlay .wp-lightbox-close-button:hover,.wp-lightbox-overlay .wp-lightbox-close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .wp-lightbox-close-button:has(.wp-lightbox-close-text:not([hidden])) .wp-lightbox-close-icon svg{height:1em;width:1em}.wp-lightbox-overlay .wp-lightbox-close-icon svg{display:block}.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{align-items:center;bottom:16px;cursor:pointer;display:flex;font-family:inherit;gap:4px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 8px;position:absolute;z-index:2000002}.wp-lightbox-overlay .wp-lightbox-navigation-button-next[hidden],.wp-lightbox-overlay .wp-lightbox-navigation-button-prev[hidden]{display:none}@media (min-width:960px){.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{bottom:50%;transform:translateY(-50%)}}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:not(:hover):not(:active):not(.has-background),.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:not(:hover):not(:active):not(.has-background){background:none;border:none;padding:0 8px}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg{display:block;height:1.5em;width:1.5em}.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{left:calc(env(safe-area-inset-left) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-button-next{right:calc(env(safe-area-inset-right) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-icon svg{vertical-align:middle}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:2000001}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
-/*# sourceURL=https://atlas-library.com/wp-includes/blocks/image/style.min.css */
-</style>
-<style id="wp-block-button-inline-css">
-.wp-block-button__link{align-content:center;box-sizing:border-box;cursor:pointer;display:inline-block;height:100%;text-align:center;word-break:break-word}.wp-block-button__link.aligncenter{text-align:center}.wp-block-button__link.alignright{text-align:right}:where(.wp-block-button__link){border-radius:9999px;box-shadow:none;padding:calc(.667em + 2px) calc(1.333em + 2px);text-decoration:none}.wp-block-button[style*=text-decoration] .wp-block-button__link{text-decoration:inherit}.wp-block-buttons>.wp-block-button.has-custom-width{max-width:none}.wp-block-buttons>.wp-block-button.has-custom-width .wp-block-button__link{width:100%}.wp-block-buttons>.wp-block-button.has-custom-font-size .wp-block-button__link{font-size:inherit}.wp-block-buttons>.wp-block-button.wp-block-button__width-25{width:calc(25% - var(--wp--style--block-gap, .5em)*.75)}.wp-block-buttons>.wp-block-button.wp-block-button__width-50{width:calc(50% - var(--wp--style--block-gap, .5em)*.5)}.wp-block-buttons>.wp-block-button.wp-block-button__width-75{width:calc(75% - var(--wp--style--block-gap, .5em)*.25)}.wp-block-buttons>.wp-block-button.wp-block-button__width-100{flex-basis:100%;width:100%}.wp-block-buttons.is-vertical>.wp-block-button.wp-block-button__width-25{width:25%}.wp-block-buttons.is-vertical>.wp-block-button.wp-block-button__width-50{width:50%}.wp-block-buttons.is-vertical>.wp-block-button.wp-block-button__width-75{width:75%}.wp-block-button.is-style-squared,.wp-block-button__link.wp-block-button.is-style-squared{border-radius:0}.wp-block-button.no-border-radius,.wp-block-button__link.no-border-radius{border-radius:0!important}:root :where(.wp-block-button .wp-block-button__link.is-style-outline),:root :where(.wp-block-button.is-style-outline>.wp-block-button__link){border:2px solid;padding:.667em 1.333em}:root :where(.wp-block-button .wp-block-button__link.is-style-outline:not(.has-text-color)),:root :where(.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-text-color)){color:currentColor}:root :where(.wp-block-button .wp-block-button__link.is-style-outline:not(.has-background)),:root :where(.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background)){background-color:initial;background-image:none}
-/*# sourceURL=https://atlas-library.com/wp-includes/blocks/button/style.min.css */
-</style>
-<style id="twentytwentyfour-button-style-outline-inline-css">
-.wp-block-button.is-style-outline
-	> .wp-block-button__link:not(.has-text-color, .has-background):hover {
-	background-color: var(--wp--preset--color--contrast-2, var(--wp--preset--color--contrast, transparent));
-	color: var(--wp--preset--color--base);
-	border-color: var(--wp--preset--color--contrast-2, var(--wp--preset--color--contrast, currentColor));
-}
-
-/*# sourceURL=https://atlas-library.com/wp-content/themes/twentytwentyfour/assets/css/button-outline.css */
-</style>
-<style id="wp-block-buttons-inline-css">
-.wp-block-buttons{box-sizing:border-box}.wp-block-buttons.is-vertical{flex-direction:column}.wp-block-buttons.is-vertical>.wp-block-button:last-child{margin-bottom:0}.wp-block-buttons>.wp-block-button{display:inline-block;margin:0}.wp-block-buttons.is-content-justification-left{justify-content:flex-start}.wp-block-buttons.is-content-justification-left.is-vertical{align-items:flex-start}.wp-block-buttons.is-content-justification-center{justify-content:center}.wp-block-buttons.is-content-justification-center.is-vertical{align-items:center}.wp-block-buttons.is-content-justification-right{justify-content:flex-end}.wp-block-buttons.is-content-justification-right.is-vertical{align-items:flex-end}.wp-block-buttons.is-content-justification-space-between{justify-content:space-between}.wp-block-buttons.aligncenter{text-align:center}.wp-block-buttons:not(.is-content-justification-space-between,.is-content-justification-right,.is-content-justification-left,.is-content-justification-center) .wp-block-button.aligncenter{margin-left:auto;margin-right:auto;width:100%}.wp-block-buttons[style*=text-decoration] .wp-block-button,.wp-block-buttons[style*=text-decoration] .wp-block-button__link{text-decoration:inherit}.wp-block-buttons.has-custom-font-size .wp-block-button__link{font-size:inherit}.wp-block-buttons .wp-block-button__link{width:100%}.wp-block-button.aligncenter{text-align:center}
-/*# sourceURL=https://atlas-library.com/wp-includes/blocks/buttons/style.min.css */
-</style>
-<style id="wp-block-separator-inline-css">
-@charset "UTF-8";.wp-block-separator{border:none;border-top:2px solid}:root :where(.wp-block-separator.is-style-dots){height:auto;line-height:1;text-align:center}:root :where(.wp-block-separator.is-style-dots):before{color:currentColor;content:"···";font-family:serif;font-size:1.5em;letter-spacing:2em;padding-left:2em}.wp-block-separator.is-style-dots{background:none!important;border:none!important}
-/*# sourceURL=https://atlas-library.com/wp-includes/blocks/separator/style.min.css */
-</style>
-<style id="wp-block-group-inline-css">
-.wp-block-group{box-sizing:border-box}:where(.wp-block-group.wp-block-group-is-layout-constrained){position:relative}
-/*# sourceURL=https://atlas-library.com/wp-includes/blocks/group/style.min.css */
-</style>
-<style id="wp-block-gallery-inline-css">
-.blocks-gallery-grid:not(.has-nested-images),.wp-block-gallery:not(.has-nested-images){display:flex;flex-wrap:wrap;list-style-type:none;margin:0;padding:0}.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-image,.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-item,.wp-block-gallery:not(.has-nested-images) .blocks-gallery-image,.wp-block-gallery:not(.has-nested-images) .blocks-gallery-item{display:flex;flex-direction:column;flex-grow:1;justify-content:center;margin:0 1em 1em 0;position:relative;width:calc(50% - 1em)}.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-image:nth-of-type(2n),.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-item:nth-of-type(2n),.wp-block-gallery:not(.has-nested-images) .blocks-gallery-image:nth-of-type(2n),.wp-block-gallery:not(.has-nested-images) .blocks-gallery-item:nth-of-type(2n){margin-right:0}.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-image figure,.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-item figure,.wp-block-gallery:not(.has-nested-images) .blocks-gallery-image figure,.wp-block-gallery:not(.has-nested-images) .blocks-gallery-item figure{align-items:flex-end;display:flex;height:100%;justify-content:flex-start;margin:0}.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-image img,.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-item img,.wp-block-gallery:not(.has-nested-images) .blocks-gallery-image img,.wp-block-gallery:not(.has-nested-images) .blocks-gallery-item img{display:block;height:auto;max-width:100%;width:auto}.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-image figcaption,.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-item figcaption,.wp-block-gallery:not(.has-nested-images) .blocks-gallery-image figcaption,.wp-block-gallery:not(.has-nested-images) .blocks-gallery-item figcaption{background:linear-gradient(0deg,#000000b3,#0000004d 70%,#0000);bottom:0;box-sizing:border-box;color:#fff;font-size:.8em;margin:0;max-height:100%;overflow:auto;padding:3em .77em .7em;position:absolute;text-align:center;width:100%;z-index:2}.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-image figcaption img,.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-item figcaption img,.wp-block-gallery:not(.has-nested-images) .blocks-gallery-image figcaption img,.wp-block-gallery:not(.has-nested-images) .blocks-gallery-item figcaption img{display:inline}.blocks-gallery-grid:not(.has-nested-images) figcaption,.wp-block-gallery:not(.has-nested-images) figcaption{flex-grow:1}.blocks-gallery-grid:not(.has-nested-images).is-cropped .blocks-gallery-image a,.blocks-gallery-grid:not(.has-nested-images).is-cropped .blocks-gallery-image img,.blocks-gallery-grid:not(.has-nested-images).is-cropped .blocks-gallery-item a,.blocks-gallery-grid:not(.has-nested-images).is-cropped .blocks-gallery-item img,.wp-block-gallery:not(.has-nested-images).is-cropped .blocks-gallery-image a,.wp-block-gallery:not(.has-nested-images).is-cropped .blocks-gallery-image img,.wp-block-gallery:not(.has-nested-images).is-cropped .blocks-gallery-item a,.wp-block-gallery:not(.has-nested-images).is-cropped .blocks-gallery-item img{flex:1;height:100%;object-fit:cover;width:100%}.blocks-gallery-grid:not(.has-nested-images).columns-1 .blocks-gallery-image,.blocks-gallery-grid:not(.has-nested-images).columns-1 .blocks-gallery-item,.wp-block-gallery:not(.has-nested-images).columns-1 .blocks-gallery-image,.wp-block-gallery:not(.has-nested-images).columns-1 .blocks-gallery-item{margin-right:0;width:100%}@media (min-width:600px){.blocks-gallery-grid:not(.has-nested-images).columns-3 .blocks-gallery-image,.blocks-gallery-grid:not(.has-nested-images).columns-3 .blocks-gallery-item,.wp-block-gallery:not(.has-nested-images).columns-3 .blocks-gallery-image,.wp-block-gallery:not(.has-nested-images).columns-3 .blocks-gallery-item{margin-right:1em;width:calc(33.33333% - .66667em)}.blocks-gallery-grid:not(.has-nested-images).columns-4 .blocks-gallery-image,.blocks-gallery-grid:not(.has-nested-images).columns-4 .blocks-gallery-item,.wp-block-gallery:not(.has-nested-images).columns-4 .blocks-gallery-image,.wp-block-gallery:not(.has-nested-images).columns-4 .blocks-gallery-item{margin-right:1em;width:calc(25% - .75em)}.blocks-gallery-grid:not(.has-nested-images).columns-5 .blocks-gallery-image,.blocks-gallery-grid:not(.has-nested-images).columns-5 .blocks-gallery-item,.wp-block-gallery:not(.has-nested-images).columns-5 .blocks-gallery-image,.wp-block-gallery:not(.has-nested-images).columns-5 .blocks-gallery-item{margin-right:1em;width:calc(20% - .8em)}.blocks-gallery-grid:not(.has-nested-images).columns-6 .blocks-gallery-image,.blocks-gallery-grid:not(.has-nested-images).columns-6 .blocks-gallery-item,.wp-block-gallery:not(.has-nested-images).columns-6 .blocks-gallery-image,.wp-block-gallery:not(.has-nested-images).columns-6 .blocks-gallery-item{margin-right:1em;width:calc(16.66667% - .83333em)}.blocks-gallery-grid:not(.has-nested-images).columns-7 .blocks-gallery-image,.blocks-gallery-grid:not(.has-nested-images).columns-7 .blocks-gallery-item,.wp-block-gallery:not(.has-nested-images).columns-7 .blocks-gallery-image,.wp-block-gallery:not(.has-nested-images).columns-7 .blocks-gallery-item{margin-right:1em;width:calc(14.28571% - .85714em)}.blocks-gallery-grid:not(.has-nested-images).columns-8 .blocks-gallery-image,.blocks-gallery-grid:not(.has-nested-images).columns-8 .blocks-gallery-item,.wp-block-gallery:not(.has-nested-images).columns-8 .blocks-gallery-image,.wp-block-gallery:not(.has-nested-images).columns-8 .blocks-gallery-item{margin-right:1em;width:calc(12.5% - .875em)}.blocks-gallery-grid:not(.has-nested-images).columns-1 .blocks-gallery-image:nth-of-type(1n),.blocks-gallery-grid:not(.has-nested-images).columns-1 .blocks-gallery-item:nth-of-type(1n),.blocks-gallery-grid:not(.has-nested-images).columns-2 .blocks-gallery-image:nth-of-type(2n),.blocks-gallery-grid:not(.has-nested-images).columns-2 .blocks-gallery-item:nth-of-type(2n),.blocks-gallery-grid:not(.has-nested-images).columns-3 .blocks-gallery-image:nth-of-type(3n),.blocks-gallery-grid:not(.has-nested-images).columns-3 .blocks-gallery-item:nth-of-type(3n),.blocks-gallery-grid:not(.has-nested-images).columns-4 .blocks-gallery-image:nth-of-type(4n),.blocks-gallery-grid:not(.has-nested-images).columns-4 .blocks-gallery-item:nth-of-type(4n),.blocks-gallery-grid:not(.has-nested-images).columns-5 .blocks-gallery-image:nth-of-type(5n),.blocks-gallery-grid:not(.has-nested-images).columns-5 .blocks-gallery-item:nth-of-type(5n),.blocks-gallery-grid:not(.has-nested-images).columns-6 .blocks-gallery-image:nth-of-type(6n),.blocks-gallery-grid:not(.has-nested-images).columns-6 .blocks-gallery-item:nth-of-type(6n),.blocks-gallery-grid:not(.has-nested-images).columns-7 .blocks-gallery-image:nth-of-type(7n),.blocks-gallery-grid:not(.has-nested-images).columns-7 .blocks-gallery-item:nth-of-type(7n),.blocks-gallery-grid:not(.has-nested-images).columns-8 .blocks-gallery-image:nth-of-type(8n),.blocks-gallery-grid:not(.has-nested-images).columns-8 .blocks-gallery-item:nth-of-type(8n),.wp-block-gallery:not(.has-nested-images).columns-1 .blocks-gallery-image:nth-of-type(1n),.wp-block-gallery:not(.has-nested-images).columns-1 .blocks-gallery-item:nth-of-type(1n),.wp-block-gallery:not(.has-nested-images).columns-2 .blocks-gallery-image:nth-of-type(2n),.wp-block-gallery:not(.has-nested-images).columns-2 .blocks-gallery-item:nth-of-type(2n),.wp-block-gallery:not(.has-nested-images).columns-3 .blocks-gallery-image:nth-of-type(3n),.wp-block-gallery:not(.has-nested-images).columns-3 .blocks-gallery-item:nth-of-type(3n),.wp-block-gallery:not(.has-nested-images).columns-4 .blocks-gallery-image:nth-of-type(4n),.wp-block-gallery:not(.has-nested-images).columns-4 .blocks-gallery-item:nth-of-type(4n),.wp-block-gallery:not(.has-nested-images).columns-5 .blocks-gallery-image:nth-of-type(5n),.wp-block-gallery:not(.has-nested-images).columns-5 .blocks-gallery-item:nth-of-type(5n),.wp-block-gallery:not(.has-nested-images).columns-6 .blocks-gallery-image:nth-of-type(6n),.wp-block-gallery:not(.has-nested-images).columns-6 .blocks-gallery-item:nth-of-type(6n),.wp-block-gallery:not(.has-nested-images).columns-7 .blocks-gallery-image:nth-of-type(7n),.wp-block-gallery:not(.has-nested-images).columns-7 .blocks-gallery-item:nth-of-type(7n),.wp-block-gallery:not(.has-nested-images).columns-8 .blocks-gallery-image:nth-of-type(8n),.wp-block-gallery:not(.has-nested-images).columns-8 .blocks-gallery-item:nth-of-type(8n){margin-right:0}}.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-image:last-child,.blocks-gallery-grid:not(.has-nested-images) .blocks-gallery-item:last-child,.wp-block-gallery:not(.has-nested-images) .blocks-gallery-image:last-child,.wp-block-gallery:not(.has-nested-images) .blocks-gallery-item:last-child{margin-right:0}.blocks-gallery-grid:not(.has-nested-images).alignleft,.blocks-gallery-grid:not(.has-nested-images).alignright,.wp-block-gallery:not(.has-nested-images).alignleft,.wp-block-gallery:not(.has-nested-images).alignright{max-width:420px;width:100%}.blocks-gallery-grid:not(.has-nested-images).aligncenter .blocks-gallery-item figure,.wp-block-gallery:not(.has-nested-images).aligncenter .blocks-gallery-item figure{justify-content:center}.wp-block-gallery:not(.is-cropped) .blocks-gallery-item{align-self:flex-start}figure.wp-block-gallery.has-nested-images{align-items:normal}.wp-block-gallery.has-nested-images figure.wp-block-image:not(#individual-image){margin:0;width:calc(50% - var(--wp--style--unstable-gallery-gap, 16px)/2)}.wp-block-gallery.has-nested-images figure.wp-block-image{box-sizing:border-box;display:flex;flex-direction:column;flex-grow:1;justify-content:center;max-width:100%;position:relative}.wp-block-gallery.has-nested-images figure.wp-block-image>a,.wp-block-gallery.has-nested-images figure.wp-block-image>div{flex-direction:column;flex-grow:1;margin:0}.wp-block-gallery.has-nested-images figure.wp-block-image img{display:block;height:auto;max-width:100%!important;width:auto}.wp-block-gallery.has-nested-images figure.wp-block-image figcaption,.wp-block-gallery.has-nested-images figure.wp-block-image:has(figcaption):before{bottom:0;left:0;max-height:100%;position:absolute;right:0}.wp-block-gallery.has-nested-images figure.wp-block-image:has(figcaption):before{backdrop-filter:blur(3px);content:"";height:100%;-webkit-mask-image:linear-gradient(0deg,#000 20%,#0000);mask-image:linear-gradient(0deg,#000 20%,#0000);max-height:3em;pointer-events:none}.wp-block-gallery.has-nested-images figure.wp-block-image figcaption{box-sizing:border-box;color:#fff;font-size:13px;margin:0;overflow:auto;padding:1em;text-align:center;text-shadow:0 0 1.5px #000}.wp-block-gallery.has-nested-images figure.wp-block-image figcaption::-webkit-scrollbar{height:12px;width:12px}.wp-block-gallery.has-nested-images figure.wp-block-image figcaption::-webkit-scrollbar-track{background-color:initial}.wp-block-gallery.has-nested-images figure.wp-block-image figcaption::-webkit-scrollbar-thumb{background-clip:padding-box;background-color:initial;border:3px solid #0000;border-radius:8px}.wp-block-gallery.has-nested-images figure.wp-block-image figcaption:focus-within::-webkit-scrollbar-thumb,.wp-block-gallery.has-nested-images figure.wp-block-image figcaption:focus::-webkit-scrollbar-thumb,.wp-block-gallery.has-nested-images figure.wp-block-image figcaption:hover::-webkit-scrollbar-thumb{background-color:#fffc}.wp-block-gallery.has-nested-images figure.wp-block-image figcaption{scrollbar-color:#0000 #0000;scrollbar-gutter:stable both-edges;scrollbar-width:thin}.wp-block-gallery.has-nested-images figure.wp-block-image figcaption:focus,.wp-block-gallery.has-nested-images figure.wp-block-image figcaption:focus-within,.wp-block-gallery.has-nested-images figure.wp-block-image figcaption:hover{scrollbar-color:#fffc #0000}.wp-block-gallery.has-nested-images figure.wp-block-image figcaption{will-change:transform}@media (hover:none){.wp-block-gallery.has-nested-images figure.wp-block-image figcaption{scrollbar-color:#fffc #0000}}.wp-block-gallery.has-nested-images figure.wp-block-image figcaption{background:linear-gradient(0deg,#0006,#0000)}.wp-block-gallery.has-nested-images figure.wp-block-image figcaption img{display:inline}.wp-block-gallery.has-nested-images figure.wp-block-image figcaption a{color:inherit}.wp-block-gallery.has-nested-images figure.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-gallery.has-nested-images figure.wp-block-image.has-custom-border>a,.wp-block-gallery.has-nested-images figure.wp-block-image.has-custom-border>div,.wp-block-gallery.has-nested-images figure.wp-block-image.is-style-rounded>a,.wp-block-gallery.has-nested-images figure.wp-block-image.is-style-rounded>div{flex:1 1 auto}.wp-block-gallery.has-nested-images figure.wp-block-image.has-custom-border figcaption,.wp-block-gallery.has-nested-images figure.wp-block-image.is-style-rounded figcaption{background:none;color:inherit;flex:initial;margin:0;padding:10px 10px 9px;position:relative;text-shadow:none}.wp-block-gallery.has-nested-images figure.wp-block-image.has-custom-border:before,.wp-block-gallery.has-nested-images figure.wp-block-image.is-style-rounded:before{content:none}.wp-block-gallery.has-nested-images figcaption{flex-basis:100%;flex-grow:1;text-align:center}.wp-block-gallery.has-nested-images:not(.is-cropped) figure.wp-block-image:not(#individual-image){margin-bottom:auto;margin-top:0}.wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image){align-self:inherit}.wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image)>a,.wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image)>div:not(.components-drop-zone){display:flex}.wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image) a,.wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image) img{flex:1 0 0%;height:100%;object-fit:cover;width:100%}.wp-block-gallery.has-nested-images.columns-1 figure.wp-block-image:not(#individual-image){width:100%}@media (min-width:600px){.wp-block-gallery.has-nested-images.columns-3 figure.wp-block-image:not(#individual-image){width:calc(33.33333% - var(--wp--style--unstable-gallery-gap, 16px)*.66667)}.wp-block-gallery.has-nested-images.columns-4 figure.wp-block-image:not(#individual-image){width:calc(25% - var(--wp--style--unstable-gallery-gap, 16px)*.75)}.wp-block-gallery.has-nested-images.columns-5 figure.wp-block-image:not(#individual-image){width:calc(20% - var(--wp--style--unstable-gallery-gap, 16px)*.8)}.wp-block-gallery.has-nested-images.columns-6 figure.wp-block-image:not(#individual-image){width:calc(16.66667% - var(--wp--style--unstable-gallery-gap, 16px)*.83333)}.wp-block-gallery.has-nested-images.columns-7 figure.wp-block-image:not(#individual-image){width:calc(14.28571% - var(--wp--style--unstable-gallery-gap, 16px)*.85714)}.wp-block-gallery.has-nested-images.columns-8 figure.wp-block-image:not(#individual-image){width:calc(12.5% - var(--wp--style--unstable-gallery-gap, 16px)*.875)}.wp-block-gallery.has-nested-images.columns-default figure.wp-block-image:not(#individual-image){width:calc(33.33% - var(--wp--style--unstable-gallery-gap, 16px)*.66667)}.wp-block-gallery.has-nested-images.columns-default figure.wp-block-image:not(#individual-image):first-child:nth-last-child(2),.wp-block-gallery.has-nested-images.columns-default figure.wp-block-image:not(#individual-image):first-child:nth-last-child(2)~figure.wp-block-image:not(#individual-image){width:calc(50% - var(--wp--style--unstable-gallery-gap, 16px)*.5)}.wp-block-gallery.has-nested-images.columns-default figure.wp-block-image:not(#individual-image):first-child:last-child{width:100%}}.wp-block-gallery.has-nested-images.alignleft,.wp-block-gallery.has-nested-images.alignright{max-width:420px;width:100%}.wp-block-gallery.has-nested-images.aligncenter{justify-content:center}
-/*# sourceURL=https://atlas-library.com/wp-includes/blocks/gallery/style.min.css */
-</style>
-<style id="wp-block-post-content-inline-css">
-.wp-block-post-content{display:flow-root}
-/*# sourceURL=https://atlas-library.com/wp-includes/blocks/post-content/style.min.css */
-</style>
-<style id="wp-block-site-title-inline-css">
-.wp-block-site-title{box-sizing:border-box}.wp-block-site-title :where(a){color:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-decoration:inherit}
-/*# sourceURL=https://atlas-library.com/wp-includes/blocks/site-title/style.min.css */
-</style>
-<style id="wp-block-site-tagline-inline-css">
-.wp-block-site-tagline{box-sizing:border-box}
-/*# sourceURL=https://atlas-library.com/wp-includes/blocks/site-tagline/style.min.css */
-</style>
-<style id="wp-block-navigation-link-inline-css">
-.wp-block-navigation .wp-block-navigation-item__label{overflow-wrap:break-word}.wp-block-navigation .wp-block-navigation-item__description{display:none}.link-ui-tools{outline:1px solid #f0f0f0;padding:8px}.link-ui-block-inserter{padding-top:8px}.link-ui-block-inserter__back{margin-left:8px;text-transform:uppercase}
-
-				.is-style-arrow-link .wp-block-navigation-item__label:after {
-					content: "\2197";
-					padding-inline-start: 0.25rem;
-					vertical-align: middle;
-					text-decoration: none;
-					display: inline-block;
-				}
-/*# sourceURL=wp-block-navigation-link-inline-css */
-</style>
-<link href="https://atlas-library.com/wp-includes/blocks/navigation/style.min.css?ver=7.0" id="wp-block-navigation-css" media="all" rel="stylesheet"/>
-<style id="wp-block-columns-inline-css">
-.wp-block-columns{box-sizing:border-box;display:flex;flex-wrap:wrap!important}@media (min-width:782px){.wp-block-columns{flex-wrap:nowrap!important}}.wp-block-columns{align-items:normal!important}.wp-block-columns.are-vertically-aligned-top{align-items:flex-start}.wp-block-columns.are-vertically-aligned-center{align-items:center}.wp-block-columns.are-vertically-aligned-bottom{align-items:flex-end}@media (max-width:781px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:100%!important}}@media (min-width:782px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column[style*=flex-basis]{flex-grow:0}}.wp-block-columns.is-not-stacked-on-mobile{flex-wrap:nowrap!important}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column[style*=flex-basis]{flex-grow:0}:where(.wp-block-columns){margin-bottom:1.75em}:where(.wp-block-columns.has-background){padding:1.25em 2.375em}.wp-block-column{flex-grow:1;min-width:0;overflow-wrap:break-word;word-break:break-word}.wp-block-column.is-vertically-aligned-top{align-self:flex-start}.wp-block-column.is-vertically-aligned-center{align-self:center}.wp-block-column.is-vertically-aligned-bottom{align-self:flex-end}.wp-block-column.is-vertically-aligned-stretch{align-self:stretch}.wp-block-column.is-vertically-aligned-bottom,.wp-block-column.is-vertically-aligned-center,.wp-block-column.is-vertically-aligned-top{width:100%}
-/*# sourceURL=https://atlas-library.com/wp-includes/blocks/columns/style.min.css */
-</style>
-<style id="wp-emoji-styles-inline-css">
-
-	img.wp-smiley, img.emoji {
-		display: inline !important;
-		border: none !important;
-		box-shadow: none !important;
-		height: 1em !important;
-		width: 1em !important;
-		margin: 0 0.07em !important;
-		vertical-align: -0.1em !important;
-		background: none !important;
-		padding: 0 !important;
-	}
-/*# sourceURL=wp-emoji-styles-inline-css */
-</style>
-<style id="wp-block-library-inline-css">
-:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
-/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
-</style>
-
-
-<style id="core-block-supports-inline-css">
-.wp-container-core-buttons-is-layout-ed107d7f{gap:0;justify-content:center;}.wp-elements-18ed6d35ac4aec359bf880ea82fa7a33 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--base-2);}.wp-elements-7003bcde27bc23ea52682d84de419f2f a:where(:not(.wp-element-button)){color:var(--wp--preset--color--base-2);}.wp-container-core-group-is-layout-db6fb920 > .alignfull{margin-right:calc(var(--wp--preset--spacing--20) * -1);margin-left:calc(var(--wp--preset--spacing--20) * -1);}.wp-container-core-group-is-layout-db6fb920 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-db6fb920 > * + *{margin-block-start:var(--wp--preset--spacing--30);margin-block-end:0;}.wp-block-gallery.wp-block-gallery-2{--wp--style--unstable-gallery-gap:0px;gap:var(--wp--preset--spacing--10) 0;}.wp-container-core-group-is-layout-831b2db5{flex-direction:column;align-items:flex-start;}.wp-container-core-navigation-is-layout-bc18b00a{flex-direction:column;align-items:center;}.wp-container-core-columns-is-layout-3a88641f{flex-wrap:nowrap;}
-/*# sourceURL=core-block-supports-inline-css */
-</style>
-<style id="wp-block-template-skip-link-inline-css">
-/*! This file is auto-generated */
-.skip-link.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute!important;width:1px;word-wrap:normal!important;word-break:normal!important}.skip-link.screen-reader-text:focus{background-color:#eee;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
-/*# sourceURL=/wp-includes/css/wp-block-template-skip-link.min.css */
-</style>
-<link href="https://atlas-library.com/wp-content/plugins/ip-countdown-by-niro/assets/countdown.css?ver=1.0.0" id="ip-countdown-style-css" media="all" rel="stylesheet"/>
-<style id="ip-countdown-style-inline-css">
-
-                .ip-countdown-sticky {
-                    position: -webkit-sticky;
-                    position: sticky;
-                    top: 0;
-                    z-index: 9999;
-                    background: rgba(255, 255, 255, 0.95);
-                    backdrop-filter: blur(10px);
-                    -webkit-backdrop-filter: blur(10px);
-                    padding: 12px 15px;
-                    box-shadow: 0 2px 20px rgba(0,0,0,0.15);
-                    transition: all 0.3s ease;
-                    width: 100%;
-                    box-sizing: border-box;
-                    text-align: center;
-                    border-bottom: 1px solid rgba(0,0,0,0.1);
-                }
-
-                @media (max-width: 768px) {
-                    .ip-countdown-sticky {
-                        padding: 10px 12px;
-                        top: 0;
-                        position: -webkit-sticky;
-                        position: sticky;
-                    }
-                }
-
-                @media (max-width: 480px) {
-                    .ip-countdown-sticky {
-                        padding: 8px 10px;
-                        top: 0px;
-                        position: -webkit-sticky;
-                        position: sticky;
-                        background: rgba(255, 255, 255, 0.98);
-                        min-height: auto;
-                    }
-
-                    .ip-countdown-sticky .countdown-cards {
-                        justify-content: center;
-                        align-items: center;
-                    }
-
-                    .ip-countdown-sticky .time-card {
-                        font-size: 14px !important;
-                        padding: 4px 6px !important;
-                    }
-
-                    .ip-countdown-sticky .time-label {
-                        font-size: 10px !important;
-                        margin-top: 1px !important;
-                    }
-                }
-
-                @media (max-width: 390px) and (-webkit-min-device-pixel-ratio: 2) {
-                    .ip-countdown-sticky {
-                        padding: 6px 8px;
-                        top: env(safe-area-inset-top, 0px);
-                        z-index: 99999;
-                    }
-                }
-            
-/*# sourceURL=ip-countdown-style-inline-css */
-</style>
-
-
-
-
-<link href="https://atlas-library.com/wp-content/plugins/wpc-order-tip/assets/css/frontend.css?ver=7.0" id="wpcot-frontend-css" media="all" rel="stylesheet"/>
-<style id="wpcot-frontend-inline-css">
-.wpcot-tips .wpcot-tip .wpcot-tip-values .wpcot-tip-value:hover > span, .wpcot-tips .wpcot-tip .wpcot-tip-values .wpcot-tip-value.active > span, .wpcot-tips .wpcot-tip .wpcot-tip-values .wpcot-tip-value-custom:hover > span, .wpcot-tips .wpcot-tip .wpcot-tip-values .wpcot-tip-value-custom.active > span, .wpcot-tips .wpcot-tip .wpcot-tip-custom .wpcot-tip-custom-form input[type=button]:hover {background-color: #cc99c2;} .wpcot-tips .wpcot-tip .wpcot-tip-values .wpcot-tip-value:hover, .wpcot-tips .wpcot-tip .wpcot-tip-values .wpcot-tip-value.active, .wpcot-tips .wpcot-tip .wpcot-tip-values .wpcot-tip-value-custom:hover, .wpcot-tips .wpcot-tip .wpcot-tip-values .wpcot-tip-value-custom.active {border-color: #cc99c2;}
-/*# sourceURL=wpcot-frontend-inline-css */
-</style>
-
-<script id="tmpl-unavailable-variation-template" type="text/template">
-	<p role="alert">Sorry, this product is unavailable. Please choose a different combination.</p>
-</script>
-
-<script id="jquery-core-js" src="https://atlas-library.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
-<script id="jquery-migrate-js" src="https://atlas-library.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
-
-<script id="wc-add-to-cart-js-extra">
-var wc_add_to_cart_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https://atlas-library.com/checkout/","is_cart":"","cart_redirect_after_add":"no"};
-//# sourceURL=wc-add-to-cart-js-extra
-</script>
-
-
-
-
-
-
-<script id="underscore-js" src="https://atlas-library.com/wp-includes/js/underscore.min.js?ver=1.13.8"></script>
-<script id="wp-util-js-extra">
-var _wpUtilSettings = {"ajax":{"url":"/wp-admin/admin-ajax.php"}};
-//# sourceURL=wp-util-js-extra
-</script>
-<script id="wp-util-js" src="https://atlas-library.com/wp-includes/js/wp-util.min.js?ver=7.0"></script>
-<script id="wc-add-to-cart-variation-js-extra">
-var wc_add_to_cart_variation_params = {"wc_ajax_url":"/?wc-ajax=%%endpoint%%","i18n_no_matching_variations_text":"Sorry, no products matched your selection. Please choose a different combination.","i18n_make_a_selection_text":"Please select some product options before adding this product to your cart.","i18n_unavailable_text":"Sorry, this product is unavailable. Please choose a different combination.","i18n_reset_alert_text":"Your selection has been reset. Please select some product options before adding this product to your cart."};
-//# sourceURL=wc-add-to-cart-variation-js-extra
-</script>
-
-<link href="https://atlas-library.com/wp-json/" rel="https://api.w.org/"/><link href="https://atlas-library.com/wp-json/wp/v2/pages/219315" rel="alternate" title="JSON" type="application/json"/><link href="https://atlas-library.com/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
-<meta content="WordPress 7.0" name="generator"/>
-<meta content="WooCommerce 10.7.0" name="generator"/>
-<link href="https://atlas-library.com/excel/" rel="canonical"/>
-<link href="https://atlas-library.com/?p=219315" rel="shortlink"/>
-<!-- Google Tag Manager -->
-
-<!-- End Google Tag Manager -->
-<meta content="aiah8lv5wt0qxwla2qcmrhom1brmux" name="facebook-domain-verification"/>
-
-<noscript></noscript>
-<style class="wpcode-css-snippet">#ali-save-card-wrap {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
-}</style><style class="wpcode-css-snippet">.fix-scroll-view{
-	position: sticky;
-    top: 0;
-    z-index: 999;
-    transition: akk 0.3s ease;
-}</style><style class="wp-fonts-local">
-@font-face{font-family:Inter;font-style:normal;font-weight:300 900;font-display:fallback;src:url('https://atlas-library.com/wp-content/themes/twentytwentyfour/assets/fonts/inter/Inter-VariableFont_slnt,wght.woff2') format('woff2');font-stretch:normal;}
-@font-face{font-family:Cardo;font-style:normal;font-weight:400;font-display:fallback;src:url('https://atlas-library.com/wp-content/themes/twentytwentyfour/assets/fonts/cardo/cardo_normal_400.woff2') format('woff2');}
-@font-face{font-family:Cardo;font-style:italic;font-weight:400;font-display:fallback;src:url('https://atlas-library.com/wp-content/themes/twentytwentyfour/assets/fonts/cardo/cardo_italic_400.woff2') format('woff2');}
-@font-face{font-family:Cardo;font-style:normal;font-weight:700;font-display:fallback;src:url('https://atlas-library.com/wp-content/themes/twentytwentyfour/assets/fonts/cardo/cardo_normal_700.woff2') format('woff2');}
-</style>
-<link href="https://atlas-library.com/wp-content/uploads/2025/12/cropped-fav-32x32.png" rel="icon" sizes="32x32"/>
-<link href="https://atlas-library.com/wp-content/uploads/2025/12/cropped-fav-192x192.png" rel="icon" sizes="192x192"/>
-<link href="https://atlas-library.com/wp-content/uploads/2025/12/cropped-fav-180x180.png" rel="apple-touch-icon"/>
-<meta content="https://atlas-library.com/wp-content/uploads/2025/12/cropped-fav-270x270.png" name="msapplication-TileImage"/>
-
-<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;📊&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
-<link href="style.css" rel="stylesheet">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Excel Maîtrise - Maîtrisez Excel rapidement</title>
+<!-- Modern Font loading in style.css -->
+<link href="data:," rel="icon"/>
+<link href="style.css" rel="stylesheet"/>
 <!-- Lucide Icons -->
 <script src="https://unpkg.com/lucide@latest"></script>
 <!-- UTMify Tracker -->
-<script async="" data-utmify-prevent-subids="" defer="" src="https://cdn.utmify.com.br/scripts/utms/latest.js"></script>
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
 <!-- UTMify Pixel -->
 <script>
-  window.pixelId = "69c734f2a7f3af58104edc35";
+  window.pixelId = "6a12248bdbf2b1177dd792f1";
   var a = document.createElement("script");
   a.setAttribute("async", "");
   a.setAttribute("defer", "");
   a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
   document.head.appendChild(a);
 </script>
-</link></head>
-<body class="wp-singular page-template page-template-excel-atlas page page-id-219315 wp-embed-responsive wp-theme-twentytwentyfour theme-twentytwentyfour woocommerce-uses-block-theme woocommerce-block-theme-has-button-styles woocommerce-no-js">
+</head>
+<body>
 <!-- STICKY COUNTDOWN BAR -->
 <div class="top-warning-bar">
-<div class="warning-text">⏰ OFFRE SPÉCIALE DE LANCEMENT : -70% TERMINE DANS</div>
+<div class="warning-text">⏰ DERNIÈRES HEURES : -70% SE TERMINE DANS</div>
 <div class="countdown-box">
 <div class="time-unit">
 <span class="time-card" id="timer-hours">00</span>
@@ -294,300 +47,277 @@ var wc_add_to_cart_variation_params = {"wc_ajax_url":"/?wc-ajax=%%endpoint%%","i
 </div>
 </div>
 </div>
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe height="0" src="https://sst.atlas-library.com/ns.html?id=GTM-KQVDXF6M" style="display:none;visibility:hidden" width="0"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<a class="skip-link screen-reader-text" href="#wp--skip-link--target" id="wp-skip-link">Skip to content</a><div class="wp-site-blocks">
-<main class="wp-block-group has-background is-layout-flow wp-block-group-is-layout-flow" id="wp--skip-link--target" style="background-color:#127834">
-
-<div class="entry-content wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained">
-<div aria-hidden="true" class="wp-block-spacer" style="height:40px"></div>
-<p class="has-text-align-center has-system-sans-serif-font-family has-x-large-font-size wp-block-paragraph"><strong><em>Vous perdez encore des heures sur des tâches Excel qui devraient prendre des minutes ?</em></strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<p class="has-text-align-center has-medium-font-size wp-block-paragraph">Et si vous pouviez enfin arrêter de chercher des formules sur Google, de regarder des tutoriels YouTube au hasard et de vous sentir bloqué chaque fois qu'un fichier Excel se complique ?</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center has-medium-font-size wp-block-paragraph">Continuez à lire…</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<figure class="wp-block-image alignfull size-full" id='&lt;a-href="-target-image"&gt;-----&lt;img-src="path/to/source/image.jpg"-alt="Source-Image"&gt;-&lt;/a&gt;'><img alt="" class="wp-image-219526" decoding="async" fetchpriority="high" height="1080" src="images/kidney-1.jpg" width="1080"/></figure>
-<p class="has-text-align-center has-x-large-font-size wp-block-paragraph" style="margin-right:0;margin-left:0"><strong><strong><strong><strong><strong><strong><strong>Pack Maîtrise d'Excel 2026</strong></strong></strong></strong></strong></strong></strong></p>
-<p class="has-text-align-center has-x-large-font-size wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--50);margin-left:var(--wp--preset--spacing--50)">⭐⭐⭐⭐⭐</p>
-<p class="has-text-align-center has-medium-font-size wp-block-paragraph"><strong>14,90 € </strong><mark class="has-inline-color" style="background-color:rgba(0, 0, 0, 0);color:#e42628"><s>49,70 €</s> </mark> <strong>Vous économisez 70%</strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<div class="wp-block-buttons has-custom-font-size has-medium-font-size is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-ed107d7f wp-block-buttons-is-layout-flex" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:var(--wp--preset--spacing--10)">
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="btn-buy-now wp-block-button__link" href="https://pay.hotmart.com/EXCEL_FR_PLACEHOLDER?checkoutMode=10" style="border-radius:20px;background-color:#4caf50;box-shadow:var(--wp--preset--shadow--natural)"><strong>COMMANDER MAINTENANT</strong></a></div>
+<!-- MAIN HERO SECTION -->
+<section class="hero-section text-center">
+<div class="container">
+<h1 class="main-headline font-heading bold italic text-primary">
+                Vous perdez encore des heures sur des tâches Excel qui devraient prendre quelques minutes ?
+            </h1>
+<p class="sub-headline">
+                Vous n’êtes pas seul. Beaucoup de professionnels se sentent bloqués sur Excel... mais avec les bonnes formules, les bons raccourcis et les bonnes fonctionnalités, ce qui prenait des heures peut se faire en quelques secondes.
+            </p>
+<!-- MAIN VSL/BUNDLE IMAGE -->
+<img alt="Pack Excel Maîtrise" class="hero-main-image" src="images/hero-fr.webp"/>
+<!-- BUY/CTA BOX -->
+<div class="cta-box">
+<div class="star-rating">
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
 </div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:30px"></div>
-<p class="has-text-align-center has-large-font-size wp-block-paragraph"><strong><strong>1 SEUL ACHAT, 3 GUIDES COMPLETS</strong></strong></p>
-<p class="has-text-align-center has-medium-font-size wp-block-paragraph">Pour une durée limitée, voici ce que vous allez recevoir :</p>
-<figure class="wp-block-image alignfull size-large"><img alt="" class="wp-image-219527" decoding="async" height="587" src="images/3books-1-1024x587.jpg" width="1024"/></figure>
-<hr class="wp-block-separator has-text-color has-base-2-color has-alpha-channel-opacity has-base-2-background-color has-background is-style-wide"/>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<p class="has-text-align-center has-large-font-size wp-block-paragraph"><strong><em><em>Pourquoi cette offre semble-t-elle trop belle pour être vraie ?</em></em></strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<p class="has-text-align-center has-medium-font-size wp-block-paragraph"><strong>Nous comprenons parfaitement — trois livres à succès pour le prix d’un seul, ce n’est pas quelque chose que l’on voit tous les jours. </strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center has-medium-font-size wp-block-paragraph">Voici la simple vérité : une fois par an, à cette période, nous organisons un Événement Spécial Lecteurs pour remercier notre public et rendre nos collections les plus populaires plus faciles d’accès. </p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center has-medium-font-size wp-block-paragraph">Comme nous gérons tout directement — de l'édition à la distribution — nous pouvons éviter les marges des revendeurs et proposer l'ensemble du pack (normalement de 49,70 €) pour seulement 14,90 €. </p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center has-medium-font-size wp-block-paragraph"><strong>Une fois l'événement terminé, les prix reviendront à la normale.</strong></p>
-<hr class="wp-block-separator has-text-color has-base-2-color has-alpha-channel-opacity has-base-2-background-color has-background is-style-wide"/>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<p class="has-text-align-center has-large-font-size wp-block-paragraph"><strong><em>Vous voulez maîtriser Excel plus rapidement que vous ne l'auriez jamais cru possible ?</em></strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center wp-block-paragraph">Que vous cherchiez à obtenir une promotion, à décrocher un meilleur emploi, à développer votre entreprise, à gérer vos finances personnelles ou simplement à ne plus vous sentir dépassé chaque fois que vous ouvrez Excel... ce pack a été spécialement conçu pour vous.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">Le <strong>Pack Maîtrise d'Excel 2026</strong> combine <strong>3 livres Excel puissants</strong> en un système complet étape par étape conçu pour vous faire passer de débutant confus à utilisateur Excel confiant — sans théorie ennuyeuse ni jargon technique.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">À l'intérieur, vous découvrirez les formules exactes, les raccourcis, les astuces d'automatisation, les modèles et les flux de travail réels que les professionnels utilisent au quotidien pour gagner du temps, augmenter leur productivité et se démarquer.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><strong>✅</strong> <strong>Fini la frustration.</strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">✅ <strong>Fini de perdre des heures sur des tâches simples.</strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">✅ <strong>Fini de vous sentir « nul avec les feuilles de calcul ».</strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">Ce pack vous donnera la confiance nécessaire pour enfin dire :</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><strong>« Je sais enfin ce que je fais sur Excel maintenant. »</strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<figure class="wp-block-image alignfull size-full"><img alt="" class="wp-image-219529" decoding="async" height="600" src="images/IMAGE-1.png" width="970"/></figure>
-<div class="wp-block-group alignfull preview-opacity has-background has-global-padding is-content-justification-center is-layout-constrained wp-container-core-group-is-layout-db6fb920 wp-block-group-is-layout-constrained" style="background-color:#127834;margin-top:0;margin-bottom:80px;padding-top:0;padding-right:var(--wp--preset--spacing--20);padding-bottom:0;padding-left:var(--wp--preset--spacing--20)">
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<p class="has-text-align-center has-x-large-font-size wp-block-paragraph" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">⭐ <strong><strong>Qu'y a-t-il dans ce pack à succès ?</strong></strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--50);margin-left:var(--wp--preset--spacing--50)">✅ <strong> Excel 2026</strong> <strong>—</strong> <strong>Le moyen le plus simple de maîtriser Excel en 7 jours</strong> </p>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--50);margin-left:var(--wp--preset--spacing--50)">Une feuille de route simple et accessible aux débutants pour vous aider à comprendre rapidement Excel sans vous sentir dépassé.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">✅ <strong>Le Guide de Référence Ultime des Formules &amp; Fonctions Microsoft Excel</strong></p>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">Un manuel de référence complet avec des explications pratiques pour les formules et fonctions que l'on utilise réellement au travail.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">✅ <strong>Cahier d'exercices Excel 2026 Avancé</strong> </p>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">Apprenez des astuces de productivité, des techniques d'automatisation, des mises en forme avancées, des tableaux de bord et des applications du monde réel.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)"><strong>✅ </strong><strong>Plus de 200 illustrations visuelles &amp; exemples</strong></p>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">Des captures d'écran et exemples faciles à suivre pour apprendre plus vite et sans confusion.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">✅ <strong>Plus de 100 exercices pratiques</strong></p>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">Pratiquez immédiatement ce que vous apprenez et développez une réelle confiance en vous.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">✅ <strong>Astuces secrètes &amp; fonctionnalités cachées</strong></p>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">Allez au-delà des fonctions de base et découvrez des outils cachés que la plupart des utilisateurs ignorent.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">✅ <strong>Prompts Copilot &amp; ChatGPT prêts à l'emploi</strong></p>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">Utilisez l'IA pour travailler plus intelligemment, automatiser vos tâches et économiser des heures chaque semaine.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">✅ <strong>Cours vidéo bonus + Modèles + eBooks gratuits</strong></p>
-<p class="has-text-align-center wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--60);margin-left:var(--wp--preset--spacing--60)">Des ressources supplémentaires conçues pour accélérer votre apprentissage et vous aider à tout appliquer instantanément.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<figure class="wp-block-image alignfull size-full"><img alt="" class="wp-image-219531" decoding="async" height="600" loading="lazy" src="images/IMAGE-2.jpg" width="970"/></figure>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-
+<h3>Excel Maîtrise + 2 Bonus</h3>
+<div class="price-container">
+<div class="current-price">€19.90</div>
+<div class="savings">
+<s>€59.70</s> <strong>Vous économisez 70%</strong>
+</div>
+</div>
+<a class="btn-buy-now" href="https://pay.hotmart.com/B105955101F?checkoutMode=10">
+                    Commander maintenant 
+                </a>
+<div class="guarantee-text">
+<i data-lucide="shield-check" style="color: #16a34a; width: 16px;"></i>
+                    Paiement 100% sécurisé • Accès numérique instantané
+                </div>
+</div>
+</div>
+</section>
+<!-- ACHETEZ 1, RECEVEZ 3 SECTION -->
+<section class="b1g3-section text-center" style="padding: 4rem 0 0; background-color: var(--bg-dark);">
+<div class="container">
+<h1 class="b1g3-title" style="letter-spacing: -0.5px;">ACHETEZ 1, RECEVEZ 3</h1>
+<p class="b1g3-subtitle">
+                Pendant une durée limitée, voici exactement ce que vous recevez :
+            </p>
+<div class="b1g3-image-container" style="max-width: 900px;">
+<div class="b1g3-prices" style="justify-content: center; padding: 0;">
+<img alt="Offre achetez 1, recevez 3" class="b1g3-image" src="images/offer-fr.webp" style="width: 100%; max-width: 800px; display: block; margin: 0 auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);"/>
+</div>
+</div>
+<div class="divider" style="margin-top: 3.5rem; margin-bottom: 0;"></div>
+</div>
+</section>
+<!-- CONTENT SECTIONS (Originally hardcoded in images!) -->
+<section class="text-section">
+<div class="container">
+<div class="text-center">
+<h2 class="font-heading bold italic" style="font-size: 2.4rem; margin-bottom: 2rem;">Pourquoi cette offre semble-t-elle presque trop belle pour être vraie ?</h2>
+</div>
+<div style="max-width: 750px; margin: 0 auto; line-height: 1.8; text-align: center;"><p>On comprend : trois guides complets pour le prix d’un seul, ce n’est pas quelque chose que l’on voit tous les jours.</p><p>En supprimant les intermédiaires et la distribution traditionnelle, nous pouvons vous proposer ce pack complet directement au format numérique.</p><p>Cela nous permet de faire passer le prix de €59.70 à seulement €19.90 pendant cette offre spéciale.</p><p class="bold" style="color: var(--red-alert);">Lorsque l’offre se termine, les prix reviennent à la normale.</p></div>
+<div class="divider"></div>
+<div class="text-center">
+<h2 class="font-heading bold italic text-primary" style="font-size: 2.2rem; margin-bottom: 2rem;">Et si la seule chose entre vous et votre prochaine évolution professionnelle, c’était une vraie maîtrise d’Excel ?</h2>
+</div>
+<div style="max-width: 750px; margin: 0 auto; line-height: 1.8; text-align: center;"><p>La vérité, c’est que <strong>vous n’avez pas besoin d’être un génie des maths ni un programmeur.</strong></p><p>Il vous faut simplement une méthode claire, progressive et pensée pour les débutants.</p><p>Ce pack vous accompagne pas à pas, du niveau débutant à une utilisation avancée et confiante d’Excel.</p></div>
+</div>
+</section>
+<!-- BENEFITS CHECKLIST SECTION -->
+<section class="benefits-section">
+<div class="container">
+<div class="text-center">
+<div class="transform-image-wrapper" style="width: 100%; max-width: 800px; margin: 0 auto 2rem;">
+<img alt="Cours vidéo" src="images/course-fr.webp" style="width: 100%; border-radius: 8px;"/>
+</div>
+</div>
+<h2 class="text-center font-heading bold italic" style="font-size: 2.2rem; margin-bottom: 2.5rem; color: #ffffff;">
+                📚 Voici exactement ce que vous obtenez dans le pack Excel :
+            </h2>
+<ul class="benefits-list">
+<li><i color="#ffffff" data-lucide="check-circle" fill="#22c55e"></i><span><strong>Excel de zéro à expert :</strong> Un guide complet pour maîtriser les bases sans vous sentir dépassé</span></li>
+<li><i color="#ffffff" data-lucide="check-circle" fill="#22c55e"></i><span><strong>Formules & fonctions avancées :</strong> RECHERCHEV, INDEX/EQUIV et bien plus encore</span></li>
+<li><i color="#ffffff" data-lucide="check-circle" fill="#22c55e"></i><span><strong>Visualisation des données :</strong> Créez des graphiques clairs et des tableaux de bord professionnels</span></li>
+<li><i color="#ffffff" data-lucide="check-circle" fill="#22c55e"></i><span><strong>Tableaux croisés dynamiques :</strong> Analysez de grands volumes de données en quelques secondes</span></li>
+<li><i color="#ffffff" data-lucide="check-circle" fill="#22c55e"></i><span><strong>Bonus 1 : Guide ChatGPT pour Excel</strong></span></li>
+<li><i color="#ffffff" data-lucide="check-circle" fill="#22c55e"></i><span><strong>Bonus 2 : Plus de 50 modèles prêts à l’emploi</strong></span></li>
+</ul>
+</div>
+</section>
+<!-- 2. TRANSFORM YOUR LIFE VIDEO SECTION -->
+<section class="transform-section" style="padding: 1rem 0;">
+<div class="container">
+<div class="transform-grid text-center">
+<div class="transform-image-wrapper" style="width: 100%; max-width: 800px; margin: 0 auto;">
+<img alt="Bonus inclus" src="images/bundle-fr.webp" style="width: 100%; border-radius: 8px;"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. HUGE OFFER BANNER -->
 <section class="huge-offer-banner">
 <div class="container">
 <div class="huge-offer-title">-70%</div>
 <div class="huge-offer-subtitle">
-      TERMINE AUJOURD'HUI 
-      <i data-lucide="corner-right-down" style="width: 48px; height: 48px; stroke-width: 3px; vertical-align: middle;"></i>
+                SE TERMINE AUJOURD’HUI 
+                <i data-lucide="corner-right-down" style="width: 48px; height: 48px; stroke-width: 3px;"></i>
 </div>
 </div>
 </section>
-
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<figure class="wp-block-image alignfull size-full" id='&lt;img-id="target-image"-src="path/to/target/image.jpg"-alt="Target-Image"&gt;'><img alt="" class="wp-image-219534" decoding="async" height="1080" loading="lazy" src="images/kidney-2.jpg" width="1080"/></figure>
-<p class="has-text-align-center has-base-2-color has-text-color has-link-color has-x-large-font-size wp-elements-18ed6d35ac4aec359bf880ea82fa7a33 wp-block-paragraph" style="border-style:none;border-width:0px;margin-right:var(--wp--preset--spacing--50);margin-left:var(--wp--preset--spacing--50)"><strong><strong><strong><strong><strong>Pack Maîtrise d'Excel 2026</strong></strong></strong></strong></strong></p>
-<p class="has-text-align-center has-x-large-font-size wp-block-paragraph" style="margin-right:var(--wp--preset--spacing--50);margin-left:var(--wp--preset--spacing--50)">⭐⭐⭐⭐⭐</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center has-base-2-color has-text-color has-link-color has-medium-font-size wp-elements-7003bcde27bc23ea52682d84de419f2f wp-block-paragraph"><strong>14,90 € </strong><mark class="has-inline-color" style="background-color:rgba(0, 0, 0, 0);color:#e42628"><s>49,70 €</s></mark> <strong>Vous économisez 70%</strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<div class="wp-block-buttons has-custom-font-size has-medium-font-size is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-ed107d7f wp-block-buttons-is-layout-flex" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:var(--wp--preset--spacing--10)">
-<div class="wp-block-button has-custom-width wp-block-button__width-75"><a class="btn-buy-now wp-block-button__link" href="https://pay.hotmart.com/EXCEL_FR_PLACEHOLDER?checkoutMode=10" style="border-radius:20px;background-color:#4caf50;box-shadow:var(--wp--preset--shadow--natural)"><strong>COMMANDER MAINTENANT</strong></a></div>
-</div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:30px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-top:0;margin-right:var(--wp--preset--spacing--60);margin-bottom:0;margin-left:var(--wp--preset--spacing--60)"><strong>Aujourd'hui, Excel n'est plus une compétence optionnelle.</strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-top:0;margin-right:var(--wp--preset--spacing--60);margin-bottom:0;margin-left:var(--wp--preset--spacing--60)">C’est l’un des moyens les plus rapides de devenir plus précieux au travail, de gagner plus d’argent et d’économiser</p>
-<p class="has-text-align-center wp-block-paragraph" style="margin-top:0;margin-right:var(--wp--preset--spacing--60);margin-bottom:0;margin-left:var(--wp--preset--spacing--60)">un temps précieux chaque semaine.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-top:0;margin-right:var(--wp--preset--spacing--60);margin-bottom:0;margin-left:var(--wp--preset--spacing--60)">Mais la plupart des gens ne l'apprennent jamais correctement parce que les tutoriels sont déroutants, obsolètes ou terriblement ennuyeux.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center wp-block-paragraph"><strong>Ce pack change la donne.</strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center wp-block-paragraph">Vous passerez d'un sentiment de frustration et de dépassement... à quelqu'un d'organisé, d'efficace et confiant.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center wp-block-paragraph">Et en ce moment, vous pouvez obtenir l'intégralité du <strong>Pack Maîtrise d'Excel 2026</strong> à un prix incroyable de <strong>-70%</strong>.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<p class="has-text-align-center wp-block-paragraph" style="margin-top:0;margin-right:var(--wp--preset--spacing--60);margin-bottom:0;margin-left:var(--wp--preset--spacing--60)">Cela signifie que vous obtenez <strong>3 livres Excel complets + des bonus</strong> pour moins que le coût d'un seul cours en ligne. Téléchargement numérique direct et instantané (Une fois votre paiement finalisé, vous aurez immédiatement la possibilité de télécharger le(s) produit(s) depuis la page de confirmation d'achat, et vous recevrez également un e-mail de téléchargement peu de temps après).</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<hr class="wp-block-separator has-text-color has-base-2-color has-alpha-channel-opacity has-base-2-background-color has-background is-style-wide"/>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:20px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<p class="has-text-align-center has-large-font-size wp-block-paragraph" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><strong>Pourquoi attendre ? </strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center has-medium-font-size wp-block-paragraph" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><strong>Si vous avez déjà dit :</strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center has-medium-font-size wp-block-paragraph" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">👉 « J'ai besoin d'améliorer mes compétences sur Excel. »</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center wp-block-paragraph">👉 « Je veux de meilleures opportunités au travail. »</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center wp-block-paragraph">👉 « J'en ai marre de perdre mon temps sur des feuilles de calcul. »</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center has-medium-font-size wp-block-paragraph" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">👉 « J'aimerais que quelqu'un m'explique Excel simplement... »</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center has-medium-font-size wp-block-paragraph" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">Alors, c'est exactement ce que vous cherchiez.</p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:10px"></div>
-<p class="has-text-align-center has-medium-font-size wp-block-paragraph" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><strong>N'attendez pas. Améliorez vos compétences, gagnez du temps et maîtrisez enfin Excel aujourd'hui.</strong></p>
-<div aria-hidden="true" class="wp-block-spacer" style="height:30px"></div>
-<hr class="wp-block-separator has-text-color has-base-2-color has-alpha-channel-opacity has-base-2-background-color has-background is-style-wide"/>
-<div aria-hidden="true" class="wp-block-spacer" style="height:30px"></div>
-<div aria-hidden="true" class="wp-block-spacer" style="height:0px;width:0px"></div>
-<p class="has-text-align-center has-medium-font-size wp-block-paragraph" style="padding-right:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><strong><strong><em><strong>Commandez maintenant </strong>et économisez 70% avant que cette offre limitée ne disparaisse. </em></strong></strong></p>
-</div>
-<p class="has-text-align-center has-large-font-size wp-block-paragraph" style="border-radius:0px"><em><em>Voici ce que l'on dit de nous</em> :</em></p>
-
-<section class="testimonials-section">
+<!-- BUNDLE / BOOKS SECTION & SECOND CTA -->
+<section class="bundle-section" style="padding-top: 2rem;">
 <div class="container">
-<h2 class="text-center font-heading bold italic" style="font-size: 2.2rem; margin-bottom: 2.5rem; color: #ffffff;">Voici ce que disent nos lecteurs :</h2>
+<img alt="Pack Excel Maîtrise" class="bundle-image" src="images/hero-fr.webp" style="width: 100%; max-width: 700px; margin: 0 auto;"/>
+<div class="cta-box" style="margin-top: 1rem; background: var(--bg-white);">
+<div class="star-rating">
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+</div>
+<h3>Excel Maîtrise + 2 Bonus</h3>
+<div class="price-container">
+<div class="current-price">€19.90</div>
+<div class="savings">
+<s>€59.70</s> <strong>Vous économisez 70%</strong>
+</div>
+</div>
+<a class="btn-buy-now" href="https://pay.hotmart.com/B105955101F?checkoutMode=10">
+                    Commander maintenant 
+                </a>
+</div>
+</div>
+</section>
+<section class="text-section text-center">
+<div class="container">
+<div style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+<p>Cela signifie que vous recevez <strong>3 livres Excel complets + des bonus</strong> pour moins cher qu’un seul cours en ligne.</p>
+<p>Téléchargement numérique instantané : une fois le paiement terminé, vous pourrez télécharger vos produits directement depuis la page finale d’achat. Vous recevrez aussi un e-mail de téléchargement peu après.</p>
+<div class="conversion-highlight-box" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.02)); border: 2px dashed var(--accent-gold); border-radius: 12px; padding: 2rem 1.5rem; margin: 3rem auto 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+<h3 class="font-heading bold italic" style="font-size: 2.2rem; margin-bottom: 0.8rem; color: var(--accent-gold);">Pourquoi attendre un jour de plus ?</h3>
+<p style="font-size: 1.3rem; line-height: 1.6; margin-bottom: 1.5rem; color: #f8fafc; font-weight: 600;"><span style="font-size: 1.4rem;">👉</span> Arrêtez de perdre du temps avec des tâches manuelles.</p>
+<a class="bold italic" href="https://pay.hotmart.com/B105955101F?checkoutMode=10" style="font-size: 1.5rem; color: #ffffff; background: var(--red-alert); display: inline-block; padding: 12px 24px; border-radius: 6px; box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4); text-decoration: none; width: 100%; max-width: 380px;">Profitez de votre pack à -70% aujourd’hui !</a>
+</div>
+</div>
+<div class="divider"></div>
+<h2 class="font-serif bold italic mt-3 mb-2" style="font-size: 2.2rem; color: #ffffff;">Voici ce qu’en disent nos clients :</h2>
+<!-- HTML Testimonial Cards Replicating the Original Images -->
 <div class="testimonials-grid">
+<!-- Testimonial 1 -->
 <div class="testimonial-card">
 <div class="testimonial-header">
-<div class="testimonial-avatar" style="background-color: var(--primary);">K</div>
+
 <div class="testimonial-author-info">
-<span class="testimonial-name" style="color: #ffffff;">Valérie D.</span>
-<span class="verified-buyer" style="color: #10b981;">
-<i data-lucide="check-circle" style="width: 14px; vertical-align: middle;"></i> Acheteur vérifié
-            </span>
+<span class="testimonial-name">Michael B.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Acheteur vérifié
+                            </span>
 </div>
 </div>
-<div class="testimonial-stars" style="color: #fbbf24; margin-bottom: 0.75rem;">
+<div class="testimonial-stars">
 <i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
 </div>
-<div class="testimonial-title" style="color: #ffffff; font-weight: 800; font-size: 1.15rem; margin-bottom: 0.5rem;">« M'a fait gagner des heures de travail ! »</div>
-<div class="testimonial-text" style="color: #cbd5e1; font-size: 1.1rem; line-height: 1.6;">« Les astuces de VBA et d'automatisation valent à elles seules dix fois le prix. J'ai configuré une macro simple pour nettoyer mes rapports hebdomadaires et maintenant cela me prend 5 secondes au lieu de 45 minutes. »</div>
+<div class="testimonial-title">"Ma façon de travailler a changé."</div>
+<div class="testimonial-text">"Je passais 3 heures chaque vendredi à mettre en forme mes rapports. Avec les raccourcis appris ici, je le fais maintenant en 15 minutes. Un excellent investissement."</div>
 </div>
+<!-- Testimonial 2 -->
 <div class="testimonial-card">
 <div class="testimonial-header">
-<div class="testimonial-avatar" style="background-color: var(--primary);">T</div>
+
 <div class="testimonial-author-info">
-<span class="testimonial-name" style="color: #ffffff;">Thierry M.</span>
-<span class="verified-buyer" style="color: #10b981;">
-<i data-lucide="check-circle" style="width: 14px; vertical-align: middle;"></i> Acheteur vérifié
-            </span>
+<span class="testimonial-name">Jessica P.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Acheteur vérifié
+                            </span>
 </div>
 </div>
-<div class="testimonial-stars" style="color: #fbbf24; margin-bottom: 0.75rem;">
+<div class="testimonial-stars">
 <i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
 </div>
-<div class="testimonial-title" style="color: #ffffff; font-weight: 800; font-size: 1.15rem; margin-bottom: 0.5rem;">« Mon responsable a été très impressionné »</div>
-<div class="testimonial-text" style="color: #cbd5e1; font-size: 1.1rem; line-height: 1.6;">« J'ai reconstruit notre suivi de projet en utilisant la mise en page du tableau de bord du livre 2. Mon responsable a été impressionné par la clarté du design et les graphiques interactifs. Un pack hautement recommandé. »</div>
+<div class="testimonial-title">"Très simple à suivre."</div>
+<div class="testimonial-text">"Excel m’intimidait toujours, mais ces guides rendent tout beaucoup plus simple. Le bonus ChatGPT est impressionnant !"</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+
+<div class="testimonial-author-info">
+<span class="testimonial-name">David & Lisa</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Acheteur vérifié
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"J’ai obtenu ma promotion !"</div>
+<div class="testimonial-text">"Mon responsable a remarqué mes nouvelles compétences presque immédiatement. Les sections sur les tableaux croisés dynamiques et RECHERCHEV m’ont énormément aidé."</div>
+</div>
+<!-- Testimonial 4 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+
+<div class="testimonial-author-info">
+<span class="testimonial-name">Robert W.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Acheteur vérifié
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Des modèles incroyables !"</div>
+<div class="testimonial-text">"Les plus de 50 modèles prêts à l’emploi m’ont fait gagner un temps précieux. J’utilise le suivi d’inventaire et le tableau de bord financier tous les jours."</div>
 </div>
 </div>
 </div>
 </section>
-
-<div aria-hidden="true" class="wp-block-spacer" style="height:40px"></div>
-<p class="wp-block-paragraph"></p>
-</div></main>
-
-<footer style="background: #022c22; color: #ffffff; text-align: center; padding: 2.5rem 1rem; font-size: 0.9rem; margin-top: 4rem;">
-<div style="width: 100%; max-width: 850px; margin: 0 auto; padding: 0 20px;">
-<h4 style="font-weight: bold; margin-bottom: 0.5rem; color: #ffffff; font-size: 1.2rem;">Bibliothèque Office Excel</h4>
-<p style="color: #ffffff; margin-bottom: 1rem;">© Tous droits réservés.</p>
+<!-- FOOTER -->
+<footer style="background: #030712; color: #94a3b8; text-align: center; padding: 2.5rem 1rem; font-size: 0.9rem;">
+<div class="container">
+<h4 class="font-serif bold mb-1" style="color: #cbd5e1; font-size: 1.2rem;">Excel Maîtrise</h4>
+<p>© Tous droits réservés.</p>
 <p style="margin-top: 1rem;">
-<a href="mailto:trinityag01@gmail.com" style="color: #ffffff; text-decoration: none;">Contactez-nous</a>
+<a href="mailto:trinityag01@gmail.com" style="color: #cbd5e1; text-decoration: none;">Nous contacter</a>
 </p>
 </div>
 </footer>
-</div>
-<script type="speculationrules">
-{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/twentytwentyfour/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
-</script>
+<!-- Initialize Lucide Icons -->
 <script>
-		(function () {
-			var c = document.body.className;
-			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
-			document.body.className = c;
-		})();
-	</script>
-<link href="https://atlas-library.com/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css?ver=wc-10.7.0" id="wc-blocks-style-css" media="all" rel="stylesheet"/>
-<script id="ip-countdown-script-js-extra">
-var ip_countdown_ajax = {"ajax_url":"https://atlas-library.com/wp-admin/admin-ajax.php","nonce":"b470004950"};
-//# sourceURL=ip-countdown-script-js-extra
-</script>
-<script id="ip-countdown-script-js" src="https://atlas-library.com/wp-content/plugins/ip-countdown-by-niro/assets/countdown.js?ver=1.0.0"></script>
-<script id="wpcot-frontend-js-extra">
-var wpcot_vars = {"wc_ajax_url":"/?wc-ajax=%%endpoint%%","a_nonce":"818ca1c121","r_nonce":"e544d529e6","user_id":"0","click_again":"no"};
-//# sourceURL=wpcot-frontend-js-extra
-</script>
-<script id="wpcot-frontend-js" src="https://atlas-library.com/wp-content/plugins/wpc-order-tip/assets/js/frontend.js?ver=3.2.7"></script>
-
-<script id="wc-order-attribution-js-extra">
-var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"base64":false,"ajaxurl":"https://atlas-library.com/wp-admin/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","utm_source_platform":"current.plt","utm_creative_format":"current.fmt","utm_marketing_tactic":"current.tct","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
-//# sourceURL=wc-order-attribution-js-extra
-</script>
-
-<script id="wp-emoji-settings" type="application/json">
-{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://atlas-library.com/wp-includes/js/wp-emoji-release.min.js?ver=7.0"}}
-</script>
-<script type="module">
-/*! This file is auto-generated */
-const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
-//# sourceURL=https://atlas-library.com/wp-includes/js/wp-emoji-loader.min.js
-</script>
-
-<!-- Initialize Lucide Icons & Countdown -->
-<script>
-    lucide.createIcons();
-    
-    // Countdown Timer Logic
-    function startTimer() {
-        const hoursEl = document.getElementById("timer-hours");
-        const minutesEl = document.getElementById("timer-minutes");
-        const secondsEl = document.getElementById("timer-seconds");
+        lucide.createIcons();
         
-        if (!hoursEl || !minutesEl || !secondsEl) return;
-        
-        let hours = parseInt(hoursEl.innerText, 10);
-        let minutes = parseInt(minutesEl.innerText, 10);
-        let seconds = parseInt(secondsEl.innerText, 10);
-        
-        let totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
-        
-        const timerInterval = setInterval(() => {
-            if (totalSeconds <= 0) {
-                clearInterval(timerInterval);
-                return;
+        // Countdown Timer Logic
+                function startTimer() {
+            const hoursEl = document.getElementById("timer-hours");
+            const minutesEl = document.getElementById("timer-minutes");
+            const secondsEl = document.getElementById("timer-seconds");
+            
+            if (!hoursEl || !minutesEl || !secondsEl) return;
+            
+            let totalSeconds = 10 * 60; // 10 minutes
+            let savedTime = localStorage.getItem('excel_fr_timer');
+            if (savedTime) {
+                let parsed = parseInt(savedTime, 10);
+                if (!isNaN(parsed) && parsed > 0 && parsed <= 600) {
+                    totalSeconds = parsed;
+                }
             }
             
-            totalSeconds--;
+            function updateDisplay() {
+                if (totalSeconds <= 0) totalSeconds = 10 * 60;
+                
+                let h = Math.floor(totalSeconds / 3600);
+                let m = Math.floor((totalSeconds % 3600) / 60);
+                let s = totalSeconds % 60;
+                
+                hoursEl.innerText = String(h).padStart(2, '0');
+                minutesEl.innerText = String(m).padStart(2, '0');
+                secondsEl.innerText = String(s).padStart(2, '0');
+            }
             
-            let h = Math.floor(totalSeconds / 3600);
-            let m = Math.floor((totalSeconds % 3600) / 60);
-            let s = totalSeconds % 60;
+            updateDisplay();
             
-            hoursEl.innerText = String(h).padStart(2, '0');
-            minutesEl.innerText = String(m).padStart(2, '0');
-            secondsEl.innerText = String(s).padStart(2, '0');
-        }, 1000);
-    }
-    
-    startTimer();
-</script>
+            const timerInterval = setInterval(() => {
+                totalSeconds--;
+                localStorage.setItem('excel_fr_timer', totalSeconds);
+                updateDisplay();
+            }, 1000);
+        }
+        
+        startTimer();
+    </script>
 </body>
 </html>
