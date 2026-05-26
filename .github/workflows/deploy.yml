@@ -42,6 +42,9 @@ on:
       - 'excel/**'
       - 'excel-plans-fr/**'
       - 'excel-plans-de/**'
+      - 'excel-plans-es/**'
+      - 'excel-plans-it/**'
+      - 'excel-plans-pt/**'
       - '.github/workflows/**'
 
 jobs:
@@ -98,6 +101,9 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/excel
             sudo mkdir -p /var/www/skillvault.blog/excel-plans-fr
             sudo mkdir -p /var/www/skillvault.blog/excel-plans-de
+            sudo mkdir -p /var/www/skillvault.blog/excel-plans-es
+            sudo mkdir -p /var/www/skillvault.blog/excel-plans-it
+            sudo mkdir -p /var/www/skillvault.blog/excel-plans-pt
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog || true
 
       # ── BIBLE1 ────────────────────────────────────────────────────────────────
@@ -484,4 +490,34 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "excel-plans-de/*"
           target: "/var/www/skillvault.blog/excel-plans-de"
+          strip_components: 1
+
+      - name: Deploy 'excel-plans-es' to skillvault.blog/excel-plans-es
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "excel-plans-es/*"
+          target: "/var/www/skillvault.blog/excel-plans-es"
+          strip_components: 1
+
+      - name: Deploy 'excel-plans-it' to skillvault.blog/excel-plans-it
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "excel-plans-it/*"
+          target: "/var/www/skillvault.blog/excel-plans-it"
+          strip_components: 1
+
+      - name: Deploy 'excel-plans-pt' to skillvault.blog/excel-plans-pt
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "excel-plans-pt/*"
+          target: "/var/www/skillvault.blog/excel-plans-pt"
           strip_components: 1
