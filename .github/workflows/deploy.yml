@@ -54,7 +54,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          lfs: true
+          lfs: false
 
       - name: Prepare VPS Directories for Deployments
         uses: appleboy/ssh-action@v0.1.10
