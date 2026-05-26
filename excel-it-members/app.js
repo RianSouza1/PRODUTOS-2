@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Welcome, Member</h1><p>What would you like to access today?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Benvenuto, Membro</h1><p>A quali materiali vorresti accedere oggi?</p></div></div>
           
   
           <div class="home-grid">
@@ -203,8 +203,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="book-open"></i>
               </div>
               <div>
-                 <div class="home-block-title">BOOKS</div>
-                 <div class="home-block-subtitle">Books and PDF Materials</div>
+                 <div class="home-block-title">LIBRI</div>
+                 <div class="home-block-subtitle">Libri e materiali PDF</div>
               </div>
             </a>
             
@@ -213,8 +213,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="play-circle"></i>
               </div>
               <div>
-                 <div class="home-block-title">VIDEOS</div>
-                 <div class="home-block-subtitle">Your Video Courses</div>
+                 <div class="home-block-title">VIDEO</div>
+                 <div class="home-block-subtitle">Le tue video lezioni</div>
               </div>
             </a>
   
@@ -223,8 +223,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="message-square"></i>
               </div>
               <div>
-                 <div class="home-block-title">CONTACT</div>
-                 <div class="home-block-subtitle">Help and Support</div>
+                 <div class="home-block-title">CONTATTO</div>
+                 <div class="home-block-subtitle">Aiuto e supporto tecnico</div>
               </div>
             </a>
   
@@ -264,10 +264,10 @@ document.addEventListener("DOMContentLoaded", () => {
               
               <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: 1.5rem;">
                  <a href="${bk.downloadUrl}" target="_blank" class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: var(--primary); color: #FFF;">
-                    <i data-lucide="book-open"></i> Read Now
+                    <i data-lucide="book-open"></i> Leggi ora
                  </a>
                  <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
-                    <i data-lucide="download"></i> Download PDF
+                    <i data-lucide="download"></i> Scarica PDF
                  </a>
               </div>
            </div>
@@ -278,19 +278,19 @@ document.addEventListener("DOMContentLoaded", () => {
     let compactHTML = '';
     if (compactBooks.length > 0) {
       compactHTML = `
-      <h2 class="section-divider-title">Additional Plans & Projects</h2>
+      <h2 class="section-divider-title">Risorse ed esercizi aggiuntivi</h2>
       <div class="compact-book-list">
         ${compactBooks.map(bk => `
           <div class="compact-book-card">
             <div class="compact-book-info">
               <h4 class="compact-book-title">${bk.title}</h4>
-              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'Plans'}</span>
+              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'Risorsa'}</span>
             </div>
             <div class="compact-book-actions">
-              <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Read Now">
+              <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Leggi ora">
                 <i data-lucide="book-open"></i>
               </a>
-              <a href="${bk.downloadUrl}" download class="compact-action-btn btn-download" title="Download PDF">
+              <a href="${bk.downloadUrl}" download class="compact-action-btn btn-download" title="Scarica PDF">
                 <i data-lucide="download"></i>
               </a>
             </div>
@@ -302,7 +302,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Your Materials</h1><p>Tap a collection below to view and download your books.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>I tuoi Materiali</h1><p>Clicca su un libro qui sotto per consultarlo e scaricarlo.</p></div></div>
           
           <div class="list-container">
             ${featuredHTML || '<p>No materials are currently registered.</p>'}
@@ -365,7 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Support</h1><p>Your satisfaction is our priority.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Supporto Tecnico</h1><p>La tua soddisfazione è la nostra massima priorità.</p></div></div>
           
   
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
@@ -373,9 +373,9 @@ document.addEventListener("DOMContentLoaded", () => {
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
              </div>
              
-             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Send a Message</h3>
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Invia un messaggio</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                Copy the email address below and send us your question. Our support team will reply as soon as possible.
+                Copia l'indirizzo email qui sotto e inviaci la tua domanda. Il nostro team di supporto ti risponderà il prima possibile.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
@@ -397,11 +397,11 @@ document.addEventListener("DOMContentLoaded", () => {
     rootEl.innerHTML = `
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Your Courses</h1><p>Stay up to date with your online woodworking courses</p></div></div>
+        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>I Tuoi Corsi Video</h1><p>Domina Excel passo dopo passo con le nostre video lezioni esclusive.</p></div></div>
         
-        <div style="background-color: rgba(255, 215, 0, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
-           <i data-lucide="clock" style="width: 20px; height: 20px; flex-shrink: 0; color: #D97706;"></i>
-           <span>New updates coming soon</span>
+        <div style="background-color: rgba(16, 185, 129, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
+           <i data-lucide="clock" style="width: 20px; height: 20px; flex-shrink: 0; color: #10B981;"></i>
+           <span>Nuove lezioni disponibili a breve</span>
         </div>
 
         <div id="video-playlist-items">

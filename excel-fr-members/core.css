@@ -1068,78 +1068,78 @@ body {
 
 
 /* =========================================================================
-   WOODWORKING THEME OVERRIDES — Warm Wood Tones
+   EXCEL MASTER — Premium Emerald/Forest Green Palette
    ========================================================================= */
 :root {
-    --bg-main: #1a120b;
-    --bg-card: #2a1f14;
-    --text-dark: #f5ebe0;
-    --text-muted: #c4a882;
-    --border-light: rgba(196, 168, 130, 0.15);
-    --primary: #C68B3E;
-    --primary-hover: #A0712F;
-    --primary-light: rgba(198, 139, 62, 0.12);
-    --secondary: #8B6F47;
-    --success: #6BE59E;
-    --success-bg: rgba(107, 229, 158, 0.15);
-    --bg-body: #1a120b;
+    --bg-main: #042416;
+    --bg-card: #0c3823;
+    --text-dark: #f0fdf4;
+    --text-muted: #86efac;
+    --border-light: rgba(134, 239, 172, 0.15);
+    --primary: #10B981;
+    --primary-hover: #059669;
+    --primary-light: rgba(16, 185, 129, 0.12);
+    --secondary: #059669;
+    --success: #34d399;
+    --success-bg: rgba(52, 211, 153, 0.15);
+    --bg-body: #042416;
 }
 
 html, body {
     background-color: var(--bg-main);
     background-image:
-        radial-gradient(circle at 20% 30%, rgba(198, 139, 62, 0.06) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(139, 111, 71, 0.04) 0%, transparent 40%);
+        radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(5, 150, 105, 0.05) 0%, transparent 40%);
 }
 
 .main-content {
     background-color: var(--bg-main);
     background-image:
-        radial-gradient(circle at 20% 30%, rgba(198, 139, 62, 0.06) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(139, 111, 71, 0.04) 0%, transparent 40%);
+        radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(5, 150, 105, 0.05) 0%, transparent 40%);
 }
 
 .app-header {
-    background: rgba(26, 18, 11, 0.97) !important;
+    background: rgba(4, 36, 22, 0.97) !important;
 }
 
 .app-header::before {
-    background: linear-gradient(90deg, #C68B3E, #E8C98A, #C68B3E);
+    background: linear-gradient(90deg, #10B981, #a7f3d0, #10B981);
 }
 
 .bottom-tab-bar {
-    background: rgba(26, 18, 11, 0.97);
+    background: rgba(4, 36, 22, 0.97);
 }
 
 .hero-card {
-    background: linear-gradient(135deg, #C68B3E, #8B6F47);
-    box-shadow: 0 8px 24px rgba(198, 139, 62, 0.35);
+    background: linear-gradient(135deg, #10B981, #059669);
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
 }
 
-/* Pre-page Woodworking */
+/* Pre-page Excel */
 .pre-page-overlay {
-    color: #f5ebe0;
+    color: #f0fdf4;
 }
 .pre-page-bg {
-    background: linear-gradient(135deg, #1a120b 0%, #2a1f14 40%, #3d2b18 100%);
+    background: linear-gradient(135deg, #042416 0%, #0c3823 40%, #064e3b 100%);
 }
 .pre-page-bg::after {
     content: '';
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 25% 25%, rgba(198, 139, 62, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(139, 111, 71, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 25% 25%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(5, 150, 105, 0.1) 0%, transparent 50%);
 }
 .pre-page-features span {
-    background: rgba(198, 139, 62, 0.15);
-    border: 1px solid rgba(198, 139, 62, 0.25);
-    color: #E8C98A;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    color: #a7f3d0;
 }
 .pre-page-content button {
-    background: linear-gradient(135deg, #C68B3E, #E8C98A);
-    color: #1a120b;
-    box-shadow: 0 4px 20px rgba(198, 139, 62, 0.4);
+    background: linear-gradient(135deg, #10B981, #a7f3d0);
+    color: #042416;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
 }
 
 /* =========================================================================

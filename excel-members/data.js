@@ -11,7 +11,20 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+        {
+            id: "v1",
+            title: "Formation Excel Débutant — Les Bases Fondamentales",
+            duration: "Formation Complète",
+            embedUrl: "https://www.youtube.com/embed/wHGMBjkce8o?list=PL8sQnj6qF1Lv6ejdklq25MGfPJFxThMw6"
+        },
+        {
+            id: "v2",
+            title: "Tableaux de Bord & Analyse Visuelle",
+            duration: "Formation Avancée",
+            embedUrl: "https://www.youtube.com/embed/N6m78wxhMys?list=PLXGfRYcOx3jg_ijUIS9iFfCXhCcTS6yIT"
+        }
+    ],
 
     books: [],
 
