@@ -446,7 +446,7 @@ const APP_DATA = {
             title: "Excel Expert",
             description: "Torne-se um especialista em Microsoft Excel e domine as ferramentas mais avançadas do mercado.",
             badgeText: "GUIA EXPERT",
-            badgeColor: "#10B981",
+            badgeColor: "#047857",
             features: ["Fórmulas complexas", "Análise de dados avançada", "Dicas de especialista"],
             downloadUrl: "materials/excel_expert.pdf",
             coverImage: "assets/covers/cover_excel_expert.png",
@@ -462,6 +462,17 @@ const APP_DATA = {
             downloadUrl: "materials/manual_excel_avancado.pdf",
             coverImage: "assets/covers/cover_manual_excel_avancado.png",
             buttonText: "Baixar Manual"
+        },
+        {
+            id: "b3",
+            title: "Cursos de Excel",
+            description: "Guia prático com exercícios e técnicas essenciais para dominar o Microsoft Excel do básico ao avançado.",
+            badgeText: "GUIA PRÁTICO",
+            badgeColor: "#10B981",
+            features: ["Exercícios práticos", "Técnicas essenciais", "Do básico ao avançado"],
+            downloadUrl: "materials/cursos_excel.pdf",
+            coverImage: "assets/covers/cover_cursos_excel.png",
+            buttonText: "Baixar Guia"
         }
     ],
 

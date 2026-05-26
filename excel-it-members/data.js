@@ -440,7 +440,7 @@ const APP_DATA = {
             title: "Manuale Pratico di Excel",
             description: "La guida completa e pratica per imparare ad usare Microsoft Excel da zero, passo dopo passo.",
             badgeText: "GUIDA PRINCIPALE",
-            badgeColor: "#10B981",
+            badgeColor: "#047857",
             features: ["Guida passo dopo passo", "Pratica e semplice", "Per tutti i livelli"],
             downloadUrl: "materials/manuale_pratico_excel.pdf",
             coverImage: "assets/covers/cover_manuale_pratico.png",

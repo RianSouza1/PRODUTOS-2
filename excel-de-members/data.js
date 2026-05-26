@@ -464,7 +464,7 @@ const APP_DATA = {
             title: "Microsoft Excel — Das Handbuch",
             description: "Das umfassende Handbuch für Microsoft Excel. Lernen Sie alle Funktionen von A bis Z kennen.",
             badgeText: "HAUPTHANDBUCH",
-            badgeColor: "#10B981",
+            badgeColor: "#047857",
             features: ["Umfassendes Handbuch", "Alle Funktionen erklärt", "Für Anfänger & Fortgeschrittene"],
             downloadUrl: "materials/excel_2016_handbuch.pdf",
             coverImage: "assets/covers/cover_excel_handbuch.png",
