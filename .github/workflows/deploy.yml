@@ -1,4 +1,4 @@
-name: Deploy to VPS
+﻿name: Deploy to VPS
 
 on:
   push:
@@ -63,7 +63,7 @@ jobs:
           lfs: true
 
       - name: Prepare VPS Directories for Deployments
-        uses: appleboy/ssh-action@v0.1.10
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -118,10 +118,10 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/excel-pt-m
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog || true
 
-      # ── BIBLE1 ────────────────────────────────────────────────────────────────
+      # â”€â”€ BIBLE1 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
       - name: Deploy 'bible1' to storeinfocus.com/bible1
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -131,7 +131,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'bible1-members' to storeinfocus.com/bible1-members
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -141,7 +141,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'bible1-es' to storeinfocus.com/bible1-es
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -151,7 +151,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'bible1-it' to storeinfocus.com/bible1-it
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -160,10 +160,10 @@ jobs:
           target: "/var/www/storeinfocus.com/bible1-it"
           strip_components: 1
 
-      # ── SYSTEMATIC THEOLOGY ───────────────────────────────────────────────────
+      # â”€â”€ SYSTEMATIC THEOLOGY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
       - name: Deploy 'sc' to storeinfocus.com/sc
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -173,7 +173,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'sc-es' to storeinfocus.com/sc-es
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -183,7 +183,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'sc-it' to storeinfocus.com/sc-it
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -193,7 +193,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'sc-pt' to storeinfocus.com/sc-pt
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -202,10 +202,10 @@ jobs:
           target: "/var/www/storeinfocus.com/sc-pt"
           strip_components: 1
 
-      # ── PROSPERITY ────────────────────────────────────────────────────────────
+      # â”€â”€ PROSPERITY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
       - name: Deploy 'py' to storeinfocus.com/py
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -215,7 +215,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'py-es' to storeinfocus.com/py-es
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -225,7 +225,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'py-fr' to storeinfocus.com/py-fr
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -234,10 +234,10 @@ jobs:
           target: "/var/www/storeinfocus.com/py-fr"
           strip_components: 1
 
-      # ── WOODWORKING ───────────────────────────────────────────────────────────────
+      # â”€â”€ WOODWORKING â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
       - name: Deploy 'WW' to skillvault.blog/ww
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -247,7 +247,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'ww-de' to skillvault.blog/ww-de
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -257,7 +257,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'ww-fr' to skillvault.blog/ww-fr
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -267,7 +267,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'ww-it' to skillvault.blog/ww-it
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -277,7 +277,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'ww-plans-fr' to skillvault.blog/ww-plans-fr
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -287,7 +287,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'ww-plans-it' to skillvault.blog/ww-plans-it
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -297,7 +297,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'mw-de' to skillvault.blog/mw-de
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -307,7 +307,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'mw' to skillvault.blog/mw
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -317,7 +317,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'bkp' to skillvault.blog/bkp
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -327,7 +327,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'bkp-de' to skillvault.blog/bkp-de
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -337,7 +337,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'bkp-es' to skillvault.blog/bkp-es
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -347,7 +347,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'bkp-pt' to skillvault.blog/bkp-pt
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -357,7 +357,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'hx-fr' to skillvault.blog/hx-fr
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -367,7 +367,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'hx-it' to skillvault.blog/hx-it
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -376,10 +376,10 @@ jobs:
           target: "/var/www/skillvault.blog/hx-it"
           strip_components: 1
 
-      # ── BEEKEEPING MEMBERS AREAS ────────────────────────────────────────────
+      # â”€â”€ BEEKEEPING MEMBERS AREAS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
       - name: Deploy 'beekeeping-members' to skillvault.blog/bkp-m
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -389,7 +389,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'beekeeping-de-members' to skillvault.blog/bkp-de-m
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -399,7 +399,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'beekeeping-fr-members' to skillvault.blog/hx-fr-m
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -409,7 +409,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'beekeeping-it-members' to skillvault.blog/hx-it-m
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -419,7 +419,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'beekeeping-es-members' to skillvault.blog/hx-es-m
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -429,7 +429,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'beekeeping-pt-members' to skillvault.blog/hx-pt-m
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -438,10 +438,10 @@ jobs:
           target: "/var/www/skillvault.blog/hx-pt-m"
           strip_components: 1
 
-      # ── WOODWORKING MEMBERS AREAS ───────────────────────────────────────────
+      # â”€â”€ WOODWORKING MEMBERS AREAS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
       - name: Deploy 'ww-members' to skillvault.blog/ww-m
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -451,7 +451,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'ww-de-members' to skillvault.blog/ww-de-m
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -460,10 +460,10 @@ jobs:
           target: "/var/www/skillvault.blog/ww-de-m"
           strip_components: 1
 
-      # ── METALWORKING MEMBERS AREAS ──────────────────────────────────────────
+      # â”€â”€ METALWORKING MEMBERS AREAS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
       - name: Deploy 'metalon-members' to skillvault.blog/mw-m
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -472,10 +472,10 @@ jobs:
           target: "/var/www/skillvault.blog/mw-m"
           strip_components: 1
 
-      # ── EXCEL ───────────────────────────────────────────────────────────────────
+      # â”€â”€ EXCEL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
       - name: Deploy 'excel' to skillvault.blog/excel
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -485,7 +485,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'excel-plans-fr' to skillvault.blog/excel-plans-fr
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -495,7 +495,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'excel-plans-de' to skillvault.blog/excel-plans-de
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -505,7 +505,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'excel-plans-es' to skillvault.blog/excel-plans-es
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -515,7 +515,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'excel-plans-it' to skillvault.blog/excel-plans-it
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -525,7 +525,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'excel-plans-pt' to skillvault.blog/excel-plans-pt
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -535,7 +535,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'excel-members' to skillvault.blog/excel-m
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -545,7 +545,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'excel-de-members' to skillvault.blog/excel-de-m
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -555,7 +555,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'excel-fr-members' to skillvault.blog/excel-fr-m
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -565,7 +565,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'excel-es-members' to skillvault.blog/excel-es-m
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -575,7 +575,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'excel-it-members' to skillvault.blog/excel-it-m
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
@@ -585,7 +585,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'excel-pt-members' to skillvault.blog/excel-pt-m
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
