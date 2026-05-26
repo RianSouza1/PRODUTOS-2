@@ -35,6 +35,30 @@ const APP_DATA = {
             title: "Lektion 4 — Erste Berechnungen, Formeln und Tabellen",
             duration: "Aufbaukurs",
             embedUrl: "https://www.youtube.com/embed/-kiutV1AE7I?list=PLD93Zs0BCugsZFGXQfP0hBSt7tS7eSUDj&index=4"
+        },
+        {
+            id: "v5",
+            title: "Lektion 5 — Aufbaukurs: Fortgeschrittene Berechnungen",
+            duration: "Aufbaukurs",
+            embedUrl: "https://www.youtube.com/embed/jfE0j_8efUc?list=PLxSH6SY3ZgVRXWTwK01vO_3nAPenq8kp6"
+        },
+        {
+            id: "v6",
+            title: "Lektion 6 — Aufbaukurs: Absolute & Relative Bezüge",
+            duration: "Aufbaukurs",
+            embedUrl: "https://www.youtube.com/embed/jfE0j_8efUc?list=PLxSH6SY3ZgVRXWTwK01vO_3nAPenq8kp6&index=2"
+        },
+        {
+            id: "v7",
+            title: "Lektion 7 — Aufbaukurs: Daten importieren und filtern",
+            duration: "Aufbaukurs",
+            embedUrl: "https://www.youtube.com/embed/jfE0j_8efUc?list=PLxSH6SY3ZgVRXWTwK01vO_3nAPenq8kp6&index=3"
+        },
+        {
+            id: "v8",
+            title: "Lektion 8 — Aufbaukurs: Fortgeschrittene Tabellen & Pivots",
+            duration: "Aufbaukurs",
+            embedUrl: "https://www.youtube.com/embed/jfE0j_8efUc?list=PLxSH6SY3ZgVRXWTwK01vO_3nAPenq8kp6&index=4"
         }
     ],
 
