@@ -1,4 +1,4 @@
-﻿name: Deploy to VPS
+name: Deploy to VPS
 
 on:
   push:
@@ -18,6 +18,7 @@ on:
       - 'py-fr/**'
       - 'smoothies/**'
       - 'chickens/**'
+      - 'chickens-de/**'
       - 'Página modelo/**'
       - 'WW/**'
       - 'ww-de/**'
@@ -88,6 +89,7 @@ jobs:
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com || true
             sudo mkdir -p /var/www/skillvault.blog/ww
             sudo mkdir -p /var/www/skillvault.blog/chickens
+            sudo mkdir -p /var/www/skillvault.blog/chickens-al
             sudo mkdir -p /var/www/skillvault.blog/ww-de
             sudo mkdir -p /var/www/skillvault.blog/ww-fr
             sudo mkdir -p /var/www/skillvault.blog/ww-it
@@ -280,6 +282,16 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "chickens/*"
           target: "/var/www/skillvault.blog/chickens"
+          strip_components: 1
+
+      - name: Deploy 'chickens-de' to skillvault.blog/chickens-al
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "chickens-de/*"
+          target: "/var/www/skillvault.blog/chickens-al"
           strip_components: 1
 
       - name: Deploy 'ww-de' to skillvault.blog/ww-de
