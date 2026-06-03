@@ -133,8 +133,41 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/off-grid-fr
             sudo mkdir -p /var/www/skillvault.blog/off-grid-de
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog || true
+            sudo chmod -R 755 /var/www/skillvault.blog || true
 
-      # â”€â”€ BIBLE1 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+      # ── OFF GRID ───────────────────────────────────────────────────────────
+
+      - name: Deploy 'off-grid' to skillvault.blog/off-grid
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "off-grid/*"
+          target: "/var/www/skillvault.blog/off-grid"
+          strip_components: 1
+
+      - name: Deploy 'off-grid-fr' to skillvault.blog/off-grid-fr
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "off-grid-fr/*"
+          target: "/var/www/skillvault.blog/off-grid-fr"
+          strip_components: 1
+
+      - name: Deploy 'off-grid-de' to skillvault.blog/off-grid-de
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "off-grid-de/*"
+          target: "/var/www/skillvault.blog/off-grid-de"
+          strip_components: 1
+
+      # ── BIBLE1 ─────────────────────────────────────────────────────────────
 
       - name: Deploy 'bible1' to storeinfocus.com/bible1
         uses: appleboy/scp-action@v0.1.7
@@ -658,34 +691,4 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "excel-pt-members/*"
           target: "/var/www/skillvault.blog/excel-pt-m"
-          strip_components: 1
-
-      - name: Deploy 'off-grid' to skillvault.blog/off-grid
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USERNAME }}
-          key: ${{ secrets.VPS_SECRET }}
-          source: "off-grid/*"
-          target: "/var/www/skillvault.blog/off-grid"
-          strip_components: 1
-
-      - name: Deploy 'off-grid-fr' to skillvault.blog/off-grid-fr
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USERNAME }}
-          key: ${{ secrets.VPS_SECRET }}
-          source: "off-grid-fr/*"
-          target: "/var/www/skillvault.blog/off-grid-fr"
-          strip_components: 1
-
-      - name: Deploy 'off-grid-de' to skillvault.blog/off-grid-de
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USERNAME }}
-          key: ${{ secrets.VPS_SECRET }}
-          source: "off-grid-de/*"
-          target: "/var/www/skillvault.blog/off-grid-de"
           strip_components: 1
