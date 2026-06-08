@@ -17,6 +17,7 @@ on:
       - 'py-es/**'
       - 'py-fr/**'
       - 'smoothies/**'
+      - 'smoothies-members/**'
       - 'chickens/**'
       - 'chickens-de/**'
       - 'Página modelo/**'
@@ -89,6 +90,7 @@ jobs:
             sudo mkdir -p /var/www/storeinfocus.com/py-es
             sudo mkdir -p /var/www/storeinfocus.com/py-fr
             sudo mkdir -p /var/www/storeinfocus.com/smoot
+            sudo mkdir -p /var/www/storeinfocus.com/smoot-m
             sudo mkdir -p /var/www/storeinfocus.com/pagina-modelo
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com || true
             sudo mkdir -p /var/www/skillvault.blog/ww
@@ -293,7 +295,17 @@ jobs:
           target: "/var/www/storeinfocus.com/smoot"
           strip_components: 1
 
-      # â”€â”€ WOODWORKING â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+      - name: Deploy 'smoothies-members' to storeinfocus.com/smoot-m
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "smoothies-members/*"
+          target: "/var/www/storeinfocus.com/smoot-m"
+          strip_components: 1
+
+      # ── WOODWORKING ─────────────────────────────────────────────────────────────────────────────────
 
       - name: Deploy 'Página modelo' to storeinfocus.com/pagina-modelo
         uses: appleboy/scp-action@v0.1.7
