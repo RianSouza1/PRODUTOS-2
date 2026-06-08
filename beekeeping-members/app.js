@@ -114,6 +114,29 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   };
 
+  window.seekYt = function(event) {
+      if(window.activeYtPlayer && typeof window.activeYtPlayer.getDuration === 'function') {
+          const container = document.getElementById('yt-progress-container');
+          const rect = container.getBoundingClientRect();
+          const clickX = event.clientX - rect.left;
+          const percentage = clickX / rect.width;
+          const duration = window.activeYtPlayer.getDuration();
+          if(duration > 0) {
+              const newTime = duration * percentage;
+              window.activeYtPlayer.seekTo(newTime, true);
+              const progressBar = document.getElementById('yt-progress-bar');
+              if(progressBar) progressBar.style.width = (percentage * 100) + '%';
+          }
+      }
+  };
+
+  window.formatYtTime = function(seconds) {
+      if (!seconds || isNaN(seconds)) return "00:00";
+      const m = Math.floor(seconds / 60);
+      const s = Math.floor(seconds % 60);
+      return (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+  };
+
   function initGlobalConfig() {
     if (APP_DATA.config) {
       brandTitle.innerText = APP_DATA.config.brandName || "Área de Membros";
@@ -466,10 +489,20 @@ document.addEventListener("DOMContentLoaded", () => {
                  <div id="video-container-${vid.id}" class="video-wrapper-container" style="border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; flex-direction: column;">
                     <div class="yt-16-9-wrapper" onclick="window.toggleYtPlayPause()" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; flex-shrink: 0; cursor: pointer;">
                         <div id="yt-player-${vid.id}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></div>
+                        <div style="position:absolute; top:0; left:0; width:100%; height:80px; background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); pointer-events: none;"></div>
                     </div>
-                    <div style="display: flex; justify-content: center; gap: 20px; padding: 12px; background: var(--bg-body); border-top: 1px solid var(--border-light); flex-shrink: 0;">
-                        <button id="yt-play-pause-btn" onclick="window.toggleYtPlayPause()" style="background:var(--primary-light); color:var(--primary); border:none; border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"><i data-lucide="pause" style="width: 20px; height: 20px;"></i></button>
-                        <button onclick="window.toggleCustomFullscreen('video-container-${vid.id}')" style="background:var(--bg-body); color:var(--text-dark); border: 1px solid var(--border-light); border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer;"><i data-lucide="maximize" style="width: 20px; height: 20px;"></i></button>
+                    <div style="display: flex; flex-direction: column; background: var(--bg-body); border-top: 1px solid var(--border-light); flex-shrink: 0;">
+                        <div id="yt-progress-container" style="width: 100%; height: 8px; background: #e5e7eb; cursor: pointer; position: relative;" onclick="window.seekYt(event)">
+                            <div id="yt-progress-bar" style="width: 0%; height: 100%; background: var(--primary); transition: width 0.1s linear; pointer-events: none;"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px;">
+                            <div id="yt-time-display" style="font-size: 0.85rem; color: var(--text-dark); font-weight: 600; font-variant-numeric: tabular-nums; min-width: 95px; white-space: nowrap;">00:00</div>
+                            <div style="display: flex; justify-content: center; gap: 20px;">
+                                <button id="yt-play-pause-btn" onclick="window.toggleYtPlayPause()" style="background:var(--primary-light); color:var(--primary); border:none; border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"><i data-lucide="pause" style="width: 20px; height: 20px;"></i></button>
+                                <button onclick="window.toggleCustomFullscreen('video-container-${vid.id}')" style="background:var(--bg-body); color:var(--text-dark); border: 1px solid var(--border-light); border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer;"><i data-lucide="maximize" style="width: 20px; height: 20px;"></i></button>
+                            </div>
+                            <div style="width: 80px; text-align: right;"></div>
+                        </div>
                     </div>
                  </div>
                  ` : (vidSrc && (vidSrc.includes('tynk.ai') || vidSrc.includes('iframe') || !vidSrc.match(/\.(mp4|webm|ogg|mov)(\?.*)?$/i))) ? `
@@ -517,6 +550,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     'modestbranding': 1,
                     'rel': 0,
                     'showinfo': 0,
+                    'iv_load_policy': 3, // Esconde anotações do vídeo
                     'fs': 0, // Desativa botão fullscreen nativo, usamos o nosso
                     'playsinline': 1
                 },
@@ -527,15 +561,40 @@ document.addEventListener("DOMContentLoaded", () => {
                     },
                     'onStateChange': (event) => {
                         const btn = document.getElementById('yt-play-pause-btn');
-                        if (!btn) return;
                         if (event.data === 1) { // Playing
-                            btn.innerHTML = '<i data-lucide="pause" style="width: 20px; height: 20px;"></i>';
-                            btn.style.background = 'var(--primary-light)';
-                            btn.style.color = 'var(--primary)';
+                            if(btn) {
+                                btn.innerHTML = '<i data-lucide="pause" style="width: 20px; height: 20px;"></i>';
+                                btn.style.background = 'var(--primary-light)';
+                                btn.style.color = 'var(--primary)';
+                            }
+                            if(window.ytProgressInterval) clearInterval(window.ytProgressInterval);
+                            window.ytProgressInterval = setInterval(() => {
+                                const progressBar = document.getElementById('yt-progress-bar');
+                                const timeDisplay = document.getElementById('yt-time-display');
+                                if(window.activeYtPlayer && typeof window.activeYtPlayer.getDuration === 'function') {
+                                    const duration = window.activeYtPlayer.getDuration();
+                                    const current = window.activeYtPlayer.getCurrentTime();
+                                    if(duration > 0) {
+                                        if(progressBar) progressBar.style.width = ((current / duration) * 100) + '%';
+                                        if(timeDisplay) timeDisplay.innerText = window.formatYtTime(current) + ' / ' + window.formatYtTime(duration);
+                                    }
+                                }
+                            }, 500);
                         } else { // Paused or other
-                            btn.innerHTML = '<i data-lucide="play" style="width: 20px; height: 20px; margin-left: 2px;"></i>';
-                            btn.style.background = 'var(--primary)';
-                            btn.style.color = 'white';
+                            if(btn) {
+                                btn.innerHTML = '<i data-lucide="play" style="width: 20px; height: 20px; margin-left: 2px;"></i>';
+                                btn.style.background = 'var(--primary)';
+                                btn.style.color = 'white';
+                            }
+                            const timeDisplay = document.getElementById('yt-time-display');
+                            if(timeDisplay && window.activeYtPlayer && typeof window.activeYtPlayer.getDuration === 'function') {
+                                const duration = window.activeYtPlayer.getDuration();
+                                const current = window.activeYtPlayer.getCurrentTime();
+                                if(duration > 0) {
+                                    timeDisplay.innerText = window.formatYtTime(current) + ' / ' + window.formatYtTime(duration);
+                                }
+                            }
+                            if(window.ytProgressInterval) clearInterval(window.ytProgressInterval);
                         }
                         if(window.lucide) window.lucide.createIcons();
                     }
