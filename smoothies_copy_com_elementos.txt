@@ -1,0 +1,173 @@
+# Estrutura e Copy da Página de Vendas: Protein Smoothies
+
+---
+
+**[ELEMENTO: Barra Fixa no Topo (Sticky Bar) com Cronômetro]**
+> FINAL HOURS – 70% OFF ENDS IN
+> 00 : 10 : 00 *(Exemplo de Tempo)*
+
+---
+
+**[ELEMENTO: Headline Principal (Texto Centralizado)]**
+> Are you dreaming of making healthy smoothies and juices part of your daily routine, but feel overwhelmed by not knowing what actually works?
+> 
+> You’re not alone.
+> 
+> Most beginners give up because their smoothies taste boring, leave them hungry, or are secretly loaded with sugar… and they never get a simple plan they can actually stick with.
+
+---
+
+**[ELEMENTO: Imagem do Produto 1 - Formato Quadrado (ex: img1.webp)]**
+
+---
+
+**[ELEMENTO: Primeira Caixa de Compra (CTA Box)]**
+*Fundo amarelo, textos centralizados.*
+> **Protein Smoothies + 2 BONUSES**
+> **[ELEMENTO: 5 Estrelas Laranjas (⭐⭐⭐⭐⭐)]**
+> **$19.90** ~~**$59.70**~~ **You Save 70%**
+> 
+> **[ELEMENTO: Botão Verde Arredondado]** BUY NOW
+
+---
+
+**[ELEMENTO: Seção "Buy 1 Get 3"]**
+> **BUY 1 GET 3**
+> 
+> For a limited time only, here is what you’ll get:
+
+**[ELEMENTO: Imagem do Combo de Produtos - Formato Retangular/Paisagem (ex: img2.webp)]**
+
+**[ELEMENTO: Linha Separadora (Divider)]**
+
+---
+
+**[ELEMENTO: Seção de Texto - Quebra de Objeções]**
+> **Why does this offer sound too good to be true?**
+> 
+> We get it — three bestselling books for the price of one isn’t something you see every day.
+> 
+> Here’s the simple truth: once a year, around this season, we run a special Reader Event to thank our audience and make our most popular collections easier to access.
+> 
+> Because we manage everything directly — from printing to fulfillment — we can skip retail markups and offer the entire bundle (normally $59.70) for only $19.90.
+> 
+> **When the event ends, prices return to normal.**
+
+**[ELEMENTO: Linha Separadora (Divider)]**
+
+---
+
+**[ELEMENTO: Seção de Texto - Benefícios e Transformação]**
+> **What if the only thing standing between you and a healthier daily routine is the right step-by-step guidance?**
+> 
+> ❌ Because the truth is: **you don’t need experience. You don’t need special skills.**
+> 
+> You just need a clear, beginner-friendly roadmap built around a simple formula: protein + fiber + greens + easy recipes that help you feel satisfied, energized, and consistent.
+> 
+> Smoothies and juices only feel hard when you try to piece together random YouTube videos, complicated recipes, and contradictory advice. That’s when mistakes happen — bland drinks, wasted ingredients, sugar-loaded recipes, frustration, and weight loss goals abandoned after just a few days.
+> 
+> But with the right foundation, making smoothies and juices becomes simple, practical, and incredibly rewarding — because you finally know how to balance ingredients instead of guessing what to blend.
+> 
+> That’s exactly why this **3-Book Bundle** was created: to walk you step-by-step from your very first protein smoothie to **7-Day Green Smoothie Cleanse**, **Juicing for Beginners**, better ingredient choices, and simple recipes that fit easily into your daily routine.
+> 
+> This bundle doesn’t just teach you smoothies and juicing — **it makes you fall in love with it.**
+
+---
+
+**[ELEMENTO: Imagem Grande de Demonstração do Produto (ex: img4.webp)]**
+
+---
+
+**[ELEMENTO: Lista de Benefícios (Checklist)]**
+> **Inside the Bundle You’ll Discover:**
+> - How to choose the right ingredients, protein sources, and smoothie combinations **without overspending**
+> - A complete step-by-step starter plan **so you always know exactly what to make**
+> - How to create smoothies confidently **using simple beginner-friendly recipes**
+> - **7-Day Green Smoothie Cleanse** methods **for clean, refreshing, satisfying results**
+> - **Juicing for Beginners** best practices **for simple daily options**
+> - A complete beginner’s guide to healthy smoothie and juice routines **with easy recipes**
+
+---
+
+**[ELEMENTO: Imagem "Banner" de Escassez - Retangular Extensa (ex: 70off-4.jpg)]**
+
+---
+
+**[ELEMENTO: Imagem do Produto 2 - Formato Quadrado (Idêntica a Imagem 1 - ex: img1.webp)]**
+
+---
+
+**[ELEMENTO: Segunda Caixa de Compra (CTA Box)]**
+*Fundo amarelo, textos centralizados.*
+> **Protein Smoothies + 2 BONUSES**
+> **[ELEMENTO: 5 Estrelas Laranjas (⭐⭐⭐⭐⭐)]**
+> **$19.90** ~~**$59.70**~~ **You Save 70%**
+> 
+> **[ELEMENTO: Botão Verde Arredondado]** BUY NOW
+
+---
+
+**[ELEMENTO: Textos Finais de Apelo e Garantia]**
+> **If you’ve been wanting to start making healthier smoothies and juices but felt overwhelmed, unsure, or scared of doing something wrong, this bundle removes every obstacle in your way.**
+> 
+> **It gives you:**
+> - Confidence
+> - Clarity
+> - A proven step-by-step path
+> - Tools to avoid beginner mistakes
+> - The joy of making healthy drinks at home
+> - And even the thrill of following **7-Day Green Smoothie Cleanse**
+> 
+> Right now, while it’s **70% OFF**, you’re getting **three complete guides for the price of one** — a deal that won’t last. Instant direct digital download (After you complete the payment you will immediately have the option to download the product(s) from the final purchase page and you will also receive a download email shortly after).
+> 
+> **Why wait?**
+> 
+> Healthy smoothies and juices don’t have to be confusing. Stop guessing what to blend and start making drinks that taste good, fit your life, and help you stay consistent.
+> 
+> Grab your 70% OFF bundle today and finally build a smoothie and juicing routine that feels simple enough to keep, without complicated ingredients or expensive store-bought drinks.
+> 
+> **Order now** and save 70% before this limited-time deal disappears.
+
+---
+
+**[ELEMENTO: Seção de Depoimentos (Grid de 4 Cards)]**
+> **Here’s What People Are Saying About Us:**
+
+**[ELEMENTO: Card de Depoimento 1]**
+> **[ELEMENTO: Foto de Perfil (John D.)]**
+> **John D.**
+> **[ELEMENTO: Ícone Verde de Verificado]** Verified Buyer
+> **[ELEMENTO: 5 Estrelas Laranjas]**
+> **"Incredible resource for beginners."**
+> "I used to skip breakfast or make smoothies that left me hungry an hour later, but this bundle broke everything down so simply. Now I know how to make protein smoothies that taste good and actually keep me satisfied."
+
+**[ELEMENTO: Card de Depoimento 2]**
+> **[ELEMENTO: Foto de Perfil (Mark T.)]**
+> **Mark T.**
+> **[ELEMENTO: Ícone Verde de Verificado]** Verified Buyer
+> **[ELEMENTO: 5 Estrelas Laranjas]**
+> **"A must-have for anyone interested in smoothies."**
+> "The step-by-step starter guidance is exactly what I needed. It helped me understand protein, greens, fruits, and simple combinations without second-guessing every recipe. My afternoon cravings are so much easier to manage now."
+
+**[ELEMENTO: Card de Depoimento 3]**
+> **[ELEMENTO: Foto de Perfil (Emily R.)]**
+> **Emily R.**
+> **[ELEMENTO: Ícone Verde de Verificado]** Verified Buyer
+> **[ELEMENTO: 5 Estrelas Laranjas]**
+> **"Saved me so much money and time."**
+> "I almost kept buying expensive bottled juices before reading this. The ingredient guidance alone is worth the price. I’m saving money and making better drinks at home without wasting produce."
+
+**[ELEMENTO: Card de Depoimento 4]**
+> **[ELEMENTO: Foto de Perfil (Sarah L.)]**
+> **Sarah L.**
+> **[ELEMENTO: Ícone Verde de Verificado]** Verified Buyer
+> **[ELEMENTO: 5 Estrelas Laranjas]**
+> **"The 7-Day Green Smoothie Cleanse is fantastic!"**
+> "Not only did I learn how to make better protein smoothies, but **7-Day Green Smoothie Cleanse** was a huge plus. The recipes are simple, refreshing, and helped me reset my routine and add more greens without feeling like I was forcing it."
+
+---
+
+**[ELEMENTO: Rodapé Escuro (Footer)]**
+> **Protein Smoothies**
+> © All rights reserved.
+> **[ELEMENTO: Link "Contact Us"]**

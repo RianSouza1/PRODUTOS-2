@@ -1,0 +1,245 @@
+# Estrutura, Copy e Elementos da Página de Vendas (Pasta bkp)
+
+---
+
+### 1. Barra Fixa no Topo (Sticky Bar) com Cronômetro
+* **Função**: Criar urgência no topo da página. A barra fica fixa durante a rolagem.
+* **Elementos Visuais**:
+  * Fundo vermelho (`#e42628`).
+  * Ícone de despertador: ⏰ (emoji).
+  * Texto em negrito: "FINAL HOURS – 70% OFF ENDS IN".
+  * Cronômetro funcional (HTML + CSS + Javascript):
+    * Exibição em formato de cartões brancos com números pretos em negrito, separados por dois pontos (`:`).
+    * Unidades: `hh` (horas), `mm` (minutos), `ss` (segundos).
+    * Comportamento: O timer inicia em 10 minutos (600 segundos), armazena o progresso no `localStorage` do navegador para manter o tempo correto ao recarregar a página e reinicia o loop ao chegar a zero.
+* **Copy**:
+  > ⏰ FINAL HOURS – 70% OFF ENDS IN
+  > 00:10:00 (Tempo regressivo dinâmico)
+
+---
+
+### 2. Headline Principal e Introdução
+* **Função**: Chamar a atenção do visitante levantando suas maiores dores e sonhos.
+* **Elementos Visuais**:
+  * Centralizado, fonte sem serifa padrão do sistema.
+* **Copy**:
+  > Are you dreaming of starting your own backyard beehive, but feel overwhelmed by the fear of messing everything up?
+  >
+  > You’re not alone.
+  >
+  > Thousands of beginners feel excited about beekeeping… until they realize they have no idea where to start, what equipment to buy, or how to keep their bees healthy and productive.
+
+---
+
+### 3. Imagem Principal do Produto (Imagem 1)
+* **Função**: Mostrar a oferta principal visualmente.
+* **Arquivo**: `img1.webp` (Resolução original 1080x1080).
+* **Descrição Visual**: Capa do livro principal "Beekeeping for Beginners" junto com os bônus inclusos na oferta.
+
+---
+
+### 4. Primeira Caixa de Oferta (CTA Box)
+* **Função**: Apresentar o preço e o primeiro botão de compra rápida.
+* **Elementos Visuais**:
+  * Fundo amarelo padrão da página (`#F8B003`).
+  * Texto destacado em negrito.
+  * Avaliação de 5 estrelas: ★★★★★ com estilo 3D de sombra projetada (tons amarelos e laranjas).
+  * Preço original riscado em vermelho e preço promocional em destaque.
+  * Botão de Ação (CTA): Verde arredondado (`#4caf50`), com sombra e texto em negrito "BUY NOW".
+* **Copy**:
+  > **Beekeeping for Beginners + 2 BONUSES**
+  > ★★★★★
+  > **$19.90** ~~$59.70~~ **You Save 70%**
+  >
+  > **[Botão]** BUY NOW (Link: `https://pay.hotmart.com/L105848651O?checkoutMode=10`)
+
+---
+
+### 5. Seção "Buy 1 Get 3" e Imagem do Combo
+* **Função**: Demonstrar o alto valor agregado da promoção (leve 3 pelo preço de 1).
+* **Elementos Visuais**:
+  * Título centralizado e texto explicativo.
+  * Imagem retangular do combo: `img2.webp` (Resolução 1024x587).
+* **Copy**:
+  > **BUY 1 GET 3**
+  >
+  > For a limited time only, here is what you’ll get:
+  >
+  > **[Imagem: img2.webp]**
+
+---
+
+### 6. Divisor de Seção (Linha Fina)
+* **Função**: Separar visualmente as seções para facilitar a leitura.
+* **Elementos Visuais**: Linha horizontal horizontal cinza claro/branco suave.
+
+---
+
+### 7. Seção de Quebra de Objeções ("Too Good to be True")
+* **Função**: Explicar o motivo de o preço ser tão baixo para gerar confiança e tirar a desconfiança de fraude.
+* **Elementos Visuais**: Texto estruturado em parágrafos curtos e centralizados.
+* **Copy**:
+  > **Why does this offer sound too good to be true?**
+  >
+  > We get it — three bestselling books for the price of one isn’t something you see every day.
+  >
+  > Here’s the simple truth: once a year, around this season, we run a special Reader Event to thank our audience and make our most popular collections easier to access.
+  >
+  > Because we manage everything directly — from printing to fulfillment — we can skip retail markups and offer the entire bundle (normally $59.70) for only $19.90.
+  >
+  > **When the event ends, prices return to normal.**
+
+---
+
+### 8. Seção "Benefícios e Transformação"
+* **Função**: Conectar emocionalmente com o leitor e demonstrar facilidade no processo.
+* **Elementos Visuais**: Centralizado, uso de emoji vermelho ❌ para chamar atenção.
+* **Copy**:
+  > **What if the only thing standing between you and a thriving hive is the right step-by-step guidance?**
+  >
+  > ❌ Because the truth is: **you don’t need experience. You don’t need special skills.**
+  >
+  > You just need a clear, beginner-friendly roadmap that takes you from confusion to confidence.
+  >
+  > Beekeeping only feels hard when you try to piece together random YouTube videos, outdated tips, and contradictory advice. That’s when mistakes happen — dead colonies, wasted money, stings, frustration, and dreams abandoned.
+  >
+  > But with the right foundation, beekeeping becomes simple, safe, and incredibly rewarding.
+  >
+  > That’s exactly why this **3-Book Bundle** was created: to walk you step-by-step from your very first hive setup to harvesting honey, preventing disease, raising strong colonies, and even crafting your own homemade mead.
+  >
+  > This bundle doesn’t just teach you beekeeping — **it makes you fall in love with it.**
+
+---
+
+### 9. Imagem de Apoio (Imagem 3)
+* **Função**: Manter o engajamento visual do leitor.
+* **Arquivo**: `img3.webp` (Resolução 2300x1700).
+* **Descrição Visual**: Ilustração/Foto relacionada à apicultura e à colheita de mel.
+
+---
+
+### 10. Seção "Inside the Bundle You’ll Discover" (Checklist)
+* **Função**: Listar detalhadamente o conteúdo prático dos livros.
+* **Elementos Visuais**:
+  * Título centralizado com emoji de livros: 📚.
+  * Ícone de marcação verde: ✅ (emoji).
+* **Copy**:
+  > 📚 **Inside the Bundle You’ll Discover:**
+  >
+  > ✅ **How to choose the right hive, tools, and bee species** without overspending
+  > ✅ **A complete step-by-step first-year plan** so you always know exactly what to do
+  > ✅ **How to inspect your hive confidently** using the included inspection checklist
+  > ✅ **Honey harvesting methods** for clean, safe, delicious results
+  > ✅ **Backyard beekeeping best practices** for small spaces
+  > ✅ **A complete beginner’s guide to making your own mead** with simple recipes
+
+---
+
+### 11. Imagem de Demonstração do Produto (Imagem 4)
+* **Função**: Mostrar mais detalhes físicos/digitais dos guias.
+* **Arquivo**: `img4.webp` (Resolução 970x600).
+* **Descrição Visual**: Mockup ou representação visual dos guias inclusos no bundle.
+
+---
+
+### 12. Banner de Urgência & Escassez (Banner 70% OFF)
+* **Função**: Reforçar a urgência da promoção no final da página.
+* **Elementos Visuais**:
+  * Seção com fundo escuro/marcado para contraste.
+  * Texto gigante em caixa alta usando fonte de impacto ("Arial Black", Impact).
+  * Texto principal: "70% OFF" em tamanho grande.
+  * Subtexto: "ENDS TODAY ↴" com seta indicando a oferta abaixo.
+* **Copy**:
+  > 70% OFF
+  > ENDS TODAY ↴
+
+---
+
+### 13. Repetição da Imagem Principal (Imagem 1)
+* **Função**: Reapresentar o produto logo antes da segunda chamada de compra.
+* **Arquivo**: `img1.webp` (Repetido).
+
+---
+
+### 14. Segunda Caixa de Oferta (CTA Box)
+* **Função**: Facilitar a compra imediata após o leitor consumir toda a copy.
+* **Elementos Visuais**:
+  * Fundo amarelo padrão da página (`#F8B003`).
+  * Avaliação de 5 estrelas: ★★★★★ com estilo 3D de sombra projetada.
+  * Preço com desconto.
+  * Botão de Ação (CTA): Verde arredondado (`#4caf50`), com sombra e texto em negrito "BUY NOW".
+* **Copy**:
+  > **Beekeeping for Beginners + 2 BONUSES**
+  > ★★★★★
+  > **$19.90** ~~$59.70~~ **You Save 70%**
+  >
+  > **[Botão]** BUY NOW (Link: `https://pay.hotmart.com/L105848651O?checkoutMode=10`)
+
+---
+
+### 15. Textos Finais de Apelo, Resumo da Entrega e Fechamento
+* **Função**: Último empurrão para a compra, esclarecendo o método de entrega imediata.
+* **Elementos Visuais**: Parágrafos estruturados e linhas divisórias.
+* **Copy**:
+  > **If you’ve been wanting to start beekeeping but felt overwhelmed, unsure, or scared of doing something wrong, this bundle removes every obstacle in your way.**
+  >
+  > ***It gives you:***
+  >
+  > ✅ **Confidence**
+  > ✅ **Clarity**
+  > ✅ **A proven step-by-step path**
+  > ✅ **Tools to avoid beginner mistakes**
+  > ✅ **The joy of producing your own honey**
+  > ✅ **And even the thrill of making your own mead**
+  >
+  > Right now, while it’s **70% OFF**, you’re getting **three complete guides for the price of one —** a deal that won’t last. Instant direct digital download (After you complete the payment you will immediately have the option to download the product(s) from the final purchase page and you will also receive a download email shortly after).
+  >
+  > **Why wait?**
+  >
+  > Beekeeping doesn’t have to be confusing. It can be simple, joyful, and deeply rewarding… when you start with the right guidance.
+  >
+  > **Grab your 70% OFF bundle today and finally become the beekeeper you’ve always wanted to be.**
+  >
+  > **Order now** and save 70% before this limited-time deal disappears.
+
+---
+
+### 16. Seção de Depoimentos (Prova Social)
+* **Função**: Construir autoridade e validar a qualidade do produto por meio de avaliações de outros compradores.
+* **Elementos Visuais**:
+  * 4 Cards individuais em fundo branco com borda cinza suave e sombra discreta.
+  * Indicador "✅ Verified Buyer" em verde para cada depoimento.
+  * Avaliação em estrelas: ⭐⭐⭐⭐⭐.
+  * Texto do depoimento em itálico/aspas com destaque em negrito para a frase principal.
+* **Copy dos Depoimentos**:
+  * **John D.**
+    * Status: ✅ Verified Buyer
+    * Avaliação: ⭐⭐⭐⭐⭐
+    * Título: *"Incredible resource for beginners."*
+    * Depoimento: "I was terrified of getting stung and making mistakes, but this bundle broke everything down so simply. My first hive is thriving, and I'm already planning to add a second one!"
+  * **Mark T.**
+    * Status: ✅ Verified Buyer
+    * Avaliação: ⭐⭐⭐⭐⭐
+    * Título: *"A must-have for anyone interested in bees."*
+    * Depoimento: "The step-by-step first year guide is exactly what I needed. It takes all the guesswork out of beekeeping. Highly recommend to anyone wanting to start this hobby."
+  * **Emily R.**
+    * Status: ✅ Verified Buyer
+    * Avaliação: ⭐⭐⭐⭐⭐
+    * Título: *"Saved me so much money and time."*
+    * Depoimento: "I almost spent hundreds on the wrong equipment before reading this. The gear guide alone is worth the price. I feel so much more confident handling my bees now."
+  * **Sarah L.**
+    * Status: ✅ Verified Buyer
+    * Avaliação: ⭐⭐⭐⭐⭐
+    * Título: *"The bonus mead guide is fantastic!"*
+    * Depoimento: "Not only did I learn how to properly care for my bees, but the bonus on making mead at home was a huge plus. We are already enjoying our first batch!"
+
+---
+
+### 17. Rodapé (Footer)
+* **Função**: Links institucionais obrigatórios e direitos autorais.
+* **Copy**:
+  > **Beekeeping Projects**
+  >
+  > © All rights reserved.
+  >
+  > Contact Us

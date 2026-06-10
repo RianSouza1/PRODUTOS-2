@@ -60,6 +60,9 @@ on:
       - 'off-grid/**'
       - 'off-grid-fr/**'
       - 'off-grid-de/**'
+      - 'off-grid-members/**'
+      - 'off-grid-de-members/**'
+      - 'off-grid-fr-members/**'
       - '.github/workflows/**'
 
 jobs:
@@ -134,6 +137,9 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/off-grid
             sudo mkdir -p /var/www/skillvault.blog/off-grid-fr
             sudo mkdir -p /var/www/skillvault.blog/off-grid-de
+            sudo mkdir -p /var/www/skillvault.blog/off-products
+            sudo mkdir -p /var/www/skillvault.blog/off-products-de
+            sudo mkdir -p /var/www/skillvault.blog/off-products-fr
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog || true
             sudo chmod -R 755 /var/www/skillvault.blog || true
 
@@ -167,6 +173,36 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "off-grid-de/*"
           target: "/var/www/skillvault.blog/off-grid-de"
+          strip_components: 1
+
+      - name: Deploy 'off-grid-members' to skillvault.blog/off-products
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "off-grid-members/*"
+          target: "/var/www/skillvault.blog/off-products"
+          strip_components: 1
+
+      - name: Deploy 'off-grid-de-members' to skillvault.blog/off-products-de
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "off-grid-de-members/*"
+          target: "/var/www/skillvault.blog/off-products-de"
+          strip_components: 1
+
+      - name: Deploy 'off-grid-fr-members' to skillvault.blog/off-products-fr
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "off-grid-fr-members/*"
+          target: "/var/www/skillvault.blog/off-products-fr"
           strip_components: 1
 
       # ── BIBLE1 ─────────────────────────────────────────────────────────────
