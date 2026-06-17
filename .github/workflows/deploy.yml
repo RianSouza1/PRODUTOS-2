@@ -63,6 +63,12 @@ on:
       - 'off-grid-members/**'
       - 'off-grid-de-members/**'
       - 'off-grid-fr-members/**'
+      - 'natures/**'
+      - 'natures-de/**'
+      - 'natures-fr/**'
+      - 'Fishing/**'
+      - 'Fishing-de/**'
+      - 'Fishing-fr/**'
       - '.github/workflows/**'
 
 jobs:
@@ -95,6 +101,12 @@ jobs:
             sudo mkdir -p /var/www/storeinfocus.com/smoot
             sudo mkdir -p /var/www/storeinfocus.com/smoot-m
             sudo mkdir -p /var/www/storeinfocus.com/pagina-modelo
+            sudo mkdir -p /var/www/storeinfocus.com/nature
+            sudo mkdir -p /var/www/storeinfocus.com/nature-de
+            sudo mkdir -p /var/www/storeinfocus.com/nature-fr
+            sudo mkdir -p /var/www/storeinfocus.com/fish
+            sudo mkdir -p /var/www/storeinfocus.com/fish-de
+            sudo mkdir -p /var/www/storeinfocus.com/fish-fr
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com || true
             sudo mkdir -p /var/www/skillvault.blog/ww
             sudo mkdir -p /var/www/skillvault.blog/chickens
@@ -351,6 +363,68 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "Página modelo/*"
           target: "/var/www/storeinfocus.com/pagina-modelo"
+          strip_components: 1
+
+      # ── APOTHECARY & FISHING ──────────────────────────────────────────────────────────────────────────
+
+      - name: Deploy 'natures' to storeinfocus.com/nature
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "natures/*"
+          target: "/var/www/storeinfocus.com/nature"
+          strip_components: 1
+
+      - name: Deploy 'natures-de' to storeinfocus.com/nature-de
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "natures-de/*"
+          target: "/var/www/storeinfocus.com/nature-de"
+          strip_components: 1
+
+      - name: Deploy 'natures-fr' to storeinfocus.com/nature-fr
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "natures-fr/*"
+          target: "/var/www/storeinfocus.com/nature-fr"
+          strip_components: 1
+
+      - name: Deploy 'Fishing' to storeinfocus.com/fish
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "Fishing/*"
+          target: "/var/www/storeinfocus.com/fish"
+          strip_components: 1
+
+      - name: Deploy 'Fishing-de' to storeinfocus.com/fish-de
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "Fishing-de/*"
+          target: "/var/www/storeinfocus.com/fish-de"
+          strip_components: 1
+
+      - name: Deploy 'Fishing-fr' to storeinfocus.com/fish-fr
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "Fishing-fr/*"
+          target: "/var/www/storeinfocus.com/fish-fr"
           strip_components: 1
 
       - name: Deploy 'WW' to skillvault.blog/ww
