@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "Área de Membros";
+      brandTitle.innerText = APP_DATA.config.brandName || "Espace Membre";
     }
   }
 
@@ -128,16 +128,10 @@ document.addEventListener("DOMContentLoaded", () => {
       case "#home":
         renderHome();
         break;
-      case "#livros":
+      case "#livres":
         renderLivros();
         break;
-      case "#videos":
-        renderVideos();
-        break;
-      case "#produtos":
-        renderOutrosProdutos();
-        break;
-      case "#contato":
+      case "#contact":
         renderContato();
         break;
       default:
@@ -177,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Regra 2: Ocultar Botão Flutuante de Ajuda APENAS se estiver na aba do menu Contato
     const fBtn = floatingHelp.querySelector('.floating-help-btn');
     if (fBtn) {
-      if (hash === "#contato" || hash === "#home") {
+      if (hash === "#contact" || hash === "#home") {
         fBtn.classList.add('hidden');
       } else {
         fBtn.classList.remove('hidden');
@@ -193,38 +187,28 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Welcome, Member</h1><p>What would you like to access today?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Bienvenue, Membre</h1><p>À quoi aimeriez-vous accéder aujourd'hui ?</p></div></div>
           
   
           <div class="home-grid">
             
-            <a href="#livros" class="home-block glass-panel">
+            <a href="#livres" class="home-block glass-panel">
               <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
                  <i data-lucide="book-open"></i>
               </div>
               <div>
-                 <div class="home-block-title">BOOKS</div>
-                 <div class="home-block-subtitle">Books and PDF Materials</div>
-              </div>
-            </a>
-            
-            <a href="#videos" class="home-block glass-panel">
-              <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
-                 <i data-lucide="play-circle"></i>
-              </div>
-              <div>
-                 <div class="home-block-title">VIDEOS</div>
-                 <div class="home-block-subtitle">Your Video Courses</div>
+                 <div class="home-block-title">LIVRES</div>
+                 <div class="home-block-subtitle">Livres et documents PDF</div>
               </div>
             </a>
   
-            <a href="#contato" class="home-block glass-panel">
+            <a href="#contact" class="home-block glass-panel">
               <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
                  <i data-lucide="message-square"></i>
               </div>
               <div>
                  <div class="home-block-title">CONTACT</div>
-                 <div class="home-block-subtitle">Help and Support</div>
+                 <div class="home-block-subtitle">Aide et support</div>
               </div>
             </a>
   
@@ -248,8 +232,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="premium-book-card">
            <div class="premium-badge-wrapper">
-              <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">PDF • Digital Download</span>
+              <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPÉCIAL'}</span>
+              <span class="premium-format">PDF • Téléchargement numérique</span>
            </div>
            
            <div class="premium-cover-container">
@@ -264,10 +248,10 @@ document.addEventListener("DOMContentLoaded", () => {
               
               <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: 1.5rem;">
                  <a href="${bk.downloadUrl}" target="_blank" class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: var(--primary); color: #FFF;">
-                    <i data-lucide="book-open"></i> Read Now
+                    <i data-lucide="book-open"></i> Lire maintenant
                  </a>
                  <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
-                    <i data-lucide="download"></i> Download PDF
+                    <i data-lucide="download"></i> Télécharger le PDF
                  </a>
               </div>
            </div>
@@ -278,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let compactHTML = '';
     if (compactBooks.length > 0) {
       compactHTML = `
-      <h2 class="section-divider-title">Additional Plans & Projects</h2>
+      <h2 class="section-divider-title">Plans et projets supplémentaires</h2>
       <div class="compact-book-list">
         ${compactBooks.map(bk => `
           <div class="compact-book-card">
@@ -287,10 +271,10 @@ document.addEventListener("DOMContentLoaded", () => {
               <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'Plans'}</span>
             </div>
             <div class="compact-book-actions">
-              <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Read Now">
+              <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Lire maintenant">
                 <i data-lucide="book-open"></i>
               </a>
-              <a href="${bk.downloadUrl}" download class="compact-action-btn btn-download" title="Download PDF">
+              <a href="${bk.downloadUrl}" download class="compact-action-btn btn-download" title="Télécharger le PDF">
                 <i data-lucide="download"></i>
               </a>
             </div>
@@ -302,10 +286,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Your Materials</h1><p>Tap a collection below to view and download your books.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Vos documents</h1><p>Cliquez sur un document ci-dessous pour le consulter et le télécharger.</p></div></div>
           
           <div class="list-container">
-            ${featuredHTML || '<p>No materials are currently registered.</p>'}
+            ${featuredHTML || '<p>Aucun document n\'est enregistré pour le moment.</p>'}
             ${compactHTML}
           </div>
         </div>
@@ -365,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Support</h1><p>Your satisfaction is our priority.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Assistance</h1><p>Votre satisfaction est notre priorité.</p></div></div>
           
   
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
@@ -373,9 +357,9 @@ document.addEventListener("DOMContentLoaded", () => {
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
              </div>
              
-             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Send a Message</h3>
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Envoyer un message</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                Copy the email address below and send us your question. Our support team will reply as soon as possible.
+                Copiez l'adresse e-mail ci-dessous et envoyez-nous votre question. Notre équipe de support vous répondra dans les plus brefs délais.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
