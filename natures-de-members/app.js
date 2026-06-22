@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="hero-card glass-panel" style="margin-bottom: 1.5rem;"><div class="hero-text"><h1>Ihre Materialien</h1><p>Greifen Sie unten auf Ihre Leitfäden und Boni zu.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/cover_natural_healing.png" alt="Nature's Apothecary Bundle" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/wall1.webp" alt="Nature's Apothecary Bundle" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
           
           <div class="list-container">
