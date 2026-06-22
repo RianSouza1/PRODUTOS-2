@@ -67,6 +67,10 @@ on:
       - 'natures-de/**'
       - 'natures-fr/**'
       - 'natures-de-members/**'
+      - 'natures-da-members/**'
+      - 'natures-nl-members/**'
+      - 'natures-hu-members/**'
+      - 'natures-pl-members/**'
       - 'Fishing/**'
       - 'Fishing-de/**'
       - 'Fishing-fr/**'
@@ -106,6 +110,10 @@ jobs:
             sudo mkdir -p /var/www/storeinfocus.com/nature-de
             sudo mkdir -p /var/www/storeinfocus.com/nature-fr
             sudo mkdir -p /var/www/storeinfocus.com/natures-de-members
+            sudo mkdir -p /var/www/storeinfocus.com/natures-da-members
+            sudo mkdir -p /var/www/storeinfocus.com/natures-nl-members
+            sudo mkdir -p /var/www/storeinfocus.com/natures-hu-members
+            sudo mkdir -p /var/www/storeinfocus.com/natures-pl-members
             sudo mkdir -p /var/www/storeinfocus.com/fish
             sudo mkdir -p /var/www/storeinfocus.com/fish-de
             sudo mkdir -p /var/www/storeinfocus.com/fish-fr
@@ -407,6 +415,46 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "natures-de-members/*"
           target: "/var/www/storeinfocus.com/natures-de-members"
+          strip_components: 1
+
+      - name: Deploy 'natures-da-members' to storeinfocus.com/natures-da-members
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "natures-da-members/*"
+          target: "/var/www/storeinfocus.com/natures-da-members"
+          strip_components: 1
+
+      - name: Deploy 'natures-nl-members' to storeinfocus.com/natures-nl-members
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "natures-nl-members/*"
+          target: "/var/www/storeinfocus.com/natures-nl-members"
+          strip_components: 1
+
+      - name: Deploy 'natures-hu-members' to storeinfocus.com/natures-hu-members
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "natures-hu-members/*"
+          target: "/var/www/storeinfocus.com/natures-hu-members"
+          strip_components: 1
+
+      - name: Deploy 'natures-pl-members' to storeinfocus.com/natures-pl-members
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "natures-pl-members/*"
+          target: "/var/www/storeinfocus.com/natures-pl-members"
           strip_components: 1
 
       - name: Deploy 'Fishing' to storeinfocus.com/fish

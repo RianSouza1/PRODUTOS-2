@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Willkommen, Mitglied</h1><p>Worauf möchten Sie heute zugreifen?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Witaj, Członku</h1><p>Do czego chciałbyś dzisiaj uzyskać dostęp?</p></div></div>
           
   
           <div class="home-grid">
@@ -143,8 +143,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="book-open"></i>
               </div>
               <div>
-                 <div class="home-block-title">BÜCHER</div>
-                 <div class="home-block-subtitle">E-Books und PDF-Materialien</div>
+                 <div class="home-block-title">KSIĄŻKI</div>
+                 <div class="home-block-subtitle">E-booki i materiały PDF</div>
               </div>
             </a>
             
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
               <div>
                  <div class="home-block-title">KONTAKT</div>
-                 <div class="home-block-subtitle">Hilfe und Support</div>
+                 <div class="home-block-subtitle">Pomoc i wsparcie</div>
               </div>
             </a>
   
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card" style="margin-bottom: 2rem;">
            <div class="premium-badge-wrapper">
               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">PDF • Jetzt lesen</span>
+              <span class="premium-format">PDF • Czytaj teraz</span>
            </div>
            
            <div class="premium-info" style="padding: 0;">
@@ -188,10 +188,10 @@ document.addEventListener("DOMContentLoaded", () => {
               
               <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: 1.5rem;">
                  <a href="${bk.downloadUrl}" target="_blank" class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: var(--primary); color: #FFF;">
-                    <i data-lucide="book-open"></i> Jetzt lesen
+                    <i data-lucide="book-open"></i> Czytaj teraz
                  </a>
                  <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
-                    <i data-lucide="download"></i> PDF herunterladen
+                    <i data-lucide="download"></i> Pobierz PDF
                  </a>
               </div>
            </div>
@@ -201,10 +201,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel" style="margin-bottom: 1.5rem;"><div class="hero-text"><h1>Ihre Materialien</h1><p>Greifen Sie unten auf Ihre Leitfäden und Boni zu.</p></div></div>
+          <div class="hero-card glass-panel" style="margin-bottom: 1.5rem;"><div class="hero-text"><h1>Twoje materiały</h1><p>Uzyskaj dostęp do swoich przewodników i bonusów poniżej.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/Alemão - img1.png" alt="Nature's Apothecary Bundle" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/cover_natural_healing.png" alt="Nature's Apothecary Bundle" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
           
           <div class="list-container">
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Studenten-Support</h1><p>Ihre Zufriedenheit ist unsere Priorität.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Wsparcie dla studentów</h1><p>Twoja satysfakcja jest naszym priorytetem.</p></div></div>
           
   
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
@@ -275,9 +275,9 @@ document.addEventListener("DOMContentLoaded", () => {
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
              </div>
              
-             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Eine Nachricht senden</h3>
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Wyślij wiadomość</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                Kopieren Sie die unten stehende Adresse und senden Sie eine E-Mail mit Ihrer Frage. Unser Team wird so schnell wie möglich antworten.
+                Skopiuj poniższy adres i wyślij e-mail ze swoim pytaniem. Nasz zespół odpowie tak szybko, jak to możliwe.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">

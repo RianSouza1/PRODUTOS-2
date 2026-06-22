@@ -38,8 +38,8 @@ const APP_DATA = {
                 "Kräuter- & Küchenzutaten-Leitfäden",
                 "Schritt-für-Schritt-Kräuterrezepte"
             ],
-            downloadUrl: "materials/natures_apothecary_handbook.pdf",
-            coverImage: "assets/covers/wall1.webp",
+            downloadUrl: "materials/Natures 1 - AL.pdf",
+            coverImage: "assets/covers/Alemão - img1.png",
             buttonText: "Hauptbuch herunterladen"
         },
         {
@@ -53,8 +53,8 @@ const APP_DATA = {
                 "Sicherheitsrichtlinien & Dosierung",
                 "Traditionelle Heilanwendungen"
             ],
-            downloadUrl: "materials/healing_power_of_herbs.pdf",
-            coverImage: "assets/covers/wall1.webp",
+            downloadUrl: "materials/Natures 2 - AL.pdf",
+            coverImage: "assets/covers/Alemão - img2.png",
             buttonText: "Bonus #1 herunterladen"
         },
         {
@@ -68,8 +68,8 @@ const APP_DATA = {
                 "Tipps für ein chemiefreies Leben",
                 "Von Barbara O'Neill inspirierte Praktiken"
             ],
-            downloadUrl: "materials/barbara_oneill_inspired_remedies.pdf",
-            coverImage: "assets/covers/wall1.webp",
+            downloadUrl: "materials/Natures  3 - AL.pdf",
+            coverImage: "assets/covers/Alemão - img3.png",
             buttonText: "Bonus #2 herunterladen"
         }
     ],
