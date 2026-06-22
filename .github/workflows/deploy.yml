@@ -66,6 +66,7 @@ on:
       - 'natures/**'
       - 'natures-de/**'
       - 'natures-fr/**'
+      - 'natures-de-members/**'
       - 'Fishing/**'
       - 'Fishing-de/**'
       - 'Fishing-fr/**'
@@ -104,6 +105,7 @@ jobs:
             sudo mkdir -p /var/www/storeinfocus.com/nature
             sudo mkdir -p /var/www/storeinfocus.com/nature-de
             sudo mkdir -p /var/www/storeinfocus.com/nature-fr
+            sudo mkdir -p /var/www/storeinfocus.com/natures-de-members
             sudo mkdir -p /var/www/storeinfocus.com/fish
             sudo mkdir -p /var/www/storeinfocus.com/fish-de
             sudo mkdir -p /var/www/storeinfocus.com/fish-fr
@@ -395,6 +397,16 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "natures-fr/*"
           target: "/var/www/storeinfocus.com/nature-fr"
+          strip_components: 1
+
+      - name: Deploy 'natures-de-members' to storeinfocus.com/natures-de-members
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "natures-de-members/*"
+          target: "/var/www/storeinfocus.com/natures-de-members"
           strip_components: 1
 
       - name: Deploy 'Fishing' to storeinfocus.com/fish
