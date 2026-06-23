@@ -1,0 +1,1060 @@
+﻿<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nature's Apothecary: Δημιουργήστε το Δικό σας Φυσικό Φαρμακείο στο Σπίτι</title>
+<meta content="Θέλετε να δημιουργήσετε το δικό σας Φυσικό Φαρμακείο στο Σπίτι, αλλά δεν ξέρετε ποια βότανα να χρησιμοποιήσετε, ποιες συνταγές λειτουργούν πραγματικά ή από πού να ξεκινήσετε; Αποκτήστε το πακέτο Nature's Apothecary + 2 Δώρα με 70% έκπτωση!" name="description"/>
+<link as_="image" href="{{ 'nature_IMG1_el.webp' | file_url }}" rel="preload"/>
+<link href="data:," rel="icon"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary: #064e3b; /* Emerald 900 (Forest Green) */
+    --bg-dark: #064e3b;
+    --bg-darker: #022c22; /* Emerald 950 */
+    --red-alert: #b91c1c; /* Brick Red */
+    --red-alert-dark: #7f1d1d;
+    --text-main: #f0fdf4; /* Emerald 50 */
+    --text-muted: #a7f3d0; /* Emerald 300 */
+    --bg-light: #ffffff;
+    --accent-gold: #fbbf24; /* Amber Gold */
+    --accent-gold-hover: #d97706;
+    --green-check: #10b981;
+    --dark: #064e3b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Extremely readable body text */
+    color: var(--text-main);
+    background-color: var(--bg-dark);
+    line-height: 1.65;
+    font-size: 1.15rem; /* Standardizing easy-to-read body size */
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center { text-align: center; }
+.text-primary { color: var(--text-main); }
+.font-heading { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+.bold { font-weight: 700; }
+.italic { font-style: italic; }
+.mt-1 { margin-top: 1.5rem; }
+.mt-2 { margin-top: 2.5rem; }
+.mt-3 { margin-top: 4rem; }
+.mb-1 { margin-bottom: 1.5rem; }
+.mb-2 { margin-bottom: 2.5rem; }
+.hidden { display: none !important; }
+
+/* ================== STICKY COUNTDOWN ================== */
+.top-warning-bar {
+    background-color: var(--red-alert);
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    letter-spacing: 0.5px;
+}
+
+.warning-text {
+    margin-bottom: 6px;
+    display: block;
+}
+
+.countdown-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.time-unit {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-label {
+    font-size: 0.75rem;
+    margin-top: 4px;
+    font-weight: 600;
+    text-transform: lowercase;
+}
+
+.time-card {
+    background: #fff;
+    color: #000;
+    font-weight: 900;
+    font-size: 1.4rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15);
+}
+
+.time-sep {
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.4rem;
+    margin-top: -18px; /* Offset to center vertically with numbers */
+}
+
+/* ================== HERO / HEADLINE ================== */
+.hero-section {
+    background-color: var(--bg-dark);
+    padding: 4rem 0 3rem;
+}
+
+.main-headline {
+    font-size: 2.8rem;
+    line-height: 1.25;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.sub-headline {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    font-weight: 400;
+}
+
+.hero-main-image {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    display: block;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* ================== ΑΓΟΡΑΣΤΕ 1, ΠΑΡΤΕ 3 ================== */
+.b1g3-title {
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.b1g3-subtitle {
+    font-size: 1.25rem;
+    color: #f8fafc;
+    margin-bottom: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.b1g3-image-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.b1g3-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.b1g3-prices {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0 10%;
+}
+
+.b1g3-price-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.b1g3-price-strikethrough {
+    color: var(--accent-gold);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.b1g3-price-final {
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+@media (max-width: 768px) {
+    .b1g3-title { font-size: 1.9rem; }
+    .b1g3-subtitle { font-size: 1.15rem; margin-bottom: 1.5rem; }
+    .b1g3-prices { padding: 0 4%; }
+    .b1g3-price-strikethrough { font-size: 1.05rem; }
+    .b1g3-price-final { font-size: 1.35rem; }
+}
+
+/* ================== CALL TO ACTION BOX ================== */
+.cta-box {
+    background: transparent;
+    padding: 1.5rem 0;
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-box h3 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.star-rating {
+    color: var(--accent-gold);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.price-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price-container .current-price {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.price-container .savings {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+}
+
+.price-container .savings s {
+    color: var(--red-alert);
+}
+
+.price-container .savings strong {
+    color: #ffffff;
+    font-weight: 700;
+    margin-left: 8px;
+}
+
+.btn-buy-now {
+    display: block;
+    width: 100%;
+    background: linear-gradient(180deg, #ffca08 0%, #f5a623 100%);
+    color: #000000;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.25rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.45);
+    transition: all 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.btn-buy-now:hover {
+    background: linear-gradient(180deg, #ffd333 0%, #fbbf24 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(245, 158, 11, 0.65);
+}
+
+.guarantee-text {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-top: 1rem;
+    text-align: center;
+}
+.guarantee-text i {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+    margin-top: -3px;
+}
+
+/* ================== DEAL INFO SECTIONS ================== */
+.text-section {
+    padding: 4rem 0;
+    background-color: var(--bg-dark);
+}
+
+.text-section h2 {
+    color: #ffffff;
+}
+
+.text-section p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: #cbd5e1;
+}
+
+.divider {
+    height: 1px;
+    background: #334155;
+    max-width: 60%;
+    margin: 3rem auto;
+}
+
+/* ================== HTML BENEFITS CHECKLIST ================== */
+.benefits-section {
+    padding: 4rem 0;
+    background-color: var(--bg-dark);
+}
+
+.benefits-list {
+    list-style: none;
+    max-width: 750px;
+    margin: 2rem auto;
+}
+
+.benefits-list li {
+    font-size: 1.2rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid #334155;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    color: #f8fafc;
+}
+
+.benefits-list li:last-child {
+    border-bottom: none;
+}
+
+.benefits-list li i {
+    color: var(--green-check);
+    font-size: 1.6rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* ================== BUNDLE SECTION ================== */
+.bundle-section {
+    padding: 4rem 0;
+    background-color: var(--bg-dark);
+    color: #fff;
+    text-align: center;
+}
+
+.bundle-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.bundle-image {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    display: block;
+}
+
+/* ================== TESTIMONIALS ================== */
+.testimonials-section {
+    padding: 4rem 0;
+    background: var(--bg-dark);
+}
+
+.testimonials-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 650px;
+    margin: 0 auto 2rem;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5);
+    color: var(--dark);
+    text-align: left;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #cbd5e1;
+}
+
+.testimonial-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.verified-buyer {
+    font-size: 0.85rem;
+    color: var(--green-check);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.testimonial-stars {
+    color: var(--accent-gold);
+    display: flex;
+    margin-bottom: 0.75rem;
+}
+
+.testimonial-title {
+    font-weight: 800;
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* ================== EXTRA SALES SECTIONS ================== */
+.huge-offer-banner {
+    background-color: var(--bg-dark); 
+    padding: 3rem 1rem;
+    text-align: center;
+    border-top: none; 
+    border-bottom: none;
+}
+
+.huge-offer-title {
+    font-size: 9rem;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -2px;
+}
+
+.huge-offer-subtitle {
+    font-size: 4.5rem;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    letter-spacing: -1px;
+}
+
+.transform-section {
+    position: relative;
+    padding: 3rem 20px;
+    background-color: var(--bg-dark);
+    /* In a real scenario, you can add the sunset background image here:
+       background-image: url('images/sunset-bg.jpg');
+       background-size: cover;
+       background-position: center;
+       background-blend-mode: overlay;
+    */
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.transform-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #ffc107;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    margin-bottom: 2rem;
+    line-height: 1.15;
+}
+
+.transform-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.transform-image-wrapper {
+    flex: 1;
+    max-width: 500px;
+}
+
+.transform-image-wrapper img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.transform-benefits {
+    flex: 1;
+    list-style: none;
+}
+
+.transform-benefits li {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.transform-benefits li::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #b91c1c;
+    border-radius: 50%;
+    margin-top: 8px;
+    box-shadow: inset -2px -2px 4px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero-section, .text-section, .benefits-section, .bundle-section, .testimonials-section {
+        padding: 0.8rem 0 !important;
+    }
+
+    .divider {
+        margin: 1.5rem auto !important;
+    }
+
+    /* Decrease explicit utility margins on mobile */
+    .mt-1 { margin-top: 1rem !important; }
+    .mt-2 { margin-top: 1.5rem !important; }
+    .mt-3 { margin-top: 2rem !important; }
+    .mb-1 { margin-bottom: 1rem !important; }
+    .mb-2 { margin-bottom: 1.5rem !important; }
+    
+    .top-warning-bar {
+        padding: 10px;
+    }
+    .warning-text {
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+    }
+    .time-card {
+        font-size: 1.1rem;
+        padding: 4px 10px;
+    }
+    .time-sep {
+        font-size: 1.1rem;
+        margin-top: -14px;
+    }
+    .time-label {
+        font-size: 0.65rem;
+    }
+
+    .main-headline {
+        font-size: 2.1rem;
+        line-height: 1.25;
+        margin-bottom: 1.2rem;
+    }
+    
+    .sub-headline {
+        font-size: 1.1rem;
+    }
+    
+    .price-container .current-price {
+        font-size: 3.2rem;
+    }
+    
+    .btn-buy-now {
+        font-size: 1.4rem;
+        padding: 1.2rem 1rem;
+    }
+    
+    .text-section p, .benefits-list li {
+        font-size: 1.15rem;
+    }
+    
+    .bundle-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+    
+    .huge-offer-banner {
+        padding: 1rem 1rem;
+    }
+    
+    .huge-offer-title {
+        font-size: 4rem;
+    }
+    
+    .huge-offer-subtitle {
+        font-size: 1.8rem;
+    }
+    
+    .transform-title {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .transform-image-wrapper {
+        width: 100%;
+        margin-bottom: -1rem;
+    }
+
+    .transform-image-wrapper img {
+        width: 100%;
+        max-width: 100%;
+        transform: scale(1.05); /* Make the image pop a bit more */
+    }
+    
+    .transform-grid {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .transform-benefits li {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .cta-box h3 {
+        font-size: 1.55rem;
+    }
+    .guarantee-text {
+        font-size: 0.85rem;
+        padding: 0 10px;
+    }
+}
+
+</style>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '830224686766443');
+    fbq('track', 'PageView');
+    </script>
+<noscript><img height="1" src="https://www.facebook.com/tr?id=830224686766443&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- UTMify Tracker -->
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+<!-- UTMify Pixel -->
+<script>
+  window.pixelId = "6a31cb3f21cd157dc1cbf8fc";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+</head>
+<body>
+<!-- STICKY COUNTDOWN BAR -->
+<div class="top-warning-bar">
+<div class="warning-text">â° FINAL HOURS â€“ 70% OFF ENDS IN</div>
+<div class="countdown-box">
+<div class="time-unit">
+<span class="time-card" id="timer-hours">00</span>
+<span class="time-label">ωρ</span>
+</div>
+<span class="time-sep">:</span>
+<div class="time-unit">
+<span class="time-card" id="timer-minutes">10</span>
+<span class="time-label">λπ</span>
+</div>
+<span class="time-sep">:</span>
+<div class="time-unit">
+<span class="time-card" id="timer-seconds">00</span>
+<span class="time-label">δλ</span>
+</div>
+</div>
+</div>
+<!-- MAIN HERO SECTION -->
+<section class="hero-section text-center">
+<div class="container">
+<h1 class="main-headline font-heading bold italic text-primary">
+                Θέλετε να Δημιουργήσετε το Δικό σας Φυσικό Φαρμακείο στο Σπίτι, Αλλά Δεν Ξέρετε Ποια Βότανα να Χρησιμοποιήσετε, Ποιες Συνταγές Λειτουργούν Πραγματικά, ή Από Πού να Ξεκινήσετε;
+            </h1>
+<p class="sub-headline">
+                Δεν χρειάζεται να είστε βοτανολόγος. Δεν χρειάζεστε ακριβά συστατικά. Και δεν χρειάζεστε ένα ντουλάπι γεμάτο περίπλοκα συμπληρώματα. Αυτή η φιλική προς τους αρχάριους συλλογή σας δείχνει πώς να προετοιμάζετε παραδοσιακές φυτικές θεραπείες, καταπραϋντικά τσάγια, φυσικά σιρόπια, σπιτικές αλοιφές, θεραπείες με υλικά της κουζίνας, και απλές συνταγές για ενοχλήσεις στο λαιμό, τον ύπνο, την πέψη, τους μυϊκούς πόνους, την περιποίηση του δέρματος, το ανοσοποιητικό, και πολλά άλλα.
+            </p>
+<!-- MAIN VSL/BUNDLE IMAGE -->
+<img alt="Nature's Apothecary Program" class="hero-main-image" src="{{ 'nature_IMG1_el.webp' | file_url }}"/>
+<!-- BUY/CTA BOX -->
+<div class="cta-box">
+<div class="star-rating">
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+</div>
+<h3>Nature's Apothecary + 2 ΔΩΡΑ</h3>
+<div class="price-container">
+<div class="current-price">19,90 €</div>
+<div class="savings">
+<s>59,70 €</s> <strong>Εξοικονομείτε 70%</strong>
+</div>
+</div>
+<a class="btn-buy-now" href="https://pay.hotmart.com/X104547537N?checkoutMode=10&utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}&xcod=FBhQwK21wXxR{{campaign.name}}|{{campaign.id}}hQwK21wXxR{{adset.name}}|{{adset.id}}hQwK21wXxR{{ad.name}}|{{ad.id}}hQwK21wXxR{{placement}}">
+                    ΑΓΟΡΑΣΤΕ ΤΩΡΑ
+                </a>
+<div class="guarantee-text">
+<i data-lucide="shield-check" style="color: #16a34a; width: 16px;"></i>
+                    100% ασφαλής ολοκλήρωση αγοράς • Άμεση ψηφιακή πρόσβαση
+                </div>
+</div>
+</div>
+</section>
+<!-- ΑΓΟΡΑΣΤΕ 1, ΠΑΡΤΕ 3 SECTION -->
+<section class="b1g3-section text-center" style="padding: 4rem 0 0; background-color: var(--bg-dark);">
+<div class="container">
+<h1 class="b1g3-title" style="letter-spacing: -0.5px;">ΑΓΟΡΑΣΤΕ 1, ΠΑΡΤΕ 3</h1>
+<p class="b1g3-subtitle" style="margin-bottom: 2rem;">
+                Μόνο για περιορισμένο χρονικό διάστημα, ορίστε τι θα λάβετε:
+            </p>
+</div>
+<div class="b1g3-image-wrapper" style="width: 100%; max-width: 100%; margin: 0; padding: 0; overflow: hidden;">
+<img alt="Buy 1 Get 3 Offer" class="b1g3-image" src="{{ 'nature_IMG2_el.webp' | file_url }}" style="width: 100%; max-width: 100%; display: block; margin: 0 auto; border-radius: 0; box-shadow: none;"/>
+</div>
+<div class="container">
+<div class="divider" style="margin-top: 3.5rem; margin-bottom: 0;"></div>
+</div>
+</section>
+<!-- CONTENT SECTIONS -->
+<section class="text-section">
+<div class="container">
+<div class="text-center">
+<h2 class="font-heading bold italic" style="font-size: 2.4rem; margin-bottom: 2rem;">Γιατί αυτή η προσφορά ακούγεται πολύ καλή για να είναι αληθινή;</h2>
+</div>
+<div style="max-width: 750px; margin: 0 auto; line-height: 1.8;">
+<p>Το καταλαβαίνουμε — τρεις πλήρεις οδηγοί φυσικών θεραπειών στην τιμή του ενός δεν είναι κάτι που συναντάτε κάθε μέρα.</p>
+<p>Ιδού η απλή αλήθεια: μία φορά τον χρόνο, αυτή την περίοδο, διοργανώνουμε μια ειδική Εκδήλωση Αναγνωστών για να ευχαριστήσουμε το κοινό μας και να κάνουμε τις πιο δημοφιλείς συλλογές ευεξίας για το σπίτι πιο προσιτές.</p>
+<p>Επειδή διαχειριζόμαστε τα πάντα απευθείας — από την έκδοση έως την ψηφιακή παράδοση — μπορούμε να παραλείψουμε τις λιανικές προσαυξήσεις, τα κόστη εκτύπωσης και τους περιττούς μεσάζοντες για να προσφέρουμε ολόκληρο το πακέτο, αξίας 59,70 €, με μόλις 19,90 €.</p>
+<p class="bold" style="color: var(--red-alert);">Όταν η εκδήλωση λήξει, οι τιμές θα επιστρέψουν στα κανονικά επίπεδα.</p>
+</div>
+<div class="divider"></div>
+<div class="text-center">
+<h2 class="font-heading bold italic text-primary" style="font-size: 2.2rem; margin-bottom: 2rem;">"Γιατί έχουν ξεχαστεί τόσες πολλές παλιές σπιτικές θεραπείες;"</h2>
+</div>
+<div style="max-width: 750px; margin: 0 auto; line-height: 1.8;">
+<p>Για γενιές, οι οικογένειες ήξεραν πώς να παρασκευάζουν απλές βοτανικές συνταγές στο σπίτι.</p>
+<p>Ήξεραν ποια τσάγια να φτιάξουν για μια δύσκολη νύχτα αϋπνίας... ποια υλικά της κουζίνας να χρησιμοποιήσουν όταν ο λαιμός ήταν ερεθισμένος... ποια βότανα χρησιμοποιούνταν παραδοσιακά για την πέψη... ποιες σπιτικές αλοιφές κρατούσαν για τους πιασμένους μύες... και ποια φυσικά παρασκευάσματα είχαν θέση σε κάθε οικιακό φαρμακείο.</p>
+<p class="bold">âŒ But today, most of that knowledge has disappeared.</p>
+<p>Αντίθετα, οι άνθρωποι τρέχουν στο φαρμακείο για κάθε μικρή ενόχληση, ξοδεύουν χρήματα σε προϊόντα που μετά βίας καταλαβαίνουν, και νιώθουν εντελώς απροετοίμαστοι όταν θέλουν μια πιο φυσική επιλογή στο σπίτι.</p>
+<p>Και κάπου εδώ ξεκινάει η απογοήτευση.</p>
+<p>Οι φυσικές σπιτικές θεραπείες φαίνονται μπερδεμένες μόνο όταν προσπαθείτε να συνδυάσετε τυχαίες συμβουλές από το διαδίκτυο, αντικρουόμενες βοτανικές απόψεις, περίπλοκες συνταγές και ασαφή βίντεο φτιαγμένα για ανθρώπους που ήδη ξέρουν τι κάνουν.</p>
+<p>Τότε είναι που γίνονται λάθη — αγοράζοντας τα λάθος βότανα, αναμειγνύοντας συστατικά χωρίς να ξέρετε το γιατί, χρησιμοποιώντας υπερβολικά περίπλοκες συνταγές, σπαταλώντας χρήματα σε περιττά προϊόντα, και τα παρατάτε πριν καν προλάβετε να χτίσετε ένα πραγματικό φυσικό φαρμακείο στο σπίτι.</p>
+<p>Τι θα γινόταν αν το μόνο πράγμα που στέκεται ανάμεσα σε εσάς και το δικό σας οικιακό φαρμακείο είναι η σωστή, βήμα-προς-βήμα καθοδήγηση;</p>
+<p>Γιατί η αλήθεια είναι: δεν χρειάζεστε χρόνια εμπειρίας. Δεν χρειάζεστε σπάνια βότανα. Δεν χρειάζεστε ακριβό εξοπλισμό. Και δεν χρειάζεται να έχετε μεγαλώσει μαθαίνοντας αυτά τα πράγματα από τους παππούδες σας.</p>
+<p>Χρειάζεστε απλώς έναν ξεκάθαρο, φιλικό προς τους αρχάριους οδικό χάρτη, που θα σας δείξει πώς να μετατρέψετε απλά βότανα, τσάγια, έλαια, σιρόπια και υλικά της κουζίνας σε πρακτικές θεραπείες για καθημερινή χρήση.</p>
+<p>Όμως με τα σωστά θεμέλια, η δημιουργία του δικού σας φυσικού φαρμακείου γίνεται απλή, σας γεμίζει αυτοπεποίθηση και είναι απίστευτα ικανοποιητική.</p>
+<p>Γι' αυτόν ακριβώς τον λόγο δημιουργήθηκε αυτό το Πακέτο 3 Βιβλίων: για να σας καθοδηγήσει βήμα-βήμα, από την επιλογή των σωστών βοτάνων και υλικών κουζίνας, μέχρι την παρασκευή καταπραϋντικών τσαγιών, παραδοσιακών σιροπιών, σπιτικών αλοιφών, φυτικών ελαίων, απλών κομπρεσών και φυσικών συνταγών για τις πιο συνηθισμένες καθημερινές ενοχλήσεις.</p>
+<p>Αυτό το πακέτο δεν σας μαθαίνει απλώς για τα βότανα — σας βοηθά να νιώθετε προετοιμασμένοι κάθε φορά που το σπίτι σας χρειάζεται μια φυσική επιλογή.</p>
+</div>
+</div>
+</section>
+<!-- BENEFITS CHECKLIST SECTION -->
+<section class="benefits-section">
+<div class="container">
+<h2 class="text-center font-heading bold italic" style="font-size: 2.2rem; margin-bottom: 2.5rem; color: #ffffff;">
+                📚 Μέσα στο Πακέτο θα Ανακαλύψετε:
+            </h2>
+<ul class="benefits-list">
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Πώς να δημιουργήσετε το δικό σας φυσικό φαρμακείο στο σπίτι χωρίς να σπαταλάτε χρήματα σε περιττά βότανα, εργαλεία ή συμπληρώματα</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Έναν πλήρη, φιλικό προς τους αρχάριους οδικό χάρτη, ώστε να ξέρετε πάντα τι να ετοιμάσετε για ενοχλήσεις στον λαιμό, τον ύπνο, την πέψη, τους μυϊκούς πόνους, την περιποίηση του δέρματος, το ανοσοποιητικό και πολλά άλλα</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Πώς να φτιάχνετε παραδοσιακά βοτανικά τσάγια, σιρόπια, αλοιφές, έλαια, κομπρέσες και απλές σπιτικές θεραπείες βήμα προς βήμα</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Ποια βότανα και υλικά κουζίνας χρησιμοποιούνταν παραδοσιακά για κοινές καθημερινές ενοχλήσεις</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Πώς να ετοιμάζετε φυσικές συνταγές χρησιμοποιώντας απλά υλικά όπως μέλι, τζίντζερ, λεμόνι, σκόρδο, μηλόξυδο, μέντα, χαμομήλι, δεντρολίβανο και άλλα</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Πώς να δημιουργείτε καταπραϋντικά βοτανικά τσάγια για τον ύπνο, την πέψη, τη χαλάρωση, την ανακούφιση του λαιμού, το ανοσοποιητικό και την καθημερινή ευεξία</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Κοινά λάθη των αρχαρίων που σπαταλούν χρήματα, καταστρέφουν τις συνταγές ή κάνουν τις φυσικές θεραπείες πιο δύσκολες από ό,τι χρειάζεται</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Εύκολες βοτανικές συνταγές, οδηγούς συστατικών, μεθόδους παρασκευής και συμβουλές για το οικιακό φαρμακείο που μπορείτε να ακολουθήσετε βήμα-βήμα</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- TRANSFORM VIDEO SECTION -->
+<section class="transform-section" style="padding: 0;">
+<div class="transform-grid text-center" style="max-width: 100%; margin: 0; gap: 0;">
+<div class="transform-image-wrapper" style="width: 100%; max-width: 100%; margin: 0;">
+<img alt="Video Course" src="{{ 'nature_IMG3_el.webp' | file_url }}" style="width: 100%; border-radius: 0; display: block;"/>
+</div>
+</div>
+</section>
+<!-- HUGE OFFER BANNER -->
+<section class="huge-offer-banner">
+<div class="container">
+<div class="huge-offer-title">70% ΕΚΠΤΩΣΗ</div>
+<div class="huge-offer-subtitle">
+                ΛΗΓΕΙ ΣΗΜΕΡΑ 
+                <i data-lucide="corner-right-down" style="width: 48px; height: 48px; stroke-width: 3px;"></i>
+</div>
+</div>
+</section>
+<!-- BUNDLE / BOOKS SECTION & SECOND CTA -->
+<section class="bundle-section" style="padding-top: 2rem;">
+<div class="container">
+<img alt="Apothecary Bundle" class="bundle-image" src="{{ 'nature_IMG1_el.webp' | file_url }}" style="width: 100%; max-width: 700px; margin: 0 auto;"/>
+<div class="cta-box" style="margin-top: 1rem; background: var(--bg-white);">
+<div class="star-rating">
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+</div>
+<h3>Nature's Apothecary + 2 ΔΩΡΑ</h3>
+<div class="price-container">
+<div class="current-price">19,90 €</div>
+<div class="savings">
+<s>59,70 €</s> <strong>Εξοικονομείτε 70%</strong>
+</div>
+</div>
+<a class="btn-buy-now" href="https://pay.hotmart.com/X104547537N?checkoutMode=10&utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}&xcod=FBhQwK21wXxR{{campaign.name}}|{{campaign.id}}hQwK21wXxR{{adset.name}}|{{adset.id}}hQwK21wXxR{{ad.name}}|{{ad.id}}hQwK21wXxR{{placement}}">
+                    ΑΓΟΡΑΣΤΕ ΤΩΡΑ
+                </a>
+</div>
+</div>
+</section>
+<section class="text-section text-center">
+<div class="container">
+<div style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+<p>Αν θέλατε καιρό να δημιουργήσετε το δικό σας φυσικό φαρμακείο στο σπίτι αλλά νιώθατε πελαγωμένοι, αβέβαιοι, ή κουρασμένοι να μαντεύετε ποια βότανα να αγοράσετε, ποιες συνταγές να εμπιστευτείτε, ή πώς να τα παρασκευάσετε σωστά, αυτό το πακέτο αφαιρεί κάθε εμπόδιο από τον δρόμο σας.</p>
+<p>Σας προσφέρει αυτοπεποίθηση, διαύγεια, ένα απλό μονοπάτι βήμα-βήμα, συνταγές εμπνευσμένες από παλιές σπιτικές θεραπείες, εργαλεία για να αποφύγετε τα λάθη των αρχαρίων, την ικανότητα να επιλέγετε χρήσιμα βότανα και υλικά χωρίς να σπαταλάτε χρήματα, την τέχνη να παρασκευάζετε τσάγια, σιρόπια, αλοιφές, έλαια και θεραπείες με υλικά της κουζίνας στο σπίτι, και την ικανοποίηση να έχετε επιτέλους έτοιμο το δικό σας φυσικό φαρμακείο όποτε η οικογένειά σας χρειάζεται απλή, παραδοσιακή σπιτική φροντίδα.</p>
+<p>Αυτή τη στιγμή, όσο υπάρχει η έκπτωση 70%, παίρνετε τρεις πλήρεις οδηγούς φυσικών θεραπειών στην τιμή του ενός — μια ευκαιρία που δεν θα κρατήσει για πολύ.</p>
+<div class="conversion-highlight-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.02)); border: 2px dashed var(--accent-gold); border-radius: 12px; padding: 2rem 1.5rem; margin: 3rem auto 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+<h3 class="font-heading bold italic" style="font-size: 2.2rem; margin-bottom: 0.8rem; color: var(--accent-gold);">
+                        Γιατί να περιμένετε;
+                    </h3>
+<p style="font-size: 1.3rem; line-height: 1.6; margin-bottom: 1.5rem; color: #f8fafc; font-weight: 600;">
+<span style="font-size: 1.4rem;">ðŸ‘‰</span> Building your own natural apothecary doesnâ€™t have to be confusing. It can be simple, practical, and incredibly rewardingâ€¦ when you start with the right guidance.
+                    </p>
+<p style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 1.5rem; color: #f8fafc; font-weight: 500;">
+                        Αποκτήστε το πακέτο με 70% έκπτωση σήμερα και μάθετε επιτέλους πώς να παρασκευάζετε παραδοσιακές βοτανικές θεραπείες, καταπραϋντικά τσάγια, συνταγές κουζίνας, σιρόπια, αλοιφές και φυσικά παρασκευάσματα με σιγουριά.
+                    </p>
+<a class="bold italic" href="https://pay.hotmart.com/X104547537N?checkoutMode=10&utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}&xcod=FBhQwK21wXxR{{campaign.name}}|{{campaign.id}}hQwK21wXxR{{adset.name}}|{{adset.id}}hQwK21wXxR{{ad.name}}|{{ad.id}}hQwK21wXxR{{placement}}" style="font-size: 1.5rem; color: #ffffff; background: var(--red-alert); display: inline-block; padding: 16px 32px; border-radius: 6px; box-shadow: 0 6px 20px rgba(185, 28, 28, 0.4); text-decoration: none; width: 100%; max-width: 450px; text-transform: uppercase;">
+                        Αποκτήστε Άμεση Πρόσβαση
+                    </a>
+<p style="font-size: 1rem; color: #cbd5e1; margin-top: 1rem;">Παραγγείλετε τώρα και εξοικονομήστε 70% πριν εξαφανιστεί αυτή η προσφορά περιορισμένου χρόνου.</p>
+</div>
+<p style="font-size: 0.95rem; color: #cbd5e1; margin-top: 1.5rem;">Άμεση ψηφιακή λήψη. Αφού ολοκληρώσετε την πληρωμή, θα έχετε αμέσως την επιλογή να κατεβάσετε τα προϊόντα από την τελική σελίδα αγοράς και θα λάβετε επίσης ένα email με τον σύνδεσμο λήψης αμέσως μετά.</p>
+</div>
+<div class="divider"></div>
+<h2 class="font-serif bold italic mt-3 mb-2" style="font-size: 2.2rem; color: #ffffff;">Δείτε Τι Λένε Για Εμάς:</h2>
+<!-- Testimonial Cards -->
+<div class="testimonials-grid">
+<!-- Testimonial 1 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Μαργαρίτα Δ.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Επιβεβαιωμένος Αγοραστής
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Ακριβώς αυτό που έψαχνα."</div>
+<div class="testimonial-text">"Πάντα ήθελα να μάθω πώς να φτιάχνω φυσικές θεραπείες στο σπίτι, αλλά δεν ήξερα από πού να ξεκινήσω. Αυτό το πακέτο τα έκανε όλα απλά. Οι συνταγές είναι ξεκάθαρες, πρακτικές και εύκολες στην εκτέλεση."</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Ελένη Τ.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Επιβεβαιωμένος Αγοραστής
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Απαραίτητο για κάθε σπίτι."</div>
+<div class="testimonial-text">"Λατρεύω την ιδέα του να έχω ένα φυσικό φαρμακείο στο σπίτι. Οι οδηγοί με βοήθησαν να καταλάβω ποια βότανα να κρατήσω, πώς να τα προετοιμάσω και τι να χρησιμοποιήσω για κοινές καθημερινές ενοχλήσεις. Νιώθω σαν να επαναφέρω την παλιά οικογενειακή γνώση."</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Λίντα Ρ.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Επιβεβαιωμένος Αγοραστής
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Μου εξοικονόμησε χρήματα και μου έδωσε αυτοπεποίθηση."</div>
+<div class="testimonial-text">"Πριν από αυτό, συνέχιζα να αγοράζω τυχαία βοτανικά προϊόντα χωρίς να ξέρω πραγματικά τι χρειαζόμουν. Τώρα καταλαβαίνω πώς να χρησιμοποιώ απλά υλικά όπως το μέλι, το τζίντζερ, το λεμόνι, τη μέντα, το χαμομήλι και το δεντρολίβανο σε πρακτικές σπιτικές συνταγές."</div>
+</div>
+<!-- Testimonial 4 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Σούζαν Λ.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Επιβεβαιωμένος Αγοραστής
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Ο οδηγός τσαγιού είναι ο αγαπημένος μου!"</div>
+<div class="testimonial-text">"Ξεκίνησα με το δώρο με τα βοτανικά τσάγια και το λάτρεψα απόλυτα. Τα μείγματα για ύπνο, πέψη, ανακούφιση λαιμού και χαλάρωση ετοιμάζονται πανεύκολα και είναι τόσο ανακουφιστικά. Επιτέλους έχω συνταγές που μπορώ να χρησιμοποιήσω πραγματικά στο σπίτι μου."</div>
+</div>
+</div>
+</div>
+</section>
+<!-- DISCLAIMER SECTION -->
+<section class="disclaimer-section" style="padding: 1.5rem 0; font-size: 0.7rem; color: #a7f3d0; opacity: 0.7; line-height: 1.5; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+<div class="container">
+<p style="max-width: 800px; margin: 0 auto;"><strong>Αποποίηση ευθυνών:</strong> Μόνο για εκπαιδευτικούς σκοπούς. Δεν αποτελεί ιατρική συμβουλή. Συμβουλευτείτε έναν γιατρό πριν από τη χρήση, ειδικά εάν είστε έγκυος, λαμβάνετε φαρμακευτική αγωγή ή έχετε προβλήματα υγείας.</p>
+</div>
+</section>
+<!-- FOOTER -->
+<footer style="background: #022c22; color: #6ee7b7; text-align: center; padding: 2.5rem 1rem; font-size: 0.9rem;">
+<div class="container">
+<h4 class="font-serif bold mb-1" style="color: #f0fdf4; font-size: 1.2rem;">Nature's Apothecary</h4>
+<p>© Με την επιφύλαξη παντός δικαιώματος.</p>
+<p style="margin-top: 1rem;">
+<a href="mailto:trinityag01@gmail.com" style="color: #f0fdf4; text-decoration: none;">Επικοινωνήστε Μαζί Μας</a>
+</p>
+</div>
+</footer>
+<!-- Initialize Lucide Icons -->
+<script>
+        lucide.createIcons();
+        
+        // Countdown Timer Logic
+        function startTimer() {
+            const hoursEl = document.getElementById("timer-hours");
+            const minutesEl = document.getElementById("timer-minutes");
+            const secondsEl = document.getElementById("timer-seconds");
+            
+            if (!hoursEl || !minutesEl || !secondsEl) return;
+            
+            let hours = parseInt(hoursEl.innerText, 10);
+            let minutes = parseInt(minutesEl.innerText, 10);
+            let seconds = parseInt(secondsEl.innerText, 10);
+            
+            let totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
+            
+            const timerInterval = setInterval(() => {
+                if (totalSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    return;
+                }
+                
+                totalSeconds--;
+                
+                let h = Math.floor(totalSeconds / 3600);
+                let m = Math.floor((totalSeconds % 3600) / 60);
+                let s = totalSeconds % 60;
+                
+                hoursEl.innerText = String(h).padStart(2, '0');
+                minutesEl.innerText = String(m).padStart(2, '0');
+                secondsEl.innerText = String(s).padStart(2, '0');
+            }, 1000);
+        }
+        
+        startTimer();
+    </script>
+</body>
+</html>

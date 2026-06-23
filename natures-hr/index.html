@@ -1,0 +1,1060 @@
+﻿<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prirodna ljekarna: Izgradite vlastitu prirodnu ljekarnu kod kuće</title>
+<meta content="Želite li izgraditi vlastitu prirodnu ljekarnu kod kuće, ali ne znate koje bilje koristiti, koji recepti doista djeluju ili odakle uopće početi? Nabavite paket Prirodne ljekarne + 2 bonusa uz 70% popusta!" name="description"/>
+<link as_="image" href="{{ 'nature_IMG1_hr.webp' | file_url }}" rel="preload"/>
+<link href="data:," rel="icon"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary: #064e3b; /* Emerald 900 (Forest Green) */
+    --bg-dark: #064e3b;
+    --bg-darker: #022c22; /* Emerald 950 */
+    --red-alert: #b91c1c; /* Brick Red */
+    --red-alert-dark: #7f1d1d;
+    --text-main: #f0fdf4; /* Emerald 50 */
+    --text-muted: #a7f3d0; /* Emerald 300 */
+    --bg-light: #ffffff;
+    --accent-gold: #fbbf24; /* Amber Gold */
+    --accent-gold-hover: #d97706;
+    --green-check: #10b981;
+    --dark: #064e3b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Extremely readable body text */
+    color: var(--text-main);
+    background-color: var(--bg-dark);
+    line-height: 1.65;
+    font-size: 1.15rem; /* Standardizing easy-to-read body size */
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center { text-align: center; }
+.text-primary { color: var(--text-main); }
+.font-heading { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+.bold { font-weight: 700; }
+.italic { font-style: italic; }
+.mt-1 { margin-top: 1.5rem; }
+.mt-2 { margin-top: 2.5rem; }
+.mt-3 { margin-top: 4rem; }
+.mb-1 { margin-bottom: 1.5rem; }
+.mb-2 { margin-bottom: 2.5rem; }
+.hidden { display: none !important; }
+
+/* ================== STICKY COUNTDOWN ================== */
+.top-warning-bar {
+    background-color: var(--red-alert);
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    letter-spacing: 0.5px;
+}
+
+.warning-text {
+    margin-bottom: 6px;
+    display: block;
+}
+
+.countdown-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.time-unit {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-label {
+    font-size: 0.75rem;
+    margin-top: 4px;
+    font-weight: 600;
+    text-transform: lowercase;
+}
+
+.time-card {
+    background: #fff;
+    color: #000;
+    font-weight: 900;
+    font-size: 1.4rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15);
+}
+
+.time-sep {
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.4rem;
+    margin-top: -18px; /* Offset to center vertically with numbers */
+}
+
+/* ================== HERO / HEADLINE ================== */
+.hero-section {
+    background-color: var(--bg-dark);
+    padding: 4rem 0 3rem;
+}
+
+.main-headline {
+    font-size: 2.8rem;
+    line-height: 1.25;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.sub-headline {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    font-weight: 400;
+}
+
+.hero-main-image {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    display: block;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* ================== KUPI 1 DOBIJ 3 ================== */
+.b1g3-title {
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.b1g3-subtitle {
+    font-size: 1.25rem;
+    color: #f8fafc;
+    margin-bottom: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.b1g3-image-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.b1g3-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.b1g3-prices {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0 10%;
+}
+
+.b1g3-price-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.b1g3-price-strikethrough {
+    color: var(--accent-gold);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.b1g3-price-final {
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+@media (max-width: 768px) {
+    .b1g3-title { font-size: 1.9rem; }
+    .b1g3-subtitle { font-size: 1.15rem; margin-bottom: 1.5rem; }
+    .b1g3-prices { padding: 0 4%; }
+    .b1g3-price-strikethrough { font-size: 1.05rem; }
+    .b1g3-price-final { font-size: 1.35rem; }
+}
+
+/* ================== CALL TO ACTION BOX ================== */
+.cta-box {
+    background: transparent;
+    padding: 1.5rem 0;
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-box h3 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.star-rating {
+    color: var(--accent-gold);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.price-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price-container .current-price {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.price-container .savings {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+}
+
+.price-container .savings s {
+    color: var(--red-alert);
+}
+
+.price-container .savings strong {
+    color: #ffffff;
+    font-weight: 700;
+    margin-left: 8px;
+}
+
+.btn-buy-now {
+    display: block;
+    width: 100%;
+    background: linear-gradient(180deg, #ffca08 0%, #f5a623 100%);
+    color: #000000;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.25rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.45);
+    transition: all 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.btn-buy-now:hover {
+    background: linear-gradient(180deg, #ffd333 0%, #fbbf24 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(245, 158, 11, 0.65);
+}
+
+.guarantee-text {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-top: 1rem;
+    text-align: center;
+}
+.guarantee-text i {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+    margin-top: -3px;
+}
+
+/* ================== DEAL INFO SECTIONS ================== */
+.text-section {
+    padding: 4rem 0;
+    background-color: var(--bg-dark);
+}
+
+.text-section h2 {
+    color: #ffffff;
+}
+
+.text-section p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: #cbd5e1;
+}
+
+.divider {
+    height: 1px;
+    background: #334155;
+    max-width: 60%;
+    margin: 3rem auto;
+}
+
+/* ================== HTML BENEFITS CHECKLIST ================== */
+.benefits-section {
+    padding: 4rem 0;
+    background-color: var(--bg-dark);
+}
+
+.benefits-list {
+    list-style: none;
+    max-width: 750px;
+    margin: 2rem auto;
+}
+
+.benefits-list li {
+    font-size: 1.2rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid #334155;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    color: #f8fafc;
+}
+
+.benefits-list li:last-child {
+    border-bottom: none;
+}
+
+.benefits-list li i {
+    color: var(--green-check);
+    font-size: 1.6rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* ================== BUNDLE SECTION ================== */
+.bundle-section {
+    padding: 4rem 0;
+    background-color: var(--bg-dark);
+    color: #fff;
+    text-align: center;
+}
+
+.bundle-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.bundle-image {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    display: block;
+}
+
+/* ================== TESTIMONIALS ================== */
+.testimonials-section {
+    padding: 4rem 0;
+    background: var(--bg-dark);
+}
+
+.testimonials-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 650px;
+    margin: 0 auto 2rem;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5);
+    color: var(--dark);
+    text-align: left;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #cbd5e1;
+}
+
+.testimonial-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.verified-buyer {
+    font-size: 0.85rem;
+    color: var(--green-check);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.testimonial-stars {
+    color: var(--accent-gold);
+    display: flex;
+    margin-bottom: 0.75rem;
+}
+
+.testimonial-title {
+    font-weight: 800;
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* ================== EXTRA SALES SECTIONS ================== */
+.huge-offer-banner {
+    background-color: var(--bg-dark); 
+    padding: 3rem 1rem;
+    text-align: center;
+    border-top: none; 
+    border-bottom: none;
+}
+
+.huge-offer-title {
+    font-size: 9rem;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -2px;
+}
+
+.huge-offer-subtitle {
+    font-size: 4.5rem;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    letter-spacing: -1px;
+}
+
+.transform-section {
+    position: relative;
+    padding: 3rem 20px;
+    background-color: var(--bg-dark);
+    /* In a real scenario, you can add the sunset background image here:
+       background-image: url('images/sunset-bg.jpg');
+       background-size: cover;
+       background-position: center;
+       background-blend-mode: overlay;
+    */
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.transform-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #ffc107;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    margin-bottom: 2rem;
+    line-height: 1.15;
+}
+
+.transform-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.transform-image-wrapper {
+    flex: 1;
+    max-width: 500px;
+}
+
+.transform-image-wrapper img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.transform-benefits {
+    flex: 1;
+    list-style: none;
+}
+
+.transform-benefits li {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.transform-benefits li::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #b91c1c;
+    border-radius: 50%;
+    margin-top: 8px;
+    box-shadow: inset -2px -2px 4px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero-section, .text-section, .benefits-section, .bundle-section, .testimonials-section {
+        padding: 0.8rem 0 !important;
+    }
+
+    .divider {
+        margin: 1.5rem auto !important;
+    }
+
+    /* Decrease explicit utility margins on mobile */
+    .mt-1 { margin-top: 1rem !important; }
+    .mt-2 { margin-top: 1.5rem !important; }
+    .mt-3 { margin-top: 2rem !important; }
+    .mb-1 { margin-bottom: 1rem !important; }
+    .mb-2 { margin-bottom: 1.5rem !important; }
+    
+    .top-warning-bar {
+        padding: 10px;
+    }
+    .warning-text {
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+    }
+    .time-card {
+        font-size: 1.1rem;
+        padding: 4px 10px;
+    }
+    .time-sep {
+        font-size: 1.1rem;
+        margin-top: -14px;
+    }
+    .time-label {
+        font-size: 0.65rem;
+    }
+
+    .main-headline {
+        font-size: 2.1rem;
+        line-height: 1.25;
+        margin-bottom: 1.2rem;
+    }
+    
+    .sub-headline {
+        font-size: 1.1rem;
+    }
+    
+    .price-container .current-price {
+        font-size: 3.2rem;
+    }
+    
+    .btn-buy-now {
+        font-size: 1.4rem;
+        padding: 1.2rem 1rem;
+    }
+    
+    .text-section p, .benefits-list li {
+        font-size: 1.15rem;
+    }
+    
+    .bundle-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+    
+    .huge-offer-banner {
+        padding: 1rem 1rem;
+    }
+    
+    .huge-offer-title {
+        font-size: 4rem;
+    }
+    
+    .huge-offer-subtitle {
+        font-size: 1.8rem;
+    }
+    
+    .transform-title {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .transform-image-wrapper {
+        width: 100%;
+        margin-bottom: -1rem;
+    }
+
+    .transform-image-wrapper img {
+        width: 100%;
+        max-width: 100%;
+        transform: scale(1.05); /* Make the image pop a bit more */
+    }
+    
+    .transform-grid {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .transform-benefits li {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .cta-box h3 {
+        font-size: 1.55rem;
+    }
+    .guarantee-text {
+        font-size: 0.85rem;
+        padding: 0 10px;
+    }
+}
+
+</style>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '830224686766443');
+    fbq('track', 'PageView');
+    </script>
+<noscript><img height="1" src="https://www.facebook.com/tr?id=830224686766443&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- UTMify Tracker -->
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+<!-- UTMify Pixel -->
+<script>
+  window.pixelId = "6a31cb3f21cd157dc1cbf8fc";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+</head>
+<body>
+<!-- STICKY COUNTDOWN BAR -->
+<div class="top-warning-bar">
+<div class="warning-text">â° FINAL HOURS â€“ 70% POPUSTA ENDS IN</div>
+<div class="countdown-box">
+<div class="time-unit">
+<span class="time-card" id="timer-hours">00</span>
+<span class="time-label">sat</span>
+</div>
+<span class="time-sep">:</span>
+<div class="time-unit">
+<span class="time-card" id="timer-minutes">10</span>
+<span class="time-label">min</span>
+</div>
+<span class="time-sep">:</span>
+<div class="time-unit">
+<span class="time-card" id="timer-seconds">00</span>
+<span class="time-label">sek</span>
+</div>
+</div>
+</div>
+<!-- MAIN HERO SECTION -->
+<section class="hero-section text-center">
+<div class="container">
+<h1 class="main-headline font-heading bold italic text-primary">
+                Želite li izgraditi vlastitu prirodnu ljekarnu kod kuće, ali ne znate koje bilje koristiti, koji recepti doista djeluju ili odakle uopće početi?
+            </h1>
+<p class="sub-headline">
+                Ne morate biti stručnjak za ljekovito bilje. Ne trebaju vam skupi sastojci. I ne treba vam ormarić prepun kompliciranih dodataka prehrani. Ova kolekcija prilagođena početnicima pokazat će vam kako pripremiti staromodne biljne lijekove, umirujuće čajeve, prirodne sirupe, domaće masti, kuhinjske lijekove i jednostavne recepte za nelagodu u grlu, san, probavu, bolove u mišićima, njegu kože, imunitet i još mnogo toga.
+            </p>
+<!-- MAIN VSL/BUNDLE IMAGE -->
+<img alt="Program Prirodne ljekarne" class="hero-main-image" src="{{ 'nature_IMG1_hr.webp' | file_url }}"/>
+<!-- BUY/CTA BOX -->
+<div class="cta-box">
+<div class="star-rating">
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+</div>
+<h3>Prirodna ljekarna + 2 BONUSA</h3>
+<div class="price-container">
+<div class="current-price">19,90 €</div>
+<div class="savings">
+<s>59,70 €</s> <strong>Štedite 70%</strong>
+</div>
+</div>
+<a class="btn-buy-now" href="https://pay.hotmart.com/X104547537N?checkoutMode=10&utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}&xcod=FBhQwK21wXxR{{campaign.name}}|{{campaign.id}}hQwK21wXxR{{adset.name}}|{{adset.id}}hQwK21wXxR{{ad.name}}|{{ad.id}}hQwK21wXxR{{placement}}">
+                    BUY NOW
+                </a>
+<div class="guarantee-text">
+<i data-lucide="shield-check" style="color: #16a34a; width: 16px;"></i>
+                    100% secure checkout â€¢ Instant digital access
+                </div>
+</div>
+</div>
+</section>
+<!-- KUPI 1 DOBIJ 3 SECTION -->
+<section class="b1g3-section text-center" style="padding: 4rem 0 0; background-color: var(--bg-dark);">
+<div class="container">
+<h1 class="b1g3-title" style="letter-spacing: -0.5px;">KUPI 1 DOBIJ 3</h1>
+<p class="b1g3-subtitle" style="margin-bottom: 2rem;">
+                Samo na ograničeno vrijeme, evo što ćete dobiti:
+            </p>
+</div>
+<div class="b1g3-image-wrapper" style="width: 100%; max-width: 100%; margin: 0; padding: 0; overflow: hidden;">
+<img alt="Kupi 1 Dobij 3 Ponuda" class="b1g3-image" src="{{ 'nature_IMG2_hr.webp' | file_url }}" style="width: 100%; max-width: 100%; display: block; margin: 0 auto; border-radius: 0; box-shadow: none;"/>
+</div>
+<div class="container">
+<div class="divider" style="margin-top: 3.5rem; margin-bottom: 0;"></div>
+</div>
+</section>
+<!-- CONTENT SECTIONS -->
+<section class="text-section">
+<div class="container">
+<div class="text-center">
+<h2 class="font-heading bold italic" style="font-size: 2.4rem; margin-bottom: 2rem;">Zašto ova ponuda zvuči predobro da bi bila istinita?</h2>
+</div>
+<div style="max-width: 750px; margin: 0 auto; line-height: 1.8;">
+<p>We get it â€” three complete natural remedy guides for the price of one isnâ€™t something you see every day.</p>
+<p>Evo jednostavne istine: jednom godišnje, otprilike u ovo doba, organiziramo poseban Događaj za čitatelje kako bismo se zahvalili našoj publici i učinili naše najpopularnije kolekcije za kućno blagostanje dostupnijima.</p>
+<p>Because we manage everything directly â€” from publishing to digital delivery â€” we can skip retail markups, printing costs, and unnecessary middlemen to offer the entire bundle, normally 59,70 €, za samo 19,90 €.</p>
+<p class="bold" style="color: var(--red-alert);">Kada događaj završi, cijene se vraćaju u normalu.</p>
+</div>
+<div class="divider"></div>
+<div class="text-center">
+<h2 class="font-heading bold italic text-primary" style="font-size: 2.2rem; margin-bottom: 2rem;">"Zašto su mnogi stari kućni lijekovi zaboravljeni?"</h2>
+</div>
+<div style="max-width: 750px; margin: 0 auto; line-height: 1.8;">
+<p>Generacijama su obitelji znale kako kod kuće pripremiti jednostavne biljne recepte.</p>
+<p>They knew which teas to make for a rough night of sleepâ€¦ which kitchen ingredients to use when the throat felt irritatedâ€¦ which herbs were traditionally used for digestionâ€¦ which homemade salves were kept for sore musclesâ€¦ and which natural preparations belonged in every home cabinet.</p>
+<p class="bold">âŒ But today, most of that knowledge has disappeared.</p>
+<p>Umjesto toga, ljudi jure u ljekarnu za svaku sitnu nelagodu, troše novac na proizvode koje jedva razumiju i osjećaju se potpuno nespremno kada žele prirodniju opciju kod kuće.</p>
+<p>I tu počinje frustracija.</p>
+<p>Prirodni kućni lijekovi djeluju zbunjujuće samo onda kada pokušavate spojiti nasumične internetske savjete, proturječne savjete o bilju, komplicirane recepte i nejasne videozapise stvorene za ljude koji već znaju što rade.</p>
+<p>Thatâ€™s when mistakes happen â€” buying the wrong herbs, mixing ingredients without knowing why, using recipes that are too complicated, wasting money on unnecessary products, and giving up before you ever build a real natural apothecary at home.</p>
+<p>Što ako je jedino što stoji između vas i vaše vlastite kućne ljekarne pravo vodstvo korak po korak?</p>
+<p>Jer istina je: ne trebaju vam godine iskustva. Ne trebaju vam rijetke biljke. Ne treba vam skupa oprema. I ne trebate to naučiti od svojih baka i djedova.</p>
+<p>Potrebne su vam samo jasne, početnicima prilagođene upute koje vam pokazuju kako jednostavno pretvoriti bilje, čajeve, ulja, sirupe i kuhinjske sastojke u praktične lijekove za svakodnevnu upotrebu.</p>
+<p>Uz prave temelje, izgradnja vlastite prirodne ljekarne postaje jednostavna, osnažujuća i nevjerojatno nagrađujuća.</p>
+<p>Upravo je zato ovaj Paket od 3 knjige i stvoren: kako bi vas korak po korak vodio od odabira pravog bilja i kuhinjskih sastojaka do pripreme umirujućih čajeva, staromodnih sirupa, domaćih masti, biljnih ulja, jednostavnih obloga i prirodnih recepata za najčešće svakodnevne nelagode.</p>
+<p>This bundle doesnâ€™t just teach you about herbs â€” it helps you feel prepared every time your home needs a natural option.</p>
+</div>
+</div>
+</section>
+<!-- BENEFITS CHECKLIST SECTION -->
+<section class="benefits-section">
+<div class="container">
+<h2 class="text-center font-heading bold italic" style="font-size: 2.2rem; margin-bottom: 2.5rem; color: #ffffff;">
+                ðŸ“š Inside the Bundle Youâ€™ll Discover:
+            </h2>
+<ul class="benefits-list">
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Kako izgraditi vlastitu prirodnu ljekarnu kod kuće bez bacanja novca na nepotrebno bilje, alate ili dodatke prehrani</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Cjelovit, početnicima prilagođen vodič kako biste uvijek znali što pripremiti za nelagodu u grlu, san, probavu, bolove u mišićima, njegu kože, imunitet i još mnogo toga</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Kako korak po korak napraviti staromodne biljne čajeve, sirupe, masti, ulja, obloge i jednostavne kućne lijekove</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Koje su se biljke i kuhinjski sastojci tradicionalno koristili za uobičajene svakodnevne nelagode</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Kako pripremiti prirodne recepte koristeći jednostavne sastojke poput meda, đumbira, limuna, češnjaka, jabučnog octa, mente, kamilice, ružmarina i više</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Kako kreirati umirujuće biljne čajeve za san, probavu, opuštanje, utjehu za grlo, imunitet i svakodnevno blagostanje</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Uobičajene početničke pogreške zbog kojih gubite novac, uništavate recepte ili zbog kojih su prirodni lijekovi teži nego što bi trebali biti</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Jednostavne biljne recepte, vodiče za sastojke, metode pripreme i savjete za kućnu ljekarnu koje možete pratiti korak po korak</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- TRANSFORM VIDEO SECTION -->
+<section class="transform-section" style="padding: 0;">
+<div class="transform-grid text-center" style="max-width: 100%; margin: 0; gap: 0;">
+<div class="transform-image-wrapper" style="width: 100%; max-width: 100%; margin: 0;">
+<img alt="Video tečaj" src="{{ 'nature_IMG3_hr.webp' | file_url }}" style="width: 100%; border-radius: 0; display: block;"/>
+</div>
+</div>
+</section>
+<!-- HUGE OFFER BANNER -->
+<section class="huge-offer-banner">
+<div class="container">
+<div class="huge-offer-title">70% POPUSTA</div>
+<div class="huge-offer-subtitle">
+                ZAVRŠAVA DANAS 
+                <i data-lucide="corner-right-down" style="width: 48px; height: 48px; stroke-width: 3px;"></i>
+</div>
+</div>
+</section>
+<!-- BUNDLE / BOOKS SECTION & SECOND CTA -->
+<section class="bundle-section" style="padding-top: 2rem;">
+<div class="container">
+<img alt="Paket Ljekarne" class="bundle-image" src="{{ 'nature_IMG1_hr.webp' | file_url }}" style="width: 100%; max-width: 700px; margin: 0 auto;"/>
+<div class="cta-box" style="margin-top: 1rem; background: var(--bg-white);">
+<div class="star-rating">
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+</div>
+<h3>Prirodna ljekarna + 2 BONUSA</h3>
+<div class="price-container">
+<div class="current-price">19,90 €</div>
+<div class="savings">
+<s>59,70 €</s> <strong>Štedite 70%</strong>
+</div>
+</div>
+<a class="btn-buy-now" href="https://pay.hotmart.com/X104547537N?checkoutMode=10&utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}&xcod=FBhQwK21wXxR{{campaign.name}}|{{campaign.id}}hQwK21wXxR{{adset.name}}|{{adset.id}}hQwK21wXxR{{ad.name}}|{{ad.id}}hQwK21wXxR{{placement}}">
+                    BUY NOW
+                </a>
+</div>
+</div>
+</section>
+<section class="text-section text-center">
+<div class="container">
+<div style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+<p>Ako ste željeli izgraditi vlastitu prirodnu ljekarnu kod kuće, ali ste se osjećali preplavljeno, nesigurno ili vam je dosta nagađanja koje bilje kupiti, kojim receptima vjerovati ili kako ih ispravno pripremiti, ovaj paket uklanja svaku prepreku koja vam stoji na putu.</p>
+<p>Daje vam samopouzdanje, jasnoću, jednostavan put korak-po-korak, recepte inspirirane staromodnim kućnim lijekovima, alate za izbjegavanje početničkih grešaka, sposobnost odabira korisnog bilja i sastojaka bez bacanja novca, vještinu da kod kuće pripremite čajeve, sirupe, masti, ulja i kuhinjske lijekove, te zadovoljstvo što napokon imate vlastitu prirodnu ljekarnu spremnu kad god vašoj obitelji zatreba jednostavna, tradicionalna kućna njega.</p>
+<p>Right now, while itâ€™s 70% POPUSTA, youâ€™re getting three complete natural remedy guides for the price of one â€” a deal that wonâ€™t last.</p>
+<div class="conversion-highlight-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.02)); border: 2px dashed var(--accent-gold); border-radius: 12px; padding: 2rem 1.5rem; margin: 3rem auto 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+<h3 class="font-heading bold italic" style="font-size: 2.2rem; margin-bottom: 0.8rem; color: var(--accent-gold);">
+                        Zašto čekati?
+                    </h3>
+<p style="font-size: 1.3rem; line-height: 1.6; margin-bottom: 1.5rem; color: #f8fafc; font-weight: 600;">
+<span style="font-size: 1.4rem;">ðŸ‘‰</span> Building your own natural apothecary doesnâ€™t have to be confusing. It can be simple, practical, and incredibly rewardingâ€¦ when you start with the right guidance.
+                    </p>
+<p style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 1.5rem; color: #f8fafc; font-weight: 500;">
+                        Grab your 70% POPUSTA bundle today and finally learn how to prepare old-fashioned herbal remedies, soothing teas, kitchen recipes, syrups, salves, and natural preparations with confidence.
+                    </p>
+<a class="bold italic" href="https://pay.hotmart.com/X104547537N?checkoutMode=10&utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}&xcod=FBhQwK21wXxR{{campaign.name}}|{{campaign.id}}hQwK21wXxR{{adset.name}}|{{adset.id}}hQwK21wXxR{{ad.name}}|{{ad.id}}hQwK21wXxR{{placement}}" style="font-size: 1.5rem; color: #ffffff; background: var(--red-alert); display: inline-block; padding: 16px 32px; border-radius: 6px; box-shadow: 0 6px 20px rgba(185, 28, 28, 0.4); text-decoration: none; width: 100%; max-width: 450px; text-transform: uppercase;">
+                        Ostvarite trenutačni pristup
+                    </a>
+<p style="font-size: 1rem; color: #cbd5e1; margin-top: 1rem;">Naručite odmah i uštedite 70% prije nego ova ograničena ponuda nestane.</p>
+</div>
+<p style="font-size: 0.95rem; color: #cbd5e1; margin-top: 1.5rem;">Instant direct digital download. After you complete the payment, you will immediately have the option to download the product(s) from the final purchase page, and you will also receive a download email shortly after.</p>
+</div>
+<div class="divider"></div>
+<h2 class="font-serif bold italic mt-3 mb-2" style="font-size: 2.2rem; color: #ffffff;">Evo što ljudi kažu o nama:</h2>
+<!-- Testimonial Cards -->
+<div class="testimonials-grid">
+<!-- Testimonial 1 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Margaret D.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Provjereni kupac
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Točno ono što sam tražila."</div>
+<div class="testimonial-text">"Uvijek sam htjela naučiti kako kod kuće izrađivati prirodne lijekove, ali nisam znala odakle početi. Ovaj je paket sve učinio jednostavnim. Recepti su jasni, praktični i laki za praćenje."</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Helen T.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Provjereni kupac
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Neophodno za svaki dom."</div>
+<div class="testimonial-text">"Sviđa mi se ideja da kod kuće imam prirodnu ljekarnu. Vodiči su mi pomogli shvatiti koje bilje čuvati, kako ga pripremati i što koristiti za uobičajene svakodnevne nelagode. Osjećam se kao da vraćam staro obiteljsko znanje."</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Linda R.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Provjereni kupac
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Uštedjelo mi je novac i dalo mi samopouzdanje."</div>
+<div class="testimonial-text">"Before this, I kept buying random herbal products without really knowing what I needed. Now I understand how to use simple ingredients like honey, ginger, lemon, mint, chamomile, and rosemary in practical home recipes."</div>
+</div>
+<!-- Testimonial 4 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Susan L.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Provjereni kupac
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Vodič za čaj mi je omiljen!"</div>
+<div class="testimonial-text">"I started with the herbal tea bonus and absolutely loved it. The blends for sleep, digestion, throat comfort, and relaxation are easy to prepare and feel so comforting. I finally have recipes I can actually use at home."</div>
+</div>
+</div>
+</div>
+</section>
+<!-- DISCLAIMER SECTION -->
+<section class="disclaimer-section" style="padding: 1.5rem 0; font-size: 0.7rem; color: #a7f3d0; opacity: 0.7; line-height: 1.5; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+<div class="container">
+<p style="max-width: 800px; margin: 0 auto;"><strong>Izjava o odricanju od odgovornosti:</strong> Educational purposes only. Not medical advice. Consult a doctor before use, especially if pregnant, taking medication, or having health conditions.</p>
+</div>
+</section>
+<!-- FOOTER -->
+<footer style="background: #022c22; color: #6ee7b7; text-align: center; padding: 2.5rem 1rem; font-size: 0.9rem;">
+<div class="container">
+<h4 class="font-serif bold mb-1" style="color: #f0fdf4; font-size: 1.2rem;">Prirodna ljekarna</h4>
+<p>Â© Sva prava pridržana.</p>
+<p style="margin-top: 1rem;">
+<a href="mailto:trinityag01@gmail.com" style="color: #f0fdf4; text-decoration: none;">Kontaktirajte nas</a>
+</p>
+</div>
+</footer>
+<!-- Initialize Lucide Icons -->
+<script>
+        lucide.createIcons();
+        
+        // Countdown Timer Logic
+        function startTimer() {
+            const hoursEl = document.getElementById("timer-hours");
+            const minutesEl = document.getElementById("timer-minutes");
+            const secondsEl = document.getElementById("timer-seconds");
+            
+            if (!hoursEl || !minutesEl || !secondsEl) return;
+            
+            let hours = parseInt(hoursEl.innerText, 10);
+            let minutes = parseInt(minutesEl.innerText, 10);
+            let seconds = parseInt(secondsEl.innerText, 10);
+            
+            let totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
+            
+            const timerInterval = setInterval(() => {
+                if (totalSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    return;
+                }
+                
+                totalSeconds--;
+                
+                let h = Math.floor(totalSeconds / 3600);
+                let m = Math.floor((totalSeconds % 3600) / 60);
+                let s = totalSeconds % 60;
+                
+                hoursEl.innerText = String(h).padStart(2, '0');
+                minutesEl.innerText = String(m).padStart(2, '0');
+                secondsEl.innerText = String(s).padStart(2, '0');
+            }, 1000);
+        }
+        
+        startTimer();
+    </script>
+</body>
+</html>

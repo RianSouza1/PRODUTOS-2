@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Farmacia Naturii: Creează-ți Propria Farmacie Naturală Acasă</title>
+<meta content="Vrei să îți creezi propria farmacie naturală acasă, dar nu știi ce plante să folosești, ce rețete funcționează cu adevărat sau de unde să începi? Obține pachetul Farmacia Naturii + 2 Bonusuri cu o reducere de 70%!" name="description"/>
+<link as_="image" href="{{ 'nature_IMG1_ro.webp' | file_url }}" rel="preload"/>
+<link href="data:," rel="icon"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary: #064e3b; /* Emerald 900 (Forest Green) */
+    --bg-dark: #064e3b;
+    --bg-darker: #022c22; /* Emerald 950 */
+    --red-alert: #b91c1c; /* Brick Red */
+    --red-alert-dark: #7f1d1d;
+    --text-main: #f0fdf4; /* Emerald 50 */
+    --text-muted: #a7f3d0; /* Emerald 300 */
+    --bg-light: #ffffff;
+    --accent-gold: #fbbf24; /* Amber Gold */
+    --accent-gold-hover: #d97706;
+    --green-check: #10b981;
+    --dark: #064e3b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Extremely readable body text */
+    color: var(--text-main);
+    background-color: var(--bg-dark);
+    line-height: 1.65;
+    font-size: 1.15rem; /* Standardizing easy-to-read body size */
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center { text-align: center; }
+.text-primary { color: var(--text-main); }
+.font-heading { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+.bold { font-weight: 700; }
+.italic { font-style: italic; }
+.mt-1 { margin-top: 1.5rem; }
+.mt-2 { margin-top: 2.5rem; }
+.mt-3 { margin-top: 4rem; }
+.mb-1 { margin-bottom: 1.5rem; }
+.mb-2 { margin-bottom: 2.5rem; }
+.hidden { display: none !important; }
+
+/* ================== STICKY COUNTDOWN ================== */
+.top-warning-bar {
+    background-color: var(--red-alert);
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    letter-spacing: 0.5px;
+}
+
+.warning-text {
+    margin-bottom: 6px;
+    display: block;
+}
+
+.countdown-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.time-unit {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-label {
+    font-size: 0.75rem;
+    margin-top: 4px;
+    font-weight: 600;
+    text-transform: lowercase;
+}
+
+.time-card {
+    background: #fff;
+    color: #000;
+    font-weight: 900;
+    font-size: 1.4rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15);
+}
+
+.time-sep {
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.4rem;
+    margin-top: -18px; /* Offset to center vertically with numbers */
+}
+
+/* ================== HERO / HEADLINE ================== */
+.hero-section {
+    background-color: var(--bg-dark);
+    padding: 4rem 0 3rem;
+}
+
+.main-headline {
+    font-size: 2.8rem;
+    line-height: 1.25;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.sub-headline {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    font-weight: 400;
+}
+
+.hero-main-image {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    display: block;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* ================== BUY 1 GET 3 ================== */
+.b1g3-title {
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.b1g3-subtitle {
+    font-size: 1.25rem;
+    color: #f8fafc;
+    margin-bottom: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.b1g3-image-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.b1g3-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.b1g3-prices {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0 10%;
+}
+
+.b1g3-price-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.b1g3-price-strikethrough {
+    color: var(--accent-gold);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.b1g3-price-final {
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+@media (max-width: 768px) {
+    .b1g3-title { font-size: 1.9rem; }
+    .b1g3-subtitle { font-size: 1.15rem; margin-bottom: 1.5rem; }
+    .b1g3-prices { padding: 0 4%; }
+    .b1g3-price-strikethrough { font-size: 1.05rem; }
+    .b1g3-price-final { font-size: 1.35rem; }
+}
+
+/* ================== CALL TO ACTION BOX ================== */
+.cta-box {
+    background: transparent;
+    padding: 1.5rem 0;
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-box h3 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.star-rating {
+    color: var(--accent-gold);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.price-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price-container .current-price {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.price-container .savings {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+}
+
+.price-container .savings s {
+    color: var(--red-alert);
+}
+
+.price-container .savings strong {
+    color: #ffffff;
+    font-weight: 700;
+    margin-left: 8px;
+}
+
+.btn-buy-now {
+    display: block;
+    width: 100%;
+    background: linear-gradient(180deg, #ffca08 0%, #f5a623 100%);
+    color: #000000;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.25rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.45);
+    transition: all 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.btn-buy-now:hover {
+    background: linear-gradient(180deg, #ffd333 0%, #fbbf24 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(245, 158, 11, 0.65);
+}
+
+.guarantee-text {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-top: 1rem;
+    text-align: center;
+}
+.guarantee-text i {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+    margin-top: -3px;
+}
+
+/* ================== DEAL INFO SECTIONS ================== */
+.text-section {
+    padding: 4rem 0;
+    background-color: var(--bg-dark);
+}
+
+.text-section h2 {
+    color: #ffffff;
+}
+
+.text-section p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: #cbd5e1;
+}
+
+.divider {
+    height: 1px;
+    background: #334155;
+    max-width: 60%;
+    margin: 3rem auto;
+}
+
+/* ================== HTML BENEFITS CHECKLIST ================== */
+.benefits-section {
+    padding: 4rem 0;
+    background-color: var(--bg-dark);
+}
+
+.benefits-list {
+    list-style: none;
+    max-width: 750px;
+    margin: 2rem auto;
+}
+
+.benefits-list li {
+    font-size: 1.2rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid #334155;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    color: #f8fafc;
+}
+
+.benefits-list li:last-child {
+    border-bottom: none;
+}
+
+.benefits-list li i {
+    color: var(--green-check);
+    font-size: 1.6rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* ================== BUNDLE SECTION ================== */
+.bundle-section {
+    padding: 4rem 0;
+    background-color: var(--bg-dark);
+    color: #fff;
+    text-align: center;
+}
+
+.bundle-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.bundle-image {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    display: block;
+}
+
+/* ================== TESTIMONIALS ================== */
+.testimonials-section {
+    padding: 4rem 0;
+    background: var(--bg-dark);
+}
+
+.testimonials-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 650px;
+    margin: 0 auto 2rem;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5);
+    color: var(--dark);
+    text-align: left;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #cbd5e1;
+}
+
+.testimonial-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.verified-buyer {
+    font-size: 0.85rem;
+    color: var(--green-check);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.testimonial-stars {
+    color: var(--accent-gold);
+    display: flex;
+    margin-bottom: 0.75rem;
+}
+
+.testimonial-title {
+    font-weight: 800;
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* ================== EXTRA SALES SECTIONS ================== */
+.huge-offer-banner {
+    background-color: var(--bg-dark); 
+    padding: 3rem 1rem;
+    text-align: center;
+    border-top: none; 
+    border-bottom: none;
+}
+
+.huge-offer-title {
+    font-size: 9rem;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -2px;
+}
+
+.huge-offer-subtitle {
+    font-size: 4.5rem;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    letter-spacing: -1px;
+}
+
+.transform-section {
+    position: relative;
+    padding: 3rem 20px;
+    background-color: var(--bg-dark);
+    /* In a real scenario, you can add the sunset background image here:
+       background-image: url('images/sunset-bg.jpg');
+       background-size: cover;
+       background-position: center;
+       background-blend-mode: overlay;
+    */
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.transform-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #ffc107;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    margin-bottom: 2rem;
+    line-height: 1.15;
+}
+
+.transform-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.transform-image-wrapper {
+    flex: 1;
+    max-width: 500px;
+}
+
+.transform-image-wrapper img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.transform-benefits {
+    flex: 1;
+    list-style: none;
+}
+
+.transform-benefits li {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.transform-benefits li::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #b91c1c;
+    border-radius: 50%;
+    margin-top: 8px;
+    box-shadow: inset -2px -2px 4px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero-section, .text-section, .benefits-section, .bundle-section, .testimonials-section {
+        padding: 0.8rem 0 !important;
+    }
+
+    .divider {
+        margin: 1.5rem auto !important;
+    }
+
+    /* Decrease explicit utility margins on mobile */
+    .mt-1 { margin-top: 1rem !important; }
+    .mt-2 { margin-top: 1.5rem !important; }
+    .mt-3 { margin-top: 2rem !important; }
+    .mb-1 { margin-bottom: 1rem !important; }
+    .mb-2 { margin-bottom: 1.5rem !important; }
+    
+    .top-warning-bar {
+        padding: 10px;
+    }
+    .warning-text {
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+    }
+    .time-card {
+        font-size: 1.1rem;
+        padding: 4px 10px;
+    }
+    .time-sep {
+        font-size: 1.1rem;
+        margin-top: -14px;
+    }
+    .time-label {
+        font-size: 0.65rem;
+    }
+
+    .main-headline {
+        font-size: 2.1rem;
+        line-height: 1.25;
+        margin-bottom: 1.2rem;
+    }
+    
+    .sub-headline {
+        font-size: 1.1rem;
+    }
+    
+    .price-container .current-price {
+        font-size: 3.2rem;
+    }
+    
+    .btn-buy-now {
+        font-size: 1.4rem;
+        padding: 1.2rem 1rem;
+    }
+    
+    .text-section p, .benefits-list li {
+        font-size: 1.15rem;
+    }
+    
+    .bundle-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+    
+    .huge-offer-banner {
+        padding: 1rem 1rem;
+    }
+    
+    .huge-offer-title {
+        font-size: 4rem;
+    }
+    
+    .huge-offer-subtitle {
+        font-size: 1.8rem;
+    }
+    
+    .transform-title {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .transform-image-wrapper {
+        width: 100%;
+        margin-bottom: -1rem;
+    }
+
+    .transform-image-wrapper img {
+        width: 100%;
+        max-width: 100%;
+        transform: scale(1.05); /* Make the image pop a bit more */
+    }
+    
+    .transform-grid {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .transform-benefits li {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .cta-box h3 {
+        font-size: 1.55rem;
+    }
+    .guarantee-text {
+        font-size: 0.85rem;
+        padding: 0 10px;
+    }
+}
+
+</style>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '830224686766443');
+    fbq('track', 'PageView');
+    </script>
+<noscript><img height="1" src="https://www.facebook.com/tr?id=830224686766443&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- UTMify Tracker -->
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+<!-- UTMify Pixel -->
+<script>
+  window.pixelId = "6a31cb3f21cd157dc1cbf8fc";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+</head>
+<body>
+<!-- STICKY COUNTDOWN BAR -->
+<div class="top-warning-bar">
+<div class="warning-text">⏳ ULTIMELE ORE – REDUCEREA DE 70% EXPIRĂ ÎN</div>
+<div class="countdown-box">
+<div class="time-unit">
+<span class="time-card" id="timer-hours">00</span>
+<span class="time-label">ore</span>
+</div>
+<span class="time-sep">:</span>
+<div class="time-unit">
+<span class="time-card" id="timer-minutes">10</span>
+<span class="time-label">min</span>
+</div>
+<span class="time-sep">:</span>
+<div class="time-unit">
+<span class="time-card" id="timer-seconds">00</span>
+<span class="time-label">sec</span>
+</div>
+</div>
+</div>
+<!-- MAIN HERO SECTION -->
+<section class="hero-section text-center">
+<div class="container">
+<h1 class="main-headline font-heading bold italic text-primary">
+                Vrei să îți construiești propria Farmacie Naturală acasă, dar nu știi ce plante să folosești, ce rețete chiar funcționează sau de unde să începi?
+            </h1>
+<p class="sub-headline">
+                Nu trebuie să fii un specialist în plante. Nu ai nevoie de ingrediente scumpe. Și nici de un dulap plin cu suplimente complicate. Această colecție perfectă pentru începători îți arată cum să prepari remedii din plante ca pe vremuri, ceaiuri calmante, siropuri naturale, unguente făcute în casă, remedii la îndemână din bucătărie și rețete simple pentru durerile de gât, probleme cu somnul, digestie, dureri musculare, îngrijirea pielii, imunitate și multe altele.
+            </p>
+<!-- MAIN VSL/BUNDLE IMAGE -->
+<img alt="Nature's Apothecary Program" class="hero-main-image" src="{{ 'nature_IMG1_ro.webp' | file_url }}"/>
+<!-- BUY/CTA BOX -->
+<div class="cta-box">
+<div class="star-rating">
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+</div>
+<h3>Farmacia Naturii + 2 BONUSURI</h3>
+<div class="price-container">
+<div class="current-price">107 lei</div>
+<div class="savings">
+<s>359 lei</s> <strong>Economisești 70%</strong>
+</div>
+</div>
+<a class="btn-buy-now" href="https://pay.hotmart.com/X104547537N?checkoutMode=10&utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}&xcod=FBhQwK21wXxR{{campaign.name}}|{{campaign.id}}hQwK21wXxR{{adset.name}}|{{adset.id}}hQwK21wXxR{{ad.name}}|{{ad.id}}hQwK21wXxR{{placement}}">
+                    CUMPĂRĂ ACUM
+                </a>
+<div class="guarantee-text">
+<i data-lucide="shield-check" style="color: #16a34a; width: 16px;"></i>
+                    Plată 100% sigură • Acces digital instantaneu
+                </div>
+</div>
+</div>
+</section>
+<!-- BUY 1 GET 3 SECTION -->
+<section class="b1g3-section text-center" style="padding: 4rem 0 0; background-color: var(--bg-dark);">
+<div class="container">
+<h1 class="b1g3-title" style="letter-spacing: -0.5px;">CUMPERI 1, PRIMEȘTI 3</h1>
+<p class="b1g3-subtitle" style="margin-bottom: 2rem;">
+                Doar pentru o perioadă limitată, iată ce vei primi:
+            </p>
+</div>
+<div class="b1g3-image-wrapper" style="width: 100%; max-width: 100%; margin: 0; padding: 0; overflow: hidden;">
+<img alt="Buy 1 Get 3 Offer" class="b1g3-image" src="{{ 'nature_IMG2_ro.webp' | file_url }}" style="width: 100%; max-width: 100%; display: block; margin: 0 auto; border-radius: 0; box-shadow: none;"/>
+</div>
+<div class="container">
+<div class="divider" style="margin-top: 3.5rem; margin-bottom: 0;"></div>
+</div>
+</section>
+<!-- CONTENT SECTIONS -->
+<section class="text-section">
+<div class="container">
+<div class="text-center">
+<h2 class="font-heading bold italic" style="font-size: 2.4rem; margin-bottom: 2rem;">De ce sună această ofertă prea frumos ca să fie adevărată?</h2>
+</div>
+<div style="max-width: 750px; margin: 0 auto; line-height: 1.8;">
+<p>Înțelegem — trei ghiduri complete de remedii naturale la prețul unuia nu e ceva ce vezi în fiecare zi.</p>
+<p>Dar adevărul e simplu: o dată pe an, în acest sezon, organizăm un Eveniment Special pentru Cititorii Noștri, pentru a le mulțumi și a face cele mai populare colecții de sănătate pentru acasă mult mai accesibile.</p>
+<p>Pentru că gestionăm totul direct — de la publicare până la livrarea digitală — putem elimina adaosurile din magazine, costurile de tipărire și intermediarii inutili, oferindu-ți întregul pachet, care în mod normal costă 359 lei, la doar 107 lei.</p>
+<p class="bold" style="color: var(--red-alert);">Când evenimentul se termină, prețurile revin la normal.</p>
+</div>
+<div class="divider"></div>
+<div class="text-center">
+<h2 class="font-heading bold italic text-primary" style="font-size: 2.2rem; margin-bottom: 2rem;">"De ce s-au uitat atâtea remedii vechi de casă?"</h2>
+</div>
+<div style="max-width: 750px; margin: 0 auto; line-height: 1.8;">
+<p>Timp de generații, familiile au știut cum să prepare rețete simple din plante acasă.</p>
+<p>Știau exact ce ceaiuri să facă pentru o noapte de nesomn... ce ingrediente din bucătărie să folosească atunci când îi irita gâtul... ce plante erau folosite în mod tradițional pentru digestie... ce unguente de casă erau păstrate pentru durerile musculare... și ce preparate naturale trebuiau să existe în orice dulap de acasă.</p>
+<p class="bold">❌ Dar astăzi, majoritatea acestor cunoștințe au dispărut.</p>
+<p>În schimb, oamenii dau fuga la farmacie pentru orice mic disconfort, cheltuiesc bani pe produse pe care abia le înțeleg și se simt complet nepregătiți atunci când își doresc o opțiune mai naturală acasă.</p>
+<p>Și de aici începe frustrarea.</p>
+<p>Remediile naturale de casă par complicate doar atunci când încerci să pui cap la cap sfaturi găsite la întâmplare pe internet, informații contradictorii despre plante, rețete dificile și clipuri video vagi făcute pentru oameni care știu deja ce fac.</p>
+<p>Atunci apar greșelile — cumperi plantele greșite, amesteci ingrediente fără să știi de ce, folosești rețete mult prea complexe, irosești bani pe produse inutile și renunți înainte de a reuși să-ți construiești cu adevărat o farmacie naturală acasă.</p>
+<p>Dar dacă singurul lucru care stă între tine și propria ta farmacie de casă ar fi ghidajul corect, pas cu pas?</p>
+<p>Pentru că adevărul este următorul: nu ai nevoie de ani de experiență. Nu ai nevoie de plante rare. Nu ai nevoie de echipamente scumpe. Și nici nu trebuie să fi crescut învățând asta de la bunicii tăi.</p>
+<p>Ai nevoie doar de un plan clar, adaptat pentru începători, care să îți arate cum să transformi plantele simple, ceaiurile, uleiurile, siropurile și ingredientele din bucătărie în remedii practice pentru utilizarea zilnică.</p>
+<p>Cu o bază solidă, construirea propriei farmacii naturale devine un proces simplu, plin de încredere și incredibil de satisfăcător.</p>
+<p>Exact din acest motiv a fost creat acest Pachet cu 3 Cărți: să te îndrume pas cu pas, de la alegerea plantelor și a ingredientelor potrivite, până la prepararea de ceaiuri calmante, siropuri vechi, unguente de casă, uleiuri din plante, comprese simple și rețete naturale pentru cele mai frecvente disconforturi zilnice.</p>
+<p>Acest pachet nu doar te învață despre plante — ci te ajută să te simți pregătit(ă) de fiecare dată când familia ta are nevoie de o opțiune naturală în casă.</p>
+</div>
+</div>
+</section>
+<!-- BENEFITS CHECKLIST SECTION -->
+<section class="benefits-section">
+<div class="container">
+<h2 class="text-center font-heading bold italic" style="font-size: 2.2rem; margin-bottom: 2.5rem; color: #ffffff;">
+                📚 În Interiorul Pachetului Vei Descoperi:
+            </h2>
+<ul class="benefits-list">
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Cum să îți construiești propria farmacie naturală acasă fără să irosești bani pe plante, instrumente sau suplimente inutile</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Un plan complet, perfect pentru începători, ca să știi mereu ce să prepari pentru disconfortul din gât, probleme de somn, digestie, dureri musculare, îngrijirea pielii, imunitate și multe altele</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Cum să faci pas cu pas ceaiuri tradiționale din plante, siropuri, unguente, uleiuri, comprese și remedii simple de casă</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Ce plante și ingrediente din bucătărie erau folosite în mod tradițional pentru disconforturile obișnuite de zi cu zi</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Cum să prepari rețete naturale folosind ingrediente simple precum miere, ghimbir, lămâie, usturoi, oțet de mere, mentă, mușețel, rozmarin și multe altele</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Cum să creezi ceaiuri din plante calmante pentru somn, digestie, relaxare, confortul gâtului, imunitate și starea generală de bine</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Cele mai frecvente greșeli făcute de începători, care duc la pierderea banilor, stricarea rețetelor sau care fac remediile naturale mai greu de preparat decât e nevoie</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Rețete simple din plante, ghiduri de ingrediente, metode de preparare și sfaturi pentru farmacia de casă pe care le poți urma pas cu pas</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- TRANSFORM VIDEO SECTION -->
+<section class="transform-section" style="padding: 0;">
+<div class="transform-grid text-center" style="max-width: 100%; margin: 0; gap: 0;">
+<div class="transform-image-wrapper" style="width: 100%; max-width: 100%; margin: 0;">
+<img alt="Video Course" src="{{ 'nature_IMG3_ro.webp' | file_url }}" style="width: 100%; border-radius: 0; display: block;"/>
+</div>
+</div>
+</section>
+<!-- HUGE OFFER BANNER -->
+<section class="huge-offer-banner">
+<div class="container">
+<div class="huge-offer-title">REDUCERE 70%</div>
+<div class="huge-offer-subtitle">
+                EXPIRĂ ASTĂZI 
+                <i data-lucide="corner-right-down" style="width: 48px; height: 48px; stroke-width: 3px;"></i>
+</div>
+</div>
+</section>
+<!-- BUNDLE / BOOKS SECTION & SECOND CTA -->
+<section class="bundle-section" style="padding-top: 2rem;">
+<div class="container">
+<img alt="Apothecary Bundle" class="bundle-image" src="{{ 'nature_IMG1_ro.webp' | file_url }}" style="width: 100%; max-width: 700px; margin: 0 auto;"/>
+<div class="cta-box" style="margin-top: 1rem; background: var(--bg-white);">
+<div class="star-rating">
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+</div>
+<h3>Farmacia Naturii + 2 BONUSURI</h3>
+<div class="price-container">
+<div class="current-price">107 lei</div>
+<div class="savings">
+<s>359 lei</s> <strong>Economisești 70%</strong>
+</div>
+</div>
+<a class="btn-buy-now" href="https://pay.hotmart.com/X104547537N?checkoutMode=10&utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}&xcod=FBhQwK21wXxR{{campaign.name}}|{{campaign.id}}hQwK21wXxR{{adset.name}}|{{adset.id}}hQwK21wXxR{{ad.name}}|{{ad.id}}hQwK21wXxR{{placement}}">
+                    CUMPĂRĂ ACUM
+                </a>
+</div>
+</div>
+</section>
+<section class="text-section text-center">
+<div class="container">
+<div style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+<p>Dacă ți-ai dorit de mult timp să îți construiești propria farmacie naturală acasă, dar te-ai simțit copleșit(ă), nesigur(ă) sau obosit(ă) să ghicești ce plante să cumperi, în ce rețete să ai încredere sau cum să le prepari corect, acest pachet elimină fiecare obstacol din calea ta.</p>
+<p>Îți oferă încredere, claritate, o cale simplă pas cu pas, rețete inspirate din remedii vechi de casă, instrumente pentru a evita greșelile de începător, abilitatea de a alege plantele și ingredientele utile fără a risipi bani, priceperea de a prepara ceaiuri, siropuri, unguente, uleiuri și remedii de bucătărie acasă și satisfacția de a avea în sfârșit propria farmacie naturală pregătită ori de câte ori familia ta are nevoie de o îngrijire tradițională, simplă și de casă.</p>
+<p>Chiar acum, cât timp beneficiază de REDUCEREA de 70%, primești trei ghiduri complete de remedii naturale la prețul unuia — o ofertă care nu va dura mult.</p>
+<div class="conversion-highlight-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.02)); border: 2px dashed var(--accent-gold); border-radius: 12px; padding: 2rem 1.5rem; margin: 3rem auto 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+<h3 class="font-heading bold italic" style="font-size: 2.2rem; margin-bottom: 0.8rem; color: var(--accent-gold);">
+                        De ce să mai aștepți?
+                    </h3>
+<p style="font-size: 1.3rem; line-height: 1.6; margin-bottom: 1.5rem; color: #f8fafc; font-weight: 600;">
+<span style="font-size: 1.4rem;">👉</span> Construirea propriei farmacii naturale nu trebuie să fie confuză. Poate fi un proces simplu, practic și incredibil de satisfăcător... atunci când ai la îndemână ghidajul potrivit.
+                    </p>
+<p style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 1.5rem; color: #f8fafc; font-weight: 500;">
+                        Prinde astăzi pachetul cu 70% REDUCERE și învață, în sfârșit, cum să prepari cu încredere remedii din plante după rețete vechi, ceaiuri calmante, rețete de bucătărie, siropuri, unguente și preparate naturale.
+                    </p>
+<a class="bold italic" href="https://pay.hotmart.com/X104547537N?checkoutMode=10&utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}&xcod=FBhQwK21wXxR{{campaign.name}}|{{campaign.id}}hQwK21wXxR{{adset.name}}|{{adset.id}}hQwK21wXxR{{ad.name}}|{{ad.id}}hQwK21wXxR{{placement}}" style="font-size: 1.5rem; color: #ffffff; background: var(--red-alert); display: inline-block; padding: 16px 32px; border-radius: 6px; box-shadow: 0 6px 20px rgba(185, 28, 28, 0.4); text-decoration: none; width: 100%; max-width: 450px; text-transform: uppercase;">
+                        OBȚINE ACCES INSTANT
+                    </a>
+<p style="font-size: 1rem; color: #cbd5e1; margin-top: 1rem;">Comandă acum și economisește 70% înainte ca această ofertă limitată să dispară.</p>
+</div>
+<p style="font-size: 0.95rem; color: #cbd5e1; margin-top: 1.5rem;">Descărcare digitală directă și instantanee. După finalizarea plății, vei avea imediat opțiunea de a descărca produsul (sau produsele) de pe pagina finală de achiziție, și vei primi de asemenea, la scurt timp, un e-mail cu linkul de descărcare.</p>
+</div>
+<div class="divider"></div>
+<h2 class="font-serif bold italic mt-3 mb-2" style="font-size: 2.2rem; color: #ffffff;">Iată Ce Spun Oamenii Despre Noi:</h2>
+<!-- Testimonial Cards -->
+<div class="testimonials-grid">
+<!-- Testimonial 1 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Margaret D.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Cumpărător Verificat
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Exact ce căutam."</div>
+<div class="testimonial-text">"Am vrut mereu să învăț cum să fac remedii naturale acasă, dar nu știam de unde să încep. Acest pachet a făcut totul simplu. Rețetele sunt clare, practice și ușor de urmat."</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Helen T.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Cumpărător Verificat
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Un ghid absolut necesar în orice casă."</div>
+<div class="testimonial-text">"Ador ideea de a avea o farmacie naturală acasă. Ghidurile m-au ajutat să înțeleg ce plante să păstrez, cum să le prepar și ce să folosesc pentru disconforturile obișnuite de zi cu zi. Parcă readuc la viață vechile cunoștințe de familie."</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Linda R.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Cumpărător Verificat
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"M-a ajutat să economisesc bani și mi-a dat încredere."</div>
+<div class="testimonial-text">"Înainte, tot cumpăram produse din plante la întâmplare, fără să știu cu adevărat de ce aveam nevoie. Acum înțeleg cum să folosesc ingrediente simple precum miere, ghimbir, lămâie, mentă, mușețel și rozmarin în rețete practice de casă."</div>
+</div>
+<!-- Testimonial 4 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Susan L.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Cumpărător Verificat
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Ghidul pentru ceaiuri este preferatul meu!"</div>
+<div class="testimonial-text">"Am început cu bonusul despre ceaiuri din plante și m-a cucerit complet. Amestecurile pentru somn, digestie, confortul gâtului și relaxare sunt foarte ușor de preparat și atât de reconfortante. În sfârșit am rețete pe care chiar le pot folosi acasă."</div>
+</div>
+</div>
+</div>
+</section>
+<!-- DISCLAIMER SECTION -->
+<section class="disclaimer-section" style="padding: 1.5rem 0; font-size: 0.7rem; color: #a7f3d0; opacity: 0.7; line-height: 1.5; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+<div class="container">
+<p style="max-width: 800px; margin: 0 auto;"><strong>Avertisment:</strong> Numai în scop educațional. Nu reprezintă sfaturi medicale. Consultați un medic înainte de utilizare, în special dacă sunteți însărcinată, luați medicamente sau aveți probleme de sănătate.</p>
+</div>
+</section>
+<!-- FOOTER -->
+<footer style="background: #022c22; color: #6ee7b7; text-align: center; padding: 2.5rem 1rem; font-size: 0.9rem;">
+<div class="container">
+<h4 class="font-serif bold mb-1" style="color: #f0fdf4; font-size: 1.2rem;">Farmacia Naturii</h4>
+<p>© Toate drepturile rezervate.</p>
+<p style="margin-top: 1rem;">
+<a href="mailto:trinityag01@gmail.com" style="color: #f0fdf4; text-decoration: none;">Contactează-ne</a>
+</p>
+</div>
+</footer>
+<!-- Initialize Lucide Icons -->
+<script>
+        lucide.createIcons();
+        
+        // Countdown Timer Logic
+        function startTimer() {
+            const hoursEl = document.getElementById("timer-hours");
+            const minutesEl = document.getElementById("timer-minutes");
+            const secondsEl = document.getElementById("timer-seconds");
+            
+            if (!hoursEl || !minutesEl || !secondsEl) return;
+            
+            let hours = parseInt(hoursEl.innerText, 10);
+            let minutes = parseInt(minutesEl.innerText, 10);
+            let seconds = parseInt(secondsEl.innerText, 10);
+            
+            let totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
+            
+            const timerInterval = setInterval(() => {
+                if (totalSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    return;
+                }
+                
+                totalSeconds--;
+                
+                let h = Math.floor(totalSeconds / 3600);
+                let m = Math.floor((totalSeconds % 3600) / 60);
+                let s = totalSeconds % 60;
+                
+                hoursEl.innerText = String(h).padStart(2, '0');
+                minutesEl.innerText = String(m).padStart(2, '0');
+                secondsEl.innerText = String(s).padStart(2, '0');
+            }, 1000);
+        }
+        
+        startTimer();
+    </script>
+</body>
+</html>

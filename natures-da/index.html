@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Naturens Apotek: Skab dit eget naturlige husapotek derhjemme</title>
+<meta content="Vil du bygge dit eget naturlige apotek derhjemme, men ved ikke, hvilke urter du skal bruge, hvilke opskrifter der faktisk virker, eller hvor du skal starte? Få Naturens Apotek-pakken + 2 bonusser med 70% rabat!" name="description"/>
+<link as_="image" href="{{ 'nature_IMG1_da.webp' | file_url }}" rel="preload"/>
+<link href="data:," rel="icon"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary: #064e3b; /* Emerald 900 (Forest Green) */
+    --bg-dark: #064e3b;
+    --bg-darker: #022c22; /* Emerald 950 */
+    --red-alert: #b91c1c; /* Brick Red */
+    --red-alert-dark: #7f1d1d;
+    --text-main: #f0fdf4; /* Emerald 50 */
+    --text-muted: #a7f3d0; /* Emerald 300 */
+    --bg-light: #ffffff;
+    --accent-gold: #fbbf24; /* Amber Gold */
+    --accent-gold-hover: #d97706;
+    --green-check: #10b981;
+    --dark: #064e3b;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Extremely readable body text */
+    color: var(--text-main);
+    background-color: var(--bg-dark);
+    line-height: 1.65;
+    font-size: 1.15rem; /* Standardizing easy-to-read body size */
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center { text-align: center; }
+.text-primary { color: var(--text-main); }
+.font-heading { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+.bold { font-weight: 700; }
+.italic { font-style: italic; }
+.mt-1 { margin-top: 1.5rem; }
+.mt-2 { margin-top: 2.5rem; }
+.mt-3 { margin-top: 4rem; }
+.mb-1 { margin-bottom: 1.5rem; }
+.mb-2 { margin-bottom: 2.5rem; }
+.hidden { display: none !important; }
+
+/* ================== STICKY COUNTDOWN ================== */
+.top-warning-bar {
+    background-color: var(--red-alert);
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    letter-spacing: 0.5px;
+}
+
+.warning-text {
+    margin-bottom: 6px;
+    display: block;
+}
+
+.countdown-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.time-unit {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-label {
+    font-size: 0.75rem;
+    margin-top: 4px;
+    font-weight: 600;
+    text-transform: lowercase;
+}
+
+.time-card {
+    background: #fff;
+    color: #000;
+    font-weight: 900;
+    font-size: 1.4rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15);
+}
+
+.time-sep {
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.4rem;
+    margin-top: -18px; /* Offset to center vertically with numbers */
+}
+
+/* ================== HERO / HEADLINE ================== */
+.hero-section {
+    background-color: var(--bg-dark);
+    padding: 4rem 0 3rem;
+}
+
+.main-headline {
+    font-size: 2.8rem;
+    line-height: 1.25;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.sub-headline {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    font-weight: 400;
+}
+
+.hero-main-image {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    display: block;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* ================== BUY 1 GET 3 ================== */
+.b1g3-title {
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.b1g3-subtitle {
+    font-size: 1.25rem;
+    color: #f8fafc;
+    margin-bottom: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.b1g3-image-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.b1g3-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.b1g3-prices {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0 10%;
+}
+
+.b1g3-price-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.b1g3-price-strikethrough {
+    color: var(--accent-gold);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.b1g3-price-final {
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+@media (max-width: 768px) {
+    .b1g3-title { font-size: 1.9rem; }
+    .b1g3-subtitle { font-size: 1.15rem; margin-bottom: 1.5rem; }
+    .b1g3-prices { padding: 0 4%; }
+    .b1g3-price-strikethrough { font-size: 1.05rem; }
+    .b1g3-price-final { font-size: 1.35rem; }
+}
+
+/* ================== CALL TO ACTION BOX ================== */
+.cta-box {
+    background: transparent;
+    padding: 1.5rem 0;
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-box h3 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.star-rating {
+    color: var(--accent-gold);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.price-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price-container .current-price {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.price-container .savings {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+}
+
+.price-container .savings s {
+    color: var(--red-alert);
+}
+
+.price-container .savings strong {
+    color: #ffffff;
+    font-weight: 700;
+    margin-left: 8px;
+}
+
+.btn-buy-now {
+    display: block;
+    width: 100%;
+    background: linear-gradient(180deg, #ffca08 0%, #f5a623 100%);
+    color: #000000;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.25rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.45);
+    transition: all 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.btn-buy-now:hover {
+    background: linear-gradient(180deg, #ffd333 0%, #fbbf24 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(245, 158, 11, 0.65);
+}
+
+.guarantee-text {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-top: 1rem;
+    text-align: center;
+}
+.guarantee-text i {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+    margin-top: -3px;
+}
+
+/* ================== DEAL INFO SECTIONS ================== */
+.text-section {
+    padding: 4rem 0;
+    background-color: var(--bg-dark);
+}
+
+.text-section h2 {
+    color: #ffffff;
+}
+
+.text-section p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: #cbd5e1;
+}
+
+.divider {
+    height: 1px;
+    background: #334155;
+    max-width: 60%;
+    margin: 3rem auto;
+}
+
+/* ================== HTML BENEFITS CHECKLIST ================== */
+.benefits-section {
+    padding: 4rem 0;
+    background-color: var(--bg-dark);
+}
+
+.benefits-list {
+    list-style: none;
+    max-width: 750px;
+    margin: 2rem auto;
+}
+
+.benefits-list li {
+    font-size: 1.2rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid #334155;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    color: #f8fafc;
+}
+
+.benefits-list li:last-child {
+    border-bottom: none;
+}
+
+.benefits-list li i {
+    color: var(--green-check);
+    font-size: 1.6rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* ================== BUNDLE SECTION ================== */
+.bundle-section {
+    padding: 4rem 0;
+    background-color: var(--bg-dark);
+    color: #fff;
+    text-align: center;
+}
+
+.bundle-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.bundle-image {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    display: block;
+}
+
+/* ================== TESTIMONIALS ================== */
+.testimonials-section {
+    padding: 4rem 0;
+    background: var(--bg-dark);
+}
+
+.testimonials-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 650px;
+    margin: 0 auto 2rem;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5);
+    color: var(--dark);
+    text-align: left;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #cbd5e1;
+}
+
+.testimonial-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.verified-buyer {
+    font-size: 0.85rem;
+    color: var(--green-check);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.testimonial-stars {
+    color: var(--accent-gold);
+    display: flex;
+    margin-bottom: 0.75rem;
+}
+
+.testimonial-title {
+    font-weight: 800;
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* ================== EXTRA SALES SECTIONS ================== */
+.huge-offer-banner {
+    background-color: var(--bg-dark); 
+    padding: 3rem 1rem;
+    text-align: center;
+    border-top: none; 
+    border-bottom: none;
+}
+
+.huge-offer-title {
+    font-size: 9rem;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -2px;
+}
+
+.huge-offer-subtitle {
+    font-size: 4.5rem;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    letter-spacing: -1px;
+}
+
+.transform-section {
+    position: relative;
+    padding: 3rem 20px;
+    background-color: var(--bg-dark);
+    /* In a real scenario, you can add the sunset background image here:
+       background-image: url('images/sunset-bg.jpg');
+       background-size: cover;
+       background-position: center;
+       background-blend-mode: overlay;
+    */
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.transform-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #ffc107;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    margin-bottom: 2rem;
+    line-height: 1.15;
+}
+
+.transform-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.transform-image-wrapper {
+    flex: 1;
+    max-width: 500px;
+}
+
+.transform-image-wrapper img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.transform-benefits {
+    flex: 1;
+    list-style: none;
+}
+
+.transform-benefits li {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.transform-benefits li::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #b91c1c;
+    border-radius: 50%;
+    margin-top: 8px;
+    box-shadow: inset -2px -2px 4px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero-section, .text-section, .benefits-section, .bundle-section, .testimonials-section {
+        padding: 0.8rem 0 !important;
+    }
+
+    .divider {
+        margin: 1.5rem auto !important;
+    }
+
+    /* Decrease explicit utility margins on mobile */
+    .mt-1 { margin-top: 1rem !important; }
+    .mt-2 { margin-top: 1.5rem !important; }
+    .mt-3 { margin-top: 2rem !important; }
+    .mb-1 { margin-bottom: 1rem !important; }
+    .mb-2 { margin-bottom: 1.5rem !important; }
+    
+    .top-warning-bar {
+        padding: 10px;
+    }
+    .warning-text {
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+    }
+    .time-card {
+        font-size: 1.1rem;
+        padding: 4px 10px;
+    }
+    .time-sep {
+        font-size: 1.1rem;
+        margin-top: -14px;
+    }
+    .time-label {
+        font-size: 0.65rem;
+    }
+
+    .main-headline {
+        font-size: 2.1rem;
+        line-height: 1.25;
+        margin-bottom: 1.2rem;
+    }
+    
+    .sub-headline {
+        font-size: 1.1rem;
+    }
+    
+    .price-container .current-price {
+        font-size: 3.2rem;
+    }
+    
+    .btn-buy-now {
+        font-size: 1.4rem;
+        padding: 1.2rem 1rem;
+    }
+    
+    .text-section p, .benefits-list li {
+        font-size: 1.15rem;
+    }
+    
+    .bundle-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+    
+    .huge-offer-banner {
+        padding: 1rem 1rem;
+    }
+    
+    .huge-offer-title {
+        font-size: 4rem;
+    }
+    
+    .huge-offer-subtitle {
+        font-size: 1.8rem;
+    }
+    
+    .transform-title {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .transform-image-wrapper {
+        width: 100%;
+        margin-bottom: -1rem;
+    }
+
+    .transform-image-wrapper img {
+        width: 100%;
+        max-width: 100%;
+        transform: scale(1.05); /* Make the image pop a bit more */
+    }
+    
+    .transform-grid {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .transform-benefits li {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .cta-box h3 {
+        font-size: 1.55rem;
+    }
+    .guarantee-text {
+        font-size: 0.85rem;
+        padding: 0 10px;
+    }
+}
+
+</style>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '830224686766443');
+    fbq('track', 'PageView');
+    </script>
+<noscript><img height="1" src="https://www.facebook.com/tr?id=830224686766443&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- UTMify Tracker -->
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+<!-- UTMify Pixel -->
+<script>
+  window.pixelId = "6a31cb3f21cd157dc1cbf8fc";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+</head>
+<body>
+<!-- STICKY COUNTDOWN BAR -->
+<div class="top-warning-bar">
+<div class="warning-text">⏳ SIDSTE CHANCE – 70% RABAT SLUTTER OM</div>
+<div class="countdown-box">
+<div class="time-unit">
+<span class="time-card" id="timer-hours">00</span>
+<span class="time-label">timer</span>
+</div>
+<span class="time-sep">:</span>
+<div class="time-unit">
+<span class="time-card" id="timer-minutes">10</span>
+<span class="time-label">min</span>
+</div>
+<span class="time-sep">:</span>
+<div class="time-unit">
+<span class="time-card" id="timer-seconds">00</span>
+<span class="time-label">sek</span>
+</div>
+</div>
+</div>
+<!-- MAIN HERO SECTION -->
+<section class="hero-section text-center">
+<div class="container">
+<h1 class="main-headline font-heading bold italic text-primary">
+                Vil du skabe dit eget naturlige husapotek, men er i tvivl om hvilke urter du skal bruge, hvilke opskrifter der virker, eller hvor du overhovedet skal starte?
+            </h1>
+<p class="sub-headline">
+                Du behøver ikke at være urteterapeut. Du har ikke brug for dyre ingredienser. Og du behøver absolut ikke et skab fyldt med komplicerede kosttilskud. Denne begyndervenlige samling viser dig, hvordan du nemt forbereder gammeldags naturlægemidler, beroligende teer, naturlige sirupper, hjemmelavede salver og enkle opskrifter mod halsbesvær, søvnproblemer, dårlig fordøjelse, ømme muskler, hudpleje, svagt immunforsvar og meget mere.
+            </p>
+<!-- MAIN VSL/BUNDLE IMAGE -->
+<img alt="Naturens Apotek Program" class="hero-main-image" src="{{ 'nature_IMG1_da.webp' | file_url }}"/>
+<!-- BUY/CTA BOX -->
+<div class="cta-box">
+<div class="star-rating">
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+</div>
+<h3>Naturens Apotek + 2 EKSKLUSIVE BONUSSER</h3>
+<div class="price-container">
+<div class="current-price">149 kr</div>
+<div class="savings">
+<s>449 kr</s> <strong>Du sparer 70%</strong>
+</div>
+</div>
+<a class="btn-buy-now" href="https://pay.hotmart.com/X104547537N?checkoutMode=10&utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}&xcod=FBhQwK21wXxR{{campaign.name}}|{{campaign.id}}hQwK21wXxR{{adset.name}}|{{adset.id}}hQwK21wXxR{{ad.name}}|{{ad.id}}hQwK21wXxR{{placement}}">
+                    KØB NU
+                </a>
+<div class="guarantee-text">
+<i data-lucide="shield-check" style="color: #16a34a; width: 16px;"></i>
+                    100% sikker betaling • Øjeblikkelig digital adgang
+                </div>
+</div>
+</div>
+</section>
+<!-- BUY 1 GET 3 SECTION -->
+<section class="b1g3-section text-center" style="padding: 4rem 0 0; background-color: var(--bg-dark);">
+<div class="container">
+<h1 class="b1g3-title" style="letter-spacing: -0.5px;">KØB 1 FÅ 3</h1>
+<p class="b1g3-subtitle" style="margin-bottom: 2rem;">
+                Kun i en begrænset periode – her er, hvad du får:
+            </p>
+</div>
+<div class="b1g3-image-wrapper" style="width: 100%; max-width: 100%; margin: 0; padding: 0; overflow: hidden;">
+<img alt="Køb 1 Få 3 Tilbud" class="b1g3-image" src="{{ 'nature_IMG2_da.webp' | file_url }}" style="width: 100%; max-width: 100%; display: block; margin: 0 auto; border-radius: 0; box-shadow: none;"/>
+</div>
+<div class="container">
+<div class="divider" style="margin-top: 3.5rem; margin-bottom: 0;"></div>
+</div>
+</section>
+<!-- CONTENT SECTIONS -->
+<section class="text-section">
+<div class="container">
+<div class="text-center">
+<h2 class="font-heading bold italic" style="font-size: 2.4rem; margin-bottom: 2rem;">Hvorfor lyder dette tilbud næsten for godt til at være sandt?</h2>
+</div>
+<div style="max-width: 750px; margin: 0 auto; line-height: 1.8;">
+<p>Vi forstår det godt — tre komplette guides til naturlige husråd for prisen af én er ikke noget, man ser hver dag.</p>
+<p>Her er den simple sandhed: Én gang om året afholder vi en eksklusiv læserbegivenhed for at takke vores følgere og gøre vores mest populære samlinger tilgængelige for alle.</p>
+<p>Fordi vi håndterer alt direkte — fra udgivelse til digital levering — kan vi skære alle fordyrende mellemled og trykomkostninger fra. Derfor kan vi tilbyde hele pakken, som normalt koster 449 kr, for kun 149 kr.</p>
+<p class="bold" style="color: var(--red-alert);">Når kampagnen slutter, vender prisen tilbage til normal.</p>
+</div>
+<div class="divider"></div>
+<div class="text-center">
+<h2 class="font-heading bold italic text-primary" style="font-size: 2.2rem; margin-bottom: 2rem;">"Hvorfor er så mange gamle husråd blevet glemt?"</h2>
+</div>
+<div style="max-width: 750px; margin: 0 auto; line-height: 1.8;">
+<p>I generationer vidste familier præcis, hvordan man forberedte enkle urteopskrifter derhjemme.</p>
+<p>De vidste, hvilken te der hjalp på en urolig nats søvn… hvilke ingredienser fra køkkenet der lindrede en irriteret hals… hvilke urter der styrkede fordøjelsen… og hvilke hjemmelavede salver der var bedst til ømme muskler.</p>
+<p class="bold">❌ Men i dag er størstedelen af den viden forsvundet.</p>
+<p>I stedet skynder vi os på apoteket ved det mindste ubehag, bruger i dyre domme på produkter, vi knap nok forstår, og føler os totalt uforberedte, når vi leder efter et naturligt alternativ.</p>
+<p>Og det er her frustrationen opstår.</p>
+<p>Naturlige husråd virker kun forvirrende, når du forsøger at sammensætte tilfældige tips fra nettet, modstridende råd, komplicerede opskrifter og upræcise videoer, der er lavet til folk, der allerede har erfaring.</p>
+<p>Det er her, fejlene sker — man køber de forkerte urter, blander ingredienser uden at vide hvorfor, og spilder penge på unødvendige produkter, hvorefter man giver op, længe før man har skabt sit eget naturlige husapotek.</p>
+<p>Hvad nu hvis det eneste, der står mellem dig og dit eget naturlige husapotek, er den rette trin-for-trin guide?</p>
+<p>For sandheden er: Du behøver ikke årevis af erfaring. Du behøver ikke sjældne urter eller dyrt udstyr. Og du behøver ikke have lært det fra dine bedsteforældre.</p>
+<p>Du har blot brug for en klar, begyndervenlig køreplan, der viser dig, hvordan du forvandler helt almindelige urter, teer, olier og ingredienser fra køkkenet til praktiske husråd i hverdagen.</p>
+<p>Med det rette fundament bliver opbygningen af dit eget naturlige apotek let, befriende og utroligt givende.</p>
+<p>Det er præcis derfor, vi skabte denne samling med 3 bøger: for at tage dig i hånden fra valget af de rette urter, til tilberedningen af beroligende teer, gammeldags sirupper, helende salver og naturlige opskrifter mod hverdagens mest almindelige skavanker.</p>
+<p>Denne pakke lærer dig ikke bare om urter — den sikrer, at du altid er forberedt, når din familie har brug for en naturlig løsning.</p>
+</div>
+</div>
+</section>
+<!-- BENEFITS CHECKLIST SECTION -->
+<section class="benefits-section">
+<div class="container">
+<h2 class="text-center font-heading bold italic" style="font-size: 2.2rem; margin-bottom: 2.5rem; color: #ffffff;">
+                📚 Inde i pakken vil du opdage:
+            </h2>
+<ul class="benefits-list">
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Hvordan du skaber dit eget naturlige husapotek uden at spilde penge på unødvendige urter, værktøjer eller kosttilskud.</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>En komplet og begyndervenlig køreplan, så du altid ved præcis, hvad du skal forberede mod halsbesvær, søvnproblemer, dårlig fordøjelse, ømme muskler, hudproblemer og meget mere.</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Hvordan du trin-for-trin laver gammeldags urtete, sirupper, salver, olier og helende kompresser.</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Hvilke urter og ingredienser fra køkkenet, der traditionelt har været brugt mod hverdagens skavanker.</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Hvordan du forbereder naturlige opskrifter ved hjælp af simple ingredienser som honning, ingefær, citron, hvidløg, æblecidereddike, mynte, kamille, rosmarin og meget mere.</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Hvordan du skaber beroligende urteteer til bedre søvn, fordøjelse, afslapning, immunforsvar og dagligt velvære.</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>De mest almindelige begynderfejl, der spilder dine penge, ødelægger opskrifter eller gør naturlige husråd sværere, end de behøver at være.</span>
+</li>
+<li>
+<i color="#ffffff" data-lucide="check-circle" fill="#10b981"></i>
+<span>Lette urteopskrifter, ingrediensguides, forberedelsesmetoder og tips til husapoteket, som du kan følge fra start til slut.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- TRANSFORM VIDEO SECTION -->
+<section class="transform-section" style="padding: 0;">
+<div class="transform-grid text-center" style="max-width: 100%; margin: 0; gap: 0;">
+<div class="transform-image-wrapper" style="width: 100%; max-width: 100%; margin: 0;">
+<img alt="Videokursus" src="{{ 'nature_IMG3_da.webp' | file_url }}" style="width: 100%; border-radius: 0; display: block;"/>
+</div>
+</div>
+</section>
+<!-- HUGE OFFER BANNER -->
+<section class="huge-offer-banner">
+<div class="container">
+<div class="huge-offer-title">70% RABAT</div>
+<div class="huge-offer-subtitle">
+                SLUTTER I DAG 
+                <i data-lucide="corner-right-down" style="width: 48px; height: 48px; stroke-width: 3px;"></i>
+</div>
+</div>
+</section>
+<!-- BUNDLE / BOOKS SECTION & SECOND CTA -->
+<section class="bundle-section" style="padding-top: 2rem;">
+<div class="container">
+<img alt="Apotekerpakken" class="bundle-image" src="{{ 'nature_IMG1_da.webp' | file_url }}" style="width: 100%; max-width: 700px; margin: 0 auto;"/>
+<div class="cta-box" style="margin-top: 1rem; background: var(--bg-white);">
+<div class="star-rating">
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+<i data-lucide="star" fill="currentColor"></i>
+</div>
+<h3>Naturens Apotek + 2 EKSKLUSIVE BONUSSER</h3>
+<div class="price-container">
+<div class="current-price">149 kr</div>
+<div class="savings">
+<s>449 kr</s> <strong>Du sparer 70%</strong>
+</div>
+</div>
+<a class="btn-buy-now" href="https://pay.hotmart.com/X104547537N?checkoutMode=10&utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}&xcod=FBhQwK21wXxR{{campaign.name}}|{{campaign.id}}hQwK21wXxR{{adset.name}}|{{adset.id}}hQwK21wXxR{{ad.name}}|{{ad.id}}hQwK21wXxR{{placement}}">
+                    KØB NU
+                </a>
+</div>
+</div>
+</section>
+<section class="text-section text-center">
+<div class="container">
+<div style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+<p>Hvis du længe har drømt om at opbygge dit eget naturlige husapotek, men har følt dig overvældet, usikker eller træt af at gætte på hvilke urter du skal købe, og hvilke opskrifter der virker – så fjerner denne pakke alle forhindringer på din vej.</p>
+<p>Du får selvtillid, klarhed og en simpel trin-for-trin vejledning fyldt med opskrifter inspireret af de bedste, gammeldags husråd. Du får værktøjerne til at undgå dyre begynderfejl, evnen til at udvælge præcis de rigtige urter og ingredienser, og den dybe tilfredsstillelse i endelig at have dit eget naturlige husapotek klar, når familien har brug for skånsom og traditionel pleje.</p>
+<p>Lige nu, med 70% RABAT, får du hele tre komplette guides til naturlige husråd for prisen af én — et tilbud, der forsvinder snart.</p>
+<div class="conversion-highlight-box" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.02)); border: 2px dashed var(--accent-gold); border-radius: 12px; padding: 2rem 1.5rem; margin: 3rem auto 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+<h3 class="font-heading bold italic" style="font-size: 2.2rem; margin-bottom: 0.8rem; color: var(--accent-gold);">
+                        Hvorfor vente?
+                    </h3>
+<p style="font-size: 1.3rem; line-height: 1.6; margin-bottom: 1.5rem; color: #f8fafc; font-weight: 600;">
+<span style="font-size: 1.4rem;">👉</span> At bygge dit eget naturlige apotek behøver ikke være forvirrende. Det kan være enkelt, praktisk og utroligt givende... når du starter med den rette vejledning.
+                    </p>
+<p style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 1.5rem; color: #f8fafc; font-weight: 500;">
+                        Snup din pakke med 70% RABAT i dag, og lær endelig at tilberede gammeldags naturlægemidler, beroligende teer, sirupper og salver med fuld selvtillid.
+                    </p>
+<a class="bold italic" href="https://pay.hotmart.com/X104547537N?checkoutMode=10&utm_source=FB&utm_campaign={{campaign.name}}|{{campaign.id}}&utm_medium={{adset.name}}|{{adset.id}}&utm_content={{ad.name}}|{{ad.id}}&utm_term={{placement}}&xcod=FBhQwK21wXxR{{campaign.name}}|{{campaign.id}}hQwK21wXxR{{adset.name}}|{{adset.id}}hQwK21wXxR{{ad.name}}|{{ad.id}}hQwK21wXxR{{placement}}" style="font-size: 1.5rem; color: #ffffff; background: var(--red-alert); display: inline-block; padding: 16px 32px; border-radius: 6px; box-shadow: 0 6px 20px rgba(185, 28, 28, 0.4); text-decoration: none; width: 100%; max-width: 450px; text-transform: uppercase;">
+                        Få Øjeblikkelig Adgang
+                    </a>
+<p style="font-size: 1rem; color: #cbd5e1; margin-top: 1rem;">Bestil nu og spar 70%, før dette tidsbegrænsede tilbud forsvinder for altid.</p>
+</div>
+<p style="font-size: 0.95rem; color: #cbd5e1; margin-top: 1.5rem;">Øjeblikkelig digital download. Så snart du har gennemført betalingen, får du mulighed for at downloade dine produkter med det samme direkte fra kvitteringssiden, og du modtager desuden en e-mail med et download-link få minutter efter.</p>
+</div>
+<div class="divider"></div>
+<h2 class="font-serif bold italic mt-3 mb-2" style="font-size: 2.2rem; color: #ffffff;">Hvad vores kunder siger:</h2>
+<!-- Testimonial Cards -->
+<div class="testimonials-grid">
+<!-- Testimonial 1 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Margaret D.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Verificeret Køber
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Præcis hvad jeg ledte efter."</div>
+<div class="testimonial-text">"Jeg har altid gerne villet lære at lave naturlige husråd, men anede ikke, hvor jeg skulle starte. Denne pakke gjorde alting utrolig let. Opskrifterne er klare, praktiske og nemme at følge."</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Helen T.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Verificeret Køber
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Et must-have til ethvert hjem."</div>
+<div class="testimonial-text">"Jeg elsker idéen om at have et naturligt apotek i hjemmet. Bøgerne hjalp mig med at forstå, hvilke urter jeg skal have på lager, hvordan de forberedes, og hvad jeg skal bruge dem til. Det føles som at bringe gammel familieviden tilbage til live."</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Linda R.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Verificeret Køber
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Sparet mig penge og givet mig selvtillid."</div>
+<div class="testimonial-text">"Tidligere købte jeg tilfældige urteprodukter i dyre domme uden rigtigt at vide, hvad jeg havde brug for. Nu forstår jeg præcis, hvordan man bruger simple ingredienser som honning, ingefær, citron, mynte og rosmarin i effektive opskrifter derhjemme."</div>
+</div>
+<!-- Testimonial 4 -->
+<div class="testimonial-card">
+<div class="testimonial-header">
+<div class="testimonial-author-info">
+<span class="testimonial-name">Susan L.</span>
+<span class="verified-buyer">
+<i data-lucide="check-circle" style="width: 14px;"></i> Verificeret Køber
+                            </span>
+</div>
+</div>
+<div class="testimonial-stars">
+<i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i><i data-lucide="star" fill="currentColor"></i>
+</div>
+<div class="testimonial-title">"Te-guiden er min absolutte favorit!"</div>
+<div class="testimonial-text">"Jeg startede med bonus-guiden om urtete og elsker den virkelig. Blandingerne til bedre søvn, fordøjelse, halskomfort og afslapning er utroligt lette at lave, og de føles så dejligt beroligende. Jeg har endelig opskrifter, som jeg rent faktisk kan bruge i min hverdag."</div>
+</div>
+</div>
+</div>
+</section>
+<!-- DISCLAIMER SECTION -->
+<section class="disclaimer-section" style="padding: 1.5rem 0; font-size: 0.7rem; color: #a7f3d0; opacity: 0.7; line-height: 1.5; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+<div class="container">
+<p style="max-width: 800px; margin: 0 auto;"><strong>Disclaimer:</strong> Kun til uddannelsesmæssige formål. Ikke medicinsk rådgivning. Rådfør dig med en læge før brug, især hvis du er gravid, tager medicin eller har helbredsmæssige udfordringer.</p>
+</div>
+</section>
+<!-- FOOTER -->
+<footer style="background: #022c22; color: #6ee7b7; text-align: center; padding: 2.5rem 1rem; font-size: 0.9rem;">
+<div class="container">
+<h4 class="font-serif bold mb-1" style="color: #f0fdf4; font-size: 1.2rem;">Naturens Apotek</h4>
+<p>© Alle rettigheder forbeholdes.</p>
+<p style="margin-top: 1rem;">
+<a href="mailto:trinityag01@gmail.com" style="color: #f0fdf4; text-decoration: none;">Kontakt Os</a>
+</p>
+</div>
+</footer>
+<!-- Initialize Lucide Icons -->
+<script>
+        lucide.createIcons();
+        
+        // Countdown Timer Logic
+        function startTimer() {
+            const hoursEl = document.getElementById("timer-hours");
+            const minutesEl = document.getElementById("timer-minutes");
+            const secondsEl = document.getElementById("timer-seconds");
+            
+            if (!hoursEl || !minutesEl || !secondsEl) return;
+            
+            let hours = parseInt(hoursEl.innerText, 10);
+            let minutes = parseInt(minutesEl.innerText, 10);
+            let seconds = parseInt(secondsEl.innerText, 10);
+            
+            let totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
+            
+            const timerInterval = setInterval(() => {
+                if (totalSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    return;
+                }
+                
+                totalSeconds--;
+                
+                let h = Math.floor(totalSeconds / 3600);
+                let m = Math.floor((totalSeconds % 3600) / 60);
+                let s = totalSeconds % 60;
+                
+                hoursEl.innerText = String(h).padStart(2, '0');
+                minutesEl.innerText = String(m).padStart(2, '0');
+                secondsEl.innerText = String(s).padStart(2, '0');
+            }, 1000);
+        }
+        
+        startTimer();
+    </script>
+</body>
+</html>
