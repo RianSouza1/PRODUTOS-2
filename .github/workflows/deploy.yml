@@ -71,6 +71,7 @@ on:
       - 'natures-nl-members/**'
       - 'natures-hu-members/**'
       - 'natures-pl-members/**'
+      - 'natures-es-members/**'
       - 'Fishing/**'
       - 'Fishing-de/**'
       - 'Fishing-fr/**'
@@ -146,6 +147,8 @@ jobs:
               - 'natures-hu-members/**'
             natures-pl-members:
               - 'natures-pl-members/**'
+            natures-es-members:
+              - 'natures-es-members/**'
             fishing:
               - 'Fishing/**'
             fishing-de:
@@ -258,6 +261,7 @@ jobs:
             sudo mkdir -p /var/www/storeinfocus.com/natures-nl-members
             sudo mkdir -p /var/www/storeinfocus.com/natures-hu-members
             sudo mkdir -p /var/www/storeinfocus.com/natures-pl-members
+            sudo mkdir -p /var/www/storeinfocus.com/natures-es-members
             sudo mkdir -p /var/www/storeinfocus.com/fish
             sudo mkdir -p /var/www/storeinfocus.com/fish-de
             sudo mkdir -p /var/www/storeinfocus.com/fish-fr
@@ -627,6 +631,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "natures-pl-members/*"
           target: "/var/www/storeinfocus.com/natures-pl-members"
+          strip_components: 1
+
+      - name: Deploy 'natures-es-members' to storeinfocus.com/natures-es-members
+        if: steps.filter.outputs.natures-es-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "natures-es-members/*"
+          target: "/var/www/storeinfocus.com/natures-es-members"
           strip_components: 1
 
       - name: Deploy 'Fishing' to storeinfocus.com/fish
