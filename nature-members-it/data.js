@@ -38,7 +38,7 @@ const APP_DATA = {
                 "Guide alle erbe e agli ingredienti da cucina",
                 "Ricette erboristiche passo dopo passo per disturbi comuni"
             ],
-            downloadUrl: "materials/la_farmacia_natural_guia.pdf",
+            downloadUrl: "materials/Natures-Apothecary-1-IT.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Scarica il Libro Principale"
         },
@@ -53,7 +53,7 @@ const APP_DATA = {
                 "Linee guida per la sicurezza e il dosaggio",
                 "Applicazioni terapeutiche tradizionali"
             ],
-            downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
+            downloadUrl: "materials/Kitchen-Remedies-2-IT.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Scarica il Bonus #1"
         },
@@ -68,7 +68,7 @@ const APP_DATA = {
                 "Ricette con miele, zenzero, menta e camomilla",
                 "Preparazione passo dopo passo a casa"
             ],
-            downloadUrl: "materials/guia_infusiones_curativas.pdf",
+            downloadUrl: "materials/Healing-Herbal-Teas-3-IT.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Scarica il Bonus #2"
         }
