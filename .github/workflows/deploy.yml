@@ -268,19 +268,19 @@ jobs:
             sudo mkdir -p /var/www/storeinfocus.com/fish-de
             sudo mkdir -p /var/www/storeinfocus.com/fish-fr
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com || true
-            sudo mkdir -p /var/www/skillvault.blog/nature-members
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
             sudo mkdir -p /var/www/skillvault.blog/ww
             sudo mkdir -p /var/www/skillvault.blog/chickens
             sudo mkdir -p /var/www/skillvault.blog/chickens-al
-            sudo mkdir -p /var/www/skillvault.blog/nature-members
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
             sudo mkdir -p /var/www/skillvault.blog/ww-de
-            sudo mkdir -p /var/www/skillvault.blog/nature-members
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
             sudo mkdir -p /var/www/skillvault.blog/ww-fr
-            sudo mkdir -p /var/www/skillvault.blog/nature-members
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
             sudo mkdir -p /var/www/skillvault.blog/ww-it
-            sudo mkdir -p /var/www/skillvault.blog/nature-members
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
             sudo mkdir -p /var/www/skillvault.blog/ww-plans-fr
-            sudo mkdir -p /var/www/skillvault.blog/nature-members
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
             sudo mkdir -p /var/www/skillvault.blog/ww-plans-it
             sudo mkdir -p /var/www/skillvault.blog/mw-de
             sudo mkdir -p /var/www/skillvault.blog/mw
@@ -297,9 +297,9 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/hx-it-m
             sudo mkdir -p /var/www/skillvault.blog/hx-es-m
             sudo mkdir -p /var/www/skillvault.blog/hx-pt-m
-            sudo mkdir -p /var/www/skillvault.blog/nature-members
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
             sudo mkdir -p /var/www/skillvault.blog/ww-m
-            sudo mkdir -p /var/www/skillvault.blog/nature-members
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
             sudo mkdir -p /var/www/skillvault.blog/ww-de-m
             sudo mkdir -p /var/www/skillvault.blog/mw-m
             sudo mkdir -p /var/www/skillvault.blog/excel
@@ -1113,7 +1113,7 @@ jobs:
           target: "/var/www/skillvault.blog/excel-pt-m"
           strip_components: 1
 
-      - name: Deploy 'healing-es-members' to skillvault.blog/nature-members
+      - name: Deploy 'healing-es-members' to skillvault.blog/natural-members-es
         if: steps.filter.outputs.healing-es-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -1121,5 +1121,5 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
           source: "healing-es-members/*"
-          target: "/var/www/skillvault.blog/nature-members"
+          target: "/var/www/skillvault.blog/natural-members-es"
           strip_components: 1
