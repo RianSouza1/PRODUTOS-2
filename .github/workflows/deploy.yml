@@ -149,42 +149,42 @@ jobs:
               - 'natures-pl-members/**'
             natures-es-members:
               - 'natures-es-members/**'
-            healing-es-members:
-              - 'healing-es-members/**'
-            healing-members:
-              - 'healing-members/**'
-            healing-sv-members:
-              - 'healing-sv-members/**'
-            healing-sl-members:
-              - 'healing-sl-members/**'
-            healing-sk-members:
-              - 'healing-sk-members/**'
-            healing-pt-members:
-              - 'healing-pt-members/**'
-            healing-pl-members:
-              - 'healing-pl-members/**'
-            healing-no-members:
-              - 'healing-no-members/**'
-            healing-nl-members:
-              - 'healing-nl-members/**'
-            healing-it-members:
-              - 'healing-it-members/**'
-            healing-hu-members:
-              - 'healing-hu-members/**'
-            healing-hr-members:
-              - 'healing-hr-members/**'
-            healing-fr-members:
-              - 'healing-fr-members/**'
-            healing-fi-members:
-              - 'healing-fi-members/**'
-            healing-de-members:
-              - 'healing-de-members/**'
-            healing-da-members:
-              - 'healing-da-members/**'
-            healing-cs-members:
-              - 'healing-cs-members/**'
-            healing-bg-members:
-              - 'healing-bg-members/**'
+            nature-es-members:
+              - 'nature-es-members/**'
+            nature-members:
+              - 'nature-members/**'
+            nature-sv-members:
+              - 'nature-sv-members/**'
+            nature-sl-members:
+              - 'nature-sl-members/**'
+            nature-sk-members:
+              - 'nature-sk-members/**'
+            nature-pt-members:
+              - 'nature-pt-members/**'
+            nature-pl-members:
+              - 'nature-pl-members/**'
+            nature-no-members:
+              - 'nature-no-members/**'
+            nature-nl-members:
+              - 'nature-nl-members/**'
+            nature-it-members:
+              - 'nature-it-members/**'
+            nature-hu-members:
+              - 'nature-hu-members/**'
+            nature-hr-members:
+              - 'nature-hr-members/**'
+            nature-fr-members:
+              - 'nature-fr-members/**'
+            nature-fi-members:
+              - 'nature-fi-members/**'
+            nature-de-members:
+              - 'nature-de-members/**'
+            nature-da-members:
+              - 'nature-da-members/**'
+            nature-cs-members:
+              - 'nature-cs-members/**'
+            nature-bg-members:
+              - 'nature-bg-members/**'
             fishing:
               - 'Fishing/**'
             fishing-de:
@@ -1275,200 +1275,200 @@ jobs:
           target: "/var/www/skillvault.blog/excel-pt-m"
           strip_components: 1
 
-      - name: Deploy 'healing-es-members' to skillvault.blog/natural-members-es
-        if: steps.filter.outputs.healing-es-members == 'true'
+      - name: Deploy 'nature-es-members' to skillvault.blog/natural-members-es
+        if: steps.filter.outputs.nature-es-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-es-members/*"
+          source: "nature-es-members/*"
           target: "/var/www/skillvault.blog/natural-members-es"
           strip_components: 1
 
-      - name: Deploy 'healing-bg-members' to skillvault.blog/natural-members-bg
-        if: steps.filter.outputs.healing-bg-members == 'true'
+      - name: Deploy 'nature-bg-members' to skillvault.blog/natural-members-bg
+        if: steps.filter.outputs.nature-bg-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-bg-members/*"
+          source: "nature-bg-members/*"
           target: "/var/www/skillvault.blog/natural-members-bg"
           strip_components: 1
 
-      - name: Deploy 'healing-cs-members' to skillvault.blog/natural-members-cs
-        if: steps.filter.outputs.healing-cs-members == 'true'
+      - name: Deploy 'nature-cs-members' to skillvault.blog/natural-members-cs
+        if: steps.filter.outputs.nature-cs-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-cs-members/*"
+          source: "nature-cs-members/*"
           target: "/var/www/skillvault.blog/natural-members-cs"
           strip_components: 1
 
-      - name: Deploy 'healing-da-members' to skillvault.blog/natural-members-da
-        if: steps.filter.outputs.healing-da-members == 'true'
+      - name: Deploy 'nature-da-members' to skillvault.blog/natural-members-da
+        if: steps.filter.outputs.nature-da-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-da-members/*"
+          source: "nature-da-members/*"
           target: "/var/www/skillvault.blog/natural-members-da"
           strip_components: 1
 
-      - name: Deploy 'healing-de-members' to skillvault.blog/natural-members-de
-        if: steps.filter.outputs.healing-de-members == 'true'
+      - name: Deploy 'nature-de-members' to skillvault.blog/natural-members-de
+        if: steps.filter.outputs.nature-de-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-de-members/*"
+          source: "nature-de-members/*"
           target: "/var/www/skillvault.blog/natural-members-de"
           strip_components: 1
 
-      - name: Deploy 'healing-fi-members' to skillvault.blog/natural-members-fi
-        if: steps.filter.outputs.healing-fi-members == 'true'
+      - name: Deploy 'nature-fi-members' to skillvault.blog/natural-members-fi
+        if: steps.filter.outputs.nature-fi-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-fi-members/*"
+          source: "nature-fi-members/*"
           target: "/var/www/skillvault.blog/natural-members-fi"
           strip_components: 1
 
-      - name: Deploy 'healing-fr-members' to skillvault.blog/natural-members-fr
-        if: steps.filter.outputs.healing-fr-members == 'true'
+      - name: Deploy 'nature-fr-members' to skillvault.blog/natural-members-fr
+        if: steps.filter.outputs.nature-fr-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-fr-members/*"
+          source: "nature-fr-members/*"
           target: "/var/www/skillvault.blog/natural-members-fr"
           strip_components: 1
 
-      - name: Deploy 'healing-hr-members' to skillvault.blog/natural-members-hr
-        if: steps.filter.outputs.healing-hr-members == 'true'
+      - name: Deploy 'nature-hr-members' to skillvault.blog/natural-members-hr
+        if: steps.filter.outputs.nature-hr-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-hr-members/*"
+          source: "nature-hr-members/*"
           target: "/var/www/skillvault.blog/natural-members-hr"
           strip_components: 1
 
-      - name: Deploy 'healing-hu-members' to skillvault.blog/natural-members-hu
-        if: steps.filter.outputs.healing-hu-members == 'true'
+      - name: Deploy 'nature-hu-members' to skillvault.blog/natural-members-hu
+        if: steps.filter.outputs.nature-hu-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-hu-members/*"
+          source: "nature-hu-members/*"
           target: "/var/www/skillvault.blog/natural-members-hu"
           strip_components: 1
 
-      - name: Deploy 'healing-it-members' to skillvault.blog/natural-members-it
-        if: steps.filter.outputs.healing-it-members == 'true'
+      - name: Deploy 'nature-it-members' to skillvault.blog/natural-members-it
+        if: steps.filter.outputs.nature-it-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-it-members/*"
+          source: "nature-it-members/*"
           target: "/var/www/skillvault.blog/natural-members-it"
           strip_components: 1
 
-      - name: Deploy 'healing-nl-members' to skillvault.blog/natural-members-nl
-        if: steps.filter.outputs.healing-nl-members == 'true'
+      - name: Deploy 'nature-nl-members' to skillvault.blog/natural-members-nl
+        if: steps.filter.outputs.nature-nl-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-nl-members/*"
+          source: "nature-nl-members/*"
           target: "/var/www/skillvault.blog/natural-members-nl"
           strip_components: 1
 
-      - name: Deploy 'healing-no-members' to skillvault.blog/natural-members-no
-        if: steps.filter.outputs.healing-no-members == 'true'
+      - name: Deploy 'nature-no-members' to skillvault.blog/natural-members-no
+        if: steps.filter.outputs.nature-no-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-no-members/*"
+          source: "nature-no-members/*"
           target: "/var/www/skillvault.blog/natural-members-no"
           strip_components: 1
 
-      - name: Deploy 'healing-pl-members' to skillvault.blog/natural-members-pl
-        if: steps.filter.outputs.healing-pl-members == 'true'
+      - name: Deploy 'nature-pl-members' to skillvault.blog/natural-members-pl
+        if: steps.filter.outputs.nature-pl-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-pl-members/*"
+          source: "nature-pl-members/*"
           target: "/var/www/skillvault.blog/natural-members-pl"
           strip_components: 1
 
-      - name: Deploy 'healing-pt-members' to skillvault.blog/natural-members-pt
-        if: steps.filter.outputs.healing-pt-members == 'true'
+      - name: Deploy 'nature-pt-members' to skillvault.blog/natural-members-pt
+        if: steps.filter.outputs.nature-pt-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-pt-members/*"
+          source: "nature-pt-members/*"
           target: "/var/www/skillvault.blog/natural-members-pt"
           strip_components: 1
 
-      - name: Deploy 'healing-sk-members' to skillvault.blog/natural-members-sk
-        if: steps.filter.outputs.healing-sk-members == 'true'
+      - name: Deploy 'nature-sk-members' to skillvault.blog/natural-members-sk
+        if: steps.filter.outputs.nature-sk-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-sk-members/*"
+          source: "nature-sk-members/*"
           target: "/var/www/skillvault.blog/natural-members-sk"
           strip_components: 1
 
-      - name: Deploy 'healing-sl-members' to skillvault.blog/natural-members-sl
-        if: steps.filter.outputs.healing-sl-members == 'true'
+      - name: Deploy 'nature-sl-members' to skillvault.blog/natural-members-sl
+        if: steps.filter.outputs.nature-sl-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-sl-members/*"
+          source: "nature-sl-members/*"
           target: "/var/www/skillvault.blog/natural-members-sl"
           strip_components: 1
 
-      - name: Deploy 'healing-sv-members' to skillvault.blog/natural-members-sv
-        if: steps.filter.outputs.healing-sv-members == 'true'
+      - name: Deploy 'nature-sv-members' to skillvault.blog/natural-members-sv
+        if: steps.filter.outputs.nature-sv-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-sv-members/*"
+          source: "nature-sv-members/*"
           target: "/var/www/skillvault.blog/natural-members-sv"
           strip_components: 1
 
-      - name: Deploy 'healing-members' to skillvault.blog/natural-members
-        if: steps.filter.outputs.healing-members == 'true'
+      - name: Deploy 'nature-members' to skillvault.blog/natural-members
+        if: steps.filter.outputs.nature-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "healing-members/*"
+          source: "nature-members/*"
           target: "/var/www/skillvault.blog/natural-members"
           strip_components: 1
