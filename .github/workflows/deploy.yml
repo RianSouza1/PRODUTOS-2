@@ -322,95 +322,10 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/ww
             sudo mkdir -p /var/www/skillvault.blog/chickens
             sudo mkdir -p /var/www/skillvault.blog/chickens-al
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-pt
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-no
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-fi
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-de
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-da
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
             sudo mkdir -p /var/www/skillvault.blog/ww-de
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-pt
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-no
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-fi
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-de
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-da
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
             sudo mkdir -p /var/www/skillvault.blog/ww-fr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-pt
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-no
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-fi
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-de
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-da
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
             sudo mkdir -p /var/www/skillvault.blog/ww-it
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-pt
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-no
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-fi
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-de
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-da
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
             sudo mkdir -p /var/www/skillvault.blog/ww-plans-fr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-pt
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-no
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-fi
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-de
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-da
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
             sudo mkdir -p /var/www/skillvault.blog/ww-plans-it
             sudo mkdir -p /var/www/skillvault.blog/mw-de
             sudo mkdir -p /var/www/skillvault.blog/mw
@@ -427,41 +342,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/hx-it-m
             sudo mkdir -p /var/www/skillvault.blog/hx-es-m
             sudo mkdir -p /var/www/skillvault.blog/hx-pt-m
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-pt
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-no
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-fi
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-de
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-da
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
             sudo mkdir -p /var/www/skillvault.blog/ww-m
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-pt
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-no
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-fi
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-de
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-da
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
             sudo mkdir -p /var/www/skillvault.blog/ww-de-m
             sudo mkdir -p /var/www/skillvault.blog/mw-m
             sudo mkdir -p /var/www/skillvault.blog/excel
