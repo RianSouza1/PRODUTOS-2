@@ -151,6 +151,40 @@ jobs:
               - 'natures-es-members/**'
             healing-es-members:
               - 'healing-es-members/**'
+            healing-members:
+              - 'healing-members/**'
+            healing-sv-members:
+              - 'healing-sv-members/**'
+            healing-sl-members:
+              - 'healing-sl-members/**'
+            healing-sk-members:
+              - 'healing-sk-members/**'
+            healing-pt-members:
+              - 'healing-pt-members/**'
+            healing-pl-members:
+              - 'healing-pl-members/**'
+            healing-no-members:
+              - 'healing-no-members/**'
+            healing-nl-members:
+              - 'healing-nl-members/**'
+            healing-it-members:
+              - 'healing-it-members/**'
+            healing-hu-members:
+              - 'healing-hu-members/**'
+            healing-hr-members:
+              - 'healing-hr-members/**'
+            healing-fr-members:
+              - 'healing-fr-members/**'
+            healing-fi-members:
+              - 'healing-fi-members/**'
+            healing-de-members:
+              - 'healing-de-members/**'
+            healing-da-members:
+              - 'healing-da-members/**'
+            healing-cs-members:
+              - 'healing-cs-members/**'
+            healing-bg-members:
+              - 'healing-bg-members/**'
             fishing:
               - 'Fishing/**'
             fishing-de:
@@ -269,18 +303,114 @@ jobs:
             sudo mkdir -p /var/www/storeinfocus.com/fish-fr
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com || true
             sudo mkdir -p /var/www/skillvault.blog/natural-members-es
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pt
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-no
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fi
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-de
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-da
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
             sudo mkdir -p /var/www/skillvault.blog/ww
             sudo mkdir -p /var/www/skillvault.blog/chickens
             sudo mkdir -p /var/www/skillvault.blog/chickens-al
             sudo mkdir -p /var/www/skillvault.blog/natural-members-es
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pt
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-no
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fi
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-de
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-da
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
             sudo mkdir -p /var/www/skillvault.blog/ww-de
             sudo mkdir -p /var/www/skillvault.blog/natural-members-es
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pt
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-no
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fi
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-de
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-da
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
             sudo mkdir -p /var/www/skillvault.blog/ww-fr
             sudo mkdir -p /var/www/skillvault.blog/natural-members-es
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pt
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-no
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fi
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-de
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-da
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
             sudo mkdir -p /var/www/skillvault.blog/ww-it
             sudo mkdir -p /var/www/skillvault.blog/natural-members-es
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pt
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-no
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fi
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-de
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-da
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
             sudo mkdir -p /var/www/skillvault.blog/ww-plans-fr
             sudo mkdir -p /var/www/skillvault.blog/natural-members-es
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pt
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-no
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fi
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-de
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-da
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
             sudo mkdir -p /var/www/skillvault.blog/ww-plans-it
             sudo mkdir -p /var/www/skillvault.blog/mw-de
             sudo mkdir -p /var/www/skillvault.blog/mw
@@ -298,8 +428,40 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/hx-es-m
             sudo mkdir -p /var/www/skillvault.blog/hx-pt-m
             sudo mkdir -p /var/www/skillvault.blog/natural-members-es
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pt
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-no
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fi
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-de
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-da
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
             sudo mkdir -p /var/www/skillvault.blog/ww-m
             sudo mkdir -p /var/www/skillvault.blog/natural-members-es
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pt
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-no
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-fi
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-de
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-da
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
             sudo mkdir -p /var/www/skillvault.blog/ww-de-m
             sudo mkdir -p /var/www/skillvault.blog/mw-m
             sudo mkdir -p /var/www/skillvault.blog/excel
@@ -1122,4 +1284,191 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "healing-es-members/*"
           target: "/var/www/skillvault.blog/natural-members-es"
+          strip_components: 1
+
+      - name: Deploy 'healing-bg-members' to skillvault.blog/natural-members-bg
+        if: steps.filter.outputs.healing-bg-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-bg-members/*"
+          target: "/var/www/skillvault.blog/natural-members-bg"
+          strip_components: 1
+
+      - name: Deploy 'healing-cs-members' to skillvault.blog/natural-members-cs
+        if: steps.filter.outputs.healing-cs-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-cs-members/*"
+          target: "/var/www/skillvault.blog/natural-members-cs"
+          strip_components: 1
+
+      - name: Deploy 'healing-da-members' to skillvault.blog/natural-members-da
+        if: steps.filter.outputs.healing-da-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-da-members/*"
+          target: "/var/www/skillvault.blog/natural-members-da"
+          strip_components: 1
+
+      - name: Deploy 'healing-de-members' to skillvault.blog/natural-members-de
+        if: steps.filter.outputs.healing-de-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-de-members/*"
+          target: "/var/www/skillvault.blog/natural-members-de"
+          strip_components: 1
+
+      - name: Deploy 'healing-fi-members' to skillvault.blog/natural-members-fi
+        if: steps.filter.outputs.healing-fi-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-fi-members/*"
+          target: "/var/www/skillvault.blog/natural-members-fi"
+          strip_components: 1
+
+      - name: Deploy 'healing-fr-members' to skillvault.blog/natural-members-fr
+        if: steps.filter.outputs.healing-fr-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-fr-members/*"
+          target: "/var/www/skillvault.blog/natural-members-fr"
+          strip_components: 1
+
+      - name: Deploy 'healing-hr-members' to skillvault.blog/natural-members-hr
+        if: steps.filter.outputs.healing-hr-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-hr-members/*"
+          target: "/var/www/skillvault.blog/natural-members-hr"
+          strip_components: 1
+
+      - name: Deploy 'healing-hu-members' to skillvault.blog/natural-members-hu
+        if: steps.filter.outputs.healing-hu-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-hu-members/*"
+          target: "/var/www/skillvault.blog/natural-members-hu"
+          strip_components: 1
+
+      - name: Deploy 'healing-it-members' to skillvault.blog/natural-members-it
+        if: steps.filter.outputs.healing-it-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-it-members/*"
+          target: "/var/www/skillvault.blog/natural-members-it"
+          strip_components: 1
+
+      - name: Deploy 'healing-nl-members' to skillvault.blog/natural-members-nl
+        if: steps.filter.outputs.healing-nl-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-nl-members/*"
+          target: "/var/www/skillvault.blog/natural-members-nl"
+          strip_components: 1
+
+      - name: Deploy 'healing-no-members' to skillvault.blog/natural-members-no
+        if: steps.filter.outputs.healing-no-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-no-members/*"
+          target: "/var/www/skillvault.blog/natural-members-no"
+          strip_components: 1
+
+      - name: Deploy 'healing-pl-members' to skillvault.blog/natural-members-pl
+        if: steps.filter.outputs.healing-pl-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-pl-members/*"
+          target: "/var/www/skillvault.blog/natural-members-pl"
+          strip_components: 1
+
+      - name: Deploy 'healing-pt-members' to skillvault.blog/natural-members-pt
+        if: steps.filter.outputs.healing-pt-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-pt-members/*"
+          target: "/var/www/skillvault.blog/natural-members-pt"
+          strip_components: 1
+
+      - name: Deploy 'healing-sk-members' to skillvault.blog/natural-members-sk
+        if: steps.filter.outputs.healing-sk-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-sk-members/*"
+          target: "/var/www/skillvault.blog/natural-members-sk"
+          strip_components: 1
+
+      - name: Deploy 'healing-sl-members' to skillvault.blog/natural-members-sl
+        if: steps.filter.outputs.healing-sl-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-sl-members/*"
+          target: "/var/www/skillvault.blog/natural-members-sl"
+          strip_components: 1
+
+      - name: Deploy 'healing-sv-members' to skillvault.blog/natural-members-sv
+        if: steps.filter.outputs.healing-sv-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-sv-members/*"
+          target: "/var/www/skillvault.blog/natural-members-sv"
+          strip_components: 1
+
+      - name: Deploy 'healing-members' to skillvault.blog/natural-members
+        if: steps.filter.outputs.healing-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "healing-members/*"
+          target: "/var/www/skillvault.blog/natural-members"
           strip_components: 1
