@@ -149,8 +149,8 @@ jobs:
               - 'natures-pl-members/**'
             natures-es-members:
               - 'natures-es-members/**'
-            nature-es-members:
-              - 'nature-es-members/**'
+            nature-members-es:
+              - 'nature-members-es/**'
             nature-members:
               - 'nature-members/**'
             nature-sv-members:
@@ -167,8 +167,8 @@ jobs:
               - 'nature-no-members/**'
             nature-nl-members:
               - 'nature-nl-members/**'
-            nature-it-members:
-              - 'nature-it-members/**'
+            nature-members-it:
+              - 'nature-members-it/**'
             nature-hu-members:
               - 'nature-hu-members/**'
             nature-hr-members:
@@ -302,7 +302,7 @@ jobs:
             sudo mkdir -p /var/www/storeinfocus.com/fish-de
             sudo mkdir -p /var/www/storeinfocus.com/fish-fr
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com || true
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-es
+            sudo mkdir -p /var/www/skillvault.blog/nature-members-es
             sudo mkdir -p /var/www/skillvault.blog/natural-members-sv
             sudo mkdir -p /var/www/skillvault.blog/natural-members-sl
             sudo mkdir -p /var/www/skillvault.blog/natural-members-sk
@@ -310,7 +310,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/natural-members-pl
             sudo mkdir -p /var/www/skillvault.blog/natural-members-no
             sudo mkdir -p /var/www/skillvault.blog/natural-members-nl
-            sudo mkdir -p /var/www/skillvault.blog/natural-members-it
+            sudo mkdir -p /var/www/skillvault.blog/nature-members-it
             sudo mkdir -p /var/www/skillvault.blog/natural-members-hu
             sudo mkdir -p /var/www/skillvault.blog/natural-members-hr
             sudo mkdir -p /var/www/skillvault.blog/natural-members-fr
@@ -1156,15 +1156,15 @@ jobs:
           target: "/var/www/skillvault.blog/excel-pt-m"
           strip_components: 1
 
-      - name: Deploy 'nature-es-members' to skillvault.blog/natural-members-es
-        if: steps.filter.outputs.nature-es-members == 'true'
+      - name: Deploy 'nature-members-es' to skillvault.blog/nature-members-es
+        if: steps.filter.outputs.nature-members-es == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "nature-es-members/*"
-          target: "/var/www/skillvault.blog/natural-members-es"
+          source: "nature-members-es/*"
+          target: "/var/www/skillvault.blog/nature-members-es"
           strip_components: 1
 
       - name: Deploy 'nature-bg-members' to skillvault.blog/natural-members-bg
@@ -1255,15 +1255,15 @@ jobs:
           target: "/var/www/skillvault.blog/natural-members-hu"
           strip_components: 1
 
-      - name: Deploy 'nature-it-members' to skillvault.blog/natural-members-it
-        if: steps.filter.outputs.nature-it-members == 'true'
+      - name: Deploy 'nature-members-it' to skillvault.blog/nature-members-it
+        if: steps.filter.outputs.nature-members-it == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
-          source: "nature-it-members/*"
-          target: "/var/www/skillvault.blog/natural-members-it"
+          source: "nature-members-it/*"
+          target: "/var/www/skillvault.blog/nature-members-it"
           strip_components: 1
 
       - name: Deploy 'nature-nl-members' to skillvault.blog/natural-members-nl
