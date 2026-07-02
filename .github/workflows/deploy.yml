@@ -358,6 +358,14 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/natural-members-da
             sudo mkdir -p /var/www/skillvault.blog/natural-members-cs
             sudo mkdir -p /var/www/skillvault.blog/natural-members-bg
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-bs
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-ca
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-zh
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-ko
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-ja
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-lv
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-mk
+            sudo mkdir -p /var/www/skillvault.blog/natural-members-sr
             sudo mkdir -p /var/www/skillvault.blog/ww
             sudo mkdir -p /var/www/skillvault.blog/chickens
             sudo mkdir -p /var/www/skillvault.blog/chickens-al
