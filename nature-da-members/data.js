@@ -38,7 +38,7 @@ const APP_DATA = {
                 "Guides til urter og køkkeningredienser",
                 "Trin for trin urteopskrifter til almindelige lidelser"
             ],
-            downloadUrl: "materials/la_farmacia_natural_guia.pdf",
+            downloadUrl: "materials/Natures-Apothecary-1-DK.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Download Hovedbog"
         },
@@ -53,7 +53,7 @@ const APP_DATA = {
                 "Sikkerhedsretningslinjer og dosering",
                 "Traditionelle helbredende anvendelser"
             ],
-            downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
+            downloadUrl: "materials/Kitchen-Remedies-2-DK.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Download Bonus #1"
         },
@@ -68,7 +68,7 @@ const APP_DATA = {
                 "Opskrifter med honning, ingefær, mynte og kamille",
                 "Trin for trin at forberede derhjemme"
             ],
-            downloadUrl: "materials/guia_infusiones_curativas.pdf",
+            downloadUrl: "materials/Healing-Herbal-Teas-3-DK.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Download Bonus #2"
         }

@@ -1,5 +1,5 @@
 /**
- * LA FARMACIA NATURAL — Members Area Data (Español)
+ * LUONNON APTEEKKI — Members Area Data (Suomi)
  */
 
 const APP_DATA = {
@@ -7,12 +7,12 @@ const APP_DATA = {
     // CONFIGURAÇÕES GLOBAIS DA PÁGINA
     // ----------------------------------------------------------------------
     config: {
-        brandName: "La Farmacia Natural", // Nome que vai no header
+        brandName: "Luonnon Apteekki", // Nome que vai no header
 
         // Contato Oficial (100% via E-mail)
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Pregunta sobre el acceso al curso (La Farmacia Natural)",
-        emailBodyTemplate: "¡Hola equipo de soporte! Me gustaría recibir ayuda con mi área de miembros de La Farmacia Natural.%0A%0AMi nombre es: ______.",
+        emailSubject: "Kysymys kurssille pääsystä (Luonnon Apteekki)",
+        emailBodyTemplate: "Hei tukitiimi! Haluaisin apua Luonnon Apteekin jäsenalueeseeni liittyen.%0A%0ANimeni on: ______.",
 
         // Mostrar ícone de "? Ajuda" flutuante em todas as telas
         showFloatingHelp: true
@@ -29,48 +29,48 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "La Farmacia Natural — Guía Completa",
-            description: "La guía principal para construir tu propia farmacia natural en casa. Aprende qué hierbas usar, qué recetas realmente funcionan y cómo prepararlas paso a paso, sin necesidad de ser un experto.",
-            badgeText: "LIBRO PRINCIPAL",
+            title: "Luonnon Apteekki — Kattava Opas",
+            description: "Tärkein opas oman luonnollisen apteekin rakentamiseen kotona. Opi mitä yrttejä käyttää, mitkä reseptit todella toimivat ja miten ne valmistetaan vaihe vaiheelta, ilman että sinun tarvitsee olla asiantuntija.",
+            badgeText: "PÄÄKIRJA",
             badgeColor: "#10B981", // Emerald Green
             features: [
-                "Métodos de preparación sencillos para principiantes",
-                "Guías de hierbas e ingredientes de cocina",
-                "Recetas herbales paso a paso para dolencias comunes"
+                "Yksinkertaiset valmistusmenetelmät aloittelijoille",
+                "Opas yrtteihin ja keittiön ainesosiin",
+                "Vaiheittaiset yrttireseptit yleisiin vaivoihin"
             ],
-            downloadUrl: "materials/la_farmacia_natural_guia.pdf",
+            downloadUrl: "materials/Natures-Apothecary-1-FI.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Libro Principal"
+            buttonText: "Lataa Pääkirja"
         },
         {
             id: "b2",
-            title: "El Poder Curativo de las Hierbas",
-            description: "Descubre las propiedades terapéuticas de las hierbas medicinales más comunes y aprende a usarlas de forma segura para el bienestar diario: tés calmantes, jarabes, ungüentos y más.",
-            badgeText: "BONO #1",
+            title: "Yrttien Parantava Voima",
+            description: "Tutustu yleisimpien lääkeyrttien terapeuttisiin ominaisuuksiin ja opi käyttämään niitä turvallisesti päivittäisessä hyvinvoinnissasi: rauhoittavat teet, siirapit, voiteet ja paljon muuta.",
+            badgeText: "BONUS #1",
             badgeColor: "#F59E0B", // Gold/Amber
             features: [
-                "Perfiles medicinales de más de 20 hierbas",
-                "Pautas de seguridad y dosificación",
-                "Aplicaciones curativas tradicionales"
+                "Yli 20 yrtin lääkinnälliset profiilit",
+                "Turvallisuusohjeet ja annostus",
+                "Perinteiset parantavat sovellukset"
             ],
-            downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
+            downloadUrl: "materials/Kitchen-Remedies-2-FI.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Bono #1"
+            buttonText: "Lataa Bonus #1"
         },
         {
             id: "b3",
-            title: "Guía de Infusiones Curativas",
-            description: "Aprende a crear infusiones de hierbas calmantes para el sueño, la digestión, la relajación, el bienestar de la garganta, la inmunidad y el bienestar diario con ingredientes simples.",
-            badgeText: "BONO #2",
+            title: "Parantavien Teiden Opas",
+            description: "Opi luomaan rauhoittavia yrttijuomia uneen, ruoansulatukseen, rentoutumiseen, kurkun hyvinvointiin, immuniteettiin ja päivittäiseen hyvinvointiin yksinkertaisista ainesosista.",
+            badgeText: "BONUS #2",
             badgeColor: "#3B82F6", // Blue
             features: [
-                "Mezclas para el sueño, la digestión y la relajación",
-                "Recetas con miel, jengibre, menta y manzanilla",
-                "Paso a paso para preparar en casa"
+                "Sekoitukset uneen, ruoansulatukseen ja rentoutumiseen",
+                "Reseptit hunajalla, inkiväärillä, mintulla ja kamomillalla",
+                "Vaiheittainen valmistus kotona"
             ],
-            downloadUrl: "materials/guia_infusiones_curativas.pdf",
+            downloadUrl: "materials/Healing-Herbal-Teas-3-FI.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Bono #2"
+            buttonText: "Lataa Bonus #2"
         }
     ],
 

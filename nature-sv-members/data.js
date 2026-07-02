@@ -38,7 +38,7 @@ const APP_DATA = {
                 "Guider till örter och köksingredienser",
                 "Steg för steg örtrecept för vanliga åkommor"
             ],
-            downloadUrl: "materials/la_farmacia_natural_guia.pdf",
+            downloadUrl: "materials/Natures-Apothecary-1-SV.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Ladda ner Huvudbok"
         },
@@ -53,7 +53,7 @@ const APP_DATA = {
                 "Säkerhetsriktlinjer och dosering",
                 "Traditionella läkande tillämpningar"
             ],
-            downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
+            downloadUrl: "materials/Kitchen-Remedies-2-SV.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Ladda ner Bonus #1"
         },
@@ -68,7 +68,7 @@ const APP_DATA = {
                 "Recept med honung, ingefära, mynta och kamomill",
                 "Steg för steg att förbereda hemma"
             ],
-            downloadUrl: "materials/guia_infusiones_curativas.pdf",
+            downloadUrl: "materials/Healing-Herbal-Teas-3-SV.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Ladda ner Bonus #2"
         }

@@ -38,7 +38,7 @@ const APP_DATA = {
                 "Útmutatók gyógynövényekhez és konyhai összetevőkhöz",
                 "Lépésről lépésre gyógynövényes receptek gyakori panaszokra"
             ],
-            downloadUrl: "materials/la_farmacia_natural_guia.pdf",
+            downloadUrl: "materials/Natures-Apothecary-1-HU.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Főkönyv Letöltése"
         },
@@ -53,7 +53,7 @@ const APP_DATA = {
                 "Biztonsági irányelvek és adagolás",
                 "Hagyományos gyógyító alkalmazások"
             ],
-            downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
+            downloadUrl: "materials/Kitchen-Remedies-2-HU.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Bónusz #1 Letöltése"
         },
@@ -68,7 +68,7 @@ const APP_DATA = {
                 "Receptek mézzel, gyömbérrel, mentával és kamillával",
                 "Lépésről lépésre házi elkészítéshez"
             ],
-            downloadUrl: "materials/guia_infusiones_curativas.pdf",
+            downloadUrl: "materials/Healing-Herbal-Teas-3-HU.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Bónusz #2 Letöltése"
         }

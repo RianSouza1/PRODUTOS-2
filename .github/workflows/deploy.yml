@@ -77,6 +77,17 @@ on:
       - 'Fishing-fr/**'
       - '.github/workflows/**'
 
+      - 'nature-el-members/**'
+      - 'nature-uk-members/**'
+      - 'nature-ro-members/**'
+      - 'nature-bs-members/**'
+      - 'nature-ca-members/**'
+      - 'nature-zh-members/**'
+      - 'nature-ko-members/**'
+      - 'nature-ja-members/**'
+      - 'nature-lv-members/**'
+      - 'nature-mk-members/**'
+      - 'nature-sr-members/**'
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -149,6 +160,28 @@ jobs:
               - 'natures-pl-members/**'
             natures-es-members:
               - 'natures-es-members/**'
+            nature-el-members:
+              - 'nature-el-members/**'
+            nature-uk-members:
+              - 'nature-uk-members/**'
+            nature-ro-members:
+              - 'nature-ro-members/**'
+            nature-bs-members:
+              - 'nature-bs-members/**'
+            nature-ca-members:
+              - 'nature-ca-members/**'
+            nature-zh-members:
+              - 'nature-zh-members/**'
+            nature-ko-members:
+              - 'nature-ko-members/**'
+            nature-ja-members:
+              - 'nature-ja-members/**'
+            nature-lv-members:
+              - 'nature-lv-members/**'
+            nature-mk-members:
+              - 'nature-mk-members/**'
+            nature-sr-members:
+              - 'nature-sr-members/**'
             nature-members-es:
               - 'nature-members-es/**'
             nature-members:
@@ -157,11 +190,8 @@ jobs:
               - 'nature-el-members/**'
             nature-uk-members:
               - 'nature-uk-members/**'
-      - 'nature-el-members/**'
-      - 'nature-uk-members/**'
             nature-ro-members:
               - 'nature-ro-members/**'
-      - 'nature-ro-members/**'
             nature-sv-members:
               - 'nature-sv-members/**'
             nature-sl-members:
@@ -1394,4 +1424,92 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "nature-ro-members/*"
           target: "/var/www/skillvault.blog/natural-members-ro"
+          strip_components: 1
+
+      - name: Deploy 'nature-bs-members' to skillvault.blog/natural-members-bs
+        if: steps.filter.outputs.nature-bs-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "nature-bs-members/*"
+          target: "/var/www/skillvault.blog/natural-members-bs"
+          strip_components: 1
+
+      - name: Deploy 'nature-ca-members' to skillvault.blog/natural-members-ca
+        if: steps.filter.outputs.nature-ca-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "nature-ca-members/*"
+          target: "/var/www/skillvault.blog/natural-members-ca"
+          strip_components: 1
+
+      - name: Deploy 'nature-zh-members' to skillvault.blog/natural-members-zh
+        if: steps.filter.outputs.nature-zh-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "nature-zh-members/*"
+          target: "/var/www/skillvault.blog/natural-members-zh"
+          strip_components: 1
+
+      - name: Deploy 'nature-ko-members' to skillvault.blog/natural-members-ko
+        if: steps.filter.outputs.nature-ko-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "nature-ko-members/*"
+          target: "/var/www/skillvault.blog/natural-members-ko"
+          strip_components: 1
+
+      - name: Deploy 'nature-ja-members' to skillvault.blog/natural-members-ja
+        if: steps.filter.outputs.nature-ja-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "nature-ja-members/*"
+          target: "/var/www/skillvault.blog/natural-members-ja"
+          strip_components: 1
+
+      - name: Deploy 'nature-lv-members' to skillvault.blog/natural-members-lv
+        if: steps.filter.outputs.nature-lv-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "nature-lv-members/*"
+          target: "/var/www/skillvault.blog/natural-members-lv"
+          strip_components: 1
+
+      - name: Deploy 'nature-mk-members' to skillvault.blog/natural-members-mk
+        if: steps.filter.outputs.nature-mk-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "nature-mk-members/*"
+          target: "/var/www/skillvault.blog/natural-members-mk"
+          strip_components: 1
+
+      - name: Deploy 'nature-sr-members' to skillvault.blog/natural-members-sr
+        if: steps.filter.outputs.nature-sr-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "nature-sr-members/*"
+          target: "/var/www/skillvault.blog/natural-members-sr"
           strip_components: 1
