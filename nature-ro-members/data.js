@@ -38,7 +38,7 @@ const APP_DATA = {
                 "Ghiduri pentru ierburi și ingrediente de bucătărie",
                 "Rețete pe bază de plante pas cu pas pentru afecțiuni comune"
             ],
-            downloadUrl: "materials/la_farmacia_natural_guia.pdf",
+            downloadUrl: "materials/Natures-Apothecary-1-RO.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Descarcă Cartea Principală"
         },
@@ -53,7 +53,7 @@ const APP_DATA = {
                 "Ghiduri de siguranță și dozare",
                 "Aplicații tradiționale de vindecare"
             ],
-            downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
+            downloadUrl: "materials/Kitchen-Remedies-2-RO.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Descarcă Bonus #1"
         },
@@ -68,7 +68,7 @@ const APP_DATA = {
                 "Rețete cu miere, ghimbir, mentă și mușețel",
                 "Pas cu pas pentru a le prepara acasă"
             ],
-            downloadUrl: "materials/guia_infusiones_curativas.pdf",
+            downloadUrl: "materials/Healing-Herbal-Teas-3-RO.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Descarcă Bonus #2"
         }
