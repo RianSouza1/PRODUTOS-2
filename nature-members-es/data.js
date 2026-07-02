@@ -38,7 +38,7 @@ const APP_DATA = {
                 "Guías de hierbas e ingredientes de cocina",
                 "Recetas herbales paso a paso para dolencias comunes"
             ],
-            downloadUrl: "materials/la_farmacia_natural_guia.pdf",
+            downloadUrl: "materials/Natures-Apothecary-1-ES.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Descargar Libro Principal"
         },
@@ -53,7 +53,7 @@ const APP_DATA = {
                 "Pautas de seguridad y dosificación",
                 "Aplicaciones curativas tradicionales"
             ],
-            downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
+            downloadUrl: "materials/Kitchen-Remedies-2-ES.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Descargar Bono #1"
         },
@@ -68,7 +68,7 @@ const APP_DATA = {
                 "Recetas con miel, jengibre, menta y manzanilla",
                 "Paso a paso para preparar en casa"
             ],
-            downloadUrl: "materials/guia_infusiones_curativas.pdf",
+            downloadUrl: "materials/Healing-Herbal-Teas-3-ES.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Descargar Bono #2"
         }
