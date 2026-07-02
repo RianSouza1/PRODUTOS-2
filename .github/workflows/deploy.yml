@@ -186,12 +186,7 @@ jobs:
               - 'nature-members-es/**'
             nature-members:
               - 'nature-members/**'
-            nature-el-members:
-              - 'nature-el-members/**'
-            nature-uk-members:
-              - 'nature-uk-members/**'
-            nature-ro-members:
-              - 'nature-ro-members/**'
+
             nature-sv-members:
               - 'nature-sv-members/**'
             nature-sl-members:
