@@ -7,12 +7,12 @@ const APP_DATA = {
     // CONFIGURAÇÕES GLOBAIS DA PÁGINA
     // ----------------------------------------------------------------------
     config: {
-        brandName: "La Farmacia Natural", // Nome que vai no header
+        brandName: "Naturens Apotek", // Nome que vai no header
 
         // Contato Oficial (100% via E-mail)
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Pregunta sobre el acceso al curso (La Farmacia Natural)",
-        emailBodyTemplate: "¡Hola equipo de soporte! Me gustaría recibir ayuda con mi área de miembros de La Farmacia Natural.%0A%0AMi nombre es: ______.",
+        emailSubject: "Spørsmål om kurstilgang (Naturens Apotek)",
+        emailBodyTemplate: "Hei supportteam! Jeg vil gjerne ha hjelp med medlemsområdet mitt for Naturens Apotek.%0A%0AMitt navn er: ______.",
 
         // Mostrar ícone de "? Ajuda" flutuante em todas as telas
         showFloatingHelp: true
@@ -29,48 +29,48 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "La Farmacia Natural — Guía Completa",
-            description: "La guía principal para construir tu propia farmacia natural en casa. Aprende qué hierbas usar, qué recetas realmente funcionan y cómo prepararlas paso a paso, sin necesidad de ser un experto.",
-            badgeText: "LIBRO PRINCIPAL",
+            title: "Naturens Apotek — Komplett Guide",
+            description: "Hovedguiden for å bygge ditt eget naturlige apotek hjemme. Lær hvilke urter du skal bruke, hvilke oppskrifter som faktisk fungerer, og hvordan du tilbereder dem trinn for trinn, uten å måtte være ekspert.",
+            badgeText: "HOVEDBOK",
             badgeColor: "#10B981", // Emerald Green
             features: [
-                "Métodos de preparación sencillos para principiantes",
-                "Guías de hierbas e ingredientes de cocina",
-                "Recetas herbales paso a paso para dolencias comunes"
+                "Enkle tilberedningsmetoder for nybegynnere",
+                "Guider til urter og kjøkkeningredienser",
+                "Trinn for trinn urteoppskrifter for vanlige plager"
             ],
             downloadUrl: "materials/la_farmacia_natural_guia.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Libro Principal"
+            buttonText: "Last Ned Hovedbok"
         },
         {
             id: "b2",
-            title: "El Poder Curativo de las Hierbas",
-            description: "Descubre las propiedades terapéuticas de las hierbas medicinales más comunes y aprende a usarlas de forma segura para el bienestar diario: tés calmantes, jarabes, ungüentos y más.",
-            badgeText: "BONO #1",
+            title: "Helbredende Kjøkkenmidler",
+            description: "Oppdag de terapeutiske egenskapene til vanlige medisinske urter og lær å bruke dem trygt for daglig velvære: beroligende teer, siruper, salver og mer.",
+            badgeText: "BONUS #1",
             badgeColor: "#F59E0B", // Gold/Amber
             features: [
-                "Perfiles medicinales de más de 20 hierbas",
-                "Pautas de seguridad y dosificación",
-                "Aplicaciones curativas tradicionales"
+                "Medisinske profiler for over 20 urter",
+                "Sikkerhetsretningslinjer og dosering",
+                "Tradisjonelle helbredende applikasjoner"
             ],
             downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Bono #1"
+            buttonText: "Last Ned Bonus #1"
         },
         {
             id: "b3",
-            title: "Guía de Infusiones Curativas",
-            description: "Aprende a crear infusiones de hierbas calmantes para el sueño, la digestión, la relajación, el bienestar de la garganta, la inmunidad y el bienestar diario con ingredientes simples.",
-            badgeText: "BONO #2",
+            title: "Helbredende Urteteer",
+            description: "Lær å lage beroligende urteinfusjoner for søvn, fordøyelse, avslapning, halsens velvære, immunitet og daglig velvære med enkle ingredienser.",
+            badgeText: "BONUS #2",
             badgeColor: "#3B82F6", // Blue
             features: [
-                "Mezclas para el sueño, la digestión y la relajación",
-                "Recetas con miel, jengibre, menta y manzanilla",
-                "Paso a paso para preparar en casa"
+                "Blandinger for søvn, fordøyelse og avslapning",
+                "Oppskrifter med honning, ingefær, mynte og kamille",
+                "Trinn for trinn for å tilberede hjemme"
             ],
             downloadUrl: "materials/guia_infusiones_curativas.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Bono #2"
+            buttonText: "Last Ned Bonus #2"
         }
     ],
 

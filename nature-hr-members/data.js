@@ -7,12 +7,12 @@ const APP_DATA = {
     // CONFIGURAÇÕES GLOBAIS DA PÁGINA
     // ----------------------------------------------------------------------
     config: {
-        brandName: "La Farmacia Natural", // Nome que vai no header
+        brandName: "Prirodna Ljekarna", // Nome que vai no header
 
         // Contato Oficial (100% via E-mail)
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Pregunta sobre el acceso al curso (La Farmacia Natural)",
-        emailBodyTemplate: "¡Hola equipo de soporte! Me gustaría recibir ayuda con mi área de miembros de La Farmacia Natural.%0A%0AMi nombre es: ______.",
+        emailSubject: "Pitanje o pristupu tečaju (Prirodna Ljekarna)",
+        emailBodyTemplate: "Poštovani tima za podršku! Želio/la bih dobiti pomoć sa svojom zonom za članove Prirodne Ljekarne.%0A%0AMoje ime je: ______.",
 
         // Mostrar ícone de "? Ajuda" flutuante em todas as telas
         showFloatingHelp: true
@@ -29,48 +29,48 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "La Farmacia Natural — Guía Completa",
-            description: "La guía principal para construir tu propia farmacia natural en casa. Aprende qué hierbas usar, qué recetas realmente funcionan y cómo prepararlas paso a paso, sin necesidad de ser un experto.",
-            badgeText: "LIBRO PRINCIPAL",
+            title: "Prirodna Ljekarna — Potpuni Vodič",
+            description: "Glavni vodič za izgradnju vlastite prirodne ljekarne kod kuće. Saznajte koje bilje koristiti, koji recepti doista djeluju i kako ih pripremiti korak po korak, a da ne morate biti stručnjak.",
+            badgeText: "GLAVNA KNJIGA",
             badgeColor: "#10B981", // Emerald Green
             features: [
-                "Métodos de preparación sencillos para principiantes",
-                "Guías de hierbas e ingredientes de cocina",
-                "Recetas herbales paso a paso para dolencias comunes"
+                "Jednostavne metode pripreme za početnike",
+                "Vodiči za bilje i kuhinjske sastojke",
+                "Korak po korak biljni recepti za uobičajene tegobe"
             ],
             downloadUrl: "materials/la_farmacia_natural_guia.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Libro Principal"
+            buttonText: "Preuzmi Glavnu Knjigu"
         },
         {
             id: "b2",
-            title: "El Poder Curativo de las Hierbas",
-            description: "Descubre las propiedades terapéuticas de las hierbas medicinales más comunes y aprende a usarlas de forma segura para el bienestar diario: tés calmantes, jarabes, ungüentos y más.",
-            badgeText: "BONO #1",
+            title: "Ljekoviti Kuhinjski Recepti",
+            description: "Otkrijte terapeutska svojstva uobičajenog ljekovitog bilja i naučite ih sigurno koristiti za svakodnevno blagostanje: umirujući čajevi, sirupi, masti i više.",
+            badgeText: "BONUS #1",
             badgeColor: "#F59E0B", // Gold/Amber
             features: [
-                "Perfiles medicinales de más de 20 hierbas",
-                "Pautas de seguridad y dosificación",
-                "Aplicaciones curativas tradicionales"
+                "Medicinski profili preko 20 biljaka",
+                "Sigurnosne smjernice i doziranje",
+                "Tradicionalne ljekovite primjene"
             ],
             downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Bono #1"
+            buttonText: "Preuzmi Bonus #1"
         },
         {
             id: "b3",
-            title: "Guía de Infusiones Curativas",
-            description: "Aprende a crear infusiones de hierbas calmantes para el sueño, la digestión, la relajación, el bienestar de la garganta, la inmunidad y el bienestar diario con ingredientes simples.",
-            badgeText: "BONO #2",
+            title: "Ljekoviti Biljni Čajevi",
+            description: "Naučte kreirati umirujuće biljne infuzije za san, probavu, opuštanje, zdravlje grla, imunitet i svakodnevno blagostanje s jednostavnim sastojcima.",
+            badgeText: "BONUS #2",
             badgeColor: "#3B82F6", // Blue
             features: [
-                "Mezclas para el sueño, la digestión y la relajación",
-                "Recetas con miel, jengibre, menta y manzanilla",
-                "Paso a paso para preparar en casa"
+                "Mješavine za san, probavu i opuštanje",
+                "Recepti s medom, đumbirom, mentom i kamilicom",
+                "Korak po korak za pripremu kod kuće"
             ],
             downloadUrl: "materials/guia_infusiones_curativas.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Bono #2"
+            buttonText: "Preuzmi Bonus #2"
         }
     ],
 

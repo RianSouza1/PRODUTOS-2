@@ -153,6 +153,12 @@ jobs:
               - 'nature-members-es/**'
             nature-members:
               - 'nature-members/**'
+            nature-el-members:
+              - 'nature-el-members/**'
+            nature-uk-members:
+              - 'nature-uk-members/**'
+      - 'nature-el-members/**'
+      - 'nature-uk-members/**'
             nature-ro-members:
               - 'nature-ro-members/**'
       - 'nature-ro-members/**'
@@ -1355,6 +1361,28 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "nature-members/*"
           target: "/var/www/skillvault.blog/natural-members"
+          strip_components: 1
+
+      - name: Deploy 'nature-el-members' to skillvault.blog/natural-members-el
+        if: steps.filter.outputs.nature-el-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "nature-el-members/*"
+          target: "/var/www/skillvault.blog/natural-members-el"
+          strip_components: 1
+
+      - name: Deploy 'nature-uk-members' to skillvault.blog/natural-members-uk
+        if: steps.filter.outputs.nature-uk-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "nature-uk-members/*"
+          target: "/var/www/skillvault.blog/natural-members-uk"
           strip_components: 1
 
       - name: Deploy 'nature-ro-members' to skillvault.blog/natural-members-ro

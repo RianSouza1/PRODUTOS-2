@@ -7,12 +7,12 @@ const APP_DATA = {
     // CONFIGURAÇÕES GLOBAIS DA PÁGINA
     // ----------------------------------------------------------------------
     config: {
-        brandName: "La Farmacia Natural", // Nome que vai no header
+        brandName: "Přírodní Lékárna", // Nome que vai no header
 
         // Contato Oficial (100% via E-mail)
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Pregunta sobre el acceso al curso (La Farmacia Natural)",
-        emailBodyTemplate: "¡Hola equipo de soporte! Me gustaría recibir ayuda con mi área de miembros de La Farmacia Natural.%0A%0AMi nombre es: ______.",
+        emailSubject: "Dotaz na přístup do kurzu (Přírodní Lékárna)",
+        emailBodyTemplate: "Dobrý den, týme podpory! Rád bych získal pomoc s mou členskou sekcí Přírodní Lékárna.%0A%0AMé jméno je: ______.",
 
         // Mostrar ícone de "? Ajuda" flutuante em todas as telas
         showFloatingHelp: true
@@ -29,48 +29,48 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "La Farmacia Natural — Guía Completa",
-            description: "La guía principal para construir tu propia farmacia natural en casa. Aprende qué hierbas usar, qué recetas realmente funcionan y cómo prepararlas paso a paso, sin necesidad de ser un experto.",
-            badgeText: "LIBRO PRINCIPAL",
+            title: "Přírodní Lékárna — Kompletní Průvodce",
+            description: "Hlavní průvodce k vytvoření vaší vlastní přírodní lékárny doma. Naučte se, jaké bylinky používat, jaké recepty skutečně fungují a jak je připravit krok za krokem, aniž byste museli být odborníkem.",
+            badgeText: "HLAVNÍ KNIHA",
             badgeColor: "#10B981", // Emerald Green
             features: [
-                "Métodos de preparación sencillos para principiantes",
-                "Guías de hierbas e ingredientes de cocina",
-                "Recetas herbales paso a paso para dolencias comunes"
+                "Jednoduché metody přípravy pro začátečníky",
+                "Průvodce bylinkami a kuchyňskými přísadami",
+                "Krok za krokem bylinné recepty pro běžné potíže"
             ],
             downloadUrl: "materials/la_farmacia_natural_guia.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Libro Principal"
+            buttonText: "Stáhnout Hlavní Knihu"
         },
         {
             id: "b2",
-            title: "El Poder Curativo de las Hierbas",
-            description: "Descubre las propiedades terapéuticas de las hierbas medicinales más comunes y aprende a usarlas de forma segura para el bienestar diario: tés calmantes, jarabes, ungüentos y más.",
-            badgeText: "BONO #1",
+            title: "Léčivé Kuchyňské Recepty",
+            description: "Objevte terapeutické vlastnosti běžných léčivých bylin a naučte se je bezpečně používat pro každodenní pohodu: uklidňující čaje, sirupy, masti a další.",
+            badgeText: "BONUS #1",
             badgeColor: "#F59E0B", // Gold/Amber
             features: [
-                "Perfiles medicinales de más de 20 hierbas",
-                "Pautas de seguridad y dosificación",
-                "Aplicaciones curativas tradicionales"
+                "Léčivé profily více než 20 bylin",
+                "Bezpečnostní pokyny a dávkování",
+                "Tradiční léčebné aplikace"
             ],
             downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Bono #1"
+            buttonText: "Stáhnout Bonus #1"
         },
         {
             id: "b3",
-            title: "Guía de Infusiones Curativas",
-            description: "Aprende a crear infusiones de hierbas calmantes para el sueño, la digestión, la relajación, el bienestar de la garganta, la inmunidad y el bienestar diario con ingredientes simples.",
-            badgeText: "BONO #2",
+            title: "Léčivé Bylinné Čaje",
+            description: "Naučte se vytvářet uklidňující bylinné nálevy pro spánek, trávení, relaxaci, zdraví v krku, imunitu a každodenní pohodu s jednoduchými přísadami.",
+            badgeText: "BONUS #2",
             badgeColor: "#3B82F6", // Blue
             features: [
-                "Mezclas para el sueño, la digestión y la relajación",
-                "Recetas con miel, jengibre, menta y manzanilla",
-                "Paso a paso para preparar en casa"
+                "Směsi pro spánek, trávení a relaxaci",
+                "Recepty s medem, zázvorem, mátou a heřmánkem",
+                "Krok za krokem pro přípravu doma"
             ],
             downloadUrl: "materials/guia_infusiones_curativas.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Bono #2"
+            buttonText: "Stáhnout Bonus #2"
         }
     ],
 

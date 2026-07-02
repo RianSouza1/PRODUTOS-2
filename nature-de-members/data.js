@@ -7,12 +7,12 @@ const APP_DATA = {
     // CONFIGURAÇÕES GLOBAIS DA PÁGINA
     // ----------------------------------------------------------------------
     config: {
-        brandName: "La Farmacia Natural", // Nome que vai no header
+        brandName: "Die Naturapotheke", // Nome que vai no header
 
         // Contato Oficial (100% via E-mail)
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Pregunta sobre el acceso al curso (La Farmacia Natural)",
-        emailBodyTemplate: "¡Hola equipo de soporte! Me gustaría recibir ayuda con mi área de miembros de La Farmacia Natural.%0A%0AMi nombre es: ______.",
+        emailSubject: "Frage zum Kurszugang (Die Naturapotheke)",
+        emailBodyTemplate: "Hallo Support-Team! Ich hätte gerne Hilfe mit meinem Mitgliederbereich der Naturapotheke.%0A%0AMein Name ist: ______.",
 
         // Mostrar ícone de "? Ajuda" flutuante em todas as telas
         showFloatingHelp: true
@@ -29,48 +29,48 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "La Farmacia Natural — Guía Completa",
-            description: "La guía principal para construir tu propia farmacia natural en casa. Aprende qué hierbas usar, qué recetas realmente funcionan y cómo prepararlas paso a paso, sin necesidad de ser un experto.",
-            badgeText: "LIBRO PRINCIPAL",
+            title: "Die Naturapotheke — Der Komplette Leitfaden",
+            description: "Der Hauptleitfaden zum Aufbau Ihrer eigenen natürlichen Apotheke zu Hause. Lernen Sie, welche Kräuter Sie verwenden sollten, welche Rezepte wirklich funktionieren und wie Sie sie Schritt für Schritt zubereiten, ohne ein Experte sein zu müssen.",
+            badgeText: "HAUPTBUCH",
             badgeColor: "#10B981", // Emerald Green
             features: [
-                "Métodos de preparación sencillos para principiantes",
-                "Guías de hierbas e ingredientes de cocina",
-                "Recetas herbales paso a paso para dolencias comunes"
+                "Einfache Zubereitungsmethoden für Anfänger",
+                "Leitfäden zu Kräutern und Küchenzutaten",
+                "Schritt-für-Schritt Kräuterrezepte für häufige Beschwerden"
             ],
             downloadUrl: "materials/la_farmacia_natural_guia.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Libro Principal"
+            buttonText: "Hauptbuch Herunterladen"
         },
         {
             id: "b2",
-            title: "El Poder Curativo de las Hierbas",
-            description: "Descubre las propiedades terapéuticas de las hierbas medicinales más comunes y aprende a usarlas de forma segura para el bienestar diario: tés calmantes, jarabes, ungüentos y más.",
-            badgeText: "BONO #1",
+            title: "Heilende Küchenrezepte",
+            description: "Entdecken Sie die therapeutischen Eigenschaften häufiger Heilkräuter und lernen Sie, sie sicher für das tägliche Wohlbefinden zu verwenden: beruhigende Tees, Sirupe, Salben und mehr.",
+            badgeText: "BONUS #1",
             badgeColor: "#F59E0B", // Gold/Amber
             features: [
-                "Perfiles medicinales de más de 20 hierbas",
-                "Pautas de seguridad y dosificación",
-                "Aplicaciones curativas tradicionales"
+                "Medizinische Profile von über 20 Kräutern",
+                "Sicherheitsrichtlinien und Dosierung",
+                "Traditionelle Heilanwendungen"
             ],
             downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Bono #1"
+            buttonText: "Bonus #1 Herunterladen"
         },
         {
             id: "b3",
-            title: "Guía de Infusiones Curativas",
-            description: "Aprende a crear infusiones de hierbas calmantes para el sueño, la digestión, la relajación, el bienestar de la garganta, la inmunidad y el bienestar diario con ingredientes simples.",
-            badgeText: "BONO #2",
+            title: "Heilende Kräutertees",
+            description: "Lernen Sie, beruhigende Kräutertees für Schlaf, Verdauung, Entspannung, Halsgesundheit, Immunität und tägliches Wohlbefinden mit einfachen Zutaten zu kreieren.",
+            badgeText: "BONUS #2",
             badgeColor: "#3B82F6", // Blue
             features: [
-                "Mezclas para el sueño, la digestión y la relajación",
-                "Recetas con miel, jengibre, menta y manzanilla",
-                "Paso a paso para preparar en casa"
+                "Mischungen für Schlaf, Verdauung und Entspannung",
+                "Rezepte mit Honig, Ingwer, Minze und Kamille",
+                "Schritt-für-Schritt Zubereitung zu Hause"
             ],
             downloadUrl: "materials/guia_infusiones_curativas.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Bono #2"
+            buttonText: "Bonus #2 Herunterladen"
         }
     ],
 
