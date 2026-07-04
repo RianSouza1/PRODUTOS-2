@@ -145,8 +145,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Cria a string `mailto:` dinamicamente com base no contato do data.js
   function mountMailTo() {
-    const { contactEmail, emailSubject, Ahoj tým podpory! Potřebuji pomoc se svou členskou oblastí včelařství.%0A%0AJmenuji se: ______. } = APP_DATA.config;
-    return `mailto:${contactEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(Ahoj tým podpory! Potřebuji pomoc se svou členskou oblastí včelařství.%0A%0AJmenuji se: ______.)}`;
+    const { contactEmail, emailSubject, emailBodyTemplate } = APP_DATA.config;
+    return `mailto:${contactEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBodyTemplate)}`;
   }
 
   // ----------------------------------------------------------------------
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderLivros();
         break;
       case "#videos":
-        renderHome();
+        renderVideos();
         break;
       case "#produtos":
         renderOutrosProdutos();
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>K čemu byste chtěli mít přístup dnes?</h1><p>K čemu byste chtěli mít přístup dnes?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Vítejte, člene</h1><p>K čemu byste chtěli mít přístup dnes?</p></div></div>
           
   
           <div class="home-grid">
@@ -250,6 +250,16 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
             </a>
             
+            <a href="#videos" class="home-block glass-panel">
+              <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
+                 <i data-lucide="play-circle"></i>
+              </div>
+              <div>
+                 <div class="home-block-title">VIDEA</div>
+                 <div class="home-block-subtitle">Vaše video kurzy</div>
+              </div>
+            </a>
+  
             <a href="#contato" class="home-block glass-panel">
               <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
                  <i data-lucide="message-square"></i>
@@ -294,7 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
               
               <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: 1.5rem;">
                  <a href="${bk.downloadUrl}" target="_blank" class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: var(--primary); color: #FFF;">
-                    <i data-lucide="book-open"></i> Přečtěte si nyní
+                    <i data-lucide="book-open"></i> Read Now
                  </a>
                  <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
                     <i data-lucide="download"></i> Stáhnout PDF
@@ -307,11 +317,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Vaše materiály</h1><p>Klepnutím na sbírku níže zobrazíte její obsah.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Your Materials</h1><p>Tap a collection below to view its content.</p></div></div>
           
           
           <div class="list-container">
-            ${booksHTML || '<p>Zatím nejsou zaregistrovány žádné materiály.</p>'}
+            ${booksHTML || '<p>No materials registered yet.</p>'}
           </div>
         </div>
       `;
@@ -354,11 +364,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Další programy</h1><p>Objevte další materiály.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>More Programs</h1><p>Discover additional materials.</p></div></div>
           
           
           <div class="list-container">
-            ${prodsHTML || '<p>Další aktualizace již brzy!</p>'}
+            ${prodsHTML || '<p>More updates coming soon!</p>'}
           </div>
         </div>
       `;
@@ -402,7 +412,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rootEl.innerHTML = `
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Your Courses</h1><p>Stay up to date with your online courses</p></div></div>
+        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Vaše kurzy</h1><p>Mějte přehled o svých online kurzech</p></div></div>
 
         <div id="video-playlist-items">
           <!-- JS Injects Lessons Here -->

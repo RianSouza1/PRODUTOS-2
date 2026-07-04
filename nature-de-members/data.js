@@ -38,7 +38,7 @@ const APP_DATA = {
                 "Leitfäden zu Kräutern und Küchenzutaten",
                 "Schritt-für-Schritt Kräuterrezepte für häufige Beschwerden"
             ],
-            downloadUrl: "materials/la_farmacia_natural_guia.pdf",
+            downloadUrl: "materials/Natures-Apothecary-1-DE.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Hauptbuch Herunterladen"
         },
@@ -53,7 +53,7 @@ const APP_DATA = {
                 "Sicherheitsrichtlinien und Dosierung",
                 "Traditionelle Heilanwendungen"
             ],
-            downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
+            downloadUrl: "materials/Kitchen-Remedies-2-DE.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Bonus #1 Herunterladen"
         },
@@ -68,7 +68,7 @@ const APP_DATA = {
                 "Rezepte mit Honig, Ingwer, Minze und Kamille",
                 "Schritt-für-Schritt Zubereitung zu Hause"
             ],
-            downloadUrl: "materials/guia_infusiones_curativas.pdf",
+            downloadUrl: "materials/Healing-Herbal-Teas-3-DE.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Bonus #2 Herunterladen"
         }
@@ -79,3 +79,5 @@ const APP_DATA = {
     // ----------------------------------------------------------------------
     otherProducts: []
 };
+
+// Force redeploy v2

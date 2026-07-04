@@ -38,7 +38,7 @@ const APP_DATA = {
                 "Guider til urter og kjøkkeningredienser",
                 "Trinn for trinn urteoppskrifter for vanlige plager"
             ],
-            downloadUrl: "materials/la_farmacia_natural_guia.pdf",
+            downloadUrl: "materials/Natures-Apothecary-1-NO.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Last Ned Hovedbok"
         },
@@ -53,7 +53,7 @@ const APP_DATA = {
                 "Sikkerhetsretningslinjer og dosering",
                 "Tradisjonelle helbredende applikasjoner"
             ],
-            downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
+            downloadUrl: "materials/Kitchen-Remedies-2-NO.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Last Ned Bonus #1"
         },
@@ -68,7 +68,7 @@ const APP_DATA = {
                 "Oppskrifter med honning, ingefær, mynte og kamille",
                 "Trinn for trinn for å tilberede hjemme"
             ],
-            downloadUrl: "materials/guia_infusiones_curativas.pdf",
+            downloadUrl: "materials/Healing-Herbal-Teas-3-NO.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Last Ned Bonus #2"
         }
@@ -79,3 +79,5 @@ const APP_DATA = {
     // ----------------------------------------------------------------------
     otherProducts: []
 };
+
+// Force redeploy v2

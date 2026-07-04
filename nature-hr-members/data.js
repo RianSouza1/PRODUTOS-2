@@ -38,7 +38,7 @@ const APP_DATA = {
                 "Vodiči za bilje i kuhinjske sastojke",
                 "Korak po korak biljni recepti za uobičajene tegobe"
             ],
-            downloadUrl: "materials/la_farmacia_natural_guia.pdf",
+            downloadUrl: "materials/Natures-Apothecary-1-HR.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Preuzmi Glavnu Knjigu"
         },
@@ -53,7 +53,7 @@ const APP_DATA = {
                 "Sigurnosne smjernice i doziranje",
                 "Tradicionalne ljekovite primjene"
             ],
-            downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
+            downloadUrl: "materials/Kitchen-Remedies-2-HR.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Preuzmi Bonus #1"
         },
@@ -68,7 +68,7 @@ const APP_DATA = {
                 "Recepti s medom, đumbirom, mentom i kamilicom",
                 "Korak po korak za pripremu kod kuće"
             ],
-            downloadUrl: "materials/guia_infusiones_curativas.pdf",
+            downloadUrl: "materials/Healing-Herbal-Teas-3-HR.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Preuzmi Bonus #2"
         }
@@ -79,3 +79,5 @@ const APP_DATA = {
     // ----------------------------------------------------------------------
     otherProducts: []
 };
+
+// Force redeploy v2

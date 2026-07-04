@@ -38,7 +38,7 @@ const APP_DATA = {
                 "Gidsen voor kruiden en keukeningrediënten",
                 "Stap voor stap kruidenrecepten voor veelvoorkomende kwalen"
             ],
-            downloadUrl: "materials/la_farmacia_natural_guia.pdf",
+            downloadUrl: "materials/Natures-Apothecary-1-NL.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Download Hoofdboek"
         },
@@ -53,7 +53,7 @@ const APP_DATA = {
                 "Veiligheidsrichtlijnen en dosering",
                 "Traditionele helende toepassingen"
             ],
-            downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
+            downloadUrl: "materials/Kitchen-Remedies-2-NL.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Download Bonus #1"
         },
@@ -68,7 +68,7 @@ const APP_DATA = {
                 "Recepten met honing, gember, munt en kamille",
                 "Stap voor stap thuis bereiden"
             ],
-            downloadUrl: "materials/guia_infusiones_curativas.pdf",
+            downloadUrl: "materials/Healing-Herbal-Teas-3-NL.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Download Bonus #2"
         }
@@ -79,3 +79,5 @@ const APP_DATA = {
     // ----------------------------------------------------------------------
     otherProducts: []
 };
+
+// Force redeploy v2

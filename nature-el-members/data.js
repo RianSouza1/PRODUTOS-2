@@ -38,7 +38,7 @@ const APP_DATA = {
                 "Οδηγοί για βότανα και συστατικά κουζίνας",
                 "Βήμα-βήμα συνταγές βοτάνων για κοινές παθήσεις"
             ],
-            downloadUrl: "materials/la_farmacia_natural_guia.pdf",
+            downloadUrl: "materials/Natures-Apothecary-1-EL.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Λήψη Κύριου Βιβλίου"
         },
@@ -53,7 +53,7 @@ const APP_DATA = {
                 "Οδηγίες ασφαλείας και δοσολογία",
                 "Παραδοσιακές θεραπευτικές εφαρμογές"
             ],
-            downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
+            downloadUrl: "materials/Kitchen-Remedies-2-EL.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Λήψη Μπόνους #1"
         },
@@ -68,7 +68,7 @@ const APP_DATA = {
                 "Συνταγές με μέλι, τζίντζερ, μέντα και χαμομήλι",
                 "Βήμα-βήμα για προετοιμασία στο σπίτι"
             ],
-            downloadUrl: "materials/guia_infusiones_curativas.pdf",
+            downloadUrl: "materials/Healing-Herbal-Teas-3-EL.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
             buttonText: "Λήψη Μπόνους #2"
         }
@@ -79,3 +79,5 @@ const APP_DATA = {
     // ----------------------------------------------------------------------
     otherProducts: []
 };
+
+// Force redeploy v2

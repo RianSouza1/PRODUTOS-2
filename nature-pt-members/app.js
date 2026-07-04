@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Bienvenido, Miembro</h1><p>¿A qué le gustaría acceder hoy?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Bem-vindo, Membro</h1><p>O que você gostaria de acessar hoje?</p></div></div>
           
   
           <div class="home-grid">
@@ -143,8 +143,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="book-open"></i>
               </div>
               <div>
-                 <div class="home-block-title">LIBROS</div>
-                 <div class="home-block-subtitle">Libros electrónicos y materiales en PDF</div>
+                 <div class="home-block-title">LIVROS</div>
+                 <div class="home-block-subtitle">E-books e materiais em PDF</div>
               </div>
             </a>
             
@@ -153,8 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="message-square"></i>
               </div>
               <div>
-                 <div class="home-block-title">CONTACTO</div>
-                 <div class="home-block-subtitle">Ayuda y soporte</div>
+                 <div class="home-block-title">CONTATO</div>
+                 <div class="home-block-subtitle">Ajuda e suporte</div>
               </div>
             </a>
   
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card" style="margin-bottom: 2rem;">
            <div class="premium-badge-wrapper">
               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">PDF • Leer ahora</span>
+              <span class="premium-format">PDF • Ler agora</span>
            </div>
            
            <div class="premium-info" style="padding: 0;">
@@ -188,10 +188,10 @@ document.addEventListener("DOMContentLoaded", () => {
               
               <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: 1.5rem;">
                  <a href="${bk.downloadUrl}" target="_blank" class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: var(--primary); color: #FFF;">
-                    <i data-lucide="book-open"></i> Leer ahora
+                    <i data-lucide="book-open"></i> Ler agora
                  </a>
                  <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
-                    <i data-lucide="download"></i> Descargar PDF
+                    <i data-lucide="download"></i> Baixar PDF
                  </a>
               </div>
            </div>
@@ -201,14 +201,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel" style="margin-bottom: 1.5rem;"><div class="hero-text"><h1>Sus materiales</h1><p>Acceda a sus guías y bonos a continuación.</p></div></div>
+          <div class="hero-card glass-panel" style="margin-bottom: 1.5rem;"><div class="hero-text"><h1>Seus materiais</h1><p>Acesse seus guias e bônus abaixo.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
               <img src="assets/covers/Espanhol - img1.png" alt="La Farmacia Natural Bundle" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
           
           <div class="list-container">
-            ${booksHTML || '<p>No materials registered at the moment.</p>'}
+            ${booksHTML || '<p>Nenhum material registrado no momento.</p>'}
           </div>
         </div>
       `;

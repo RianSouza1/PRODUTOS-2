@@ -1,5 +1,5 @@
 /**
- * LA FARMACIA NATURAL — Members Area Data (Español)
+ * NATURALNA APTEKA — Members Area Data (Polski)
  */
 
 const APP_DATA = {
@@ -7,12 +7,12 @@ const APP_DATA = {
     // CONFIGURAÇÕES GLOBAIS DA PÁGINA
     // ----------------------------------------------------------------------
     config: {
-        brandName: "La Farmacia Natural", // Nome que vai no header
+        brandName: "Naturalna Apteka", // Nome que vai no header
 
         // Contato Oficial (100% via E-mail)
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Pregunta sobre el acceso al curso (La Farmacia Natural)",
-        emailBodyTemplate: "¡Hola equipo de soporte! Me gustaría recibir ayuda con mi área de miembros de La Farmacia Natural.%0A%0AMi nombre es: ______.",
+        emailSubject: "Pytanie dotyczące dostępu do kursu (Naturalna Apteka)",
+        emailBodyTemplate: "Witaj zespole wsparcia! Chciałbym otrzymać pomoc w związku z moją strefą członkowską Naturalnej Apteki.%0A%0AMoje imię to: ______.",
 
         // Mostrar ícone de "? Ajuda" flutuante em todas as telas
         showFloatingHelp: true
@@ -29,48 +29,48 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "La Farmacia Natural — Guía Completa",
-            description: "La guía principal para construir tu propia farmacia natural en casa. Aprende qué hierbas usar, qué recetas realmente funcionan y cómo prepararlas paso a paso, sin necesidad de ser un experto.",
-            badgeText: "LIBRO PRINCIPAL",
+            title: "Naturalna Apteka — Kompletny Przewodnik",
+            description: "Główny przewodnik po budowaniu własnej domowej naturalnej apteki. Dowiedz się, jakich ziół używać, jakie przepisy naprawdę działają i jak je krok po kroku przygotować, bez konieczności bycia ekspertem.",
+            badgeText: "GŁÓWNA KSIĄŻKA",
             badgeColor: "#10B981", // Emerald Green
             features: [
-                "Métodos de preparación sencillos para principiantes",
-                "Guías de hierbas e ingredientes de cocina",
-                "Recetas herbales paso a paso para dolencias comunes"
+                "Proste metody przygotowania dla początkujących",
+                "Przewodniki po ziołach i składnikach kuchennych",
+                "Przepisy ziołowe krok po kroku na powszechne dolegliwości"
             ],
-            downloadUrl: "materials/la_farmacia_natural_guia.pdf",
+            downloadUrl: "materials/Natures-Apothecary-1-PL.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Libro Principal"
+            buttonText: "Pobierz Główną Książkę"
         },
         {
             id: "b2",
-            title: "El Poder Curativo de las Hierbas",
-            description: "Descubre las propiedades terapéuticas de las hierbas medicinales más comunes y aprende a usarlas de forma segura para el bienestar diario: tés calmantes, jarabes, ungüentos y más.",
-            badgeText: "BONO #1",
+            title: "Uzdrawiająca Moc Ziół",
+            description: "Odkryj właściwości terapeutyczne najpopularniejszych ziół leczniczych i dowiedz się, jak bezpiecznie z nich korzystać w codziennym życiu: wyciszające napary, syropy, maści i wiele więcej.",
+            badgeText: "BONUS #1",
             badgeColor: "#F59E0B", // Gold/Amber
             features: [
-                "Perfiles medicinales de más de 20 hierbas",
-                "Pautas de seguridad y dosificación",
-                "Aplicaciones curativas tradicionales"
+                "Opisy lecznicze ponad 20 ziół",
+                "Wskazówki dotyczące bezpieczeństwa i dawkowania",
+                "Tradiycyjne zastosowania lecznicze"
             ],
-            downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
+            downloadUrl: "materials/Kitchen-Remedies-2-PL.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Bono #1"
+            buttonText: "Pobierz Bonus #1"
         },
         {
             id: "b3",
-            title: "Guía de Infusiones Curativas",
-            description: "Aprende a crear infusiones de hierbas calmantes para el sueño, la digestión, la relajación, el bienestar de la garganta, la inmunidad y el bienestar diario con ingredientes simples.",
-            badgeText: "BONO #2",
+            title: "Przewodnik po Uzdrawiających Naparach",
+            description: "Dowiedz się, jak tworzyć wyciszające napary ziołowe na sen, trawienie, relaks, gardło, odporność i codzienne dobre samopoczucie przy użyciu prostych składników.",
+            badgeText: "BONUS #2",
             badgeColor: "#3B82F6", // Blue
             features: [
-                "Mezclas para el sueño, la digestión y la relajación",
-                "Recetas con miel, jengibre, menta y manzanilla",
-                "Paso a paso para preparar en casa"
+                "Mieszanki na sen, trawienie i relaks",
+                "Przepisy z miodem, imbirem, miętą i rumiankiem",
+                "Przygotowanie w domu krok po kroku"
             ],
-            downloadUrl: "materials/guia_infusiones_curativas.pdf",
+            downloadUrl: "materials/Healing-Herbal-Teas-3-PL.pdf",
             coverImage: "assets/covers/Espanhol - img1.png",
-            buttonText: "Descargar Bono #2"
+            buttonText: "Pobierz Bonus #2"
         }
     ],
 
@@ -79,3 +79,5 @@ const APP_DATA = {
     // ----------------------------------------------------------------------
     otherProducts: []
 };
+
+// Force redeploy v2
