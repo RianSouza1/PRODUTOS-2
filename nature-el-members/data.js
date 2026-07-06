@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Βήμα-βήμα συνταγές βοτάνων για κοινές παθήσεις"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-EL.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Grego - img1.webp",
             buttonText: "Λήψη Κύριου Βιβλίου"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Παραδοσιακές θεραπευτικές εφαρμογές"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-EL.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Grego - img1.webp",
             buttonText: "Λήψη Μπόνους #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Βήμα-βήμα για προετοιμασία στο σπίτι"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-EL.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Grego - img1.webp",
             buttonText: "Λήψη Μπόνους #2"
         }
     ],
