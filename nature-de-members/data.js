@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Schritt-für-Schritt Kräuterrezepte für häufige Beschwerden"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-DE.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Alemão - img1.png",
             buttonText: "Hauptbuch Herunterladen"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Traditionelle Heilanwendungen"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-DE.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Alemão - img2.png",
             buttonText: "Bonus #1 Herunterladen"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Schritt-für-Schritt Zubereitung zu Hause"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-DE.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Alemão - img3.png",
             buttonText: "Bonus #2 Herunterladen"
         }
     ],

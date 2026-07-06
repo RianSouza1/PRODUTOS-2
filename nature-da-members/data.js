@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Trin for trin urteopskrifter til almindelige lidelser"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-DK.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Dinamarquês - img1.png",
             buttonText: "Download Hovedbog"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Traditionelle helbredende anvendelser"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-DK.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Dinamarquês - img2.png",
             buttonText: "Download Bonus #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Trin for trin at forberede derhjemme"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-DK.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Dinamarquês - img3.png",
             buttonText: "Download Bonus #2"
         }
     ],
