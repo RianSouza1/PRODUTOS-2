@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Bienvenido, Miembro</h1><p>¿A qué le gustaría acceder hoy?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Welkom, Lid</h1><p>Waar wil je vandaag toegang toe?</p></div></div>
           
   
           <div class="home-grid">
@@ -143,8 +143,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="book-open"></i>
               </div>
               <div>
-                 <div class="home-block-title">LIBROS</div>
-                 <div class="home-block-subtitle">Libros electrónicos y materiales en PDF</div>
+                 <div class="home-block-title">BOEKEN</div>
+                 <div class="home-block-subtitle">E-boeken en PDF-materialen</div>
               </div>
             </a>
             
@@ -153,8 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="message-square"></i>
               </div>
               <div>
-                 <div class="home-block-title">CONTACTO</div>
-                 <div class="home-block-subtitle">Ayuda y soporte</div>
+                 <div class="home-block-title">KONTAKT</div>
+                 <div class="home-block-subtitle">Hulp en ondersteuning</div>
               </div>
             </a>
   
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card" style="margin-bottom: 2rem;">
            <div class="premium-badge-wrapper">
               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">PDF • Leer ahora</span>
+              <span class="premium-format">PDF • Nu lezen</span>
            </div>
            
            <div class="premium-info" style="padding: 0;">
@@ -188,10 +188,10 @@ document.addEventListener("DOMContentLoaded", () => {
               
               <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: 1.5rem;">
                  <a href="${bk.downloadUrl}" target="_blank" class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: var(--primary); color: #FFF;">
-                    <i data-lucide="book-open"></i> Leer ahora
+                    <i data-lucide="book-open"></i> Nu lezen
                  </a>
                  <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
-                    <i data-lucide="download"></i> Descargar PDF
+                    <i data-lucide="download"></i> PDF downloaden
                  </a>
               </div>
            </div>
@@ -201,14 +201,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel" style="margin-bottom: 1.5rem;"><div class="hero-text"><h1>Sus materiales</h1><p>Acceda a sus guías y bonos a continuación.</p></div></div>
+          <div class="hero-card glass-panel" style="margin-bottom: 1.5rem;"><div class="hero-text"><h1>Jouw materialen</h1><p>Krijg hieronder toegang tot je gidsen en bonussen.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
               <img src="assets/covers/Espanhol - img1.png" alt="La Farmacia Natural Bundle" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
           
           <div class="list-container">
-            ${booksHTML || '<p>No materials registered at the moment.</p>'}
+            ${booksHTML || '<p>Op dit moment zijn er geen materialen geregistreerd.</p>'}
           </div>
         </div>
       `;
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Soporte al estudiante</h1><p>Su satisfacción es nuestra prioridad.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Ondersteuning voor studenten</h1><p>Jouw tevredenheid is onze prioriteit.</p></div></div>
           
   
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
@@ -275,9 +275,9 @@ document.addEventListener("DOMContentLoaded", () => {
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
              </div>
              
-             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Enviar un mensaje</h3>
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Stuur een bericht</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                Copie la dirección a continuación y envíe un correo electrónico con su pregunta. Nuestro equipo responderá lo antes posible.
+                Kopieer het onderstaande adres en stuur een e-mail met je vraag. Ons team zal zo snel mogelijk antwoorden.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
