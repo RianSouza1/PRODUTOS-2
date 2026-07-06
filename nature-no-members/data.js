@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Trinn for trinn urteoppskrifter for vanlige plager"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-NO.pdf",
-            coverImage: "assets/covers/Norueguês - img1.png",
+            coverImage: "assets/covers/Noruegues - img1.png",
             buttonText: "Last Ned Hovedbok"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Tradisjonelle helbredende applikasjoner"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-NO.pdf",
-            coverImage: "assets/covers/Norueguês - img1.png",
+            coverImage: "assets/covers/Noruegues - img1.png",
             buttonText: "Last Ned Bonus #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Trinn for trinn for å tilberede hjemme"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-NO.pdf",
-            coverImage: "assets/covers/Norueguês - img1.png",
+            coverImage: "assets/covers/Noruegues - img1.png",
             buttonText: "Last Ned Bonus #2"
         }
     ],
