@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Step by step herbal recipes for common ailments"
             ],
             downloadUrl: "materials/la_farmacia_natural_guia.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/English - img1.webp",
             buttonText: "Download Main Book"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Traditional healing applications"
             ],
             downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/English - img1.webp",
             buttonText: "Download Bonus #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Step by step to prepare at home"
             ],
             downloadUrl: "materials/guia_infusiones_curativas.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/English - img1.webp",
             buttonText: "Download Bonus #2"
         }
     ],

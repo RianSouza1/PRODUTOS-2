@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Step by step herbal recipes for common ailments"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-UK.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/English - img1.webp",
             buttonText: "Download Main Book"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Traditional healing applications"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-UK.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/English - img1.webp",
             buttonText: "Download Bonus #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Step by step to prepare at home"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-UK.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/English - img1.webp",
             buttonText: "Download Bonus #2"
         }
     ],
