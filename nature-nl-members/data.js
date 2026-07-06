@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Stap voor stap kruidenrecepten voor veelvoorkomende kwalen"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-NL.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Holandes - img1.webp",
             buttonText: "Download Hoofdboek"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Traditionele helende toepassingen"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-NL.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Holandes - img1.webp",
             buttonText: "Download Bonus #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Stap voor stap thuis bereiden"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-NL.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Holandes - img1.webp",
             buttonText: "Download Bonus #2"
         }
     ],
