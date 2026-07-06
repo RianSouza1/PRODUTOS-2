@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Injetar o footer global de Copyright no final de todas as telas
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-         &copy; 2026 RSCA Library. All rights reserved.
+         &copy; 2026 RSCA Library. Wszelkie prawa zastrzeżone.
        </footer>
     `);
 
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Welcome, Member</h1><p>What would you like to access today?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Witaj, Członku</h1><p>Do czego chciałbyś dzisiaj uzyskać dostęp?</p></div></div>
           
   
           <div class="home-grid">
@@ -245,8 +245,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="book-open"></i>
               </div>
               <div>
-                 <div class="home-block-title">BOOKS</div>
-                 <div class="home-block-subtitle">Books and PDF Materials</div>
+                 <div class="home-block-title">KSIĄŻKI</div>
+                 <div class="home-block-subtitle">Książki i materiały PDF</div>
               </div>
             </a>
             
@@ -257,8 +257,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="message-square"></i>
               </div>
               <div>
-                 <div class="home-block-title">CONTACT</div>
-                 <div class="home-block-subtitle">Help and Support</div>
+                 <div class="home-block-title">KONTAKT</div>
+                 <div class="home-block-subtitle">Pomoc i wsparcie</div>
               </div>
             </a>
   
@@ -281,12 +281,10 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card">
            <div class="premium-badge-wrapper">
               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">PDF • Digital Download</span>
+              <span class="premium-format">PDF • Pobieranie cyfrowe</span>
            </div>
            
-           <div class="premium-cover-container">
-              <img src="${bk.coverImage}" alt="${bk.title}" loading="lazy" class="premium-cover">
-           </div>
+           
            
            <div class="premium-info">
               <h3 class="premium-title">${bk.title}</h3>
@@ -296,10 +294,10 @@ document.addEventListener("DOMContentLoaded", () => {
               
               <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: 1.5rem;">
                  <a href="${bk.downloadUrl}" target="_blank" class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: var(--primary); color: #FFF;">
-                    <i data-lucide="book-open"></i> Read Now
+                    <i data-lucide="book-open"></i> Czytaj teraz
                  </a>
                  <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
-                    <i data-lucide="download"></i> Download PDF
+                    <i data-lucide="download"></i> Pobierz PDF
                  </a>
               </div>
            </div>
@@ -307,13 +305,21 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
     }).join('');
 
+    const firstBookCover = APP_DATA.books && APP_DATA.books[0] ? APP_DATA.books[0].coverImage : '';
+    const heroCoverHTML = firstBookCover ? `
+      <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
+          <img src="${firstBookCover}" alt="Bundle Cover" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+      </div>
+    ` : '';
+
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Your Materials</h1><p>Tap a collection below to view its content.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Twoje materiały</h1><p>Dotknij kolekcji poniżej, aby wyświetlić jej zawartość.</p></div></div>
           
+          ${heroCoverHTML}
           
           <div class="list-container">
-            ${booksHTML || '<p>No materials registered yet.</p>'}
+            ${booksHTML || '<p>Obecnie nie ma zarejestrowanych materiałów.</p>'}
           </div>
         </div>
       `;
@@ -347,7 +353,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ${featuresHTML}
               
               <a href="${prod.linkUrl}" target="_blank" class="premium-btn">
-                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Learn More'}
+                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Dowiedz się więcej'}
               </a>
            </div>
         </div>
@@ -356,11 +362,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>More Programs</h1><p>Discover additional materials.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Inne programy</h1><p>Odkryj dodatkowe materiały.</p></div></div>
           
           
           <div class="list-container">
-            ${prodsHTML || '<p>More updates coming soon!</p>'}
+            ${prodsHTML || '<p>Więcej aktualizacji wkrótce!</p>'}
           </div>
         </div>
       `;
@@ -372,7 +378,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Support</h1><p>Your satisfaction is our priority.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Wsparcie</h1><p>Twoja satysfakcja jest naszym priorytetem.</p></div></div>
           
   
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
@@ -380,9 +386,9 @@ document.addEventListener("DOMContentLoaded", () => {
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
              </div>
              
-             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Send a Message</h3>
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Wyślij wiadomość</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                Copy the address below and send us an email with your question. Our team will respond as soon as possible.
+                Skopiuj poniższy adres i wyślij nam e-mail ze swoim pytaniem. Nasz zespół odpowie tak szybko, jak to możliwe.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
