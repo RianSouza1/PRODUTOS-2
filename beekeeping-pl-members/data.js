@@ -173,23 +173,7 @@ const APP_DATA = {
             downloadUrl: "materials/Miodosytnictwo-dla-Poczatkujacych-PL.pdf",
             coverImage: "assets/covers/bee_IMG3_pl.png",
             buttonText: "Pobierz bonus"
-        },
-        {
-            id: "b4",
-            title: "Pszczelarstwo stało się proste",
-            description: "Uproszczone podejście do pszczelarstwa Marcusa Williamsa — praktyczne wskazówki i triki dla początkujących, którzy chcą szybkich rezultatów.",
-            badgeText: "DODATKOWY",
-            badgeColor: "#059669",
-            features: [
-                "Metody szybkiego startu",
-                "Typowe błędy, których należy unikać",
-                "Praktyczne wskazówki i porady"
-            ],
-            downloadUrl: "materials/ENG 04-Beekeeping-Made-Easy-by-Marcus-Williams.pdf",
-            coverImage: "assets/covers/bee_IMG4_pl.png",
-            buttonText: "Pobierz dodatek"
-        }
-    ],
+        }],
 
     otherProducts: []
 };

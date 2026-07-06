@@ -173,23 +173,7 @@ const APP_DATA = {
             downloadUrl: "materials/Prepararea-Hidromelului-pentru-Incepatori-RO.pdf",
             coverImage: "assets/covers/bee_IMG3_ro.png",
             buttonText: "Bonus de descărcare"
-        },
-        {
-            id: "b4",
-            title: "Apicultura este ușoară",
-            description: "O abordare simplificată a apiculturii de către Marcus Williams — sfaturi și trucuri practice pentru începătorii care doresc rezultate rapid.",
-            badgeText: "SUPLIMENTAR",
-            badgeColor: "#059669",
-            features: [
-                "Metode de pornire rapidă",
-                "Greșeli frecvente de evitat",
-                "Sfaturi și trucuri practice"
-            ],
-            downloadUrl: "materials/ENG 04-Beekeeping-Made-Easy-by-Marcus-Williams.pdf",
-            coverImage: "assets/covers/bee_IMG4_ro.png",
-            buttonText: "Descărcați Extra"
-        }
-    ],
+        }],
 
     otherProducts: []
 };

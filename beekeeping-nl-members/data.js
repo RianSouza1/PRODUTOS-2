@@ -173,23 +173,7 @@ const APP_DATA = {
             downloadUrl: "materials/Metwijn-Maken-voor-Beginners-NL.pdf",
             coverImage: "assets/covers/bee_IMG3_nl.png",
             buttonText: "Bonus downloaden"
-        },
-        {
-            id: "b4",
-            title: "Bijenteelt gemakkelijk gemaakt",
-            description: "Een vereenvoudigde benadering van de bijenteelt door Marcus Williams – praktische tips en trucs voor beginners die snel resultaten willen.",
-            badgeText: "EXTRA",
-            badgeColor: "#059669",
-            features: [
-                "Snelstartmethoden",
-                "Veelvoorkomende fouten die u moet vermijden",
-                "Praktische tips en trucs"
-            ],
-            downloadUrl: "materials/ENG 04-Beekeeping-Made-Easy-by-Marcus-Williams.pdf",
-            coverImage: "assets/covers/bee_IMG4_nl.png",
-            buttonText: "Extra downloaden"
-        }
-    ],
+        }],
 
     otherProducts: []
 };

@@ -173,23 +173,7 @@ const APP_DATA = {
             downloadUrl: "materials/Pergatitja-e-Mjaltesires-per-Fillestaret-EL.pdf",
             coverImage: "assets/covers/bee_IMG3_el.png",
             buttonText: "Μπόνους λήψης"
-        },
-        {
-            id: "b4",
-            title: "Η μελισσοκομία έγινε εύκολη",
-            description: "Μια απλοποιημένη προσέγγιση στη μελισσοκομία από τον Marcus Williams — πρακτικές συμβουλές και κόλπα για αρχάριους που θέλουν γρήγορα αποτελέσματα.",
-            badgeText: "ΕΠΙΠΛΕΟΝ",
-            badgeColor: "#059669",
-            features: [
-                "Μέθοδοι Γρήγορης Εκκίνησης",
-                "Συνήθη λάθη προς αποφυγή",
-                "Πρακτικές συμβουλές και κόλπα"
-            ],
-            downloadUrl: "materials/ENG 04-Beekeeping-Made-Easy-by-Marcus-Williams.pdf",
-            coverImage: "assets/covers/bee_IMG4_el.png",
-            buttonText: "Λήψη Extra"
-        }
-    ],
+        }],
 
     otherProducts: []
 };

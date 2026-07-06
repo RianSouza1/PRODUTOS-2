@@ -173,23 +173,7 @@ const APP_DATA = {
             downloadUrl: "materials/Priprava-Medoviny-pro-Zacatecniky-CS.pdf",
             coverImage: "assets/covers/bee_IMG3_cs.png",
             buttonText: "Bonus ke stažení"
-        },
-        {
-            id: "b4",
-            title: "Snadné včelaření",
-            description: "Zjednodušený přístup ke včelaření od Marcuse Williamse — praktické tipy a triky pro začátečníky, kteří chtějí výsledky rychle.",
-            badgeText: "DALŠÍ",
-            badgeColor: "#059669",
-            features: [
-                "Metody rychlého startu",
-                "Časté chyby, kterým je třeba se vyhnout",
-                "Praktické tipy a triky"
-            ],
-            downloadUrl: "materials/ENG 04-Beekeeping-Made-Easy-by-Marcus-Williams.pdf",
-            coverImage: "assets/covers/bee_IMG4_cs.png",
-            buttonText: "Stáhnout Extra"
-        }
-    ],
+        }],
 
     otherProducts: []
 };

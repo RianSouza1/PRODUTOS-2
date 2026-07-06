@@ -173,23 +173,7 @@ const APP_DATA = {
             downloadUrl: "materials/Mezbor-Keszitese-Kezdoknek-HU.pdf",
             coverImage: "assets/covers/bee_IMG3_hu.png",
             buttonText: "Letöltés bónusz"
-        },
-        {
-            id: "b4",
-            title: "Méhészet egyszerűen",
-            description: "Marcus Williams egyszerűsített megközelítése a méhészetben – gyakorlati tippek és trükkök kezdőknek, akik gyors eredményt szeretnének elérni.",
-            badgeText: "KÜLÖN",
-            badgeColor: "#059669",
-            features: [
-                "Gyorsindítási módszerek",
-                "Gyakori hibák, amelyeket el kell kerülni",
-                "Gyakorlati tippek és trükkök"
-            ],
-            downloadUrl: "materials/ENG 04-Beekeeping-Made-Easy-by-Marcus-Williams.pdf",
-            coverImage: "assets/covers/bee_IMG4_hu.png",
-            buttonText: "Letöltés Extra"
-        }
-    ],
+        }],
 
     otherProducts: []
 };
