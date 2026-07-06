@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Przepisy ziołowe krok po kroku na powszechne dolegliwości"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-PL.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Polones - img1.webp",
             buttonText: "Pobierz Główną Książkę"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Tradiycyjne zastosowania lecznicze"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-PL.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Polones - img1.webp",
             buttonText: "Pobierz Bonus #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Przygotowanie w domu krok po kroku"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-PL.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Polones - img1.webp",
             buttonText: "Pobierz Bonus #2"
         }
     ],
