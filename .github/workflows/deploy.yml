@@ -120,7 +120,42 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          lfs: true
+          fetch-depth: 0
+          lfs: false
+
+      - name: Pull LFS for changed directories
+        run: |
+          BEFORE_SHA="${{ github.event.before }}"
+          AFTER_SHA="${{ github.event.after }}"
+          if [ -z "$BEFORE_SHA" ] || [ "$BEFORE_SHA" = "0000000000000000000000000000000000000000" ]; then
+            if git rev-parse HEAD~1 >/dev/null 2>&1; then
+              BEFORE_SHA="HEAD~1"
+            else
+              BEFORE_SHA=""
+            fi
+          fi
+          if [ -z "$BEFORE_SHA" ]; then
+            echo "No base commit found for diff. Pulling all LFS files."
+            git lfs pull
+          else
+            DIRS=""
+            for item in $(git diff --name-only "$BEFORE_SHA" "$AFTER_SHA" | cut -d/ -f1 | sort -u); do
+              if [ -d "$item" ]; then
+                if [ -z "$DIRS" ]; then
+                  DIRS="$item"
+                else
+                  DIRS="$DIRS,$item"
+                fi
+              fi
+            done
+            if [ -n "$DIRS" ]; then
+              INCLUDE_PATTERN=$(echo "$DIRS" | sed 's/,/\/\*\*,/g' | sed 's/$/\/\*\*/')
+              echo "Pulling LFS files for: $INCLUDE_PATTERN"
+              git lfs pull --include="$INCLUDE_PATTERN"
+            else
+              echo "No directories changed. Skipping LFS pull."
+            fi
+          fi
 
       - name: Check changed files
         uses: dorny/paths-filter@v3
