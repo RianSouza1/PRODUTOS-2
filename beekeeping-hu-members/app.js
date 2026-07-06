@@ -145,8 +145,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Cria a string `mailto:` dinamicamente com base no contato do data.js
   function mountMailTo() {
-    const { contactEmail, emailSubject, Hello támogató csapat! Segítségre van szükségem a Méhészet tagjaimmal kapcsolatban.%0A%0AA nevem: ______. } = APP_DATA.config;
-    return `mailto:${contactEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(Hello támogató csapat! Segítségre van szükségem a Méhészet tagjaimmal kapcsolatban.%0A%0AA nevem: ______.)}`;
+    const { contactEmail, emailSubject, emailBodyTemplate } = APP_DATA.config;
+    return `mailto:${contactEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBodyTemplate)}`;
   }
 
   // ----------------------------------------------------------------------
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderLivros();
         break;
       case "#videos":
-        renderHome();
+        renderVideos();
         break;
       case "#produtos":
         renderOutrosProdutos();
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Üdvözöljük, tag</h1><p>Mihez szeretne ma hozzáférni?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Welcome, Member</h1><p>What would you like to access today?</p></div></div>
           
   
           <div class="home-grid">
@@ -245,18 +245,28 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="book-open"></i>
               </div>
               <div>
-                 <div class="home-block-title">KÖNYVEK</div>
-                 <div class="home-block-subtitle">Könyvek és PDF anyagok</div>
+                 <div class="home-block-title">BOOKS</div>
+                 <div class="home-block-subtitle">Books and PDF Materials</div>
               </div>
             </a>
             
+            <a href="#videos" class="home-block glass-panel">
+              <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
+                 <i data-lucide="play-circle"></i>
+              </div>
+              <div>
+                 <div class="home-block-title">VIDEOS</div>
+                 <div class="home-block-subtitle">Your Video Courses</div>
+              </div>
+            </a>
+  
             <a href="#contato" class="home-block glass-panel">
               <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
                  <i data-lucide="message-square"></i>
               </div>
               <div>
-                 <div class="home-block-title">ÉRINTKEZÉS</div>
-                 <div class="home-block-subtitle">Segítség és támogatás</div>
+                 <div class="home-block-title">CONTACT</div>
+                 <div class="home-block-subtitle">Help and Support</div>
               </div>
             </a>
   
@@ -265,7 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
   }
 
-  // TELA: KÖNYVEK (Materiais tipo Bundle)
+  // TELA: BOOKS (Materiais tipo Bundle)
   function renderLivros() {
     const booksHTML = APP_DATA.books.map(bk => {
       // Create features checklist HTML
@@ -279,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card">
            <div class="premium-badge-wrapper">
               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">PDF • Digitális letöltés</span>
+              <span class="premium-format">PDF • Digital Download</span>
            </div>
            
            <div class="premium-cover-container">
@@ -294,10 +304,10 @@ document.addEventListener("DOMContentLoaded", () => {
               
               <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: 1.5rem;">
                  <a href="${bk.downloadUrl}" target="_blank" class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: var(--primary); color: #FFF;">
-                    <i data-lucide="book-open"></i> Olvassa el most
+                    <i data-lucide="book-open"></i> Read Now
                  </a>
                  <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
-                    <i data-lucide="download"></i> PDF letöltése
+                    <i data-lucide="download"></i> Download PDF
                  </a>
               </div>
            </div>
@@ -307,11 +317,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Az Ön anyagai</h1><p>Koppintson az alábbi gyűjteményre a tartalmának megtekintéséhez.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Your Materials</h1><p>Tap a collection below to view its content.</p></div></div>
           
           
           <div class="list-container">
-            ${booksHTML || '<p>Még nincsenek regisztrálva anyagok.</p>'}
+            ${booksHTML || '<p>No materials registered yet.</p>'}
           </div>
         </div>
       `;
@@ -354,23 +364,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>További programok</h1><p>Fedezze fel a további anyagokat.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>More Programs</h1><p>Discover additional materials.</p></div></div>
           
           
           <div class="list-container">
-            ${prodsHTML || '<p>További frissítések hamarosan!</p>'}
+            ${prodsHTML || '<p>More updates coming soon!</p>'}
           </div>
         </div>
       `;
   }
 
-  // SCREEN: ÉRINTKEZÉS
+  // SCREEN: CONTACT
   function renderContato() {
     const mailHref = mountMailTo();
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Támogatás</h1><p>Az Ön elégedettsége számunkra a legfontosabb.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Support</h1><p>Your satisfaction is our priority.</p></div></div>
           
   
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
@@ -378,9 +388,9 @@ document.addEventListener("DOMContentLoaded", () => {
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
              </div>
              
-             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Üzenet küldése</h3>
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Send a Message</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                Másolja ki az alábbi címet, és küldjön e-mailt kérdésével. Csapatunk a lehető leghamarabb válaszol.
+                Copy the address below and send us an email with your question. Our team will respond as soon as possible.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
@@ -461,7 +471,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit;">
               <div style="display:flex; flex-direction:column; justify-content:center; flex:1">
                  <h4 style="margin:0 0 4px; font-size:1.1rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}">${vid.title}</h4>
-                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Full Course'}</p>
+                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Teljes tanfolyam'}</p>
               </div>
               ${isPlaying
           ? '<i data-lucide="chevron-down" style="color:var(--primary); align-self:center;"></i>'
