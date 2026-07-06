@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderLivros();
         break;
       case "#videos":
-        renderVideos();
+        renderHome();
         break;
       case "#produtos":
         renderOutrosProdutos();
@@ -250,15 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
             </a>
             
-            <a href="#videos" class="home-block glass-panel">
-              <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
-                 <i data-lucide="play-circle"></i>
-              </div>
-              <div>
-                 <div class="home-block-title">VIDEOS</div>
-                 <div class="home-block-subtitle">Your Video Courses</div>
-              </div>
-            </a>
+
   
             <a href="#contato" class="home-block glass-panel">
               <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
@@ -471,7 +463,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit;">
               <div style="display:flex; flex-direction:column; justify-content:center; flex:1">
                  <h4 style="margin:0 0 4px; font-size:1.1rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}">${vid.title}</h4>
-                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Celý kurz'}</p>
+                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Full Course'}</p>
               </div>
               ${isPlaying
           ? '<i data-lucide="chevron-down" style="color:var(--primary); align-self:center;"></i>'
