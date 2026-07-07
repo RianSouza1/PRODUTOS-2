@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Krok za krokem bylinné recepty pro běžné potíže"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-CS.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Tcheco - img1.png",
             buttonText: "Stáhnout Hlavní Knihu"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Tradiční léčebné aplikace"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-CS.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Tcheco - img1.png",
             buttonText: "Stáhnout Bonus #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Krok za krokem pro přípravu doma"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-CS.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Tcheco - img1.png",
             buttonText: "Stáhnout Bonus #2"
         }
     ],
