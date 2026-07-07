@@ -12,7 +12,7 @@ const APP_DATA = {
         // Contato Oficial (100% via E-mail)
         contactEmail: "trinityag01@gmail.com",
         emailSubject: "Pitanje o pristupu kursu (Prirodna Apoteka)",
-        emailBodyTemplate: "Pozdrav timu za podršku! Želim da dobijem pomoć u vezi sa Područjem za članove Prirodne Apoteke.\n\nMoje ime je: ______.",
+        emailBodyTemplate: "Pozdrav timu za podršku! Želim da dobijem pomoć u vezi sa Studentskom zonom Prirodne Apoteke.\n\nMoje ime je: ______.",
 
         // Mostrar ícone de "? Ajuda" flutuante em todas as telas
         showFloatingHelp: true
