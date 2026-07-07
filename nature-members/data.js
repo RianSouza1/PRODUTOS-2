@@ -1,30 +1,30 @@
 /**
- * LA FARMACIA NATURAL — Members Area Data (Español)
+ * NATURE'S APOTHECARY — Members Area Data (English)
  */
 
 const APP_DATA = {
     // ----------------------------------------------------------------------
-    // CONFIGURAÇÕES GLOBAIS DA PÁGINA
+    // GLOBAL CONFIGURATION
     // ----------------------------------------------------------------------
     config: {
-        brandName: "Nature's Apothecary", // Nome que vai no header
+        brandName: "Nature's Apothecary", // Name in the header
 
-        // Contato Oficial (100% via E-mail)
+        // Official Contact (100% via Email)
         contactEmail: "trinityag01@gmail.com",
         emailSubject: "Question about course access (Nature's Apothecary)",
-        emailBodyTemplate: "Hello support team! I would like to get help with my Nature's Apothecary members area.%0A%0AMy name is: ______.",
+        emailBodyTemplate: "Hello support team! I would like to get help with my Nature's Apothecary members area.\n\nMy name is: ______.",
 
-        // Mostrar ícone de "? Ajuda" flutuante em todas as telas
+        // Show floating "?" help button on all screens
         showFloatingHelp: true
     },
 
     // ----------------------------------------------------------------------
-    // 1. VÍDEOS (Curso em vídeo) — vazio se não houver vídeos
+    // 1. VIDEOS (Video course) — empty if no videos
     // ----------------------------------------------------------------------
     videos: [],
 
     // ----------------------------------------------------------------------
-    // 2. LIVROS (E-books e PDFs)
+    // 2. BOOKS (E-books and PDFs)
     // ----------------------------------------------------------------------
     books: [
         {
@@ -38,7 +38,7 @@ const APP_DATA = {
                 "Guides to herbs and kitchen ingredients",
                 "Step by step herbal recipes for common ailments"
             ],
-            downloadUrl: "materials/la_farmacia_natural_guia.pdf",
+            downloadUrl: "materials/Natures-Apothecary-1-UKE(1).pdf",
             coverImage: "assets/covers/English - img1.webp",
             buttonText: "Download Main Book"
         },
@@ -53,7 +53,7 @@ const APP_DATA = {
                 "Safety guidelines and dosing",
                 "Traditional healing applications"
             ],
-            downloadUrl: "materials/el_poder_curativo_de_las_hierbas.pdf",
+            downloadUrl: "materials/Kitchen-Remedies-2-UKE(1).pdf",
             coverImage: "assets/covers/English - img1.webp",
             buttonText: "Download Bonus #1"
         },
@@ -68,16 +68,16 @@ const APP_DATA = {
                 "Recipes with honey, ginger, mint and chamomile",
                 "Step by step to prepare at home"
             ],
-            downloadUrl: "materials/guia_infusiones_curativas.pdf",
+            downloadUrl: "materials/Healing-Herbal-Teas-3-UKE(1).pdf",
             coverImage: "assets/covers/English - img1.webp",
             buttonText: "Download Bonus #2"
         }
     ],
 
     // ----------------------------------------------------------------------
-    // 3. OUTROS PRODUTOS (Upsell / Cross-sell)
+    // 3. OTHER PRODUCTS (Upsell / Cross-sell)
     // ----------------------------------------------------------------------
     otherProducts: []
 };
 
-// Force redeploy v3
+// Force redeploy v5

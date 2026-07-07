@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "Área de Membros";
+      brandTitle.innerText = APP_DATA.config.brandName || "Područje za članove";
     }
   }
 
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Injetar o footer global de Copyright no final de todas as telas
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-         &copy; 2026 ${APP_DATA.config.brandName || "Library"}. All rights reserved.
+         &copy; 2026 ${APP_DATA.config.brandName || "Biblioteka"}. Sva prava zadržana.
        </footer>
     `);
 
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Dobrodošli, Članu</h1><p>Čemu biste željeli pristupiti danas?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Dobro došli, članu</h1><p>Čemu želite da pristupite danas?</p></div></div>
           
   
           <div class="home-grid">
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card" style="margin-bottom: 2rem;">
            <div class="premium-badge-wrapper">
               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">PDF • Pročitaj sada</span>
+              <span class="premium-format">PDF • Pročitajte sada</span>
            </div>
            
            <div class="premium-info" style="padding: 0;">
@@ -188,10 +188,10 @@ document.addEventListener("DOMContentLoaded", () => {
               
               <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: 1.5rem;">
                  <a href="${bk.downloadUrl}" target="_blank" class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: var(--primary); color: #FFF;">
-                    <i data-lucide="book-open"></i> Pročitaj sada
+                    <i data-lucide="book-open"></i> Pročitajte sada
                  </a>
                  <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
-                    <i data-lucide="download"></i> Preuzmi PDF
+                    <i data-lucide="download"></i> Preuzmite PDF
                  </a>
               </div>
            </div>
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="hero-card glass-panel" style="margin-bottom: 1.5rem;"><div class="hero-text"><h1>Vaši materijali</h1><p>Pristupite svojim vodičima i bonusima u nastavku.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/Espanhol - img1.png" alt="La Farmacia Natural Bundle" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/nature_IMG1_bs.png" alt="Prirodna Apoteka Kolekcija" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
           
           <div class="list-container">
@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card">
            <div class="premium-badge-wrapper">
               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">Online Access</span>
+              <span class="premium-format">Online pristup</span>
            </div>
            
            <div class="premium-cover-container">
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ${featuresHTML}
               
               <a href="${prod.linkUrl}" target="_blank" class="premium-btn">
-                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Conhecer Mais'}
+                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Saznajte više'}
               </a>
            </div>
         </div>
@@ -251,11 +251,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Other Programs</h1><p>Discover materials to improve your health.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Ostali programi</h1><p>Otkrijte materijale za poboljšanje vašeg zdravlja.</p></div></div>
           
           
           <div class="list-container">
-            ${prodsHTML || '<p>More news coming soon!</p>'}
+            ${prodsHTML || '<p>Uskoro stiže još novosti!</p>'}
           </div>
         </div>
       `;
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Soporte al estudiante</h1><p>Su satisfacción es nuestra prioridad.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Podrška</h1><p>Vaše zadovoljstvo je naš prioritet.</p></div></div>
           
   
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
@@ -275,9 +275,9 @@ document.addEventListener("DOMContentLoaded", () => {
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
              </div>
              
-             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Enviar un mensaje</h3>
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Pošaljite poruku</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                Copie la dirección a continuación y envíe un correo electrónico con su pregunta. Nuestro equipo responderá lo antes posible.
+                Kopirajte adresu ispod i pošaljite imejl sa svojim pitanjem. Naš tim će vam odgovoriti u najkraćem mogućem roku.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
@@ -299,7 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rootEl.innerHTML = `
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Your Classes</h1><p>Stay up to date with your online practices</p></div></div>
+        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Vaša predavanja</h1><p>Pratite svoje online prakse</p></div></div>
         
         
 
@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit;">
               <div style="display:flex; flex-direction:column; justify-content:center; flex:1">
                  <h4 style="margin:0 0 4px; font-size:1.1rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}">${vid.title}</h4>
-                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Full Class'}</p>
+                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Cijelo predavanje'}</p>
               </div>
               ${isPlaying
           ? '<i data-lucide="chevron-down" style="color:var(--primary); align-self:center;"></i>'
