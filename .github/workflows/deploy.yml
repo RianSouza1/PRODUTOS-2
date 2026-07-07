@@ -101,6 +101,7 @@ on:
       - 'nature-sv-members/**'
       - 'nature-sl-members/**'
       - 'nature-sk-members/**'
+      - 'natures-sk-members/**'
       - 'nature-pt-members/**'
       - 'nature-pl-members/**'
       - 'nature-no-members/**'
@@ -256,6 +257,8 @@ jobs:
               - 'nature-sl-members/**'
             nature-sk-members:
               - 'nature-sk-members/**'
+            natures-sk-members:
+              - 'natures-sk-members/**'
             nature-pt-members:
               - 'nature-pt-members/**'
             nature-pl-members:
@@ -1523,6 +1526,17 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
           source: "nature-sk-members/*"
+          target: "/var/www/skillvault.blog/nature-members-sk"
+          strip_components: 1
+
+      - name: Deploy 'natures-sk-members' to skillvault.blog/nature-members-sk
+        if: steps.filter.outputs.natures-sk-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "natures-sk-members/*"
           target: "/var/www/skillvault.blog/nature-members-sk"
           strip_components: 1
 
