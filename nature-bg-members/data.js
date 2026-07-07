@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Билкови рецепти стъпка по стъпка за често срещани заболявания"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-BG.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_bg.png",
             buttonText: "Изтеглете Основната Книга"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Традиционни лечебни приложения"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-BG.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_bg.png",
             buttonText: "Изтеглете Бонус #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Стъпка по стъпка за приготвяне у дома"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-BG.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_bg.png",
             buttonText: "Изтеглете Бонус #2"
         }
     ],

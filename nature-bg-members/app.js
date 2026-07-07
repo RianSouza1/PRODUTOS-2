@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "Área de Membros";
+      brandTitle.innerText = APP_DATA.config.brandName || "Студентска зона";
     }
   }
 
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Injetar o footer global de Copyright no final de todas as telas
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-         &copy; 2026 ${APP_DATA.config.brandName || "Library"}. All rights reserved.
+         &copy; 2026 ${APP_DATA.config.brandName || "Природна Аптека"}. Всички права запазени.
        </footer>
     `);
 
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="hero-card glass-panel" style="margin-bottom: 1.5rem;"><div class="hero-text"><h1>Вашите материали</h1><p>Достъп до вашите ръководства и бонуси по-долу.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/Espanhol - img1.png" alt="La Farmacia Natural Bundle" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/nature_IMG1_bg.png" alt="Природна Аптека" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
           
           <div class="list-container">
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ${featuresHTML}
               
               <a href="${prod.linkUrl}" target="_blank" class="premium-btn">
-                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Conhecer Mais'}
+                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Научете повече'}
               </a>
            </div>
         </div>
@@ -251,11 +251,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Other Programs</h1><p>Discover materials to improve your health.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Други програми</h1><p>Открийте материали за подобряване на вашето здраве.</p></div></div>
           
           
           <div class="list-container">
-            ${prodsHTML || '<p>More news coming soon!</p>'}
+            ${prodsHTML || '<p>Очаквайте скоро още новини!</p>'}
           </div>
         </div>
       `;
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Soporte al estudiante</h1><p>Su satisfacción es nuestra prioridad.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Студентска поддръжка</h1><p>Вашето удовлетворение е наш приоритет.</p></div></div>
           
   
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
@@ -275,9 +275,9 @@ document.addEventListener("DOMContentLoaded", () => {
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
              </div>
              
-             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Enviar un mensaje</h3>
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Изпратете съобщение</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                Copie la dirección a continuación y envíe un correo electrónico con su pregunta. Nuestro equipo responderá lo antes posible.
+                Копирайте адреса по-долу и изпратете имейл с вашия въпрос. Нашият екип ще ви отговори възможно най-бързо.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
@@ -299,7 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rootEl.innerHTML = `
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Your Classes</h1><p>Stay up to date with your online practices</p></div></div>
+        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Вашите лекции</h1><p>Бъдете в крак с вашите онлайн практики</p></div></div>
         
         
 
@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit;">
               <div style="display:flex; flex-direction:column; justify-content:center; flex:1">
                  <h4 style="margin:0 0 4px; font-size:1.1rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}">${vid.title}</h4>
-                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Full Class'}</p>
+                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Цяла лекция'}</p>
               </div>
               ${isPlaying
           ? '<i data-lucide="chevron-down" style="color:var(--primary); align-self:center;"></i>'
