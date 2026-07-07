@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "Área de Membros";
+      brandTitle.innerText = APP_DATA.config.brandName || "Το Φαρμακείο της Φύσης";
     }
   }
 
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Injetar o footer global de Copyright no final de todas as telas
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-         &copy; 2026 ${APP_DATA.config.brandName || "Library"}. All rights reserved.
+         &copy; 2026 ${APP_DATA.config.brandName || "Το Φαρμακείο της Φύσης"}. Με επιφύλαξη παντός δικαιώματος.
        </footer>
     `);
 
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ${featuresHTML}
               
               <a href="${prod.linkUrl}" target="_blank" class="premium-btn">
-                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Conhecer Mais'}
+                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Μάθετε περισσότερα'}
               </a>
            </div>
         </div>
@@ -251,11 +251,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Other Programs</h1><p>Discover materials to improve your health.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Άλλα Προγράμματα</h1><p>Ανακαλύψτε υλικά για να βελτιώσετε την υγεία σας.</p></div></div>
           
           
           <div class="list-container">
-            ${prodsHTML || '<p>More news coming soon!</p>'}
+            ${prodsHTML || '<p>Σύντομα περισσότερα νέα!</p>'}
           </div>
         </div>
       `;
@@ -299,7 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rootEl.innerHTML = `
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Your Classes</h1><p>Stay up to date with your online practices</p></div></div>
+        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Τα Μαθήματά σας</h1><p>Μείνετε ενημερωμένοι με τις διαδικτυακές σας πρακτικές</p></div></div>
         
         
 
@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit;">
               <div style="display:flex; flex-direction:column; justify-content:center; flex:1">
                  <h4 style="margin:0 0 4px; font-size:1.1rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}">${vid.title}</h4>
-                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Full Class'}</p>
+                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Πλήρες Μάθημα'}</p>
               </div>
               ${isPlaying
           ? '<i data-lucide="chevron-down" style="color:var(--primary); align-self:center;"></i>'

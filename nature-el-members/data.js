@@ -1,30 +1,30 @@
 /**
- * LA FARMACIA NATURAL — Members Area Data (Español)
+ * NATURE'S APOTHECARY — Members Area Data (Greek)
  */
 
 const APP_DATA = {
     // ----------------------------------------------------------------------
-    // CONFIGURAÇÕES GLOBAIS DA PÁGINA
+    // GLOBAL CONFIGURATION
     // ----------------------------------------------------------------------
     config: {
-        brandName: "Το Φαρμακείο της Φύσης", // Nome que vai no header
+        brandName: "Το Φαρμακείο της Φύσης", // Name shown in the header
 
-        // Contato Oficial (100% via E-mail)
+        // Official Contact (100% via Email)
         contactEmail: "trinityag01@gmail.com",
         emailSubject: "Ερώτηση σχετικά με την πρόσβαση στο μάθημα (Το Φαρμακείο της Φύσης)",
-        emailBodyTemplate: "Γεια σας ομάδα υποστήριξης! Θα ήθελα βοήθεια με την περιοχή μελών μου στο Φαρμακείο της Φύσης.%0A%0AΤο όνομά μου είναι: ______.",
+        emailBodyTemplate: "Γεια σας ομάδα υποστήριξης! Θα ήθελα βοήθεια με την περιοχή μελών μου στο Φαρμακείο της Φύσης.\n\nΤο όνομά μου είναι: ______.",
 
-        // Mostrar ícone de "? Ajuda" flutuante em todas as telas
+        // Show floating "?" help button on all screens
         showFloatingHelp: true
     },
 
     // ----------------------------------------------------------------------
-    // 1. VÍDEOS (Curso em vídeo) — vazio se não houver vídeos
+    // 1. VIDEOS (Video course) — empty if no videos
     // ----------------------------------------------------------------------
     videos: [],
 
     // ----------------------------------------------------------------------
-    // 2. LIVROS (E-books e PDFs)
+    // 2. BOOKS (E-books and PDFs)
     // ----------------------------------------------------------------------
     books: [
         {
@@ -49,7 +49,7 @@ const APP_DATA = {
             badgeText: "ΜΠΟΝΟΥΣ #1",
             badgeColor: "#F59E0B", // Gold/Amber
             features: [
-                "Φαρμακευτικά προφίλ για πάνω από 20 βότανα",
+                "Φαρμακευτικά προφίλ για πάνω από 20 βόταna",
                 "Οδηγίες ασφαλείας και δοσολογία",
                 "Παραδοσιακές θεραπευτικές εφαρμογές"
             ],
@@ -75,9 +75,9 @@ const APP_DATA = {
     ],
 
     // ----------------------------------------------------------------------
-    // 3. OUTROS PRODUTOS (Upsell / Cross-sell)
+    // 3. OTHER PRODUCTS (Upsell / Cross-sell)
     // ----------------------------------------------------------------------
     otherProducts: []
 };
 
-// Force redeploy v3
+// Force redeploy v4
