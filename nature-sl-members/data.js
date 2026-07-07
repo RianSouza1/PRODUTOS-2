@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Zeliščni recepti korak za korakom za pogoste težave"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-SL.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Esloveno - img1.png",
             buttonText: "Prenesi Glavno Knjigo"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Tradicionalna zdravilna uporaba"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-SL.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Esloveno - img1.png",
             buttonText: "Prenesi Bonus #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Priprava korak za korakom doma"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-SL.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Esloveno - img1.png",
             buttonText: "Prenesi Bonus #2"
         }
     ],
