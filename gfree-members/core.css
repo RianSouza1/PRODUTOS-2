@@ -3,22 +3,23 @@
    ========================================================================= */
 
 :root {
-    /* Premium Earthy Natural Green Theme (Inspirado no Natures) */
-    --bg-main: #F0FDF4; /* Very light mint green */
+    /* Premium Warm Amber — G-Free Theme */
+    --bg-main: #FFFBF5;       /* Warm cream */
     --bg-card: #FFFFFF;
-    --text-dark: #022C22; /* Dark forest green */
-    --text-muted: #047857; /* Medium forest green */
-    --border-light: rgba(6, 78, 59, 0.08);
+    --bg-body: #FFFBF5;
+    --text-dark: #3D1F00;     /* Deep warm brown */
+    --text-muted: #92600A;    /* Medium amber brown */
+    --border-light: rgba(146, 96, 10, 0.12);
 
-    /* Cor Principal - Forest Green */
-    --primary: #064E3B; /* forest green */
-    --primary-hover: #022C22;
-    --primary-light: rgba(6, 78, 59, 0.1);
+    /* Cor Principal — Golden Amber */
+    --primary: #B45309;       /* Warm amber */
+    --primary-hover: #92400E;
+    --primary-light: rgba(180, 83, 9, 0.10);
 
     /* Feedback Visual Secundário / Destaques */
-    --secondary: #FBBF24; /* Amber Gold */
-    --success: #10B981;
-    --success-bg: rgba(16, 185, 129, 0.15);
+    --secondary: #F59E0B;     /* Bright golden yellow */
+    --success: #D97706;
+    --success-bg: rgba(217, 119, 6, 0.15);
 
     /* Espaçamentos Marginais e Z-Index */
     --safe-padding: 1.5rem;
@@ -27,9 +28,8 @@
     --z-header: 50;
     --z-float: 150;
 
-    /* Tipografia densa base (Inter) */
+    /* Tipografia densa base (Outfit) */
     font-size: 16px;
-    /* Base grande para escalabilidade em REM */
     --font-family: 'Outfit', system-ui, -apple-system, sans-serif;
 }
 
@@ -45,7 +45,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: var(--bg-main);
-    background-image: radial-gradient(circle at 10% 20%, rgba(6, 78, 59, 0.04) 0%, transparent 25%), radial-gradient(circle at 90% 80%, rgba(2, 44, 34, 0.02) 0%, transparent 25%);
+    background-image: radial-gradient(circle at 10% 20%, rgba(180, 83, 9, 0.04) 0%, transparent 25%), radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.03) 0%, transparent 25%);
     min-height: 100vh;
     min-height: 100dvh;
     color: var(--text-dark);
@@ -909,14 +909,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #10B981, #059669);
-    color: var(--text-dark);
+    background: linear-gradient(135deg, #B45309, #92400E);
+    color: #FFFFFF;
     font-weight: 700;
     font-size: 1.05rem;
     text-decoration: none;
     border-radius: 100px;
     padding: 16px 20px;
-    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 8px 16px rgba(180, 83, 9, 0.25);
     transition: transform 0.2s, box-shadow 0.2s;
     text-align: center;
 }
@@ -944,7 +944,7 @@ body {
     overflow: hidden;
     background: var(--primary);
     border: none;
-    box-shadow: 0 8px 24px rgba(6, 78, 59, 0.25);
+    box-shadow: 0 8px 24px rgba(180, 83, 9, 0.25);
 }
 
 .hero-text h1 {
