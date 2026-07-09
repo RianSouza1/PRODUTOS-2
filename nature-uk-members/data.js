@@ -1,5 +1,5 @@
 /**
- * LA FARMACIA NATURAL — Members Area Data (Español)
+ * PRIRODNA APOTEKA — Members Area Data (Ukrainska)
  */
 
 const APP_DATA = {
@@ -7,12 +7,12 @@ const APP_DATA = {
     // CONFIGURAÇÕES GLOBAIS DA PÁGINA
     // ----------------------------------------------------------------------
     config: {
-        brandName: "Nature's Apothecary", // Nome que vai no header
+        brandName: "Аптека Природи", // Nome que vai no header
 
         // Contato Oficial (100% via E-mail)
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Question about course access (Nature's Apothecary)",
-        emailBodyTemplate: "Hello support team! I would like to get help with my Nature's Apothecary members area.%0A%0AMy name is: ______.",
+        emailSubject: "Запитання щодо доступу до курсу (Аптека Природи)",
+        emailBodyTemplate: "Вітання команді підтримки! Я хотів би отримати допомогу щодо моєї студентської зони Аптеки Природи.%0A%0AMій ім'я: ______.",
 
         // Mostrar ícone de "? Ajuda" flutuante em todas as telas
         showFloatingHelp: true
@@ -29,48 +29,48 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "Nature's Apothecary — Complete Guide",
-            description: "The main guide to building your own natural pharmacy at home. Learn which herbs to use, which recipes actually work and how to prepare them step by step, without needing to be an expert.",
-            badgeText: "MAIN BOOK",
+            title: "Аптека Природи — Повний Посібник",
+            description: "Головний посібник зі створення власної природної аптеки вдома. Дізнайтеся, які трави використовувати, які рецепти дійсно працюють і як їх приготувати крок за кроком без потреби бути експертом.",
+            badgeText: "ОСНОВНА КНИГА",
             badgeColor: "#10B981", // Emerald Green
             features: [
-                "Simple preparation methods for beginners",
-                "Guides to herbs and kitchen ingredients",
-                "Step by step herbal recipes for common ailments"
+                "Прості методи приготування для початківців",
+                "Посібники з трав та кухонних інгредієнтів",
+                "Покрокові трав'яні рецепти для поширених недуг"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-UK.pdf",
-            coverImage: "assets/covers/English - img1.webp",
-            buttonText: "Download Main Book"
+            coverImage: "assets/covers/nature_IMG1_uk.png",
+            buttonText: "Завантажити основну книгу"
         },
         {
             id: "b2",
-            title: "Healing Kitchen Remedies",
-            description: "Discover the therapeutic properties of common medicinal herbs and learn to use them safely for daily well-being: soothing teas, syrups, salves and more.",
-            badgeText: "BONUS #1",
+            title: "Цілющі Кухонні Засоби",
+            description: "Відкрийте для себе терапевтичні властивості поширених лікарських трав і навчіться безпечно використовувати їх для щоденного самопочуття: заспокійливі чаї, сиропи, мазі та багато іншого.",
+            badgeText: "БОНУС #1",
             badgeColor: "#F59E0B", // Gold/Amber
             features: [
-                "Medicinal profiles of over 20 herbs",
-                "Safety guidelines and dosing",
-                "Traditional healing applications"
+                "Лікарські профілі понад 20 трав",
+                "Правила безпеки та дозування",
+                "Традиційне застосування для оздоровлення"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-UK.pdf",
-            coverImage: "assets/covers/English - img1.webp",
-            buttonText: "Download Bonus #1"
+            coverImage: "assets/covers/nature_IMG1_uk.png",
+            buttonText: "Завантажити Бонус #1"
         },
         {
             id: "b3",
-            title: "Healing Herbal Teas",
-            description: "Learn to create soothing herbal infusions for sleep, digestion, relaxation, throat wellness, immunity and daily well-being with simple ingredients.",
-            badgeText: "BONUS #2",
+            title: "Цілющі Трав'яні Чаї",
+            description: "Навчіться створювати заспокійливі трав'яні настої для сну, травлення, розслаблення, здоров'я горла, імунітету та щоденного самопочуття з простих інгредієнтів.",
+            badgeText: "БОНУС #2",
             badgeColor: "#3B82F6", // Blue
             features: [
-                "Blends for sleep, digestion and relaxation",
-                "Recipes with honey, ginger, mint and chamomile",
-                "Step by step to prepare at home"
+                "Суміші для сну, травлення та розслаблення",
+                "Рецепти з медом, імбиром, м'ятою та ромашкою",
+                "Покрокове приготування в домашніх умовах"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-UK.pdf",
-            coverImage: "assets/covers/English - img1.webp",
-            buttonText: "Download Bonus #2"
+            coverImage: "assets/covers/nature_IMG1_uk.png",
+            buttonText: "Завантажити Бонус #2"
         }
     ],
 
@@ -79,5 +79,3 @@ const APP_DATA = {
     // ----------------------------------------------------------------------
     otherProducts: []
 };
-
-// Force redeploy v3

@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "Área de Membros";
+      brandTitle.innerText = APP_DATA.config.brandName || "Студентська зона";
     }
   }
 
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Injetar o footer global de Copyright no final de todas as telas
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-         &copy; 2026 ${APP_DATA.config.brandName || "Library"}. All rights reserved.
+         &copy; 2026 ${APP_DATA.config.brandName || "Аптека Природи"}. Всі права захищені.
        </footer>
     `);
 
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Welcome, Member</h1><p>What would you like to access today?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Ласкаво просимо, учаснику!</h1><p>Що б ви хотіли переглянути сьогодні?</p></div></div>
           
   
           <div class="home-grid">
@@ -143,8 +143,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="book-open"></i>
               </div>
               <div>
-                 <div class="home-block-title">BOOKS</div>
-                 <div class="home-block-subtitle">E-books and PDF materials</div>
+                 <div class="home-block-title">КНИГИ</div>
+                 <div class="home-block-subtitle">Електронні книги та PDF-матеріали</div>
               </div>
             </a>
             
@@ -153,8 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="message-square"></i>
               </div>
               <div>
-                 <div class="home-block-title">CONTACT</div>
-                 <div class="home-block-subtitle">Help and support</div>
+                 <div class="home-block-title">КОНТАКТИ</div>
+                 <div class="home-block-subtitle">Допомога та підтримка</div>
               </div>
             </a>
   
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card" style="margin-bottom: 2rem;">
            <div class="premium-badge-wrapper">
               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">PDF • Read now</span>
+              <span class="premium-format">PDF • Читати зараз</span>
            </div>
            
            <div class="premium-info" style="padding: 0;">
@@ -188,10 +188,10 @@ document.addEventListener("DOMContentLoaded", () => {
               
               <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: 1.5rem;">
                  <a href="${bk.downloadUrl}" target="_blank" class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: var(--primary); color: #FFF;">
-                    <i data-lucide="book-open"></i> Read now
+                    <i data-lucide="book-open"></i> Читати зараз
                  </a>
                  <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
-                    <i data-lucide="download"></i> Download PDF
+                    <i data-lucide="download"></i> Завантажити PDF
                  </a>
               </div>
            </div>
@@ -201,14 +201,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel" style="margin-bottom: 1.5rem;"><div class="hero-text"><h1>Your materials</h1><p>Access your guides and bonuses below.</p></div></div>
+          <div class="hero-card glass-panel" style="margin-bottom: 1.5rem;"><div class="hero-text"><h1>Ваші матеріали</h1><p>Отримуйте доступ до своїх посібників та бонусів нижче.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/English - img1.webp" alt="Nature's Apothecary Bundle" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/nature_IMG1_uk.png" alt="Колекція Аптека Природи" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
           
           <div class="list-container">
-            ${booksHTML || '<p>No materials registered at the moment.</p>'}
+            ${booksHTML || '<p>На даний момент матеріалів немає.</p>'}
           </div>
         </div>
       `;
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Student support</h1><p>Your satisfaction is our priority.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Підтримка студентів</h1><p>Ваше задоволення є нашим пріоритетом.</p></div></div>
           
   
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
@@ -275,9 +275,9 @@ document.addEventListener("DOMContentLoaded", () => {
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
              </div>
              
-             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Send a message</h3>
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Надіслати повідомлення</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                Copy the address below and send an email with your question. Our team will reply as soon as possible.
+                Скопіюйте адресу нижче та надішліть електронний лист із вашим запитанням. Наша команда відповість якомога швидше.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
