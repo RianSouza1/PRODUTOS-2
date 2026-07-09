@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Ricette erboristiche passo dopo passo per disturbi comuni"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-IT.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Italiano - img1.png",
             buttonText: "Scarica il Libro Principale"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Applicazioni terapeutiche tradizionali"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-IT.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Italiano - img1.png",
             buttonText: "Scarica il Bonus #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Preparazione passo dopo passo a casa"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-IT.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Italiano - img1.png",
             buttonText: "Scarica il Bonus #2"
         }
     ],
