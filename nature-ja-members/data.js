@@ -39,7 +39,7 @@ const APP_DATA = {
                 "一般的な不調のためのステップバイステップのハーブレシピ"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-JA.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_jp.png",
             buttonText: "メイン書籍をダウンロード"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "伝統的な癒やしの応用"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-JA.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_jp.png",
             buttonText: "特典 #1 をダウンロード"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "自宅でできるステップバイステップの作り方"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-JA.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_jp.png",
             buttonText: "特典 #2 をダウンロード"
         }
     ],
