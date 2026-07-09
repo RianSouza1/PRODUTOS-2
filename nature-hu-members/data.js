@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Lépésről lépésre gyógynövényes receptek gyakori panaszokra"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-HU.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_hu.png",
             buttonText: "Főkönyv Letöltése"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Hagyományos gyógyító alkalmazások"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-HU.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_hu.png",
             buttonText: "Bónusz #1 Letöltése"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Lépésről lépésre házi elkészítéshez"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-HU.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_hu.png",
             buttonText: "Bónusz #2 Letöltése"
         }
     ],
