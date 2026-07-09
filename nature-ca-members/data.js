@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Receptes d'herbes pas a pas per a dolors comuns"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-CA.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_cat.png",
             buttonText: "Descarregar Llibre Principal"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Aplicacions curatives tradicionals"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-CA.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_cat.png",
             buttonText: "Descarregar Bonus #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Pas a pas per preparar a casa"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-CA.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_cat.png",
             buttonText: "Descarregar Bonus #2"
         }
     ],
