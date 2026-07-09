@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Чекор-по-чекор билни рецепти за вообичаени тегоби"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-MK.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_mk.png",
             buttonText: "Преземи ја Главната Книга"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Традиционални лековити примени"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-MK.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_mk.png",
             buttonText: "Преземи Бонус #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Чекор-по-чекор подготовка дома"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-MK.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_mk.png",
             buttonText: "Преземи Бонус #2"
         }
     ],
