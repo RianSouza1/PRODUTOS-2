@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Recettes à base de plantes étape par étape pour les affections courantes"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-FR.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_fr.png",
             buttonText: "Télécharger le Livre Principal"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Applications thérapeutiques traditionnelles"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-FR.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_fr.png",
             buttonText: "Télécharger le Bonus #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Étape par étape pour préparer à la maison"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-FR.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_fr.png",
             buttonText: "Télécharger le Bonus #2"
         }
     ],
