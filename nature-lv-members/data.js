@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Pakāpeniskas augu receptes biežākajām kaitēm"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-LV.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_lv.png",
             buttonText: "Lejupielādēt Galveno Grāmatu"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Tradicionālie dziednieciskie pielietojumi"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-LV.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_lv.png",
             buttonText: "Lejupielādēt Bonusu #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Sagatavošana mājās soli pa solim"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-LV.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_lv.png",
             buttonText: "Lejupielādēt Bonusu #2"
         }
     ],
