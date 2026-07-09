@@ -83,6 +83,7 @@ on:
       - 'nature-ar-members/**'
       - 'nature-ru-members/**'
       - 'nature-tr-members/**'
+      - 'nature-lt-members/**'
       - 'Fishing/**'
       - 'Fishing-de/**'
       - 'Fishing-fr/**'
@@ -248,6 +249,8 @@ jobs:
               - 'nature-ru-members/**'
             nature-tr-members:
               - 'nature-tr-members/**'
+            nature-lt-members:
+              - 'nature-lt-members/**'
             nature-zh-members:
               - 'nature-zh-members/**'
             nature-ko-members:
@@ -443,6 +446,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/nature-members-ar
             sudo mkdir -p /var/www/skillvault.blog/nature-members-ru
             sudo mkdir -p /var/www/skillvault.blog/nature-members-tr
+            sudo mkdir -p /var/www/skillvault.blog/nature-members-lt
             sudo mkdir -p /var/www/skillvault.blog/nature-members-fi
             sudo mkdir -p /var/www/skillvault.blog/nature-members-de
             sudo mkdir -p /var/www/skillvault.blog/nature-members-da
@@ -1752,6 +1756,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "nature-tr-members/*"
           target: "/var/www/skillvault.blog/nature-members-tr"
+          strip_components: 1
+
+      - name: Deploy 'nature-lt-members' to skillvault.blog/nature-members-lt
+        if: steps.filter.outputs.nature-lt-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "nature-lt-members/*"
+          target: "/var/www/skillvault.blog/nature-members-lt"
           strip_components: 1
 
       - name: Deploy 'gfree-members' to naturalmethods.blog/g-free-sv
