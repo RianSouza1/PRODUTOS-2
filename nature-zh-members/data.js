@@ -39,7 +39,7 @@ const APP_DATA = {
                 "针对常见不适的一步步草药配方"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-ZH.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_chn.png",
             buttonText: "下载主书"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "传统治愈应用"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-ZH.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_chn.png",
             buttonText: "下载赠品 #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "在家一步步制作"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-ZH.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_chn.png",
             buttonText: "下载赠品 #2"
         }
     ],
