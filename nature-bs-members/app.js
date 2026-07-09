@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "Studentska zona";
+      brandTitle.innerText = APP_DATA.config.brandName || "Prostor za studente";
     }
   }
 
