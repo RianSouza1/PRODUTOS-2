@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Rețete pe bază de plante pas cu pas pentru afecțiuni comune"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-RO.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Romeno - img1.png",
             buttonText: "Descarcă Cartea Principală"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Aplicații tradiționale de vindecare"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-RO.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Romeno - img1.png",
             buttonText: "Descarcă Bonus #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Pas cu pas pentru a le prepara acasă"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-RO.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/Romeno - img1.png",
             buttonText: "Descarcă Bonus #2"
         }
     ],
