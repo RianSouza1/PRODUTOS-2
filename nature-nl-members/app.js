@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "Área de Membros";
+      brandTitle.innerText = APP_DATA.config.brandName || "Studentengedeelte";
     }
   }
 
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Injetar o footer global de Copyright no final de todas as telas
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-         &copy; 2026 ${APP_DATA.config.brandName || "Library"}. All rights reserved.
+         &copy; 2026 ${APP_DATA.config.brandName || "De Natuurlijke Apotheek"}. Alle rechten voorbehouden.
        </footer>
     `);
 
