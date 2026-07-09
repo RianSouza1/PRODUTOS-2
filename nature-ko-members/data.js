@@ -39,7 +39,7 @@ const APP_DATA = {
                 "흔한 질환을 위한 단계별 허브 레시피"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-KO.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_ko.png",
             buttonText: "메인 도서 다운로드"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "전통적인 치유 방법"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-KO.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_ko.png",
             buttonText: "보너스 #1 다운로드"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "집에서 직접 만드는 단계별 안내"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-KO.pdf",
-            coverImage: "assets/covers/Espanhol - img1.png",
+            coverImage: "assets/covers/nature_IMG1_ko.png",
             buttonText: "보너스 #2 다운로드"
         }
     ],
