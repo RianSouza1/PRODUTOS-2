@@ -39,7 +39,7 @@ const APP_DATA = {
                 "Steg för steg örtrecept för vanliga åkommor"
             ],
             downloadUrl: "materials/Natures-Apothecary-1-SV.pdf",
-            coverImage: "assets/covers/Sueco - img1.webp",
+            coverImage: "assets/covers/Sueco - img1.png",
             buttonText: "Ladda ner Huvudbok"
         },
         {
@@ -54,7 +54,7 @@ const APP_DATA = {
                 "Traditionella läkande tillämpningar"
             ],
             downloadUrl: "materials/Kitchen-Remedies-2-SV.pdf",
-            coverImage: "assets/covers/Sueco - img1.webp",
+            coverImage: "assets/covers/Sueco - img1.png",
             buttonText: "Ladda ner Bonus #1"
         },
         {
@@ -69,7 +69,7 @@ const APP_DATA = {
                 "Steg för steg att förbereda hemma"
             ],
             downloadUrl: "materials/Healing-Herbal-Teas-3-SV.pdf",
-            coverImage: "assets/covers/Sueco - img1.webp",
+            coverImage: "assets/covers/Sueco - img1.png",
             buttonText: "Ladda ner Bonus #2"
         }
     ],
