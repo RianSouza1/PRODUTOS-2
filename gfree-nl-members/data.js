@@ -38,8 +38,8 @@ const APP_DATA = {
                 "Gidsen voor kruiden en keukeningrediënten",
                 "Stap-voor-stap kruidenrecepten voor veelvoorkomende kwalen"
             ],
-            downloadUrl: "materials/G-FREE-1-SV.pdf",
-            coverImage: "assets/covers/gf_IMG1_sv.png",
+            downloadUrl: "materials/G-FREE-1-NL.pdf",
+            coverImage: "assets/covers/gf_IMG1_nl.png",
             buttonText: "Hoofdboek downloaden"
         },
         {
@@ -53,8 +53,8 @@ const APP_DATA = {
                 "Veiligheidsrichtlijnen en dosering",
                 "Tradionele geneeskrachtige toepassingen"
             ],
-            downloadUrl: "materials/G-FREE-2-SV.pdf",
-            coverImage: "assets/covers/gf_IMG1_sv.png",
+            downloadUrl: "materials/G-FREE-2-NL.pdf",
+            coverImage: "assets/covers/gf_IMG1_nl.png",
             buttonText: "Bonus #1 downloaden"
         },
         {
@@ -68,8 +68,8 @@ const APP_DATA = {
                 "Recepten met honing, gember, munt en kamille",
                 "Stap-voor-stap om thuis te bereiden"
             ],
-            downloadUrl: "materials/G-FREE-3-SV.pdf",
-            coverImage: "assets/covers/gf_IMG1_sv.png",
+            downloadUrl: "materials/G-FREE-3-NL.pdf",
+            coverImage: "assets/covers/gf_IMG1_nl.png",
             buttonText: "Bonus #2 downloaden"
         }
     ],
@@ -79,5 +79,3 @@ const APP_DATA = {
     // ----------------------------------------------------------------------
     otherProducts: []
 };
-
-// Force redeploy v5
