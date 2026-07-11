@@ -1,5 +1,5 @@
 /**
- * NATURE'S APOTHECARY — Members Area Data (English)
+ * GLUTEN-FREE — Members Area Data (Swedish)
  */
 
 const APP_DATA = {
@@ -7,12 +7,12 @@ const APP_DATA = {
     // GLOBAL CONFIGURATION
     // ----------------------------------------------------------------------
     config: {
-        brandName: "Naturligt Apotek", // Name in the header
+        brandName: "Enkel Glutenfri", // Name in the header
 
         // Official Contact (100% via Email)
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Fråga om kursåtkomst (Naturligt Apotek)",
-        emailBodyTemplate: "Hej supportteamet! Jag skulle vilja få hjälp med mitt medlemsområde för Naturligt Apotek.\n\nMitt namn är: ______.",
+        emailSubject: "Fråga om kursåtkomst (Enkel Glutenfri)",
+        emailBodyTemplate: "Hej supportteamet! Jag skulle vilja få hjälp med mitt medlemsområde för Enkel Glutenfri.\n\nMitt namn är: ______.",
 
         // Show floating "?" help button on all screens
         showFloatingHelp: true
@@ -29,14 +29,14 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "Naturligt Apotek — Komplett guide",
-            description: "Huvudguiden för att bygga ditt eget naturliga apotek hemma. Lär dig vilka örter du ska använda, vilka recept som verkligen fungerar och hur du förbereder dem steg för steg, utan att behöva vara en expert.",
+            title: "Den enkla glutenfria kokboken",
+            description: "Enkla måltider för varje dag för nybörjare. Upptäck hur enkelt och gott det kan vara att laga glutenfri mat med praktiska recept steg-för-steg.",
             badgeText: "HUVUDBOK",
             badgeColor: "#10B981", // Emerald Green
             features: [
-                "Enkla beredningsmetoder för nybörjare",
-                "Guider till örter och köksingredienser",
-                "Steg för steg-örtrecept för vanliga besvär"
+                "Enkla måltider för varje dag för nybörjare",
+                "Goda och hälsosamma recept steg-för-steg",
+                "Oumbärlig guide till en glutenfri livsstil"
             ],
             downloadUrl: "materials/G-FREE-1-SV.pdf",
             coverImage: "assets/covers/gf_IMG1_sv.png",
@@ -44,14 +44,14 @@ const APP_DATA = {
         },
         {
             id: "b2",
-            title: "Läkande huskurer från köket",
-            description: "Upptäck de terapeutiska egenskaperna hos vanliga läkeörter och lär dig att använda dem säkert för dagligt välbefinnande: lugnande teer, siraper, salvor och mer.",
+            title: "Glutenfri vardagsbakning & comfort food",
+            description: "Bättre bröd, snacks, desserter och familjens favoriter. Lär dig baka mjuka, goda glutenfria bröd och bakverk som alla kommer att älska.",
             badgeText: "BONUS #1",
             badgeColor: "#F59E0B", // Gold/Amber
             features: [
-                "Medicinska profiler för över 20 örter",
-                "Säkerhetsriktlinjer och dosering",
-                "Traditionella läkande tillämpningar"
+                "Recept på glutenfritt bröd och snacks",
+                "Goda desserter och familjens favoriter",
+                "Baktips för perfekt resultat varje gång"
             ],
             downloadUrl: "materials/G-FREE-2-SV.pdf",
             coverImage: "assets/covers/gf_IMG1_sv.png",
@@ -59,14 +59,14 @@ const APP_DATA = {
         },
         {
             id: "b3",
-            title: "Läkande örtteer",
-            description: "Lär dig att skapa lugnande örtinfusioner för sömn, matsmältning, avslappning, halsens hälsa, immunförsvar och dagligt välbefinnande med enkla ingredienser.",
+            title: "30-dagars glutenfri menyplan & inköpslista",
+            description: "Enkla veckomenyer, organiserade inköpslistor och experthjälp med matförberedelser för att göra din övergång smidig och stressfri.",
             badgeText: "BONUS #2",
             badgeColor: "#3B82F6", // Blue
             features: [
-                "Blandningar för sömn, matsmältning och avslappning",
-                "Recept med honung, ingefära, mynta och kamomill",
-                "Steg för steg för att förbereda hemma"
+                "Komplett 30-dagars menyplan",
+                "Organiserade veckovisa inköpslistor",
+                "Praktiska tips för enkel matförberedelse"
             ],
             downloadUrl: "materials/G-FREE-3-SV.pdf",
             coverImage: "assets/covers/gf_IMG1_sv.png",
@@ -80,4 +80,4 @@ const APP_DATA = {
     otherProducts: []
 };
 
-// Force redeploy v5
+// Force redeploy v6
