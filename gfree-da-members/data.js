@@ -1,5 +1,5 @@
 /**
- * NATURE'S APOTHECARY — Members Area Data (English)
+ * NATURLIGT APOTEK — Medlemsområde Data (Dansk)
  */
 
 const APP_DATA = {
@@ -38,8 +38,8 @@ const APP_DATA = {
                 "Guider til urter og køkkeningredienser",
                 "Trin-for-trin urteopskrifter til almindelige gener"
             ],
-            downloadUrl: "materials/G-FREE-1-SV.pdf",
-            coverImage: "assets/covers/gf_IMG1_sv.png",
+            downloadUrl: "materials/G-FREE-1-DK.pdf",
+            coverImage: "assets/covers/gf_IMG1_da.png",
             buttonText: "Download hovedbog"
         },
         {
@@ -53,8 +53,8 @@ const APP_DATA = {
                 "Retningslinjer for sikkerhed og dosering",
                 "Traditionelle helbredende anvendelser"
             ],
-            downloadUrl: "materials/G-FREE-2-SV.pdf",
-            coverImage: "assets/covers/gf_IMG1_sv.png",
+            downloadUrl: "materials/G-FREE-2-DK.pdf",
+            coverImage: "assets/covers/gf_IMG1_da.png",
             buttonText: "Download bonus #1"
         },
         {
@@ -68,8 +68,8 @@ const APP_DATA = {
                 "Opskrifter med honning, ingefær, mynte og kamille",
                 "Trin for trin til at tilberede derhjemme"
             ],
-            downloadUrl: "materials/G-FREE-3-SV.pdf",
-            coverImage: "assets/covers/gf_IMG1_sv.png",
+            downloadUrl: "materials/G-FREE-3-DK.pdf",
+            coverImage: "assets/covers/gf_IMG1_da.png",
             buttonText: "Download bonus #2"
         }
     ],
@@ -80,4 +80,4 @@ const APP_DATA = {
     otherProducts: []
 };
 
-// Force redeploy v5
+// Force redeploy v6

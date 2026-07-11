@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="premium-book-card" style="margin-bottom: 2rem;">
            <div class="premium-badge-wrapper">
-              <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
+              <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIEL'}</span>
               <span class="premium-format">PDF · Læs nu</span>
            </div>
            
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="hero-card glass-panel" style="margin-bottom: 1.5rem;"><div class="hero-text"><h1>Dine materialer</h1><p>Få adgang til dine guider og bonusser nedenfor.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/gf_IMG1_sv.png" alt="Nature's Apothecary Bundle" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/gf_IMG1_da.png" alt="Naturligt Apotek pakke" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
           
           <div class="list-container">
@@ -227,8 +227,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="premium-book-card">
            <div class="premium-badge-wrapper">
-              <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'SPECIAL'}</span>
-              <span class="premium-format">Online Access</span>
+              <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'SPECIEL'}</span>
+              <span class="premium-format">Online adgang</span>
            </div>
            
            <div class="premium-cover-container">
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ${featuresHTML}
               
               <a href="${prod.linkUrl}" target="_blank" class="premium-btn">
-                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Läs mer'}
+                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Læs mere'}
               </a>
            </div>
         </div>
