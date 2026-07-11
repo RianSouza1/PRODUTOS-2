@@ -1,5 +1,5 @@
 /**
- * FARMACIA NATURALE — Dati Area Membri (Italiano)
+ * GLUTEN-FREE — Members Area Data (Italian)
  */
 
 const APP_DATA = {
@@ -7,12 +7,12 @@ const APP_DATA = {
     // GLOBAL CONFIGURATION
     // ----------------------------------------------------------------------
     config: {
-        brandName: "Farmacia Naturale", // Name in the header
+        brandName: "Cucina Senza Glutine", // Name in the header
 
         // Official Contact (100% via Email)
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Domanda sull'accesso al corso (Farmacia Naturale)",
-        emailBodyTemplate: "Gentile supporto! Desidero ricevere assistenza per la mia area membri di Farmacia Naturale.\n\nIl mio nome è: ______.",
+        emailSubject: "Domanda sull'accesso al corso (Cucina Senza Glutine)",
+        emailBodyTemplate: "Ciao team di supporto! Vorrei ricevere aiuto con la mia area membri Cucina Senza Glutine.\n\nIl mio nome è: ______.",
 
         // Show floating "?" help button on all screens
         showFloatingHelp: true
@@ -29,14 +29,14 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "Farmacia Naturale — Guida Completa",
-            description: "La guida principale per creare la tua farmacia naturale a casa. Scopri quali erbe utilizzare, quali ricette funzionano davvero e come prepararle passo dopo passo, senza dover essere un esperto.",
+            title: "Cucina semplice senza glutine",
+            description: "Pasti semplici per ogni giorno per principianti. Scopri quanto può essere facile e deliziosa la cucina senza glutine con ricette pratiche passo-passo.",
             badgeText: "LIBRO PRINCIPALE",
             badgeColor: "#10B981", // Emerald Green
             features: [
-                "Metodi di preparazione semplici per principianti",
-                "Guide alle erbe e agli ingredienti da cucina",
-                "Ricette a base di erbe passo dopo passo per disturbi comuni"
+                "Pasti semplici per ogni giorno per principianti",
+                "Ricette deliziose e salutari passo-passo",
+                "Guida essenziale per uno stile di vita senza glutine"
             ],
             downloadUrl: "materials/G-FREE-1-IT.pdf",
             coverImage: "assets/covers/gf_IMG1_it.png",
@@ -44,14 +44,14 @@ const APP_DATA = {
         },
         {
             id: "b2",
-            title: "Rimedi Casalinghi Curativi dalla Cucina",
-            description: "Scopri le proprietà terapeutiche delle comuni erbe medicinali e impara a usarle in modo sicuro per il benessere quotidiano: tisane rilassanti, sciroppi, unguenti e altro ancora.",
+            title: "Cucina senza glutine ogni giorno e comfort food",
+            description: "Il miglior pane, snack, dessert e piatti preferiti per tutta la famiglia. Impara a preparare pane e dolci senza glutine soffici e deliziosi che tutti ameranno.",
             badgeText: "BONUS #1",
             badgeColor: "#F59E0B", // Gold/Amber
             features: [
-                "Profili medicinali per oltre 20 erbe",
-                "Linee guida sulla sicurezza e dosaggio",
-                "Applicazioni curative tradizionali"
+                "Ricette per pane e snack senza glutine",
+                "Dolci deliziose e piatti preferiti della famiglia",
+                "Consigli di panificazione per risultati sempre perfetti"
             ],
             downloadUrl: "materials/G-FREE-2-IT.pdf",
             coverImage: "assets/covers/gf_IMG1_it.png",
@@ -59,14 +59,14 @@ const APP_DATA = {
         },
         {
             id: "b3",
-            title: "Tisane Curative a base di Erbe",
-            description: "Impara a preparare tisane rilassanti a base di erbe per il sonno, la digestione, il rilassamento, la salute della gola, il supporto immunitario e il benessere quotidiano con ingredienti semplici.",
+            title: "Piano pasti senza glutine di 30 giorni e lista della spesa",
+            description: "Menu settimanali semplici, liste della spesa organizzate e aiuto esperto nella preparazione dei pasti per rendere la tua transizione facile e senza stress.",
             badgeText: "BONUS #2",
             badgeColor: "#3B82F6", // Blue
             features: [
-                "Miscele per il sonno, la digestione e il relax",
-                "Ricette con miele, zenzero, menta e camomilla",
-                "Preparazione passo dopo passo da fare a casa"
+                "Piano pasti completo di 30 giorni",
+                "Liste della spesa settimanali organizzate",
+                "Consigli utili per preparare facilmente i pasti"
             ],
             downloadUrl: "materials/G-FREE-3-IT.pdf",
             coverImage: "assets/covers/gf_IMG1_it.png",
@@ -80,4 +80,4 @@ const APP_DATA = {
     otherProducts: []
 };
 
-// Force redeploy v1
+// Force redeploy v2
