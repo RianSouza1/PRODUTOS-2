@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Injetar o footer global de Copyright no final de todas as telas
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-         &copy; 2026 ${APP_DATA.config.brandName || "Pharmacie Naturelle"}. Tous droits réservés.
+         &copy; 2026 ${APP_DATA.config.brandName || "Cuisine Sans Gluten"}. Tous droits réservés.
        </footer>
     `);
 
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="hero-card glass-panel" style="margin-bottom: 1.5rem;"><div class="hero-text"><h1>Vos matériaux</h1><p>Accédez à vos guides et bonus ci-dessous.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/gf_IMG1_fr.png" alt="Pack Pharmacie Naturelle" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/gf_IMG1_fr.png" alt="Cuisine Sans Gluten Pack" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
           
           <div class="list-container">

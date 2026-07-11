@@ -1,5 +1,5 @@
 /**
- * PHARMACIE NATURELLE — Espace Membres (Français)
+ * GLUTEN-FREE — Members Area Data (French)
  */
 
 const APP_DATA = {
@@ -7,12 +7,12 @@ const APP_DATA = {
     // GLOBAL CONFIGURATION
     // ----------------------------------------------------------------------
     config: {
-        brandName: "Pharmacie Naturelle",
+        brandName: "Cuisine Sans Gluten",
 
         // Official Contact (100% via Email)
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Question sur l'accès au cours (Pharmacie Naturelle)",
-        emailBodyTemplate: "Bonjour, équipe d'assistance ! Je souhaite obtenir de l'aide pour mon espace membres de la Pharmacie Naturelle.\n\nMon nom est : ______.",
+        emailSubject: "Question concernant l'accès au cours (Cuisine Sans Gluten)",
+        emailBodyTemplate: "Bonjour l'équipe d'assistance ! Je souhaite obtenir de l'aide concernant mon espace membre Cuisine Sans Gluten.\n\nMon nom est : ______.",
 
         // Show floating "?" help button on all screens
         showFloatingHelp: true
@@ -29,14 +29,14 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "Pharmacie Naturelle — Guide Complet",
-            description: "Le guide principal pour créer votre propre pharmacie naturelle à la maison. Apprenez quelles plantes utiliser, quelles recettes fonctionnent vraiment et comment les préparer étape par étape, sans avoir besoin d'être expert.",
+            title: "Cuisine simple sans gluten",
+            description: "Des repas simples du quotidien pour débutants. Découvrez à quel point la cuisine sans gluten peut être simple et délicieuse grâce à des recettes pratiques, étape par étape.",
             badgeText: "LIVRE PRINCIPAL",
             badgeColor: "#10B981",
             features: [
-                "Méthodes de préparation simples pour les débutants",
-                "Guides sur les plantes et les ingrédients de cuisine",
-                "Recettes de plantes médicinales étape par étape pour les maux courants"
+                "Repas simples du quotidien pour débutants",
+                "Recettes délicieuses et saines étape par étape",
+                "Guide essentiel pour un mode de vie sans gluten"
             ],
             downloadUrl: "materials/G-FREE-1-FR.pdf",
             coverImage: "assets/covers/gf_IMG1_fr.png",
@@ -44,14 +44,14 @@ const APP_DATA = {
         },
         {
             id: "b2",
-            title: "Remèdes Maison Guérisseurs de la Cuisine",
-            description: "Découvrez les propriétés thérapeutiques des plantes médicinales courantes et apprenez à les utiliser en toute sécurité pour le bien-être quotidien : tisanes apaisantes, sirops, onguents et bien plus encore.",
+            title: "Cuisine sans gluten au quotidien et comfort food",
+            description: "Le meilleur du pain, des en-cas, des desserts et des plats réconfortants pour toute la famille. Apprenez à préparer du pain et des douceurs sans gluten moelleux et délicieux que tout le monde adorera.",
             badgeText: "BONUS #1",
             badgeColor: "#F59E0B",
             features: [
-                "Profils médicinaux de plus de 20 plantes",
-                "Directives de sécurité et posologie",
-                "Applications thérapeutiques traditionnelles"
+                "Recettes de pain et d'en-cas sans gluten",
+                "Desserts délicieux et plats familiaux préférés",
+                "Astuces de cuisson pour des résultats parfaits à chaque fois"
             ],
             downloadUrl: "materials/G-FREE-2-FR.pdf",
             coverImage: "assets/covers/gf_IMG1_fr.png",
@@ -59,14 +59,14 @@ const APP_DATA = {
         },
         {
             id: "b3",
-            title: "Tisanes Médicinales Guérisseuses",
-            description: "Apprenez à créer des infusions d'herbes apaisantes pour le sommeil, la digestion, la relaxation, la santé de la gorge, le soutien immunitaire et le bien-être quotidien avec des ingrédients simples.",
+            title: "Plan de repas sans gluten sur 30 jours et liste de courses",
+            description: "Des menus hebdomadaires simples, des listes de courses organisées et une aide précieuse pour la prparation des repas afin de rendre votre transition facile et sans stress.",
             badgeText: "BONUS #2",
             badgeColor: "#3B82F6",
             features: [
-                "Mélanges pour le sommeil, la digestion et la relaxation",
-                "Recettes avec du miel, du gingembre, de la menthe et de la camomille",
-                "Étape par étape pour préparer à la maison"
+                "Plan de repas complet sur 30 jours",
+                "Listes de courses hebdomadaires organisées",
+                "Conseils utiles pour préparer facilement vos repas"
             ],
             downloadUrl: "materials/G-FREE-3-FR.pdf",
             coverImage: "assets/covers/gf_IMG1_fr.png",
@@ -80,4 +80,4 @@ const APP_DATA = {
     otherProducts: []
 };
 
-// Force redeploy v1-fr
+// Force redeploy v2-fr
