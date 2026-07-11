@@ -38,8 +38,8 @@ const APP_DATA = {
                 "Guides to herbs and kitchen ingredients",
                 "Step-by-step herb recipes for common ailments"
             ],
-            downloadUrl: "materials/G-FREE-1-SV.pdf",
-            coverImage: "assets/covers/gf_IMG1_sv.png",
+            downloadUrl: "materials/G-FREE-1-EN.pdf",
+            coverImage: "assets/covers/gf_IMG1_en.png",
             buttonText: "Download main book"
         },
         {
@@ -53,8 +53,8 @@ const APP_DATA = {
                 "Safety guidelines and dosage",
                 "Traditional healing applications"
             ],
-            downloadUrl: "materials/G-FREE-2-SV.pdf",
-            coverImage: "assets/covers/gf_IMG1_sv.png",
+            downloadUrl: "materials/G-FREE-2-EN.pdf",
+            coverImage: "assets/covers/gf_IMG1_en.png",
             buttonText: "Download bonus #1"
         },
         {
@@ -68,8 +68,8 @@ const APP_DATA = {
                 "Recipes with honey, ginger, mint, and chamomile",
                 "Step-by-step to prepare at home"
             ],
-            downloadUrl: "materials/G-FREE-3-SV.pdf",
-            coverImage: "assets/covers/gf_IMG1_sv.png",
+            downloadUrl: "materials/G-FREE-3-EN.pdf",
+            coverImage: "assets/covers/gf_IMG1_en.png",
             buttonText: "Download bonus #2"
         }
     ],
@@ -80,4 +80,4 @@ const APP_DATA = {
     otherProducts: []
 };
 
-// Force redeploy v5
+// Force redeploy v6
