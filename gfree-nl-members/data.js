@@ -1,5 +1,5 @@
 /**
- * NATUURLIJKE APOTHEEK — Ledengedeelte Data (Nederlands)
+ * EENVOUDIG GLUTENVRIJ — Ledengedeelte Data (Nederlands)
  */
 
 const APP_DATA = {
@@ -7,12 +7,12 @@ const APP_DATA = {
     // GLOBAL CONFIGURATION
     // ----------------------------------------------------------------------
     config: {
-        brandName: "Natuurlijke Apotheek", // Name in the header
+        brandName: "Eenvoudig Glutenvrij", // Name in the header
 
         // Official Contact (100% via Email)
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Vraag over toegang tot de cursus (Natuurlijke Apotheek)",
-        emailBodyTemplate: "Hallo supportteam! Ik wil graag hulp met mijn ledengedeelte voor Natuurlijke Apotheek.\n\nMijn naam is: ______.",
+        emailSubject: "Vraag over toegang tot de cursus (Eenvoudig Glutenvrij)",
+        emailBodyTemplate: "Hallo supportteam! Ik wil graag hulp met mijn ledengedeelte voor Eenvoudig Glutenvrij.\n\nMijn naam is: ______.",
 
         // Show floating "?" help button on all screens
         showFloatingHelp: true
@@ -29,14 +29,14 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "Natuurlijke Apotheek — Complete gids",
-            description: "De hoofdgids om thuis je eigen natuurlijke apotheek op te zetten. Leer welke kruiden je moet gebruiken, welke recepten echt werken en hoe je ze stap voor stap bereidt, zonder een expert te hoeven zijn.",
+            title: "Het Eenvoudige Glutenvrije Kookboek",
+            description: "Eenvoudige maaltijden voor elke dag voor beginners. Ontdek hoe eenvoudig en heerlijk glutenvrij koken kan zijn met praktische, stap-voor-stap recepten.",
             badgeText: "HOOFDBOEK",
             badgeColor: "#10B981", // Emerald Green
             features: [
-                "Eenvoudige bereidingsmethoden voor beginners",
-                "Gidsen voor kruiden en keukeningrediënten",
-                "Stap-voor-stap kruidenrecepten voor veelvoorkomende kwalen"
+                "Eenvoudige maaltijden voor elke dag voor beginners",
+                "Heerlijke en gezonde recepten stap-voor-stap",
+                "Essentiële gids voor een glutenvrije levensstijl"
             ],
             downloadUrl: "materials/G-FREE-1-NL.pdf",
             coverImage: "assets/covers/gf_IMG1_nl.png",
@@ -44,14 +44,14 @@ const APP_DATA = {
         },
         {
             id: "b2",
-            title: "Genezende huismiddeltjes uit de keuken",
-            description: "Ontdek de therapeutische eigenschappen van veelvoorkomende geneeskrachtige kruiden en leer hoe je ze veilig kunt gebruiken voor dagelijks welzijn: verzachtende theesoorten, siropen, zalven en meer.",
+            title: "Alledaags Glutenvrij Bakken & Comfortgerechten",
+            description: "Beter brood, snacks, desserts & familiefavorieten. Leer hoe je zacht, heerlijk glutenvrij brood en lekkernijen bakt waar iedereen dol op zal zijn.",
             badgeText: "BONUS #1",
             badgeColor: "#F59E0B", // Gold/Amber
             features: [
-                "Medische profielen voor meer dan 20 kruiden",
-                "Veiligheidsrichtlijnen en dosering",
-                "Tradionele geneeskrachtige toepassingen"
+                "Recepten voor glutenvrij brood en snacks",
+                "Heerlijke desserts en familiefavorieten",
+                "Baktips voor perfecte resultaten, elke keer weer"
             ],
             downloadUrl: "materials/G-FREE-2-NL.pdf",
             coverImage: "assets/covers/gf_IMG1_nl.png",
@@ -59,14 +59,14 @@ const APP_DATA = {
         },
         {
             id: "b3",
-            title: "Genezende kruidentheeën",
-            description: "Leer hoe je verzachtende kruideninfusies maakt voor slaap, spijsvertering, ontspanning, keelgezondheid, immuunsysteem en dagelijks welzijn met eenvoudige ingrediënten.",
+            title: "30-Daags Glutenvrij Menuplan & Boodschappenlijst",
+            description: "Eenvoudige weekmenu's, boodschappenlijsten & hulp bij het voorbereiden van maaltijden om je overgang soepel en stressvrij te maken.",
             badgeText: "BONUS #2",
             badgeColor: "#3B82F6", // Blue
             features: [
-                "Mengsels voor slaap, spijsvertering en ontspanning",
-                "Recepten met honing, gember, munt en kamille",
-                "Stap-voor-stap om thuis te bereiden"
+                "Compleet 30-daags menuplan",
+                "Georganiseerde wekelijkse boodschappenlijsten",
+                "Handige tips voor eenvoudige maaltijdvoorbereiding"
             ],
             downloadUrl: "materials/G-FREE-3-NL.pdf",
             coverImage: "assets/covers/gf_IMG1_nl.png",
@@ -80,4 +80,4 @@ const APP_DATA = {
     otherProducts: []
 };
 
-// Force redeploy v6
+// Force redeploy v9
