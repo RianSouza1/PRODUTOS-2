@@ -1,5 +1,5 @@
 /**
- * EASY CANNING — Members Area Data (English)
+ * FOOD PRESERVATION & STORAGE — Members Area Data (English)
  */
 
 const APP_DATA = {
@@ -7,12 +7,12 @@ const APP_DATA = {
     // GLOBAL CONFIGURATION
     // ----------------------------------------------------------------------
     config: {
-        brandName: "Easy Canning Guide", // Name in the header
+        brandName: "Food Preservation & Storage", // Name in the header
 
         // Official Contact (100% via Email)
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Question about course access (Easy Canning Guide)",
-        emailBodyTemplate: "Hello support team! I would like to get help with my Easy Canning Guide members area.\n\nMy name is: ______.",
+        emailSubject: "Question about access (Food Preservation & Storage)",
+        emailBodyTemplate: "Hello support team! I would like to get help with my Food Preservation & Storage members area.\n\nMy name is: ______.",
 
         // Show floating "?" help button on all screens
         showFloatingHelp: true
@@ -29,14 +29,14 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "The Complete Guide to Canning & Preserving",
-            description: "Simple techniques and step-by-step methods for water bath and pressure canning at home safely.",
+            title: "The Complete 2026 Guide to Food Preservation and Storage",
+            description: "A practical guide for beginners to water-bath canning, pressure canning, fermented foods, jams, sauces, safe storage, and home food preservation. From your first jar right through to a fully stocked pantry.",
             badgeText: "MAIN BOOK",
-            badgeColor: "#10B981", // Emerald Green
+            badgeColor: "#C2593F", // Terracotta orange
             features: [
-                "Safe water bath & pressure canning methods",
-                "Step-by-step canning guides for beginners",
-                "Essential checklist for kitchen setup"
+                "Beginner guides to water-bath and pressure canning",
+                "Safe kitchen practices and storage temperatures",
+                "Step-by-step methods for jams, sauces, and veggies"
             ],
             downloadUrl: "materials/CANNING-1-EN.pdf",
             coverImage: "assets/covers/canning_IMG1_en.png",
@@ -44,14 +44,14 @@ const APP_DATA = {
         },
         {
             id: "b2",
-            title: "Everyday Canning Recipes & Jams",
-            description: "Over 50 delicious recipes for preserving fruits, vegetables, jams, jellies, pickles, and sauces.",
+            title: "Long-life Cooking Guide",
+            description: "Homemade dry mixes, portioned ready-made jars, soups, dessert mixes, spice blends and practical ingredients for the everyday pantry. Your kitchen, your ingredients, your rules – without sterilising equipment.",
             badgeText: "BONUS #1",
-            badgeColor: "#F59E0B", // Gold/Amber
+            badgeColor: "#D97706", // Amber gold
             features: [
-                "Delicious jam, jelly, and pickle recipes",
-                "Sauces, salsas, and pressure canning recipes",
-                "Long-term pantry storage tips"
+                "Homemade dry mixes and portioned ready-made jars",
+                "Dry soups, dessert mixes, spice blends, and ingredients",
+                "No sterilising equipment needed for quick prep"
             ],
             downloadUrl: "materials/CANNING-2-EN.pdf",
             coverImage: "assets/covers/canning_IMG1_en.png",
@@ -59,14 +59,14 @@ const APP_DATA = {
         },
         {
             id: "b3",
-            title: "30-Day Canning Planner & Checklist",
-            description: "Organize your preserving season, keep track of jar inventory, and plan your shopping and harvest schedules.",
+            title: "Beginner's Guide to Home Fermentation",
+            description: "Simple fermented vegetables, sauerkraut, fermented pickles, kimchi-style recipes, brine, spices, fermented drinks, troubleshooting and safe kitchen methods. Traditional, practical and beginner-friendly.",
             badgeText: "BONUS #2",
-            badgeColor: "#3B82F6", // Blue
+            badgeColor: "#5A7A56", // Olive green
             features: [
-                "Annual harvest & canning calendar",
-                "Jar inventory & batch records templates",
-                "Seasonal planner & shopping lists"
+                "Fermented vegetables, sauerkraut, and kimchi recipes",
+                "Brine ratios, spices, and fermented drinks guides",
+                "Troubleshooting & traditional food-safe methods"
             ],
             downloadUrl: "materials/CANNING-3-EN.pdf",
             coverImage: "assets/covers/canning_IMG1_en.png",
@@ -80,4 +80,4 @@ const APP_DATA = {
     otherProducts: []
 };
 
-// Force redeploy v1
+// Force redeploy v2

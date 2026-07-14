@@ -3,23 +3,23 @@
    ========================================================================= */
 
 :root {
-    /* Premium Warm Amber — G-Free Theme */
-    --bg-main: #FFFBF5;       /* Warm cream */
+    /* Warm Canning Theme — Terracotta & Olive Green */
+    --bg-main: #FDFBF7;       /* Warm linen cream */
     --bg-card: #FFFFFF;
-    --bg-body: #FFFBF5;
-    --text-dark: #3D1F00;     /* Deep warm brown */
-    --text-muted: #92600A;    /* Medium amber brown */
-    --border-light: rgba(146, 96, 10, 0.12);
+    --bg-body: #FDFBF7;
+    --text-dark: #3A342F;     /* Deep espresso brown */
+    --text-muted: #756C64;    /* Warm grey-brown */
+    --border-light: rgba(117, 108, 100, 0.15);
 
-    /* Cor Principal — Golden Amber */
-    --primary: #B45309;       /* Warm amber */
-    --primary-hover: #92400E;
-    --primary-light: rgba(180, 83, 9, 0.10);
+    /* Primary Color — Terracotta Orange */
+    --primary: #C2593F;       /* Warm rust / terracotta */
+    --primary-hover: #A53B25;
+    --primary-light: rgba(194, 89, 63, 0.10);
 
-    /* Feedback Visual Secundário / Destaques */
-    --secondary: #F59E0B;     /* Bright golden yellow */
-    --success: #D97706;
-    --success-bg: rgba(217, 119, 6, 0.15);
+    /* Secondary Color / highlights — Olive Green */
+    --secondary: #5A7A56;     /* Olive green */
+    --success: #5A7A56;
+    --success-bg: rgba(90, 122, 86, 0.15);
 
     /* Espaçamentos Marginais e Z-Index */
     --safe-padding: 1.5rem;
