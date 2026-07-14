@@ -145,6 +145,7 @@ on:
       - 'gfree-ru-members/**'
       - 'gfree-lv-members/**'
       - 'gfree-lt-members/**'
+      - 'gfree-he-members/**'
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -375,6 +376,8 @@ jobs:
               - 'gfree-lv-members/**'
             gfree-lt-members:
               - 'gfree-lt-members/**'
+            gfree-he-members:
+              - 'gfree-he-members/**'
             fishing:
               - 'Fishing/**'
             fishing-de:
@@ -614,6 +617,7 @@ jobs:
             sudo mkdir -p /var/www/naturalmethods.blog/g-free-ru
             sudo mkdir -p /var/www/naturalmethods.blog/g-free-lv
             sudo mkdir -p /var/www/naturalmethods.blog/g-free-lt
+            sudo mkdir -p /var/www/naturalmethods.blog/g-free-he
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog || true
             sudo chmod -R 755 /var/www/skillvault.blog || true
 
@@ -2153,5 +2157,16 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "gfree-lt-members/*"
           target: "/var/www/naturalmethods.blog/g-free-lt"
+          strip_components: 1
+
+      - name: Deploy 'gfree-he-members' to naturalmethods.blog/g-free-he
+        if: steps.filter.outputs.gfree-he-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "gfree-he-members/*"
+          target: "/var/www/naturalmethods.blog/g-free-he"
           strip_components: 1
 
