@@ -1,5 +1,6 @@
 /**
  * Excel Mesterkurzus — Tagi Felület Adatok (Magyar)
+ * v2
  */
 
 const APP_DATA = {
