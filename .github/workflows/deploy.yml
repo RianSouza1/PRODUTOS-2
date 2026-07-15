@@ -165,6 +165,7 @@ on:
       - 'canning-no-members/**'
       - 'canning-de-members/**'
       - 'canning-it-members/**'
+      - 'canning-ga-members/**'
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -433,6 +434,8 @@ jobs:
               - 'canning-de-members/**'
             canning-it-members:
               - 'canning-it-members/**'
+            canning-ga-members:
+              - 'canning-ga-members/**'
             fishing:
               - 'Fishing/**'
             fishing-de:
@@ -694,6 +697,7 @@ jobs:
             sudo mkdir -p /var/www/naturalmethods.blog/canning-no
             sudo mkdir -p /var/www/naturalmethods.blog/canning-de
             sudo mkdir -p /var/www/naturalmethods.blog/canning-it
+            sudo mkdir -p /var/www/naturalmethods.blog/canning-ga
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/naturalmethods.blog || true
             sudo chmod -R 755 /var/www/naturalmethods.blog || true
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog || true
@@ -2456,5 +2460,17 @@ jobs:
           source: "canning-it-members/*"
           target: "/var/www/naturalmethods.blog/canning-it"
           strip_components: 1
+
+      - name: Deploy 'canning-ga-members' to naturalmethods.blog/canning-ga
+        if: steps.filter.outputs.canning-ga-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "canning-ga-members/*"
+          target: "/var/www/naturalmethods.blog/canning-ga"
+          strip_components: 1
+
 
 
