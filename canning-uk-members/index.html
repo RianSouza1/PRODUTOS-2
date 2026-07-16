@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Cache Control -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>Домашнє Консервування — Особистий Кабінет</title>
+    <!-- Outfit Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- App Styles -->
+    <link rel="stylesheet" href="core.css?v=6">
+</head>
+<body>
+    <div id="floating-help-container"></div>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-logo">
+                <img src="assets/logo.png" alt="Logo" id="brand-logo" onerror="this.style.display='none'">
+                <h1 id="brand-title"></h1>
+            </div>
+        </header>
+        <!-- Root -->
+        <main id="app-root" class="main-content">
+            <div class="loader-container">
+                <i data-lucide="loader-2" class="spin-icon"></i>
+            </div>
+        </main>
+        <!-- Bottom bar with only Books and Contact -->
+        <nav class="bottom-tab-bar" id="main-nav">
+            <a href="#livros" class="tab-item" data-tab="livros">
+                <i data-lucide="book-open"></i>
+                <span>Книги</span>
+            </a>
+            <a href="#contato" class="tab-item" data-tab="contato">
+                <i data-lucide="message-square"></i>
+                <span>Контакти</span>
+            </a>
+        </nav>
+    </div>
+    <!-- Data & Logic -->
+    <script src="data.js?v=6"></script>
+    <script src="app.js?v=6"></script>
+</body>
+</html>
