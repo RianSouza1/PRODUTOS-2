@@ -154,6 +154,7 @@ on:
       - 'gfree-sl-members/**'
       - 'gfree-ko-members/**'
       - 'gfree-cs-members/**'
+      - 'gfree-sk-members/**'
       - 'canning-members/**'
       - 'canning-da-members/**'
       - 'canning-sv-members/**'
@@ -428,6 +429,8 @@ jobs:
               - 'gfree-ko-members/**'
             gfree-cs-members:
               - 'gfree-cs-members/**'
+            gfree-sk-members:
+              - 'gfree-sk-members/**'
             canning-members:
               - 'canning-members/**'
             canning-da-members:
@@ -2707,4 +2710,15 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "gfree-cs-members/*"
           target: "/var/www/naturalmethods.blog/g-free-cs"
+          strip_components: 1
+
+      - name: Deploy 'gfree-sk-members' to naturalmethods.blog/g-free-sk
+        if: steps.filter.outputs.gfree-sk-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "gfree-sk-members/*"
+          target: "/var/www/naturalmethods.blog/g-free-sk"
           strip_components: 1
