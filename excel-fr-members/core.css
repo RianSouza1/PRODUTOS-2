@@ -714,7 +714,7 @@ body {
     }
 
     .bottom-tab-bar::before {
-        content: "ÁREA DO ALUNO";
+        content: "ESPACE MEMBRES";
         font-size: 0.8rem;
         font-weight: 700;
         color: #94A3B8;
