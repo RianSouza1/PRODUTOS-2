@@ -1,13 +1,13 @@
 /**
- * Mistrzostwo Excela — Members Area Data
+ * Excel Mastery — Dane obszaru członkowskiego (Polski)
  */
 
 const APP_DATA = {
     config: {
-        brandName: "Mistrzostwo Excela",
+        brandName: "Excel Mastery",
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Pytanie dotyczące dostępu do kursu (Excel)",
-        emailBodyTemplate: "Witaj zespole wsparcia! Chciałbym otrzymać pomoc w związku z moją strefą członkowską Excela.%0A%0AMoje imię to: ______.",
+        emailSubject: "Zapytanie dotyczące dostępu (Excel Mastery)",
+        emailBodyTemplate: "Cześć zespole wsparcia! Potrzebuję pomocy z dostępem do mojego obszaru członkowskiego Excel Mastery.\n\nMoje imię to: ______.",
         showFloatingHelp: true
     },
 
@@ -16,36 +16,48 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "Microsoft Excel — Podręcznik",
-            description: "Kompleksowy podręcznik do programu Microsoft Excel. Poznaj wszystkie funkcje od A do Z.",
-            badgeText: "GŁÓWNY PODRĘCZNIK",
-            badgeColor: "#047857",
-            features: ["Kompleksowy podręcznik", "Wyjaśnienie wszystkich funkcji", "Dla początkujących i zaawansowanych"],
+            title: "Excel od zera do profesjonalisty — Wydanie 2026",
+            description: "Praktyczny poradnik dla początkujących o arkuszach kalkulacyjnych, organizacji i codziennej produktywności. Ucz się Excela krok po kroku, od pierwszej komórki po zaawansowane narzędzia.",
+            badgeText: "GŁÓWNA KSIĄŻKA",
+            badgeColor: "#1a7a45",
+            features: [
+                "Arkusze kalkulacyjne i organizacja danych dla początkujących",
+                "Codzienna produktywność i zarządzanie listami klientów",
+                "Śledzenie finansów i planowanie kalendarza w Excelu"
+            ],
             downloadUrl: "materials/Excel-1-PL.pdf",
-            coverImage: "assets/covers/cover_excel_handbuch.png",
-            buttonText: "Pobierz książkę"
+            coverImage: "assets/covers/excel_IMG1_pl.png",
+            buttonText: "Pobierz główną książkę"
         },
         {
             id: "b2",
-            title: "Excel — Zaawansowane techniki",
-            description: "Cenne wskazówki praktyczne, skróty klawiszowe i zaawansowane techniki dla użytkowników programu Excel.",
-            badgeText: "WSKAZÓWKI PRAKTYCZNE",
-            badgeColor: "#3B82F6",
-            features: ["Skróty klawiszowe i triki", "Techniki praktyczne", "Zwiększenie wydajności"],
+            title: "Formuły Excela, funkcje i inteligentne przepływy pracy — Wydanie 2026",
+            description: "Praktyczny przewodnik, jak szybciej rozwiązywać problemy w Excelu. Zamień prostą tabelę w prawdziwe narzędzie do rozwiązywania problemów za pomocą formuł i funkcji.",
+            badgeText: "BONUS #1",
+            badgeColor: "#D97706",
+            features: [
+                "Formuły i funkcje na poziomie zaawansowanym",
+                "Automatyczne obliczenia i inteligentne przepływy pracy",
+                "Szybsze rozwiązywanie problemów w Excelu"
+            ],
             downloadUrl: "materials/Excel-2-PL.pdf",
-            coverImage: "assets/covers/cover_tipps_fortgeschrittene.png",
-            buttonText: "Pobierz poradnik"
+            coverImage: "assets/covers/excel_IMG1_pl.png",
+            buttonText: "Pobierz bonus #1"
         },
         {
             id: "b3",
-            title: "Zaawansowane ćwiczenia z Excela",
-            description: "Opanuj swoje umiejętności w programie Excel dzięki temu obszernemu zeszytowi ćwiczeń dla zaawansowanych.",
-            badgeText: "ZESZYT ĆWICZEŃ",
-            badgeColor: "#047857",
-            features: ["Wiele zadań ćwiczeniowych", "Dla zaawansowanych", "Praktyczne przykłady"],
+            title: "Panele Excel, raporty i tabele przestawne — Edycja 2026",
+            description: "Praktyczny przewodnik po przekształcaniu danych in przejrzyste, profesjonalne raporty. Dowiedz się, jak skutecznie prezentować swoje dane za pomocą paneli i raportów.",
+            badgeText: "BONUS #2",
+            badgeColor: "#7C3AED",
+            features: [
+                "Profesjonalne panele kontrolne i wizualne",
+                "Raporty podsumowujące i tabele przestawne",
+                "Prezentacja danych przełożonym, klientom i zespołowi"
+            ],
             downloadUrl: "materials/Excel-3-PL.pdf",
-            coverImage: "assets/covers/cover_fortgeschrittene_uebungen.png",
-            buttonText: "Pobierz zeszyt ćwiczeń"
+            coverImage: "assets/covers/excel_IMG1_pl.png",
+            buttonText: "Pobierz bonus #2"
         }
     ],
 
