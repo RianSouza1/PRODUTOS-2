@@ -175,9 +175,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       return `
       <div class="premium-book-card" style="margin-bottom: 2rem;">
-           <div class="premium-badge-wrapper">
-              <span class="premium-format">PDF · Čítať ihneď</span>
-           </div>
+            <div class="premium-badge-wrapper">
+               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'ŠPECIÁLNE'}</span>
+               <span class="premium-format">PDF · Čítať ihneď</span>
+            </div>
            
            <div class="premium-info" style="padding: 0;">
               <h3 class="premium-title" style="margin-top: 0.5rem;">${bk.title}</h3>
