@@ -68,6 +68,7 @@ on:
       - 'excel-el-members/**'
       - 'excel-hr-members/**'
       - 'excel-sl-members/**'
+      - 'excel-fi-members/**'
       - 'off-grid/**'
       - 'off-grid-fr/**'
       - 'off-grid-de/**'
@@ -594,6 +595,8 @@ jobs:
               - 'excel-hr-members/**'
             excel-sl-members:
               - 'excel-sl-members/**'
+            excel-fi-members:
+              - 'excel-fi-members/**'
 
       - name: Prepare VPS Directories for Deployments
         uses: appleboy/ssh-action@v1.0.3
@@ -1685,6 +1688,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "excel-sl-members/*"
           target: "/var/www/skillvault.blog/excel-sl-m"
+          strip_components: 1
+
+      - name: Deploy 'excel-fi-members' to skillvault.blog/excel-fi-m
+        if: steps.filter.outputs.excel-fi-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "excel-fi-members/*"
+          target: "/var/www/skillvault.blog/excel-fi-m"
           strip_components: 1
 
       - name: Deploy 'nature-members-es' to skillvault.blog/nature-members-es
