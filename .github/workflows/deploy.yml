@@ -714,6 +714,12 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/excel-it-m
             sudo mkdir -p /var/www/skillvault.blog/excel-pt-m
             sudo mkdir -p /var/www/skillvault.blog/excel-hu-m
+            sudo mkdir -p /var/www/skillvault.blog/excel-el-m
+            sudo mkdir -p /var/www/skillvault.blog/excel-hr-m
+            sudo mkdir -p /var/www/skillvault.blog/excel-sl-m
+            sudo mkdir -p /var/www/skillvault.blog/excel-fi-m
+            sudo mkdir -p /var/www/skillvault.blog/excel-da-m
+            sudo mkdir -p /var/www/skillvault.blog/excel-bg-m
             sudo mkdir -p /var/www/skillvault.blog/off-grid
             sudo mkdir -p /var/www/skillvault.blog/off-grid-fr
             sudo mkdir -p /var/www/skillvault.blog/off-grid-de
