@@ -79,6 +79,7 @@ on:
       - 'excel-sr-members/**'
       - 'excel-sv-members/**'
       - 'excel-ja-members/**'
+      - 'excel-zh-members/**'
       - 'off-grid/**'
       - 'off-grid-fr/**'
       - 'off-grid-de/**'
@@ -627,6 +628,8 @@ jobs:
               - 'excel-sv-members/**'
             excel-ja-members:
               - 'excel-ja-members/**'
+            excel-zh-members:
+              - 'excel-zh-members/**'
 
       - name: Prepare VPS Directories for Deployments
         uses: appleboy/ssh-action@v1.0.3
@@ -752,6 +755,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/excel-sr-m
             sudo mkdir -p /var/www/skillvault.blog/excel-sv-m
             sudo mkdir -p /var/www/skillvault.blog/excel-ja-m
+            sudo mkdir -p /var/www/skillvault.blog/excel-zh-m
             sudo mkdir -p /var/www/skillvault.blog/off-grid
             sudo mkdir -p /var/www/skillvault.blog/off-grid-fr
             sudo mkdir -p /var/www/skillvault.blog/off-grid-de
@@ -1853,6 +1857,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "excel-ja-members/*"
           target: "/var/www/skillvault.blog/excel-ja-m"
+          strip_components: 1
+
+      - name: Deploy 'excel-zh-members' to skillvault.blog/excel-zh-m
+        if: steps.filter.outputs.excel-zh-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "excel-zh-members/*"
+          target: "/var/www/skillvault.blog/excel-zh-m"
           strip_components: 1
 
       - name: Deploy 'nature-members-es' to skillvault.blog/nature-members-es
