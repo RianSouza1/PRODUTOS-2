@@ -1,0 +1,1249 @@
+/* =========================================================================
+   CORE STYLES - ÁREA DE MEMBROS (Mobile First & Senior Friendly)
+   ========================================================================= */
+
+:root {
+    /* Navy Blue Dark Theme (Bible Guide) */
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --text-dark: #f8fafc;
+    --text-muted: #cbd5e1;
+    --border-light: rgba(255, 255, 255, 0.1);
+
+    /* Cor Principal - Gold / Tan */
+    --primary: #D97706;
+    --primary-hover: #B45309;
+    --primary-light: rgba(217, 119, 6, 0.1);
+    /* Fundo sútil dourado */
+
+    /* Feedback Visual Secundário */
+    --secondary: #4ade80;
+    --success: #6BE59E;
+    --success-bg: rgba(107, 229, 158, 0.15);
+
+    /* Espaçamentos Marginais e Z-Index */
+    --safe-padding: 1.5rem;
+    --nav-height: 70px;
+    --z-nav: 100;
+    --z-header: 50;
+    --z-float: 150;
+
+    /* Tipografia densa base (Inter) */
+    font-size: 16px;
+    /* Base grande para escalabilidade em REM */
+    --font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+}
+
+/* Reset e Box-Sizing Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-main);
+    background-image: radial-gradient(circle at 10% 20%, rgba(217, 119, 6, 0.05) 0%, transparent 25%), radial-gradient(circle at 90% 80%, rgba(15, 23, 42, 0.03) 0%, transparent 25%);
+    min-height: 100vh;
+    min-height: 100dvh;
+    color: var(--text-dark);
+    font-family: var(--font-family);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* =========================================================================
+   ESTRUTURA PRINCIPAL (APP CONTAINER)
+   ========================================================================= */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    height: 100dvh;
+    /* iOS Fix */
+}
+
+/* Header Superior Fixo Premium Dark */
+.app-header {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.95) !important;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-dark);
+    padding: env(safe-area-inset-top) var(--safe-padding) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-nav);
+    min-height: 72px;
+    height: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Faixa de destaque gradient no topo do App */
+.app-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ffd700, #ffea70, #ffd700);
+    z-index: 2;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 0;
+}
+
+.header-logo img {
+    height: 32px;
+    width: auto;
+    /* filter auto */
+}
+
+.header-logo h1 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary);
+    -webkit-text-fill-color: var(--primary);
+    background: none;
+    line-height: 1.2;
+    text-align: center;
+    text-shadow: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Área Central de Conteúdo */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    /* Afastar do Bottom bar apenas nas telas internas (Home não tem bottom bar) */
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    /* Fundo da main acompanhando a page */
+    background-color: var(--bg-main);
+    padding-top: 1rem; /* Added to keep away from sticky header */
+    background-image: radial-gradient(circle at 10% 20%, rgba(217, 119, 6, 0.05) 0%, transparent 25%), radial-gradient(circle at 90% 80%, rgba(15, 23, 42, 0.03) 0%, transparent 25%);
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+/* =========================================================================
+   NAVEGAÇÃO BOTTOM (MOBILE FIRST)
+   ========================================================================= */
+.bottom-tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(env(safe-area-inset-bottom) + var(--nav-height));
+    background: rgba(15, 23, 42, 0.95);
+    /* Light effect */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    z-index: var(--z-nav);
+    padding-top: 12px;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Desaparece na tela de HOME (via JS ou CSS class) */
+.bottom-tab-bar.hidden-on-home {
+    transform: translateY(150%);
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #94A3B8;
+    width: 25%;
+    height: 100%;
+    gap: 4px;
+    transition: color 0.2s ease;
+}
+
+.tab-item i {
+    width: 24px;
+    height: 24px;
+}
+
+.tab-item span {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Estado Ativo/Foco na Aba */
+.tab-item.active {
+    color: var(--primary);
+}
+
+.tab-item.active i {
+    stroke-width: 2.5px;
+}
+
+.playlist-container {
+    padding-bottom: 24px;
+}
+
+/* =========================================================================
+   CUSTOM VIDEO PLAYER SKIN (Ocultando controles nativos)
+   ========================================================================= */
+
+.video-container {
+    width: 100%;
+    /* Default is aspect ratio, overriding app.js inline style for cleaner CSS */
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    height: 0;
+    background: #000;
+}
+
+.custom-player-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    background: #111;
+    /* Fallback */
+}
+
+/* O "Pôster" Falso Antes do Play */
+.custom-player-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('assets/covers/bundle_taichi.jpg') center/cover no-repeat;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.custom-play-button {
+    width: 80px;
+    height: 80px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(8px);
+    border: 2px solid var(--primary);
+    /* Borda Dourada */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(217, 119, 6, 0.2);
+    /* Glow dourado */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-player-overlay:hover .custom-play-button {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(229, 169, 107, 0.7);
+}
+
+.custom-player-title {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FFF;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Container do iFrame (Fica abaixo do Overlay) */
+.custom-player-iframe-container {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.custom-player-iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* Evita cliques fantasmas antes de injetar */
+    pointer-events: none;
+}
+
+/* Estado de Exibição (Quando clicado!) */
+.custom-player-wrapper.is-playing .custom-player-overlay {
+    opacity: 0;
+    pointer-events: none;
+    /* Deixa o clique passar pro iFrame */
+}
+
+.custom-player-wrapper.is-playing .custom-player-iframe-container iframe {
+    pointer-events: auto;
+    /* Reativa os cliques nativos pra tocar e pausar no Iframe invisível */
+}
+
+
+/* =========================================================================
+   ELEMENTOS DE FEEDBACK (Ex: Básico e Ocultos)
+   ========================================================================= */
+/* =========================================================================
+   TELAS / VIEWS DINÂMICAS
+   ========================================================================= */
+.page-view {
+    padding: var(--safe-padding);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Títulos das Views */
+.view-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.view-subtitle {
+    font-size: 1rem;
+    color: #94A3B8;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+/* =========================================================================
+   COMPONENTES COMUNS (Botões, Cards)
+   ========================================================================= */
+
+/* Botão de Ação Massivo Padrão */
+.btn-mestre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 60px;
+    background: var(--primary);
+    /* Gold / Tan */
+    color: #FFFFFF;
+    /* Texto em verde escuro para altíssimo contraste */
+    border: none;
+    border-radius: 16px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 16px rgba(255, 215, 0, 0.2);
+    /* Sombra difusa da cor primária */
+}
+
+.btn-mestre:active,
+.btn-mestre.active-play {
+    transform: scale(0.98);
+    background: var(--primary-hover);
+    box-shadow: 0 2px 8px rgba(229, 169, 107, 0.1);
+}
+
+.btn-mestre.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    box-shadow: none;
+    font-weight: 600;
+}
+
+.btn-mestre.btn-outline:active {
+    background: var(--primary-light);
+}
+
+/* Cartões Base (Livros, Produtos, etc) */
+.card-bloco {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: none;
+    /* Em fundo preto, evitar sombra clara. Foca na borda */
+    transition: transform 0.2s ease;
+}
+
+.card-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.card-thumb {
+    width: 80px;
+    height: 110px;
+    border-radius: 8px;
+    object-fit: cover;
+    background-color: var(--primary-light);
+}
+
+.card-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.card-info p {
+    font-size: 0.875rem;
+    color: #94A3B8;
+    line-height: 1.4;
+}
+
+/* Novo Estilo Bundle Card (Livros) */
+.bundle-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: transform 0.2s ease;
+}
+
+.bundle-card:active {
+    transform: scale(0.98);
+}
+
+.bundle-thumb {
+    width: 100%;
+    height: 260px;
+    /* Constrains vertical height to avoid giant images on mobile */
+    background-color: #1A2321;
+    /* Slightly darker than card background to frame the cover nicely */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.bundle-thumb img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    /* Shows the full portrait cover without cropping */
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    /* Give it a book depth feel */
+}
+
+.bundle-info {
+    padding: 1.5rem;
+}
+
+.bundle-info h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.bundle-info p {
+    font-size: 1rem;
+    color: #94A3B8;
+    margin-bottom: 1.25rem;
+}
+
+.bundle-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary);
+    /* Dourado/Tan da paleta */
+    font-size: 1rem;
+    font-weight: 700;
+    background: var(--primary-light);
+    padding: 10px 16px;
+    border-radius: 12px;
+}
+
+.bundle-action i {
+    width: 18px;
+    height: 18px;
+}
+
+/* =========================================================================
+   TELA HOME (OS 4 BLOCOS INICIAIS)
+   ========================================================================= */
+.home-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.home-block {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+    box-shadow: none;
+    /* Dark mode foca na solidez do block, sem sombra clara */
+}
+
+.home-block:active {
+    transform: scale(0.98);
+    background-color: var(--primary-light);
+}
+
+.home-block-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    /* Fundo gerenciado via JS com cores premium puras */
+}
+
+.home-block-icon i {
+    width: 30px;
+    height: 30px;
+}
+
+.home-block-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.home-block-subtitle {
+    font-size: 0.8rem;
+    color: #94A3B8;
+    margin-top: 2px;
+}
+
+/* =========================================================================
+   TELA DE VIDEOS (Layout Específico)
+   ========================================================================= */
+.video-player-container {
+    width: 100%;
+    /* Aspect Ratio 16:9 cravado para o Iframe em mobile */
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    position: relative;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.video-player-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.playlist-container {
+    padding: var(--safe-padding);
+}
+
+.playlist-header {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 1rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+    gap: 1rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.playlist-item:active {
+    transform: scale(0.98);
+}
+
+.playlist-item.playing {
+    border-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--primary-light);
+    box-shadow: none;
+}
+
+/* Nova V2 do Playlist Item (Usado pelo JavaScript via tag <a>) */
+.play-item {
+    text-decoration: none !important;
+    color: var(--text-dark) !important;
+}
+
+.play-item:active {
+    background-color: var(--primary-light) !important;
+    transform: scale(0.98);
+}
+
+.play-item i {
+    color: var(--primary);
+    /* Faz o icone de play herdar nossa cor dourada ao inves de azul nativo */
+}
+
+/* Fim da Nova V2 */
+
+.playlist-item.playing .pl-title {
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.pl-icon {
+    color: var(--text-dark);
+}
+
+.playlist-item.playing .pl-icon {
+    display: none;
+    /* Oculta o ícone padrao para mostrar o custom "In Play" se precisarmos via JS */
+}
+
+/* Elemento Injetado no JS como "Em Exibição" */
+.is-playing-badge {
+    background: var(--primary);
+    color: #FFFFFF;
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin-left: auto;
+    font-weight: 800;
+}
+
+/* =========================================================================
+   RESPONSIVIDADE (TABLET & DESKTOP > 1024px)
+   ========================================================================= */
+@media (min-width: 1024px) {
+
+    /* Restore larger hero sizes on desktop */
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .home-block-title {
+        font-size: 1.25rem;
+    }
+    .bundle-info h3 {
+        font-size: 1.35rem;
+    }
+    .card-info h3 {
+        font-size: 1.125rem;
+    }
+    .app-container {
+        flex-direction: row;
+    }
+
+    /* O Header vira invisível/Inutil caso tenhamos a Navbar Lateral */
+    .app-header {
+        display: none;
+    }
+
+    /* O Bottom Bar vira um Painel Lateral Esquerdo (Sidebar) */
+
+    .bottom-tab-bar.hidden-on-home {
+        transform: none !important;
+        pointer-events: auto !important;
+    }
+
+    .bottom-tab-bar {
+        position: static;
+        flex-direction: column;
+        width: 280px;
+        height: 100vh;
+        border-top: none;
+        border-right: 1px solid var(--border-light);
+        justify-content: flex-start;
+        padding-top: 3rem;
+        gap: 0.5rem;
+    }
+
+    .bottom-tab-bar::before {
+        content: "Асабісты кабінет";
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #94A3B8;
+        margin-bottom: 2rem;
+        padding-left: 2rem;
+        align-self: flex-start;
+        letter-spacing: 1px;
+    }
+
+    /* Os itens da tab viram botões horizontais longos na sidebar */
+    .tab-item {
+        width: calc(100% - 2rem);
+        flex-direction: row;
+        justify-content: flex-start;
+        height: 54px;
+        padding: 0 1.5rem;
+        border-radius: 12px;
+        margin: 0 1rem;
+    }
+
+    .tab-item span {
+        font-size: 1.1rem;
+    }
+
+    .tab-item.active {
+        background-color: var(--primary-light);
+    }
+
+    /* Ajuste da Área Central no Desktop */
+    .main-content {
+        padding: 3rem;
+        padding-bottom: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .page-view {
+        padding: 0;
+    }
+
+    /* Tela de Home em Grid 2x2 */
+    .home-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .home-block {
+        width: calc(50% - 0.5rem);
+    }
+
+    /* Tela de Vídeo em modo Split Layout */
+    .split-video-view {
+        display: flex;
+        gap: 3rem;
+        align-items: flex-start;
+    }
+
+    .split-left {
+        flex: 2;
+        /* 66% para o vídeo */
+        position: sticky;
+        top: 3rem;
+    }
+
+    .split-right {
+        flex: 1;
+        /* 33% para playlist */
+    }
+
+    .video-player-container {
+        border-radius: 16px;
+        overflow: hidden;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .playlist-container {
+        padding: 0;
+    }
+}
+
+/* Correção de chaves finais */
+/* End of CSS patch */
+/* Force CSS Flush */
+
+/* =========================================================================
+   PREMIUM E-BOOK CARDS (Design Reference Base)
+   ========================================================================= */
+
+.premium-book-card {
+    background-color: #1A1C23;
+    /* Fundo escuro premium */
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.premium-badge-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 12px;
+}
+
+.premium-badge {
+    color: var(--text-dark);
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 100px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.premium-format {
+    color: #8E8E93;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.premium-cover-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+    padding: 10px;
+    border-radius: 16px;
+    background: transparent;
+}
+
+.premium-cover {
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    filter: drop-shadow(0 12px 20px rgba(0,0,0,0.15)); max-height: 380px;
+    border: none;
+    object-fit: contain;
+}
+
+.premium-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.premium-title {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.premium-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.premium-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+}
+
+.premium-checklist li {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.premium-checklist li:last-child {
+    border-bottom: none;
+}
+
+.premium-checklist li i {
+    margin-right: 12px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.premium-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #10B981, #059669);
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    border-radius: 100px;
+    padding: 16px 20px;
+    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.premium-btn i {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+}
+
+.premium-btn:active {
+    transform: scale(0.98);
+}
+.glass-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.hero-card {
+    padding: 2.5rem;
+    border-radius: 24px;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    background: var(--primary);
+    border: none;
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.4);
+}
+
+.hero-text h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+}
+.hero-text p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+}
+
+.premium-book-card {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+.app-header {
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+
+/* =========================================================================
+   PRE-PAGE WELCOME SCREEN
+   ========================================================================= */
+.pre-page-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.6s ease;
+    overflow: hidden;
+}
+
+.pre-page-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.pre-page-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+    max-width: 480px;
+    animation: preFadeIn 0.8s ease;
+}
+
+@keyframes preFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.pre-page-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+}
+
+.pre-page-content h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.pre-page-content p {
+    font-size: 1rem;
+    opacity: 0.85;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.pre-page-features {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.pre-page-features span {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-weight: 500;
+    backdrop-filter: blur(8px);
+}
+
+.pre-page-content button {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 14px 36px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.pre-page-content button:hover {
+    transform: scale(1.04);
+}
+
+.pre-page-content button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================================
+   EXCEL MASTER — Premium Emerald/Forest Green Palette
+   ========================================================================= */
+:root {
+    --bg-main: #042416;
+    --bg-card: #0c3823;
+    --text-dark: #f0fdf4;
+    --text-muted: #86efac;
+    --border-light: rgba(134, 239, 172, 0.15);
+    --primary: #10B981;
+    --primary-hover: #059669;
+    --primary-light: rgba(16, 185, 129, 0.12);
+    --secondary: #059669;
+    --success: #34d399;
+    --success-bg: rgba(52, 211, 153, 0.15);
+    --bg-body: #042416;
+}
+
+html, body {
+    background-color: var(--bg-main);
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(5, 150, 105, 0.05) 0%, transparent 40%);
+}
+
+.main-content {
+    background-color: var(--bg-main);
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(5, 150, 105, 0.05) 0%, transparent 40%);
+}
+
+.app-header {
+    background: rgba(4, 36, 22, 0.97) !important;
+}
+
+.app-header::before {
+    background: linear-gradient(90deg, #10B981, #a7f3d0, #10B981);
+}
+
+.bottom-tab-bar {
+    background: rgba(4, 36, 22, 0.97);
+}
+
+.hero-card {
+    background: linear-gradient(135deg, #10B981, #059669);
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+}
+
+/* Pre-page Excel */
+.pre-page-overlay {
+    color: #f0fdf4;
+}
+.pre-page-bg {
+    background: linear-gradient(135deg, #042416 0%, #0c3823 40%, #064e3b 100%);
+}
+.pre-page-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 25% 25%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(5, 150, 105, 0.1) 0%, transparent 50%);
+}
+.pre-page-features span {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    color: #a7f3d0;
+}
+.pre-page-content button {
+    background: linear-gradient(135deg, #10B981, #a7f3d0);
+    color: #042416;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* =========================================================================
+   COMPACT BOOK LIST STYLES (For 4th book onwards)
+   ========================================================================= */
+.section-divider-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem 0;
+    color: var(--primary);
+    border-bottom: 2px solid var(--border-light);
+    padding-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.compact-book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+.compact-book-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.compact-book-card:hover {
+    border-color: rgba(198, 139, 62, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.compact-book-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.compact-book-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.compact-book-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: #FFF;
+    width: fit-content;
+}
+
+.compact-book-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.compact-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.compact-action-btn.btn-read {
+    background: var(--primary-light);
+    color: var(--primary);
+    border: 1px solid rgba(198, 139, 62, 0.3);
+}
+
+.compact-action-btn.btn-read:active {
+    background: var(--primary);
+    color: #FFF;
+    transform: scale(0.95);
+}
+
+.compact-action-btn.btn-download {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-light);
+}
+
+.compact-action-btn.btn-download:active {
+    background: var(--border-light);
+    transform: scale(0.95);
+}
