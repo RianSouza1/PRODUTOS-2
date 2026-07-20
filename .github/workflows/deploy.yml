@@ -92,6 +92,7 @@ on:
       - 'excel-ko-members/**'
       - 'excel-sk-members/**'
       - 'excel-cs-members/**'
+      - 'excel-bs-members/**'
       - 'pilates-nl-members/**'
       - 'off-grid/**'
       - 'off-grid-fr/**'
@@ -670,6 +671,8 @@ jobs:
               - 'excel-sk-members/**'
             excel-cs-members:
               - 'excel-cs-members/**'
+            excel-bs-members:
+              - 'excel-bs-members/**'
             pilates-nl-members:
               - 'pilates-nl-members/**'
 
@@ -810,6 +813,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/excel-ko-m
             sudo mkdir -p /var/www/skillvault.blog/excel-sk-m
             sudo mkdir -p /var/www/skillvault.blog/excel-cs-m
+            sudo mkdir -p /var/www/skillvault.blog/excel-bs-m
             sudo mkdir -p /var/www/skillvault.blog/pilates-nl-m
             sudo mkdir -p /var/www/skillvault.blog/off-grid
             sudo mkdir -p /var/www/skillvault.blog/off-grid-fr
@@ -2056,6 +2060,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "excel-cs-members/*"
           target: "/var/www/skillvault.blog/excel-cs-m"
+          strip_components: 1
+
+      - name: Deploy 'excel-bs-members' to skillvault.blog/excel-bs-m
+        if: steps.filter.outputs.excel-bs-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "excel-bs-members/*"
+          target: "/var/www/skillvault.blog/excel-bs-m"
           strip_components: 1
 
       - name: Deploy 'pilates-nl-members' to skillvault.blog/pilates-nl-m
