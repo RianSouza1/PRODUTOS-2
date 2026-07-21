@@ -1,6 +1,7 @@
 /**
  * Survival & Bushcraft — Members Area (English)
  * The complete Bushcraft & Survival Series
+ * Redeploy trigger
  */
 
 const APP_DATA = {
