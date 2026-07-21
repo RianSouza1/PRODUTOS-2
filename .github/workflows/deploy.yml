@@ -99,6 +99,7 @@ on:
       - 'pilates-it-members/**'
       - 'pilates-da-members/**'
       - 'pilates-de-members/**'
+      - 'survivor-de-members/**'
       - 'off-grid/**'
       - 'off-grid-fr/**'
       - 'off-grid-de/**'
@@ -690,6 +691,8 @@ jobs:
               - 'pilates-da-members/**'
             pilates-de-members:
               - 'pilates-de-members/**'
+            survivor-de-members:
+              - 'survivor-de-members/**'
 
       - name: Prepare VPS Directories for Deployments
         uses: appleboy/ssh-action@v1.0.3
@@ -835,6 +838,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/pilates-it-m
             sudo mkdir -p /var/www/skillvault.blog/pilates-da-m
             sudo mkdir -p /var/www/skillvault.blog/pilates-de-m
+            sudo mkdir -p /var/www/skillvault.blog/survivor-de-m
             sudo mkdir -p /var/www/skillvault.blog/off-grid
             sudo mkdir -p /var/www/skillvault.blog/off-grid-fr
             sudo mkdir -p /var/www/skillvault.blog/off-grid-de
@@ -2157,6 +2161,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "pilates-de-members/*"
           target: "/var/www/skillvault.blog/pilates-de-m"
+          strip_components: 1
+
+      - name: Deploy 'survivor-de-members' to skillvault.blog/survivor-de-m
+        if: steps.filter.outputs.survivor-de-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "survivor-de-members/*"
+          target: "/var/www/skillvault.blog/survivor-de-m"
           strip_components: 1
 
       - name: Deploy 'nature-members-es' to skillvault.blog/nature-members-es
