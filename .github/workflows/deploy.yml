@@ -105,6 +105,7 @@ on:
       - 'survivor-sr-members/**'
       - 'survivor-ro-members/**'
       - 'survivor-pl-members/**'
+      - 'survivor-no-members/**'
       - 'off-grid/**'
       - 'off-grid-fr/**'
       - 'off-grid-de/**'
@@ -708,6 +709,8 @@ jobs:
               - 'survivor-ro-members/**'
             survivor-pl-members:
               - 'survivor-pl-members/**'
+            survivor-no-members:
+              - 'survivor-no-members/**'
 
       - name: Prepare VPS Directories for Deployments
         uses: appleboy/ssh-action@v1.0.3
@@ -859,6 +862,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/survivor-sr-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-ro-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-pl-m
+            sudo mkdir -p /var/www/skillvault.blog/survivor-no-m
             sudo mkdir -p /var/www/skillvault.blog/off-grid
             sudo mkdir -p /var/www/skillvault.blog/off-grid-fr
             sudo mkdir -p /var/www/skillvault.blog/off-grid-de
@@ -2247,6 +2251,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "survivor-pl-members/*"
           target: "/var/www/skillvault.blog/survivor-pl-m"
+          strip_components: 1
+
+      - name: Deploy 'survivor-no-members' to skillvault.blog/survivor-no-m
+        if: steps.filter.outputs.survivor-no-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "survivor-no-members/*"
+          target: "/var/www/skillvault.blog/survivor-no-m"
           strip_components: 1
 
       - name: Deploy 'nature-members-es' to skillvault.blog/nature-members-es
