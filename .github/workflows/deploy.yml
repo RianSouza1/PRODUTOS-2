@@ -114,6 +114,7 @@ on:
       - 'pilates-da-members/**'
       - 'pilates-de-members/**'
       - 'smoking-de-members/**'
+      - 'smoking-sv-members/**'
       - 'survivor-de-members/**'
       - 'survivor-cs-members/**'
       - 'survivor-sv-members/**'
@@ -756,6 +757,8 @@ jobs:
               - 'pilates-de-members/**'
             smoking-de-members:
               - 'smoking-de-members/**'
+            smoking-sv-members:
+              - 'smoking-sv-members/**'
             survivor-de-members:
               - 'survivor-de-members/**'
             survivor-cs-members:
@@ -958,6 +961,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/pilates-da-m
             sudo mkdir -p /var/www/skillvault.blog/pilates-de-m
             sudo mkdir -p /var/www/skillvault.blog/smoking-de-m
+            sudo mkdir -p /var/www/skillvault.blog/smoking-sv-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-de-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-cs-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-sv-m
@@ -2466,6 +2470,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "smoking-de-members/*"
           target: "/var/www/skillvault.blog/smoking-de-m"
+          strip_components: 1
+
+      - name: Deploy 'smoking-sv-members' to skillvault.blog/smoking-sv-m
+        if: steps.filter.outputs.smoking-sv-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "smoking-sv-members/*"
+          target: "/var/www/skillvault.blog/smoking-sv-m"
           strip_components: 1
 
       - name: Deploy 'survivor-de-members' to skillvault.blog/survivor-de-m
