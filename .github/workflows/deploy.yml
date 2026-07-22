@@ -103,6 +103,7 @@ on:
       - 'pilates-ro-members/**'
       - 'pilates-el-members/**'
       - 'pilates-sk-members/**'
+      - 'pilates-bg-members/**'
       - 'pilates-sv-members/**'
       - 'pilates-pl-members/**'
       - 'pilates-it-members/**'
@@ -728,6 +729,8 @@ jobs:
               - 'pilates-el-members/**'
             pilates-sk-members:
               - 'pilates-sk-members/**'
+            pilates-bg-members:
+              - 'pilates-bg-members/**'
             pilates-sv-members:
               - 'pilates-sv-members/**'
             pilates-pl-members:
@@ -929,6 +932,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/pilates-ro-m
             sudo mkdir -p /var/www/skillvault.blog/pilates-el-m
             sudo mkdir -p /var/www/skillvault.blog/pilates-sk-m
+            sudo mkdir -p /var/www/skillvault.blog/pilates-bg-m
             sudo mkdir -p /var/www/skillvault.blog/pilates-sv-m
             sudo mkdir -p /var/www/skillvault.blog/pilates-pl-m
             sudo mkdir -p /var/www/skillvault.blog/pilates-it-m
@@ -2365,6 +2369,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "pilates-sk-members/*"
           target: "/var/www/skillvault.blog/pilates-sk-m"
+          strip_components: 1
+
+      - name: Deploy 'pilates-bg-members' to skillvault.blog/pilates-bg-m
+        if: steps.filter.outputs.pilates-bg-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "pilates-bg-members/*"
+          target: "/var/www/skillvault.blog/pilates-bg-m"
           strip_components: 1
 
       - name: Deploy 'pilates-de-members' to skillvault.blog/pilates-de-m
