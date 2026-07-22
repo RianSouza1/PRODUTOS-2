@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const featuredHTML = featuredBooks.map(bk => {
       const featuresHTML = bk.features
         ? `<ul class="premium-checklist">
-      ${bk.features.map(f => `<li><i data-lucide="check-square" style="color:#10B981; width:16px; height:16px;"></i> <span>${f}</span></li>`).join('')}
+      ${bk.features.map(f => `<li><i data-lucide="check-square" style="color:var(--primary); width:16px; height:16px;"></i> <span>${f}</span></li>`).join('')}
              </ul>`
         : '';
 
@@ -319,7 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Create features checklist HTML
       const featuresHTML = prod.features
         ? `<ul class="premium-checklist">
-      ${prod.features.map(f => `<li><i data-lucide="check-square" style="color:#10B981; width:16px; height:16px;"></i> <span>${f}</span></li>`).join('')}
+      ${prod.features.map(f => `<li><i data-lucide="check-square" style="color:var(--primary); width:16px; height:16px;"></i> <span>${f}</span></li>`).join('')}
              </ul>`
         : '';
 
@@ -400,8 +400,8 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
         <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Ihre Kurse</h1><p>Meistern Sie Schritt für Schritt die Kunst des Räucherns und Grillens mit Ethan Blackwood.</p></div></div>
         
-        <div style="background-color: rgba(16, 185, 129, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
-           <i data-lucide="clock" style="width: 20px; height: 20px; flex-shrink: 0; color: #10B981;"></i>
+        <div style="background-color: rgba(230, 74, 25, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
+           <i data-lucide="clock" style="width: 20px; height: 20px; flex-shrink: 0; color: var(--primary);"></i>
            <span>Neue Lektionen bald verfügbar</span>
         </div>
 
