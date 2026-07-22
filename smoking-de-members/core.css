@@ -1068,75 +1068,75 @@ body {
    PILATES & WELZIJN — Ocean Cyan & Turquoise Palette (Matches Cover Art)
    ========================================================================= */
 :root {
-    --bg-main: #0b192c;
-    --bg-card: #1e293b;
-    --text-dark: #f8fafc;
-    --text-muted: #94a3b8;
-    --border-light: rgba(14, 165, 233, 0.2);
-    --primary: #0EA5E9;
-    --primary-hover: #0284C7;
-    --primary-light: rgba(14, 165, 233, 0.15);
-    --secondary: #0284C7;
-    --success: #38bdf8;
-    --success-bg: rgba(56, 189, 248, 0.15);
-    --bg-body: #0b192c;
+    --bg-main: #120E0C;
+    --bg-card: #1C1513;
+    --text-dark: #FBEBE6;
+    --text-muted: #A1887F;
+    --border-light: rgba(230, 74, 25, 0.2);
+    --primary: #E64A19;
+    --primary-hover: #D84315;
+    --primary-light: rgba(230, 74, 25, 0.15);
+    --secondary: #BF360C;
+    --success: #FF7043;
+    --success-bg: rgba(255, 112, 67, 0.15);
+    --bg-body: #120E0C;
 }
 
 html, body {
     background-color: var(--bg-main);
     background-image:
-        radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(2, 132, 199, 0.08) 0%, transparent 40%);
+        radial-gradient(circle at 20% 30%, rgba(230, 74, 25, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(191, 54, 12, 0.05) 0%, transparent 40%);
 }
 
 .main-content {
     background-color: var(--bg-main);
     background-image:
-        radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(2, 132, 199, 0.08) 0%, transparent 40%);
+        radial-gradient(circle at 20% 30%, rgba(230, 74, 25, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(191, 54, 12, 0.05) 0%, transparent 40%);
 }
 
 .app-header {
-    background: rgba(11, 25, 44, 0.97) !important;
+    background: rgba(18, 14, 12, 0.97) !important;
 }
 
 .app-header::before {
-    background: linear-gradient(90deg, #0EA5E9, #7dd3fc, #0EA5E9);
+    background: linear-gradient(90deg, #E64A19, #FF7043, #E64A19);
 }
 
 .bottom-tab-bar {
-    background: rgba(11, 25, 44, 0.97);
+    background: rgba(18, 14, 12, 0.97);
 }
 
 .hero-card {
-    background: linear-gradient(135deg, #0284C7, #0EA5E9);
-    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.35);
+    background: linear-gradient(135deg, #BF360C, #E64A19);
+    box-shadow: 0 8px 24px rgba(230, 74, 25, 0.35);
 }
 
 /* Pre-page Pilates */
 .pre-page-overlay {
-    color: #f8fafc;
+    color: #FBEBE6;
 }
 .pre-page-bg {
-    background: linear-gradient(135deg, #0b192c 0%, #1e293b 40%, #0369a1 100%);
+    background: linear-gradient(135deg, #120E0C 0%, #1C1513 40%, #BF360C 100%);
 }
 .pre-page-bg::after {
     content: '';
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 25% 25%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(2, 132, 199, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 25% 25%, rgba(230, 74, 25, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(191, 54, 12, 0.1) 0%, transparent 50%);
 }
 .pre-page-features span {
-    background: rgba(14, 165, 233, 0.15);
-    border: 1px solid rgba(14, 165, 233, 0.25);
-    color: #7dd3fc;
+    background: rgba(230, 74, 25, 0.15);
+    border: 1px solid rgba(230, 74, 25, 0.25);
+    color: #FF7043;
 }
 .pre-page-content button {
-    background: linear-gradient(135deg, #0EA5E9, #7dd3fc);
-    color: #0b192c;
-    box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
+    background: linear-gradient(135deg, #E64A19, #FF7043);
+    color: #120E0C;
+    box-shadow: 0 4px 20px rgba(230, 74, 25, 0.4);
 }
 
 /* =========================================================================
