@@ -3,22 +3,22 @@
    ========================================================================= */
 
 :root {
-    /* Pilates Theme Palette (Ocean Cyan & Turquoise - Matches Cover Art) */
-    --bg-main: #0B192C;
-    --bg-card: #1E293B;
-    --text-dark: #F8FAFC;
-    --text-muted: #94A3B8;
-    --border-light: rgba(14, 165, 233, 0.2);
+    /* Smoking & BBQ Theme Palette (Smoky Charcoal, Warm Wood & Hot Embers) */
+    --bg-main: #120E0C;
+    --bg-card: #1C1513;
+    --text-dark: #FBEBE6;
+    --text-muted: #A1887F;
+    --border-light: rgba(230, 74, 25, 0.2);
 
-    /* Cor Principal - Vibrant Ocean Cyan Blue */
-    --primary: #0EA5E9;
-    --primary-hover: #0284C7;
-    --primary-light: rgba(14, 165, 233, 0.15);
+    /* Cor Principal - Vibrant Hot Ember Orange */
+    --primary: #E64A19;
+    --primary-hover: #D84315;
+    --primary-light: rgba(230, 74, 25, 0.15);
 
     /* Secondary Feedback */
-    --secondary: #0284C7;
-    --success: #38BDF8;
-    --success-bg: rgba(56, 189, 248, 0.15);
+    --secondary: #BF360C;
+    --success: #FF7043;
+    --success-bg: rgba(255, 112, 67, 0.15);
 
     /* Espaçamentos Marginais e Z-Index */
     --safe-padding: 1.5rem;

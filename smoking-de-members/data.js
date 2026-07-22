@@ -19,7 +19,7 @@ const APP_DATA = {
             title: "Fleisch räuchern für Einsteiger — Ausgabe 2026",
             description: "Feuer, Rauch, Temperatur & Zartheit zu Hause meistern. Ein warmer, ermutigender Leitfaden, dem Sie bequem von zu Hause aus folgen können, um saftiges Fleisch mit perfektem Raucharoma zuzubereiten.",
             badgeText: "Hauptbuch",
-            badgeColor: "#C07A68",
+            badgeColor: "#BF360C",
             features: [
                 "Feuer, Rauch und Temperatur meisterhaft kontrollieren",
                 "Detaillierte Schritt-für-Schritt-Anleitungen für Einsteiger",
@@ -34,7 +34,7 @@ const APP_DATA = {
             title: "Backyard BBQ Rezepte — Ausgabe 2026",
             description: "Beliebte Smoked Meats, klassische Beilagen & komplette Cookout-Menüs für Familientreffen, Geburtstage, Spieltage und unvergessliche Gartenpartys.",
             badgeText: "Bonus #1",
-            badgeColor: "#5B8C7D",
+            badgeColor: "#8D6E63",
             features: [
                 "Die besten Rezepte für geräuchertes Fleisch",
                 "Klassische amerikanische BBQ-Beilagen",
@@ -49,7 +49,7 @@ const APP_DATA = {
             title: "BBQ-Rubs, Saucen & Marinaden — Ausgabe 2026",
             description: "Kräftige und ausgewogene Aromen für jeden Fleischzuschnitt meisterhaft entwickeln. Der ultimative Leitfaden, um Ihren Gerichten den perfekten Geschmackskick zu verleihen.",
             badgeText: "Bonus #2",
-            badgeColor: "#9C6A88",
+            badgeColor: "#E64A19",
             features: [
                 "Geheimrezepte für erstklassige BBQ-Rubs und Gewürzmischungen",
                 "Schmackhafte Saucen und Marinaden für jeden Fleischtyp",
