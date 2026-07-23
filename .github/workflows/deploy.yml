@@ -131,6 +131,7 @@ on:
       - 'word-ja-members/**'
       - 'word-hu-members/**'
       - 'word-he-members/**'
+      - 'word-el-members/**'
       - 'survivor-de-members/**'
       - 'survivor-cs-members/**'
       - 'survivor-sv-members/**'
@@ -807,6 +808,8 @@ jobs:
               - 'word-hu-members/**'
             word-he-members:
               - 'word-he-members/**'
+            word-el-members:
+              - 'word-el-members/**'
             survivor-de-members:
               - 'survivor-de-members/**'
             survivor-cs-members:
@@ -1026,6 +1029,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/word-ja-m
             sudo mkdir -p /var/www/skillvault.blog/word-hu-m
             sudo mkdir -p /var/www/skillvault.blog/word-he-m
+            sudo mkdir -p /var/www/skillvault.blog/word-el-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-de-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-cs-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-sv-m
@@ -2721,6 +2725,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "word-he-members/*"
           target: "/var/www/skillvault.blog/word-he-m"
+          strip_components: 1
+
+      - name: Deploy 'word-el-members' to skillvault.blog/word-el-m
+        if: steps.filter.outputs.word-el-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "word-el-members/*"
+          target: "/var/www/skillvault.blog/word-el-m"
           strip_components: 1
 
       - name: Deploy 'survivor-de-members' to skillvault.blog/survivor-de-m
