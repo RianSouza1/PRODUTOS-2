@@ -123,6 +123,7 @@ on:
       - 'homerepair-de-members/**'
       - 'homerepair-it-members/**'
       - 'homerepair-nl-members/**'
+      - 'homerepair-sv-members/**'
       - 'survivor-de-members/**'
       - 'survivor-cs-members/**'
       - 'survivor-sv-members/**'
@@ -783,6 +784,8 @@ jobs:
               - 'homerepair-it-members/**'
             homerepair-nl-members:
               - 'homerepair-nl-members/**'
+            homerepair-sv-members:
+              - 'homerepair-sv-members/**'
             survivor-de-members:
               - 'survivor-de-members/**'
             survivor-cs-members:
@@ -994,6 +997,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/homerepair-de-m
             sudo mkdir -p /var/www/skillvault.blog/homerepair-it-m
             sudo mkdir -p /var/www/skillvault.blog/homerepair-nl-m
+            sudo mkdir -p /var/www/skillvault.blog/homerepair-sv-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-de-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-cs-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-sv-m
@@ -2601,6 +2605,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "homerepair-nl-members/*"
           target: "/var/www/skillvault.blog/homerepair-nl-m"
+          strip_components: 1
+
+      - name: Deploy 'homerepair-sv-members' to skillvault.blog/homerepair-sv-m
+        if: steps.filter.outputs.homerepair-sv-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "homerepair-sv-members/*"
+          target: "/var/www/skillvault.blog/homerepair-sv-m"
           strip_components: 1
 
       - name: Deploy 'survivor-de-members' to skillvault.blog/survivor-de-m
