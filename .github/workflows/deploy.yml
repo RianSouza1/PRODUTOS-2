@@ -128,6 +128,7 @@ on:
       - 'homerepair-da-members/**'
       - 'word-nl-members/**'
       - 'word-cs-members/**'
+      - 'word-ja-members/**'
       - 'survivor-de-members/**'
       - 'survivor-cs-members/**'
       - 'survivor-sv-members/**'
@@ -798,6 +799,8 @@ jobs:
               - 'word-nl-members/**'
             word-cs-members:
               - 'word-cs-members/**'
+            word-ja-members:
+              - 'word-ja-members/**'
             survivor-de-members:
               - 'survivor-de-members/**'
             survivor-cs-members:
@@ -1014,6 +1017,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/homerepair-da-m
             sudo mkdir -p /var/www/skillvault.blog/word-nl-m
             sudo mkdir -p /var/www/skillvault.blog/word-cs-m
+            sudo mkdir -p /var/www/skillvault.blog/word-ja-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-de-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-cs-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-sv-m
@@ -2676,6 +2680,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "word-cs-members/*"
           target: "/var/www/skillvault.blog/word-cs-m"
+          strip_components: 1
+
+      - name: Deploy 'word-ja-members' to skillvault.blog/word-ja-m
+        if: steps.filter.outputs.word-ja-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "word-ja-members/*"
+          target: "/var/www/skillvault.blog/word-ja-m"
           strip_components: 1
 
       - name: Deploy 'survivor-de-members' to skillvault.blog/survivor-de-m
