@@ -16,6 +16,23 @@
 
 <body>
 
+    <!-- ============ PRE-PAGE WELCOME SCREEN ============ -->
+    <div id="pre-page" class="pre-page-overlay">
+        <div class="pre-page-bg"></div>
+        <div class="pre-page-content">
+            <div class="pre-page-icon">📊</div>
+            <h1>Excel Mastery</h1>
+            <p>Pristup vašim materijalima je potvrđen.<br>Hajde da savladamo Excel danas.</p>
+            <div class="pre-page-features">
+                <span>📖 Knjige</span>
+                <span>💬 Podrška</span>
+            </div>
+            <button onclick="let el=document.getElementById('pre-page'); el.style.opacity='0'; setTimeout(()=>el.style.display='none',600);">
+                Pristup materijalima →
+            </button>
+        </div>
+    </div>
+
     <div id="floating-help-container"></div>
 
     <div class="app-container">
