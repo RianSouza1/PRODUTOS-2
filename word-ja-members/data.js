@@ -17,7 +17,7 @@ const APP_DATA = {
         {
             id: "b1",
             title: "WORD 初心者からプロへ — 2026年版 第1部（全3部）",
-            description: "初めての方にも安心の完全ガイド ― Microsoft Word でわかりやすく、整理された、プロ品質 of ビジネス文書を作成する方法を学びましょう。",
+            description: "初めての方にも安心の完全ガイド ― Microsoft Word でわかりやすく、整理された、プロ品質のビジネス文書を作成する方法を学びましょう。",
             badgeText: "メインガイド",
             badgeColor: "#2563EB",
             features: [
