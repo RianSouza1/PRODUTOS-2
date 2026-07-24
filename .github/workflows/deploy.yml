@@ -131,6 +131,7 @@ on:
       - 'homerepair-fi-members/**'
       - 'homerepair-fr-members/**'
       - 'homerepair-hu-members/**'
+      - 'homerepair-el-members/**'
       - 'word-nl-members/**'
       - 'word-cs-members/**'
       - 'word-ja-members/**'
@@ -813,6 +814,8 @@ jobs:
               - 'homerepair-fr-members/**'
             homerepair-hu-members:
               - 'homerepair-hu-members/**'
+            homerepair-el-members:
+              - 'homerepair-el-members/**'
             word-nl-members:
               - 'word-nl-members/**'
             word-cs-members:
@@ -1044,6 +1047,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/homerepair-fi-m
             sudo mkdir -p /var/www/skillvault.blog/homerepair-fr-m
             sudo mkdir -p /var/www/skillvault.blog/homerepair-hu-m
+            sudo mkdir -p /var/www/skillvault.blog/homerepair-el-m
             sudo mkdir -p /var/www/skillvault.blog/word-nl-m
             sudo mkdir -p /var/www/skillvault.blog/word-cs-m
             sudo mkdir -p /var/www/skillvault.blog/word-ja-m
@@ -2745,6 +2749,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "homerepair-hu-members/*"
           target: "/var/www/skillvault.blog/homerepair-hu-m"
+          strip_components: 1
+
+      - name: Deploy 'homerepair-el-members' to skillvault.blog/homerepair-el-m
+        if: steps.filter.outputs.homerepair-el-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "homerepair-el-members/*"
+          target: "/var/www/skillvault.blog/homerepair-el-m"
           strip_components: 1
 
       - name: Deploy 'word-nl-members' to skillvault.blog/word-nl-m
