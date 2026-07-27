@@ -1,6 +1,7 @@
 /**
  * Treskjæring & Slöyd — Medlemsområde (Norsk)
  */
+// Trigger deploy rerun
 
 const APP_DATA = {
     config: {
