@@ -134,6 +134,7 @@ on:
       - 'homerepair-el-members/**'
       - 'whittling-sv-members/**'
       - 'whittling-no-members/**'
+      - 'whittling-nl-members/**'
       - 'word-nl-members/**'
       - 'word-cs-members/**'
       - 'word-ja-members/**'
@@ -822,6 +823,8 @@ jobs:
               - 'whittling-sv-members/**'
             whittling-no-members:
               - 'whittling-no-members/**'
+            whittling-nl-members:
+              - 'whittling-nl-members/**'
             word-nl-members:
               - 'word-nl-members/**'
             word-cs-members:
@@ -1056,6 +1059,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/homerepair-el-m
             sudo mkdir -p /var/www/skillvault.blog/whittling-sv-m
             sudo mkdir -p /var/www/skillvault.blog/whittling-no-m
+            sudo mkdir -p /var/www/skillvault.blog/whittling-nl-m
             sudo mkdir -p /var/www/skillvault.blog/word-nl-m
             sudo mkdir -p /var/www/skillvault.blog/word-cs-m
             sudo mkdir -p /var/www/skillvault.blog/word-ja-m
@@ -2702,6 +2706,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "whittling-no-members/*"
           target: "/var/www/skillvault.blog/whittling-no-m"
+          strip_components: 1
+
+      - name: Deploy 'whittling-nl-members' to skillvault.blog/whittling-nl-m
+        if: steps.filter.outputs.whittling-nl-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "whittling-nl-members/*"
+          target: "/var/www/skillvault.blog/whittling-nl-m"
           strip_components: 1
 
       - name: Deploy 'homerepair-cs-members' to skillvault.blog/homerepair-cs-m
