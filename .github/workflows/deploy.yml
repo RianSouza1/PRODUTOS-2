@@ -142,6 +142,7 @@ on:
       - 'psalms-it-members/**'
       - 'psalms-en-members/**'
       - 'psalms-es-members/**'
+      - 'psalms-de-members/**'
       - 'word-nl-members/**'
       - 'word-cs-members/**'
       - 'word-ja-members/**'
@@ -846,6 +847,8 @@ jobs:
               - 'psalms-en-members/**'
             psalms-es-members:
               - 'psalms-es-members/**'
+            psalms-de-members:
+              - 'psalms-de-members/**'
             word-nl-members:
               - 'word-nl-members/**'
             word-cs-members:
@@ -1088,6 +1091,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/psalms-it-m
             sudo mkdir -p /var/www/skillvault.blog/psalms-en-m
             sudo mkdir -p /var/www/skillvault.blog/psalms-es-m
+            sudo mkdir -p /var/www/skillvault.blog/psalms-de-m
             sudo mkdir -p /var/www/skillvault.blog/word-nl-m
             sudo mkdir -p /var/www/skillvault.blog/word-cs-m
             sudo mkdir -p /var/www/skillvault.blog/word-ja-m
@@ -2822,6 +2826,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "psalms-es-members/*"
           target: "/var/www/skillvault.blog/psalms-es-m"
+          strip_components: 1
+
+      - name: Deploy 'psalms-de-members' to skillvault.blog/psalms-de-m
+        if: steps.filter.outputs.psalms-de-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "psalms-de-members/*"
+          target: "/var/www/skillvault.blog/psalms-de-m"
           strip_components: 1
 
       - name: Deploy 'homerepair-cs-members' to skillvault.blog/homerepair-cs-m
