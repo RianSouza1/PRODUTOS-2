@@ -3,18 +3,16 @@
    ========================================================================= */
 
 :root {
-    /* Navy Blue Dark Theme (Bible Guide) */
-    --bg-main: #0f172a;
-    --bg-card: #1e293b;
+    --bg-main: #09091e;
+    --bg-card: #14143a;
     --text-dark: #f8fafc;
     --text-muted: #cbd5e1;
     --border-light: rgba(255, 255, 255, 0.1);
 
-    /* Cor Principal - Gold / Tan */
-    --primary: #D97706;
-    --primary-hover: #B45309;
-    --primary-light: rgba(217, 119, 6, 0.1);
-    /* Fundo sútil dourado */
+    /* Cor Principal */
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --primary-light: rgba(99, 102, 241, 0.1);
 
     /* Feedback Visual Secundário */
     --secondary: #4ade80;
@@ -28,9 +26,8 @@
     --z-header: 50;
     --z-float: 150;
 
-    /* Tipografia densa base (Inter) */
+    /* Tipografia densa base (Outfit) */
     font-size: 16px;
-    /* Base grande para escalabilidade em REM */
     --font-family: 'Outfit', system-ui, -apple-system, sans-serif;
 }
 
