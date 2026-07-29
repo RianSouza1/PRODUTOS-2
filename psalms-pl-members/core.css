@@ -3,22 +3,22 @@
    ========================================================================= */
 
 :root {
-    /* Godzina z Jezusem Theme Palette (Gold highlights & Deep Night Navy background) */
-    --bg-main: #0A0F1D;
-    --bg-card: #161F30;
-    --text-dark: #F8FAFC;
-    --text-muted: #94A3B8;
-    --border-light: rgba(212, 175, 55, 0.25);
+    /* Godzina z Jezusem Theme Palette (Sky Blue & Light Sand Theme) */
+    --bg-main: #F7F5F0;
+    --bg-card: #FFFFFF;
+    --text-dark: #1E293B;
+    --text-muted: #64748B;
+    --border-light: rgba(29, 78, 216, 0.12);
 
-    /* Cor Principal - Gold / Warm Spiritual Amber */
-    --primary: #D4AF37;
-    --primary-hover: #F59E0B;
-    --primary-light: rgba(212, 175, 55, 0.12);
+    /* Cor Principal - Sky Blue / Royal Blue */
+    --primary: #1D4ED8;
+    --primary-hover: #1E40AF;
+    --primary-light: rgba(29, 78, 216, 0.08);
 
-    /* Secondary Feedback (Royal Purple/Indigo) */
-    --secondary: #4F46E5;
+    /* Secondary Feedback (Soft Gold) */
+    --secondary: #D4AF37;
     --success: #10B981;
-    --success-bg: rgba(16, 185, 129, 0.15);
+    --success-bg: rgba(16, 185, 129, 0.1);
 
     /* Espaçamentos Marginais e Z-Index */
     --safe-padding: 1.5rem;
@@ -66,7 +66,7 @@ body {
 /* Header Superior Fixo Premium Dark */
 .app-header {
     width: 100%;
-    background: rgba(28, 25, 22, 0.95) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
     border-bottom: 1px solid var(--border-light);
     color: var(--text-dark);
     padding: env(safe-area-inset-top) var(--safe-padding) 0;
@@ -150,7 +150,7 @@ body {
     left: 0;
     width: 100%;
     height: calc(env(safe-area-inset-bottom) + var(--nav-height));
-    background: rgba(28, 25, 22, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     /* Light effect */
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -1068,18 +1068,18 @@ body {
    PILATES & WELZIJN — Ocean Cyan & Turquoise Palette (Matches Cover Art)
    ========================================================================= */
 :root {
-    --bg-main: #0F172A;
-    --bg-card: #1E293B;
-    --text-dark: #F8FAFC;
-    --text-muted: #94A3B8;
-    --border-light: rgba(245, 158, 11, 0.2);
-    --primary: #F59E0B;
-    --primary-hover: #D97706;
-    --primary-light: rgba(245, 158, 11, 0.15);
-    --secondary: #D97706;
+    --bg-main: #F7F5F0;
+    --bg-card: #FFFFFF;
+    --text-dark: #1E293B;
+    --text-muted: #64748B;
+    --border-light: rgba(29, 78, 216, 0.12);
+    --primary: #1D4ED8;
+    --primary-hover: #1E40AF;
+    --primary-light: rgba(29, 78, 216, 0.08);
+    --secondary: #D4AF37;
     --success: #10B981;
-    --success-bg: rgba(16, 185, 129, 0.15);
-    --bg-body: #0F172A;
+    --success-bg: rgba(16, 185, 129, 0.10);
+    --bg-body: #F0EDE6;
 }
 
 html, body {
@@ -1097,20 +1097,20 @@ html, body {
 }
 
 .app-header {
-    background: rgba(28, 25, 22, 0.97) !important;
+    background: rgba(255, 255, 255, 0.97) !important;
 }
 
 .app-header::before {
-    background: linear-gradient(90deg, #D97706, #2E5A44, #D97706);
+    background: linear-gradient(90deg, #1D4ED8, #D4AF37, #1D4ED8);
 }
 
 .bottom-tab-bar {
-    background: rgba(28, 25, 22, 0.97);
+    background: rgba(255, 255, 255, 0.97);
 }
 
 .hero-card {
-    background: linear-gradient(135deg, #8B5A2B, #2E5A44);
-    box-shadow: 0 8px 24px rgba(46, 90, 68, 0.2);
+    background: linear-gradient(135deg, #1D4ED8, #D4AF37);
+    box-shadow: 0 8px 24px rgba(29, 78, 216, 0.15);
 }
 
 /* Pre-page Whittling */
@@ -1118,25 +1118,25 @@ html, body {
     color: #F5F5F4;
 }
 .pre-page-bg {
-    background: linear-gradient(135deg, #1C1917 0%, #292524 40%, #8B5A2B 100%);
+    background: linear-gradient(135deg, #F7F5F0 0%, #FFFFFF 60%, #E0E7FF 100%);
 }
 .pre-page-bg::after {
     content: '';
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 25% 25%, rgba(217, 119, 6, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(46, 90, 68, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 25% 25%, rgba(29, 78, 216, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
 }
 .pre-page-features span {
-    background: rgba(46, 90, 68, 0.15);
-    border: 1px solid rgba(46, 90, 68, 0.25);
-    color: #10B981;
+    background: rgba(29, 78, 216, 0.08);
+    border: 1px solid rgba(29, 78, 216, 0.15);
+    color: #1D4ED8;
 }
 .pre-page-content button {
-    background: linear-gradient(135deg, #D97706, #B45309);
+    background: linear-gradient(135deg, #1D4ED8, #1E40AF);
     color: #FFF;
-    box-shadow: 0 4px 20px rgba(217, 119, 6, 0.4);
+    box-shadow: 0 4px 20px rgba(29, 78, 216, 0.3);
 }
 
 /* =========================================================================
