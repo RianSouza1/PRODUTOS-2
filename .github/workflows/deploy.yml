@@ -143,6 +143,13 @@ on:
       - 'psalms-en-members/**'
       - 'psalms-es-members/**'
       - 'psalms-de-members/**'
+      - 'colorir-members/**'
+      - 'caligrafia-members/**'
+      - 'calistenia-members/**'
+      - 'marmita-members/**'
+      - 'historinhas-members/**'
+      - 'taichi-members/**'
+      - 'saladas-members/**'
       - 'word-nl-members/**'
       - 'word-cs-members/**'
       - 'word-ja-members/**'
@@ -849,6 +856,20 @@ jobs:
               - 'psalms-es-members/**'
             psalms-de-members:
               - 'psalms-de-members/**'
+            colorir-members:
+              - 'colorir-members/**'
+            caligrafia-members:
+              - 'caligrafia-members/**'
+            calistenia-members:
+              - 'calistenia-members/**'
+            marmita-members:
+              - 'marmita-members/**'
+            historinhas-members:
+              - 'historinhas-members/**'
+            taichi-members:
+              - 'taichi-members/**'
+            saladas-members:
+              - 'saladas-members/**'
             word-nl-members:
               - 'word-nl-members/**'
             word-cs-members:
@@ -1092,6 +1113,13 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/psalms-en-m
             sudo mkdir -p /var/www/skillvault.blog/psalms-es-m
             sudo mkdir -p /var/www/skillvault.blog/psalms-de-m
+            sudo mkdir -p /var/www/skillvault.blog/colorir-m
+            sudo mkdir -p /var/www/skillvault.blog/caligrafia-m
+            sudo mkdir -p /var/www/skillvault.blog/calistenia-m
+            sudo mkdir -p /var/www/skillvault.blog/marmita-m
+            sudo mkdir -p /var/www/skillvault.blog/historinhas-m
+            sudo mkdir -p /var/www/skillvault.blog/taichi-m
+            sudo mkdir -p /var/www/skillvault.blog/saladas-m
             sudo mkdir -p /var/www/skillvault.blog/word-nl-m
             sudo mkdir -p /var/www/skillvault.blog/word-cs-m
             sudo mkdir -p /var/www/skillvault.blog/word-ja-m
@@ -2837,6 +2865,83 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "psalms-de-members/*"
           target: "/var/www/skillvault.blog/psalms-de-m"
+          strip_components: 1
+
+      - name: Deploy 'colorir-members' to skillvault.blog/colorir-m
+        if: steps.filter.outputs.colorir-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "colorir-members/*"
+          target: "/var/www/skillvault.blog/colorir-m"
+          strip_components: 1
+
+      - name: Deploy 'caligrafia-members' to skillvault.blog/caligrafia-m
+        if: steps.filter.outputs.caligrafia-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "caligrafia-members/*"
+          target: "/var/www/skillvault.blog/caligrafia-m"
+          strip_components: 1
+
+      - name: Deploy 'calistenia-members' to skillvault.blog/calistenia-m
+        if: steps.filter.outputs.calistenia-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calistenia-members/*"
+          target: "/var/www/skillvault.blog/calistenia-m"
+          strip_components: 1
+
+      - name: Deploy 'marmita-members' to skillvault.blog/marmita-m
+        if: steps.filter.outputs.marmita-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "marmita-members/*"
+          target: "/var/www/skillvault.blog/marmita-m"
+          strip_components: 1
+
+      - name: Deploy 'historinhas-members' to skillvault.blog/historinhas-m
+        if: steps.filter.outputs.historinhas-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "historinhas-members/*"
+          target: "/var/www/skillvault.blog/historinhas-m"
+          strip_components: 1
+
+      - name: Deploy 'taichi-members' to skillvault.blog/taichi-m
+        if: steps.filter.outputs.taichi-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "taichi-members/*"
+          target: "/var/www/skillvault.blog/taichi-m"
+          strip_components: 1
+
+      - name: Deploy 'saladas-members' to skillvault.blog/saladas-m
+        if: steps.filter.outputs.saladas-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "saladas-members/*"
+          target: "/var/www/skillvault.blog/saladas-m"
           strip_components: 1
 
       - name: Deploy 'homerepair-cs-members' to skillvault.blog/homerepair-cs-m
