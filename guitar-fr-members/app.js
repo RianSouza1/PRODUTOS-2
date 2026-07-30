@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "メンバー専用エリア";
+      brandTitle.innerText = APP_DATA.config.brandName || "Espace Membres";
     }
   }
 
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Injetar o footer global de Copyright no final de todas as telas
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-          &copy; 2026 ${APP_DATA.config.brandName || "Acoustic Guitar Mastery"}. 無断転載を禁じます。
+         &copy; 2026 ${APP_DATA.config.brandName || "Survival & Bushcraft"}. Tous droits réservés.
        </footer>
     `);
 
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>メンバー専用エリアへようこそ！</h1><p>本日はどの教材にアクセスしますか？</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Bienvenue, cher membre !</h1><p>À quel contenu souhaitez-vous accéder aujourd'hui ?</p></div></div>
           
   
           <div class="home-grid">
@@ -214,8 +214,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="book-open"></i>
               </div>
               <div>
-                 <div class="home-block-title">書籍</div>
-                 <div class="home-block-subtitle">書籍およびPDF教材</div>
+                 <div class="home-block-title">Livres</div>
+                 <div class="home-block-subtitle">Livres & supports PDF</div>
               </div>
             </a>
             
@@ -224,8 +224,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="message-square"></i>
               </div>
               <div>
-                 <div class="home-block-title">お問い合わせ</div>
-                 <div class="home-block-subtitle">ヘルプ＆サポート</div>
+                 <div class="home-block-title">Contact</div>
+                 <div class="home-block-subtitle">Aide & Support</div>
               </div>
             </a>
   
@@ -249,8 +249,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'スペシャル'}</span>
-               <span class="premium-format">PDF • ダウンロード可能ドキュメント</span>
+               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'PREMIUM'}</span>
+               <span class="premium-format">PDF • Document téléchargeable</span>
             </div>
            
            <div class="premium-info">
@@ -261,10 +261,10 @@ document.addEventListener("DOMContentLoaded", () => {
               
                <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: 1.5rem;">
                   <a href="${bk.downloadUrl}" target="_blank" class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: var(--primary); color: #FFF;">
-                     <i data-lucide="book-open"></i> 今すぐ読む
+                     <i data-lucide="book-open"></i> Lire maintenant
                   </a>
                   <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
-                     <i data-lucide="download"></i> PDFをダウンロード
+                     <i data-lucide="download"></i> Télécharger le PDF
                   </a>
                </div>
            </div>
@@ -275,19 +275,19 @@ document.addEventListener("DOMContentLoaded", () => {
     let compactHTML = '';
     if (compactBooks.length > 0) {
       compactHTML = `
-      <h2 class="section-divider-title">追加リソース</h2>
+      <h2 class="section-divider-title">Ressources complémentaires</h2>
       <div class="compact-book-list">
         ${compactBooks.map(bk => `
           <div class="compact-book-card">
-            <div class="compact-book-info">
+            <div style="display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0;">
               <h4 class="compact-book-title">${bk.title}</h4>
-              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'リソース'}</span>
+              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'Ressource'}</span>
             </div>
             <div class="compact-book-actions">
-              <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="今すぐ読む">
+              <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Lire maintenant">
                 <i data-lucide="book-open"></i>
               </a>
-              <a href="${bk.downloadUrl}" download class="compact-action-btn btn-download" title="PDFをダウンロード">
+              <a href="${bk.downloadUrl}" download class="compact-action-btn btn-download" title="Télécharger le PDF">
                 <i data-lucide="download"></i>
               </a>
             </div>
@@ -299,14 +299,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>あなたの教材</h1><p>以下のコレクションをクリックして、書籍を閲覧・ダウンロードしてください。</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Vos supports</h1><p>Cliquez sur les collections ci-dessous pour voir et télécharger vos livres.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/guitar_IMG1_jp.png" alt="Acoustic Guitar Mastery パック" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/sur_IMG1_fr.png" alt="Pack Survival & Bushcraft" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
 
           <div class="list-container">
-            ${featuredHTML || '<p>現在登録されている教材はありません。</p>'}
+            ${featuredHTML || '<p>Aucun support enregistré pour le moment.</p>'}
             ${compactHTML}
           </div>
         </div>
@@ -326,8 +326,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'スペシャル'}</span>
-               <span class="premium-format">オンラインアクセス</span>
+               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'PREMIUM'}</span>
+               <span class="premium-format">Accès en ligne</span>
             </div>
            
            <div class="premium-cover-container">
@@ -341,7 +341,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ${featuresHTML}
               
               <a href="${prod.linkUrl}" target="_blank" class="premium-btn">
-                 <i data-lucide="external-link"></i> ${prod.buttonText || '詳細を見る'}
+                 <i data-lucide="external-link"></i> ${prod.buttonText || 'En savoir plus'}
               </a>
            </div>
          </div>
@@ -350,11 +350,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>他のプログラム</h1><p>その他のプログラムや教材をご覧ください。</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Autres programmes</h1><p>Découvrez d'autres programmes et supports.</p></div></div>
           
           
           <div class="list-container">
-            ${prodsHTML || '<p>新しいアップデートを近日公開予定！</p>'}
+            ${prodsHTML || '<p>Plus de mises à jour très bientôt !</p>'}
           </div>
         </div>
       `;
@@ -366,7 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>メンバーサポート</h1><p>ご満足いただけるサポートを提供いたします。</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Support client</h1><p>Votre satisfaction est notre priorité.</p></div></div>
           
   
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
@@ -374,9 +374,9 @@ document.addEventListener("DOMContentLoaded", () => {
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
              </div>
              
-             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">メッセージを送信する</h3>
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Envoyer un message</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                以下のメールアドレスをコピーして、ご質問をお送りください。サポートチームができる限り迅速に返信いたします。
+                 Copiez l'adresse e-mail ci-dessous et envoyez-nous votre question. Notre équipe de support vous répondra dans les plus brefs délais.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
@@ -398,11 +398,11 @@ document.addEventListener("DOMContentLoaded", () => {
     rootEl.innerHTML = `
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-         <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>あなたのコース</h1><p>専用のビデオレッスンで、Wordをステップバイステップでマスターしましょう。</p></div></div>
+        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Vos formations</h1><p>Développez vos compétences en survie et en bushcraft étape par étape.</p></div></div>
         
-        <div style="background-color: rgba(37, 99, 235, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
-           <i data-lucide="clock" style="width: 20px; height: 20px; flex-shrink: 0; color: var(--primary);"></i>
-           <span>新しいレッスンがまもなく公開されます</span>
+        <div style="background-color: rgba(16, 185, 129, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
+           <i data-lucide="clock" style="width: 20px; height: 20px; flex-shrink: 0; color: #10B981;"></i>
+           <span>Nouveaux cours très bientôt</span>
         </div>
 
         <div id="video-playlist-items">
@@ -462,7 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit;">
               <div style="display:flex; flex-direction:column; justify-content:center; flex:1">
                  <h4 style="margin:0 0 4px; font-size:1.1rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}">${vid.title}</h4>
-                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Volledige cursus'}</p>
+                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Cours complet'}</p>
               </div>
               ${isPlaying
           ? '<i data-lucide="chevron-down" style="color:var(--primary); align-self:center;"></i>'
