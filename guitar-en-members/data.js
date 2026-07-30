@@ -1,5 +1,5 @@
 /**
- * Acoustic Guitar Mastery — Members Area (English)
+ * Acoustic Guitar Mastery — Members Area (English) v3
  */
 
 const APP_DATA = {

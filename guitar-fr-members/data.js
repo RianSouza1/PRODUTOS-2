@@ -1,5 +1,5 @@
 /**
- * Maîtrise de la Guitare Acoustique — Espace Membres (Français)
+ * Maîtrise de la Guitare Acoustique — Espace Membres (Français) v3
  */
 
 const APP_DATA = {
