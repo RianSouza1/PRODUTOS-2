@@ -302,7 +302,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="hero-card glass-panel"><div class="hero-text"><h1>Vos supports</h1><p>Cliquez sur les collections ci-dessous pour voir et télécharger vos livres.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/sur_IMG1_fr.png" alt="Pack Survival & Bushcraft" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/guitar_IMG1_fr.png" alt="Maîtrise de la Guitare Acoustique" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
 
           <div class="list-container">
