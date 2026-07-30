@@ -4,10 +4,10 @@
 
 const APP_DATA = {
     config: {
-        brandName: "Acoustic Guitar Mastery",
+        brandName: "アコースティックギター・マスタリー",
         contactEmail: "trinityag01@gmail.com",
         emailSubject: "アクセスに関するお問い合わせ (Acoustic Guitar Mastery)",
-        emailBodyTemplate: "サポートチームの皆様へ。Acoustic Guitar Masteryのメンバー専用エリアへのアクセスに関してサポートをお願いいたします。\n\nお名前: ______。",
+        emailBodyTemplate: "サポートチームの皆様へ。アコースティックギター・マスタリーのメンバー専用エリアへのアクセスに関してサポートをお願いいたします。\n\nお名前: ______。",
         showFloatingHelp: true
     },
 

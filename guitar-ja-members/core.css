@@ -1108,38 +1108,38 @@ html, body {
 }
 
 .bottom-tab-bar {
-    background: rgba(11, 30, 54, 0.97);
+    background: rgba(22, 19, 17, 0.97);
 }
 
 .hero-card {
-    background: linear-gradient(135deg, #2563EB, #1D4ED8);
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+    background: linear-gradient(135deg, #F57C00, #E65100);
+    box-shadow: 0 8px 24px rgba(245, 124, 0, 0.35);
 }
 
-/* Pre-page Word */
+/* Pre-page Guitar */
 .pre-page-overlay {
-    color: #F0F7FF;
+    color: #FFF3E0;
 }
 .pre-page-bg {
-    background: linear-gradient(135deg, #0B1E36 0%, #112A4A 40%, #173B6C 100%);
+    background: linear-gradient(135deg, #120F0D 0%, #1E1916 40%, #2A211D 100%);
 }
 .pre-page-bg::after {
     content: '';
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 25% 25%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(29, 78, 216, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 25% 25%, rgba(245, 124, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(230, 81, 0, 0.1) 0%, transparent 50%);
 }
 .pre-page-features span {
-    background: rgba(37, 99, 235, 0.15);
-    border: 1px solid rgba(37, 99, 235, 0.25);
-    color: #93C5FD;
+    background: rgba(245, 124, 0, 0.15);
+    border: 1px solid rgba(245, 124, 0, 0.25);
+    color: #FFB74D;
 }
 .pre-page-content button {
-    background: linear-gradient(135deg, #3B82F6, #93C5FD);
-    color: #0B1E36;
-    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+    background: linear-gradient(135deg, #FF9800, #FFB74D);
+    color: #120F0D;
+    box-shadow: 0 4px 20px rgba(245, 124, 0, 0.4);
 }
 
 /* =========================================================================
