@@ -155,6 +155,7 @@ on:
       - 'word-ja-members/**'
       - 'guitar-ja-members/**'
       - 'guitar-en-members/**'
+      - 'guitar-fr-members/**'
       - 'word-hu-members/**'
       - 'word-he-members/**'
       - 'word-el-members/**'
@@ -882,6 +883,8 @@ jobs:
               - 'guitar-ja-members/**'
             guitar-en-members:
               - 'guitar-en-members/**'
+            guitar-fr-members:
+              - 'guitar-fr-members/**'
             word-hu-members:
               - 'word-hu-members/**'
             word-he-members:
@@ -3092,6 +3095,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "guitar-en-members/*"
           target: "/var/www/skillvault.blog/guitar-en-m"
+          strip_components: 1
+
+      - name: Deploy 'guitar-fr-members' to skillvault.blog/guitar-fr-m
+        if: steps.filter.outputs.guitar-fr-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "guitar-fr-members/*"
+          target: "/var/www/skillvault.blog/guitar-fr-m"
           strip_components: 1
 
       - name: Deploy 'word-hu-members' to skillvault.blog/word-hu-m
