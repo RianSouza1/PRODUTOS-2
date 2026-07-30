@@ -1133,6 +1133,8 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/word-cs-m
             sudo mkdir -p /var/www/skillvault.blog/word-ja-m
             sudo mkdir -p /var/www/skillvault.blog/guitar-ja-m
+            sudo mkdir -p /var/www/skillvault.blog/guitar-en-m
+            sudo mkdir -p /var/www/skillvault.blog/guitar-fr-m
             sudo mkdir -p /var/www/skillvault.blog/word-hu-m
             sudo mkdir -p /var/www/skillvault.blog/word-he-m
             sudo mkdir -p /var/www/skillvault.blog/word-el-m
