@@ -3,16 +3,16 @@
    ========================================================================= */
 
 :root {
-    --bg-main: #18040b;
-    --bg-card: #2d0915;
+    --bg-main: #0c120a;
+    --bg-card: #162013;
     --text-dark: #f8fafc;
     --text-muted: #cbd5e1;
     --border-light: rgba(255, 255, 255, 0.1);
 
-    /* Cor Principal */
-    --primary: #f43f5e;
-    --primary-hover: #e11d48;
-    --primary-light: rgba(244, 63, 94, 0.1);
+    /* Cor Principal - Verde Tático/Oliva da Capa */
+    --primary: #769b3f;
+    --primary-hover: #5e7d30;
+    --primary-light: rgba(118, 155, 63, 0.15);
 
     /* Feedback Visual Secundário */
     --secondary: #4ade80;
