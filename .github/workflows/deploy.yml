@@ -147,6 +147,7 @@ on:
       - 'caligrafia-members/**'
       - 'calistenia-members/**'
       - 'calistenia-sv-members/**'
+      - 'calistenia-nl-members/**'
       - 'marmita-members/**'
       - 'historinhas-members/**'
       - 'taichi-members/**'
@@ -870,6 +871,8 @@ jobs:
               - 'calistenia-members/**'
             calistenia-sv-members:
               - 'calistenia-sv-members/**'
+            calistenia-nl-members:
+              - 'calistenia-nl-members/**'
             marmita-members:
               - 'marmita-members/**'
             historinhas-members:
@@ -1135,6 +1138,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/caligrafia-m
             sudo mkdir -p /var/www/skillvault.blog/calistenia-m
             sudo mkdir -p /var/www/skillvault.blog/calistenia-sv-m
+            sudo mkdir -p /var/www/skillvault.blog/calistenia-nl-m
             sudo mkdir -p /var/www/skillvault.blog/marmita-m
             sudo mkdir -p /var/www/skillvault.blog/historinhas-m
             sudo mkdir -p /var/www/skillvault.blog/taichi-m
@@ -2933,6 +2937,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "calistenia-sv-members/*"
           target: "/var/www/skillvault.blog/calistenia-sv-m"
+          strip_components: 1
+
+      - name: Deploy 'calistenia-nl-members' to skillvault.blog/calistenia-nl-m
+        if: steps.filter.outputs.calistenia-nl-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calistenia-nl-members/*"
+          target: "/var/www/skillvault.blog/calistenia-nl-m"
           strip_components: 1
 
       - name: Deploy 'marmita-members' to skillvault.blog/marmita-m
