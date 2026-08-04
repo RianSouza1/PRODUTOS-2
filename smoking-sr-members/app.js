@@ -374,7 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
              </div>
              
-             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Pošalji poruku</h3>
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Pošaljite poruku</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
                  Kopirajte e-mail adresu ispod i pošaljite nam svoje pitanje. Naš tim za podršku će odgovoriti u najkraćem mogućem roku.
              </p>
