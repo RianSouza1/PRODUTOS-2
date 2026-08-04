@@ -121,6 +121,7 @@ on:
       - 'smoking-da-members/**'
       - 'smoking-es-members/**'
       - 'smoking-fr-members/**'
+      - 'smoking-members/**'
       - 'homerepair-en-members/**'
       - 'homerepair-de-members/**'
       - 'homerepair-it-members/**'
@@ -824,6 +825,8 @@ jobs:
               - 'smoking-es-members/**'
             smoking-fr-members:
               - 'smoking-fr-members/**'
+            smoking-members:
+              - 'smoking-members/**'
             homerepair-en-members:
               - 'homerepair-en-members/**'
             homerepair-de-members:
@@ -1127,6 +1130,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/smoking-da-m
             sudo mkdir -p /var/www/skillvault.blog/smoking-es-m
             sudo mkdir -p /var/www/skillvault.blog/smoking-fr-m
+            sudo mkdir -p /var/www/skillvault.blog/smoking-m
             sudo mkdir -p /var/www/skillvault.blog/homerepair-en-m
             sudo mkdir -p /var/www/skillvault.blog/homerepair-de-m
             sudo mkdir -p /var/www/skillvault.blog/homerepair-it-m
@@ -2759,6 +2763,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "smoking-fr-members/*"
           target: "/var/www/skillvault.blog/smoking-fr-m"
+          strip_components: 1
+
+      - name: Deploy 'smoking-members' to skillvault.blog/smoking-m
+        if: steps.filter.outputs.smoking-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "smoking-members/*"
+          target: "/var/www/skillvault.blog/smoking-m"
           strip_components: 1
 
       - name: Deploy 'homerepair-en-members' to skillvault.blog/homerepair-en-m
