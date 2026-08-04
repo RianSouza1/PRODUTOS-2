@@ -11,10 +11,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="core.css?v=3">
+    <link rel="stylesheet" href="core.css?v=12">
 </head>
 
 <body>
+
+    <!-- ============ PRE-PAGE WELCOME SCREEN ============ -->
+    <div id="pre-page" class="pre-page-overlay">
+        <div class="pre-page-bg"></div>
+        <div class="pre-page-content">
+            <div class="pre-page-icon">🍖</div>
+            <h1>Räuchern & BBQ</h1>
+            <p>Ihr Premium-Zugang wurde bestätigt.<br>Beginnen Sie noch heute, die Kunst des Räucherns zu Hause zu meistern.</p>
+            <div class="pre-page-features">
+                <span>📖 Bücher</span>
+                <span>💬 Support</span>
+            </div>
+            <button onclick="let el=document.getElementById('pre-page'); el.style.opacity='0'; setTimeout(()=>el.style.display='none',600);">
+                Zu den Materialien →
+            </button>
+        </div>
+    </div>
 
     <div id="floating-help-container"></div>
 
@@ -44,8 +61,8 @@
         </nav>
     </div>
 
-    <script src="data.js?v=3"></script>
-    <script src="app.js?v=3"></script>
+    <script src="data.js?v=12"></script>
+    <script src="app.js?v=12"></script>
 
 </body>
 
