@@ -27,84 +27,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const floatingHelp = document.getElementById("floating-help-container");
   const tabItems = document.querySelectorAll(".tab-item");
 
-  // Variável para armazenar qual ID de vídeo foi escolhido para tocar
-  let currentVideoId = APP_DATA.videos.length > 0 ? APP_DATA.videos[0].id : null;
-
   // ----------------------------------------------------------------------
   // 1. INICIALIZAÇÃO DA BASE (Header e Global Settings)
   // ----------------------------------------------------------------------
   initGlobalConfig();
   handleRouting();
 
-  // Ouvinte para trocar a rota cada vez que o hash (url/#tela) mudar.
   window.addEventListener("hashchange", handleRouting);
 
-  // Re-renderizar ícones Lucide sempre que novas views surgirem
   function renderIcons() {
     if (window.lucide) {
       lucide.createIcons();
     }
   }
-
-  // Inject YouTube Iframe API globally
-  if (!document.getElementById("yt-api-script")) {
-    const tag = document.createElement('script');
-    tag.id = "yt-api-script";
-    tag.src = "https://www.youtube.com/iframe_api";
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  }
-  window.activeYtPlayer = null; // Guardar a instância ativa do player
-
-  // Fullscreen CSS injections
-  if (!document.getElementById("fullscreen-css")) {
-      const style = document.createElement('style');
-      style.id = "fullscreen-css";
-      style.textContent = `
-          .video-wrapper-container:fullscreen {
-              background: #000 !important;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-          }
-          .video-wrapper-container:fullscreen > div[id^="yt-player-"] {
-              height: calc(100vh - 68px) !important;
-              flex-grow: 1;
-          }
-          .video-wrapper-container:-webkit-full-screen {
-              background: #000 !important;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-          }
-          .video-wrapper-container:-webkit-full-screen > div[id^="yt-player-"] {
-              height: calc(100vh - 68px) !important;
-              flex-grow: 1;
-          }
-      `;
-      document.head.appendChild(style);
-  }
-
-  window.toggleCustomFullscreen = function(elementId) {
-      const container = document.getElementById(elementId);
-      if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-          if (container.requestFullscreen) {
-              container.requestFullscreen();
-          } else if (container.webkitRequestFullscreen) {
-              container.webkitRequestFullscreen();
-          } else if (container.msRequestFullscreen) {
-              container.msRequestFullscreen();
-          }
-      } else {
-          if (document.exitFullscreen) {
-              document.exitFullscreen();
-          } else if (document.webkitExitFullscreen) {
-              document.webkitExitFullscreen();
-          } else if (document.msExitFullscreen) {
-              document.msExitFullscreen();
-          }
-      }
-  };
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
@@ -112,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Cria a string `mailto:` dinamicamente com base no contato do data.js
   function mountMailTo() {
     const { contactEmail, emailSubject, emailBodyTemplate } = APP_DATA.config;
     return `mailto:${contactEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBodyTemplate)}`;
@@ -230,6 +164,13 @@ document.addEventListener("DOMContentLoaded", () => {
              </ul>`
         : '';
 
+      // Só exibe capa individual no card se for uma imagem de capa individual e não a imagem do combo/bundle geral
+      const hasDistinctCover = bk.coverImage && !bk.coverImage.includes('smo_IMG1') && !bk.coverImage.includes('SMK_IMG1');
+      const coverHTML = hasDistinctCover ? `
+           <div class="premium-cover-container">
+              <img src="${bk.coverImage}" alt="${bk.title}" loading="lazy" class="premium-cover">
+           </div>` : '';
+
       return `
       <div class="premium-book-card">
            <div class="premium-badge-wrapper">
@@ -237,9 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <span class="premium-format">PDF • Documento Baixável</span>
            </div>
            
-           <div class="premium-cover-container">
-              <img src="${bk.coverImage}" alt="${bk.title}" loading="lazy" class="premium-cover">
-           </div>
+           ${coverHTML}
            
            <div class="premium-info">
               <h3 class="premium-title">${bk.title}</h3>
