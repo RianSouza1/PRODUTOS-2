@@ -179,6 +179,7 @@ on:
       - 'word-members/**'
       - 'word-ro-members/**'
       - 'word-sv-members/**'
+      - 'word-da-members/**'
       - 'guitar-ja-members/**'
       - 'guitar-en-members/**'
       - 'guitar-fr-members/**'
@@ -959,6 +960,8 @@ jobs:
               - 'word-ro-members/**'
             word-sv-members:
               - 'word-sv-members/**'
+            word-da-members:
+              - 'word-da-members/**'
             guitar-ja-members:
               - 'guitar-ja-members/**'
             guitar-en-members:
@@ -1242,6 +1245,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/word-m
             sudo mkdir -p /var/www/skillvault.blog/word-ro-m
             sudo mkdir -p /var/www/skillvault.blog/word-sv-m
+            sudo mkdir -p /var/www/skillvault.blog/word-da-m
             sudo mkdir -p /var/www/skillvault.blog/guitar-ja-m
             sudo mkdir -p /var/www/skillvault.blog/guitar-en-m
             sudo mkdir -p /var/www/skillvault.blog/guitar-fr-m
@@ -3473,6 +3477,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "word-sv-members/*"
           target: "/var/www/skillvault.blog/word-sv-m"
+          strip_components: 1
+
+      - name: Deploy 'word-da-members' to skillvault.blog/word-da-m
+        if: steps.filter.outputs.word-da-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "word-da-members/*"
+          target: "/var/www/skillvault.blog/word-da-m"
           strip_components: 1
 
       - name: Deploy 'guitar-ja-members' to skillvault.blog/guitar-ja-m
