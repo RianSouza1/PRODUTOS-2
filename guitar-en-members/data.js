@@ -14,33 +14,33 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Guitar Chord Chart — 10-min Workout for Beginners (Audio Only)",
-            duration: "Visual • Chord diagrams with audio",
-            youtubeId: "lUXHEQyszy0"
+            title: "How to Play the G Chord on Guitar",
+            duration: "NBN Guitar • Hands on fretboard + chord diagram",
+            youtubeId: "ES428uOSZ68"
         },
         {
             id: "v2",
-            title: "How to Read a Guitar Chord Diagram (Visual Guide)",
-            duration: "Visual • No talking — diagram only",
-            youtubeId: "SoVGWkC8Pr4"
+            title: "How to Play the C Chord on Guitar",
+            duration: "NBN Guitar • Hands on fretboard + chord diagram",
+            youtubeId: "-lLcxTp9dAg"
         },
         {
             id: "v3",
-            title: "Beginner Guitar — How to Read a Chord Diagram",
-            duration: "Visual • Hands on fretboard",
-            youtubeId: "vBCM13d3C-w"
+            title: "How to Play the D Chord on Guitar",
+            duration: "NBN Guitar • Hands on fretboard + chord diagram",
+            youtubeId: "1DPd5zkh1r0"
         },
         {
             id: "v4",
-            title: "All Basic Guitar Chords — Major, Minor & 7th (Practice)",
-            duration: "Visual • Chord shapes with audio",
-            youtubeId: "AzDsFoO1Bfc"
+            title: "How to Play the A Chord on Guitar",
+            duration: "NBN Guitar • Hands on fretboard + chord diagram",
+            youtubeId: "bpvLZpcIwZk"
         },
         {
             id: "v5",
-            title: "How to Play the A Chord — Easiest Beginner Lesson",
-            duration: "Visual • Step-by-step, hands on guitar",
-            youtubeId: "bpvLZpcIwZk"
+            title: "How to Play the Em Chord on Guitar",
+            duration: "NBN Guitar • Hands on fretboard + chord diagram",
+            youtubeId: "_aOFJ0WuwQE"
         }
     ],
 
