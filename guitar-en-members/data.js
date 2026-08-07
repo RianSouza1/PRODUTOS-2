@@ -14,33 +14,33 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Basic Guitar Chords for Beginners (No Talking)",
-            duration: "11 min • Visual only",
-            youtubeId: "z4EoTSr3ILI"
+            title: "First 7 Chords To Learn on Guitar",
+            duration: "Beginner • Essential Chords",
+            youtubeId: "R_qmvyUDvEc"
         },
         {
             id: "v2",
-            title: "G, C, D & Em — The 4 Essential Chords (No Talking)",
-            duration: "8 min • No voice, guitar only",
-            youtubeId: "RWwHxjHGaS0"
+            title: "The 4 Easiest Beginner Guitar Chords To Play Real Songs",
+            duration: "Beginner • G, C, D, Em",
+            youtubeId: "WGIcfDCWysQ"
         },
         {
             id: "v3",
-            title: "Beginner Chord Transitions — Slow Practice (No Talking)",
-            duration: "14 min • Play-along, guitar sound only",
-            youtubeId: "p5O0oBOaYQU"
+            title: "The 3 Easiest Chords for Total Beginners",
+            duration: "Beginner • Quick Start",
+            youtubeId: "3LUYd5vMAEo"
         },
         {
             id: "v4",
-            title: "Am, Em, G, C Chord Practice Loop (No Talking)",
-            duration: "10 min • Chord loop, no voice",
-            youtubeId: "jZEfFlM_9aY"
+            title: "2 Easy Guitar Chords That Unlock 1,000 Songs",
+            duration: "Beginner • Chord Fundamentals",
+            youtubeId: "n-DYeX5Eg_w"
         },
         {
             id: "v5",
-            title: "Fingerpicking Patterns for Beginners (No Talking)",
-            duration: "12 min • Fingerstyle, no voice",
-            youtubeId: "5qap5aO4i9A"
+            title: "10 Easy Songs with 3 Easy Chords — G, C & D",
+            duration: "Beginner • Practice Songs",
+            youtubeId: "zi6CRi0SXLM"
         }
     ],
 
