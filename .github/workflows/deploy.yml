@@ -3204,6 +3204,8 @@ jobs:
           source: "whittling-ja-members/*"
           target: "/var/www/skillvault.blog/whittling-ja-m"
           strip_components: 1
+          timeout: 300s
+          command_timeout: 10m
 
       - name: Deploy 'whittling-fi-members' to skillvault.blog/whittling-fi-m
         if: steps.filter.outputs.whittling-fi-members == 'true'
