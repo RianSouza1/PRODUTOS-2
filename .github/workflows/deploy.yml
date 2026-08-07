@@ -152,6 +152,7 @@ on:
       - 'whittling-de-members/**'
       - 'whittling-en-members/**'
       - 'whittling-fr-members/**'
+      - 'whittling-es-members/**'
       - 'psalms-pl-members/**'
       - 'psalms-ro-members/**'
       - 'psalms-it-members/**'
@@ -912,6 +913,8 @@ jobs:
               - 'whittling-en-members/**'
             whittling-fr-members:
               - 'whittling-fr-members/**'
+            whittling-es-members:
+              - 'whittling-es-members/**'
             psalms-pl-members:
               - 'psalms-pl-members/**'
             psalms-ro-members:
@@ -1236,6 +1239,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/whittling-de-m
             sudo mkdir -p /var/www/skillvault.blog/whittling-en-m
             sudo mkdir -p /var/www/skillvault.blog/whittling-fr-m
+            sudo mkdir -p /var/www/skillvault.blog/whittling-es-m
             sudo mkdir -p /var/www/skillvault.blog/psalms-pl-m
             sudo mkdir -p /var/www/skillvault.blog/psalms-ro-m
             sudo mkdir -p /var/www/skillvault.blog/psalms-it-m
@@ -3116,6 +3120,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "whittling-fr-members/*"
           target: "/var/www/skillvault.blog/whittling-fr-m"
+          strip_components: 1
+
+      - name: Deploy 'whittling-es-members' to skillvault.blog/whittling-es-m
+        if: steps.filter.outputs.whittling-es-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "whittling-es-members/*"
+          target: "/var/www/skillvault.blog/whittling-es-m"
           strip_components: 1
 
       - name: Deploy 'psalms-pl-members' to skillvault.blog/psalms-pl-m
