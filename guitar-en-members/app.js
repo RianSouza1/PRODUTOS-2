@@ -540,17 +540,17 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="play-item-body" style="padding: 0 16px 16px 16px; animation: slideDown 0.3s ease;">
                  ${vid.youtubeId ? `
                  <div id="video-container-${vid.id}" class="video-wrapper-container" style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); width: 100%; aspect-ratio: 16 / 9;">
-                    <div id="yt-player-${vid.id}" style="width: 100%; height: 150%; position: absolute; top: -15%; left: 0;"></div>
+                    <div id="yt-player-${vid.id}" style="width: 115%; height: 115%; position: absolute; top: -7%; left: -7.5%;"></div>
                     <!-- Click overlay (middle area, avoids top and bottom bars) -->
-                    <div class="video-click-overlay" onclick="window.toggleActiveYtPlay()" style="position: absolute; top: 62px; left: 0; width: 100%; height: calc(100% - 122px); cursor: pointer; z-index: 5;"></div>
+                    <div class="video-click-overlay" onclick="window.toggleActiveYtPlay()" style="position: absolute; top: 48px; left: 0; width: 100%; height: calc(100% - 86px); cursor: pointer; z-index: 5;"></div>
                     <!-- Top black bar: hides channel icon + title + channel name -->
-                    <div style="position:absolute;top:0;left:0;width:100%;height:62px;background:#000;z-index:6;pointer-events:none;"></div>
+                    <div style="position:absolute;top:0;left:0;width:100%;height:48px;background:#000;z-index:6;pointer-events:none;"></div>
                     <!-- Bottom black bar: hides YouTube logo + any branding row -->
-                    <div style="position:absolute;bottom:0;left:0;width:100%;height:60px;background:#000;z-index:6;pointer-events:none;"></div>
+                    <div style="position:absolute;bottom:0;left:0;width:100%;height:38px;background:#000;z-index:6;pointer-events:none;"></div>
                     <!-- Bottom-right corner patch: hides channel name watermark badge -->
-                    <div style="position:absolute;bottom:60px;right:0;width:160px;height:40px;background:#000;z-index:6;pointer-events:none;"></div>
-                    <!-- Bottom-left corner patch: hides any remaining badge -->
-                    <div style="position:absolute;bottom:60px;left:0;width:160px;height:40px;background:#000;z-index:6;pointer-events:none;"></div>
+                    <div style="position:absolute;bottom:38px;right:0;width:160px;height:36px;background:#000;z-index:6;pointer-events:none;"></div>
+                    <!-- Bottom-left corner patch -->
+                    <div style="position:absolute;bottom:38px;left:0;width:160px;height:36px;background:#000;z-index:6;pointer-events:none;"></div>
                  </div>
                  <!-- ACTION BAR -->
                  <div style="background:var(--bg-card); border:1px solid var(--border-light); border-radius:0 0 12px 12px; padding: 10px 14px; display:flex; flex-direction:column; gap:10px;">

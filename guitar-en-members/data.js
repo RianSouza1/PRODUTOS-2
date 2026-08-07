@@ -15,31 +15,31 @@ const APP_DATA = {
         {
             id: "v1",
             title: "How to Play the G Chord on Guitar",
-            duration: "NBN Guitar • Hands on fretboard + chord diagram",
+            duration: "Beginner • Hands on fretboard + chord diagram",
             youtubeId: "ES428uOSZ68"
         },
         {
             id: "v2",
             title: "How to Play the C Chord on Guitar",
-            duration: "NBN Guitar • Hands on fretboard + chord diagram",
+            duration: "Beginner • Hands on fretboard + chord diagram",
             youtubeId: "-lLcxTp9dAg"
         },
         {
             id: "v3",
             title: "How to Play the D Chord on Guitar",
-            duration: "NBN Guitar • Hands on fretboard + chord diagram",
+            duration: "Beginner • Hands on fretboard + chord diagram",
             youtubeId: "1DPd5zkh1r0"
         },
         {
             id: "v4",
             title: "How to Play the A Chord on Guitar",
-            duration: "NBN Guitar • Hands on fretboard + chord diagram",
+            duration: "Beginner • Hands on fretboard + chord diagram",
             youtubeId: "bpvLZpcIwZk"
         },
         {
             id: "v5",
             title: "How to Play the Em Chord on Guitar",
-            duration: "NBN Guitar • Hands on fretboard + chord diagram",
+            duration: "Beginner • Hands on fretboard + chord diagram",
             youtubeId: "_aOFJ0WuwQE"
         }
     ],
