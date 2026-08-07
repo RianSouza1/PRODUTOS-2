@@ -18,6 +18,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  window.restartYtVideo = function() {
+    if (window.activeYtPlayer && typeof window.activeYtPlayer.seekTo === 'function') {
+      window.activeYtPlayer.seekTo(0, true);
+      window.activeYtPlayer.playVideo();
+    }
+  };
+
+  window.setYtSpeed = function(rate) {
+    if (window.activeYtPlayer && typeof window.activeYtPlayer.setPlaybackRate === 'function') {
+      window.activeYtPlayer.setPlaybackRate(rate);
+      // Update active speed button
+      document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('speed-active'));
+      const active = document.querySelector(`.speed-btn[data-rate="${rate}"]`);
+      if (active) active.classList.add('speed-active');
+    }
+  };
+
+  window.toggleWatched = function(videoId) {
+    const key = `watched_${videoId}`;
+    const isWatched = localStorage.getItem(key) === '1';
+    if (isWatched) {
+      localStorage.removeItem(key);
+    } else {
+      localStorage.setItem(key, '1');
+    }
+    const nowWatched = !isWatched;
+    // Update action button
+    const btn = document.getElementById(`watched-btn-${videoId}`);
+    if (btn) {
+      btn.style.borderColor = nowWatched ? 'var(--primary)' : 'var(--border-light)';
+      btn.style.background = nowWatched ? 'var(--primary-light)' : 'transparent';
+      btn.style.color = nowWatched ? 'var(--primary)' : 'var(--text-muted)';
+      btn.innerHTML = nowWatched
+        ? '<i data-lucide="check-circle" style="width:18px;height:18px;"></i> <span>Watched</span>'
+        : '<i data-lucide="circle" style="width:18px;height:18px;"></i> <span>Mark as Watched</span>';
+      if (window.lucide) lucide.createIcons();
+    }
+    // Update header badge
+    const badge = document.getElementById(`watched-badge-${videoId}`);
+    if (badge) badge.style.display = nowWatched ? 'inline-flex' : 'none';
+  };
+
   // ----------------------------------------------------------------------
   // 0. REFERÊNCIAS DO DOM ENCAPSULADAS
   // ----------------------------------------------------------------------
@@ -469,14 +511,18 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="card-bloco play-item glass-panel ${isPlaying ? 'active-play' : ''}" style="margin-bottom:16px; display:flex; flex-direction:column; padding:0; overflow:hidden;" data-video-id="${vid.id}">
             
             <!-- Cabeçalho Clicável -->
-            <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit;">
-              <div style="display:flex; flex-direction:column; justify-content:center; flex:1">
-                 <h4 style="margin:0 0 4px; font-size:1.1rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}">${vid.title}</h4>
-                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Full course'}</p>
+            <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit; align-items:center; gap:12px;">
+              ${!isPlaying ? `<div style="width:36px;height:36px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i data-lucide="play-circle" style="width:18px;height:18px;color:var(--primary);"></i></div>` : ''}
+              <div style="display:flex; flex-direction:column; justify-content:center; flex:1; min-width:0;">
+                 <h4 style="margin:0 0 4px; font-size:1.05rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${vid.title}</h4>
+                 <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                   <p style="margin:0; font-size:0.82rem; color:var(--text-muted);">${vid.duration || 'Full lesson'}</p>
+                   ${`<span id="watched-badge-${vid.id}" style="display:${typeof localStorage !== 'undefined' && localStorage.getItem('watched_'+vid.id)==='1'?'inline-flex':'none'}; align-items:center; gap:3px; font-size:0.72rem; font-weight:700; color:var(--primary); background:var(--primary-light); padding:2px 8px; border-radius:20px;"><i data-lucide="check" style="width:10px;height:10px;"></i> Watched</span>`}
+                 </div>
               </div>
               ${isPlaying
-          ? '<i data-lucide="chevron-down" style="color:var(--primary); align-self:center;"></i>'
-          : '<i data-lucide="play-circle" style="opacity:0.5; align-self:center;"></i>'}
+          ? '<i data-lucide="chevron-down" style="color:var(--primary); align-self:center; flex-shrink:0;"></i>'
+          : '<i data-lucide="chevron-right" style="opacity:0.35; align-self:center; flex-shrink:0;"></i>'}
             </a>
             
             <!-- Corpo do Vídeo (Só aparece se estiver ativo) -->
@@ -484,12 +530,41 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="play-item-body" style="padding: 0 16px 16px 16px; animation: slideDown 0.3s ease;">
                  ${vid.youtubeId ? `
                  <div id="video-container-${vid.id}" class="video-wrapper-container" style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); width: 100%; aspect-ratio: 16 / 9;">
-                    <div id="yt-player-${vid.id}" style="width: 100%; height: 100%;"></div>
-                    <div class="video-click-overlay" onclick="window.toggleActiveYtPlay()" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; z-index: 5;"></div>
+                    <div id="yt-player-${vid.id}" style="width: 100%; height: 110%;"></div>
+                    <div class="video-click-overlay" onclick="window.toggleActiveYtPlay()" style="position: absolute; top: 0; left: 0; width: 100%; height: calc(100% - 44px); cursor: pointer; z-index: 5;"></div>
+                    <div style="position:absolute;bottom:0;left:0;width:100%;height:44px;background:#000;z-index:6;pointer-events:none;"></div>
                  </div>
-                 <div style="display: flex; justify-content: center; gap: 20px; padding: 12px; background: var(--bg-body); border-top: 1px solid var(--border-light);">
-                     <button class="play-pause-btn" onclick="window.toggleActiveYtPlay()" style="background:var(--primary); color:white; border:none; border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"><i data-lucide="pause" style="width: 20px; height: 20px;"></i></button>
-                     <button onclick="window.toggleCustomFullscreen('video-container-${vid.id}')" style="background:var(--bg-body); color:var(--text-dark); border: 1px solid var(--border-light); border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer;"><i data-lucide="maximize" style="width: 20px; height: 20px;"></i></button>
+                 <!-- ACTION BAR -->
+                 <div style="background:var(--bg-card); border:1px solid var(--border-light); border-radius:0 0 12px 12px; padding: 10px 14px; display:flex; flex-direction:column; gap:10px;">
+
+                   <!-- Row 1: Transport controls -->
+                   <div style="display:flex; justify-content:center; align-items:center; gap:10px;">
+                     <button onclick="window.restartYtVideo()" title="Restart" style="background:var(--bg-body); color:var(--text-dark); border:1px solid var(--border-light); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;" title="Restart">
+                       <i data-lucide="skip-back" style="width:18px;height:18px;"></i>
+                     </button>
+                     <button class="play-pause-btn" onclick="window.toggleActiveYtPlay()" style="background:var(--primary); color:white; border:none; border-radius:50%; width:50px; height:50px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.2); flex-shrink:0;">
+                       <i data-lucide="pause" style="width:22px;height:22px;"></i>
+                     </button>
+                     <button onclick="window.toggleCustomFullscreen('video-container-${vid.id}')" title="Fullscreen" style="background:var(--bg-body); color:var(--text-dark); border:1px solid var(--border-light); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;">
+                       <i data-lucide="maximize" style="width:18px;height:18px;"></i>
+                     </button>
+                   </div>
+
+                   <!-- Row 2: Speed controls -->
+                   <div style="display:flex; align-items:center; gap:6px; justify-content:center; flex-wrap:wrap;">
+                     <span style="font-size:0.75rem; font-weight:600; color:var(--text-muted); margin-right:4px;">SPEED</span>
+                     ${['0.5','0.75','1','1.25','1.5'].map(r => `
+                     <button class="speed-btn ${r==='1'?'speed-active':''}" data-rate="${r}" onclick="window.setYtSpeed(${r})" style="font-size:0.72rem; font-weight:600; padding:4px 10px; border-radius:20px; border:1px solid var(--border-light); cursor:pointer; transition:all 0.2s; background:${r==='1'?'var(--primary)':'var(--bg-body)'}; color:${r==='1'?'white':'var(--text-dark)'}; min-width:42px;">${r}x</button>`).join('')}
+                   </div>
+
+                   <!-- Row 3: Mark as watched -->
+                   <div style="display:flex; justify-content:center;">
+                     <button id="watched-btn-${vid.id}" onclick="window.toggleWatched('${vid.id}')" class="${localStorage.getItem('watched_${vid.id}')==='1'?'watched-active':''}" style="display:flex; align-items:center; gap:6px; padding:8px 20px; border-radius:30px; border:1.5px solid ${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary)':'var(--border-light)'}; background:${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary-light)':'transparent'}; color:${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary)':'var(--text-muted)'}; cursor:pointer; font-size:0.85rem; font-weight:600; transition:all 0.2s;">
+                       <i data-lucide="${localStorage.getItem('watched_${vid.id}')==='1'?'check-circle':'circle'}" style="width:18px;height:18px;"></i>
+                       <span>${localStorage.getItem('watched_${vid.id}')==='1'?'Watched':'Mark as Watched'}</span>
+                     </button>
+                   </div>
+
                  </div>
                  ` : (vidSrc && (vidSrc.includes('tynk.ai') || vidSrc.includes('iframe') || !vidSrc.match(/\.(mp4|webm|ogg|mov)(\?.*)?$/i))) ? `
                  <iframe 
@@ -540,13 +615,17 @@ document.addEventListener("DOMContentLoaded", () => {
             window.activeYtPlayer = new YT.Player(`yt-player-${activeVidObj.id}`, {
                 videoId: activeVidObj.youtubeId,
                 playerVars: {
-                    'controls': 0, // Esconde a barra nativa, usamos apenas os nossos botões
+                    'controls': 0,
                     'disablekb': 1,
                     'modestbranding': 1,
                     'rel': 0,
                     'showinfo': 0,
-                    'fs': 0, // Desativa botão fullscreen nativo, usamos o nosso
-                    'playsinline': 1
+                    'fs': 0,
+                    'playsinline': 1,
+                    'iv_load_policy': 3,
+                    'cc_load_policy': 0,
+                    'autohide': 1,
+                    'origin': window.location.origin
                 },
                 events: {
                     'onReady': (event) => { 
