@@ -11,7 +11,38 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+        {
+            id: "v1",
+            title: "Basic Guitar Chords for Beginners (No Talking)",
+            duration: "11 min • Visual only",
+            youtubeId: "z4EoTSr3ILI"
+        },
+        {
+            id: "v2",
+            title: "G, C, D & Em — The 4 Essential Chords (No Talking)",
+            duration: "8 min • No voice, guitar only",
+            youtubeId: "RWwHxjHGaS0"
+        },
+        {
+            id: "v3",
+            title: "Beginner Chord Transitions — Slow Practice (No Talking)",
+            duration: "14 min • Play-along, guitar sound only",
+            youtubeId: "p5O0oBOaYQU"
+        },
+        {
+            id: "v4",
+            title: "Am, Em, G, C Chord Practice Loop (No Talking)",
+            duration: "10 min • Chord loop, no voice",
+            youtubeId: "jZEfFlM_9aY"
+        },
+        {
+            id: "v5",
+            title: "Fingerpicking Patterns for Beginners (No Talking)",
+            duration: "12 min • Fingerstyle, no voice",
+            youtubeId: "5qap5aO4i9A"
+        }
+    ],
 
     books: [
         {

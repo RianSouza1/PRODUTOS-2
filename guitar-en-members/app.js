@@ -219,6 +219,16 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
             </a>
             
+            <a href="#videos" class="home-block glass-panel">
+              <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
+                 <i data-lucide="play-circle"></i>
+              </div>
+              <div>
+                 <div class="home-block-title">Videos</div>
+                 <div class="home-block-subtitle">Video Lessons & Tutorials</div>
+              </div>
+            </a>
+
             <a href="#contato" class="home-block glass-panel">
               <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
                  <i data-lucide="message-square"></i>
@@ -398,7 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rootEl.innerHTML = `
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Your Courses</h1><p>Develop your survival and bushcraft skills step by step.</p></div></div>
+        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Video Lessons</h1><p>Watch beginner guitar chord tutorials — no talking, only guitar sound.</p></div></div>
         
         <div style="background-color: rgba(16, 185, 129, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
            <i data-lucide="clock" style="width: 20px; height: 20px; flex-shrink: 0; color: #10B981;"></i>
