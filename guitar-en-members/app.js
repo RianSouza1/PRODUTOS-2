@@ -539,18 +539,18 @@ document.addEventListener("DOMContentLoaded", () => {
       ${isPlaying ? `
               <div class="play-item-body" style="padding: 0 16px 16px 16px; animation: slideDown 0.3s ease;">
                  ${vid.youtubeId ? `
-                 <div id="video-container-${vid.id}" class="video-wrapper-container" style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); width: 100%; aspect-ratio: 16 / 9;">
-                    <div id="yt-player-${vid.id}" style="width: 115%; height: 115%; position: absolute; top: -7%; left: -7.5%;"></div>
+                 <div id="video-container-${vid.id}" class="video-wrapper-container" style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); aspect-ratio: 9 / 16; max-height: 520px; margin: 0 auto;">
+                    <div id="yt-player-${vid.id}" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
                     <!-- Click overlay (middle area, avoids top and bottom bars) -->
-                    <div class="video-click-overlay" onclick="window.toggleActiveYtPlay()" style="position: absolute; top: 48px; left: 0; width: 100%; height: calc(100% - 86px); cursor: pointer; z-index: 5;"></div>
-                    <!-- Top black bar: hides channel icon + title + channel name -->
-                    <div style="position:absolute;top:0;left:0;width:100%;height:48px;background:#000;z-index:6;pointer-events:none;"></div>
-                    <!-- Bottom black bar: hides YouTube logo + any branding row -->
-                    <div style="position:absolute;bottom:0;left:0;width:100%;height:38px;background:#000;z-index:6;pointer-events:none;"></div>
-                    <!-- Bottom-right corner patch: hides channel name watermark badge -->
-                    <div style="position:absolute;bottom:38px;right:0;width:160px;height:36px;background:#000;z-index:6;pointer-events:none;"></div>
+                    <div class="video-click-overlay" onclick="window.toggleActiveYtPlay()" style="position: absolute; top: 50px; left: 0; width: 100%; height: calc(100% - 80px); cursor: pointer; z-index: 5;"></div>
+                    <!-- Top black bar: hides YouTube title bar + channel icon -->
+                    <div style="position:absolute;top:0;left:0;width:100%;height:50px;background:#000;z-index:6;pointer-events:none;"></div>
+                    <!-- Bottom black bar: hides YouTube logo row -->
+                    <div style="position:absolute;bottom:0;left:0;width:100%;height:30px;background:#000;z-index:6;pointer-events:none;"></div>
+                    <!-- Bottom-right corner: hides channel name watermark -->
+                    <div style="position:absolute;bottom:30px;right:0;width:140px;height:34px;background:#000;z-index:6;pointer-events:none;"></div>
                     <!-- Bottom-left corner patch -->
-                    <div style="position:absolute;bottom:38px;left:0;width:160px;height:36px;background:#000;z-index:6;pointer-events:none;"></div>
+                    <div style="position:absolute;bottom:30px;left:0;width:100px;height:34px;background:#000;z-index:6;pointer-events:none;"></div>
                  </div>
                  <!-- ACTION BAR -->
                  <div style="background:var(--bg-card); border:1px solid var(--border-light); border-radius:0 0 12px 12px; padding: 10px 14px; display:flex; flex-direction:column; gap:10px;">
