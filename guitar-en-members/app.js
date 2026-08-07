@@ -28,10 +28,20 @@ document.addEventListener("DOMContentLoaded", () => {
   window.setYtSpeed = function(rate) {
     if (window.activeYtPlayer && typeof window.activeYtPlayer.setPlaybackRate === 'function') {
       window.activeYtPlayer.setPlaybackRate(rate);
-      // Update active speed button
-      document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('speed-active'));
-      const active = document.querySelector(`.speed-btn[data-rate="${rate}"]`);
-      if (active) active.classList.add('speed-active');
+    }
+    // Update active speed button visual (inline style override)
+    document.querySelectorAll('.speed-btn').forEach(b => {
+      b.style.background = 'var(--bg-body)';
+      b.style.color = 'var(--text-dark)';
+      b.style.borderColor = 'var(--border-light)';
+      b.style.transform = 'scale(1)';
+    });
+    const active = document.querySelector(`.speed-btn[data-rate="${rate}"]`);
+    if (active) {
+      active.style.background = 'var(--primary)';
+      active.style.color = 'white';
+      active.style.borderColor = 'var(--primary)';
+      active.style.transform = 'scale(1.1)';
     }
   };
 
@@ -530,8 +540,12 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="play-item-body" style="padding: 0 16px 16px 16px; animation: slideDown 0.3s ease;">
                  ${vid.youtubeId ? `
                  <div id="video-container-${vid.id}" class="video-wrapper-container" style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); width: 100%; aspect-ratio: 16 / 9;">
-                    <div id="yt-player-${vid.id}" style="width: 100%; height: 110%;"></div>
-                    <div class="video-click-overlay" onclick="window.toggleActiveYtPlay()" style="position: absolute; top: 0; left: 0; width: 100%; height: calc(100% - 44px); cursor: pointer; z-index: 5;"></div>
+                    <div id="yt-player-${vid.id}" style="width: 100%; height: 130%; position: absolute; top: -10%; left: 0;"></div>
+                    <!-- Click overlay: excludes top (title bar) and bottom (logo bar) overlay areas -->
+                    <div class="video-click-overlay" onclick="window.toggleActiveYtPlay()" style="position: absolute; top: 60px; left: 0; width: 100%; height: calc(100% - 104px); cursor: pointer; z-index: 5;"></div>
+                    <!-- Top black bar: hides channel icon + title + channel name -->
+                    <div style="position:absolute;top:0;left:0;width:100%;height:60px;background:#000;z-index:6;pointer-events:none;"></div>
+                    <!-- Bottom black bar: hides YouTube logo watermark -->
                     <div style="position:absolute;bottom:0;left:0;width:100%;height:44px;background:#000;z-index:6;pointer-events:none;"></div>
                  </div>
                  <!-- ACTION BAR -->
