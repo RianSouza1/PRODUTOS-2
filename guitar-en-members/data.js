@@ -14,33 +14,33 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "First 7 Chords To Learn on Guitar",
-            duration: "Beginner • Essential Chords",
-            youtubeId: "R_qmvyUDvEc"
+            title: "Guitar Chord Chart — 10-min Workout for Beginners (Audio Only)",
+            duration: "Visual • Chord diagrams with audio",
+            youtubeId: "lUXHEQyszy0"
         },
         {
             id: "v2",
-            title: "The 4 Easiest Beginner Guitar Chords To Play Real Songs",
-            duration: "Beginner • G, C, D, Em",
-            youtubeId: "WGIcfDCWysQ"
+            title: "How to Read a Guitar Chord Diagram (Visual Guide)",
+            duration: "Visual • No talking — diagram only",
+            youtubeId: "SoVGWkC8Pr4"
         },
         {
             id: "v3",
-            title: "The 3 Easiest Chords for Total Beginners",
-            duration: "Beginner • Quick Start",
-            youtubeId: "3LUYd5vMAEo"
+            title: "Beginner Guitar — How to Read a Chord Diagram",
+            duration: "Visual • Hands on fretboard",
+            youtubeId: "vBCM13d3C-w"
         },
         {
             id: "v4",
-            title: "2 Easy Guitar Chords That Unlock 1,000 Songs",
-            duration: "Beginner • Chord Fundamentals",
-            youtubeId: "n-DYeX5Eg_w"
+            title: "All Basic Guitar Chords — Major, Minor & 7th (Practice)",
+            duration: "Visual • Chord shapes with audio",
+            youtubeId: "AzDsFoO1Bfc"
         },
         {
             id: "v5",
-            title: "10 Easy Songs with 3 Easy Chords — G, C & D",
-            duration: "Beginner • Practice Songs",
-            youtubeId: "zi6CRi0SXLM"
+            title: "How to Play the A Chord — Easiest Beginner Lesson",
+            duration: "Visual • Step-by-step, hands on guitar",
+            youtubeId: "bpvLZpcIwZk"
         }
     ],
 
