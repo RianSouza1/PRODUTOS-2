@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
                <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-               <span class="premium-format">PDF • Nedladdningsbart Dokument</span>
+               <span class="premium-format">PDF &bull; Nedladdningsbart Dokument</span>
             </div>
            
            <div class="premium-info">
