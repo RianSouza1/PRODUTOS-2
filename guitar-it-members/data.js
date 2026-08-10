@@ -56,8 +56,8 @@ const APP_DATA = {
                 "Lezioni di ritmo e ritmica di base",
                 "Guida passo-passo alle tue prime canzoni"
             ],
-            downloadUrl: "materials/GUITAR-1-ENGB.pdf",
-            coverImage: "assets/covers/guitar_IMG1_en.png",
+            downloadUrl: "materials/GUITAR-1-IT.pdf",
+            coverImage: "assets/covers/gui_IMG1_it.png",
             buttonText: "Scarica la Guida per Principianti (PDF)"
         },
         {
@@ -71,8 +71,8 @@ const APP_DATA = {
                 "Tutorial sui pattern di ritmica dinamici",
                 "Canzoni passo-passo per crescere con sicurezza"
             ],
-            downloadUrl: "materials/GUITAR-2-ENGB.pdf",
-            coverImage: "assets/covers/guitar_IMG1_en.png",
+            downloadUrl: "materials/GUITAR-2-IT.pdf",
+            coverImage: "assets/covers/gui_IMG1_it.png",
             buttonText: "Scarica il Songbook (PDF)"
         },
         {
@@ -86,8 +86,8 @@ const APP_DATA = {
                 "Esercizi di ritmo, sicurezza e precisione",
                 "Routine intelligente per progressi costanti"
             ],
-            downloadUrl: "materials/GUITAR-3-ENGB.pdf",
-            coverImage: "assets/covers/guitar_IMG1_en.png",
+            downloadUrl: "materials/GUITAR-3-IT.pdf",
+            coverImage: "assets/covers/gui_IMG1_it.png",
             buttonText: "Scarica il Piano di Pratica (PDF)"
         }
     ],

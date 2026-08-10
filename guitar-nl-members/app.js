@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.style.color = nowWatched ? 'var(--primary)' : 'var(--text-muted)';
       btn.innerHTML = nowWatched
         ? '<i data-lucide="check-circle" style="width:18px;height:18px;"></i> <span>Bekeken</span>'
-        : '<i data-lucide="circle" style="width:18px;height:18px;"></i> <span>Mark as Bekeken</span>';
+        : '<i data-lucide="circle" style="width:18px;height:18px;"></i> <span>Markeer als Bekeken</span>';
       if (window.lucide) lucide.createIcons();
     }
     // Update header badge
@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Injetar o footer global de Copyright no final de todas as telas
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-         &copy; 2026 ${APP_DATA.config.brandName || "Chitarra Acustica Mastery"}. Tutti i diritti riservati.
+         &copy; 2026 ${APP_DATA.config.brandName || "Akoestische Gitaar Mastery"}. Alle rechten voorbehouden.
        </footer>
     `);
 
@@ -312,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
                <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-               <span class="premium-format">PDF • Documento Scaricabile</span>
+               <span class="premium-format">PDF • Downloadbaar Document</span>
             </div>
            
            <div class="premium-info">
@@ -343,7 +343,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="compact-book-card">
             <div style="display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0;">
               <h4 class="compact-book-title">${bk.title}</h4>
-              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'Risorsa'}</span>
+              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'Bron'}</span>
             </div>
             <div class="compact-book-actions">
               <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Nu lezen">
@@ -364,7 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="hero-card glass-panel"><div class="hero-text"><h1>Jouw Materialen</h1><p>Klik op de collecties hieronder om je boeken te bekijken en te downloaden.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/guitar_IMG1_en.png" alt="Acoustic Guitar Mastery" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/gui_IMG1_nl.png" alt="Acoustic Guitar Mastery" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
 
           <div class="list-container">

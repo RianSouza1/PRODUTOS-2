@@ -56,8 +56,8 @@ const APP_DATA = {
                 "Techniki rytmu i uderzenia dla początkujących",
                 "Krok po kroku do pierwszych piosenek"
             ],
-            downloadUrl: "materials/GUITAR-1-ENGB.pdf",
-            coverImage: "assets/covers/guitar_IMG1_en.png",
+            downloadUrl: "materials/GUITAR-1-PL.pdf",
+            coverImage: "assets/covers/gui_IMG1_pl.png",
             buttonText: "Pobierz Przewodnik dla Początkujących (PDF)"
         },
         {
@@ -71,8 +71,8 @@ const APP_DATA = {
                 "Dynamiczne samouczki techniki uderzenia",
                 "Piosenki krok po kroku dla budowania pewności siebie"
             ],
-            downloadUrl: "materials/GUITAR-2-ENGB.pdf",
-            coverImage: "assets/covers/guitar_IMG1_en.png",
+            downloadUrl: "materials/GUITAR-2-PL.pdf",
+            coverImage: "assets/covers/gui_IMG1_pl.png",
             buttonText: "Pobierz Śpiewnik (PDF)"
         },
         {
@@ -86,8 +86,8 @@ const APP_DATA = {
                 "Ćwiczenia rytmu, pewności siebie i precyzji",
                 "Sprytna rutyna dla stałego postępu"
             ],
-            downloadUrl: "materials/GUITAR-3-ENGB.pdf",
-            coverImage: "assets/covers/guitar_IMG1_en.png",
+            downloadUrl: "materials/GUITAR-3-PL.pdf",
+            coverImage: "assets/covers/gui_IMG1_pl.png",
             buttonText: "Pobierz Plan Ćwiczeń (PDF)"
         }
     ],

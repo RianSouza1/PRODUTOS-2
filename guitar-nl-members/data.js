@@ -56,8 +56,8 @@ const APP_DATA = {
                 "Ritme- en slagtechniek voor beginners",
                 "Stapsgewijze gids naar je eerste liedjes"
             ],
-            downloadUrl: "materials/GUITAR-1-ENGB.pdf",
-            coverImage: "assets/covers/guitar_IMG1_en.png",
+            downloadUrl: "materials/GUITAR-1-NL.pdf",
+            coverImage: "assets/covers/gui_IMG1_nl.png",
             buttonText: "Download Beginnersgids (PDF)"
         },
         {
@@ -71,8 +71,8 @@ const APP_DATA = {
                 "Dynamische slagtechniek-tutorials",
                 "Liedjes stap voor stap om zelfvertrouwen te bouwen"
             ],
-            downloadUrl: "materials/GUITAR-2-ENGB.pdf",
-            coverImage: "assets/covers/guitar_IMG1_en.png",
+            downloadUrl: "materials/GUITAR-2-NL.pdf",
+            coverImage: "assets/covers/gui_IMG1_nl.png",
             buttonText: "Download Liedjesboek (PDF)"
         },
         {
@@ -86,8 +86,8 @@ const APP_DATA = {
                 "Ritme-, zelfvertrouwen- en nauwkeurigheidsoefeningen",
                 "Slimme routine voor consistente vooruitgang"
             ],
-            downloadUrl: "materials/GUITAR-3-ENGB.pdf",
-            coverImage: "assets/covers/guitar_IMG1_en.png",
+            downloadUrl: "materials/GUITAR-3-NL.pdf",
+            coverImage: "assets/covers/gui_IMG1_nl.png",
             buttonText: "Download Oefenplan (PDF)"
         }
     ],
