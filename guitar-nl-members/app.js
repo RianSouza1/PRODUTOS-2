@@ -1,7 +1,7 @@
-/**
+﻿/**
  * APP CORE ENGINE
- * ÁREA DE MEMBROS (Mobile First & Senior Friendly)
- * Nenhuma alteração de conteúdo ou curso deve ocorrer aqui. 
+ * ÃREA DE MEMBROS (Mobile First & Senior Friendly)
+ * Nenhuma alteraÃ§Ã£o de conteÃºdo ou curso deve ocorrer aqui. 
  * Apenas em data.js
  */
 
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // ----------------------------------------------------------------------
-  // 0. REFERÊNCIAS DO DOM ENCAPSULADAS
+  // 0. REFERÃŠNCIAS DO DOM ENCAPSULADAS
   // ----------------------------------------------------------------------
   const rootEl = document.getElementById("app-root");
   const brandTitle = document.getElementById("brand-title");
@@ -79,11 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const floatingHelp = document.getElementById("floating-help-container");
   const tabItems = document.querySelectorAll(".tab-item");
 
-  // Variável para armazenar qual ID de vídeo foi escolhido para tocar
+  // VariÃ¡vel para armazenar qual ID de vÃ­deo foi escolhido para tocar
   let currentVideoId = APP_DATA.videos.length > 0 ? APP_DATA.videos[0].id : null;
 
   // ----------------------------------------------------------------------
-  // 1. INICIALIZAÇÃO DA BASE (Header e Global Settings)
+  // 1. INICIALIZAÃ‡ÃƒO DA BASE (Header e Global Settings)
   // ----------------------------------------------------------------------
   initGlobalConfig();
   handleRouting();
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Ouvinte para trocar a rota cada vez que o hash (url/#tela) mudar.
   window.addEventListener("hashchange", handleRouting);
 
-  // Re-renderizar ícones Lucide sempre que novas views surgirem
+  // Re-renderizar Ã­cones Lucide sempre que novas views surgirem
   function renderIcons() {
     if (window.lucide) {
       lucide.createIcons();
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   }
-  window.activeYtPlayer = null; // Guardar a instância ativa do player
+  window.activeYtPlayer = null; // Guardar a instÃ¢ncia ativa do player
 
   // Fullscreen CSS injections
   if (!document.getElementById("fullscreen-css")) {
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ----------------------------------------------------------------------
-  // 2. SISTEMA DE ROTEAMENTO SPA (O "Coração" da navegação)
+  // 2. SISTEMA DE ROTEAMENTO SPA (O "CoraÃ§Ã£o" da navegaÃ§Ã£o)
   // ----------------------------------------------------------------------
   function handleRouting() {
     // 2.1 Verifica a rota atual. Se vazio, joga para #home
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2.3 Destacar Aba Inferior Ativa
     updateBottomNavBar(currentHash);
 
-    // 2.4 Controlar Opções Flutuantes exclusivas de Telas Internas
+    // 2.4 Controlar OpÃ§Ãµes Flutuantes exclusivas de Telas Internas
     togglePersistentElements(currentHash);
 
     // 2.5 Injetar a view correta dentro da main
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderContato();
         break;
       default:
-        renderHome(); // Prevenção de Rota Perdida (Sênior Friendly)
+        renderHome(); // PrevenÃ§Ã£o de Rota Perdida (SÃªnior Friendly)
         break;
     }
 
@@ -230,14 +230,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function togglePersistentElements(hash) {
-    // Regra 1: Na Home, o bottomNav não deve aparecer para não distrair
+    // Regra 1: Na Home, o bottomNav nÃ£o deve aparecer para nÃ£o distrair
     if (hash === "#home") {
       bottomNav.classList.add('hidden-on-home');
     } else {
       bottomNav.classList.remove('hidden-on-home');
     }
 
-    // Regra 2: Ocultar Botão Flutuante de Ajuda APENAS se estiver na aba do menu Contato
+    // Regra 2: Ocultar BotÃ£o Flutuante de Ajuda APENAS se estiver na aba do menu Contato
     const fBtn = floatingHelp.querySelector('.floating-help-btn');
     if (fBtn) {
       if (hash === "#contato" || hash === "#home") {
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
               <div>
                  <div class="home-block-title">Boeken</div>
-                 <div class="home-block-subtitle">Libri & Materiali PDF</div>
+                 <div class="home-block-subtitle">Boeken & PDF-Materialen</div>
               </div>
             </a>
             
@@ -312,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
                <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-               <span class="premium-format">PDF • Downloadbaar Document</span>
+               <span class="premium-format">PDF â€¢ Downloadbaar Document</span>
             </div>
            
            <div class="premium-info">
@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ${featuresHTML}
               
               <a href="${prod.linkUrl}" target="_blank" class="premium-btn">
-                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Scopri di più'}
+                 <i data-lucide="external-link"></i> ${prod.buttonText || "Meer ontdekken"}
               </a>
            </div>
          </div>
@@ -412,7 +412,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Andere Programma's</h1><p>Scopri Andere Programma's e materiali.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Andere Programma's</h1><p>Ontdek meer programma's en materialen.</p></div></div>
           
           
           <div class="list-container">
@@ -428,7 +428,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Klantenservice</h1><p>La tua soddisfazione è la nostra priorità.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Klantenservice</h1><p>Jouw tevredenheid is onze prioriteit.</p></div></div>
           
   
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
@@ -438,7 +438,7 @@ document.addEventListener("DOMContentLoaded", () => {
              
              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Stuur een bericht</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                 Copia l'indirizzo email qui sotto e inviaci la tua domanda. Il nostro team di supporto risponderà il prima possibile.
+                 Kopieer het e-mailadres hieronder en stuur ons je vraag. Ons ondersteuningsteam reageert zo snel mogelijk.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
@@ -450,17 +450,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ----------------------------------------------------------------------
-  // 4. MÓDULO COMPLEXO: RENDERIZADOR DE VIDEOS
+  // 4. MÃ“DULO COMPLEXO: RENDERIZADOR DE VIDEOS
   // ----------------------------------------------------------------------
   function renderVideos() {
     const allVideos = APP_DATA.videos || [];
     const safeVideo = allVideos.find(v => v.id === currentVideoId) || allVideos[0] || null;
 
-    // Render do Layout (Sem Top Player, apenas a Playlist Sanduíche)
+    // Render do Layout (Sem Top Player, apenas a Playlist SanduÃ­che)
     rootEl.innerHTML = `
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Videolessen</h1><p>Guarda i tutorial sugli accordi per chitarra — nessuna voce, solo suono di chitarra.</p></div></div>
+        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Videolessen</h1><p>Bekijk gitaarakkoord-tutorials voor beginners â€” geen stemmen, alleen gitaargeluid.</p></div></div>
         
         <div style="background-color: rgba(16, 185, 129, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
            <i data-lucide="clock" style="width: 20px; height: 20px; flex-shrink: 0; color: #10B981;"></i>
@@ -480,7 +480,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Função global para iniciar o Play (Nativo HTML5)
+  // FunÃ§Ã£o global para iniciar o Play (Nativo HTML5)
   window.startCustomPlay = function (wrapper, videoSrc) {
     if (wrapper.classList.contains('is-playing')) return;
 
@@ -499,7 +499,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     wrapper.classList.add('is-playing');
 
-    // Força o Autoplay Programático para o usuário não precisar clicar 2 vezes (1 no banner, 1 no player)
+    // ForÃ§a o Autoplay ProgramÃ¡tico para o usuÃ¡rio nÃ£o precisar clicar 2 vezes (1 no banner, 1 no player)
     setTimeout(() => {
       const player = document.getElementById('main-native-player');
       if (player) {
@@ -512,7 +512,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const playlistEl = document.getElementById("video-playlist-items");
     if (!playlistEl) return;
 
-    // Montar a árvore HTML (Sanduíche/Accordion)
+    // Montar a Ã¡rvore HTML (SanduÃ­che/Accordion)
     const playlistHtml = videosArray.map((vid, index) => {
       const isPlaying = vid.id === activeVideoId;
       const vidSrc = vid.videoUrl || vid.embedUrl;
@@ -520,7 +520,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="card-bloco play-item glass-panel ${isPlaying ? 'active-play' : ''}" style="margin-bottom:16px; display:flex; flex-direction:column; padding:0; overflow:hidden;" data-video-id="${vid.id}">
             
-            <!-- Cabeçalho Clicável -->
+            <!-- CabeÃ§alho ClicÃ¡vel -->
             <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit; align-items:center; gap:12px;">
               ${!isPlaying ? `<div style="width:36px;height:36px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i data-lucide="play-circle" style="width:18px;height:18px;color:var(--primary);"></i></div>` : ''}
               <div style="display:flex; flex-direction:column; justify-content:center; flex:1; min-width:0;">
@@ -535,7 +535,7 @@ document.addEventListener("DOMContentLoaded", () => {
           : '<i data-lucide="chevron-right" style="opacity:0.35; align-self:center; flex-shrink:0;"></i>'}
             </a>
             
-            <!-- Corpo do Vídeo (Só aparece se estiver ativo) -->
+            <!-- Corpo do VÃ­deo (SÃ³ aparece se estiver ativo) -->
       ${isPlaying ? `
               <div class="play-item-body" style="padding: 0 16px 16px 16px; animation: slideDown 0.3s ease;">
                  ${vid.youtubeId ? `
@@ -570,7 +570,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                    <!-- Row 2: Speed controls -->
                    <div style="display:flex; align-items:center; gap:6px; justify-content:center; flex-wrap:wrap;">
-                     <span style="font-size:0.75rem; font-weight:600; color:var(--text-muted); margin-right:4px;">VELOCITÀ</span>
+                     <span style="font-size:0.75rem; font-weight:600; color:var(--text-muted); margin-right:4px;">VELOCITÃ€</span>
                      ${['0.5','0.75','1','1.25','1.5'].map(r => `
                      <button class="speed-btn ${r==='1'?'speed-active':''}" data-rate="${r}" onclick="window.setYtSpeed(${r})" style="font-size:0.72rem; font-weight:600; padding:4px 10px; border-radius:20px; border:1px solid var(--border-light); cursor:pointer; transition:all 0.2s; background:${r==='1'?'var(--primary)':'var(--bg-body)'}; color:${r==='1'?'white':'var(--text-dark)'}; min-width:42px;">${r}x</button>`).join('')}
                    </div>
@@ -623,7 +623,7 @@ document.addEventListener("DOMContentLoaded", () => {
     playlistEl.innerHTML = playlistHtml;
     renderIcons();
 
-    // Inicializar YouTube Player caso o vídeo ativo tenha youtubeId
+    // Inicializar YouTube Player caso o vÃ­deo ativo tenha youtubeId
     const activeVidObj = videosArray.find(v => v.id === activeVideoId);
     if (activeVidObj && activeVidObj.youtubeId) {
         const initYT = () => {
@@ -647,7 +647,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
                 events: {
                     'onReady': (event) => { 
-                        // Autoplay nem sempre funciona sem interação, mas tentamos
+                        // Autoplay nem sempre funciona sem interaÃ§Ã£o, mas tentamos
                         event.target.playVideo(); 
                     },
                     'onStateChange': (event) => {
