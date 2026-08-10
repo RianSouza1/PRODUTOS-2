@@ -1,5 +1,5 @@
 /**
- * Akustisk Gitarr Mastery — Medlemsområde (Svenska) v1
+ * Akustisk Gitarr Mastery — Medlemsområde (Svenska) v35
  */
 
 const APP_DATA = {
