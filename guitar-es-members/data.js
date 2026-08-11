@@ -11,7 +11,38 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+        videos: [
+        {
+            id: "v1",
+            title: "Cómo tocar el acorde Sol (G) en guitarra",
+            duration: "Para principiantes • Manos en el diapasón + diagrama de acordes",
+            youtubeId: "ES428uOSZ68"
+        },
+        {
+            id: "v2",
+            title: "Cómo tocar el acorde Do (C) en guitarra",
+            duration: "Para principiantes • Manos en el diapasón + diagrama de acordes",
+            youtubeId: "-lLcxTp9dAg"
+        },
+        {
+            id: "v3",
+            title: "Cómo tocar el acorde Re (D) en guitarra",
+            duration: "Para principiantes • Manos en el diapasón + diagrama de acordes",
+            youtubeId: "1DPd5zkh1r0"
+        },
+        {
+            id: "v4",
+            title: "Cómo tocar el acorde La (A) en guitarra",
+            duration: "Para principiantes • Manos en el diapasón + diagrama de acordes",
+            youtubeId: "bpvLZpcIwZk"
+        },
+        {
+            id: "v5",
+            title: "Cómo tocar el acorde Mi menor (Em) en guitarra",
+            duration: "Para principiantes • Manos en el diapasón + diagrama de acordes",
+            youtubeId: "_aOFJ0WuwQE"
+        }
+    ],
 
     books: [
         {

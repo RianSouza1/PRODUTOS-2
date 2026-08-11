@@ -11,7 +11,38 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+        videos: [
+        {
+            id: "v1",
+            title: "Comment jouer l'accord Sol (G) à la guitare",
+            duration: "Pour débutants • Mains sur la touche + diagramme d'accord",
+            youtubeId: "ES428uOSZ68"
+        },
+        {
+            id: "v2",
+            title: "Comment jouer l'accord Do (C) à la guitare",
+            duration: "Pour débutants • Mains sur la touche + diagramme d'accord",
+            youtubeId: "-lLcxTp9dAg"
+        },
+        {
+            id: "v3",
+            title: "Comment jouer l'accord Ré (D) à la guitare",
+            duration: "Pour débutants • Mains sur la touche + diagramme d'accord",
+            youtubeId: "1DPd5zkh1r0"
+        },
+        {
+            id: "v4",
+            title: "Comment jouer l'accord La (A) à la guitare",
+            duration: "Pour débutants • Mains sur la touche + diagramme d'accord",
+            youtubeId: "bpvLZpcIwZk"
+        },
+        {
+            id: "v5",
+            title: "Comment jouer l'accord Mi mineur (Em) à la guitare",
+            duration: "Pour débutants • Mains sur la touche + diagramme d'accord",
+            youtubeId: "_aOFJ0WuwQE"
+        }
+    ],
 
     books: [
         {

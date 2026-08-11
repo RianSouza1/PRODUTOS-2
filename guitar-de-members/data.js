@@ -11,7 +11,38 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+        videos: [
+        {
+            id: "v1",
+            title: "Wie man den G-Akkord auf der Gitarre spielt",
+            duration: "Für Anfänger • Hände auf dem Griffbrett + Akkorddiagramm",
+            youtubeId: "ES428uOSZ68"
+        },
+        {
+            id: "v2",
+            title: "Wie man den C-Akkord auf der Gitarre spielt",
+            duration: "Für Anfänger • Hände auf dem Griffbrett + Akkorddiagramm",
+            youtubeId: "-lLcxTp9dAg"
+        },
+        {
+            id: "v3",
+            title: "Wie man den D-Akkord auf der Gitarre spielt",
+            duration: "Für Anfänger • Hände auf dem Griffbrett + Akkorddiagramm",
+            youtubeId: "1DPd5zkh1r0"
+        },
+        {
+            id: "v4",
+            title: "Wie man den A-Akkord auf der Gitarre spielt",
+            duration: "Für Anfänger • Hände auf dem Griffbrett + Akkorddiagramm",
+            youtubeId: "bpvLZpcIwZk"
+        },
+        {
+            id: "v5",
+            title: "Wie man den Em-Akkord auf der Gitarre spielt",
+            duration: "Für Anfänger • Hände auf dem Griffbrett + Akkorddiagramm",
+            youtubeId: "_aOFJ0WuwQE"
+        }
+    ],
 
     books: [
         {

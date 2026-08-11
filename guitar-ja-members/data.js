@@ -11,7 +11,38 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+        videos: [
+        {
+            id: "v1",
+            title: "ギターでGコードを弾く方法",
+            duration: "初心者向け • 指板上の手 + コード図",
+            youtubeId: "ES428uOSZ68"
+        },
+        {
+            id: "v2",
+            title: "ギターでCコードを弾く方法",
+            duration: "初心者向け • 指板上の手 + コード図",
+            youtubeId: "-lLcxTp9dAg"
+        },
+        {
+            id: "v3",
+            title: "ギターでDコードを弾く方法",
+            duration: "初心者向け • 指板上の手 + コード図",
+            youtubeId: "1DPd5zkh1r0"
+        },
+        {
+            id: "v4",
+            title: "ギターでAコードを弾く方法",
+            duration: "初心者向け • 指板上の手 + コード図",
+            youtubeId: "bpvLZpcIwZk"
+        },
+        {
+            id: "v5",
+            title: "ギターでEmコードを弾く方法",
+            duration: "初心者向け • 指板上の手 + コード図",
+            youtubeId: "_aOFJ0WuwQE"
+        }
+    ],
 
     books: [
         {
