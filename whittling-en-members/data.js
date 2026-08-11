@@ -11,7 +11,38 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+        {
+            id: "v1",
+            title: "Carving a Comfort Bird — No Talking, Full Process",
+            duration: "Beginner • Knife control & smoothing visual tutorial",
+            youtubeId: "W0vN8k_lRsc"
+        },
+        {
+            id: "v2",
+            title: "Spoon Carving Tutorial — No Talking",
+            duration: "Beginner • Sloyd & hook knife technique step-by-step",
+            youtubeId: "J_mK40V_-0M"
+        },
+        {
+            id: "v3",
+            title: "Carving a Garden Gnome — No Talking",
+            duration: "Beginner • Fun & visual gnome carving tutorial",
+            youtubeId: "_b47Z8dG-2s"
+        },
+        {
+            id: "v4",
+            title: "Whittling a Small Fox — No Talking",
+            duration: "Beginner • Quick exercise & simple cuts",
+            youtubeId: "eD1lY5x8Mfs"
+        },
+        {
+            id: "v5",
+            title: "Kuksa Wooden Mug Carving — No Talking",
+            duration: "Intermediate • Traditional wooden cup carving",
+            youtubeId: "fH5v_84h5b0"
+        }
+    ],
 
     books: [
         {
