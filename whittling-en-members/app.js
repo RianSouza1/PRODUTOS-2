@@ -5,43 +5,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  window.toggleActiveYtPlay = function() {
-    if (window.activeYtPlayer && typeof window.activeYtPlayer.getPlayerState === 'function') {
-      const state = window.activeYtPlayer.getPlayerState();
-      if (state === YT.PlayerState.PLAYING) {
-        window.activeYtPlayer.pauseVideo();
-      } else {
-        window.activeYtPlayer.playVideo();
-      }
-    }
-  };
-
-  window.restartYtVideo = function() {
-    if (window.activeYtPlayer && typeof window.activeYtPlayer.seekTo === 'function') {
-      window.activeYtPlayer.seekTo(0, true);
-      window.activeYtPlayer.playVideo();
-    }
-  };
-
-  window.setYtSpeed = function(rate) {
-    if (window.activeYtPlayer && typeof window.activeYtPlayer.setPlaybackRate === 'function') {
-      window.activeYtPlayer.setPlaybackRate(rate);
-    }
-    document.querySelectorAll('.speed-btn').forEach(b => {
-      b.style.background = 'var(--bg-body)';
-      b.style.color = 'var(--text-dark)';
-      b.style.borderColor = 'var(--border-light)';
-      b.style.transform = 'scale(1)';
-    });
-    const active = document.querySelector(`.speed-btn[data-rate="${rate}"]`);
-    if (active) {
-      active.style.background = 'var(--primary)';
-      active.style.color = 'white';
-      active.style.borderColor = 'var(--primary)';
-      active.style.transform = 'scale(1.1)';
-    }
-  };
-
   window.toggleWatched = function(videoId) {
     const key = `watched_${videoId}`;
     const isWatched = localStorage.getItem(key) === '1';
@@ -83,66 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
       lucide.createIcons();
     }
   }
-
-  // Inject YouTube Iframe API globally
-  if (!document.getElementById("yt-api-script")) {
-    const tag = document.createElement('script');
-    tag.id = "yt-api-script";
-    tag.src = "https://www.youtube.com/iframe_api";
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  }
-  window.activeYtPlayer = null;
-
-  // Fullscreen CSS Injections
-  if (!document.getElementById("fullscreen-css")) {
-      const style = document.createElement('style');
-      style.id = "fullscreen-css";
-      style.textContent = `
-          .video-wrapper-container:fullscreen {
-              background: #000 !important;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-          }
-          .video-wrapper-container:fullscreen > div[id^="yt-player-"] {
-              height: calc(100vh - 68px) !important;
-              flex-grow: 1;
-          }
-          .video-wrapper-container:-webkit-full-screen {
-              background: #000 !important;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-          }
-          .video-wrapper-container:-webkit-full-screen > div[id^="yt-player-"] {
-              height: calc(100vh - 68px) !important;
-              flex-grow: 1;
-          }
-      `;
-      document.head.appendChild(style);
-  }
-
-  window.toggleCustomFullscreen = function(elementId) {
-      const container = document.getElementById(elementId);
-      if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-          if (container.requestFullscreen) {
-              container.requestFullscreen();
-          } else if (container.webkitRequestFullscreen) {
-              container.webkitRequestFullscreen();
-          } else if (container.msRequestFullscreen) {
-              container.msRequestFullscreen();
-          }
-      } else {
-          if (document.exitFullscreen) {
-              document.exitFullscreen();
-          } else if (document.webkitExitFullscreen) {
-              document.webkitExitFullscreen();
-          } else if (document.msExitFullscreen) {
-              document.msExitFullscreen();
-          }
-      }
-  };
 
   function updateBottomNavBar(currentHash) {
     tabItems.forEach((item) => {
@@ -444,6 +347,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     playlistContainer.innerHTML = allVideos.map(vid => {
       const isPlaying = vid.id === (safeVideo ? safeVideo.id : null);
+      const ytId = vid.youtubeId || null;
       const vidSrc = vid.videoUrl || vid.embedUrl || vid.src || null;
 
       return `
@@ -465,57 +369,40 @@ document.addEventListener("DOMContentLoaded", () => {
             
       ${isPlaying ? `
               <div class="play-item-body" style="padding: 0 16px 16px 16px; animation: slideDown 0.3s ease;">
-                 ${vid.youtubeId ? `
-                 <div id="video-container-${vid.id}" class="video-wrapper-container" style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); aspect-ratio: 16 / 9; max-height: 480px; margin: 0 auto;">
-                    <div id="yt-player-${vid.id}" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
-                    <div class="video-click-overlay" onclick="window.toggleActiveYtPlay()" style="position: absolute; top: 50px; left: 0; width: 100%; height: calc(100% - 80px); cursor: pointer; z-index: 5;"></div>
-                    <div style="position:absolute;top:0;left:0;width:100%;height:50px;background:#000;z-index:6;pointer-events:none;"></div>
-                    <div style="position:absolute;bottom:0;left:0;width:100%;height:30px;background:#000;z-index:6;pointer-events:none;"></div>
-                    <div style="position:absolute;bottom:30px;right:0;width:140px;height:34px;background:#000;z-index:6;pointer-events:none;"></div>
-                    <div style="position:absolute;bottom:30px;left:0;width:100px;height:34px;background:#000;z-index:6;pointer-events:none;"></div>
+                 
+                 <div class="video-wrapper-container" style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); aspect-ratio: 16 / 9; width: 100%; max-width: 800px; margin: 0 auto 12px auto;">
+                    ${ytId ? `
+                    <iframe 
+                       src="https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1" 
+                       title="${vid.title}"
+                       frameborder="0" 
+                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                       allowfullscreen 
+                       style="width: 100%; height: 100%; position: absolute; top:0; left:0; border: none; border-radius: 12px;">
+                    </iframe>
+                    ` : (vidSrc && (vidSrc.includes('tynk.ai') || vidSrc.includes('iframe') || !vidSrc.match(/\.(mp4|webm|ogg|mov)(\?.*)?$/i))) ? `
+                    <iframe 
+                       src="${vidSrc}" 
+                       frameborder="0" 
+                       scrolling="no"
+                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                       allowfullscreen 
+                       style="width: 100%; height: 100%; position: absolute; top:0; left:0; border: none; background: #000;">
+                    </iframe>
+                    ` : `
+                    <video controls style="width: 100%; height: 100%; position: absolute; top:0; left:0; border-radius: 12px; background: #000;">
+                       <source src="${vidSrc}" type="video/mp4">
+                    </video>
+                    `}
                  </div>
-                 <div style="background:var(--bg-card); border:1px solid var(--border-light); border-radius:0 0 12px 12px; padding: 10px 14px; display:flex; flex-direction:column; gap:10px;">
 
-                   <div style="display:flex; justify-content:center; align-items:center; gap:10px;">
-                     <button onclick="window.restartYtVideo()" title="Restart" style="background:var(--bg-body); color:var(--text-dark); border:1px solid var(--border-light); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;">
-                       <i data-lucide="skip-back" style="width:18px;height:18px;"></i>
-                     </button>
-                     <button class="play-pause-btn" onclick="window.toggleActiveYtPlay()" style="background:var(--primary); color:white; border:none; border-radius:50%; width:50px; height:50px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.2); flex-shrink:0;">
-                       <i data-lucide="pause" style="width:22px;height:22px;"></i>
-                     </button>
-                     <button onclick="window.toggleCustomFullscreen('video-container-${vid.id}')" title="Fullscreen" style="background:var(--bg-body); color:var(--text-dark); border:1px solid var(--border-light); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;">
-                       <i data-lucide="maximize" style="width:18px;height:18px;"></i>
-                     </button>
-                   </div>
-
-                   <div style="display:flex; align-items:center; gap:6px; justify-content:center; flex-wrap:wrap;">
-                     <span style="font-size:0.75rem; font-weight:600; color:var(--text-muted); margin-right:4px;">SPEED</span>
-                     ${['0.5','0.75','1','1.25','1.5'].map(r => `
-                     <button class="speed-btn ${r==='1'?'speed-active':''}" data-rate="${r}" onclick="window.setYtSpeed(${r})" style="font-size:0.72rem; font-weight:600; padding:4px 10px; border-radius:20px; border:1px solid var(--border-light); cursor:pointer; transition:all 0.2s; background:${r==='1'?'var(--primary)':'var(--bg-body)'}; color:${r==='1'?'white':'var(--text-dark)'}; min-width:42px;">${r}x</button>`).join('')}
-                   </div>
-
-                   <div style="display:flex; justify-content:center;">
-                     <button id="watched-btn-${vid.id}" onclick="window.toggleWatched('${vid.id}')" class="${localStorage.getItem('watched_${vid.id}')==='1'?'watched-active':''}" style="display:flex; align-items:center; gap:6px; padding:8px 20px; border-radius:30px; border:1.5px solid ${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary)':'var(--border-light)'}; background:${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary-light)':'transparent'}; color:${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary)':'var(--text-muted)'}; cursor:pointer; font-size:0.85rem; font-weight:600; transition:all 0.2s;">
-                       <i data-lucide="${localStorage.getItem('watched_${vid.id}')==='1'?'check-circle':'circle'}" style="width:18px;height:18px;"></i>
-                       <span>${localStorage.getItem('watched_${vid.id}')==='1'?'Watched':'Mark as Watched'}</span>
-                     </button>
-                   </div>
-
+                 <div style="background:var(--bg-card); border:1px solid var(--border-light); border-radius:12px; padding: 12px 14px; display:flex; justify-content:center; align-items:center;">
+                   <button id="watched-btn-${vid.id}" onclick="window.toggleWatched('${vid.id}')" class="${localStorage.getItem('watched_${vid.id}')==='1'?'watched-active':''}" style="display:flex; align-items:center; gap:6px; padding:8px 20px; border-radius:30px; border:1.5px solid ${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary)':'var(--border-light)'}; background:${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary-light)':'transparent'}; color:${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary)':'var(--text-muted)'}; cursor:pointer; font-size:0.85rem; font-weight:600; transition:all 0.2s;">
+                     <i data-lucide="${localStorage.getItem('watched_${vid.id}')==='1'?'check-circle':'circle'}" style="width:18px;height:18px;"></i>
+                     <span>${localStorage.getItem('watched_${vid.id}')==='1'?'Watched':'Mark as Watched'}</span>
+                   </button>
                  </div>
-                 ` : (vidSrc && (vidSrc.includes('tynk.ai') || vidSrc.includes('iframe') || !vidSrc.match(/\.(mp4|webm|ogg|mov)(\?.*)?$/i))) ? `
-                 <iframe 
-                    src="${vidSrc}" 
-                    frameborder="0" 
-                    scrolling="no"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen 
-                    style="width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; border: none; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                 </iframe>
-                 ` : `
-                 <video controls style="width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                    <source src="${vidSrc}" type="video/mp4">
-                 </video>
-                 `}
+
               </div>
       ` : ''}
          </div>
@@ -523,57 +410,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }).join('');
 
     renderIcons();
-
-    if (safeVideo && safeVideo.youtubeId) {
-        const initYT = () => {
-            if (window.activeYtPlayer && typeof window.activeYtPlayer.destroy === 'function') {
-                window.activeYtPlayer.destroy();
-            }
-            window.activeYtPlayer = new YT.Player(`yt-player-${safeVideo.id}`, {
-                videoId: safeVideo.youtubeId,
-                playerVars: {
-                    'controls': 0,
-                    'disablekb': 1,
-                    'modestbranding': 1,
-                    'rel': 0,
-                    'showinfo': 0,
-                    'fs': 0,
-                    'playsinline': 1,
-                    'iv_load_policy': 3,
-                    'cc_load_policy': 0,
-                    'autohide': 1,
-                    'origin': window.location.origin
-                },
-                events: {
-                    'onReady': (event) => { 
-                        event.target.playVideo(); 
-                    },
-                    'onStateChange': (event) => {
-                        const playPauseBtn = document.querySelector(`.play-pause-btn`);
-                        if (playPauseBtn) {
-                            if (event.data === YT.PlayerState.PLAYING) {
-                                playPauseBtn.innerHTML = '<i data-lucide="pause" style="width: 22px; height: 22px;"></i>';
-                            } else {
-                                playPauseBtn.innerHTML = '<i data-lucide="play" style="width: 22px; height: 22px;"></i>';
-                            }
-                            if (window.lucide) lucide.createIcons();
-                        }
-                    }
-                }
-            });
-        };
-        
-        if (window.YT && window.YT.Player) {
-            initYT();
-        } else {
-            const checkYT = setInterval(() => {
-                if (window.YT && window.YT.Player) {
-                    clearInterval(checkYT);
-                    initYT();
-                }
-            }, 100);
-        }
-    }
   }
 
 });
