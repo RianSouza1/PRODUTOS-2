@@ -84,6 +84,66 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Inject YouTube Iframe API globally
+  if (!document.getElementById("yt-api-script")) {
+    const tag = document.createElement('script');
+    tag.id = "yt-api-script";
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  }
+  window.activeYtPlayer = null;
+
+  // Fullscreen CSS Injections
+  if (!document.getElementById("fullscreen-css")) {
+      const style = document.createElement('style');
+      style.id = "fullscreen-css";
+      style.textContent = `
+          .video-wrapper-container:fullscreen {
+              background: #000 !important;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+          }
+          .video-wrapper-container:fullscreen > div[id^="yt-player-"] {
+              height: calc(100vh - 68px) !important;
+              flex-grow: 1;
+          }
+          .video-wrapper-container:-webkit-full-screen {
+              background: #000 !important;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+          }
+          .video-wrapper-container:-webkit-full-screen > div[id^="yt-player-"] {
+              height: calc(100vh - 68px) !important;
+              flex-grow: 1;
+          }
+      `;
+      document.head.appendChild(style);
+  }
+
+  window.toggleCustomFullscreen = function(elementId) {
+      const container = document.getElementById(elementId);
+      if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+          if (container.requestFullscreen) {
+              container.requestFullscreen();
+          } else if (container.webkitRequestFullscreen) {
+              container.webkitRequestFullscreen();
+          } else if (container.msRequestFullscreen) {
+              container.msRequestFullscreen();
+          }
+      } else {
+          if (document.exitFullscreen) {
+              document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) {
+              document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) {
+              document.msExitFullscreen();
+          }
+      }
+  };
+
   function updateBottomNavBar(currentHash) {
     tabItems.forEach((item) => {
       const tabTarget = item.getAttribute("href");
@@ -406,7 +466,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ${isPlaying ? `
               <div class="play-item-body" style="padding: 0 16px 16px 16px; animation: slideDown 0.3s ease;">
                  ${vid.youtubeId ? `
-                 <div id="video-container-${vid.id}" class="video-wrapper-container" style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); aspect-ratio: 9 / 16; max-height: 520px; margin: 0 auto;">
+                 <div id="video-container-${vid.id}" class="video-wrapper-container" style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); aspect-ratio: 16 / 9; max-height: 480px; margin: 0 auto;">
                     <div id="yt-player-${vid.id}" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
                     <div class="video-click-overlay" onclick="window.toggleActiveYtPlay()" style="position: absolute; top: 50px; left: 0; width: 100%; height: calc(100% - 80px); cursor: pointer; z-index: 5;"></div>
                     <div style="position:absolute;top:0;left:0;width:100%;height:50px;background:#000;z-index:6;pointer-events:none;"></div>
@@ -465,38 +525,54 @@ document.addEventListener("DOMContentLoaded", () => {
     renderIcons();
 
     if (safeVideo && safeVideo.youtubeId) {
-      setTimeout(() => {
-        if (window.YT && window.YT.Player) {
-          window.activeYtPlayer = new YT.Player(`yt-player-${safeVideo.id}`, {
-            videoId: safeVideo.youtubeId,
-            playerVars: {
-              autoplay: 1,
-              controls: 0,
-              modestbranding: 1,
-              rel: 0,
-              showinfo: 0,
-              fs: 0,
-              playsinline: 1,
-              iv_load_policy: 3,
-              disablekb: 1,
-              cc_load_policy: 0
-            },
-            events: {
-              onStateChange: function(event) {
-                const playBtn = document.querySelector('.play-pause-btn');
-                if (playBtn) {
-                  if (event.data === YT.PlayerState.PLAYING) {
-                    playBtn.innerHTML = '<i data-lucide="pause" style="width:22px;height:22px;"></i>';
-                  } else {
-                    playBtn.innerHTML = '<i data-lucide="play" style="width:22px;height:22px;"></i>';
-                  }
-                  renderIcons();
-                }
-              }
+        const initYT = () => {
+            if (window.activeYtPlayer && typeof window.activeYtPlayer.destroy === 'function') {
+                window.activeYtPlayer.destroy();
             }
-          });
+            window.activeYtPlayer = new YT.Player(`yt-player-${safeVideo.id}`, {
+                videoId: safeVideo.youtubeId,
+                playerVars: {
+                    'controls': 0,
+                    'disablekb': 1,
+                    'modestbranding': 1,
+                    'rel': 0,
+                    'showinfo': 0,
+                    'fs': 0,
+                    'playsinline': 1,
+                    'iv_load_policy': 3,
+                    'cc_load_policy': 0,
+                    'autohide': 1,
+                    'origin': window.location.origin
+                },
+                events: {
+                    'onReady': (event) => { 
+                        event.target.playVideo(); 
+                    },
+                    'onStateChange': (event) => {
+                        const playPauseBtn = document.querySelector(`.play-pause-btn`);
+                        if (playPauseBtn) {
+                            if (event.data === YT.PlayerState.PLAYING) {
+                                playPauseBtn.innerHTML = '<i data-lucide="pause" style="width: 22px; height: 22px;"></i>';
+                            } else {
+                                playPauseBtn.innerHTML = '<i data-lucide="play" style="width: 22px; height: 22px;"></i>';
+                            }
+                            if (window.lucide) lucide.createIcons();
+                        }
+                    }
+                }
+            });
+        };
+        
+        if (window.YT && window.YT.Player) {
+            initYT();
+        } else {
+            const checkYT = setInterval(() => {
+                if (window.YT && window.YT.Player) {
+                    clearInterval(checkYT);
+                    initYT();
+                }
+            }, 100);
         }
-      }, 300);
     }
   }
 
