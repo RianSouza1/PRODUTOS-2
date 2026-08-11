@@ -14,33 +14,33 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Wood Carving a Garden Gnome — No Talking",
-            duration: "Beginner • Fun & visual gnome carving tutorial",
-            youtubeId: "ES428uOSZ68"
+            title: "Wood Carving for Beginners — Basics & Knife Grips (BeaverCraft)",
+            duration: "Beginner • Essential grips, cuts & safety rules",
+            youtubeId: "hG9O4CqL26o"
         },
         {
             id: "v2",
-            title: "Spoon Carving Tutorial — No Talking",
-            duration: "Beginner • Sloyd & hook knife technique step-by-step",
-            youtubeId: "-lLcxTp9dAg"
+            title: "How to Whittle a Simple Wooden Fox — Step by Step",
+            duration: "Beginner • Shaping, rounding & finishing a small fox",
+            youtubeId: "q69Hk7b9J1c"
         },
         {
             id: "v3",
-            title: "Carving a Comfort Bird — No Talking, Full Process",
-            duration: "Beginner • Knife control & smoothing visual tutorial",
-            youtubeId: "1DPd5zkh1r0"
+            title: "Whittle a Simple Wooden Bear — Step-by-Step",
+            duration: "Beginner • Easy 1x1 inch block project",
+            youtubeId: "J3e3m8Xg0Yc"
         },
         {
             id: "v4",
-            title: "Whittling a Small Fox — No Talking",
-            duration: "Beginner • Quick exercise & simple cuts",
-            youtubeId: "bpvLZpcIwZk"
+            title: "How to Carve a Wooden Spoon — Beginner Tutorial",
+            duration: "Beginner • Sloyd & hook knife spoon carving",
+            youtubeId: "lS7IMuS4gv4"
         },
         {
             id: "v5",
-            title: "Kuksa Wooden Mug Carving — No Talking",
-            duration: "Intermediate • Traditional wooden cup carving",
-            youtubeId: "_aOFJ0WuwQE"
+            title: "Wood Carving Fundamentals — Safety & Techniques",
+            duration: "Beginner • Fundamental wood carving techniques",
+            youtubeId: "5Vz13h1PZks"
         }
     ],
 
