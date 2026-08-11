@@ -1,8 +1,6 @@
 /**
  * APP CORE ENGINE
  * ÁREA DE MEMBROS (Mobile First & Senior Friendly)
- * Nenhuma alteração de conteúdo ou curso deve ocorrer aqui. 
- * Apenas em data.js
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,123 +16,120 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // ----------------------------------------------------------------------
-  // 0. REFERÊNCIAS DO DOM ENCAPSULADAS
-  // ----------------------------------------------------------------------
+  window.restartYtVideo = function() {
+    if (window.activeYtPlayer && typeof window.activeYtPlayer.seekTo === 'function') {
+      window.activeYtPlayer.seekTo(0, true);
+      window.activeYtPlayer.playVideo();
+    }
+  };
+
+  window.setYtSpeed = function(rate) {
+    if (window.activeYtPlayer && typeof window.activeYtPlayer.setPlaybackRate === 'function') {
+      window.activeYtPlayer.setPlaybackRate(rate);
+    }
+    document.querySelectorAll('.speed-btn').forEach(b => {
+      b.style.background = 'var(--bg-body)';
+      b.style.color = 'var(--text-dark)';
+      b.style.borderColor = 'var(--border-light)';
+      b.style.transform = 'scale(1)';
+    });
+    const active = document.querySelector(`.speed-btn[data-rate="${rate}"]`);
+    if (active) {
+      active.style.background = 'var(--primary)';
+      active.style.color = 'white';
+      active.style.borderColor = 'var(--primary)';
+      active.style.transform = 'scale(1.1)';
+    }
+  };
+
+  window.toggleWatched = function(videoId) {
+    const key = `watched_${videoId}`;
+    const isWatched = localStorage.getItem(key) === '1';
+    if (isWatched) {
+      localStorage.removeItem(key);
+    } else {
+      localStorage.setItem(key, '1');
+    }
+    const nowWatched = !isWatched;
+    const btn = document.getElementById(`watched-btn-${videoId}`);
+    if (btn) {
+      btn.style.borderColor = nowWatched ? 'var(--primary)' : 'var(--border-light)';
+      btn.style.background = nowWatched ? 'var(--primary-light)' : 'transparent';
+      btn.style.color = nowWatched ? 'var(--primary)' : 'var(--text-muted)';
+      btn.innerHTML = nowWatched
+        ? '<i data-lucide="check-circle" style="width:18px;height:18px;"></i> <span>Visto</span>'
+        : '<i data-lucide="circle" style="width:18px;height:18px;"></i> <span>Marcar como visto</span>';
+      if (window.lucide) lucide.createIcons();
+    }
+    const badge = document.getElementById(`watched-badge-${videoId}`);
+    if (badge) badge.style.display = nowWatched ? 'inline-flex' : 'none';
+  };
+
   const rootEl = document.getElementById("app-root");
   const brandTitle = document.getElementById("brand-title");
   const bottomNav = document.getElementById("main-nav");
   const floatingHelp = document.getElementById("floating-help-container");
   const tabItems = document.querySelectorAll(".tab-item");
 
-  // Variável para armazenar qual ID de vídeo foi escolhido para tocar
   let currentVideoId = APP_DATA.videos.length > 0 ? APP_DATA.videos[0].id : null;
 
-  // ----------------------------------------------------------------------
-  // 1. INICIALIZAÇÃO DA BASE (Header e Global Settings)
-  // ----------------------------------------------------------------------
   initGlobalConfig();
   handleRouting();
 
-  // Ouvinte para trocar a rota cada vez que o hash (url/#tela) mudar.
   window.addEventListener("hashchange", handleRouting);
 
-  // Re-renderizar ícones Lucide sempre que novas views surgirem
   function renderIcons() {
     if (window.lucide) {
       lucide.createIcons();
     }
   }
 
-  // Inject YouTube Iframe API globally
-  if (!document.getElementById("yt-api-script")) {
-    const tag = document.createElement('script');
-    tag.id = "yt-api-script";
-    tag.src = "https://www.youtube.com/iframe_api";
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  }
-  window.activeYtPlayer = null; // Guardar a instância ativa do player
-
-  // Fullscreen CSS injections
-  if (!document.getElementById("fullscreen-css")) {
-      const style = document.createElement('style');
-      style.id = "fullscreen-css";
-      style.textContent = `
-          .video-wrapper-container:fullscreen {
-              background: #000 !important;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-          }
-          .video-wrapper-container:fullscreen > div[id^="yt-player-"] {
-              height: calc(100vh - 68px) !important;
-              flex-grow: 1;
-          }
-          .video-wrapper-container:-webkit-full-screen {
-              background: #000 !important;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-          }
-          .video-wrapper-container:-webkit-full-screen > div[id^="yt-player-"] {
-              height: calc(100vh - 68px) !important;
-              flex-grow: 1;
-          }
-      `;
-      document.head.appendChild(style);
-  }
-
-  window.toggleCustomFullscreen = function(elementId) {
-      const container = document.getElementById(elementId);
-      if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-          if (container.requestFullscreen) {
-              container.requestFullscreen();
-          } else if (container.webkitRequestFullscreen) {
-              container.webkitRequestFullscreen();
-          } else if (container.msRequestFullscreen) {
-              container.msRequestFullscreen();
-          }
+  function updateBottomNavBar(currentHash) {
+    tabItems.forEach((item) => {
+      const tabTarget = item.getAttribute("href");
+      if (tabTarget === currentHash) {
+        item.classList.add("active");
       } else {
-          if (document.exitFullscreen) {
-              document.exitFullscreen();
-          } else if (document.webkitExitFullscreen) {
-              document.webkitExitFullscreen();
-          } else if (document.msExitFullscreen) {
-              document.msExitFullscreen();
-          }
+        item.classList.remove("active");
       }
-  };
+    });
+  }
 
-  function initGlobalConfig() {
-    if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "Área de Miembros";
+  function togglePersistentElements(currentHash) {
+    if (APP_DATA.config && APP_DATA.config.showFloatingHelp) {
+      if (currentHash === "#contato") {
+        floatingHelp.style.display = "none";
+      } else {
+        const mailHref = mountMailTo();
+        floatingHelp.style.display = "block";
+        floatingHelp.innerHTML = `
+          <a href="${mailHref}" class="floating-help-btn" title="Ayuda &amp; Soporte">
+             <i data-lucide="help-circle"></i>
+          </a>
+        `;
+      }
+    } else {
+      floatingHelp.style.display = "none";
     }
   }
 
-  // Cria a string `mailto:` dinamicamente com base no contato do data.js
+  function initGlobalConfig() {
+    if (APP_DATA.config) {
+      brandTitle.innerText = APP_DATA.config.brandName || "Maestría en Guitarra Acústica";
+    }
+  }
+
   function mountMailTo() {
     const { contactEmail, emailSubject, emailBodyTemplate } = APP_DATA.config;
     return `mailto:${contactEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBodyTemplate)}`;
   }
 
-  // ----------------------------------------------------------------------
-  // 2. SISTEMA DE ROTEAMENTO SPA (O "Coração" da navegação)
-  // ----------------------------------------------------------------------
   function handleRouting() {
-    // 2.1 Verifica a rota atual. Se vazio, joga para #home
     let currentHash = window.location.hash || "#home";
-
-    // 2.2 Limpar a tela
     rootEl.innerHTML = "";
-
-    // 2.3 Destacar Aba Inferior Ativa
     updateBottomNavBar(currentHash);
-
-    // 2.4 Controlar Opções Flutuantes exclusivas de Telas Internas
     togglePersistentElements(currentHash);
 
-    // 2.5 Injetar a view correta dentro da main
     switch (currentHash) {
       case "#home":
         renderHome();
@@ -152,61 +147,25 @@ document.addEventListener("DOMContentLoaded", () => {
         renderContato();
         break;
       default:
-        renderHome(); // Prevenção de Rota Perdida (Sênior Friendly)
+        renderHome();
         break;
     }
 
-    // Injetar o footer global de Copyright no final de todas as telas
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-         &copy; 2026 ${APP_DATA.config.brandName || "Survival & Bushcraft"}. Todos los derechos reservados.
+         &copy; 2026 ${APP_DATA.config.brandName || "Maestría en Guitarra Acústica"}. Todos los derechos reservados.
        </footer>
     `);
 
     renderIcons();
-    // Emula que a tela rolou de volta para cima ao trocar de rota
     document.querySelector('.app-container').scrollTo(0, 0);
   }
 
-  function updateBottomNavBar(hash) {
-    tabItems.forEach(tab => {
-      tab.classList.remove("active");
-      if (tab.getAttribute("href") === hash) {
-        tab.classList.add("active");
-      }
-    });
-  }
-
-  function togglePersistentElements(hash) {
-    // Regra 1: Na Home, o bottomNav não deve aparecer para não distrair
-    if (hash === "#home") {
-      bottomNav.classList.add('hidden-on-home');
-    } else {
-      bottomNav.classList.remove('hidden-on-home');
-    }
-
-    // Regra 2: Ocultar Botão Flutuante de Ajuda APENAS se estiver na aba do menu Contato
-    const fBtn = floatingHelp.querySelector('.floating-help-btn');
-    if (fBtn) {
-      if (hash === "#contato" || hash === "#home") {
-        fBtn.classList.add('hidden');
-      } else {
-        fBtn.classList.remove('hidden');
-      }
-    }
-  }
-
-  // ----------------------------------------------------------------------
-  // 3. RENDERIZADORES DE TELAS (VIEWS)
-  // ----------------------------------------------------------------------
-
-  // TELA: HOME (Ponto de Partida)
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>¡Bienvenido, estimado miembro!</h1><p>¿A qué contenido le gustaría acceder hoy?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>¡Bienvenido, miembro!</h1><p>¿A qué te gustaría acceder hoy?</p></div></div>
           
-  
           <div class="home-grid">
             
             <a href="#livros" class="home-block glass-panel">
@@ -215,17 +174,27 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
               <div>
                  <div class="home-block-title">Libros</div>
-                 <div class="home-block-subtitle">Libros y materiales PDF</div>
+                 <div class="home-block-subtitle">Libros &amp; Materiales PDF</div>
               </div>
             </a>
             
+            <a href="#videos" class="home-block glass-panel">
+              <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
+                 <i data-lucide="play-circle"></i>
+              </div>
+              <div>
+                 <div class="home-block-title">Videos</div>
+                 <div class="home-block-subtitle">Lecciones en Video &amp; Guías</div>
+              </div>
+            </a>
+
             <a href="#contato" class="home-block glass-panel">
               <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
                  <i data-lucide="message-square"></i>
               </div>
               <div>
                  <div class="home-block-title">Contacto</div>
-                 <div class="home-block-subtitle">Ayuda y Soporte</div>
+                 <div class="home-block-subtitle">Ayuda &amp; Soporte</div>
               </div>
             </a>
   
@@ -234,23 +203,26 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
   }
 
-  // TELA: BOOKS (Materiais tipo Bundle)
   function renderLivros() {
-    const featuredBooks = APP_DATA.books.slice(0, 3);
-    const compactBooks = APP_DATA.books.slice(3);
+    const featuredBook = APP_DATA.books || [];
+    const mainBooks = featuredBook.filter(b => !b.isCompact);
+    const compactBooks = featuredBook.filter(b => b.isCompact);
 
-    const featuredHTML = featuredBooks.map(bk => {
-      const featuresHTML = bk.features
-        ? `<ul class="premium-checklist">
-      ${bk.features.map(f => `<li><i data-lucide="check-square" style="color:#10B981; width:16px; height:16px;"></i> <span>${f}</span></li>`).join('')}
-             </ul>`
-        : '';
+    let featuredHTML = mainBooks.map(bk => {
+      let featuresHTML = '';
+      if (bk.features && bk.features.length > 0) {
+        featuresHTML = `
+          <ul class="premium-features-list">
+            ${bk.features.map(f => `<li><i data-lucide="check-circle-2"></i> <span>${f}</span></li>`).join('')}
+          </ul>
+        `;
+      }
 
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'PREMIUM'}</span>
-               <span class="premium-format">PDF • Documento descargable</span>
+               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'ESPECIAL'}</span>
+               <span class="premium-format">PDF &bull; Documento Descargable</span>
             </div>
            
            <div class="premium-info">
@@ -275,13 +247,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let compactHTML = '';
     if (compactBooks.length > 0) {
       compactHTML = `
-      <h2 class="section-divider-title">Recursos adicionales</h2>
+      <h2 class="section-divider-title">Recursos Adicionales</h2>
       <div class="compact-book-list">
         ${compactBooks.map(bk => `
           <div class="compact-book-card">
             <div style="display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0;">
               <h4 class="compact-book-title">${bk.title}</h4>
-              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'Recurso'}</span>
+              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'Resource'}</span>
             </div>
             <div class="compact-book-actions">
               <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Leer ahora">
@@ -299,41 +271,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Sus materiales</h1><p>Haga clic en las colecciones a continuación para ver y descargar sus libros.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Tus Materiales</h1><p>Haz clic en las colecciones a continuación para ver y descargar tus libros.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/guitar_IMG1_es.png" alt="Dominio de la Guitarra Acústica" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/gui_IMG1_es.png" alt="Maestría en Guitarra Acústica" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
 
           <div class="list-container">
-            ${featuredHTML || '<p>No hay materiales registrados en este momento.</p>'}
+            ${featuredHTML}
             ${compactHTML}
           </div>
         </div>
       `;
   }
 
-  // TELA: OTHER PRODUCTS
   function renderOutrosProdutos() {
-    const prodsHTML = APP_DATA.otherProducts.map(prod => {
-      // Create features checklist HTML
-      const featuresHTML = prod.features
-        ? `<ul class="premium-checklist">
-      ${prod.features.map(f => `<li><i data-lucide="check-square" style="color:#10B981; width:16px; height:16px;"></i> <span>${f}</span></li>`).join('')}
-             </ul>`
-        : '';
+    const prods = APP_DATA.otherProducts || [];
+
+    let prodsHTML = prods.map(prod => {
+      let featuresHTML = '';
+      if (prod.features && prod.features.length > 0) {
+        featuresHTML = `
+          <ul class="premium-features-list">
+            ${prod.features.map(f => `<li><i data-lucide="check-circle-2"></i> <span>${f}</span></li>`).join('')}
+          </ul>
+        `;
+      }
 
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'PREMIUM'}</span>
-               <span class="premium-format">Acceso en línea</span>
+               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'ESPECIAL'}</span>
+               <span class="premium-format">Online Access</span>
             </div>
            
            <div class="premium-cover-container">
-              <img src="${prod.coverImage}" alt="${prod.title}" loading="lazy" class="premium-cover">
+              <img src="${prod.coverImage}" alt="${prod.title}" class="premium-cover-img">
            </div>
-           
+
            <div class="premium-info">
               <h3 class="premium-title">${prod.title}</h3>
               <p class="premium-desc">${prod.description}</p>
@@ -341,7 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ${featuresHTML}
               
               <a href="${prod.linkUrl}" target="_blank" class="premium-btn">
-                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Saber más'}
+                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Learn more'}
               </a>
            </div>
          </div>
@@ -350,33 +325,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Otros programas</h1><p>Descubra otros programas y materiales.</p></div></div>
-          
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Other Programmes</h1><p>Discover more programmes and materials.</p></div></div>
           
           <div class="list-container">
-            ${prodsHTML || '<p>¡Más actualizaciones muy pronto!</p>'}
+            ${prodsHTML || '<p>More updates coming soon!</p>'}
           </div>
         </div>
       `;
   }
 
-  // TELA: CONTACT (100% Nativa E-mail)
   function renderContato() {
     const mailHref = mountMailTo();
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Soporte al cliente</h1><p>Su satisfacción es nuestra prioridad.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Soporte al Cliente</h1><p>Tu satisfacción es nuestra prioridad.</p></div></div>
           
-  
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
              <div style="margin: 0 auto 1.5rem; width: 64px; height: 64px; background:var(--primary-light); color:var(--primary); border-radius:18px; display:flex; align-items:center; justify-content:center; border: 1px solid var(--border-light)">
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
              </div>
              
-             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Enviar un message</h3>
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Enviar un mensaje</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                 Copie la dirección de correo electrónico a continuación y envíenos su pregunta. Nuestro equipo de soporte le responderá lo antes posible.
+                 Copia la dirección de correo electrónico a continuación y envíanos tu consulta. Nuestro equipo de soporte responderá lo antes posible.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
@@ -387,109 +359,89 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
   }
 
-  // ----------------------------------------------------------------------
-  // 4. MÓDULO COMPLEXO: RENDERIZADOR DE VIDEOS
-  // ----------------------------------------------------------------------
   function renderVideos() {
     const allVideos = APP_DATA.videos || [];
     const safeVideo = allVideos.find(v => v.id === currentVideoId) || allVideos[0] || null;
 
-    // Render do Layout (Sem Top Player, apenas a Playlist Sanduíche)
     rootEl.innerHTML = `
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Sus cursos</h1><p>Desarrolle sus habilidades de supervivencia y bushcraft paso a paso.</p></div></div>
+        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Lecciones en Video</h1><p>Mira tutoriales de acordes de guitarra para principiantes — sin hablar, solo sonido de guitarra.</p></div></div>
         
         <div style="background-color: rgba(16, 185, 129, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
            <i data-lucide="clock" style="width: 20px; height: 20px; flex-shrink: 0; color: #10B981;"></i>
-           <span>Nuevas lecciones pronto</span>
+           <span>Nuevas lecciones muy pronto</span>
         </div>
 
         <div id="video-playlist-items">
-          <!-- JS Injeta Aulas Aqui -->
         </div>
       </div>
         </div>
       `;
 
-    // Atualizar lista da Playlist
-    if (safeVideo) {
-      attachPlaylistEvents(allVideos, safeVideo.id);
-    }
-  }
+    const playlistContainer = document.getElementById("video-playlist-items");
+    if (!playlistContainer) return;
 
-  // Função global para iniciar o Play (Nativo HTML5)
-  window.startCustomPlay = function (wrapper, videoSrc) {
-    if (wrapper.classList.contains('is-playing')) return;
-
-    const container = wrapper.querySelector('.custom-player-iframe-container');
-
-    container.innerHTML = `
-      <video 
-            id="main-native-player"
-            src="${videoSrc}" 
-            controls 
-            playsinline 
-            controlsList="nodownload" 
-            style="width: 100%; height: 100%; display: block; object-fit: contain; border-radius: 4px; background: #000;">
-         </video>
-      `;
-
-    wrapper.classList.add('is-playing');
-
-    // Força o Autoplay Programático para o usuário não precisar clicar 2 vezes (1 no banner, 1 no player)
-    setTimeout(() => {
-      const player = document.getElementById('main-native-player');
-      if (player) {
-        player.play().catch(e => console.log('Autoplay preventivo nativo:', e));
-      }
-    }, 100);
-  };
-
-  function attachPlaylistEvents(videosArray, activeVideoId) {
-    const playlistEl = document.getElementById("video-playlist-items");
-    if (!playlistEl) return;
-
-    // Montar a árvore HTML (Sanduíche/Accordion)
-    const playlistHtml = videosArray.map((vid, index) => {
-      const isPlaying = vid.id === activeVideoId;
-      const vidSrc = vid.videoUrl || vid.embedUrl;
+    playlistContainer.innerHTML = allVideos.map(vid => {
+      const isPlaying = vid.id === (safeVideo ? safeVideo.id : null);
+      const vidSrc = vid.videoUrl || vid.embedUrl || vid.src || null;
 
       return `
-      <div class="card-bloco play-item glass-panel ${isPlaying ? 'active-play' : ''}" style="margin-bottom:16px; display:flex; flex-direction:column; padding:0; overflow:hidden;" data-video-id="${vid.id}">
+         <div style="background: var(--bg-card); border-radius: 16px; border: 1px solid ${isPlaying ? 'var(--primary)' : 'var(--border-light)'}; margin-bottom: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: all 0.2s;">
             
-            <!-- Cabeçalho Clicável -->
-            <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit;">
-              <div style="display:flex; flex-direction:column; justify-content:center; flex:1">
-                 <h4 style="margin:0 0 4px; font-size:1.1rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}">${vid.title}</h4>
-                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Curso completo'}</p>
+            <a href="#videos" onclick="window.currentVideoId='${vid.id}'; window.location.hash='#videos'; location.reload(); return false;" style="display: flex; align-items: center; gap: 12px; padding: 16px; text-decoration: none; color: inherit;">
+              ${!isPlaying ? `<div style="width:36px;height:36px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i data-lucide="play-circle" style="width:18px;height:18px;color:var(--primary);"></i></div>` : ''}
+              <div style="display:flex; flex-direction:column; justify-content:center; flex:1; min-width:0;">
+                 <h4 style="margin:0 0 4px; font-size:1.05rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${vid.title}</h4>
+                 <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                   <p style="margin:0; font-size:0.82rem; color:var(--text-muted);">${vid.duration || 'Lección completa'}</p>
+                   ${`<span id="watched-badge-${vid.id}" style="display:${typeof localStorage !== 'undefined' && localStorage.getItem('watched_'+vid.id)==='1'?'inline-flex':'none'}; align-items:center; gap:3px; font-size:0.72rem; font-weight:700; color:var(--primary); background:var(--primary-light); padding:2px 8px; border-radius:20px;"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>`}
+                 </div>
               </div>
               ${isPlaying
-          ? '<i data-lucide="chevron-down" style="color:var(--primary); align-self:center;"></i>'
-          : '<i data-lucide="play-circle" style="opacity:0.5; align-self:center;"></i>'}
+          ? '<i data-lucide="chevron-down" style="color:var(--primary); align-self:center; flex-shrink:0;"></i>'
+          : '<i data-lucide="chevron-right" style="opacity:0.35; align-self:center; flex-shrink:0;"></i>'}
             </a>
             
-            <!-- Corpo do Vídeo (Só aparece se estiver ativo) -->
       ${isPlaying ? `
               <div class="play-item-body" style="padding: 0 16px 16px 16px; animation: slideDown 0.3s ease;">
                  ${vid.youtubeId ? `
-                 <div id="video-container-${vid.id}" class="video-wrapper-container" style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); width: 100%; aspect-ratio: 16 / 9;">
-                    <div id="yt-player-${vid.id}" style="width: 100%; height: 100%;"></div>
-                    <div class="video-click-overlay" onclick="window.toggleActiveYtPlay()" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; z-index: 5;"></div>
+                 <div id="video-container-${vid.id}" class="video-wrapper-container" style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); aspect-ratio: 9 / 16; max-height: 520px; margin: 0 auto;">
+                    <div id="yt-player-${vid.id}" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+                    <div class="video-click-overlay" onclick="window.toggleActiveYtPlay()" style="position: absolute; top: 50px; left: 0; width: 100%; height: calc(100% - 80px); cursor: pointer; z-index: 5;"></div>
+                    <div style="position:absolute;top:0;left:0;width:100%;height:50px;background:#000;z-index:6;pointer-events:none;"></div>
+                    <div style="position:absolute;bottom:0;left:0;width:100%;height:30px;background:#000;z-index:6;pointer-events:none;"></div>
+                    <div style="position:absolute;bottom:30px;right:0;width:140px;height:34px;background:#000;z-index:6;pointer-events:none;"></div>
+                    <div style="position:absolute;bottom:30px;left:0;width:100px;height:34px;background:#000;z-index:6;pointer-events:none;"></div>
                  </div>
-                 <div style="display: flex; justify-content: center; gap: 20px; padding: 12px; background: var(--bg-body); border-top: 1px solid var(--border-light);">
-                     <button class="play-pause-btn" onclick="window.toggleActiveYtPlay()" style="background:var(--primary); color:white; border:none; border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"><i data-lucide="pause" style="width: 20px; height: 20px;"></i></button>
-                     <button onclick="window.toggleCustomFullscreen('video-container-${vid.id}')" style="background:var(--bg-body); color:var(--text-dark); border: 1px solid var(--border-light); border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer;"><i data-lucide="maximize" style="width: 20px; height: 20px;"></i></button>
+                 <div style="background:var(--bg-card); border:1px solid var(--border-light); border-radius:0 0 12px 12px; padding: 10px 14px; display:flex; flex-direction:column; gap:10px;">
+
+                   <div style="display:flex; justify-content:center; align-items:center; gap:10px;">
+                     <button onclick="window.restartYtVideo()" title="Reiniciar" style="background:var(--bg-body); color:var(--text-dark); border:1px solid var(--border-light); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;">
+                       <i data-lucide="skip-back" style="width:18px;height:18px;"></i>
+                     </button>
+                     <button class="play-pause-btn" onclick="window.toggleActiveYtPlay()" style="background:var(--primary); color:white; border:none; border-radius:50%; width:50px; height:50px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.2); flex-shrink:0;">
+                       <i data-lucide="pause" style="width:22px;height:22px;"></i>
+                     </button>
+                     <button onclick="window.toggleCustomFullscreen('video-container-${vid.id}')" title="Pantalla completa" style="background:var(--bg-body); color:var(--text-dark); border:1px solid var(--border-light); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;">
+                       <i data-lucide="maximize" style="width:18px;height:18px;"></i>
+                     </button>
+                   </div>
+
+                   <div style="display:flex; align-items:center; gap:6px; justify-content:center; flex-wrap:wrap;">
+                     <span style="font-size:0.75rem; font-weight:600; color:var(--text-muted); margin-right:4px;">VELOCIDAD</span>
+                     ${['0.5','0.75','1','1.25','1.5'].map(r => `
+                     <button class="speed-btn ${r==='1'?'speed-active':''}" data-rate="${r}" onclick="window.setYtSpeed(${r})" style="font-size:0.72rem; font-weight:600; padding:4px 10px; border-radius:20px; border:1px solid var(--border-light); cursor:pointer; transition:all 0.2s; background:${r==='1'?'var(--primary)':'var(--bg-body)'}; color:${r==='1'?'white':'var(--text-dark)'}; min-width:42px;">${r}x</button>`).join('')}
+                   </div>
+
+                   <div style="display:flex; justify-content:center;">
+                     <button id="watched-btn-${vid.id}" onclick="window.toggleWatched('${vid.id}')" class="${localStorage.getItem('watched_${vid.id}')==='1'?'watched-active':''}" style="display:flex; align-items:center; gap:6px; padding:8px 20px; border-radius:30px; border:1.5px solid ${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary)':'var(--border-light)'}; background:${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary-light)':'transparent'}; color:${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary)':'var(--text-muted)'}; cursor:pointer; font-size:0.85rem; font-weight:600; transition:all 0.2s;">
+                       <i data-lucide="${localStorage.getItem('watched_${vid.id}')==='1'?'check-circle':'circle'}" style="width:18px;height:18px;"></i>
+                       <span>${localStorage.getItem('watched_${vid.id}')==='1'?'Visto':'Marcar como visto'}</span>
+                     </button>
+                   </div>
+
                  </div>
-                 ` : (vidSrc && (vidSrc.includes('tynk.ai') || vidSrc.includes('iframe') || !vidSrc.match(/\.(mp4|webm|ogg|mov)(\?.*)?$/i))) ? `
-                 <iframe 
-                    src="${vidSrc}" 
-                    frameborder="0" 
-                    scrolling="no"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen 
-                    style="width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; border: none; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                 </iframe>
                  ` : (vidSrc && (vidSrc.includes('tynk.ai') || vidSrc.includes('iframe') || !vidSrc.match(/\.(mp4|webm|ogg|mov)(\?.*)?$/i))) ? `
                  <iframe 
                     src="${vidSrc}" 
@@ -500,92 +452,52 @@ document.addEventListener("DOMContentLoaded", () => {
                     style="width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; border: none; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                  </iframe>
                  ` : `
-                 <video 
-                    src="${vidSrc}" 
-                    controls 
-                    autoplay 
-                    playsinline 
-                    controlsList="nodownload" 
-                    onclick="this.paused ? this.play() : this.pause();"
-                    style="width: 100%; max-height: 260px; display: block; object-fit: contain; border-radius: 12px; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                 <video controls style="width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <source src="${vidSrc}" type="video/mp4">
                  </video>
                  `}
               </div>
-            ` : ''
-        }
-          </div>
-    `;
+      ` : ''}
+         </div>
+      `;
     }).join('');
 
-    playlistEl.innerHTML = playlistHtml;
     renderIcons();
 
-    // Inicializar YouTube Player caso o vídeo ativo tenha youtubeId
-    const activeVidObj = videosArray.find(v => v.id === activeVideoId);
-    if (activeVidObj && activeVidObj.youtubeId) {
-        const initYT = () => {
-            if (window.activeYtPlayer && typeof window.activeYtPlayer.destroy === 'function') {
-                window.activeYtPlayer.destroy();
-            }
-            window.activeYtPlayer = new YT.Player(`yt-player-${activeVidObj.id}`, {
-                videoId: activeVidObj.youtubeId,
-                playerVars: {
-                    'controls': 0, // Esconde a barra nativa, usamos apenas os nossos botões
-                    'disablekb': 1,
-                    'modestbranding': 1,
-                    'rel': 0,
-                    'showinfo': 0,
-                    'fs': 0, // Desativa botão fullscreen nativo, usamos o nosso
-                    'playsinline': 1
-                },
-                events: {
-                    'onReady': (event) => { 
-                        // Autoplay nem sempre funciona sem interação, mas tentamos
-                        event.target.playVideo(); 
-                    },
-                    'onStateChange': (event) => {
-                        const playPauseBtn = document.querySelector(`.play-pause-btn`);
-                        if (playPauseBtn) {
-                            if (event.data === YT.PlayerState.PLAYING) {
-                                playPauseBtn.innerHTML = '<i data-lucide="pause" style="width: 20px; height: 20px;"></i>';
-                            } else {
-                                playPauseBtn.innerHTML = '<i data-lucide="play" style="width: 20px; height: 20px; margin-left: 2px;"></i>';
-                            }
-                            if (window.lucide) lucide.createIcons();
-                        }
-                    }
-                }
-            });
-        };
-        
+    if (safeVideo && safeVideo.youtubeId) {
+      setTimeout(() => {
         if (window.YT && window.YT.Player) {
-            initYT();
-        } else {
-            const checkYT = setInterval(() => {
-                if (window.YT && window.YT.Player) {
-                    clearInterval(checkYT);
-                    initYT();
+          window.activeYtPlayer = new YT.Player(`yt-player-${safeVideo.id}`, {
+            videoId: safeVideo.youtubeId,
+            playerVars: {
+              autoplay: 1,
+              controls: 0,
+              modestbranding: 1,
+              rel: 0,
+              showinfo: 0,
+              fs: 0,
+              playsinline: 1,
+              iv_load_policy: 3,
+              disablekb: 1,
+              cc_load_policy: 0
+            },
+            events: {
+              onStateChange: function(event) {
+                const playBtn = document.querySelector('.play-pause-btn');
+                if (playBtn) {
+                  if (event.data === YT.PlayerState.PLAYING) {
+                    playBtn.innerHTML = '<i data-lucide="pause" style="width:22px;height:22px;"></i>';
+                  } else {
+                    playBtn.innerHTML = '<i data-lucide="play" style="width:22px;height:22px;"></i>';
+                  }
+                  renderIcons();
                 }
-            }, 100);
+              }
+            }
+          });
         }
+      }, 300);
     }
-
-    // Adicionar comportamentos de clique na lista
-    const listHeaders = playlistEl.querySelectorAll(".play-item-header");
-    listHeaders.forEach(header => {
-      header.addEventListener("click", () => {
-        const item = header.closest('.play-item');
-        const clickedId = item.getAttribute("data-video-id");
-        if (clickedId !== currentVideoId) {
-          currentVideoId = clickedId;
-          renderVideos();
-          setTimeout(() => {
-            const activeNode = document.querySelector('.active-play');
-            if (activeNode) activeNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }, 50);
-        }
-      });
-    });
   }
 
 });
