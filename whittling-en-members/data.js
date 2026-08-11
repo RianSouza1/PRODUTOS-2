@@ -14,9 +14,9 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Carving a Comfort Bird — No Talking, Full Process",
-            duration: "Beginner • Knife control & smoothing visual tutorial",
-            youtubeId: "ES428uOSZ68"
+            title: "Wood Carving a Garden Gnome (no talking) — LINKER",
+            duration: "Beginner • Fun & visual gnome carving tutorial",
+            youtubeId: "-ljGbc3u983c"
         },
         {
             id: "v2",
@@ -26,9 +26,9 @@ const APP_DATA = {
         },
         {
             id: "v3",
-            title: "Carving a Garden Gnome — No Talking",
-            duration: "Beginner • Fun & visual gnome carving tutorial",
-            youtubeId: "1DPd5zkh1r0"
+            title: "Carving a Comfort Bird — No Talking, Full Process",
+            duration: "Beginner • Knife control & smoothing visual tutorial",
+            youtubeId: "ES428uOSZ68"
         },
         {
             id: "v4",
