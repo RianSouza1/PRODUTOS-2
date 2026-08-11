@@ -212,6 +212,7 @@ on:
       - 'guitar-no-members/**'
       - 'guitar-da-members/**'
       - 'guitar-fi-members/**'
+      - 'guitar-cs-members/**'
       - 'word-hu-members/**'
       - 'word-he-members/**'
       - 'word-el-members/**'
@@ -1053,6 +1054,8 @@ jobs:
               - 'guitar-da-members/**'
             guitar-fi-members:
               - 'guitar-fi-members/**'
+            guitar-cs-members:
+              - 'guitar-cs-members/**'
             word-hu-members:
               - 'word-hu-members/**'
             word-he-members:
@@ -1359,6 +1362,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/guitar-no-m
             sudo mkdir -p /var/www/skillvault.blog/guitar-da-m
             sudo mkdir -p /var/www/skillvault.blog/guitar-fi-m
+            sudo mkdir -p /var/www/skillvault.blog/guitar-cs-m
             sudo mkdir -p /var/www/skillvault.blog/word-hu-m
             sudo mkdir -p /var/www/skillvault.blog/word-he-m
             sudo mkdir -p /var/www/skillvault.blog/word-el-m
@@ -3950,6 +3954,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "guitar-fi-members/*"
           target: "/var/www/skillvault.blog/guitar-fi-m"
+          strip_components: 1
+
+      - name: Deploy 'guitar-cs-members' to skillvault.blog/guitar-cs-m
+        if: steps.filter.outputs.guitar-cs-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "guitar-cs-members/*"
+          target: "/var/www/skillvault.blog/guitar-cs-m"
           strip_components: 1
 
       - name: Deploy 'word-hu-members' to skillvault.blog/word-hu-m
