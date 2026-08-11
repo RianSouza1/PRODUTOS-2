@@ -373,10 +373,10 @@ document.addEventListener("DOMContentLoaded", () => {
                  <div class="video-wrapper-container" style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); aspect-ratio: 16 / 9; width: 100%; max-width: 800px; margin: 0 auto 12px auto;">
                     ${ytId ? `
                     <iframe 
-                       src="https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1" 
+                       src="https://www.youtube.com/embed/${ytId}?rel=0" 
                        title="${vid.title}"
                        frameborder="0" 
-                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                        allowfullscreen 
                        style="width: 100%; height: 100%; position: absolute; top:0; left:0; border: none; border-radius: 12px;">
                     </iframe>

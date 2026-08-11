@@ -14,9 +14,9 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Wood Carving a Garden Gnome (no talking) — LINKER",
+            title: "Wood Carving a Garden Gnome — No Talking",
             duration: "Beginner • Fun & visual gnome carving tutorial",
-            youtubeId: "-ljGbc3u983c"
+            youtubeId: "ES428uOSZ68"
         },
         {
             id: "v2",
@@ -28,7 +28,7 @@ const APP_DATA = {
             id: "v3",
             title: "Carving a Comfort Bird — No Talking, Full Process",
             duration: "Beginner • Knife control & smoothing visual tutorial",
-            youtubeId: "ES428uOSZ68"
+            youtubeId: "1DPd5zkh1r0"
         },
         {
             id: "v4",
