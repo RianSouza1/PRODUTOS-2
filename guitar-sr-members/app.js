@@ -1,6 +1,6 @@
 /**
  * APP CORE ENGINE
- * ČLANSKA ZONA (Mobile First & Senior Friendly)
+ * ЧЛАНСКА ЗОНА (Mobile First & Senior Friendly)
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.style.background = nowWatched ? 'var(--primary-light)' : 'transparent';
       btn.style.color = nowWatched ? 'var(--primary)' : 'var(--text-muted)';
       btn.innerHTML = nowWatched
-        ? '<i data-lucide="check-circle" style="width:18px;height:18px;"></i> <span>Odgledano</span>'
-        : '<i data-lucide="circle" style="width:18px;height:18px;"></i> <span>Označi kao odgledano</span>';
+        ? '<i data-lucide="check-circle" style="width:18px;height:18px;"></i> <span>Одгледано</span>'
+        : '<i data-lucide="circle" style="width:18px;height:18px;"></i> <span>Означи као одгледано</span>';
       if (window.lucide) lucide.createIcons();
     }
     const badge = document.getElementById(`watched-badge-${videoId}`);
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const mailHref = mountMailTo();
         floatingHelp.style.display = "block";
         floatingHelp.innerHTML = `
-          <a href="${mailHref}" class="floating-help-btn" title="Pomoć & Podrška">
+          <a href="${mailHref}" class="floating-help-btn" title="Помоћ & Подршка">
              <i data-lucide="help-circle"></i>
           </a>
         `;
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "Članska Zona";
+      brandTitle.innerText = APP_DATA.config.brandName || "Чланска Зона";
     }
   }
 
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-         &copy; 2026 ${APP_DATA.config.brandName || "Majstorstvo Akustične Gitare"}. Sva prava zadržana.
+         &copy; 2026 ${APP_DATA.config.brandName || "Мајсторство Акустичне Гитаре"}. Сва права задржана.
        </footer>
     `);
 
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Dobrodošli, člane!</h1><p>Čemu želite da pristupite danas?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Добродошли, члане!</h1><p>Чему желите да приступите данас?</p></div></div>
           
           <div class="home-grid">
             
@@ -173,8 +173,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="book-open"></i>
               </div>
               <div>
-                 <div class="home-block-title">Knjige</div>
-                 <div class="home-block-subtitle">Knjige &amp; PDF materijali</div>
+                 <div class="home-block-title">Књиге</div>
+                 <div class="home-block-subtitle">Књиге &amp; PDF материјали</div>
               </div>
             </a>
             
@@ -183,8 +183,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="play-circle"></i>
               </div>
               <div>
-                 <div class="home-block-title">Video zapisi</div>
-                 <div class="home-block-subtitle">Video lekcije &amp; Vodiči</div>
+                 <div class="home-block-title">Видео записи</div>
+                 <div class="home-block-subtitle">Видео лекције &amp; Водичи</div>
               </div>
             </a>
 
@@ -193,8 +193,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="message-square"></i>
               </div>
               <div>
-                 <div class="home-block-title">Kontakt</div>
-                 <div class="home-block-subtitle">Pomoć &amp; Podrška</div>
+                 <div class="home-block-title">Контакт</div>
+                 <div class="home-block-subtitle">Помоћ &amp; Подршка</div>
               </div>
             </a>
   
@@ -221,8 +221,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIJALNO'}</span>
-               <span class="premium-format">PDF &bull; Dokument za Preuzimanje</span>
+               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'СПЕЦИЈАЛНО'}</span>
+               <span class="premium-format">PDF &bull; Документ за Преузимање</span>
             </div>
            
            <div class="premium-info">
@@ -233,10 +233,10 @@ document.addEventListener("DOMContentLoaded", () => {
               
                <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: 1.5rem;">
                   <a href="${bk.downloadUrl}" target="_blank" class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: var(--primary); color: #FFF;">
-                     <i data-lucide="book-open"></i> Čitaj sada
+                     <i data-lucide="book-open"></i> Читај сада
                   </a>
                   <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
-                     <i data-lucide="download"></i> Preuzmi PDF
+                     <i data-lucide="download"></i> Преузми PDF
                   </a>
                </div>
            </div>
@@ -247,19 +247,19 @@ document.addEventListener("DOMContentLoaded", () => {
     let compactHTML = '';
     if (compactBooks.length > 0) {
       compactHTML = `
-      <h2 class="section-divider-title">Dodatni Resursi</h2>
+      <h2 class="section-divider-title">Додатни Ресурси</h2>
       <div class="compact-book-list">
         ${compactBooks.map(bk => `
           <div class="compact-book-card">
             <div style="display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0;">
               <h4 class="compact-book-title">${bk.title}</h4>
-              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'Resurs'}</span>
+              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'Ресурс'}</span>
             </div>
             <div class="compact-book-actions">
-              <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Čitaj sada">
+              <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Читај сада">
                 <i data-lucide="book-open"></i>
               </a>
-              <a href="${bk.downloadUrl}" download class="compact-action-btn btn-download" title="Preuzmi PDF">
+              <a href="${bk.downloadUrl}" download class="compact-action-btn btn-download" title="Преузми PDF">
                 <i data-lucide="download"></i>
               </a>
             </div>
@@ -271,14 +271,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Vaši Materijali</h1><p>Kliknite na kolekcije ispod da biste pregledali i preuzeli vaše knjige.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Ваши Материјали</h1><p>Кликните на колекције испод да бисте прегледали и преузели ваше књиге.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/gui_IMG1_sr.png" alt="Majstorstvo Akustične Gitare" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/gui_IMG1_sr.png" alt="Мајсторство Акустичне Гитаре" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
 
           <div class="list-container">
-            ${featuredHTML || '<p>Nema dostupnih materijala u ovom trenutku.</p>'}
+            ${featuredHTML || '<p>Нема доступних материјала у овом тренутку.</p>'}
             ${compactHTML}
           </div>
         </div>
@@ -301,8 +301,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'SPECIJALNO'}</span>
-               <span class="premium-format">Online Pristup</span>
+               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'СПЕЦИЈАЛНО'}</span>
+               <span class="premium-format">Online Приступ</span>
             </div>
            
            <div class="premium-cover-container">
@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ${featuresHTML}
               
               <a href="${prod.linkUrl}" target="_blank" class="premium-btn">
-                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Saznaj više'}
+                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Сазнај више'}
               </a>
            </div>
          </div>
@@ -325,10 +325,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Drugi Programi</h1><p>Otkrijte više programa i materijala.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Други Програми</h1><p>Откријте више програма и материјала.</p></div></div>
           
           <div class="list-container">
-            ${prodsHTML || '<p>Nove nadogradnje uskoro!</p>'}
+            ${prodsHTML || '<p>Нове надоградње ускоро!</p>'}
           </div>
         </div>
       `;
@@ -339,16 +339,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Korisnička Podrška</h1><p>Vaše zadovoljstvo je naš prioritet.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Корисничка Подршка</h1><p>Ваше задовољство је наш приоритет.</p></div></div>
           
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
              <div style="margin: 0 auto 1.5rem; width: 64px; height: 64px; background:var(--primary-light); color:var(--primary); border-radius:18px; display:flex; align-items:center; justify-content:center; border: 1px solid var(--border-light)">
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
              </div>
              
-             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Pošaljite poruku</h3>
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Пошаљите поруку</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                 Kopirajte e-mail adresu ispod i pošaljite nam vaše pitanje. Naš tim za podršku će odgovoriti u najkraćem mogućem roku.
+                 Копирајте е-маил адресу испод и пошаљите нам ваше питање. Наш тим за подршку ће одговорити у најкраћем могућем року.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
@@ -366,11 +366,11 @@ document.addEventListener("DOMContentLoaded", () => {
     rootEl.innerHTML = `
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Video Lekcije</h1><p>Gledajte vodiče za akorde na gitari za početnike — bez priče, samo zvuk gitare.</p></div></div>
+        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Видео Лекције</h1><p>Гледајте водиче за акорде на гитари за почетнике — без приче, само звук гитаре.</p></div></div>
         
         <div style="background-color: rgba(16, 185, 129, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
            <i data-lucide="clock" style="width: 20px; height: 20px; flex-shrink: 0; color: #10B981;"></i>
-           <span>Nove lekcije uskoro</span>
+           <span>Нове лекције ускоро</span>
         </div>
 
         <div id="video-playlist-items">
@@ -394,8 +394,8 @@ document.addEventListener("DOMContentLoaded", () => {
               <div style="display:flex; flex-direction:column; justify-content:center; flex:1; min-width:0;">
                  <h4 style="margin:0 0 4px; font-size:1.05rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${vid.title}</h4>
                  <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                   <p style="margin:0; font-size:0.82rem; color:var(--text-muted);">${vid.duration || 'Cela lekcija'}</p>
-                   ${`<span id="watched-badge-${vid.id}" style="display:${typeof localStorage !== 'undefined' && localStorage.getItem('watched_'+vid.id)==='1'?'inline-flex':'none'}; align-items:center; gap:3px; font-size:0.72rem; font-weight:700; color:var(--primary); background:var(--primary-light); padding:2px 8px; border-radius:20px;"><i data-lucide="check" style="width:10px;height:10px;"></i> Odgledano</span>`}
+                   <p style="margin:0; font-size:0.82rem; color:var(--text-muted);">${vid.duration || 'Цела лекција'}</p>
+                   ${`<span id="watched-badge-${vid.id}" style="display:${typeof localStorage !== 'undefined' && localStorage.getItem('watched_'+vid.id)==='1'?'inline-flex':'none'}; align-items:center; gap:3px; font-size:0.72rem; font-weight:700; color:var(--primary); background:var(--primary-light); padding:2px 8px; border-radius:20px;"><i data-lucide="check" style="width:10px;height:10px;"></i> Одгледано</span>`}
                  </div>
               </div>
               ${isPlaying
@@ -417,19 +417,19 @@ document.addEventListener("DOMContentLoaded", () => {
                  <div style="background:var(--bg-card); border:1px solid var(--border-light); border-radius:0 0 12px 12px; padding: 10px 14px; display:flex; flex-direction:column; gap:10px;">
 
                    <div style="display:flex; justify-content:center; align-items:center; gap:10px;">
-                     <button onclick="window.restartYtVideo()" title="Restartuj" style="background:var(--bg-body); color:var(--text-dark); border:1px solid var(--border-light); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;">
+                     <button onclick="window.restartYtVideo()" title="Рестартуј" style="background:var(--bg-body); color:var(--text-dark); border:1px solid var(--border-light); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;">
                        <i data-lucide="skip-back" style="width:18px;height:18px;"></i>
                      </button>
                      <button class="play-pause-btn" onclick="window.toggleActiveYtPlay()" style="background:var(--primary); color:white; border:none; border-radius:50%; width:50px; height:50px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.2); flex-shrink:0;">
                        <i data-lucide="pause" style="width:22px;height:22px;"></i>
                      </button>
-                     <button onclick="window.toggleCustomFullscreen('video-container-${vid.id}')" title="Ceo ekran" style="background:var(--bg-body); color:var(--text-dark); border:1px solid var(--border-light); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;">
+                     <button onclick="window.toggleCustomFullscreen('video-container-${vid.id}')" title="Цео екран" style="background:var(--bg-body); color:var(--text-dark); border:1px solid var(--border-light); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;">
                        <i data-lucide="maximize" style="width:18px;height:18px;"></i>
                      </button>
                    </div>
 
                    <div style="display:flex; align-items:center; gap:6px; justify-content:center; flex-wrap:wrap;">
-                     <span style="font-size:0.75rem; font-weight:600; color:var(--text-muted); margin-right:4px;">BRZINA</span>
+                     <span style="font-size:0.75rem; font-weight:600; color:var(--text-muted); margin-right:4px;">БРЗИНА</span>
                      ${['0.5','0.75','1','1.25','1.5'].map(r => `
                      <button class="speed-btn ${r==='1'?'speed-active':''}" data-rate="${r}" onclick="window.setYtSpeed(${r})" style="font-size:0.72rem; font-weight:600; padding:4px 10px; border-radius:20px; border:1px solid var(--border-light); cursor:pointer; transition:all 0.2s; background:${r==='1'?'var(--primary)':'var(--bg-body)'}; color:${r==='1'?'white':'var(--text-dark)'}; min-width:42px;">${r}x</button>`).join('')}
                    </div>
@@ -437,7 +437,7 @@ document.addEventListener("DOMContentLoaded", () => {
                    <div style="display:flex; justify-content:center;">
                      <button id="watched-btn-${vid.id}" onclick="window.toggleWatched('${vid.id}')" class="${localStorage.getItem('watched_${vid.id}')==='1'?'watched-active':''}" style="display:flex; align-items:center; gap:6px; padding:8px 20px; border-radius:30px; border:1.5px solid ${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary)':'var(--border-light)'}; background:${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary-light)':'transparent'}; color:${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary)':'var(--text-muted)'}; cursor:pointer; font-size:0.85rem; font-weight:600; transition:all 0.2s;">
                        <i data-lucide="${localStorage.getItem('watched_${vid.id}')==='1'?'check-circle':'circle'}" style="width:18px;height:18px;"></i>
-                       <span>${localStorage.getItem('watched_${vid.id}')==='1'?'Odgledano':'Označi kao odgledano'}</span>
+                       <span>${localStorage.getItem('watched_${vid.id}')==='1'?'Одгледано':'Означи као одгледано'}</span>
                      </button>
                    </div>
 
