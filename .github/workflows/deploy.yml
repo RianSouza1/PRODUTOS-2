@@ -115,6 +115,7 @@ on:
       - 'pilates-de-members/**'
       - 'smoking-de-members/**'
       - 'smoking-bg-members/**'
+      - 'smoking-he-members/**'
       - 'smoking-sv-members/**'
       - 'smoking-pl-members/**'
       - 'smoking-no-members/**'
@@ -871,6 +872,8 @@ jobs:
               - 'smoking-de-members/**'
             smoking-bg-members:
               - 'smoking-bg-members/**'
+            smoking-he-members:
+              - 'smoking-he-members/**'
             smoking-sv-members:
               - 'smoking-sv-members/**'
             smoking-pl-members:
@@ -1298,6 +1301,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/pilates-de-m
             sudo mkdir -p /var/www/skillvault.blog/smoking-de-m
             sudo mkdir -p /var/www/skillvault.blog/smoking-bg-m
+            sudo mkdir -p /var/www/skillvault.blog/smoking-he-m
             sudo mkdir -p /var/www/skillvault.blog/smoking-sv-m
             sudo mkdir -p /var/www/skillvault.blog/smoking-pl-m
             sudo mkdir -p /var/www/skillvault.blog/smoking-no-m
@@ -2929,6 +2933,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "smoking-bg-members/*"
           target: "/var/www/skillvault.blog/smoking-bg-m"
+          strip_components: 1
+
+      - name: Deploy 'smoking-he-members' to skillvault.blog/smoking-he-m
+        if: steps.filter.outputs.smoking-he-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "smoking-he-members/*"
+          target: "/var/www/skillvault.blog/smoking-he-m"
           strip_components: 1
 
       - name: Deploy 'smoking-sv-members' to skillvault.blog/smoking-sv-m
