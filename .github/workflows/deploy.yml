@@ -243,6 +243,7 @@ on:
       - 'survivor-fi-members/**'
       - 'survivor-es-members/**'
       - 'survivor-sk-members/**'
+      - 'survivor-sl-members/**'
       - 'survivor-da-members/**'
       - 'survivor-hr-members/**'
       - 'survivor-bg-members/**'
@@ -1125,6 +1126,8 @@ jobs:
               - 'survivor-es-members/**'
             survivor-sk-members:
               - 'survivor-sk-members/**'
+            survivor-sl-members:
+              - 'survivor-sl-members/**'
             survivor-da-members:
               - 'survivor-da-members/**'
             survivor-hr-members:
@@ -1420,6 +1423,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/survivor-fi-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-es-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-sk-m
+            sudo mkdir -p /var/www/skillvault.blog/survivor-sl-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-da-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-hr-m
             sudo mkdir -p /var/www/skillvault.blog/survivor-bg-m
@@ -4331,6 +4335,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "survivor-sk-members/*"
           target: "/var/www/skillvault.blog/survivor-sk-m"
+          strip_components: 1
+
+      - name: Deploy 'survivor-sl-members' to skillvault.blog/survivor-sl-m
+        if: steps.filter.outputs.survivor-sl-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "survivor-sl-members/*"
+          target: "/var/www/skillvault.blog/survivor-sl-m"
           strip_components: 1
 
       - name: Deploy 'survivor-da-members' to skillvault.blog/survivor-da-m
