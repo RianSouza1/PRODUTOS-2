@@ -514,7 +514,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderIcons();
 
-    if (safeVideo && safeVideo.youtubeId) {
+        if (safeVideo && safeVideo.youtubeId) {
         const initYT = () => {
             if (window.activeYtPlayer && typeof window.activeYtPlayer.destroy === 'function') {
                 window.activeYtPlayer.destroy();
