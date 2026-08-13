@@ -1,6 +1,8 @@
 /**
  * APP CORE ENGINE
  * ÁREA DE MEMBROS (Mobile First & Senior Friendly)
+ * Nenhuma alteração de conteúdo ou curso deve ocorrer aqui. 
+ * Apenas em data.js
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -73,13 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentVideoId = APP_DATA.videos.length > 0 ? APP_DATA.videos[0].id : null;
 
-  window.selectVideo = function(vidId) {
-    if (vidId && vidId !== currentVideoId) {
-      currentVideoId = vidId;
-      renderVideos();
-    }
-  };
-
   initGlobalConfig();
   handleRouting();
 
@@ -91,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Inject YouTube Iframe API globally
   if (!document.getElementById("yt-api-script")) {
     const tag = document.createElement('script');
     tag.id = "yt-api-script";
@@ -101,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.activeYtPlayer = null;
 
-  // Fullscreen CSS Injections
   if (!document.getElementById("fullscreen-css")) {
       const style = document.createElement('style');
       style.id = "fullscreen-css";
@@ -151,38 +144,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   };
 
-  function updateBottomNavBar(currentHash) {
-    tabItems.forEach((item) => {
-      const tabTarget = item.getAttribute("href");
-      if (tabTarget === currentHash) {
-        item.classList.add("active");
-      } else {
-        item.classList.remove("active");
-      }
-    });
-  }
-
-  function togglePersistentElements(currentHash) {
-    if (APP_DATA.config && APP_DATA.config.showFloatingHelp) {
-      if (currentHash === "#contato") {
-        floatingHelp.style.display = "none";
-      } else {
-        const mailHref = mountMailTo();
-        floatingHelp.style.display = "block";
-        floatingHelp.innerHTML = `
-          <a href="${mailHref}" class="floating-help-btn" title="Pomoč in Podpora">
-             <i data-lucide="help-circle"></i>
-          </a>
-        `;
-      }
-    } else {
-      floatingHelp.style.display = "none";
-    }
-  }
-
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "Akustična Kitara";
+      brandTitle.innerText = APP_DATA.config.brandName || "Mojstrstvo Akustične Kitare";
     }
   }
 
@@ -193,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function handleRouting() {
     let currentHash = window.location.hash || "#home";
+
     rootEl.innerHTML = "";
     updateBottomNavBar(currentHash);
     togglePersistentElements(currentHash);
@@ -220,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-         &copy; 2026 ${APP_DATA.config.brandName || "Akustična Kitara"}. Vse pravice pridržane.
+         &copy; 2026 ${APP_DATA.config.brandName || "Mojstrstvo Akustične Kitare"}. Vse pravice pridržane.
        </footer>
     `);
 
@@ -228,10 +193,36 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.app-container').scrollTo(0, 0);
   }
 
+  function updateBottomNavBar(hash) {
+    tabItems.forEach(tab => {
+      tab.classList.remove("active");
+      if (tab.getAttribute("href") === hash) {
+        tab.classList.add("active");
+      }
+    });
+  }
+
+  function togglePersistentElements(hash) {
+    if (hash === "#home") {
+      bottomNav.classList.add('hidden-on-home');
+    } else {
+      bottomNav.classList.remove('hidden-on-home');
+    }
+
+    const fBtn = floatingHelp.querySelector('.floating-help-btn');
+    if (fBtn) {
+      if (hash === "#contato" || hash === "#home") {
+        fBtn.classList.add('hidden');
+      } else {
+        fBtn.classList.remove('hidden');
+      }
+    }
+  }
+
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Dobrodošli, cenjeni član!</h1><p>Kaj želite dostopati danes?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Dobrodošli, cenjeni član!</h1><p>Katerim materialom želite dostopati danes?</p></div></div>
           
           <div class="home-grid">
             
@@ -251,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
               <div>
                  <div class="home-block-title">Videoposnetki</div>
-                 <div class="home-block-subtitle">Video Lekcije in Vadnice</div>
+                 <div class="home-block-subtitle">Video Lekcije in Vodniki</div>
               </div>
             </a>
 
@@ -271,25 +262,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderLivros() {
-    const featuredBook = APP_DATA.books || [];
-    const mainBooks = featuredBook.filter(b => !b.isCompact);
-    const compactBooks = featuredBook.filter(b => b.isCompact);
+    const featuredBooks = APP_DATA.books.slice(0, 3);
+    const compactBooks = APP_DATA.books.slice(3);
 
-    let featuredHTML = mainBooks.map(bk => {
-      let featuresHTML = '';
-      if (bk.features && bk.features.length > 0) {
-        featuresHTML = `
-          <ul class="premium-features-list">
-            ${bk.features.map(f => `<li><i data-lucide="check-circle-2"></i> <span>${f}</span></li>`).join('')}
-          </ul>
-        `;
-      }
+    const featuredHTML = featuredBooks.map(bk => {
+      const featuresHTML = bk.features
+        ? `<ul class="premium-checklist">
+      ${bk.features.map(f => `<li><i data-lucide="check-square" style="color:#10B981; width:16px; height:16px;"></i> <span>${f}</span></li>`).join('')}
+             </ul>`
+        : '';
 
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'POSEBNO'}</span>
-               <span class="premium-format">PDF &bull; Dokument za Prenos</span>
+               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
+               <span class="premium-format">PDF • Dokument za Prenos</span>
             </div>
            
            <div class="premium-info">
@@ -341,7 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="hero-card glass-panel"><div class="hero-text"><h1>Vaša Gradiva</h1><p>Kliknite na spodnje zbirke za ogled in prenos vaših knjig.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/gui_IMG1_sl.png" alt="Akustična Kitara" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/gui_IMG1_sl.png" alt="${APP_DATA.config.brandName || "Mojstrstvo Akustične Kitare"}" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
 
           <div class="list-container">
@@ -353,17 +340,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderOutrosProdutos() {
-    const prods = APP_DATA.otherProducts || [];
-
-    let prodsHTML = prods.map(prod => {
-      let featuresHTML = '';
-      if (prod.features && prod.features.length > 0) {
-        featuresHTML = `
-          <ul class="premium-features-list">
-            ${prod.features.map(f => `<li><i data-lucide="check-circle-2"></i> <span>${f}</span></li>`).join('')}
-          </ul>
-        `;
-      }
+    const prodsHTML = APP_DATA.otherProducts.map(prod => {
+      const featuresHTML = prod.features
+        ? `<ul class="premium-checklist">
+      ${prod.features.map(f => `<li><i data-lucide="check-square" style="color:#10B981; width:16px; height:16px;"></i> <span>${f}</span></li>`).join('')}
+             </ul>`
+        : '';
 
       return `
       <div class="premium-book-card">
@@ -373,9 +355,9 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
            
            <div class="premium-cover-container">
-              <img src="${prod.coverImage}" alt="${prod.title}" class="premium-cover-img">
+              <img src="${prod.coverImage}" alt="${prod.title}" loading="lazy" class="premium-cover">
            </div>
-
+           
            <div class="premium-info">
               <h3 class="premium-title">${prod.title}</h3>
               <p class="premium-desc">${prod.description}</p>
@@ -446,16 +428,23 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
 
-    const playlistContainer = document.getElementById("video-playlist-items");
-    if (!playlistContainer) return;
+    if (safeVideo) {
+      attachPlaylistEvents(allVideos, safeVideo.id);
+    }
+  }
 
-    playlistContainer.innerHTML = allVideos.map(vid => {
-      const isPlaying = vid.id === (safeVideo ? safeVideo.id : null);
+  function attachPlaylistEvents(videosArray, activeVideoId) {
+    const playlistEl = document.getElementById("video-playlist-items");
+    if (!playlistEl) return;
+
+    const playlistHtml = videosArray.map((vid, index) => {
+      const isPlaying = vid.id === activeVideoId;
+      const vidSrc = vid.videoUrl || vid.embedUrl;
 
       return `
-         <div style="background: var(--bg-card); border-radius: 16px; border: 1px solid ${isPlaying ? 'var(--primary)' : 'var(--border-light)'}; margin-bottom: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: all 0.2s;">
+      <div class="card-bloco play-item glass-panel ${isPlaying ? 'active-play' : ''}" style="margin-bottom:16px; display:flex; flex-direction:column; padding:0; overflow:hidden;" data-video-id="${vid.id}">
             
-            <a href="#videos" onclick=\"window.selectVideo('${vid.id}'); return false;\" style="display: flex; align-items: center; gap: 12px; padding: 16px; text-decoration: none; color: inherit;">
+            <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit; align-items:center; gap:12px;">
               ${!isPlaying ? `<div style="width:36px;height:36px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i data-lucide="play-circle" style="width:18px;height:18px;color:var(--primary);"></i></div>` : ''}
               <div style="display:flex; flex-direction:column; justify-content:center; flex:1; min-width:0;">
                  <h4 style="margin:0 0 4px; font-size:1.05rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${vid.title}</h4>
@@ -471,6 +460,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
       ${isPlaying ? `
               <div class="play-item-body" style="padding: 0 16px 16px 16px; animation: slideDown 0.3s ease;">
+                 ${vid.youtubeId ? `
                  <div id="video-container-${vid.id}" class="video-wrapper-container" style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); aspect-ratio: 9 / 16; max-height: 520px; margin: 0 auto;">
                     <div id="yt-player-${vid.id}" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
                     <div class="video-click-overlay" onclick="window.toggleActiveYtPlay()" style="position: absolute; top: 50px; left: 0; width: 100%; height: calc(100% - 80px); cursor: pointer; z-index: 5;"></div>
@@ -479,10 +469,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div style="position:absolute;bottom:30px;right:0;width:140px;height:34px;background:#000;z-index:6;pointer-events:none;"></div>
                     <div style="position:absolute;bottom:30px;left:0;width:100px;height:34px;background:#000;z-index:6;pointer-events:none;"></div>
                  </div>
-                 
                  <div style="background:var(--bg-card); border:1px solid var(--border-light); border-radius:0 0 12px 12px; padding: 10px 14px; display:flex; flex-direction:column; gap:10px;">
+
                    <div style="display:flex; justify-content:center; align-items:center; gap:10px;">
-                     <button onclick="window.restartYtVideo()" title="Ponovno predvajaj" style="background:var(--bg-body); color:var(--text-dark); border:1px solid var(--border-light); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;">
+                     <button onclick="window.restartYtVideo()" title="Ponovno zagon" style="background:var(--bg-body); color:var(--text-dark); border:1px solid var(--border-light); border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;">
                        <i data-lucide="skip-back" style="width:18px;height:18px;"></i>
                      </button>
                      <button class="play-pause-btn" onclick="window.toggleActiveYtPlay()" style="background:var(--primary); color:white; border:none; border-radius:50%; width:50px; height:50px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.2); flex-shrink:0;">
@@ -500,27 +490,51 @@ document.addEventListener("DOMContentLoaded", () => {
                    </div>
 
                    <div style="display:flex; justify-content:center;">
-                     <button id="watched-btn-${vid.id}" onclick="window.toggleWatched('${vid.id}')" class="${localStorage.getItem('watched_${vid.id}')==='1'?'watched-active':''}" style="display:flex; align-items:center; gap:6px; padding:8px 20px; border-radius:30px; border:1.5px solid ${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary)':'var(--border-light)'}; background:${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary-light)':'transparent'}; color:${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary)':'var(--text-muted)'}; cursor:pointer; font-size:0.85rem; font-weight:600; transition:all 0.2s;">
-                       <i data-lucide="${localStorage.getItem('watched_${vid.id}')==='1'?'check-circle':'circle'}" style="width:18px;height:18px;"></i>
-                       <span>${localStorage.getItem('watched_${vid.id}')==='1'?'Ogledano':'Označi kot ogledano'}</span>
+                     <button id="watched-btn-${vid.id}" onclick="window.toggleWatched('${vid.id}')" class="${localStorage.getItem('watched_'+vid.id)==='1'?'watched-active':''}" style="display:flex; align-items:center; gap:6px; padding:8px 20px; border-radius:30px; border:1.5px solid ${localStorage.getItem('watched_'+vid.id)==='1'?'var(--primary)':'var(--border-light)'}; background:${localStorage.getItem('watched_'+vid.id)==='1'?'var(--primary-light)':'transparent'}; color:${localStorage.getItem('watched_'+vid.id)==='1'?'var(--primary)':'var(--text-muted)'}; cursor:pointer; font-size:0.85rem; font-weight:600; transition:all 0.2s;">
+                       <i data-lucide="${localStorage.getItem('watched_'+vid.id)==='1'?'check-circle':'circle'}" style="width:18px;height:18px;"></i>
+                       <span>${localStorage.getItem('watched_'+vid.id)==='1'?'Ogledano':'Označi kot ogledano'}</span>
                      </button>
                    </div>
+
                  </div>
+                 ` : (vidSrc && (vidSrc.includes('tynk.ai') || vidSrc.includes('iframe') || !vidSrc.match(/\.(mp4|webm|ogg|mov)(\?.*)?$/i))) ? `
+                 <iframe 
+                    src="${vidSrc}" 
+                    frameborder="0" 
+                    scrolling="no"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen 
+                    style="width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; border: none; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                 </iframe>
+                 ` : `
+                 <video 
+                    src="${vidSrc}" 
+                    controls 
+                    autoplay 
+                    playsinline 
+                    controlsList="nodownload" 
+                    onclick="this.paused ? this.play() : this.pause();"
+                    style="width: 100%; max-height: 260px; display: block; object-fit: contain; border-radius: 12px; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                 </video>
+                 `}
               </div>
-      ` : ''}
-         </div>
-      `;
+            ` : ''
+        }
+          </div>
+    `;
     }).join('');
 
+    playlistEl.innerHTML = playlistHtml;
     renderIcons();
 
-        if (safeVideo && safeVideo.youtubeId) {
+    const activeVidObj = videosArray.find(v => v.id === activeVideoId);
+    if (activeVidObj && activeVidObj.youtubeId) {
         const initYT = () => {
             if (window.activeYtPlayer && typeof window.activeYtPlayer.destroy === 'function') {
                 window.activeYtPlayer.destroy();
             }
-            window.activeYtPlayer = new YT.Player(`yt-player-${safeVideo.id}`, {
-                videoId: safeVideo.youtubeId,
+            window.activeYtPlayer = new YT.Player(`yt-player-${activeVidObj.id}`, {
+                videoId: activeVidObj.youtubeId,
                 playerVars: {
                     'controls': 0,
                     'disablekb': 1,
@@ -542,9 +556,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         const playPauseBtn = document.querySelector(`.play-pause-btn`);
                         if (playPauseBtn) {
                             if (event.data === YT.PlayerState.PLAYING) {
-                                playPauseBtn.innerHTML = '<i data-lucide="pause" style="width: 22px; height: 22px;"></i>';
+                                playPauseBtn.innerHTML = '<i data-lucide="pause" style="width: 20px; height: 20px;"></i>';
                             } else {
-                                playPauseBtn.innerHTML = '<i data-lucide="play" style="width: 22px; height: 22px;"></i>';
+                                playPauseBtn.innerHTML = '<i data-lucide="play" style="width: 20px; height: 20px; margin-left: 2px;"></i>';
                             }
                             if (window.lucide) lucide.createIcons();
                         }
@@ -564,6 +578,22 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 100);
         }
     }
+
+    const listHeaders = playlistEl.querySelectorAll(".play-item-header");
+    listHeaders.forEach(header => {
+      header.addEventListener("click", () => {
+        const item = header.closest('.play-item');
+        const clickedId = item.getAttribute("data-video-id");
+        if (clickedId !== currentVideoId) {
+          currentVideoId = clickedId;
+          renderVideos();
+          setTimeout(() => {
+            const activeNode = document.querySelector('.active-play');
+            if (activeNode) activeNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 50);
+        }
+      });
+    });
   }
 
 });

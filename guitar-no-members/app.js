@@ -1,6 +1,8 @@
 /**
  * APP CORE ENGINE
- * MEDLEMSOMRÅDE (Mobile First & Senior Friendly)
+ * ÁREA DE MEMBROS (Mobile First & Senior Friendly)
+ * Nenhuma alteração de conteúdo ou curso deve ocorrer aqui. 
+ * Apenas em data.js
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -73,13 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentVideoId = APP_DATA.videos.length > 0 ? APP_DATA.videos[0].id : null;
 
-  window.selectVideo = function(vidId) {
-    if (vidId && vidId !== currentVideoId) {
-      currentVideoId = vidId;
-      renderVideos();
-    }
-  };
-
   initGlobalConfig();
   handleRouting();
 
@@ -91,38 +86,67 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function updateBottomNavBar(currentHash) {
-    tabItems.forEach((item) => {
-      const tabTarget = item.getAttribute("href");
-      if (tabTarget === currentHash) {
-        item.classList.add("active");
-      } else {
-        item.classList.remove("active");
-      }
-    });
+  if (!document.getElementById("yt-api-script")) {
+    const tag = document.createElement('script');
+    tag.id = "yt-api-script";
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  }
+  window.activeYtPlayer = null;
+
+  if (!document.getElementById("fullscreen-css")) {
+      const style = document.createElement('style');
+      style.id = "fullscreen-css";
+      style.textContent = `
+          .video-wrapper-container:fullscreen {
+              background: #000 !important;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+          }
+          .video-wrapper-container:fullscreen > div[id^="yt-player-"] {
+              height: calc(100vh - 68px) !important;
+              flex-grow: 1;
+          }
+          .video-wrapper-container:-webkit-full-screen {
+              background: #000 !important;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+          }
+          .video-wrapper-container:-webkit-full-screen > div[id^="yt-player-"] {
+              height: calc(100vh - 68px) !important;
+              flex-grow: 1;
+          }
+      `;
+      document.head.appendChild(style);
   }
 
-  function togglePersistentElements(currentHash) {
-    if (APP_DATA.config && APP_DATA.config.showFloatingHelp) {
-      if (currentHash === "#contato") {
-        floatingHelp.style.display = "none";
+  window.toggleCustomFullscreen = function(elementId) {
+      const container = document.getElementById(elementId);
+      if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+          if (container.requestFullscreen) {
+              container.requestFullscreen();
+          } else if (container.webkitRequestFullscreen) {
+              container.webkitRequestFullscreen();
+          } else if (container.msRequestFullscreen) {
+              container.msRequestFullscreen();
+          }
       } else {
-        const mailHref = mountMailTo();
-        floatingHelp.style.display = "block";
-        floatingHelp.innerHTML = `
-          <a href="${mailHref}" class="floating-help-btn" title="Hjelp & Support">
-             <i data-lucide="help-circle"></i>
-          </a>
-        `;
+          if (document.exitFullscreen) {
+              document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) {
+              document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) {
+              document.msExitFullscreen();
+          }
       }
-    } else {
-      floatingHelp.style.display = "none";
-    }
-  }
+  };
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "Medlemsområde";
+      brandTitle.innerText = APP_DATA.config.brandName || "Akustisk Gitar Mastery";
     }
   }
 
@@ -133,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function handleRouting() {
     let currentHash = window.location.hash || "#home";
+
     rootEl.innerHTML = "";
     updateBottomNavBar(currentHash);
     togglePersistentElements(currentHash);
@@ -160,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-         &copy; 2026 ${APP_DATA.config.brandName || "Akustisk Gitar Mastery"}. Alle rettigheter forbeholdt.
+         &copy; 2026 ${APP_DATA.config.brandName || "Akustisk Gitar Mastery"}. Med enerett.
        </footer>
     `);
 
@@ -168,10 +193,36 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.app-container').scrollTo(0, 0);
   }
 
+  function updateBottomNavBar(hash) {
+    tabItems.forEach(tab => {
+      tab.classList.remove("active");
+      if (tab.getAttribute("href") === hash) {
+        tab.classList.add("active");
+      }
+    });
+  }
+
+  function togglePersistentElements(hash) {
+    if (hash === "#home") {
+      bottomNav.classList.add('hidden-on-home');
+    } else {
+      bottomNav.classList.remove('hidden-on-home');
+    }
+
+    const fBtn = floatingHelp.querySelector('.floating-help-btn');
+    if (fBtn) {
+      if (hash === "#contato" || hash === "#home") {
+        fBtn.classList.add('hidden');
+      } else {
+        fBtn.classList.remove('hidden');
+      }
+    }
+  }
+
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Velkommen, medlem!</h1><p>Hva vil du ha tilgang til i dag?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Velkommen, kjære medlem!</h1><p>Hvilke materialer vil du ha tilgang til i dag?</p></div></div>
           
           <div class="home-grid">
             
@@ -181,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
               <div>
                  <div class="home-block-title">Bøker</div>
-                 <div class="home-block-subtitle">Bøker &amp; PDF-materiell</div>
+                 <div class="home-block-subtitle">Bøker & PDF-Materialer</div>
               </div>
             </a>
             
@@ -191,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
               <div>
                  <div class="home-block-title">Videoer</div>
-                 <div class="home-block-subtitle">Videoleksjoner &amp; Guider</div>
+                 <div class="home-block-subtitle">Videoleksjoner & Guider</div>
               </div>
             </a>
 
@@ -201,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
               <div>
                  <div class="home-block-title">Kontakt</div>
-                 <div class="home-block-subtitle">Hjelp &amp; Support</div>
+                 <div class="home-block-subtitle">Hjelp & Støtte</div>
               </div>
             </a>
   
@@ -211,25 +262,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderLivros() {
-    const featuredBook = APP_DATA.books || [];
-    const mainBooks = featuredBook.filter(b => !b.isCompact);
-    const compactBooks = featuredBook.filter(b => b.isCompact);
+    const featuredBooks = APP_DATA.books.slice(0, 3);
+    const compactBooks = APP_DATA.books.slice(3);
 
-    let featuredHTML = mainBooks.map(bk => {
-      let featuresHTML = '';
-      if (bk.features && bk.features.length > 0) {
-        featuresHTML = `
-          <ul class="premium-features-list">
-            ${bk.features.map(f => `<li><i data-lucide="check-circle-2"></i> <span>${f}</span></li>`).join('')}
-          </ul>
-        `;
-      }
+    const featuredHTML = featuredBooks.map(bk => {
+      const featuresHTML = bk.features
+        ? `<ul class="premium-checklist">
+      ${bk.features.map(f => `<li><i data-lucide="check-square" style="color:#10B981; width:16px; height:16px;"></i> <span>${f}</span></li>`).join('')}
+             </ul>`
+        : '';
 
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPESIELL'}</span>
-               <span class="premium-format">PDF &bull; Nedlastbart Dokument</span>
+               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
+               <span class="premium-format">PDF • Nedlastbart Dokument</span>
             </div>
            
            <div class="premium-info">
@@ -278,14 +325,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Ditt Materiell</h1><p>Klikk på samlingene nedenfor for å se og laste ned bøkene dine.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Dine Materialer</h1><p>Klikk på samlingene nedenfor for å se og laste ned bøkene dine.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/gui_IMG1_no.png" alt="Akustisk Gitar Mastery" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/gui_IMG1_no.png" alt="${APP_DATA.config.brandName || "Akustisk Gitar Mastery"}" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
 
           <div class="list-container">
-            ${featuredHTML || '<p>Ingen materiell tilgjengelig for øyeblikket.</p>'}
+            ${featuredHTML || '<p>Ingen materialer tilgjengelig for øyeblikket.</p>'}
             ${compactHTML}
           </div>
         </div>
@@ -293,17 +340,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderOutrosProdutos() {
-    const prods = APP_DATA.otherProducts || [];
-
-    let prodsHTML = prods.map(prod => {
-      let featuresHTML = '';
-      if (prod.features && prod.features.length > 0) {
-        featuresHTML = `
-          <ul class="premium-features-list">
-            ${prod.features.map(f => `<li><i data-lucide="check-circle-2"></i> <span>${f}</span></li>`).join('')}
-          </ul>
-        `;
-      }
+    const prodsHTML = APP_DATA.otherProducts.map(prod => {
+      const featuresHTML = prod.features
+        ? `<ul class="premium-checklist">
+      ${prod.features.map(f => `<li><i data-lucide="check-square" style="color:#10B981; width:16px; height:16px;"></i> <span>${f}</span></li>`).join('')}
+             </ul>`
+        : '';
 
       return `
       <div class="premium-book-card">
@@ -313,9 +355,9 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
            
            <div class="premium-cover-container">
-              <img src="${prod.coverImage}" alt="${prod.title}" class="premium-cover-img">
+              <img src="${prod.coverImage}" alt="${prod.title}" loading="lazy" class="premium-cover">
            </div>
-
+           
            <div class="premium-info">
               <h3 class="premium-title">${prod.title}</h3>
               <p class="premium-desc">${prod.description}</p>
@@ -323,7 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ${featuresHTML}
               
               <a href="${prod.linkUrl}" target="_blank" class="premium-btn">
-                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Les mer'}
+                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Lær mer'}
               </a>
            </div>
          </div>
@@ -332,7 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Andre Programmer</h1><p>Oppdag flere programmer og materiell.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Andre Programmer</h1><p>Oppdag flere programmer og materialer.</p></div></div>
           
           <div class="list-container">
             ${prodsHTML || '<p>Nye oppdateringer kommer snart!</p>'}
@@ -346,7 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Kundesupport</h1><p>Din fornøydhet er vår prioritet.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Kundestøtte</h1><p>Din tilfredshet er vår prioritet.</p></div></div>
           
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
              <div style="margin: 0 auto 1.5rem; width: 64px; height: 64px; background:var(--primary-light); color:var(--primary); border-radius:18px; display:flex; align-items:center; justify-content:center; border: 1px solid var(--border-light)">
@@ -355,7 +397,7 @@ document.addEventListener("DOMContentLoaded", () => {
              
              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Send en melding</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                 Kopier e-postadressen nedenfor og send spørsmålet ditt til oss. Vårt supportteam svarer så raskt som mulig.
+                 Kopier e-postadressen nedenfor og send oss spørsmålet ditt. Vårt supportteam svarer så snart som mulig.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
@@ -373,7 +415,7 @@ document.addEventListener("DOMContentLoaded", () => {
     rootEl.innerHTML = `
       <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
       <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Videoleksjoner</h1><p>Se gitargrep-guider for nybegynnere — ingen prating, bare gitarlyd.</p></div></div>
+        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Videoleksjoner</h1><p>Se gitar akkord tutorials for nybegynnere — ingen tale, bare gitarlyd.</p></div></div>
         
         <div style="background-color: rgba(16, 185, 129, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
            <i data-lucide="clock" style="width: 20px; height: 20px; flex-shrink: 0; color: #10B981;"></i>
@@ -386,22 +428,28 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
 
-    const playlistContainer = document.getElementById("video-playlist-items");
-    if (!playlistContainer) return;
+    if (safeVideo) {
+      attachPlaylistEvents(allVideos, safeVideo.id);
+    }
+  }
 
-    playlistContainer.innerHTML = allVideos.map(vid => {
-      const isPlaying = vid.id === (safeVideo ? safeVideo.id : null);
-      const vidSrc = vid.videoUrl || vid.embedUrl || vid.src || null;
+  function attachPlaylistEvents(videosArray, activeVideoId) {
+    const playlistEl = document.getElementById("video-playlist-items");
+    if (!playlistEl) return;
+
+    const playlistHtml = videosArray.map((vid, index) => {
+      const isPlaying = vid.id === activeVideoId;
+      const vidSrc = vid.videoUrl || vid.embedUrl;
 
       return `
-         <div style="background: var(--bg-card); border-radius: 16px; border: 1px solid ${isPlaying ? 'var(--primary)' : 'var(--border-light)'}; margin-bottom: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: all 0.2s;">
+      <div class="card-bloco play-item glass-panel ${isPlaying ? 'active-play' : ''}" style="margin-bottom:16px; display:flex; flex-direction:column; padding:0; overflow:hidden;" data-video-id="${vid.id}">
             
-            <a href="#videos" onclick=\"window.selectVideo('${vid.id}'); return false;\" style="display: flex; align-items: center; gap: 12px; padding: 16px; text-decoration: none; color: inherit;">
+            <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit; align-items:center; gap:12px;">
               ${!isPlaying ? `<div style="width:36px;height:36px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i data-lucide="play-circle" style="width:18px;height:18px;color:var(--primary);"></i></div>` : ''}
               <div style="display:flex; flex-direction:column; justify-content:center; flex:1; min-width:0;">
                  <h4 style="margin:0 0 4px; font-size:1.05rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${vid.title}</h4>
                  <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                   <p style="margin:0; font-size:0.82rem; color:var(--text-muted);">${vid.duration || 'Full leksjon'}</p>
+                   <p style="margin:0; font-size:0.82rem; color:var(--text-muted);">${vid.duration || 'Fullstendig leksjon'}</p>
                    ${`<span id="watched-badge-${vid.id}" style="display:${typeof localStorage !== 'undefined' && localStorage.getItem('watched_'+vid.id)==='1'?'inline-flex':'none'}; align-items:center; gap:3px; font-size:0.72rem; font-weight:700; color:var(--primary); background:var(--primary-light); padding:2px 8px; border-radius:20px;"><i data-lucide="check" style="width:10px;height:10px;"></i> Sett</span>`}
                  </div>
               </div>
@@ -442,9 +490,9 @@ document.addEventListener("DOMContentLoaded", () => {
                    </div>
 
                    <div style="display:flex; justify-content:center;">
-                     <button id="watched-btn-${vid.id}" onclick="window.toggleWatched('${vid.id}')" class="${localStorage.getItem('watched_${vid.id}')==='1'?'watched-active':''}" style="display:flex; align-items:center; gap:6px; padding:8px 20px; border-radius:30px; border:1.5px solid ${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary)':'var(--border-light)'}; background:${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary-light)':'transparent'}; color:${localStorage.getItem('watched_${vid.id}')==='1'?'var(--primary)':'var(--text-muted)'}; cursor:pointer; font-size:0.85rem; font-weight:600; transition:all 0.2s;">
-                       <i data-lucide="${localStorage.getItem('watched_${vid.id}')==='1'?'check-circle':'circle'}" style="width:18px;height:18px;"></i>
-                       <span>${localStorage.getItem('watched_${vid.id}')==='1'?'Sett':'Marker som sett'}</span>
+                     <button id="watched-btn-${vid.id}" onclick="window.toggleWatched('${vid.id}')" class="${localStorage.getItem('watched_'+vid.id)==='1'?'watched-active':''}" style="display:flex; align-items:center; gap:6px; padding:8px 20px; border-radius:30px; border:1.5px solid ${localStorage.getItem('watched_'+vid.id)==='1'?'var(--primary)':'var(--border-light)'}; background:${localStorage.getItem('watched_'+vid.id)==='1'?'var(--primary-light)':'transparent'}; color:${localStorage.getItem('watched_'+vid.id)==='1'?'var(--primary)':'var(--text-muted)'}; cursor:pointer; font-size:0.85rem; font-weight:600; transition:all 0.2s;">
+                       <i data-lucide="${localStorage.getItem('watched_'+vid.id)==='1'?'check-circle':'circle'}" style="width:18px;height:18px;"></i>
+                       <span>${localStorage.getItem('watched_'+vid.id)==='1'?'Sett':'Marker som sett'}</span>
                      </button>
                    </div>
 
@@ -459,25 +507,34 @@ document.addEventListener("DOMContentLoaded", () => {
                     style="width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; border: none; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                  </iframe>
                  ` : `
-                 <video controls style="width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                    <source src="${vidSrc}" type="video/mp4">
+                 <video 
+                    src="${vidSrc}" 
+                    controls 
+                    autoplay 
+                    playsinline 
+                    controlsList="nodownload" 
+                    onclick="this.paused ? this.play() : this.pause();"
+                    style="width: 100%; max-height: 260px; display: block; object-fit: contain; border-radius: 12px; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                  </video>
                  `}
               </div>
-      ` : ''}
-         </div>
-      `;
+            ` : ''
+        }
+          </div>
+    `;
     }).join('');
 
+    playlistEl.innerHTML = playlistHtml;
     renderIcons();
 
-        if (safeVideo && safeVideo.youtubeId) {
+    const activeVidObj = videosArray.find(v => v.id === activeVideoId);
+    if (activeVidObj && activeVidObj.youtubeId) {
         const initYT = () => {
             if (window.activeYtPlayer && typeof window.activeYtPlayer.destroy === 'function') {
                 window.activeYtPlayer.destroy();
             }
-            window.activeYtPlayer = new YT.Player(`yt-player-${safeVideo.id}`, {
-                videoId: safeVideo.youtubeId,
+            window.activeYtPlayer = new YT.Player(`yt-player-${activeVidObj.id}`, {
+                videoId: activeVidObj.youtubeId,
                 playerVars: {
                     'controls': 0,
                     'disablekb': 1,
@@ -499,9 +556,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         const playPauseBtn = document.querySelector(`.play-pause-btn`);
                         if (playPauseBtn) {
                             if (event.data === YT.PlayerState.PLAYING) {
-                                playPauseBtn.innerHTML = '<i data-lucide="pause" style="width: 22px; height: 22px;"></i>';
+                                playPauseBtn.innerHTML = '<i data-lucide="pause" style="width: 20px; height: 20px;"></i>';
                             } else {
-                                playPauseBtn.innerHTML = '<i data-lucide="play" style="width: 22px; height: 22px;"></i>';
+                                playPauseBtn.innerHTML = '<i data-lucide="play" style="width: 20px; height: 20px; margin-left: 2px;"></i>';
                             }
                             if (window.lucide) lucide.createIcons();
                         }
@@ -521,6 +578,22 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 100);
         }
     }
+
+    const listHeaders = playlistEl.querySelectorAll(".play-item-header");
+    listHeaders.forEach(header => {
+      header.addEventListener("click", () => {
+        const item = header.closest('.play-item');
+        const clickedId = item.getAttribute("data-video-id");
+        if (clickedId !== currentVideoId) {
+          currentVideoId = clickedId;
+          renderVideos();
+          setTimeout(() => {
+            const activeNode = document.querySelector('.active-play');
+            if (activeNode) activeNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 50);
+        }
+      });
+    });
   }
 
 });
