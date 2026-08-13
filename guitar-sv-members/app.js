@@ -75,6 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentVideoId = APP_DATA.videos.length > 0 ? APP_DATA.videos[0].id : null;
 
+  window.selectVideo = function(vidId) {
+    if (vidId && vidId !== currentVideoId) {
+      currentVideoId = vidId;
+      renderVideos();
+    }
+  };
+
   initGlobalConfig();
   handleRouting();
 
@@ -391,7 +398,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
          <div style="background: var(--bg-card); border-radius: 16px; border: 1px solid ${isPlaying ? 'var(--primary)' : 'var(--border-light)'}; margin-bottom: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: all 0.2s;">
             
-            <a href="#videos" onclick="window.currentVideoId='${vid.id}'; window.location.hash='#videos'; location.reload(); return false;" style="display: flex; align-items: center; gap: 12px; padding: 16px; text-decoration: none; color: inherit;">
+            <a href="#videos" onclick=\"window.selectVideo('${vid.id}'); return false;\" style="display: flex; align-items: center; gap: 12px; padding: 16px; text-decoration: none; color: inherit;">
               ${!isPlaying ? `<div style="width:36px;height:36px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i data-lucide="play-circle" style="width:18px;height:18px;color:var(--primary);"></i></div>` : ''}
               <div style="display:flex; flex-direction:column; justify-content:center; flex:1; min-width:0;">
                  <h4 style="margin:0 0 4px; font-size:1.05rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${vid.title}</h4>
