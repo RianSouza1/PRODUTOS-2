@@ -26,7 +26,7 @@ const APP_DATA = {
                 "Grundudstyr og de bedste beholdere til fryseren"
             ],
             downloadUrl: "materials/FREEZER-1-DA.pdf",
-            coverImage: "assets/covers/free_IMG3_da.png",
+            coverImage: "assets/covers/free_IMG1_da.png",
             buttonText: "Download Hovedbog (Bog 1)"
         },
         {
@@ -41,7 +41,7 @@ const APP_DATA = {
                 "Nemme trin-for-trin instruktioner til ethvert køkken"
             ],
             downloadUrl: "materials/FREEZER-2-DA.pdf",
-            coverImage: "assets/covers/free_IMG3_da.png",
+            coverImage: "assets/covers/free_IMG1_da.png",
             buttonText: "Download Opskriftsbog (Bog 2)"
         },
         {
@@ -56,7 +56,7 @@ const APP_DATA = {
                 "Ingen daglig madlavningsstress og intet rod i køkkenet"
             ],
             downloadUrl: "materials/FREEZER-3-DA.pdf",
-            coverImage: "assets/covers/free_IMG3_da.png",
+            coverImage: "assets/covers/free_IMG1_da.png",
             buttonText: "Download 30-Dages Plan (Bog 3)"
         }
     ],
