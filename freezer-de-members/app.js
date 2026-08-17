@@ -142,9 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
       case "#livros":
         renderLivros();
         break;
-      case "#videos":
-        renderVideos();
-        break;
+
       case "#produtos":
         renderOutrosProdutos();
         break;
@@ -159,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Injetar o footer global de Copyright no final de todas as telas
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-          &copy; 2026 ${APP_DATA.config.brandName || "Schnitzen & Holzhandwerk"}. Alle Rechte vorbehalten.
+          &copy; 2026 ${APP_DATA.config.brandName || "Tiefkühlgerichte & Prep-Küche"}. Alle Rechte vorbehalten.
        </footer>
     `);
 
@@ -302,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="hero-card glass-panel"><div class="hero-text"><h1>Ihre Materialien</h1><p>Klicken Sie auf die unten stehenden Sammlungen, um die Bücher anzusehen und herunterzuladen.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/whi_IMG1_al.png" alt="Schnitzen & Holzhandwerk-Paket" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/free_IMG1_de.png" alt="Tiefkühlgerichte & Prep-Küche Paket" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
 
           <div class="list-container">
@@ -388,204 +386,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ----------------------------------------------------------------------
-  // 4. MÓDULO COMPLEXO: RENDERIZADOR DE VIDEOS
-  // ----------------------------------------------------------------------
-  function renderVideos() {
-    const allVideos = APP_DATA.videos || [];
-    const safeVideo = allVideos.find(v => v.id === currentVideoId) || allVideos[0] || null;
-
-    // Render do Layout (Sem Top Player, apenas a Playlist Sanduíche)
-    rootEl.innerHTML = `
-      <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
-      <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Ihre Kurse</h1><p>Meistern Sie das Holzschnitzen Schritt für Schritt mit Ethan Blackwood.</p></div></div>
-        
-        <div style="background-color: rgba(245, 158, 11, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
-           <i data-lucide="clock" style="width: 20px; height: 20px; flex-shrink: 0; color: var(--primary);"></i>
-           <span>Nya lektioner kommer snart</span>
-        </div>
-
-        <div id="video-playlist-items">
-          <!-- JS Injeta Aulas Aqui -->
-        </div>
-      </div>
-        </div>
-      `;
-
-    // Atualizar lista da Playlist
-    if (safeVideo) {
-      attachPlaylistEvents(allVideos, safeVideo.id);
-    }
-  }
-
-  // Função global para iniciar o Play (Nativo HTML5)
-  window.startCustomPlay = function (wrapper, videoSrc) {
-    if (wrapper.classList.contains('is-playing')) return;
-
-    const container = wrapper.querySelector('.custom-player-iframe-container');
-
-    container.innerHTML = `
-      <video 
-            id="main-native-player"
-            src="${videoSrc}" 
-            controls 
-            playsinline 
-            controlsList="nodownload" 
-            style="width: 100%; height: 100%; display: block; object-fit: contain; border-radius: 4px; background: #000;">
-         </video>
-      `;
-
-    wrapper.classList.add('is-playing');
-
-    // Força o Autoplay Programático para o usuário não precisar clicar 2 vezes (1 no banner, 1 no player)
-    setTimeout(() => {
-      const player = document.getElementById('main-native-player');
-      if (player) {
-        player.play().catch(e => console.log('Autoplay preventivo nativo:', e));
-      }
-    }, 100);
-  };
-
-  function attachPlaylistEvents(videosArray, activeVideoId) {
-    const playlistEl = document.getElementById("video-playlist-items");
-    if (!playlistEl) return;
-
-    // Montar a árvore HTML (Sanduíche/Accordion)
-    const playlistHtml = videosArray.map((vid, index) => {
-      const isPlaying = vid.id === activeVideoId;
-      const vidSrc = vid.videoUrl || vid.embedUrl;
-
-      return `
-      <div class="card-bloco play-item glass-panel ${isPlaying ? 'active-play' : ''}" style="margin-bottom:16px; display:flex; flex-direction:column; padding:0; overflow:hidden;" data-video-id="${vid.id}">
-            
-            <!-- Cabeçalho Clicável -->
-            <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit;">
-              <div style="display:flex; flex-direction:column; justify-content:center; flex:1">
-                 <h4 style="margin:0 0 4px; font-size:1.1rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'}">${vid.title}</h4>
-                 <p style="margin:0; font-size:0.9rem; color:${isPlaying ? 'var(--text-dark)' : 'var(--text-muted)'}">${vid.duration || 'Vollständiger Kurs'}</p>
-              </div>
-              ${isPlaying
-          ? '<i data-lucide="chevron-down" style="color:var(--primary); align-self:center;"></i>'
-          : '<i data-lucide="play-circle" style="opacity:0.5; align-self:center;"></i>'}
-            </a>
-            
-            <!-- Corpo do Vídeo (Só aparece se estiver ativo) -->
-      ${isPlaying ? `
-              <div class="play-item-body" style="padding: 0 16px 16px 16px; animation: slideDown 0.3s ease;">
-                 ${vid.youtubeId ? `
-                 <div id="video-container-${vid.id}" class="video-wrapper-container" style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); width: 100%; aspect-ratio: 16 / 9;">
-                    <div id="yt-player-${vid.id}" style="width: 100%; height: 100%;"></div>
-                    <div class="video-click-overlay" onclick="window.toggleActiveYtPlay()" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; z-index: 5;"></div>
-                 </div>
-                 <div style="display: flex; justify-content: center; gap: 20px; padding: 12px; background: var(--bg-body); border-top: 1px solid var(--border-light);">
-                     <button class="play-pause-btn" onclick="window.toggleActiveYtPlay()" style="background:var(--primary); color:white; border:none; border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"><i data-lucide="pause" style="width: 20px; height: 20px;"></i></button>
-                     <button onclick="window.toggleCustomFullscreen('video-container-${vid.id}')" style="background:var(--bg-body); color:var(--text-dark); border: 1px solid var(--border-light); border-radius: 50%; width: 44px; height: 44px; display:flex; align-items:center; justify-content:center; cursor:pointer;"><i data-lucide="maximize" style="width: 20px; height: 20px;"></i></button>
-                 </div>
-                 ` : (vidSrc && (vidSrc.includes('tynk.ai') || vidSrc.includes('iframe') || !vidSrc.match(/\.(mp4|webm|ogg|mov)(\?.*)?$/i))) ? `
-                 <iframe 
-                    src="${vidSrc}" 
-                    frameborder="0" 
-                    scrolling="no"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen 
-                    style="width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; border: none; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                 </iframe>
-                 ` : (vidSrc && (vidSrc.includes('tynk.ai') || vidSrc.includes('iframe') || !vidSrc.match(/\.(mp4|webm|ogg|mov)(\?.*)?$/i))) ? `
-                 <iframe 
-                    src="${vidSrc}" 
-                    frameborder="0" 
-                    scrolling="no"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen 
-                    style="width: 100%; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; border: none; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                 </iframe>
-                 ` : `
-                 <video 
-                    src="${vidSrc}" 
-                    controls 
-                    autoplay 
-                    playsinline 
-                    controlsList="nodownload" 
-                    onclick="this.paused ? this.play() : this.pause();"
-                    style="width: 100%; max-height: 260px; display: block; object-fit: contain; border-radius: 12px; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                 </video>
-                 `}
-              </div>
-            ` : ''
-        }
-          </div>
-    `;
-    }).join('');
-
-    playlistEl.innerHTML = playlistHtml;
-    renderIcons();
-
-    // Inicializar YouTube Player caso o vídeo ativo tenha youtubeId
-    const activeVidObj = videosArray.find(v => v.id === activeVideoId);
-    if (activeVidObj && activeVidObj.youtubeId) {
-        const initYT = () => {
-            if (window.activeYtPlayer && typeof window.activeYtPlayer.destroy === 'function') {
-                window.activeYtPlayer.destroy();
-            }
-            window.activeYtPlayer = new YT.Player(`yt-player-${activeVidObj.id}`, {
-                videoId: activeVidObj.youtubeId,
-                playerVars: {
-                    'controls': 0, // Esconde a barra nativa, usamos apenas os nossos botões
-                    'disablekb': 1,
-                    'modestbranding': 1,
-                    'rel': 0,
-                    'showinfo': 0,
-                    'fs': 0, // Desativa botão fullscreen nativo, usamos o nosso
-                    'playsinline': 1
-                },
-                events: {
-                    'onReady': (event) => { 
-                        // Autoplay nem sempre funciona sem interação, mas tentamos
-                        event.target.playVideo(); 
-                    },
-                    'onStateChange': (event) => {
-                        const playPauseBtn = document.querySelector(`.play-pause-btn`);
-                        if (playPauseBtn) {
-                            if (event.data === YT.PlayerState.PLAYING) {
-                                playPauseBtn.innerHTML = '<i data-lucide="pause" style="width: 20px; height: 20px;"></i>';
-                            } else {
-                                playPauseBtn.innerHTML = '<i data-lucide="play" style="width: 20px; height: 20px; margin-left: 2px;"></i>';
-                            }
-                            if (window.lucide) lucide.createIcons();
-                        }
-                    }
-                }
-            });
-        };
-        
-        if (window.YT && window.YT.Player) {
-            initYT();
-        } else {
-            const checkYT = setInterval(() => {
-                if (window.YT && window.YT.Player) {
-                    clearInterval(checkYT);
-                    initYT();
-                }
-            }, 100);
-        }
-    }
-
-    // Adicionar comportamentos de clique na lista
-    const listHeaders = playlistEl.querySelectorAll(".play-item-header");
-    listHeaders.forEach(header => {
-      header.addEventListener("click", () => {
-        const item = header.closest('.play-item');
-        const clickedId = item.getAttribute("data-video-id");
-        if (clickedId !== currentVideoId) {
-          currentVideoId = clickedId;
-          renderVideos();
-          setTimeout(() => {
-            const activeNode = document.querySelector('.active-play');
-            if (activeNode) activeNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }, 50);
-        }
-      });
-    });
-  }
-
+  
 });
