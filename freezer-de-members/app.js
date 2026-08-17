@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "Mitgliederbereich";
+      brandTitle.innerText = APP_DATA.config.brandName || "MITGLIEDERBEREICH";
     }
   }
 
