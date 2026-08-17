@@ -19,7 +19,7 @@ const APP_DATA = {
             title: "Tiefkühlgerichte vorbereiten für Einsteiger — Der vollständige Schritt-für-Schritt-Leitfaden",
             description: "Der vollständige Schritt-für-Schritt-Leitfaden zum richtigen Vorbereiten, Einfrieren, Aufbewahren, Auftauen und Aufwärmen von Mahlzeiten.",
             badgeText: "HAUPTBUCH",
-            badgeColor: "#1e3a8a",
+            badgeColor: "#0D5C75",
             features: [
                 "Vorbereitung, Einfrieren und Aufbewahrung für Einsteiger",
                 "Tipps zum sicheren Auftauen und Aufwärmen ohne Qualitätsverlust",
@@ -34,7 +34,7 @@ const APP_DATA = {
             title: "50 einfache Mahlzeiten zum Einfrieren — Rezepte für Frühstück, Mittagessen & Abendessen",
             description: "50 praktische Rezepte zum Vorkochen für Frühstück, Mittagessen, Abendessen & stressige Wochentage. Alle Rezepte sind erprobt, tiefkühlgeeignet und für den Alltag geschrieben.",
             badgeText: "REZEPTSAMMLUNG",
-            badgeColor: "#047857",
+            badgeColor: "#D97706",
             features: [
                 "50 praxiserprobte und schmackhafte Tiefkühl-Rezepte",
                 "Perfekt für Frühstück, Mittag- und Abendessen im Alltag",
@@ -49,7 +49,7 @@ const APP_DATA = {
             title: "Der 30-Tage-Tiefkühlplan & Batch-Cooking-Guide",
             description: "Ein vollständiges Schritt-für-Schritt-System, um Mahlzeiten im Voraus zuzubereiten, den Tiefkühler gut zu bestücken, Zeit zu sparen und einen ganzen Monat lang entspannt und lecker zu essen.",
             badgeText: "30-TAGE-SYSTEM",
-            badgeColor: "#7c3aed",
+            badgeColor: "#2D6A4F",
             features: [
                 "Komplettes 30-Tage-Batch-Cooking-System für maximale Zeitersparnis",
                 "Wochen-Einkaufslisten und Vorbereitungs-Pläne",
