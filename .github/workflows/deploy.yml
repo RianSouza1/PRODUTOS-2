@@ -963,7 +963,6 @@ jobs:
               - 'freezer-en-members/**'
             babysleep-en-members:
               - 'babysleep-en-members/**'
-      - 'babysleep-en-members/**'
             freezer-nl-members:
               - 'freezer-nl-members/**'
             freezer-de-members:
@@ -1371,6 +1370,8 @@ jobs:
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/freezer-sv-m || true
             sudo mkdir -p /var/www/skillvault.blog/freezer-en-m
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/freezer-en-m || true
+            sudo mkdir -p /var/www/skillvault.blog/babysleep-en-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/babysleep-en-m || true
             sudo mkdir -p /var/www/skillvault.blog/freezer-nl-m
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/freezer-nl-m || true
             sudo mkdir -p /var/www/skillvault.blog/freezer-de-m
