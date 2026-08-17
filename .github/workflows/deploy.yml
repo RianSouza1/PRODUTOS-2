@@ -152,6 +152,7 @@ on:
       - 'whittling-no-members/**'
       - 'whittling-nl-members/**'
       - 'whittling-da-members/**'
+      - 'freezer-da-members/**'
       - 'freezer-de-members/**'
       - 'whittling-de-members/**'
       - 'whittling-en-members/**'
@@ -950,6 +951,8 @@ jobs:
               - 'whittling-nl-members/**'
             whittling-da-members:
               - 'whittling-da-members/**'
+            freezer-da-members:
+              - 'freezer-da-members/**'
             freezer-de-members:
               - 'freezer-de-members/**'
             whittling-de-members:
@@ -1350,6 +1353,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/whittling-no-m
             sudo mkdir -p /var/www/skillvault.blog/whittling-nl-m
             sudo mkdir -p /var/www/skillvault.blog/whittling-da-m
+            sudo mkdir -p /var/www/skillvault.blog/freezer-da-m
             sudo mkdir -p /var/www/skillvault.blog/freezer-de-m
             sudo mkdir -p /var/www/skillvault.blog/whittling-de-m
             sudo mkdir -p /var/www/skillvault.blog/whittling-en-m
@@ -3268,6 +3272,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "whittling-da-members/*"
           target: "/var/www/skillvault.blog/whittling-da-m"
+          strip_components: 1
+
+      - name: Deploy 'freezer-da-members' to skillvault.blog/freezer-da-m
+        if: steps.filter.outputs.freezer-da-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "freezer-da-members/*"
+          target: "/var/www/skillvault.blog/freezer-da-m"
           strip_components: 1
 
       - name: Deploy 'freezer-de-members' to skillvault.blog/freezer-de-m
