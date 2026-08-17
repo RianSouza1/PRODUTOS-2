@@ -3339,6 +3339,16 @@ jobs:
           target: "/var/www/skillvault.blog/babysleep-en-m"
           strip_components: 1
 
+      - name: Fix permissions for 'babysleep-en-members'
+        if: steps.filter.outputs.babysleep-en-members == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo chmod -R 755 /var/www/skillvault.blog/babysleep-en-m
+
       - name: Deploy 'freezer-nl-members' to skillvault.blog/freezer-nl-m
         if: steps.filter.outputs.freezer-nl-members == 'true'
         uses: appleboy/scp-action@v0.1.7
