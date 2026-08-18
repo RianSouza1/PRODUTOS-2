@@ -11,7 +11,38 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+        {
+            id: "v1",
+            title: "Entalhe em Madeira para Iniciantes — Conceitos Básicos & Pegadas de Faca",
+            duration: "Iniciante • Empunhadura, cortes e regras de segurança",
+            youtubeId: "hG9O4CqL26o"
+        },
+        {
+            id: "v2",
+            title: "Como Entalhar uma Raposa de Madeira Simples — Passo a Passo",
+            duration: "Iniciante • Modelagem, arredondamento e acabamento de uma raposa",
+            youtubeId: "q69Hk7b9J1c"
+        },
+        {
+            id: "v3",
+            title: "Como Entalhar um Urso de Madeira Simples — Passo a Passo",
+            duration: "Iniciante • Projeto fácil em bloco de madeira 1x1 polegada",
+            youtubeId: "J3e3m8Xg0Yc"
+        },
+        {
+            id: "v4",
+            title: "Como Entalhar uma Colher de Madeira — Tutorial para Iniciantes",
+            duration: "Iniciante • Entalhe de colher com faca Sloyd e curva",
+            youtubeId: "lS7IMuS4gv4"
+        },
+        {
+            id: "v5",
+            title: "Fundamentos da Escultura em Madeira — Segurança & Técnicas",
+            duration: "Iniciante • Técnicas fundamentais de escultura e manuseio",
+            youtubeId: "5Vz13h1PZks"
+        },
+    ],
 
     books: [
         {

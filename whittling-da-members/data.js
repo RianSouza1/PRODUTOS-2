@@ -11,7 +11,38 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+        {
+            id: "v1",
+            title: "Træskæring for begyndere — Grundlæggende & Knivgreb",
+            duration: "Begynder • Sikkerhedsregler, greb og skæreteknikker",
+            youtubeId: "hG9O4CqL26o"
+        },
+        {
+            id: "v2",
+            title: "Skær en simpel træræv — Trin for trin",
+            duration: "Begynder • Formgivning, afrunding og finish af en træræv",
+            youtubeId: "q69Hk7b9J1c"
+        },
+        {
+            id: "v3",
+            title: "Skær en simpel træbjørn — Trin for trin",
+            duration: "Begynder • Nemt projekt fra en træblok",
+            youtubeId: "J3e3m8Xg0Yc"
+        },
+        {
+            id: "v4",
+            title: "Skær en træske — Begyndervejledning",
+            duration: "Begynder • Skæring af træske med Sloyd og hulkniv",
+            youtubeId: "lS7IMuS4gv4"
+        },
+        {
+            id: "v5",
+            title: "Grundlæggende træskæring — Sikkerhed & Teknikker",
+            duration: "Begynder • Fundamentale skæreteknikker og sikkerhed",
+            youtubeId: "5Vz13h1PZks"
+        },
+    ],
 
     books: [
         {

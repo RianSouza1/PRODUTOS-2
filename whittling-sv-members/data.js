@@ -11,7 +11,38 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+        {
+            id: "v1",
+            title: "Tälja i trä för nybörjare — Grundläggande & Knivgrepp",
+            duration: "Nybörjare • Säkerhetsregler, knivgrepp och skärtekniker",
+            youtubeId: "hG9O4CqL26o"
+        },
+        {
+            id: "v2",
+            title: "Tälja en enkel träräv — Steg för steg",
+            duration: "Nybörjare • Formning, avrundning och ytbehandling av en träräv",
+            youtubeId: "q69Hk7b9J1c"
+        },
+        {
+            id: "v3",
+            title: "Tälja en enkel träbjörn — Steg för steg",
+            duration: "Nybörjare • Enkelt projekt från ett träblock",
+            youtubeId: "J3e3m8Xg0Yc"
+        },
+        {
+            id: "v4",
+            title: "Tälja en träsked — Nybörjarguide",
+            duration: "Nybörjare • Skedskärning med Sloyd- och skedkniv",
+            youtubeId: "lS7IMuS4gv4"
+        },
+        {
+            id: "v5",
+            title: "Grunderna i träsnideri — Säkerhet & Tekniker",
+            duration: "Nybörjare • Fundamentala täljtekniker och säkerhet",
+            youtubeId: "5Vz13h1PZks"
+        },
+    ],
 
     books: [
         {

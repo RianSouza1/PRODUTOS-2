@@ -11,7 +11,38 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+        {
+            id: "v1",
+            title: "Sculpture sur bois pour débutants — Bases & Prise en main du couteau",
+            duration: "Débutant • Règles de sécurité, prises en main et coupes",
+            youtubeId: "hG9O4CqL26o"
+        },
+        {
+            id: "v2",
+            title: "Sculpter un renard en bois simple — Étape par étape",
+            duration: "Débutant • Façonnage, arrondi et finition d'un renard",
+            youtubeId: "q69Hk7b9J1c"
+        },
+        {
+            id: "v3",
+            title: "Sculpter un ours en bois simple — Étape par étape",
+            duration: "Débutant • Projet facile sur petit bloc de bois",
+            youtubeId: "J3e3m8Xg0Yc"
+        },
+        {
+            id: "v4",
+            title: "Sculpter une cuillère en bois — Tutoriel pour débutants",
+            duration: "Débutant • Sculpture de cuillère au couteau Sloyd et croche",
+            youtubeId: "lS7IMuS4gv4"
+        },
+        {
+            id: "v5",
+            title: "Fondamentaux de la sculpture sur bois — Sécurité & Techniques",
+            duration: "Débutant • Techniques fondamentales de sculpture sur bois",
+            youtubeId: "5Vz13h1PZks"
+        },
+    ],
 
     books: [
         {

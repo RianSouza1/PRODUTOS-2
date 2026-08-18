@@ -11,7 +11,38 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+        {
+            id: "v1",
+            title: "Holzschnitzen für Anfänger — Grundlagen & Messerhaltung",
+            duration: "Anfänger • Sicherheitsregeln, Messerhaltung & Schnitttechniken",
+            youtubeId: "hG9O4CqL26o"
+        },
+        {
+            id: "v2",
+            title: "Einen einfachen Holzfuchs schnitzen — Schritt für Schritt",
+            duration: "Anfänger • Formgebung, Abrundung & Finish eines Fuchs-Projekts",
+            youtubeId: "q69Hk7b9J1c"
+        },
+        {
+            id: "v3",
+            title: "Einen einfachen Holzbären schnitzen — Schritt für Schritt",
+            duration: "Anfänger • Einfaches Projekt aus einem Holzblock",
+            youtubeId: "J3e3m8Xg0Yc"
+        },
+        {
+            id: "v4",
+            title: "Einen Holzlöffel schnitzen — Anleitung für Anfänger",
+            duration: "Anfänger • Schnitzen von Löffeln mit Sloyd- und Hohlmesser",
+            youtubeId: "lS7IMuS4gv4"
+        },
+        {
+            id: "v5",
+            title: "Grundlagen des Holzschnitzens — Sicherheit & Techniken",
+            duration: "Anfänger • Fundamentale Schnitztechniken und Sicherheit",
+            youtubeId: "5Vz13h1PZks"
+        },
+    ],
 
     books: [
         {

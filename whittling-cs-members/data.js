@@ -11,7 +11,38 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+        {
+            id: "v1",
+            title: "Vyřezávání ze dřeva pro začátečníky — Základy a držení nože",
+            duration: "Začátečník • Bezpečnostní pravidla, úchopy a řezy",
+            youtubeId: "hG9O4CqL26o"
+        },
+        {
+            id: "v2",
+            title: "Jak vyřezat jednoduchou dřevěnou lišku — Krok za krokem",
+            duration: "Začátečník • Tvarování, zaoblování a dokončení lišky",
+            youtubeId: "q69Hk7b9J1c"
+        },
+        {
+            id: "v3",
+            title: "Jak vyřezat jednoduchého dřevěného medvěda — Krok za krokem",
+            duration: "Začátečník • Snadný projekt z dřevěného hranolu",
+            youtubeId: "J3e3m8Xg0Yc"
+        },
+        {
+            id: "v4",
+            title: "Jak vyřezat dřevěnou lžíci — Návod pro začátečníky",
+            duration: "Začátečník • Vyřezávání lžíce nožem Sloyd a lžičkářem",
+            youtubeId: "lS7IMuS4gv4"
+        },
+        {
+            id: "v5",
+            title: "Základy vyřezávání ze dřeva — Bezpečnost a techniky",
+            duration: "Začátečník • Základní techniky vyřezávání a bezpečnost",
+            youtubeId: "5Vz13h1PZks"
+        },
+    ],
 
     books: [
         {

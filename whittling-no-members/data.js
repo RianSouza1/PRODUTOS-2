@@ -12,7 +12,38 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+        {
+            id: "v1",
+            title: "Wood Carving for Beginners — Basics & Knife Grips",
+            duration: "Beginner • Essential grips, cuts & safety rules",
+            youtubeId: "hG9O4CqL26o"
+        },
+        {
+            id: "v2",
+            title: "How to Whittle a Simple Wooden Fox — Step by Step",
+            duration: "Beginner • Shaping, rounding & finishing a small fox",
+            youtubeId: "q69Hk7b9J1c"
+        },
+        {
+            id: "v3",
+            title: "Whittle a Simple Wooden Bear — Step-by-Step",
+            duration: "Beginner • Easy 1x1 inch block project",
+            youtubeId: "J3e3m8Xg0Yc"
+        },
+        {
+            id: "v4",
+            title: "How to Carve a Wooden Spoon — Beginner Tutorial",
+            duration: "Beginner • Sloyd & hook knife spoon carving",
+            youtubeId: "lS7IMuS4gv4"
+        },
+        {
+            id: "v5",
+            title: "Wood Carving Fundamentals — Safety & Techniques",
+            duration: "Beginner • Fundamental wood carving techniques",
+            youtubeId: "5Vz13h1PZks"
+        },
+    ],
 
     books: [
         {

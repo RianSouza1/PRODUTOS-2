@@ -14,34 +14,34 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Резба на Дърво за Начинаещи — Основи и Хватове на Ножа",
-            duration: "Начинаещи • Основни хватове и правила за безопасност",
+            title: "Wood Carving for Beginners — Basics & Knife Grips",
+            duration: "Beginner • Essential grips, cuts & safety rules",
             youtubeId: "hG9O4CqL26o"
         },
         {
             id: "v2",
-            title: "Как да Издялате Лесна Дървена Лисица — Стъпка по Стъпка",
-            duration: "Начинаещи • Оформяне и заглаждане на малка лисица",
+            title: "How to Whittle a Simple Wooden Fox — Step by Step",
+            duration: "Beginner • Shaping, rounding & finishing a small fox",
             youtubeId: "q69Hk7b9J1c"
         },
         {
             id: "v3",
-            title: "Издялайте Лесна Дървена Мечка — Урок за Начинаещи",
-            duration: "Начинаещи • Лесен проект от кубче дърво",
+            title: "Whittle a Simple Wooden Bear — Step-by-Step",
+            duration: "Beginner • Easy 1x1 inch block project",
             youtubeId: "J3e3m8Xg0Yc"
         },
         {
             id: "v4",
-            title: "Как да Издялате Дървена Лъжица — Урок за Начинаещи",
-            duration: "Начинаещи • Дялане на лъжица с огънат нож",
+            title: "How to Carve a Wooden Spoon — Beginner Tutorial",
+            duration: "Beginner • Sloyd & hook knife spoon carving",
             youtubeId: "lS7IMuS4gv4"
         },
         {
             id: "v5",
-            title: "Основи на Резбата на Дърво — Техники и Безопасност",
-            duration: "Начинаещи • Фундаментални техники за дялане",
+            title: "Wood Carving Fundamentals — Safety & Techniques",
+            duration: "Beginner • Fundamental wood carving techniques",
             youtubeId: "5Vz13h1PZks"
-        }
+        },
     ],
 
     books: [

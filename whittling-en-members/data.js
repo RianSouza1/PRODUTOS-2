@@ -14,7 +14,7 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Wood Carving for Beginners — Basics & Knife Grips (BeaverCraft)",
+            title: "Wood Carving for Beginners — Basics & Knife Grips",
             duration: "Beginner • Essential grips, cuts & safety rules",
             youtubeId: "hG9O4CqL26o"
         },
@@ -41,7 +41,7 @@ const APP_DATA = {
             title: "Wood Carving Fundamentals — Safety & Techniques",
             duration: "Beginner • Fundamental wood carving techniques",
             youtubeId: "5Vz13h1PZks"
-        }
+        },
     ],
 
     books: [

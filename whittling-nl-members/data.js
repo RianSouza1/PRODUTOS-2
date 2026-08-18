@@ -11,7 +11,38 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+        {
+            id: "v1",
+            title: "Houtsnijden voor beginners — Basis & Mesgrepen",
+            duration: "Beginner • Veiligheidsregels, grepen en snijtechnieken",
+            youtubeId: "hG9O4CqL26o"
+        },
+        {
+            id: "v2",
+            title: "Een eenvoudige houten vos snijden — Stap voor stap",
+            duration: "Beginner • Vormgeven, afronden en afwerken van een houten vos",
+            youtubeId: "q69Hk7b9J1c"
+        },
+        {
+            id: "v3",
+            title: "Een eenvoudige houten beer snijden — Stap voor stap",
+            duration: "Beginner • Eenvoudig project op een houten blokje",
+            youtubeId: "J3e3m8Xg0Yc"
+        },
+        {
+            id: "v4",
+            title: "Een houten lepels snijden — Handleiding voor beginners",
+            duration: "Beginner • Lepel snijden met Sloyd- en lepelmes",
+            youtubeId: "lS7IMuS4gv4"
+        },
+        {
+            id: "v5",
+            title: "Basisprincipes van houtsnijden — Veiligheid & Technieken",
+            duration: "Beginner • Fundamentele houtsnijtechnieken en veiligheid",
+            youtubeId: "5Vz13h1PZks"
+        },
+    ],
 
     books: [
         {

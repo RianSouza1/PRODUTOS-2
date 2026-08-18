@@ -235,6 +235,78 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // TELA: BOOKS (Materiais tipo Bundle)
+  function renderAulas() {
+    const videos = APP_DATA.videos || [];
+    if (videos.length === 0) {
+      rootEl.innerHTML = `<div class="glass-panel"><p style="color:var(--text-muted)">Nenhuma aula disponível.</p></div>`;
+      return;
+    }
+
+    const activeVidId = window.activeVideoId || videos[0].id;
+    const safeVideo = videos.find(v => v.id === activeVidId) || videos[0];
+
+    const listCardsHTML = videos.map(vid => {
+      const isActive = vid.id === safeVideo.id;
+      const isWatched = localStorage.getItem('watched_' + vid.id) === '1';
+
+      return `
+        <div class="card-bloco glass-panel ${isActive ? 'active-video-item' : ''}" style="padding:1rem; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:1rem; border:${isActive ? '1px solid var(--primary)' : '1px solid var(--border-light)'}" onclick="window.activeVideoId='${vid.id}'; location.hash='#aulas';">
+           <div style="display:flex; align-items:center; gap:0.85rem">
+              <div style="width:40px; height:40px; border-radius:10px; background:${isActive ? 'var(--primary)' : 'var(--primary-light)'}; color:${isActive ? '#fff' : 'var(--primary)'}; display:flex; align-items:center; justify-content:center; flex-shrink:0">
+                 <i data-lucide="${isActive ? 'play-circle' : (isWatched ? 'check-circle' : 'film')}" style="width:20px; height:20px"></i>
+              </div>
+              <div>
+                 <h4 style="font-size:0.95rem; font-weight:600; color:var(--text-dark); margin-bottom:0.2rem">${vid.title}</h4>
+                 <span style="font-size:0.8rem; color:var(--text-muted)">${vid.duration || ''}</span>
+              </div>
+           </div>
+           ${isWatched ? `<span style="font-size:0.75rem; background:rgba(34,197,94,0.15); color:#22c55e; padding:0.25rem 0.5rem; border-radius:6px; font-weight:600">Abgeschlossen</span>` : ''}
+        </div>
+      `;
+    }).join('');
+
+    rootEl.innerHTML = `
+      <div class="page-view">
+        <div class="hero-card glass-panel">
+           <div class="hero-text">
+              <h1>Praktische Schnitzanleitungen</h1>
+              <p>${safeVideo ? safeVideo.title : 'Wähle oben ein Video aus, um es anzusehen'}</p>
+           </div>
+        </div>
+
+        ${safeVideo ? `
+          <div class="glass-panel" style="padding:0.75rem; margin-bottom:1.5rem; border-radius:16px;">
+             <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; background:#000;">
+                <iframe src="https://www.youtube.com/embed/${safeVideo.youtubeId}?autoplay=1&rel=0" 
+                        title="${safeVideo.title}" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen 
+                        style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:12px;">
+                </iframe>
+             </div>
+             <div style="padding:1rem 0.5rem 0.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem">
+                <div>
+                   <h3 style="font-size:1.1rem; font-weight:700; color:var(--text-dark)">${safeVideo.title}</h3>
+                   <p style="font-size:0.85rem; color:var(--text-muted)">${safeVideo.duration || ''}</p>
+                </div>
+                <button class="download-btn" style="width:auto; padding:0.5rem 1rem; font-size:0.85rem;" onclick="const curr = localStorage.getItem('watched_${safeVideo.id}'); localStorage.setItem('watched_${safeVideo.id}', curr === '1' ? '0' : '1'); location.hash='#aulas';">
+                   <i data-lucide="${localStorage.getItem('watched_' + safeVideo.id) === '1' ? 'check-circle' : 'check'}" style="width:16px; height:16px"></i>
+                   <span>${localStorage.getItem('watched_' + safeVideo.id) === '1' ? 'Abgeschlossen' : 'Als gesehen markieren'}</span>
+                </button>
+             </div>
+          </div>
+        ` : ''}
+
+        <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom:1.5rem">
+           ${listCardsHTML}
+        </div>
+      </div>
+    `;
+
+    if (window.lucide) lucide.createIcons();
+  }
+
   function renderLivros() {
     const featuredBooks = APP_DATA.books.slice(0, 3);
     const compactBooks = APP_DATA.books.slice(3);

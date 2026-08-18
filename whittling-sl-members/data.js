@@ -14,34 +14,34 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Rezbarenje Lesa za Začetnike — Osnove in Oprijem Noža",
-            duration: "Začetniki • Osnovni oprijemi in varnostna pravila",
+            title: "Wood Carving for Beginners — Basics & Knife Grips",
+            duration: "Beginner • Essential grips, cuts & safety rules",
             youtubeId: "hG9O4CqL26o"
         },
         {
             id: "v2",
-            title: "Kako Izrezbariti Enostavno Leseno Lisico — Korak za Korakom",
-            duration: "Začetniki • Oblikovanje in zaoblitev male lisice",
+            title: "How to Whittle a Simple Wooden Fox — Step by Step",
+            duration: "Beginner • Shaping, rounding & finishing a small fox",
             youtubeId: "q69Hk7b9J1c"
         },
         {
             id: "v3",
-            title: "Izrezbarite Enostavnega Lesenega Medvedka — Vodnik za Začetnike",
-            duration: "Začetniki • Enostaven projekt iz lesene kocke",
+            title: "Whittle a Simple Wooden Bear — Step-by-Step",
+            duration: "Beginner • Easy 1x1 inch block project",
             youtubeId: "J3e3m8Xg0Yc"
         },
         {
             id: "v4",
-            title: "Kako Izrezbariti Leseno Žlico — Lekcija za Začetnike",
-            duration: "Začetniki • Rezbarenje žlice z ukrivljenim nožem",
+            title: "How to Carve a Wooden Spoon — Beginner Tutorial",
+            duration: "Beginner • Sloyd & hook knife spoon carving",
             youtubeId: "lS7IMuS4gv4"
         },
         {
             id: "v5",
-            title: "Osnove Rezbarenja Lesa — Tehnike in Varnost",
-            duration: "Začetniki • Osnovne tehnike rezbarenja",
+            title: "Wood Carving Fundamentals — Safety & Techniques",
+            duration: "Beginner • Fundamental wood carving techniques",
             youtubeId: "5Vz13h1PZks"
-        }
+        },
     ],
 
     books: [
