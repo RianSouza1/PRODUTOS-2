@@ -1,124 +1,389 @@
 /**
- * SPA Engine — Zpracování dřeva & Woodworking (Čeština)
+ * APP CORE ENGINE
+ * ÁREA DE MEMBROS (Mobile First & Senior Friendly)
+ * Nenhuma alteração de conteúdo ou curso deve ocorrer aqui. 
+ * Apenas em data.js
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const rootEl = document.getElementById("app-root");
-  const navItems = document.querySelectorAll(".tab-item");
-  const brandTitleEl = document.getElementById("brand-title");
 
-  if (brandTitleEl && typeof APP_DATA !== "undefined") {
-    brandTitleEl.innerText = APP_DATA.config.brandName || "Zpracování dřeva";
+  window.toggleActiveYtPlay = function() {
+    if (window.activeYtPlayer && typeof window.activeYtPlayer.getPlayerState === 'function') {
+      const state = window.activeYtPlayer.getPlayerState();
+      if (state === YT.PlayerState.PLAYING) {
+        window.activeYtPlayer.pauseVideo();
+      } else {
+        window.activeYtPlayer.playVideo();
+      }
+    }
+  };
+
+  // ----------------------------------------------------------------------
+  // 0. REFERÊNCIAS DO DOM ENCAPSULADAS
+  // ----------------------------------------------------------------------
+  const rootEl = document.getElementById("app-root");
+  const brandTitle = document.getElementById("brand-title");
+  const bottomNav = document.getElementById("main-nav");
+  const floatingHelp = document.getElementById("floating-help-container");
+  const tabItems = document.querySelectorAll(".tab-item");
+
+  // Variável para armazenar qual ID de vídeo foi escolhido para tocar
+  let currentVideoId = APP_DATA.videos.length > 0 ? APP_DATA.videos[0].id : null;
+
+  // ----------------------------------------------------------------------
+  // 1. INICIALIZAÇÃO DA BASE (Header e Global Settings)
+  // ----------------------------------------------------------------------
+  initGlobalConfig();
+  handleRouting();
+
+  // Ouvinte para trocar a rota cada vez que o hash (url/#tela) mudar.
+  window.addEventListener("hashchange", handleRouting);
+
+  // Re-renderizar ícones Lucide sempre que novas views surgirem
+  function renderIcons() {
+    if (window.lucide) {
+      lucide.createIcons();
+    }
   }
 
-  function handleRoute() {
-    const hash = window.location.hash.replace("#", "") || "livros";
-    
-    navItems.forEach(item => {
-      if (item.getAttribute("data-tab") === hash) {
-        item.classList.add("active");
+  // Inject YouTube Iframe API globally
+  if (!document.getElementById("yt-api-script")) {
+    const tag = document.createElement('script');
+    tag.id = "yt-api-script";
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  }
+  window.activeYtPlayer = null; // Guardar a instância ativa do player
+
+  // Fullscreen CSS injections
+  if (!document.getElementById("fullscreen-css")) {
+      const style = document.createElement('style');
+      style.id = "fullscreen-css";
+      style.textContent = `
+          .video-wrapper-container:fullscreen {
+              background: #000 !important;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+          }
+          .video-wrapper-container:fullscreen > div[id^="yt-player-"] {
+              height: calc(100vh - 68px) !important;
+              flex-grow: 1;
+          }
+          .video-wrapper-container:-webkit-full-screen {
+              background: #000 !important;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+          }
+          .video-wrapper-container:-webkit-full-screen > div[id^="yt-player-"] {
+              height: calc(100vh - 68px) !important;
+              flex-grow: 1;
+          }
+      `;
+      document.head.appendChild(style);
+  }
+
+  window.toggleCustomFullscreen = function(elementId) {
+      const container = document.getElementById(elementId);
+      if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+          if (container.requestFullscreen) {
+              container.requestFullscreen();
+          } else if (container.webkitRequestFullscreen) {
+              container.webkitRequestFullscreen();
+          } else if (container.msRequestFullscreen) {
+              container.msRequestFullscreen();
+          }
       } else {
-        item.classList.remove("active");
+          if (document.exitFullscreen) {
+              document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) {
+              document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) {
+              document.msExitFullscreen();
+          }
+      }
+  };
+
+  function initGlobalConfig() {
+    if (APP_DATA.config) {
+      brandTitle.innerText = APP_DATA.config.brandName || "Členská sekce";
+    }
+  }
+
+  // Cria a string `mailto:` dinamicamente com base no contato do data.js
+  function mountMailTo() {
+    const { contactEmail, emailSubject, emailBodyTemplate } = APP_DATA.config;
+    return `mailto:${contactEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBodyTemplate)}`;
+  }
+
+  // ----------------------------------------------------------------------
+  // 2. SISTEMA DE ROTEAMENTO SPA (O "Coração" da navegação)
+  // ----------------------------------------------------------------------
+  function handleRouting() {
+    // 2.1 Verifica a rota atual. Se vazio, joga para #home
+    let currentHash = window.location.hash || "#home";
+
+    // 2.2 Limpar a tela
+    rootEl.innerHTML = "";
+
+    // 2.3 Destacar Aba Inferior Ativa
+    updateBottomNavBar(currentHash);
+
+    // 2.4 Controlar Opções Flutuantes exclusivas de Telas Internas
+    togglePersistentElements(currentHash);
+
+    // 2.5 Injetar a view correta dentro da main
+    switch (currentHash) {
+      case "#home":
+        renderHome();
+        break;
+      case "#livros":
+        renderLivros();
+        break;
+
+      case "#produtos":
+        renderOutrosProdutos();
+        break;
+      case "#contato":
+        renderContato();
+        break;
+      default:
+        renderHome(); // Prevenção de Rota Perdida (Sênior Friendly)
+        break;
+    }
+
+    // Injetar o footer global de Copyright no final de todas as telas
+    rootEl.insertAdjacentHTML('beforeend', `
+       <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
+          &copy; 2026 ${APP_DATA.config.brandName || "Členská sekce"}. Všechna práva vyhrazena.
+       </footer>
+    `);
+
+    renderIcons();
+    // Emula que a tela rolou de volta para cima ao trocar de rota
+    document.querySelector('.app-container').scrollTo(0, 0);
+  }
+
+  function updateBottomNavBar(hash) {
+    tabItems.forEach(tab => {
+      tab.classList.remove("active");
+      if (tab.getAttribute("href") === hash) {
+        tab.classList.add("active");
       }
     });
-
-    if (hash === "contato") {
-      renderContato();
-    } else {
-      renderLivros();
-    }
-
-    if (window.lucide) {
-      window.lucide.createIcons();
-    }
-    window.scrollTo(0, 0);
   }
 
-  function renderLivros() {
-    if (!APP_DATA.books || APP_DATA.books.length === 0) {
-      rootEl.innerHTML = `<div class="glass-panel"><p style="color:var(--text-muted);">V současné době nejsou registrovány žádné knihy.</p></div>`;
-      return;
+  function togglePersistentElements(hash) {
+    // Regra 1: Na Home, o bottomNav não deve aparecer para não distrair
+    if (hash === "#home") {
+      bottomNav.classList.add('hidden-on-home');
+    } else {
+      bottomNav.classList.remove('hidden-on-home');
     }
 
-    let booksHTML = APP_DATA.books.map(book => {
-      let featuresHTML = book.features ? book.features.map(f => `<li>${f}</li>`).join("") : "";
-      
-      return `
-        <div class="book-card">
-          ${book.badgeText ? `<span class="book-badge" style="background:${book.badgeColor || 'var(--primary)'}">${book.badgeText}</span>` : ""}
-          <div class="book-cover">
-            <img src="${book.coverImage}" alt="${book.title}" onerror="this.src='assets/covers/wood_IMG1_cs.png'">
+    // Regra 2: Ocultar Botão Flutuante de Ajuda APENAS se estiver na aba do menu Contato
+    const fBtn = floatingHelp.querySelector('.floating-help-btn');
+    if (fBtn) {
+      if (hash === "#contato" || hash === "#home") {
+        fBtn.classList.add('hidden');
+      } else {
+        fBtn.classList.remove('hidden');
+      }
+    }
+  }
+
+  // ----------------------------------------------------------------------
+  // 3. RENDERIZADORES DE TELAS (VIEWS)
+  // ----------------------------------------------------------------------
+
+  // TELA: HOME (Ponto de Partida)
+  function renderHome() {
+    rootEl.innerHTML = `
+      <div class="page-view">
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Vítejte, vážený člene!</h1><p>K jakému obsahu chcete dnes přistoupit?</p></div></div>
+          
+  
+          <div class="home-grid">
+            
+            <a href="#livros" class="home-block glass-panel">
+              <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
+                 <i data-lucide="book-open"></i>
+              </div>
+              <div>
+                 <div class="home-block-title">Knihy</div>
+                 <div class="home-block-subtitle">Knihy a PDF materiály</div>
+              </div>
+            </a>
+            
+            <a href="#contato" class="home-block glass-panel">
+              <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
+                 <i data-lucide="message-square"></i>
+              </div>
+              <div>
+                 <div class="home-block-title">Kontakt</div>
+                 <div class="home-block-subtitle">Nápověda & Podpora</div>
+              </div>
+            </a>
+  
           </div>
-          <div class="book-info">
-            <h3>${book.title}</h3>
-            <p>${book.description}</p>
-            ${featuresHTML ? `<ul class="feature-list">${featuresHTML}</ul>` : ""}
-          </div>
-          <a href="${book.downloadUrl}" class="download-btn" download target="_blank">
-            <i data-lucide="download"></i>
-            <span>${book.buttonText || "Stáhnout PDF"}</span>
-          </a>
         </div>
       `;
-    }).join("");
+  }
+
+  // TELA: BOOKS (Materiais tipo Bundle)
+  function renderLivros() {
+    const featuredBooks = APP_DATA.books.slice(0, 3);
+    const compactBooks = APP_DATA.books.slice(3);
+
+    const featuredHTML = featuredBooks.map(bk => {
+      const featuresHTML = bk.features
+        ? `<ul class="premium-checklist">
+      ${bk.features.map(f => `<li><i data-lucide="check-square" style="color:var(--primary); width:16px; height:16px;"></i> <span>${f}</span></li>`).join('')}
+             </ul>`
+        : '';
+
+      return `
+      <div class="premium-book-card">
+            <div class="premium-badge-wrapper">
+               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPEZIAL'}</span>
+               <span class="premium-format">PDF • Dokument ke stažení</span>
+            </div>
+           
+           <div class="premium-info">
+              <h3 class="premium-title">${bk.title}</h3>
+              <p class="premium-desc">${bk.description}</p>
+              
+              ${featuresHTML}
+              
+               <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: 1.5rem;">
+                  <a href="${bk.downloadUrl}" target="_blank" class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: var(--primary); color: #FFF;">
+                     <i data-lucide="book-open"></i> Číst nyní
+                  </a>
+                  <a href="${bk.downloadUrl}" download class="premium-btn" style="width: 100%; text-align: center; justify-content: center; background: transparent; color: var(--text-dark); border: 1px solid var(--border-light);">
+                     <i data-lucide="download"></i> Stáhnout PDF
+                  </a>
+               </div>
+           </div>
+        </div>
+      `;
+    }).join('');
+
+    let compactHTML = '';
+    if (compactBooks.length > 0) {
+      compactHTML = `
+      <h2 class="section-divider-title">Další zdroje</h2>
+      <div class="compact-book-list">
+        ${compactBooks.map(bk => `
+          <div class="compact-book-card">
+            <div class="compact-book-info">
+              <h4 class="compact-book-title">${bk.title}</h4>
+              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPEZIAL'}</span>
+            </div>
+            <div class="compact-book-actions">
+              <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Číst nyní">
+                <i data-lucide="book-open"></i>
+              </a>
+              <a href="${bk.downloadUrl}" download class="compact-action-btn btn-download" title="Stáhnout PDF">
+                <i data-lucide="download"></i>
+              </a>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+      `;
+    }
+
+    rootEl.innerHTML = `
+      <div class="page-view" style="padding-bottom: 0;">
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Vaše materiály</h1><p>Kliknutím na níže uvedené kolekce si zobrazíte a stáhnete knihy.</p></div></div>
+          
+          <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
+              <img src="assets/covers/wood_IMG1_cs.png" alt="Balíček Zpracování dřeva & Woodworking" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+          </div>
+
+          <div class="list-container">
+            ${featuredHTML || '<p>V současné době nejsou registrovány žádné materiály.</p>'}
+            ${compactHTML}
+          </div>
+        </div>
+      `;
+  }
+
+  // TELA: OTHER PRODUCTS
+  function renderOutrosProdutos() {
+    const prodsHTML = APP_DATA.otherProducts.map(prod => {
+      // Create features checklist HTML
+      const featuresHTML = prod.features
+        ? `<ul class="premium-checklist">
+      ${prod.features.map(f => `<li><i data-lucide="check-square" style="color:var(--primary); width:16px; height:16px;"></i> <span>${f}</span></li>`).join('')}
+             </ul>`
+        : '';
+
+      return `
+      <div class="premium-book-card">
+            <div class="premium-badge-wrapper">
+               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'SPEZIAL'}</span>
+               <span class="premium-format">PDF • Dokument ke stažení</span>
+            </div>
+           
+           <div class="premium-cover-container">
+              <img src="${prod.coverImage}" alt="${prod.title}" loading="lazy" class="premium-cover">
+           </div>
+           
+           <div class="premium-info">
+              <h3 class="premium-title">${prod.title}</h3>
+              <p class="premium-desc">${prod.description}</p>
+              
+              ${featuresHTML}
+              
+              <a href="${prod.linkUrl}" target="_blank" class="premium-btn">
+                 <i data-lucide="external-link"></i> ${prod.buttonText || 'Mehr erfahren'}
+              </a>
+           </div>
+         </div>
+      `;
+    }).join('');
 
     rootEl.innerHTML = `
       <div class="page-view">
-        <div class="hero-card">
-          <div class="hero-text">
-            <h1>Vítejte, vážený člene!</h1>
-            <p>Vaše kompletní kolekce e-knih o zpracování dřeva je připravena ke stažení.</p>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Další programy</h1><p>Objevíte další programy a materiály.</p></div></div>
+          
+          
+          <div class="list-container">
+            ${prodsHTML || '<p>Brzy přibudou další aktualizace!</p>'}
           </div>
         </div>
-
-        <h2 class="section-title">
-          <i data-lucide="book-open" style="color:var(--primary)"></i>
-          <span>Vaše knihy a manuály</span>
-        </h2>
-
-        <div class="books-grid">
-          ${booksHTML}
-        </div>
-
-        <footer>
-          <p>&copy; 2026 Zpracování dřeva & Woodworking. Všechna práva vyhrazena.</p>
-        </footer>
-      </div>
-    `;
+      `;
   }
 
-  function renderContato() {
+  // TELA: CONTACT (100% Nativa E-mail)
+  // TELA: CONTACT (100% Nativa E-mail)
+  // TELA: CONTACT (100% Nativa E-mail)
+    function renderContato() {
     rootEl.innerHTML = `
       <div class="page-view">
-        <div class="hero-card">
-          <div class="hero-text">
-            <h1>Podpora členů</h1>
-            <p>Vaše spokojenost je naší prioritou.</p>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Podpora členů</h1><p>Vaše spokojenost je naší prioritou.</p></div></div>
+          
+          <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
+             <div style="margin: 0 auto 1.5rem; width: 64px; height: 64px; background:var(--primary-light); color:var(--primary); border-radius:18px; display:flex; align-items:center; justify-content:center; border: 1px solid var(--border-light)">
+               <i data-lucide="mail" style="width: 32px; height: 32px"></i>
+             </div>
+             
+             <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Odeslat zprávu</h3>
+             <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
+                Zkopírujte níže uvedenou e-mailovou adresu a pošlete nám svůj dotaz. Náš tým podpory vám odpoví co nejdříve.
+             </p>
+             
+             <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
+                <span style="font-size: 1.1rem; font-weight: 700; color:var(--primary); user-select: auto;">${APP_DATA.config.contactEmail}</span>
+             </div>
           </div>
         </div>
-
-        <div class="glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
-          <div style="margin: 0 auto 1.5rem; width: 64px; height: 64px; background:var(--primary-light); color:var(--primary); border-radius:18px; display:flex; align-items:center; justify-content:center; border: 1px solid var(--border-card)">
-            <i data-lucide="mail" style="width: 32px; height: 32px"></i>
-          </div>
-
-          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Odeslat zprávu</h3>
-          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-            Zkopírujte níže uvedenou e-mailovou adresu a pošlete nám svůj dotaz. Náš tým podpory vám odpoví co nejdříve.
-          </p>
-
-          <div style="background:var(--bg-main); border:1px solid var(--border-card); padding:1rem; border-radius:8px; display:inline-block;">
-            <span style="font-size: 1.1rem; font-weight: 700; color:var(--primary); user-select: auto;">${APP_DATA.config.contactEmail}</span>
-          </div>
-        </div>
-
-        <footer>
-          <p>&copy; 2026 Zpracování dřeva & Woodworking. Všechna práva vyhrazena.</p>
-        </footer>
-      </div>
-    `;
+      `;
   }
 
-  window.addEventListener("hashchange", handleRoute);
-  handleRoute();
+  // ----------------------------------------------------------------------
+  
 });
