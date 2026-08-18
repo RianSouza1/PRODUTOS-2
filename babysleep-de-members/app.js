@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "MEMBERS AREA";
+      brandTitle.innerText = APP_DATA.config.brandName || "Mitgliederbereich";
     }
   }
 
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Injetar o footer global de Copyright no final de todas as telas
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-          &copy; 2026 ${APP_DATA.config.brandName || "Babyschlaf Ratgeber"}. Alle Rechte vorbehalten.
+          &copy; 2026 ${APP_DATA.config.brandName || "Mitgliederbereich"}. Alle Rechte vorbehalten.
        </footer>
     `);
 
@@ -279,7 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="compact-book-card">
             <div class="compact-book-info">
               <h4 class="compact-book-title">${bk.title}</h4>
-              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'Ressource'}</span>
+              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPEZIAL'}</span>
             </div>
             <div class="compact-book-actions">
               <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Jetzt lesen">
@@ -325,7 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
                <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'SPEZIAL'}</span>
-               <span class="premium-format">Online-Zugang</span>
+               <span class="premium-format">PDF • Dokument zum Download</span>
             </div>
            
            <div class="premium-cover-container">

@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "MEMBERS AREA";
+      brandTitle.innerText = APP_DATA.config.brandName || "Ledengedeelte";
     }
   }
 
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Injetar o footer global de Copyright no final de todas as telas
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-          &copy; 2026 ${APP_DATA.config.brandName || "Babyslaap Gids"}. Alle rechten voorbehouden.
+          &copy; 2026 ${APP_DATA.config.brandName || "Ledengedeelte"}. Alle rechten voorbehouden.
        </footer>
     `);
 
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
                  <i data-lucide="book-open"></i>
               </div>
               <div>
-                 <div class="home-block-title">Bücher</div>
+                 <div class="home-block-title">Boeken</div>
                  <div class="home-block-subtitle">Boeken en PDF-materialen</div>
               </div>
             </a>
@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPEZIAL'}</span>
+               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAAL'}</span>
                <span class="premium-format">PDF • Document om te downloaden</span>
             </div>
            
@@ -273,13 +273,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let compactHTML = '';
     if (compactBooks.length > 0) {
       compactHTML = `
-      <h2 class="section-divider-title">Weitere Ressourcen</h2>
+      <h2 class="section-divider-title">Meer bronnen</h2>
       <div class="compact-book-list">
         ${compactBooks.map(bk => `
           <div class="compact-book-card">
             <div class="compact-book-info">
               <h4 class="compact-book-title">${bk.title}</h4>
-              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'Ressource'}</span>
+              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAAL'}</span>
             </div>
             <div class="compact-book-actions">
               <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Nu lezen">
@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
 
           <div class="list-container">
-            ${featuredHTML || '<p>Derzeit sind keine Materialien registriert.</p>'}
+            ${featuredHTML || '<p>Er zijn momenteel geen materialen geregistreerd.</p>'}
             ${compactHTML}
           </div>
         </div>
@@ -324,8 +324,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'SPEZIAL'}</span>
-               <span class="premium-format">Online-Zugang</span>
+               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'SPECIAAL'}</span>
+               <span class="premium-format">PDF • Document om te downloaden</span>
             </div>
            
            <div class="premium-cover-container">
@@ -348,11 +348,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Weitere Programme</h1><p>Entdecken Sie weitere Programme und Materialien.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Meer programma's</h1><p>Ontdek meer programma's en materialen.</p></div></div>
           
           
           <div class="list-container">
-            ${prodsHTML || '<p>Weitere Updates folgen in Kürze!</p>'}
+            ${prodsHTML || '<p>Binnenkort meer updates!</p>'}
           </div>
         </div>
       `;
