@@ -366,7 +366,6 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="page-view">
           <div class="hero-card glass-panel"><div class="hero-text"><h1>Ledenondersteuning</h1><p>Jouw tevredenheid is onze prioriteit.</p></div></div>
           
-  
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
              <div style="margin: 0 auto 1.5rem; width: 64px; height: 64px; background:var(--primary-light); color:var(--primary); border-radius:18px; display:flex; align-items:center; justify-content:center; border: 1px solid var(--border-light)">
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>

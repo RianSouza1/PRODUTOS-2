@@ -364,9 +364,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Mitglieder-Support</h1><p>Ihre Zufriedenheit ist unsere Priorität.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Medlemssupport</h1><p>Din tilfredshed er vores prioritet.</p></div></div>
           
-  
           <div class="card-bloco glass-panel" style="text-align: center; padding: 2.5rem 1.5rem;">
              <div style="margin: 0 auto 1.5rem; width: 64px; height: 64px; background:var(--primary-light); color:var(--primary); border-radius:18px; display:flex; align-items:center; justify-content:center; border: 1px solid var(--border-light)">
                <i data-lucide="mail" style="width: 32px; height: 32px"></i>
@@ -374,7 +373,7 @@ document.addEventListener("DOMContentLoaded", () => {
              
              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Send besked</h3>
              <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
-                Kopieren Sie die unten stehende E-Mail-Adresse und senden Sie uns Ihre Frage. Unser Support-Team wird so schnell wie möglich antworten.
+                Kopier e-mail adressen nedenfor og send os dit spørgsmål. Vores supportteam vil svare så hurtigt som muligt.
              </p>
              
              <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
