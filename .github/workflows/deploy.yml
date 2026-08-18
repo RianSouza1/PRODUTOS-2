@@ -1908,7 +1908,7 @@ jobs:
           strip_components: 1
 
       - name: Prepare VPS Directory for 'ww-cs-members'
-        if: steps.filter.outputs.ww-cs-members == 'true'
+        if: always()
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -1921,7 +1921,7 @@ jobs:
             sudo chmod -R 777 /var/www/skillvault.blog/ww-cs-m
 
       - name: Deploy 'ww-cs-members' to skillvault.blog/ww-cs-m
-        if: steps.filter.outputs.ww-cs-members == 'true'
+        if: always()
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
