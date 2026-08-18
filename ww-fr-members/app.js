@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPEZIAL'}</span>
+               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPÉCIAL'}</span>
                <span class="premium-format">PDF • Document à télécharger</span>
             </div>
            
@@ -279,7 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="compact-book-card">
             <div class="compact-book-info">
               <h4 class="compact-book-title">${bk.title}</h4>
-              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPEZIAL'}</span>
+              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPÉCIAL'}</span>
             </div>
             <div class="compact-book-actions">
               <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Lire maintenant">
@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
 
           <div class="list-container">
-            ${featuredHTML || '<p>Aucun matériel n'est actuellement enregistré.</p>'}
+            ${featuredHTML || '<p>Aucun matériel n\'est actuellement enregistré.</p>'}
             ${compactHTML}
           </div>
         </div>
@@ -324,7 +324,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'SPEZIAL'}</span>
+               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'SPÉCIAL'}</span>
                <span class="premium-format">PDF • Document à télécharger</span>
             </div>
            
@@ -348,16 +348,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Weitere Programme</h1><p>Entdecken Sie weitere Programme und Materialien.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Autres programmes</h1><p>Découvrez d'autres programmes et matériels.</p></div></div>
           
           
           <div class="list-container">
-            ${prodsHTML || '<p>Weitere Updates folgen in Kürze!</p>'}
+            ${prodsHTML || "<p>D'autres mises à jour arrivent bientôt !</p>"}
           </div>
         </div>
       `;
   }
 
+  // TELA: CONTACT (100% Nativa E-mail)
   // TELA: CONTACT (100% Nativa E-mail)
   function renderContato() {
     const mailHref = mountMailTo();
