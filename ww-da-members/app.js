@@ -359,6 +359,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // TELA: CONTACT (100% Nativa E-mail)
+  // TELA: CONTACT (100% Nativa E-mail)
+  // TELA: CONTACT (100% Nativa E-mail)
   function renderContato() {
     const mailHref = mountMailTo();
 
