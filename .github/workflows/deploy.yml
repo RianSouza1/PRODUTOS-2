@@ -1930,7 +1930,7 @@ jobs:
           target: "/var/www/skillvault.blog/ww-cs-m"
           strip_components: 1
 
-      - name: Verify and Reload Nginx for 'ww-cs-members'
+      - name: Verify and Direct Sync VPS for 'ww-cs-members'
         if: always()
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -1938,9 +1938,19 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
           script: |
+            sudo mkdir -p /var/www/skillvault.blog/ww-cs-m
+            if [ -d "/var/www/skillvault.blog/ww-cs-m/ww-cs-members" ]; then
+              sudo cp -r /var/www/skillvault.blog/ww-cs-m/ww-cs-members/* /var/www/skillvault.blog/ww-cs-m/ || true
+            fi
+            sudo rm -rf /tmp/vps_sync_cs || true
+            git clone --depth 1 https://github.com/RianSouza1/PRODUTOS-2.git /tmp/vps_sync_cs || true
+            if [ -d "/tmp/vps_sync_cs/ww-cs-members" ]; then
+              sudo cp -r /tmp/vps_sync_cs/ww-cs-members/* /var/www/skillvault.blog/ww-cs-m/ || true
+              sudo rm -rf /tmp/vps_sync_cs || true
+            fi
             sudo chmod -R 755 /var/www/skillvault.blog/ww-cs-m
             sudo systemctl reload nginx || true
-            echo "=== VPS DIRECTORY LISTING FOR ww-cs-m ==="
+            echo "=== VERIFIED CONTENTS OF /var/www/skillvault.blog/ww-cs-m ==="
             ls -la /var/www/skillvault.blog/ww-cs-m
 
       - name: Prepare VPS Directory for 'ww-sv-members'
