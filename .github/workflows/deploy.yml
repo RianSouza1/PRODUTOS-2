@@ -153,6 +153,7 @@ on:
       - 'whittling-nl-members/**'
       - 'whittling-da-members/**'
       - 'freezer-da-members/**'
+      - 'babysleep-sv-members/**'
       - 'babysleep-nl-members/**'
       - 'babysleep-de-members/**'
       - 'freezer-sv-members/**'
@@ -959,6 +960,8 @@ jobs:
               - 'whittling-da-members/**'
             freezer-da-members:
               - 'freezer-da-members/**'
+            babysleep-sv-members:
+              - 'babysleep-sv-members/**'
             babysleep-nl-members:
               - 'babysleep-nl-members/**'
             babysleep-de-members:
@@ -1372,6 +1375,8 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/whittling-nl-m
             sudo mkdir -p /var/www/skillvault.blog/whittling-da-m
             sudo mkdir -p /var/www/skillvault.blog/freezer-da-m
+            sudo mkdir -p /var/www/skillvault.blog/babysleep-sv-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/babysleep-sv-m || true
             sudo mkdir -p /var/www/skillvault.blog/babysleep-nl-m
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/babysleep-nl-m || true
             sudo mkdir -p /var/www/skillvault.blog/babysleep-de-m
@@ -3314,6 +3319,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "freezer-da-members/*"
           target: "/var/www/skillvault.blog/freezer-da-m"
+          strip_components: 1
+
+      - name: Deploy 'babysleep-sv-members' to skillvault.blog/babysleep-sv-m
+        if: steps.filter.outputs.babysleep-sv-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "babysleep-sv-members/*"
+          target: "/var/www/skillvault.blog/babysleep-sv-m"
           strip_components: 1
 
       - name: Deploy 'babysleep-nl-members' to skillvault.blog/babysleep-nl-m
