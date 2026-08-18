@@ -49,6 +49,7 @@ on:
       - 'beekeeping-ro-members/**'
       - 'beekeeping-hu-members/**'
       - 'ww-members/**'
+      - 'ww-cs-members/**'
       - 'ww-sv-members/**'
       - 'ww-nl-members/**'
       - 'ww-fr-members/**'
@@ -756,6 +757,8 @@ jobs:
               - 'beekeeping-hu-members/**'
             ww-members:
               - 'ww-members/**'
+            ww-cs-members:
+              - 'ww-cs-members/**'
             ww-sv-members:
               - 'ww-sv-members/**'
             ww-nl-members:
@@ -1283,6 +1286,8 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/bkp-ro-m
             sudo mkdir -p /var/www/skillvault.blog/bkp-hu-m
             sudo mkdir -p /var/www/skillvault.blog/ww-m
+            sudo mkdir -p /var/www/skillvault.blog/ww-cs-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ww-cs-m || true
             sudo mkdir -p /var/www/skillvault.blog/ww-sv-m
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ww-sv-m || true
             sudo mkdir -p /var/www/skillvault.blog/ww-nl-m
@@ -2279,6 +2284,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "ww-members/*"
           target: "/var/www/skillvault.blog/ww-m"
+          strip_components: 1
+
+      - name: Deploy 'ww-cs-members' to skillvault.blog/ww-cs-m
+        if: steps.filter.outputs.ww-cs-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "ww-cs-members/*"
+          target: "/var/www/skillvault.blog/ww-cs-m"
           strip_components: 1
 
       - name: Deploy 'ww-sv-members' to skillvault.blog/ww-sv-m
