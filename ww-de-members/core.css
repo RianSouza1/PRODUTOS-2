@@ -3,17 +3,17 @@
    ========================================================================= */
 
 :root {
-    /* Navy Blue Dark Theme (Bible Guide) */
-    --bg-main: #0f172a;
-    --bg-card: #1e293b;
+    /* Warm Charcoal & Wood Dark Theme (Guitar Mastery) */
+    --bg-main: #120F0D;
+    --bg-card: #1E1916;
     --text-dark: #f8fafc;
     --text-muted: #cbd5e1;
-    --border-light: rgba(255, 255, 255, 0.1);
+    --border-light: rgba(255, 255, 255, 0.08);
 
-    /* Cor Principal - Gold / Tan */
-    --primary: #D97706;
-    --primary-hover: #B45309;
-    --primary-light: rgba(217, 119, 6, 0.1);
+    /* Cor Principal - Sunburst Orange / Wood Accent */
+    --primary: #F57C00;
+    --primary-hover: #E65100;
+    --primary-light: rgba(245, 124, 0, 0.1);
     /* Fundo sútil dourado */
 
     /* Feedback Visual Secundário */
@@ -714,7 +714,7 @@ body {
     }
 
     .bottom-tab-bar::before {
-        content: "ÁREA DO ALUNO";
+        content: "MITGLIEDERBEREICH";
         font-size: 0.8rem;
         font-weight: 700;
         color: #94A3B8;
@@ -910,14 +910,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #10B981, #059669);
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
     color: var(--text-dark);
     font-weight: 700;
     font-size: 1.05rem;
     text-decoration: none;
     border-radius: 100px;
     padding: 16px 20px;
-    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 8px 16px rgba(245, 124, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
     text-align: center;
 }
@@ -1068,78 +1068,89 @@ body {
 
 
 /* =========================================================================
-   WOODWORKING THEME OVERRIDES — Warm Wood Tones
+   WOODWORKING & MARCENARIA — Warm Wood Amber & Forest Green Palette
    ========================================================================= */
 :root {
-    --bg-main: #1a120b;
-    --bg-card: #2a1f14;
-    --text-dark: #f5ebe0;
-    --text-muted: #c4a882;
-    --border-light: rgba(196, 168, 130, 0.15);
-    --primary: #C68B3E;
-    --primary-hover: #A0712F;
-    --primary-light: rgba(198, 139, 62, 0.12);
-    --secondary: #8B6F47;
-    --success: #6BE59E;
-    --success-bg: rgba(107, 229, 158, 0.15);
-    --bg-body: #1a120b;
+    --bg-main: #120F0D;
+    --bg-card: #1E1916;
+    --text-dark: #F5F5F4;
+    --text-muted: #A8A29E;
+    --border-light: rgba(217, 119, 6, 0.25);
+    --primary: #D97706;
+    --primary-hover: #B45309;
+    --primary-light: rgba(217, 119, 6, 0.18);
+    --secondary: #2D6A4F;
+    --success: #10B981;
+    --success-bg: rgba(16, 185, 129, 0.15);
+    --bg-body: #120F0D;
 }
 
 html, body {
     background-color: var(--bg-main);
     background-image:
-        radial-gradient(circle at 20% 30%, rgba(198, 139, 62, 0.06) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(139, 111, 71, 0.04) 0%, transparent 40%);
+        radial-gradient(circle at 20% 30%, rgba(217, 119, 6, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(45, 106, 79, 0.08) 0%, transparent 40%);
 }
 
 .main-content {
     background-color: var(--bg-main);
     background-image:
-        radial-gradient(circle at 20% 30%, rgba(198, 139, 62, 0.06) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(139, 111, 71, 0.04) 0%, transparent 40%);
+        radial-gradient(circle at 20% 30%, rgba(217, 119, 6, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(45, 106, 79, 0.08) 0%, transparent 40%);
 }
 
 .app-header {
-    background: rgba(26, 18, 11, 0.97) !important;
+    background: rgba(18, 15, 13, 0.97) !important;
 }
 
 .app-header::before {
-    background: linear-gradient(90deg, #C68B3E, #E8C98A, #C68B3E);
+    background: linear-gradient(90deg, #D97706, #2D6A4F, #D97706);
 }
 
 .bottom-tab-bar {
-    background: rgba(26, 18, 11, 0.97);
+    background: rgba(18, 15, 13, 0.97);
+}
+
+.bottom-tab-bar::before {
+    content: "MITGLIEDERBEREICH";
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #A8A29E;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    align-self: flex-start;
+    letter-spacing: 1px;
 }
 
 .hero-card {
-    background: linear-gradient(135deg, #C68B3E, #8B6F47);
-    box-shadow: 0 8px 24px rgba(198, 139, 62, 0.35);
+    background: linear-gradient(135deg, #78350F 0%, #92400E 50%, #B45309 100%);
+    box-shadow: 0 8px 24px rgba(217, 119, 6, 0.35);
 }
 
 /* Pre-page Woodworking */
 .pre-page-overlay {
-    color: #f5ebe0;
+    color: #F5F5F4;
 }
 .pre-page-bg {
-    background: linear-gradient(135deg, #1a120b 0%, #2a1f14 40%, #3d2b18 100%);
+    background: linear-gradient(135deg, #0C0A09 0%, #120F0D 40%, #1E1916 100%);
 }
 .pre-page-bg::after {
     content: '';
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 25% 25%, rgba(198, 139, 62, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(139, 111, 71, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 25% 25%, rgba(217, 119, 6, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(45, 106, 79, 0.12) 0%, transparent 50%);
 }
 .pre-page-features span {
-    background: rgba(198, 139, 62, 0.15);
-    border: 1px solid rgba(198, 139, 62, 0.25);
-    color: #E8C98A;
+    background: rgba(217, 119, 6, 0.18);
+    border: 1px solid rgba(217, 119, 6, 0.35);
+    color: #FBBF24;
 }
 .pre-page-content button {
-    background: linear-gradient(135deg, #C68B3E, #E8C98A);
-    color: #1a120b;
-    box-shadow: 0 4px 20px rgba(198, 139, 62, 0.4);
+    background: linear-gradient(135deg, #D97706, #F59E0B);
+    color: #120F0D;
+    box-shadow: 0 4px 20px rgba(217, 119, 6, 0.45);
 }
 
 /* =========================================================================
@@ -1247,3 +1258,5 @@ html, body {
     background: var(--border-light);
     transform: scale(0.95);
 }
+
+/* trigger rebuild */
