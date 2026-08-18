@@ -14,33 +14,33 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Sculpture sur bois pour débutants — Bases & Prise en main du couteau",
+            title: "Sculpture sur bois pour débutants — Guide complet",
             duration: "Débutant • Règles de sécurité, prises en main et coupes",
-            youtubeId: "hG9O4CqL26o"
+            youtubeId: "cghNbdy0xtc"
         },
         {
             id: "v2",
-            title: "Sculpter un renard en bois simple — Étape par étape",
-            duration: "Débutant • Façonnage, arrondi et finition d'un renard",
-            youtubeId: "q69Hk7b9J1c"
+            title: "Le Sorcier de 5 minutes (Doug Linker) — Projet facile",
+            duration: "Débutant • Projet rapide et satisfaisant sur bois",
+            youtubeId: "AlIr95-ZlCc"
         },
         {
             id: "v3",
-            title: "Sculpter un ours en bois simple — Étape par étape",
-            duration: "Débutant • Projet facile sur petit bloc de bois",
-            youtubeId: "J3e3m8Xg0Yc"
+            title: "Sculpter un mignon lapin en bois — Étape par étape",
+            duration: "Débutant • Façonnage, arrondi et finitions",
+            youtubeId: "eG88Ny-hNOc"
         },
         {
             id: "v4",
-            title: "Sculpter une cuillère en bois — Tutoriel pour débutants",
+            title: "Sculpter une cuillère en bois — Tutoriel complet",
             duration: "Débutant • Sculpture de cuillère au couteau Sloyd et croche",
             youtubeId: "lS7IMuS4gv4"
         },
         {
             id: "v5",
-            title: "Fondamentaux de la sculpture sur bois — Sécurité & Techniques",
-            duration: "Débutant • Techniques fondamentales de sculpture sur bois",
-            youtubeId: "5Vz13h1PZks"
+            title: "Détails du visage en sculpture — Yeux et nez",
+            duration: "Débutant • Techniques fines pour visages en bois",
+            youtubeId: "8MfD4LSNI9g"
         },
     ],
 

@@ -14,33 +14,33 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Træskæring for begyndere — Grundlæggende & Knivgreb",
+            title: "Træskæring for begyndere — Komplet vejledning",
             duration: "Begynder • Sikkerhedsregler, greb og skæreteknikker",
-            youtubeId: "hG9O4CqL26o"
+            youtubeId: "cghNbdy0xtc"
         },
         {
             id: "v2",
-            title: "Skær en simpel træræv — Trin for trin",
-            duration: "Begynder • Formgivning, afrunding og finish af en træræv",
-            youtubeId: "q69Hk7b9J1c"
+            title: "5-Minutters Troldmand (Doug Linker) — Nemt projekt",
+            duration: "Begynder • Hurtigt og sjovt træprojekt",
+            youtubeId: "AlIr95-ZlCc"
         },
         {
             id: "v3",
-            title: "Skær en simpel træbjørn — Trin for trin",
-            duration: "Begynder • Nemt projekt fra en træblok",
-            youtubeId: "J3e3m8Xg0Yc"
+            title: "Skær en sød kanin i træ — Trin for trin",
+            duration: "Begynder • Formgivning, afrunding og detaljer",
+            youtubeId: "eG88Ny-hNOc"
         },
         {
             id: "v4",
-            title: "Skær en træske — Begyndervejledning",
+            title: "Skær en træske — Komplet vejledning",
             duration: "Begynder • Skæring af træske med Sloyd og hulkniv",
             youtubeId: "lS7IMuS4gv4"
         },
         {
             id: "v5",
-            title: "Grundlæggende træskæring — Sikkerhed & Teknikker",
-            duration: "Begynder • Fundamentale skæreteknikker og sikkerhed",
-            youtubeId: "5Vz13h1PZks"
+            title: "Ansigtsdetaljer i træskæring — Øjne og næse",
+            duration: "Begynder • Teknikker til ansigtsskæring",
+            youtubeId: "8MfD4LSNI9g"
         },
     ],
 

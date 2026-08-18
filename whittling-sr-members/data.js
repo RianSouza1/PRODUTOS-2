@@ -14,21 +14,21 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Wood Carving for Beginners — Basics & Knife Grips",
+            title: "Start Whittling TODAY — Complete Beginners Guide",
             duration: "Beginner • Essential grips, cuts & safety rules",
-            youtubeId: "hG9O4CqL26o"
+            youtubeId: "cghNbdy0xtc"
         },
         {
             id: "v2",
-            title: "How to Whittle a Simple Wooden Fox — Step by Step",
-            duration: "Beginner • Shaping, rounding & finishing a small fox",
-            youtubeId: "q69Hk7b9J1c"
+            title: "The 5-Minute Wizard (Doug Linker) — Simple Carving Project",
+            duration: "Beginner • Fast, easy & satisfying 1x1 carving",
+            youtubeId: "AlIr95-ZlCc"
         },
         {
             id: "v3",
-            title: "Whittle a Simple Wooden Bear — Step-by-Step",
-            duration: "Beginner • Easy 1x1 inch block project",
-            youtubeId: "J3e3m8Xg0Yc"
+            title: "How to Whittle a Cute Bunny — Step-by-Step Tutorial",
+            duration: "Beginner • Shaping, rounding & detailing a rabbit",
+            youtubeId: "eG88Ny-hNOc"
         },
         {
             id: "v4",
@@ -38,9 +38,9 @@ const APP_DATA = {
         },
         {
             id: "v5",
-            title: "Wood Carving Fundamentals — Safety & Techniques",
-            duration: "Beginner • Fundamental wood carving techniques",
-            youtubeId: "5Vz13h1PZks"
+            title: "Beginners Whittle — Facial Detailing: Eyes & Nose",
+            duration: "Beginner • Facial carving techniques & fine details",
+            youtubeId: "8MfD4LSNI9g"
         },
     ],
 

@@ -14,33 +14,33 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Vyřezávání ze dřeva pro začátečníky — Základy a držení nože",
+            title: "Vyřezávání ze dřeva pro začátečníky — Kompletní průvodce",
             duration: "Začátečník • Bezpečnostní pravidla, úchopy a řezy",
-            youtubeId: "hG9O4CqL26o"
+            youtubeId: "cghNbdy0xtc"
         },
         {
             id: "v2",
-            title: "Jak vyřezat jednoduchou dřevěnou lišku — Krok za krokem",
-            duration: "Začátečník • Tvarování, zaoblování a dokončení lišky",
-            youtubeId: "q69Hk7b9J1c"
+            title: "5minutový Čaroděj (Doug Linker) — Snadný projekt",
+            duration: "Začátečník • Rychlý a zábavný projekt ze dřeva",
+            youtubeId: "AlIr95-ZlCc"
         },
         {
             id: "v3",
-            title: "Jak vyřezat jednoduchého dřevěného medvěda — Krok za krokem",
-            duration: "Začátečník • Snadný projekt z dřevěného hranolu",
-            youtubeId: "J3e3m8Xg0Yc"
+            title: "Jak vyřezat roztomilého dřevěného králíka — Krok za krokem",
+            duration: "Začátečník • Tvarování, zaoblování a detaily",
+            youtubeId: "eG88Ny-hNOc"
         },
         {
             id: "v4",
-            title: "Jak vyřezat dřevěnou lžíci — Návod pro začátečníky",
+            title: "Jak vyřezat dřevěnou lžíci — Kompletní návod",
             duration: "Začátečník • Vyřezávání lžíce nožem Sloyd a lžičkářem",
             youtubeId: "lS7IMuS4gv4"
         },
         {
             id: "v5",
-            title: "Základy vyřezávání ze dřeva — Bezpečnost a techniky",
-            duration: "Začátečník • Základní techniky vyřezávání a bezpečnost",
-            youtubeId: "5Vz13h1PZks"
+            title: "Detaily obličeje při vyřezávání — Oči a nos",
+            duration: "Začátečník • Jemné techniky vyřezávání obličeje",
+            youtubeId: "8MfD4LSNI9g"
         },
     ],
 

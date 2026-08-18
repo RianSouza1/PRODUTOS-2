@@ -14,33 +14,33 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Holzschnitzen für Anfänger — Grundlagen & Messerhaltung",
+            title: "Holzschnitzen für Anfänger — Vollständiger Leitfaden",
             duration: "Anfänger • Sicherheitsregeln, Messerhaltung & Schnitttechniken",
-            youtubeId: "hG9O4CqL26o"
+            youtubeId: "cghNbdy0xtc"
         },
         {
             id: "v2",
-            title: "Einen einfachen Holzfuchs schnitzen — Schritt für Schritt",
-            duration: "Anfänger • Formgebung, Abrundung & Finish eines Fuchs-Projekts",
-            youtubeId: "q69Hk7b9J1c"
+            title: "Der 5-Minuten-Zauberer (Doug Linker) — Einfaches Projekt",
+            duration: "Anfänger • Schnelles und einfaches Holzprojekt",
+            youtubeId: "AlIr95-ZlCc"
         },
         {
             id: "v3",
-            title: "Einen einfachen Holzbären schnitzen — Schritt für Schritt",
-            duration: "Anfänger • Einfaches Projekt aus einem Holzblock",
-            youtubeId: "J3e3m8Xg0Yc"
+            title: "Einen süßen Holzhasen schnitzen — Schritt für Schritt",
+            duration: "Anfänger • Formgebung, Abrundung & Details",
+            youtubeId: "eG88Ny-hNOc"
         },
         {
             id: "v4",
-            title: "Einen Holzlöffel schnitzen — Anleitung für Anfänger",
+            title: "Einen Holzlöffel schnitzen — Vollständige Anleitung",
             duration: "Anfänger • Schnitzen von Löffeln mit Sloyd- und Hohlmesser",
             youtubeId: "lS7IMuS4gv4"
         },
         {
             id: "v5",
-            title: "Grundlagen des Holzschnitzens — Sicherheit & Techniken",
-            duration: "Anfänger • Fundamentale Schnitztechniken und Sicherheit",
-            youtubeId: "5Vz13h1PZks"
+            title: "Gesichtsdetails beim Schnitzen — Augen & Nase",
+            duration: "Anfänger • Feinheiten der Gesichtsschnitzerei",
+            youtubeId: "8MfD4LSNI9g"
         },
     ],
 

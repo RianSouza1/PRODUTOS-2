@@ -14,33 +14,33 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Houtsnijden voor beginners — Basis & Mesgrepen",
+            title: "Houtsnijden voor beginners — Volledige gids",
             duration: "Beginner • Veiligheidsregels, grepen en snijtechnieken",
-            youtubeId: "hG9O4CqL26o"
+            youtubeId: "cghNbdy0xtc"
         },
         {
             id: "v2",
-            title: "Een eenvoudige houten vos snijden — Stap voor stap",
-            duration: "Beginner • Vormgeven, afronden en afwerken van een houten vos",
-            youtubeId: "q69Hk7b9J1c"
+            title: "De 5-Minuten Tovenaar (Doug Linker) — Eenvoudig project",
+            duration: "Beginner • Snel en leuk houtproject",
+            youtubeId: "AlIr95-ZlCc"
         },
         {
             id: "v3",
-            title: "Een eenvoudige houten beer snijden — Stap voor stap",
-            duration: "Beginner • Eenvoudig project op een houten blokje",
-            youtubeId: "J3e3m8Xg0Yc"
+            title: "Een schattig houten konijn snijden — Stap voor stap",
+            duration: "Beginner • Vormgeven, afronden en details",
+            youtubeId: "eG88Ny-hNOc"
         },
         {
             id: "v4",
-            title: "Een houten lepels snijden — Handleiding voor beginners",
+            title: "Een houten lepels snijden — Volledige handleiding",
             duration: "Beginner • Lepel snijden met Sloyd- en lepelmes",
             youtubeId: "lS7IMuS4gv4"
         },
         {
             id: "v5",
-            title: "Basisprincipes van houtsnijden — Veiligheid & Technieken",
-            duration: "Beginner • Fundamentele houtsnijtechnieken en veiligheid",
-            youtubeId: "5Vz13h1PZks"
+            title: "Gezichtsdetails bij houtsnijden — Ogen en neus",
+            duration: "Beginner • Fijne technieken voor gezichtssnijden",
+            youtubeId: "8MfD4LSNI9g"
         },
     ],
 

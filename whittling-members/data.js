@@ -14,33 +14,33 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Entalhe em Madeira para Iniciantes — Conceitos Básicos & Pegadas de Faca",
-            duration: "Iniciante • Empunhadura, cortes e regras de segurança",
-            youtubeId: "hG9O4CqL26o"
+            title: "Comece no Entalhe Hoje — Guia Completo para Iniciantes",
+            duration: "Iniciante • Conceitos básicos, facas & regras de segurança",
+            youtubeId: "cghNbdy0xtc"
         },
         {
             id: "v2",
-            title: "Como Entalhar uma Raposa de Madeira Simples — Passo a Passo",
-            duration: "Iniciante • Modelagem, arredondamento e acabamento de uma raposa",
-            youtubeId: "q69Hk7b9J1c"
+            title: "Entalhe do Mago de 5 Minutos (Doug Linker) — Projeto Fácil",
+            duration: "Iniciante • Projeto prático, rápido e satisfatório em madeira",
+            youtubeId: "AlIr95-ZlCc"
         },
         {
             id: "v3",
-            title: "Como Entalhar um Urso de Madeira Simples — Passo a Passo",
-            duration: "Iniciante • Projeto fácil em bloco de madeira 1x1 polegada",
-            youtubeId: "J3e3m8Xg0Yc"
+            title: "Como Entalhar um Coelho de Madeira — Passo a Passo",
+            duration: "Iniciante • Modelagem, arredondamento e detalhes fáceis",
+            youtubeId: "eG88Ny-hNOc"
         },
         {
             id: "v4",
-            title: "Como Entalhar uma Colher de Madeira — Tutorial para Iniciantes",
+            title: "Como Entalhar uma Colher de Madeira — Tutorial Completo",
             duration: "Iniciante • Entalhe de colher com faca Sloyd e curva",
             youtubeId: "lS7IMuS4gv4"
         },
         {
             id: "v5",
-            title: "Fundamentos da Escultura em Madeira — Segurança & Técnicas",
-            duration: "Iniciante • Técnicas fundamentais de escultura e manuseio",
-            youtubeId: "5Vz13h1PZks"
+            title: "Detalhamento Facial no Entalhe — Olhos & Nariz",
+            duration: "Iniciante • Técnicas de escultura facial e acabamento fino",
+            youtubeId: "8MfD4LSNI9g"
         },
     ],
 

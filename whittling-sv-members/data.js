@@ -14,33 +14,33 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Tälja i trä för nybörjare — Grundläggande & Knivgrepp",
+            title: "Tälja i trä för nybörjare — Komplett guide",
             duration: "Nybörjare • Säkerhetsregler, knivgrepp och skärtekniker",
-            youtubeId: "hG9O4CqL26o"
+            youtubeId: "cghNbdy0xtc"
         },
         {
             id: "v2",
-            title: "Tälja en enkel träräv — Steg för steg",
-            duration: "Nybörjare • Formning, avrundning och ytbehandling av en träräv",
-            youtubeId: "q69Hk7b9J1c"
+            title: "5-Minuters Trollkarl (Doug Linker) — Enkelt projekt",
+            duration: "Nybörjare • Snabbt och roligt träprojekt",
+            youtubeId: "AlIr95-ZlCc"
         },
         {
             id: "v3",
-            title: "Tälja en enkel träbjörn — Steg för steg",
-            duration: "Nybörjare • Enkelt projekt från ett träblock",
-            youtubeId: "J3e3m8Xg0Yc"
+            title: "Tälja en söt träkanin — Steg för steg",
+            duration: "Nybörjare • Formning, avrundning och detaljer",
+            youtubeId: "eG88Ny-hNOc"
         },
         {
             id: "v4",
-            title: "Tälja en träsked — Nybörjarguide",
+            title: "Tälja en träsked — Komplett guide",
             duration: "Nybörjare • Skedskärning med Sloyd- och skedkniv",
             youtubeId: "lS7IMuS4gv4"
         },
         {
             id: "v5",
-            title: "Grunderna i träsnideri — Säkerhet & Tekniker",
-            duration: "Nybörjare • Fundamentala täljtekniker och säkerhet",
-            youtubeId: "5Vz13h1PZks"
+            title: "Ansiktsdetaljer i träsnideri — Ögon och näsa",
+            duration: "Nybörjare • Fina tekniker för ansiktsskärning",
+            youtubeId: "8MfD4LSNI9g"
         },
     ],
 
