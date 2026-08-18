@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHome() {
     rootEl.innerHTML = `
       <div class="page-view">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Vítejte, vážený člene!</h1><p>K jakému obsahu chcete dnes přistoupit?</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Vítejte, vážený člene!</h1><p>Hvad vil du gerne tilgå i dag?</p></div></div>
           
   
           <div class="home-grid">
@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPEZIAL'}</span>
+               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
                <span class="premium-format">PDF • Dokument ke stažení</span>
             </div>
            
@@ -273,13 +273,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let compactHTML = '';
     if (compactBooks.length > 0) {
       compactHTML = `
-      <h2 class="section-divider-title">Další zdroje</h2>
+      <h2 class="section-divider-title">Flere ressourcer</h2>
       <div class="compact-book-list">
         ${compactBooks.map(bk => `
           <div class="compact-book-card">
             <div class="compact-book-info">
               <h4 class="compact-book-title">${bk.title}</h4>
-              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPEZIAL'}</span>
+              <span class="compact-book-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
             </div>
             <div class="compact-book-actions">
               <a href="${bk.downloadUrl}" target="_blank" class="compact-action-btn btn-read" title="Číst nyní">
@@ -297,14 +297,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
-          <div class="hero-card glass-panel"><div class="hero-text"><h1>Vaše materiály</h1><p>Kliknutím na níže uvedené kolekce si zobrazíte a stáhnete knihy.</p></div></div>
+          <div class="hero-card glass-panel"><div class="hero-text"><h1>Dine Materialer</h1><p>Kliknutím na níže uvedené kolekce si zobrazíte a stáhnete knihy.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
               <img src="assets/covers/wood_IMG1_cs.png" alt="Balíček Zpracování dřeva & Woodworking" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
 
           <div class="list-container">
-            ${featuredHTML || '<p>V současné době nejsou registrovány žádné materiály.</p>'}
+            ${featuredHTML || '<p>Der er i øjeblikket ingen registrerede materialer.</p>'}
             ${compactHTML}
           </div>
         </div>
@@ -324,7 +324,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'SPEZIAL'}</span>
+               <span class="premium-badge" style="background-color: ${prod.badgeColor || 'var(--primary)'}">${prod.badgeText || 'SPECIAL'}</span>
                <span class="premium-format">PDF • Dokument ke stažení</span>
             </div>
            

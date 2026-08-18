@@ -1915,10 +1915,9 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
           script: |
-            sudo rm -rf /var/www/skillvault.blog/ww-cs-m
             sudo mkdir -p /var/www/skillvault.blog/ww-cs-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ww-cs-m
-            sudo chmod -R 777 /var/www/skillvault.blog/ww-cs-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ww-cs-m || true
+            sudo chmod -R 777 /var/www/skillvault.blog/ww-cs-m || true
 
       - name: Deploy 'ww-cs-members' to skillvault.blog/ww-cs-m
         if: steps.filter.outputs.ww-cs-members == 'true'
