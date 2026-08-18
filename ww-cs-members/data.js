@@ -1,4 +1,3 @@
-// release 10000
 /**
  * Zpracování dřeva & Woodworking — Členská sekce (Čeština)
  */
