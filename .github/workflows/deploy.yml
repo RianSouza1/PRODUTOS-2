@@ -2287,6 +2287,18 @@ jobs:
           target: "/var/www/skillvault.blog/ww-m"
           strip_components: 1
 
+      - name: Prepare VPS Directory for 'ww-cs-members'
+        if: steps.filter.outputs.ww-cs-members == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/ww-cs-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ww-cs-m || true
+            sudo chmod -R 777 /var/www/skillvault.blog/ww-cs-m || true
+
       - name: Deploy 'ww-cs-members' to skillvault.blog/ww-cs-m
         if: steps.filter.outputs.ww-cs-members == 'true'
         uses: appleboy/scp-action@v0.1.7
@@ -2297,6 +2309,18 @@ jobs:
           source: "ww-cs-members/*"
           target: "/var/www/skillvault.blog/ww-cs-m"
           strip_components: 1
+
+      - name: Prepare VPS Directory for 'ww-sv-members'
+        if: steps.filter.outputs.ww-sv-members == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/ww-sv-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ww-sv-m || true
+            sudo chmod -R 777 /var/www/skillvault.blog/ww-sv-m || true
 
       - name: Deploy 'ww-sv-members' to skillvault.blog/ww-sv-m
         if: steps.filter.outputs.ww-sv-members == 'true'
@@ -2309,6 +2333,18 @@ jobs:
           target: "/var/www/skillvault.blog/ww-sv-m"
           strip_components: 1
 
+      - name: Prepare VPS Directory for 'ww-nl-members'
+        if: steps.filter.outputs.ww-nl-members == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/ww-nl-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ww-nl-m || true
+            sudo chmod -R 777 /var/www/skillvault.blog/ww-nl-m || true
+
       - name: Deploy 'ww-nl-members' to skillvault.blog/ww-nl-m
         if: steps.filter.outputs.ww-nl-members == 'true'
         uses: appleboy/scp-action@v0.1.7
@@ -2319,6 +2355,18 @@ jobs:
           source: "ww-nl-members/*"
           target: "/var/www/skillvault.blog/ww-nl-m"
           strip_components: 1
+
+      - name: Prepare VPS Directory for 'ww-fr-members'
+        if: steps.filter.outputs.ww-fr-members == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/ww-fr-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ww-fr-m || true
+            sudo chmod -R 777 /var/www/skillvault.blog/ww-fr-m || true
 
       - name: Deploy 'ww-fr-members' to skillvault.blog/ww-fr-m
         if: steps.filter.outputs.ww-fr-members == 'true'
@@ -2331,6 +2379,18 @@ jobs:
           target: "/var/www/skillvault.blog/ww-fr-m"
           strip_components: 1
 
+      - name: Prepare VPS Directory for 'ww-da-members'
+        if: steps.filter.outputs.ww-da-members == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/ww-da-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ww-da-m || true
+            sudo chmod -R 777 /var/www/skillvault.blog/ww-da-m || true
+
       - name: Deploy 'ww-da-members' to skillvault.blog/ww-da-m
         if: steps.filter.outputs.ww-da-members == 'true'
         uses: appleboy/scp-action@v0.1.7
@@ -2341,6 +2401,18 @@ jobs:
           source: "ww-da-members/*"
           target: "/var/www/skillvault.blog/ww-da-m"
           strip_components: 1
+
+      - name: Prepare VPS Directory for 'ww-de-members'
+        if: steps.filter.outputs.ww-de-members == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/ww-de-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ww-de-m || true
+            sudo chmod -R 777 /var/www/skillvault.blog/ww-de-m || true
 
       - name: Deploy 'ww-de-members' to skillvault.blog/ww-de-m
         if: steps.filter.outputs.ww-de-members == 'true'
