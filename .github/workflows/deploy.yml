@@ -1076,6 +1076,8 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/calistenia-es-m
             sudo mkdir -p /var/www/skillvault.blog/calistenia-da-m
             sudo mkdir -p /var/www/skillvault.blog/calistenia-de-m
+            sudo mkdir -p /var/www/skillvault.blog/calis-man-nl-m
+            sudo mkdir -p /var/www/skillvault.blog/calistenia-man-nl-m
             sudo mkdir -p /var/www/skillvault.blog/marmita-m
             sudo mkdir -p /var/www/skillvault.blog/historinhas-m
             sudo mkdir -p /var/www/skillvault.blog/taichi-m
