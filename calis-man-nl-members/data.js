@@ -1,13 +1,13 @@
 /**
- * Calisthenics voor Mannen — Ledengedeelte (Nederlands)
+ * Militaire Calisthenics voor Mannen — Ledengedeelte (Nederlands)
  */
 
 const APP_DATA = {
     config: {
-        brandName: "Calisthenics voor Mannen",
+        brandName: "Militaire Calisthenics voor Mannen",
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Supportverzoek over toegang (Calisthenics voor Mannen)",
-        emailBodyTemplate: "Hallo supportteam! Ik wil graag hulp vragen bij mijn toegang tot het ledengedeelte van Calisthenics voor Mannen.\n\nMijn naam is: ______.",
+        emailSubject: "Supportverzoek over toegang (Militaire Calisthenics voor Mannen)",
+        emailBodyTemplate: "Hallo supportteam! Ik wil graag hulp vragen bij mijn toegang tot het ledengedeelte van Militaire Calisthenics voor Mannen.\n\nMijn naam is: ______.",
         showFloatingHelp: true
     },
 
@@ -16,14 +16,14 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "Calisthenics voor Mannen — Kracht, Spiermassa & Lichaamsbeheersing (Deel 1)",
-            description: "Stap-voor-stap handleiding om een sterk, atletisch en gespierd lichaam op te bouwen met lichaamsgewichtoefeningen zonder sportschool.",
-            badgeText: "Deel 1",
-            badgeColor: "#1e3a8a",
+            title: "Militaire Calisthenics voor Mannen Boven de 40 — 28-Daagse Uitdaging (Deel 1)",
+            description: "Stap-voor-stap militair calisthenicsprogramma speciaal ontworpen voor mannen van 40+. Bouw functionele spierkracht, gewrichtsstabiliteit en uithoudingsvermogen op met 15 minuten per dag zonder sportschool.",
+            badgeText: "28-Daagse Challenge",
+            badgeColor: "#c45329",
             features: [
-                "Fundamentele lichaamsgewichtoefeningen en juiste uitvoering",
-                "Opbouwen van functionele kracht, schouder- en kernstabiliteit",
-                "Warming-up protocollen en blessurepreventie voor mannen"
+                "15 minuten per dag militaire lichaamsgewichtoefeningen",
+                "Speciaal afgestemd op gewrichtsbescherming voor mannen 40+",
+                "Geen sportschool of dure apparatuur nodig"
             ],
             downloadUrl: "materials/MAN-1-NL.pdf",
             coverImage: "assets/covers/man_IMG1_nl.png",
@@ -31,14 +31,14 @@ const APP_DATA = {
         },
         {
             id: "b2",
-            title: "Gevorderde Calisthenics voor Mannen — Progressies & Master-technieken (Deel 2)",
-            description: "Geavanceerde oefeningen, spieropbouw, push-up variaties, pull-ups en core-stabiliteit voor maximale resultaten.",
-            badgeText: "Hoofdgids",
-            badgeColor: "#065f46",
+            title: "Militaire Functionele Fitnessworkout — Protocol van 9 Weken (Deel 2)",
+            description: "Geavanceerd militair trainingsprotocol voor maximale vetverbranding, spierdefinitie, schouder- en core-stabiliteit.",
+            badgeText: "9 Weken Protocol",
+            badgeColor: "#3b5940",
             features: [
-                "Progressieve trainingsschema's voor borst, rug, armen en core",
-                "Technieken voor Muscle-ups, Handstands en L-sits",
-                "Optimalisatie van trainingsvolume en hersteltijden"
+                "Progressief 9-weken trainingsschema voor borst, rug en armen",
+                "Militaire functionele routines voor maximale vetverbranding",
+                "Optimale hersteltijden en blessurepreventie"
             ],
             downloadUrl: "materials/MAN-2-NL.pdf",
             coverImage: "assets/covers/man_IMG1_nl.png",
@@ -46,14 +46,14 @@ const APP_DATA = {
         },
         {
             id: "b3",
-            title: "Calisthenics Voeding & Herstel voor Mannen — Geavanceerd Schema (Deel 3)",
-            description: "Optimaliseer je prestaties, vetverbranding en spierherstel met het complete calisthenics voedings- en herstelschema.",
-            badgeText: "Deel 3",
-            badgeColor: "#854d0e",
+            title: "Militaire Calisthenics Workout & Voeding voor Mannen (Deel 3)",
+            description: "Het complete militaire voedings- en herstelplan voor continue spieropbouw, vetverlies en maximale energie voor mannen 40+.",
+            badgeText: "Voeding & Herstel",
+            badgeColor: "#1b2a3a",
             features: [
-                "Macro-nutriënten verdeling voor spieropbouw en vetverbranding",
-                "Maaltijdplanning en hydratatierichtlijnen voor maximale energie",
-                "Slaap- en herstelstrategieën voor continue progressie"
+                "Militaire macro-nutriënten verdeling voor spieropbouw",
+                "Voedings- en hydratatierichtlijnen voor maximale uithoudingsvermogen",
+                "Slaap- en herstelstrategieën voor continu resultaat"
             ],
             downloadUrl: "materials/MAN-3-NL.pdf",
             coverImage: "assets/covers/man_IMG1_nl.png",
