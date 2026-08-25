@@ -3553,7 +3553,7 @@ jobs:
           strip_components: 1
 
       - name: Prepare VPS Directory for 'calis-man-nl-members'
-        if: github.event_name == 'workflow_dispatch' || steps.filter.outputs.calis-man-nl-members == 'true' || steps.filter.outputs.workflow == 'true'
+        if: github.event_name == 'workflow_dispatch' || steps.filter.outputs['calis-man-nl-members'] == 'true' || steps.filter.outputs.calis_man_nl_members == 'true' || steps.filter.outputs.workflow == 'true'
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -3565,7 +3565,7 @@ jobs:
             sudo chmod -R 755 /var/www/skillvault.blog/calis-man-nl-m
 
       - name: Deploy 'calis-man-nl-members' to skillvault.blog/calis-man-nl-m
-        if: github.event_name == 'workflow_dispatch' || steps.filter.outputs.calis-man-nl-members == 'true' || steps.filter.outputs.workflow == 'true'
+        if: github.event_name == 'workflow_dispatch' || steps.filter.outputs['calis-man-nl-members'] == 'true' || steps.filter.outputs.calis_man_nl_members == 'true' || steps.filter.outputs.workflow == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -3576,7 +3576,7 @@ jobs:
           strip_components: 1
 
       - name: Verify and Reload Nginx for 'calis-man-nl-members'
-        if: github.event_name == 'workflow_dispatch' || steps.filter.outputs.calis-man-nl-members == 'true' || steps.filter.outputs.workflow == 'true'
+        if: github.event_name == 'workflow_dispatch' || steps.filter.outputs['calis-man-nl-members'] == 'true' || steps.filter.outputs.calis_man_nl_members == 'true' || steps.filter.outputs.workflow == 'true'
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
