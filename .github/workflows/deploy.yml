@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -54,6 +55,8 @@ jobs:
         id: filter
         with:
           filters: |
+            workflow:
+              - '.github/workflows/deploy.yml'
             off-grid:
               - 'off-grid/**'
             off-grid-fr:
@@ -3550,7 +3553,7 @@ jobs:
           strip_components: 1
 
       - name: Prepare VPS Directory for 'calis-man-nl-members'
-        if: always()
+        if: github.event_name == 'workflow_dispatch' || steps.filter.outputs.calis-man-nl-members == 'true' || steps.filter.outputs.workflow == 'true'
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -3558,11 +3561,11 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           script: |
             sudo mkdir -p /var/www/skillvault.blog/calis-man-nl-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/calis-man-nl-m || true
-            sudo chmod -R 777 /var/www/skillvault.blog/calis-man-nl-m || true
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/calis-man-nl-m
+            sudo chmod -R 755 /var/www/skillvault.blog/calis-man-nl-m
 
       - name: Deploy 'calis-man-nl-members' to skillvault.blog/calis-man-nl-m
-        if: always()
+        if: github.event_name == 'workflow_dispatch' || steps.filter.outputs.calis-man-nl-members == 'true' || steps.filter.outputs.workflow == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -3572,26 +3575,16 @@ jobs:
           target: "/var/www/skillvault.blog/calis-man-nl-m"
           strip_components: 1
 
-      - name: Verify and Direct Sync VPS for 'calis-man-nl-members'
-        if: always()
+      - name: Verify and Reload Nginx for 'calis-man-nl-members'
+        if: github.event_name == 'workflow_dispatch' || steps.filter.outputs.calis-man-nl-members == 'true' || steps.filter.outputs.workflow == 'true'
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
           script: |
-            sudo mkdir -p /var/www/skillvault.blog/calis-man-nl-m
-            if [ -d "/var/www/skillvault.blog/calis-man-nl-m/calis-man-nl-members" ]; then
-              sudo cp -r /var/www/skillvault.blog/calis-man-nl-m/calis-man-nl-members/* /var/www/skillvault.blog/calis-man-nl-m/ || true
-            fi
-            sudo rm -rf /tmp/vps_sync_calis_man_nl || true
-            git clone --depth 1 https://github.com/RianSouza1/PRODUTOS-2.git /tmp/vps_sync_calis_man_nl || true
-            if [ -d "/tmp/vps_sync_calis_man_nl/calis-man-nl-members" ]; then
-              sudo cp -r /tmp/vps_sync_calis_man_nl/calis-man-nl-members/* /var/www/skillvault.blog/calis-man-nl-m/ || true
-              sudo rm -rf /tmp/vps_sync_calis_man_nl || true
-            fi
             sudo chmod -R 755 /var/www/skillvault.blog/calis-man-nl-m
-            sudo systemctl reload nginx || true
+            sudo systemctl reload nginx
             echo "=== VERIFIED CONTENTS OF /var/www/skillvault.blog/calis-man-nl-m ==="
             ls -la /var/www/skillvault.blog/calis-man-nl-m
 
@@ -5540,7 +5533,9 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "gfree-sk-members/*"
           target: "/var/www/naturalmethods.blog/g-free-sk"
-          strip_components: 1      - name: Prepare VPS Directory for 'ww-cs-members'
+          strip_components: 1
+
+      - name: Prepare VPS Directory for 'ww-cs-members'
         if: steps.filter.outputs.ww-cs-members == 'true'
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -5563,7 +5558,7 @@ jobs:
           target: "/var/www/skillvault.blog/ww-cs-m"
           strip_components: 1
 
-Prepare VPS Directory for 'ww-sv-members'
+      - name: Prepare VPS Directory for 'ww-sv-members'
         if: steps.filter.outputs.ww-sv-members == 'true'
         uses: appleboy/ssh-action@v1.0.3
         with:
