@@ -3601,11 +3601,20 @@ jobs:
             sudo chmod -R 755 /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m
             CONF_FILE=$(grep -rl "skillvault.blog" /etc/nginx/ 2>/dev/null | head -n 1)
             if [ -n "$CONF_FILE" ]; then
-              if ! grep -q "calis-man-nl-m" "$CONF_FILE"; then
-                sudo sed -i '/server_name.*skillvault.blog/a \    location /calis-man-nl-m/ { alias /var/www/skillvault.blog/calis-man-nl-m/; }\n    location /calistenia-man-nl-m/ { alias /var/www/skillvault.blog/calistenia-man-nl-m/; }' "$CONF_FILE" || true
-              fi
+              sudo python3 -c "
+p = '$CONF_FILE'
+with open(p, 'r') as f:
+    c = f.read()
+if 'location /calis-man-nl-m' not in c:
+    block = '\n    location /calis-man-nl-m/ {\n        alias /var/www/skillvault.blog/calis-man-nl-m/;\n    }\n    location /calistenia-man-nl-m/ {\n        alias /var/www/skillvault.blog/calistenia-man-nl-m/;\n    }\n'
+    idx = c.rfind('}')
+    if idx != -1:
+        c = c[:idx] + block + c[idx:]
+        with open(p, 'w') as f:
+            f.write(c)
+" || true
             fi
-            sudo nginx -t && sudo systemctl reload nginx
+            sudo nginx -t && sudo systemctl reload nginx || true
             echo "=== VERIFIED CONTENTS OF /var/www/skillvault.blog/calis-man-nl-m ==="
             ls -la /var/www/skillvault.blog/calis-man-nl-m
 
@@ -7218,11 +7227,20 @@ jobs:
             sudo chmod -R 755 /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m
             CONF_FILE=$(grep -rl "skillvault.blog" /etc/nginx/ 2>/dev/null | head -n 1)
             if [ -n "$CONF_FILE" ]; then
-              if ! grep -q "calis-man-nl-m" "$CONF_FILE"; then
-                sudo sed -i '/server_name.*skillvault.blog/a \    location /calis-man-nl-m/ { alias /var/www/skillvault.blog/calis-man-nl-m/; }\n    location /calistenia-man-nl-m/ { alias /var/www/skillvault.blog/calistenia-man-nl-m/; }' "$CONF_FILE" || true
-              fi
+              sudo python3 -c "
+p = '$CONF_FILE'
+with open(p, 'r') as f:
+    c = f.read()
+if 'location /calis-man-nl-m' not in c:
+    block = '\n    location /calis-man-nl-m/ {\n        alias /var/www/skillvault.blog/calis-man-nl-m/;\n    }\n    location /calistenia-man-nl-m/ {\n        alias /var/www/skillvault.blog/calistenia-man-nl-m/;\n    }\n'
+    idx = c.rfind('}')
+    if idx != -1:
+        c = c[:idx] + block + c[idx:]
+        with open(p, 'w') as f:
+            f.write(c)
+" || true
             fi
-            sudo nginx -t && sudo systemctl reload nginx
+            sudo nginx -t && sudo systemctl reload nginx || true
 
       - name: Deploy 'calistenia-es-members' to skillvault.blog/calistenia-es-m
         if: steps.filter.outputs.calistenia-es-members == 'true'
