@@ -1,13 +1,13 @@
 /**
- * Calisthenics voor Mannen — Ledengedeelte (Nederlands)
+ * Calisthenics Thuis — Ledengedeelte (Nederlands) v10
  */
 
 const APP_DATA = {
     config: {
-        brandName: "Calisthenics voor Mannen",
+        brandName: "Calisthenics Thuis",
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Supportverzoek over toegang (Calisthenics voor Mannen)",
-        emailBodyTemplate: "Hallo supportteam! Ik wil graag hulp vragen bij mijn toegang tot het ledengedeelte van Calisthenics voor Mannen.\n\nMijn naam is: ______.",
+        emailSubject: "Supportverzoek over toegang (Calisthenics Thuis)",
+        emailBodyTemplate: "Hallo supportteam! Ik wil graag hulp vragen bij mijn toegang tot het ledengedeelte van Calisthenics Thuis.\n\nMijn naam is: ______.",
         showFloatingHelp: true
     },
 
@@ -16,48 +16,48 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "Calisthenics voor Mannen — Kracht, Spiermassa & Lichaamsbeheersing (Deel 1)",
-            description: "Stap-voor-stap handleiding om een sterk, atletisch en gespierd lichaam op te bouwen met lichaamsgewichtoefeningen zonder sportschool.",
-            badgeText: "Deel 1",
-            badgeColor: "#1e3a8a",
+            title: "Calisthenics voor Absolute Beginners — Boek 1 van 3",
+            description: "Een essentiële introductiegids voor absolute beginners die hun eerste stappen zetten met lichaamsgewichttraining. Leer de basisbewegingen, bouw kracht op en begin veilig te trainen.",
+            badgeText: "Beginnersgids",
+            badgeColor: "#769B3F",
             features: [
-                "Fundamentele lichaamsgewichtoefeningen en juiste uitvoering",
-                "Opbouwen van functionele kracht, schouder- en kernstabiliteit",
-                "Warming-up protocollen en blessurepreventie voor mannen"
+                "Essentiële lichaamsgewichtoefeningen voor beginners",
+                "Stap-voor-stap begeleiding voor veilige training",
+                "Bouw kracht en mobiliteit op in uw eigen tempo"
             ],
-            downloadUrl: "materials/MAN-1-NL.pdf",
-            coverImage: "assets/covers/man_IMG1_nl.png",
-            buttonText: "Download Deel 1 (PDF)"
+            downloadUrl: "materials/CALISTENIA-1-NL.pdf",
+            coverImage: "assets/covers/cali_IMG1_nl.png",
+            buttonText: "Download Beginnersgids (PDF)"
         },
         {
             id: "b2",
-            title: "Gevorderde Calisthenics voor Mannen — Progressies & Master-technieken (Deel 2)",
-            description: "Geavanceerde oefeningen, spieropbouw, push-up variaties, pull-ups en core-stabiliteit voor maximale resultaten.",
-            badgeText: "Hoofdgids",
-            badgeColor: "#065f46",
+            title: "Compleet Programma voor Lichaamsgewichttraining — Boek 2 van de Collectie",
+            description: "Til uw training naar een hoger niveau door progressies en functionele oefeningen onder de knie te krijgen. Ontwikkel uithoudingsvermogen, controle en spiermassa zonder apparatuur.",
+            badgeText: "Trainingsprogramma",
+            badgeColor: "#475569",
             features: [
-                "Progressieve trainingsschema's voor borst, rug, armen en core",
-                "Technieken voor Muscle-ups, Handstands en L-sits",
-                "Optimalisatie van trainingsvolume en hersteltijden"
+                "Geavanceerde oefenprogressies en technieken",
+                "Kracht en lichaamsbeheersing bij elke beweging",
+                "Complete trainingsgids voor thuisgebruik"
             ],
-            downloadUrl: "materials/MAN-2-NL.pdf",
-            coverImage: "assets/covers/man_IMG1_nl.png",
-            buttonText: "Download Hoofdgids (Deel 2)"
+            downloadUrl: "materials/CALISTENIA-2-NL.pdf",
+            coverImage: "assets/covers/cali_IMG1_nl.png",
+            buttonText: "Download Trainingsprogramma (PDF)"
         },
         {
             id: "b3",
-            title: "Calisthenics Voeding & Herstel voor Mannen — Geavanceerd Schema (Deel 3)",
-            description: "Optimaliseer je prestaties, vetverbranding en spierherstel met het complete calisthenics voedings- en herstelschema.",
-            badgeText: "Deel 3",
-            badgeColor: "#854d0e",
+            title: "30-Dagen Calisthenics Challenge — Boek 3 van 3",
+            description: "Een gestructureerd, dagelijks trainingsschema ontworpen om consistentie op te bouwen, de fysiek te verbeteren en het hele lichaam te versterken. Een gespecialiseerd trainingshandboek.",
+            badgeText: "30-Dagen Challenge",
+            badgeColor: "#0F766E",
             features: [
-                "Macro-nutriënten verdeling voor spieropbouw en vetverbranding",
-                "Maaltijdplanning en hydratatierichtlijnen voor maximale energie",
-                "Slaap- en herstelstrategieën voor continue progressie"
+                "Dagelijkse trainingsstructuur gedurende 30 dagen",
+                "Focus op discipline, vorm en uithoudingsvermogen",
+                "Slimme routines voor continu succes"
             ],
-            downloadUrl: "materials/MAN-3-NL.pdf",
-            coverImage: "assets/covers/man_IMG1_nl.png",
-            buttonText: "Download Deel 3 (PDF)"
+            downloadUrl: "materials/CALISTENIA-3-NL.pdf",
+            coverImage: "assets/covers/cali_IMG1_nl.png",
+            buttonText: "Download Trainingsschema (PDF)"
         }
     ],
 
