@@ -3563,10 +3563,9 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
           script: |
-            sudo mkdir -p /var/www/skillvault.blog/calis-man-nl-m
-            sudo mkdir -p /var/www/skillvault.blog/calistenia-man-nl-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m
-            sudo chmod -R 755 /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m
+            sudo mkdir -p /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m /var/www/skillvault.blog/calistenia-nl-m/man
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m /var/www/skillvault.blog/calistenia-nl-m/man
+            sudo chmod -R 755 /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m /var/www/skillvault.blog/calistenia-nl-m/man
 
       - name: Deploy 'calis-man-nl-members' to skillvault.blog/calis-man-nl-m
         if: always()
@@ -3590,6 +3589,17 @@ jobs:
           target: "/var/www/skillvault.blog/calistenia-man-nl-m"
           strip_components: 1
 
+      - name: Deploy 'calis-man-nl-members' to skillvault.blog/calistenia-nl-m/man
+        if: always()
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calis-man-nl-members/*"
+          target: "/var/www/skillvault.blog/calistenia-nl-m/man"
+          strip_components: 1
+
       - name: Verify and Reload Nginx for 'calis-man-nl-members'
         if: always()
         uses: appleboy/ssh-action@v1.0.3
@@ -3598,7 +3608,7 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
           script: |
-            sudo chmod -R 755 /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m
+            sudo chmod -R 755 /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m /var/www/skillvault.blog/calistenia-nl-m/man
             CONF_FILE=$(grep -rl "skillvault.blog" /etc/nginx/ 2>/dev/null | head -n 1)
             if [ -n "$CONF_FILE" ]; then
               sudo python3 -c "
@@ -7190,9 +7200,9 @@ if 'location /calis-man-nl-m' not in c:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
           script: |
-            sudo mkdir -p /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m
-            sudo chmod -R 755 /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m
+            sudo mkdir -p /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m /var/www/skillvault.blog/calistenia-nl-m/man
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m /var/www/skillvault.blog/calistenia-nl-m/man
+            sudo chmod -R 755 /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m /var/www/skillvault.blog/calistenia-nl-m/man
 
       - name: Deploy 'calis-man-nl-members' to skillvault.blog/calis-man-nl-m (Block 2)
         if: always()
@@ -7216,6 +7226,17 @@ if 'location /calis-man-nl-m' not in c:
           target: "/var/www/skillvault.blog/calistenia-man-nl-m"
           strip_components: 1
 
+      - name: Deploy 'calis-man-nl-members' to skillvault.blog/calistenia-nl-m/man (Block 2)
+        if: always()
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calis-man-nl-members/*"
+          target: "/var/www/skillvault.blog/calistenia-nl-m/man"
+          strip_components: 1
+
       - name: Verify and Reload Nginx for 'calis-man-nl-members' (Block 2)
         if: always()
         uses: appleboy/ssh-action@v1.0.3
@@ -7224,7 +7245,7 @@ if 'location /calis-man-nl-m' not in c:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
           script: |
-            sudo chmod -R 755 /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m
+            sudo chmod -R 755 /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m /var/www/skillvault.blog/calistenia-nl-m/man
             CONF_FILE=$(grep -rl "skillvault.blog" /etc/nginx/ 2>/dev/null | head -n 1)
             if [ -n "$CONF_FILE" ]; then
               sudo python3 -c "
