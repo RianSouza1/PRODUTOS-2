@@ -297,12 +297,15 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
     }
 
+    const heroCoverImg = (APP_DATA.books && APP_DATA.books[0] && APP_DATA.books[0].coverImage) ? APP_DATA.books[0].coverImage : "assets/covers/man_IMG1_nl.png";
+    const heroCoverAlt = (APP_DATA.config && APP_DATA.config.brandName) ? APP_DATA.config.brandName : "Calisthenics voor Mannen";
+
     rootEl.innerHTML = `
       <div class="page-view" style="padding-bottom: 0;">
           <div class="hero-card glass-panel"><div class="hero-text"><h1>Uw materialen</h1><p>Klik op de onderstaande collecties om uw boeken te bekijken en te downloaden.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/cali_IMG1_nl.png" alt="Calisthenics Thuis" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="${heroCoverImg}" alt="${heroCoverAlt}" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
 
           <div class="list-container">

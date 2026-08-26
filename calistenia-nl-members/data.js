@@ -1,13 +1,13 @@
 /**
- * Calisthenics Thuis — Ledengedeelte (Nederlands) v10
+ * Militaire Calisthenics voor Mannen — Ledengedeelte (Nederlands)
  */
 
 const APP_DATA = {
     config: {
-        brandName: "Calisthenics Thuis",
+        brandName: "Militaire Calisthenics voor Mannen",
         contactEmail: "trinityag01@gmail.com",
-        emailSubject: "Supportverzoek over toegang (Calisthenics Thuis)",
-        emailBodyTemplate: "Hallo supportteam! Ik wil graag hulp vragen bij mijn toegang tot het ledengedeelte van Calisthenics Thuis.\n\nMijn naam is: ______.",
+        emailSubject: "Supportverzoek over toegang (Militaire Calisthenics voor Mannen)",
+        emailBodyTemplate: "Hallo supportteam! Ik wil graag hulp vragen bij mijn toegang tot het ledengedeelte van Militaire Calisthenics voor Mannen.\n\nMijn naam is: ______.",
         showFloatingHelp: true
     },
 
@@ -16,48 +16,48 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "Calisthenics voor Absolute Beginners — Boek 1 van 3",
-            description: "Een essentiële introductiegids voor absolute beginners die hun eerste stappen zetten met lichaamsgewichttraining. Leer de basisbewegingen, bouw kracht op en begin veilig te trainen.",
-            badgeText: "Beginnersgids",
-            badgeColor: "#769B3F",
+            title: "Militaire Calisthenics voor Mannen Boven de 40 — 28-Daagse Uitdaging (Deel 1)",
+            description: "Stap-voor-stap militair calisthenicsprogramma speciaal ontworpen voor mannen van 40+. Bouw functionele spierkracht, gewrichtsstabiliteit en uithoudingsvermogen op met 15 minuten per dag zonder sportschool.",
+            badgeText: "28-Daagse Challenge",
+            badgeColor: "#c45329",
             features: [
-                "Essentiële lichaamsgewichtoefeningen voor beginners",
-                "Stap-voor-stap begeleiding voor veilige training",
-                "Bouw kracht en mobiliteit op in uw eigen tempo"
+                "15 minuten per dag militaire lichaamsgewichtoefeningen",
+                "Speciaal afgestemd op gewrichtsbescherming voor mannen 40+",
+                "Geen sportschool of dure apparatuur nodig"
             ],
-            downloadUrl: "materials/CALISTENIA-1-NL.pdf",
-            coverImage: "assets/covers/cali_IMG1_nl.png",
-            buttonText: "Download Beginnersgids (PDF)"
+            downloadUrl: "materials/MAN-1-NL.pdf",
+            coverImage: "assets/covers/man_IMG1_nl.png",
+            buttonText: "Download Deel 1 (PDF)"
         },
         {
             id: "b2",
-            title: "Compleet Programma voor Lichaamsgewichttraining — Boek 2 van de Collectie",
-            description: "Til uw training naar een hoger niveau door progressies en functionele oefeningen onder de knie te krijgen. Ontwikkel uithoudingsvermogen, controle en spiermassa zonder apparatuur.",
-            badgeText: "Trainingsprogramma",
-            badgeColor: "#475569",
+            title: "Militaire Functionele Fitnessworkout — Protocol van 9 Weken (Deel 2)",
+            description: "Geavanceerd militair trainingsprotocol voor maximale vetverbranding, spierdefinitie, schouder- en core-stabiliteit.",
+            badgeText: "9 Weken Protocol",
+            badgeColor: "#3b5940",
             features: [
-                "Geavanceerde oefenprogressies en technieken",
-                "Kracht en lichaamsbeheersing bij elke beweging",
-                "Complete trainingsgids voor thuisgebruik"
+                "Progressief 9-weken trainingsschema voor borst, rug en armen",
+                "Militaire functionele routines voor maximale vetverbranding",
+                "Optimale hersteltijden en blessurepreventie"
             ],
-            downloadUrl: "materials/CALISTENIA-2-NL.pdf",
-            coverImage: "assets/covers/cali_IMG1_nl.png",
-            buttonText: "Download Trainingsprogramma (PDF)"
+            downloadUrl: "materials/MAN-2-NL.pdf",
+            coverImage: "assets/covers/man_IMG1_nl.png",
+            buttonText: "Download Hoofdgids (Deel 2)"
         },
         {
             id: "b3",
-            title: "30-Dagen Calisthenics Challenge — Boek 3 van 3",
-            description: "Een gestructureerd, dagelijks trainingsschema ontworpen om consistentie op te bouwen, de fysiek te verbeteren en het hele lichaam te versterken. Een gespecialiseerd trainingshandboek.",
-            badgeText: "30-Dagen Challenge",
-            badgeColor: "#0F766E",
+            title: "Militaire Calisthenics Workout & Voeding voor Mannen (Deel 3)",
+            description: "Het complete militaire voedings- en herstelplan voor continue spieropbouw, vetverlies en maximale energie voor mannen 40+.",
+            badgeText: "Voeding & Herstel",
+            badgeColor: "#1b2a3a",
             features: [
-                "Dagelijkse trainingsstructuur gedurende 30 dagen",
-                "Focus op discipline, vorm en uithoudingsvermogen",
-                "Slimme routines voor continu succes"
+                "Militaire macro-nutriënten verdeling voor spieropbouw",
+                "Voedings- en hydratatierichtlijnen voor maximale uithoudingsvermogen",
+                "Slaap- en herstelstrategieën voor continu resultaat"
             ],
-            downloadUrl: "materials/CALISTENIA-3-NL.pdf",
-            coverImage: "assets/covers/cali_IMG1_nl.png",
-            buttonText: "Download Trainingsschema (PDF)"
+            downloadUrl: "materials/MAN-3-NL.pdf",
+            coverImage: "assets/covers/man_IMG1_nl.png",
+            buttonText: "Download Deel 3 (PDF)"
         }
     ],
 

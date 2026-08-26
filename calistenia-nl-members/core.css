@@ -3,21 +3,22 @@
    ========================================================================= */
 
 :root {
-    --bg-main: #0c120a;
-    --bg-card: #162013;
-    --text-dark: #f8fafc;
-    --text-muted: #cbd5e1;
-    --border-light: rgba(255, 255, 255, 0.1);
+    --bg-main: #0d140e;
+    --bg-card: #152217;
+    --text-dark: #f4efe6;
+    --text-muted: #bdbaa8;
+    --border-light: rgba(232, 220, 196, 0.15);
 
-    /* Cor Principal - Verde Tático/Oliva da Capa */
-    --primary: #769b3f;
-    --primary-hover: #5e7d30;
-    --primary-light: rgba(118, 155, 63, 0.15);
+    /* Cor Principal - Laranja Tático Rust / Terracota da Capa */
+    --primary: #c45329;
+    --primary-hover: #a3401d;
+    --primary-light: rgba(196, 83, 41, 0.18);
 
-    /* Feedback Visual Secundário */
-    --secondary: #4ade80;
-    --success: #6BE59E;
-    --success-bg: rgba(107, 229, 158, 0.15);
+    /* Cores Secundárias - Verde Militar & Creme */
+    --secondary: #3b5940;
+    --accent-sand: #e8dcc4;
+    --success: #3b5940;
+    --success-bg: rgba(59, 89, 64, 0.2);
 
     /* Espaçamentos Marginais e Z-Index */
     --safe-padding: 1.5rem;
@@ -711,7 +712,7 @@ body {
     }
 
     .bottom-tab-bar::before {
-        content: "LEDENGEDEELTE";
+        content: "MITGLIEDERBEREICH";
         font-size: 0.8rem;
         font-weight: 700;
         color: #94A3B8;
@@ -1083,60 +1084,60 @@ body {
 }
 
 html, body {
-    background-color: var(--bg-main);
+    background-color: #0d140e;
     background-image:
-        radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(5, 150, 105, 0.05) 0%, transparent 40%);
+        radial-gradient(circle at 20% 30%, rgba(196, 83, 41, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(59, 89, 64, 0.12) 0%, transparent 40%);
 }
 
 .main-content {
-    background-color: var(--bg-main);
+    background-color: #0d140e;
     background-image:
-        radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(5, 150, 105, 0.05) 0%, transparent 40%);
+        radial-gradient(circle at 20% 30%, rgba(196, 83, 41, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(59, 89, 64, 0.12) 0%, transparent 40%);
 }
 
 .app-header {
-    background: rgba(4, 36, 22, 0.97) !important;
+    background: rgba(21, 34, 23, 0.97) !important;
 }
 
 .app-header::before {
-    background: linear-gradient(90deg, #10B981, #a7f3d0, #10B981);
+    background: linear-gradient(90deg, #c45329, #e8dcc4, #c45329);
 }
 
 .bottom-tab-bar {
-    background: rgba(4, 36, 22, 0.97);
+    background: rgba(21, 34, 23, 0.97);
 }
 
 .hero-card {
-    background: linear-gradient(135deg, #10B981, #059669);
-    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+    background: linear-gradient(135deg, #1f3323 0%, #293e2e 50%, #c45329 100%);
+    box-shadow: 0 8px 24px rgba(196, 83, 41, 0.3);
 }
 
-/* Pre-page Excel */
+/* Pre-page Military Theme */
 .pre-page-overlay {
-    color: #f0fdf4;
+    color: #f4efe6;
 }
 .pre-page-bg {
-    background: linear-gradient(135deg, #042416 0%, #0c3823 40%, #064e3b 100%);
+    background: linear-gradient(135deg, #0a100b 0%, #152217 40%, #273a2b 100%);
 }
 .pre-page-bg::after {
     content: '';
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 25% 25%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(5, 150, 105, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 25% 25%, rgba(196, 83, 41, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(59, 89, 64, 0.2) 0%, transparent 50%);
 }
 .pre-page-features span {
-    background: rgba(16, 185, 129, 0.15);
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    color: #a7f3d0;
+    background: rgba(196, 83, 41, 0.18);
+    border: 1px solid rgba(196, 83, 41, 0.35);
+    color: #f4efe6;
 }
 .pre-page-content button {
-    background: linear-gradient(135deg, #10B981, #a7f3d0);
-    color: #042416;
-    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+    background: linear-gradient(135deg, #c45329, #a3401d);
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(196, 83, 41, 0.5);
 }
 
 /* =========================================================================
