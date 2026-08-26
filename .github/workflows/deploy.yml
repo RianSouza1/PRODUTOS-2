@@ -3620,9 +3620,12 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
           script: |
-            sudo chmod -R 755 /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m /var/www/skillvault.blog/calistenia-nl-m/man
-            sudo cp -rf /var/www/skillvault.blog/calis-man-nl-m/* /var/www/skillvault.blog/calistenia-nl-m/ || true
-            sudo chmod -R 755 /var/www/skillvault.blog/calistenia-nl-m || true
+            sudo chmod -R 777 /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m /var/www/skillvault.blog/calistenia-nl-m || true
+            for d in $(sudo find /var/www -type d -name "calistenia-nl-m" 2>/dev/null); do
+              echo "Syncing calis-man-nl-m to $d"
+              sudo cp -rf /var/www/skillvault.blog/calis-man-nl-m/* "$d/" || true
+              sudo chmod -R 755 "$d" || true
+            done
             CONF_FILE=$(grep -rl "skillvault.blog" /etc/nginx/ 2>/dev/null | head -n 1)
             if [ -n "$CONF_FILE" ]; then
               sudo python3 -c "
