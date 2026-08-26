@@ -851,7 +851,7 @@ jobs:
             sudo mkdir -p /var/www/storeinfocus.com/fish
             sudo mkdir -p /var/www/storeinfocus.com/fish-de
             sudo mkdir -p /var/www/storeinfocus.com/fish-fr
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com || true
+            sudo chown -R $USER:$USER /var/www/storeinfocus.com || true
             sudo mkdir -p /var/www/skillvault.blog/nature-members-es
             sudo mkdir -p /var/www/skillvault.blog/nature-members-sv
             sudo mkdir -p /var/www/skillvault.blog/nature-members-sl
@@ -913,16 +913,16 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/bkp-hu-m
             sudo mkdir -p /var/www/skillvault.blog/ww-m
             sudo mkdir -p /var/www/skillvault.blog/ww-cs-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ww-cs-m || true
+            sudo chown -R $USER:$USER /var/www/skillvault.blog/ww-cs-m || true
             sudo chmod -R 755 /var/www/skillvault.blog/ww-cs-m || true
             sudo mkdir -p /var/www/skillvault.blog/ww-sv-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ww-sv-m || true
+            sudo chown -R $USER:$USER /var/www/skillvault.blog/ww-sv-m || true
             sudo mkdir -p /var/www/skillvault.blog/ww-nl-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ww-nl-m || true
+            sudo chown -R $USER:$USER /var/www/skillvault.blog/ww-nl-m || true
             sudo mkdir -p /var/www/skillvault.blog/ww-fr-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ww-fr-m || true
+            sudo chown -R $USER:$USER /var/www/skillvault.blog/ww-fr-m || true
             sudo mkdir -p /var/www/skillvault.blog/ww-da-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ww-da-m || true
+            sudo chown -R $USER:$USER /var/www/skillvault.blog/ww-da-m || true
             sudo mkdir -p /var/www/skillvault.blog/ww-de-m
             sudo mkdir -p /var/www/skillvault.blog/mw-m
             sudo mkdir -p /var/www/skillvault.blog/excel
@@ -1028,21 +1028,21 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/whittling-da-m
             sudo mkdir -p /var/www/skillvault.blog/freezer-da-m
             sudo mkdir -p /var/www/skillvault.blog/babysleep-sv-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/babysleep-sv-m || true
+            sudo chown -R $USER:$USER /var/www/skillvault.blog/babysleep-sv-m || true
             sudo mkdir -p /var/www/skillvault.blog/babysleep-nl-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/babysleep-nl-m || true
+            sudo chown -R $USER:$USER /var/www/skillvault.blog/babysleep-nl-m || true
             sudo mkdir -p /var/www/skillvault.blog/babysleep-de-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/babysleep-de-m || true
+            sudo chown -R $USER:$USER /var/www/skillvault.blog/babysleep-de-m || true
             sudo mkdir -p /var/www/skillvault.blog/freezer-sv-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/freezer-sv-m || true
+            sudo chown -R $USER:$USER /var/www/skillvault.blog/freezer-sv-m || true
             sudo mkdir -p /var/www/skillvault.blog/freezer-en-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/freezer-en-m || true
+            sudo chown -R $USER:$USER /var/www/skillvault.blog/freezer-en-m || true
             sudo mkdir -p /var/www/skillvault.blog/babysleep-en-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/babysleep-en-m || true
+            sudo chown -R $USER:$USER /var/www/skillvault.blog/babysleep-en-m || true
             sudo mkdir -p /var/www/skillvault.blog/freezer-nl-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/freezer-nl-m || true
+            sudo chown -R $USER:$USER /var/www/skillvault.blog/freezer-nl-m || true
             sudo mkdir -p /var/www/skillvault.blog/freezer-de-m
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/freezer-da-m /var/www/skillvault.blog/freezer-de-m || true
+            sudo chown -R $USER:$USER /var/www/skillvault.blog/freezer-da-m /var/www/skillvault.blog/freezer-de-m || true
             sudo mkdir -p /var/www/skillvault.blog/whittling-de-m
             sudo mkdir -p /var/www/skillvault.blog/whittling-en-m
             sudo mkdir -p /var/www/skillvault.blog/whittling-fr-m
@@ -1212,9 +1212,9 @@ jobs:
             sudo mkdir -p /var/www/naturalmethods.blog/canning-ko
             sudo mkdir -p /var/www/naturalmethods.blog/canning-sk
             sudo mkdir -p /var/www/naturalmethods.blog/canning-cs
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/naturalmethods.blog || true
+            sudo chown -R $USER:$USER /var/www/naturalmethods.blog || true
             sudo chmod -R 755 /var/www/naturalmethods.blog || true
-            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog || true
+            sudo chown -R $USER:$USER /var/www/skillvault.blog || true
             sudo chmod -R 755 /var/www/skillvault.blog || true
 
       # ── OFF GRID ───────────────────────────────────────────────────────────
