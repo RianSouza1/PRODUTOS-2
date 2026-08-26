@@ -3544,6 +3544,18 @@ jobs:
           target: "/var/www/skillvault.blog/calistenia-sv-m"
           strip_components: 1
 
+      - name: Prepare VPS Directory for 'calistenia-nl-members'
+        if: always()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/calistenia-nl-m /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/calistenia-nl-m /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m
+            sudo chmod -R 777 /var/www/skillvault.blog/calistenia-nl-m /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m
+
       - name: Deploy 'calistenia-nl-members' to skillvault.blog/calistenia-nl-m
         if: always()
         uses: appleboy/scp-action@v0.1.7
@@ -7182,6 +7194,18 @@ if 'location /calis-man-nl-m' not in c:
           source: "calistenia-sv-members/*"
           target: "/var/www/skillvault.blog/calistenia-sv-m"
           strip_components: 1
+
+      - name: Prepare VPS Directory for 'calistenia-nl-members' (Block 2)
+        if: always()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/calistenia-nl-m /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/calistenia-nl-m /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m
+            sudo chmod -R 777 /var/www/skillvault.blog/calistenia-nl-m /var/www/skillvault.blog/calis-man-nl-m /var/www/skillvault.blog/calistenia-man-nl-m
 
       - name: Deploy 'calistenia-nl-members' to skillvault.blog/calistenia-nl-m
         if: always()
