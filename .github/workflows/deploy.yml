@@ -3602,7 +3602,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'calis-man-nl-members' to skillvault.blog/calis-man-nl-m
-        if: steps.filter.outputs['calis-man-nl-members'] == 'true'
+        if: steps.filter.outputs.calis-man-nl-members == 'true' || steps.filter.outputs['calis-man-nl-members'] == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -4086,7 +4086,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'piano-nl-members' to skillvault.blog/piano-nl-m
-        if: steps.filter.outputs.piano-nl-members == 'true'
+        if: steps.filter.outputs.piano-nl-members == 'true' || steps.filter.outputs['piano-nl-members'] == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -7207,7 +7207,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'calis-man-nl-members' to skillvault.blog/calis-man-nl-m
-        if: steps.filter.outputs['calis-man-nl-members'] == 'true'
+        if: steps.filter.outputs.calis-man-nl-members == 'true' || steps.filter.outputs['calis-man-nl-members'] == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -7691,7 +7691,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'piano-nl-members' to skillvault.blog/piano-nl-m
-        if: steps.filter.outputs.piano-nl-members == 'true'
+        if: steps.filter.outputs.piano-nl-members == 'true' || steps.filter.outputs['piano-nl-members'] == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}

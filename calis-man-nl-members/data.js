@@ -46,14 +46,14 @@ const APP_DATA = {
         },
         {
             id: "b3",
-            title: "Militaire Calisthenics Workout & Voeding voor Mannen (Deel 3)",
-            description: "Het complete militaire voedings- en herstelplan voor continue spieropbouw, vetverlies en maximale energie voor mannen 40+.",
-            badgeText: "Voeding & Herstel",
+            title: "Militaire Calisthenics Workout voor Mannen Boven de 50 (Deel 3)",
+            description: "Bouw functionele kracht, balans, mobiliteit en een duurzame conditie op — gewoon thuis of buiten, zonder sportschool. Speciaal afgestemd op mannen van 50+ met focus op gewrichtsbescherming en vitaliteit.",
+            badgeText: "Mannen 50+",
             badgeColor: "#1b2a3a",
             features: [
-                "Militaire macro-nutriënten verdeling voor spieropbouw",
-                "Voedings- en hydratatierichtlijnen voor maximale uithoudingsvermogen",
-                "Slaap- en herstelstrategieën voor continu resultaat"
+                "Focus op kracht, balans, mobiliteit en duurzame conditie",
+                "Veilige en effectieve lichaamsgewichtoefeningen voor mannen 50+",
+                "Duurzame gewrichtsbescherming en maximale energie in het dagelijks leven"
             ],
             downloadUrl: "materials/MAN-3-NL.pdf",
             coverImage: "assets/covers/man_IMG1_nl.png",
