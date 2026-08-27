@@ -265,8 +265,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-               <span class="premium-format">PDF • Downloadbart Dokument</span>
+               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIEL'}</span>
+               <span class="premium-format">PDF • Dokument til download</span>
             </div>
            
            <div class="premium-info">
