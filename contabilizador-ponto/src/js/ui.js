@@ -8,6 +8,7 @@ import { timer } from './timer.js';
 class UI {
   constructor() {
     this.activeView = 'employee'; // 'employee' ou 'team'
+    window.ui = this;
   }
 
   init() {

@@ -1,5 +1,5 @@
 /**
- * store.js - Gerenciamento de Dados e Persistência Local (LocalStorage)
+ * store.js - Gerenciamento de Dados, Persistência Local (LocalStorage) e Sincronização Server-Side (API)
  */
 
 const STORAGE_KEY = 'contabilizador_ponto_v1';
@@ -48,6 +48,8 @@ const DEFAULT_DATA = {
 class Store {
   constructor() {
     this.data = this.loadData();
+    // Tenta sincronizar com o banco do servidor em segundo plano ao iniciar
+    this.syncWithServer();
   }
 
   loadData() {
@@ -59,7 +61,7 @@ class Store {
       }
       const parsed = JSON.parse(raw);
       // Garantir estrutura correta se dados antigos existirem
-      if (!parsed.employees || parsed.employees.length === 0) {
+      if (!parsed.employees || !Array.isArray(parsed.employees) || parsed.employees.length === 0) {
         return JSON.parse(JSON.stringify(DEFAULT_DATA));
       }
       return parsed;
@@ -72,20 +74,53 @@ class Store {
   saveData(data = this.data) {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      // Salva no servidor em segundo plano para sincronizar entre todos os celulares/computadores
+      this.saveToServer(data);
     } catch (e) {
-      console.error('Erro ao salvar dados no LocalStorage:', e);
+      console.error('Erro ao salvar dados:', e);
+    }
+  }
+
+  async syncWithServer() {
+    try {
+      const response = await fetch('./api.php', { cache: 'no-store' });
+      if (response.ok) {
+        const serverData = await response.json();
+        if (serverData && serverData.employees && Array.isArray(serverData.employees) && serverData.employees.length > 0) {
+          this.data = serverData;
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(serverData));
+          if (window.ui) {
+            window.ui.renderAll();
+          }
+        }
+      }
+    } catch (err) {
+      console.log('Sincronização com o servidor ignorada (rodando offline ou local).');
+    }
+  }
+
+  async saveToServer(data = this.data) {
+    try {
+      await fetch('./api.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+    } catch (err) {
+      // Ignora erro se offline
     }
   }
 
   // --- MÉTODOS DE FUNCIONÁRIO ---
 
   getEmployees() {
-    return this.data.employees;
+    return this.data.employees || [];
   }
 
   getActiveEmployee() {
-    const emp = this.data.employees.find(e => e.id === this.data.activeEmployeeId);
-    return emp || this.data.employees[0];
+    const employees = this.getEmployees();
+    const emp = employees.find(e => e.id === this.data.activeEmployeeId);
+    return emp || employees[0] || DEFAULT_DATA.employees[0];
   }
 
   setActiveEmployee(id) {
@@ -166,17 +201,32 @@ class Store {
     const totalMinutes = (parseInt(hours, 10) || 0) * 60 + (parseInt(minutes, 10) || 0);
     if (totalMinutes <= 0) return null;
 
+    let validIsoDate;
+    try {
+      if (date) {
+        const d = new Date(date);
+        validIsoDate = isNaN(d.getTime()) ? new Date().toISOString() : d.toISOString();
+      } else {
+        validIsoDate = new Date().toISOString();
+      }
+    } catch (err) {
+      validIsoDate = new Date().toISOString();
+    }
+
     const entry = {
       id: 'entry-' + Date.now() + '-' + Math.random().toString(36).substr(2, 4),
       hours: parseInt(hours, 10) || 0,
       minutes: parseInt(minutes, 10) || 0,
       totalMinutes,
-      date: date ? new Date(date).toISOString() : new Date().toISOString(),
+      date: validIsoDate,
       type,
-      description: description.trim()
+      description: (description || '').trim()
     };
 
+    if (!emp.entries) emp.entries = [];
     emp.entries.unshift(entry); // Adiciona no início
+
+    if (!this.data.undoStack) this.data.undoStack = [];
     this.data.undoStack.push({
       action: 'add_entry',
       employeeId,
@@ -189,7 +239,7 @@ class Store {
 
   updateEntry(employeeId, entryId, { hours, minutes, date, description }) {
     const emp = this.data.employees.find(e => e.id === employeeId);
-    if (!emp) return false;
+    if (!emp || !emp.entries) return false;
 
     const entry = emp.entries.find(e => e.id === entryId);
     if (!entry) return false;
@@ -199,7 +249,14 @@ class Store {
     entry.hours = h;
     entry.minutes = m;
     entry.totalMinutes = h * 60 + m;
-    if (date) entry.date = new Date(date).toISOString();
+
+    if (date) {
+      try {
+        const d = new Date(date);
+        if (!isNaN(d.getTime())) entry.date = d.toISOString();
+      } catch (e) {}
+    }
+
     if (description !== undefined) entry.description = description.trim();
 
     this.saveData();
@@ -208,11 +265,12 @@ class Store {
 
   deleteEntry(employeeId, entryId) {
     const emp = this.data.employees.find(e => e.id === employeeId);
-    if (!emp) return false;
+    if (!emp || !emp.entries) return false;
 
     const index = emp.entries.findIndex(e => e.id === entryId);
     if (index !== -1) {
       const removed = emp.entries.splice(index, 1)[0];
+      if (!this.data.undoStack) this.data.undoStack = [];
       this.data.undoStack.push({
         action: 'delete_entry',
         employeeId,
@@ -226,17 +284,18 @@ class Store {
   }
 
   undoLastAction() {
-    if (this.data.undoStack.length === 0) return null;
+    if (!this.data.undoStack || this.data.undoStack.length === 0) return null;
 
     const lastAction = this.data.undoStack.pop();
     const emp = this.data.employees.find(e => e.id === lastAction.employeeId);
     if (!emp) return null;
 
     if (lastAction.action === 'add_entry') {
-      emp.entries = emp.entries.filter(e => e.id !== lastAction.entry.id);
+      emp.entries = (emp.entries || []).filter(e => e.id !== lastAction.entry.id);
       this.saveData();
       return { message: 'Lançamento desfeito com sucesso.', entry: lastAction.entry };
     } else if (lastAction.action === 'delete_entry') {
+      if (!emp.entries) emp.entries = [];
       emp.entries.splice(lastAction.index, 0, lastAction.entry);
       this.saveData();
       return { message: 'Registro restaurado com sucesso.', entry: lastAction.entry };
@@ -248,7 +307,7 @@ class Store {
 
   getEmployeeTotalMinutes(employeeId) {
     const emp = this.data.employees.find(e => e.id === employeeId);
-    if (!emp) return 0;
+    if (!emp || !emp.entries) return 0;
     return emp.entries.reduce((acc, curr) => acc + (curr.totalMinutes || 0), 0);
   }
 
@@ -281,11 +340,12 @@ class Store {
       totalMinutes: totalMin,
       hoursCount: Math.floor(totalMin / 60),
       minutesCount: totalMin % 60,
-      entriesCount: emp.entries.length,
-      archivedEntries: [...emp.entries]
+      entriesCount: (emp.entries || []).length,
+      archivedEntries: [...(emp.entries || [])]
     };
 
-    emp.completedCyclesCount += 1;
+    emp.completedCyclesCount = (emp.completedCyclesCount || 0) + 1;
+    if (!emp.completedCyclesHistory) emp.completedCyclesHistory = [];
     emp.completedCyclesHistory.push(cycleRecord);
     // Limpa entradas ativas do ciclo para iniciar novo ciclo zerado
     emp.entries = [];
