@@ -1721,6 +1721,18 @@ jobs:
           target: "/var/www/skillvault.blog/ponto"
           strip_components: 1
 
+      - name: Fix permissions for 'ponto'
+        if: steps.filter.outputs.ponto == 'true' || steps.filter.outputs.workflow == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo chmod -R 755 /var/www/skillvault.blog/ponto
+            sudo find /var/www/skillvault.blog/ponto -type d -exec chmod 755 {} \;
+            sudo find /var/www/skillvault.blog/ponto -type f -exec chmod 644 {} \;
+
       - name: Deploy 'bkp' to skillvault.blog/bkp
         if: steps.filter.outputs.bkp == 'true'
         uses: appleboy/scp-action@v0.1.7
