@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contabilizador de Horas & Ponto Eletrônico — Ciclo 40h</title>
+  <meta name="description" content="Aplicação moderna de Ponto Eletrônico e Contabilizador de Horas por Ciclo de 40 Horas com suporte a múltiplos funcionários e cronômetro em tempo real.">
+  
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Top Header Navigation -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-icon">40h</div>
+        <div>
+          <h1 class="brand-title">Ponto & Contabilizador</h1>
+          <div class="brand-subtitle">Gestão de Ciclo de 40 Horas por Funcionário</div>
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <button id="btn-report" class="btn-icon" title="Gerar Relatório CSV" aria-label="Gerar Relatório CSV">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        </button>
+        <button id="btn-export" class="btn-icon" title="Exportar Backup JSON" aria-label="Exportar Backup JSON">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </button>
+        <button id="btn-import" class="btn-icon" title="Importar Backup JSON" aria-label="Importar Backup JSON">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+        </button>
+        <button id="theme-toggle" class="btn-icon" title="Alternar Tema (Escuro / Claro)" aria-label="Alternar Tema">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+      </div>
+    </header>
+
+    <input type="file" id="import-file-input" accept=".json" style="display: none;">
+
+    <!-- Bar de Seleção de Funcionários & Equipe -->
+    <div class="view-tabs-bar">
+      <div id="employee-pills-container" class="employee-pills">
+        <!-- Injetado dinamicamente pelo ui.js -->
+      </div>
+      <button id="btn-add-employee-modal" class="btn-add-emp">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        Novo Funcionário
+      </button>
+    </div>
+
+    <!-- Toast Notification Banner -->
+    <div id="toast-banner" class="toast-banner" role="alert">
+      <span style="font-size: 1.4rem;">🎉</span>
+      <div>
+        <div id="toast-title" style="font-weight: 800; font-size: 0.95rem;">Sucesso!</div>
+        <div id="toast-message" style="font-size: 0.8rem; opacity: 0.8;">Operação realizada.</div>
+      </div>
+    </div>
+
+    <!-- CONTAINER VISUALIZAÇÃO DE FUNCIONÁRIO INDIVIDUAL -->
+    <div id="single-emp-container">
+      
+      <!-- Informações do Perfil Ativo -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+        <div>
+          <h2 id="emp-active-name" style="font-size: 1.4rem; font-weight: 800;">Nome do Funcionário</h2>
+          <div id="emp-active-role" style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Cargo</div>
+        </div>
+        <button id="btn-complete-cycle" class="btn-ghost hidden" style="border-color: var(--success); color: var(--success); font-weight: 700;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          Concluir e Iniciar Novo Ciclo de 40h
+        </button>
+      </div>
+
+      <!-- CRONÔMETRO EM TEMPO REAL CARD -->
+      <section id="stopwatch-card" class="card stopwatch-card">
+        <div class="card-header" style="margin-bottom: 0.5rem;">
+          <h2 class="card-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2"></path><path d="M12 2v3"></path></svg>
+            Cronômetro em Tempo Real
+          </h2>
+        </div>
+
+        <!-- Live Digital Stopwatch Counter -->
+        <div class="stopwatch-hero">
+          <div id="stopwatch-status-tag" class="stopwatch-status-tag">PAUSADO</div>
+          <div id="stopwatch-display" class="stopwatch-display">00:00:00</div>
+        </div>
+
+        <!-- Primary Actions (Iniciar/Pausar + Zerar com total autonomia) -->
+        <div class="stopwatch-actions">
+          <button id="btn-stopwatch-start" class="btn-stopwatch-main">
+            <svg id="stopwatch-start-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <span id="stopwatch-start-text">INICIAR CRONÔMETRO</span>
+          </button>
+          <button id="btn-stopwatch-reset" class="btn-ghost" style="height: 48px; width: 48px; border-radius: var(--radius-md); padding: 0; justify-content: center;" title="Zerar Cronômetro">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+          </button>
+        </div>
+
+        <!-- Transfer Hours Action Button -->
+        <button id="btn-stopwatch-add-to-cycle" class="btn-primary" style="margin-top: 0.85rem; background: var(--bg-card-subtle); border: 1px solid var(--border-color); color: var(--text-main); box-shadow: none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          + ENVIAR TEMPO CRONOMETRADO PARA O CONTADOR
+        </button>
+      </section>
+
+      <main>
+        <!-- HERO COUNTER DISPLAY -->
+        <section class="card hero-card">
+          <div class="hero-tag">
+            <span class="hero-tag-dot"></span>
+            HORAS TRABALHADAS NO CICLO
+          </div>
+          
+          <!-- Large Big Bold Counter -->
+          <div class="main-counter">
+            <span id="counter-current">0h 00min</span>
+            <span id="counter-target" class="target">/ 40h</span>
+          </div>
+
+          <!-- Time Remaining Pill -->
+          <div class="remaining-pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span id="remaining-text">Faltam <strong>40h 00min</strong> para completar o ciclo</span>
+          </div>
+
+          <!-- Visual Progress Bar -->
+          <div class="progress-box">
+            <div class="progress-track" aria-label="Progresso do ciclo">
+              <div id="progress-bar" class="progress-bar" style="width: 0%;"></div>
+            </div>
+            <div class="progress-info">
+              <span>Ciclo Atual</span>
+              <span id="progress-percentage" class="progress-percent">0% concluído</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- STATS SUMMARY GRID -->
+        <section class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Ciclos de 40h concluídos</div>
+            <div class="stat-val" id="completed-cycles">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total geral trabalhado</div>
+            <div class="stat-val" id="total-general">0h 00min</div>
+          </div>
+        </section>
+
+        <!-- ADD HOURS CARD -->
+        <section class="card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              Adicionar horas trabalhadas
+            </h2>
+            <button id="btn-undo" class="btn-ghost" title="Desfazer última entrada">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7v6h6"></path><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"></path></svg>
+              Desfazer
+            </button>
+          </div>
+
+          <!-- Quick Presets -->
+          <div class="preset-row">
+            <button class="btn-pill" data-h="0" data-m="15">+15m</button>
+            <button class="btn-pill" data-h="0" data-m="30">+30m</button>
+            <button class="btn-pill" data-h="1" data-m="0">+1h</button>
+            <button class="btn-pill" data-h="2" data-m="0">+2h</button>
+            <button class="btn-pill" data-h="4" data-m="0">+4h</button>
+            <button class="btn-pill" data-h="8" data-m="0">+8h</button>
+          </div>
+
+          <form id="add-hours-form">
+            <div class="inputs-row">
+              <div class="input-field">
+                <label for="input-hours">Horas</label>
+                <input type="number" id="input-hours" class="number-input" min="0" max="999" value="4" required>
+              </div>
+              <div class="input-field">
+                <label for="input-minutes">Minutos</label>
+                <input type="number" id="input-minutes" class="number-input" min="0" max="59" value="0" required>
+              </div>
+            </div>
+
+            <div class="input-field" style="margin-bottom: 1rem;">
+              <label for="input-description">Descrição / Tarefa (opcional)</label>
+              <input type="text" id="input-description" class="text-input" placeholder="Ex: Atendimento a cliente, suporte, dev...">
+            </div>
+
+            <button type="submit" id="btn-add-hours" class="btn-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              + ADICIONAR HORAS
+            </button>
+          </form>
+        </section>
+
+        <!-- HISTORY SECTION -->
+        <section class="card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              Histórico de Horas
+            </h2>
+            <span id="history-count" style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700;">0 registros</span>
+          </div>
+
+          <div id="history-list" class="history-list">
+            <!-- Injetado dinamicamente pelo ui.js -->
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- CONTAINER PAINEL DA EQUIPE (TEAM DASHBOARD) -->
+    <div id="team-container" class="hidden">
+      <div style="margin-bottom: 1.25rem;">
+        <h2 style="font-size: 1.4rem; font-weight: 800;">Painel Geral da Equipe</h2>
+        <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Acompanhe o status e o ciclo de 40h de todos os funcionários cadastrados</div>
+      </div>
+
+      <div id="team-grid-container" class="team-grid">
+        <!-- Injetado dinamicamente pelo ui.js -->
+      </div>
+    </div>
+
+    <!-- MODAL EDITAR REGISTRO -->
+    <div id="edit-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 1.25rem;">Editar Registro de Horas</h3>
+        <form id="edit-form">
+          <input type="hidden" id="edit-id">
+          <div class="inputs-row">
+            <div class="input-field">
+              <label for="edit-hours">Horas</label>
+              <input type="number" id="edit-hours" class="number-input" min="0" max="999" required>
+            </div>
+            <div class="input-field">
+              <label for="edit-minutes">Minutos</label>
+              <input type="number" id="edit-minutes" class="number-input" min="0" max="59" required>
+            </div>
+          </div>
+          <div class="input-field" style="margin-bottom: 1.25rem;">
+            <label for="edit-description">Descrição / Tarefa</label>
+            <input type="text" id="edit-description" class="text-input">
+          </div>
+          <div class="modal-actions">
+            <button type="button" id="btn-cancel-edit" class="btn-ghost">Cancelar</button>
+            <button type="submit" class="btn-primary" style="width: auto; padding: 0 1.25rem; height: 44px;">Salvar Alterações</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL ADICIONAR FUNCIONÁRIO -->
+    <div id="employee-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 1.25rem;">Cadastrar Novo Funcionário</h3>
+        <form id="employee-form">
+          <div class="input-field" style="margin-bottom: 1rem;">
+            <label for="emp-name">Nome Completo</label>
+            <input type="text" id="emp-name" class="text-input" placeholder="Ex: Maria Santos" required>
+          </div>
+          <div class="input-field" style="margin-bottom: 1rem;">
+            <label for="emp-role">Cargo / Função</label>
+            <input type="text" id="emp-role" class="text-input" placeholder="Ex: Desenvolvedor Front-end" required>
+          </div>
+          <div class="inputs-row">
+            <div class="input-field">
+              <label for="emp-target">Meta do Ciclo (Horas)</label>
+              <input type="number" id="emp-target" class="number-input" min="1" max="200" value="40" required>
+            </div>
+            <div class="input-field">
+              <label for="emp-color">Cor da Badge</label>
+              <input type="color" id="emp-color" class="text-input" value="#3b82f6" style="padding: 2px;">
+            </div>
+          </div>
+          <div class="modal-actions">
+            <button type="button" id="btn-cancel-employee" class="btn-ghost">Cancelar</button>
+            <button type="submit" class="btn-primary" style="width: auto; padding: 0 1.25rem; height: 44px;">Salvar Funcionário</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scripts ES Modules -->
+  <script type="module" src="./src/js/app.js"></script>
+</body>
+</html>

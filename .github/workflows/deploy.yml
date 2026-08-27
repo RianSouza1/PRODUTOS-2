@@ -58,6 +58,8 @@ jobs:
           filters: |
             workflow:
               - '.github/workflows/deploy.yml'
+            ponto:
+              - 'ponto/**'
             off-grid:
               - 'off-grid/**'
             off-grid-fr:
@@ -910,6 +912,8 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/bkp-cs-m
             sudo mkdir -p /var/www/skillvault.blog/bkp-el-m
             sudo mkdir -p /var/www/skillvault.blog/bkp-ro-m
+            sudo mkdir -p /var/www/skillvault.blog/ponto
+            sudo chown -R $USER:$USER /var/www/skillvault.blog/ponto || true
             sudo mkdir -p /var/www/skillvault.blog/bkp-hu-m
             sudo mkdir -p /var/www/skillvault.blog/ww-m
             sudo mkdir -p /var/www/skillvault.blog/ww-cs-m
@@ -9095,3 +9099,15 @@ jobs:
           source: "gfree-sk-members/*"
           target: "/var/www/naturalmethods.blog/g-free-sk"
           strip_components: 1
+
+      - name: Deploy 'ponto' to skillvault.blog/ponto
+        if: steps.filter.outputs.ponto == 'true' || steps.filter.outputs.workflow == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "ponto/*"
+          target: "/var/www/skillvault.blog/ponto"
+          strip_components: 1
+
