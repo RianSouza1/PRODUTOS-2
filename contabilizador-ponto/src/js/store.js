@@ -1,5 +1,5 @@
 /**
- * store.js - Gerenciamento de Dados e Persistência Blindada (LocalStorage + Migration + Integrity)
+ * store.js - Gerenciamento de Dados e Persistência Dupla (LocalStorage + IndexedDB + Migração)
  */
 
 const STORAGE_KEY = 'contabilizador_ponto_v1';
@@ -47,9 +47,61 @@ const DEFAULT_DATA = {
 
 class Store {
   constructor() {
+    this.db = null;
     this.data = this.loadData();
-    // Tenta sincronizar se houver backend
-    this.syncWithServer();
+    this.initIndexedDB();
+  }
+
+  initIndexedDB() {
+    try {
+      if (!window.indexedDB) return;
+      const request = indexedDB.open('ContabilizadorPontoDB_v2', 1);
+      request.onupgradeneeded = (e) => {
+        const db = e.target.result;
+        if (!db.objectStoreNames.contains('app_state')) {
+          db.createObjectStore('app_state', { keyPath: 'key' });
+        }
+      };
+      request.onsuccess = (e) => {
+        this.db = e.target.result;
+        this.syncIndexedDB();
+      };
+    } catch (e) {
+      console.log('IndexedDB não suportado neste navegador:', e);
+    }
+  }
+
+  syncIndexedDB() {
+    if (!this.db) return;
+    try {
+      const tx = this.db.transaction('app_state', 'readwrite');
+      const store = tx.objectStore('app_state');
+      const getReq = store.get(STORAGE_KEY);
+      getReq.onsuccess = (e) => {
+        const res = e.target.result;
+        if (res && res.value && res.value.employees && Array.isArray(res.value.employees)) {
+          // Se IndexedDB tem dados e LocalStorage não tem, recupera do IndexedDB
+          const lsRaw = localStorage.getItem(STORAGE_KEY);
+          if (!lsRaw) {
+            this.data = res.value;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(res.value));
+            if (window.ui) window.ui.renderAll();
+          }
+        } else {
+          // Salva copia do estado atual no IndexedDB
+          store.put({ key: STORAGE_KEY, value: this.data });
+        }
+      };
+    } catch (e) {}
+  }
+
+  saveToIndexedDB(data) {
+    if (!this.db) return;
+    try {
+      const tx = this.db.transaction('app_state', 'readwrite');
+      const store = tx.objectStore('app_state');
+      store.put({ key: STORAGE_KEY, value: data });
+    } catch (e) {}
   }
 
   loadData() {
@@ -102,39 +154,9 @@ class Store {
     try {
       this.data = data;
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-      this.saveToServer(data);
+      this.saveToIndexedDB(data);
     } catch (e) {
       console.error('Erro ao salvar dados no LocalStorage:', e);
-    }
-  }
-
-  async syncWithServer() {
-    try {
-      const response = await fetch('./api.php', { cache: 'no-store' });
-      if (response.ok) {
-        const serverData = await response.json();
-        if (serverData && serverData.employees && Array.isArray(serverData.employees) && serverData.employees.length > 0) {
-          this.data = serverData;
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(serverData));
-          if (window.ui) {
-            window.ui.renderAll();
-          }
-        }
-      }
-    } catch (err) {
-      // Ignora erro em ambientes sem PHP ou offline
-    }
-  }
-
-  async saveToServer(data = this.data) {
-    try {
-      await fetch('./api.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-    } catch (err) {
-      // Ignora silenciosamente se offline
     }
   }
 
