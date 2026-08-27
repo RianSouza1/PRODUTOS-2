@@ -1,5 +1,5 @@
 /**
- * store.js - Gerenciamento de Dados, Persistência Local (LocalStorage) e Sincronização Server-Side (API)
+ * store.js - Gerenciamento de Dados e Persistência Blindada (LocalStorage + Migration + Integrity)
  */
 
 const STORAGE_KEY = 'contabilizador_ponto_v1';
@@ -48,7 +48,7 @@ const DEFAULT_DATA = {
 class Store {
   constructor() {
     this.data = this.loadData();
-    // Tenta sincronizar com o banco do servidor em segundo plano ao iniciar
+    // Tenta sincronizar se houver backend
     this.syncWithServer();
   }
 
@@ -56,28 +56,55 @@ class Store {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) {
-        this.saveData(DEFAULT_DATA);
-        return JSON.parse(JSON.stringify(DEFAULT_DATA));
+        const initial = JSON.parse(JSON.stringify(DEFAULT_DATA));
+        this.saveData(initial);
+        return initial;
       }
+
       const parsed = JSON.parse(raw);
-      // Garantir estrutura correta se dados antigos existirem
-      if (!parsed.employees || !Array.isArray(parsed.employees) || parsed.employees.length === 0) {
-        return JSON.parse(JSON.stringify(DEFAULT_DATA));
+
+      // Validação de integridade do objeto
+      if (!parsed || typeof parsed !== 'object' || !parsed.employees || !Array.isArray(parsed.employees) || parsed.employees.length === 0) {
+        const fallback = JSON.parse(JSON.stringify(DEFAULT_DATA));
+        this.saveData(fallback);
+        return fallback;
       }
+
+      // Garantia de integridade para cada funcionário (migração de dados antigos)
+      parsed.employees.forEach(emp => {
+        if (!emp.entries || !Array.isArray(emp.entries)) emp.entries = [];
+        if (!emp.completedCyclesHistory || !Array.isArray(emp.completedCyclesHistory)) emp.completedCyclesHistory = [];
+        if (!emp.stopwatch || typeof emp.stopwatch !== 'object') {
+          emp.stopwatch = { isRunning: false, startTime: null, accumulatedMs: 0 };
+        }
+
+        // Se o nome no LocalStorage for de mocks antigos, atualiza para os funcionários reais
+        if (emp.name === 'Rian Souza') {
+          emp.name = 'Eduardo';
+          emp.avatar = 'ED';
+        }
+        if (emp.name === 'João Silva') {
+          emp.name = 'Públio';
+          emp.avatar = 'PB';
+        }
+      });
+
       return parsed;
     } catch (e) {
-      console.error('Erro ao carregar dados do LocalStorage:', e);
-      return JSON.parse(JSON.stringify(DEFAULT_DATA));
+      console.error('Erro ao carregar dados do LocalStorage, usando padrão:', e);
+      const fallback = JSON.parse(JSON.stringify(DEFAULT_DATA));
+      this.saveData(fallback);
+      return fallback;
     }
   }
 
   saveData(data = this.data) {
     try {
+      this.data = data;
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-      // Salva no servidor em segundo plano para sincronizar entre todos os celulares/computadores
       this.saveToServer(data);
     } catch (e) {
-      console.error('Erro ao salvar dados:', e);
+      console.error('Erro ao salvar dados no LocalStorage:', e);
     }
   }
 
@@ -95,7 +122,7 @@ class Store {
         }
       }
     } catch (err) {
-      console.log('Sincronização com o servidor ignorada (rodando offline ou local).');
+      // Ignora erro em ambientes sem PHP ou offline
     }
   }
 
@@ -107,7 +134,7 @@ class Store {
         body: JSON.stringify(data)
       });
     } catch (err) {
-      // Ignora erro se offline
+      // Ignora silenciosamente se offline
     }
   }
 
@@ -198,7 +225,10 @@ class Store {
     const emp = this.data.employees.find(e => e.id === employeeId);
     if (!emp) return null;
 
-    const totalMinutes = (parseInt(hours, 10) || 0) * 60 + (parseInt(minutes, 10) || 0);
+    const h = parseInt(hours, 10) || 0;
+    const m = parseInt(minutes, 10) || 0;
+    const totalMinutes = h * 60 + m;
+
     if (totalMinutes <= 0) return null;
 
     let validIsoDate;
@@ -215,16 +245,16 @@ class Store {
 
     const entry = {
       id: 'entry-' + Date.now() + '-' + Math.random().toString(36).substr(2, 4),
-      hours: parseInt(hours, 10) || 0,
-      minutes: parseInt(minutes, 10) || 0,
+      hours: h,
+      minutes: m,
       totalMinutes,
       date: validIsoDate,
       type,
       description: (description || '').trim()
     };
 
-    if (!emp.entries) emp.entries = [];
-    emp.entries.unshift(entry); // Adiciona no início
+    if (!emp.entries || !Array.isArray(emp.entries)) emp.entries = [];
+    emp.entries.unshift(entry); // Adiciona no início do histórico
 
     if (!this.data.undoStack) this.data.undoStack = [];
     this.data.undoStack.push({
@@ -347,7 +377,7 @@ class Store {
     emp.completedCyclesCount = (emp.completedCyclesCount || 0) + 1;
     if (!emp.completedCyclesHistory) emp.completedCyclesHistory = [];
     emp.completedCyclesHistory.push(cycleRecord);
-    // Limpa entradas ativas do ciclo para iniciar novo ciclo zerado
+    // Limpa apenas entradas ativas do ciclo atual para o próximo ciclo
     emp.entries = [];
     this.saveData();
     return cycleRecord;

@@ -181,10 +181,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const dInput = document.getElementById('input-date');
     const descInput = document.getElementById('input-description');
 
+    let dateIso;
+    if (dInput && dInput.value) {
+      try {
+        const parts = dInput.value.split('-');
+        if (parts.length === 3) {
+          const y = parseInt(parts[0], 10);
+          const m = parseInt(parts[1], 10) - 1;
+          const d = parseInt(parts[2], 10);
+          dateIso = new Date(y, m, d, 12, 0, 0).toISOString();
+        } else {
+          dateIso = new Date().toISOString();
+        }
+      } catch (err) {
+        dateIso = new Date().toISOString();
+      }
+    } else {
+      dateIso = new Date().toISOString();
+    }
+
     const entry = store.addEntry(emp.id, {
-      hours: hInput.value,
-      minutes: mInput.value,
-      date: dInput?.value ? new Date(dInput.value + 'T12:00:00').toISOString() : new Date().toISOString(),
+      hours: hInput ? hInput.value : 0,
+      minutes: mInput ? mInput.value : 0,
+      date: dateIso,
       type: 'manual',
       description: descInput?.value || 'Lançamento manual de horas'
     });
@@ -192,7 +211,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (entry) {
       if (descInput) descInput.value = '';
       ui.renderAll();
-      ui.showToast('Lançamento Registrado!', `+${entry.hours}h ${entry.minutes}m adicionados.`);
+      ui.showToast('Lançamento Registrado! 🎉', `+${entry.hours}h ${entry.minutes}m salvos em ${emp.name}.`);
+    } else {
+      alert('Por favor, informe ao menos 1 minuto ou hora para o lançamento.');
     }
   });
 
