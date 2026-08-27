@@ -749,6 +749,8 @@ jobs:
               - 'guitar-da-members/**'
             piano-da-members:
               - 'piano-da-members/**'
+            piano-nl-members:
+              - 'piano-nl-members/**'
             guitar-fi-members:
               - 'guitar-fi-members/**'
             guitar-cs-members:
@@ -1128,6 +1130,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/guitar-hr-m
             sudo mkdir -p /var/www/skillvault.blog/guitar-bg-m
             sudo mkdir -p /var/www/skillvault.blog/piano-da-m
+            sudo mkdir -p /var/www/skillvault.blog/piano-nl-m
             sudo mkdir -p /var/www/skillvault.blog/word-hu-m
             sudo mkdir -p /var/www/skillvault.blog/word-he-m
             sudo mkdir -p /var/www/skillvault.blog/word-el-m
@@ -4080,6 +4083,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "piano-da-members/*"
           target: "/var/www/skillvault.blog/piano-da-m"
+          strip_components: 1
+
+      - name: Deploy 'piano-nl-members' to skillvault.blog/piano-nl-m
+        if: steps.filter.outputs.piano-nl-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "piano-nl-members/*"
+          target: "/var/www/skillvault.blog/piano-nl-m"
           strip_components: 1
 
       - name: Deploy 'guitar-fi-members' to skillvault.blog/guitar-fi-m
@@ -7674,6 +7688,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "piano-da-members/*"
           target: "/var/www/skillvault.blog/piano-da-m"
+          strip_components: 1
+
+      - name: Deploy 'piano-nl-members' to skillvault.blog/piano-nl-m
+        if: steps.filter.outputs.piano-nl-members == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "piano-nl-members/*"
+          target: "/var/www/skillvault.blog/piano-nl-m"
           strip_components: 1
 
       - name: Deploy 'guitar-fi-members' to skillvault.blog/guitar-fi-m
