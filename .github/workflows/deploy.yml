@@ -4032,7 +4032,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'piano-da-members' to skillvault.blog/piano-da-m
-        if: steps.filter.outputs['piano-da-members'] == 'true'
+        if: steps.filter.outputs.piano-da-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -7626,7 +7626,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'piano-da-members' to skillvault.blog/piano-da-m
-        if: steps.filter.outputs['piano-da-members'] == 'true'
+        if: steps.filter.outputs.piano-da-members == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
