@@ -1710,6 +1710,18 @@ jobs:
           target: "/var/www/skillvault.blog/mw-pt"
           strip_components: 1
 
+      - name: Clean ponto directory on VPS
+        if: steps.filter.outputs.ponto == 'true' || steps.filter.outputs.workflow == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/ponto
+            sudo rm -rf /var/www/skillvault.blog/ponto/*
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ponto
+
       - name: Deploy 'ponto' to skillvault.blog/ponto
         if: steps.filter.outputs.ponto == 'true' || steps.filter.outputs.workflow == 'true'
         uses: appleboy/scp-action@v0.1.7
