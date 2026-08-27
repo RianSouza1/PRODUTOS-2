@@ -163,6 +163,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Define data padrão do formulário como a data atual YYYY-MM-DD
+  const dateInput = document.getElementById('input-date');
+  if (dateInput) {
+    const today = new Date();
+    dateInput.value = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+  }
+
   // Formulário Manual de Adicionar Horas
   document.getElementById('add-hours-form')?.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -171,11 +178,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const hInput = document.getElementById('input-hours');
     const mInput = document.getElementById('input-minutes');
+    const dInput = document.getElementById('input-date');
     const descInput = document.getElementById('input-description');
 
     const entry = store.addEntry(emp.id, {
       hours: hInput.value,
       minutes: mInput.value,
+      date: dInput?.value ? new Date(dInput.value + 'T12:00:00').toISOString() : new Date().toISOString(),
       type: 'manual',
       description: descInput?.value || 'Lançamento manual de horas'
     });
@@ -238,6 +247,9 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('edit-id').value = entry.id;
       document.getElementById('edit-hours').value = entry.hours;
       document.getElementById('edit-minutes').value = entry.minutes;
+      const entryDate = new Date(entry.date);
+      const formattedEntryDate = entryDate.getFullYear() + '-' + String(entryDate.getMonth() + 1).padStart(2, '0') + '-' + String(entryDate.getDate()).padStart(2, '0');
+      document.getElementById('edit-date').value = formattedEntryDate;
       document.getElementById('edit-description').value = entry.description || '';
 
       document.getElementById('edit-modal')?.classList.add('active');
@@ -258,9 +270,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const id = document.getElementById('edit-id').value;
     const hours = document.getElementById('edit-hours').value;
     const minutes = document.getElementById('edit-minutes').value;
+    const dateVal = document.getElementById('edit-date').value;
     const description = document.getElementById('edit-description').value;
 
-    store.updateEntry(emp.id, id, { hours, minutes, description });
+    const dateIso = dateVal ? new Date(dateVal + 'T12:00:00').toISOString() : undefined;
+
+    store.updateEntry(emp.id, id, { hours, minutes, date: dateIso, description });
     document.getElementById('edit-modal')?.classList.remove('active');
     ui.renderAll();
     ui.showToast('Registro Atualizado', 'As alterações foram salvas com sucesso.');

@@ -187,9 +187,15 @@
               </div>
             </div>
 
-            <div class="input-field" style="margin-bottom: 1rem;">
-              <label for="input-description">Descrição / Tarefa (opcional)</label>
-              <input type="text" id="input-description" class="text-input" placeholder="Ex: Atendimento a cliente, suporte, dev...">
+            <div class="inputs-row" style="margin-bottom: 1rem;">
+              <div class="input-field">
+                <label for="input-date">Data do Lançamento</label>
+                <input type="date" id="input-date" class="date-input" required>
+              </div>
+              <div class="input-field">
+                <label for="input-description">Descrição / Tarefa (opcional)</label>
+                <input type="text" id="input-description" class="text-input" placeholder="Ex: Atendimento, suporte, dev...">
+              </div>
             </div>
 
             <button type="submit" id="btn-add-hours" class="btn-primary">
@@ -244,9 +250,15 @@
               <input type="number" id="edit-minutes" class="number-input" min="0" max="59" required>
             </div>
           </div>
-          <div class="input-field" style="margin-bottom: 1.25rem;">
-            <label for="edit-description">Descrição / Tarefa</label>
-            <input type="text" id="edit-description" class="text-input">
+          <div class="inputs-row" style="margin-bottom: 1.25rem;">
+            <div class="input-field">
+              <label for="edit-date">Data do Lançamento</label>
+              <input type="date" id="edit-date" class="date-input" required>
+            </div>
+            <div class="input-field">
+              <label for="edit-description">Descrição / Tarefa</label>
+              <input type="text" id="edit-description" class="text-input">
+            </div>
           </div>
           <div class="modal-actions">
             <button type="button" id="btn-cancel-edit" class="btn-ghost">Cancelar</button>

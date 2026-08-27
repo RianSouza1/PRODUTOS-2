@@ -190,7 +190,7 @@ class UI {
     }
   }
 
-  // --- HISTÓRICO DE LANÇAMENTOS ---
+  // --- HISTÓRICO DE LANÇAMENTOS AGRUPADO POR DIA ---
   renderHistoryList(employee) {
     const listElem = document.getElementById('history-list');
     const countElem = document.getElementById('history-count');
@@ -210,38 +210,83 @@ class UI {
       return;
     }
 
-    let html = '';
+    // Agrupa por data YYYY-MM-DD
+    const groups = {};
     entries.forEach(entry => {
-      const dateObj = new Date(entry.date);
-      const formattedDate = dateObj.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
-      const formattedTime = dateObj.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
-      const isStopwatch = entry.type === 'stopwatch';
+      const d = new Date(entry.date);
+      // Ajusta timezone local para agrupar pela data correta
+      const dateKey = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+      if (!groups[dateKey]) {
+        groups[dateKey] = {
+          dateObj: d,
+          totalMinutes: 0,
+          items: []
+        };
+      }
+      groups[dateKey].totalMinutes += entry.totalMinutes || 0;
+      groups[dateKey].items.push(entry);
+    });
+
+    let html = '';
+    const sortedDates = Object.keys(groups).sort().reverse();
+
+    sortedDates.forEach(dateKey => {
+      const group = groups[dateKey];
+      const d = group.dateObj;
+      
+      const dayName = d.toLocaleDateString('pt-BR', { weekday: 'long' });
+      const formattedDate = d.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+      const capitalizedDay = dayName.charAt(0).toUpperCase() + dayName.slice(1);
+      
+      const gH = Math.floor(group.totalMinutes / 60);
+      const gM = group.totalMinutes % 60;
+      const totalDayStr = `${gH}h ${String(gM).padStart(2, '0')}min`;
 
       html += `
-        <div class="history-item">
-          <div class="history-left">
-            <div class="history-icon-badge ${isStopwatch ? 'stopwatch' : ''}">
-              ${isStopwatch 
-                ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2"></path></svg>' 
-                : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>'
-              }
+        <div class="history-group" style="margin-bottom: 1.25rem;">
+          <div class="history-group-header" style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0.75rem; background: var(--bg-card-hover); border-radius: var(--radius-md); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.6rem; border-left: 4px solid var(--primary);">
+            <span>📅 ${capitalizedDay} • ${formattedDate}</span>
+            <span style="color: var(--primary);">Total no dia: ${totalDayStr}</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+      `;
+
+      group.items.forEach(entry => {
+        const itemDate = new Date(entry.date);
+        const formattedTime = itemDate.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+        const isStopwatch = entry.type === 'stopwatch';
+
+        html += `
+          <div class="history-item">
+            <div class="history-left">
+              <div class="history-icon-badge ${isStopwatch ? 'stopwatch' : ''}">
+                ${isStopwatch 
+                  ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2"></path></svg>' 
+                  : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>'
+                }
+              </div>
+              <div>
+                <div class="history-info-title">${entry.description ? this.escapeHtml(entry.description) : (isStopwatch ? 'Tempo Cronometrado' : 'Lançamento Manual')}</div>
+                <div class="history-info-sub">Horário: ${formattedTime} • Origem: ${isStopwatch ? 'Cronômetro' : 'Manual'}</div>
+              </div>
             </div>
-            <div>
-              <div class="history-info-title">${entry.description ? this.escapeHtml(entry.description) : (isStopwatch ? 'Tempo Cronometrado' : 'Lançamento Manual')}</div>
-              <div class="history-info-sub">${formattedDate} às ${formattedTime}</div>
+
+            <div class="history-right">
+              <div class="history-duration">+${entry.hours}h ${String(entry.minutes).padStart(2, '0')}m</div>
+              <div class="history-actions">
+                <button class="btn-icon btn-edit-entry" data-entry-id="${entry.id}" title="Editar" style="width: 32px; height: 32px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                </button>
+                <button class="btn-icon btn-delete-entry" data-entry-id="${entry.id}" title="Excluir" style="width: 32px; height: 32px; color: var(--danger);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                </button>
+              </div>
             </div>
           </div>
+        `;
+      });
 
-          <div class="history-right">
-            <div class="history-duration">+${entry.hours}h ${String(entry.minutes).padStart(2, '0')}m</div>
-            <div class="history-actions">
-              <button class="btn-icon btn-edit-entry" data-entry-id="${entry.id}" title="Editar" style="width: 32px; height: 32px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-              </button>
-              <button class="btn-icon btn-delete-entry" data-entry-id="${entry.id}" title="Excluir" style="width: 32px; height: 32px; color: var(--danger);">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-              </button>
-            </div>
+      html += `
           </div>
         </div>
       `;
