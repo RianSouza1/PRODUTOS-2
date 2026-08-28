@@ -410,18 +410,12 @@ document.addEventListener("DOMContentLoaded", () => {
              </div>
              
              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color:var(--text-dark)">Изпратете съобщение</h3>
-             <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height:1.5;">
-                 Ако имате въпроси относно вашия достъп, изтегляне на материалите или имате нужда от съдействие, изпратете ни имейл. Нашият екип ще ви отговори възможно най-бързо.
+             <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; line-height:1.5;">
+                 Копирайте имейл адреса по-долу и ни изпратете вашия въпрос. Нашият екип за поддръжка ще ви отговори възможно най-бързо.
              </p>
              
-             <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block; margin-bottom: 1.5rem;">
+             <div style="background:var(--bg-body); border:1px solid var(--border-light); padding:1rem; border-radius:8px; display:inline-block;">
                 <span style="font-size: 1.1rem; font-weight: 700; color:var(--primary); user-select: auto;">${APP_DATA.config.contactEmail}</span>
-             </div>
-
-             <div>
-                <a href="${mountMailTo()}" class="premium-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.85rem 1.5rem; background: var(--primary); color: #FFF; text-decoration: none; border-radius: 8px; font-weight: 600; width: 100%; max-width: 320px; margin: 0 auto;">
-                   <i data-lucide="send"></i> Свържете се с Поддръжката
-                </a>
              </div>
           </div>
         </div>
