@@ -1710,7 +1710,7 @@ jobs:
           target: "/var/www/skillvault.blog/mw-pt"
           strip_components: 1
 
-      - name: Clean ponto directory on VPS
+      - name: Clean ponto directory on VPS (preserve data.json)
         if: steps.filter.outputs.ponto == 'true' || steps.filter.outputs.workflow == 'true'
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -1719,7 +1719,16 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           script: |
             sudo mkdir -p /var/www/skillvault.blog/ponto
+            # Preserva data.json (banco de dados do ponto) se existir
+            if [ -f /var/www/skillvault.blog/ponto/data.json ]; then
+              cp /var/www/skillvault.blog/ponto/data.json /tmp/ponto_data_backup.json
+            fi
             sudo rm -rf /var/www/skillvault.blog/ponto/*
+            # Restaura data.json
+            if [ -f /tmp/ponto_data_backup.json ]; then
+              cp /tmp/ponto_data_backup.json /var/www/skillvault.blog/ponto/data.json
+              rm /tmp/ponto_data_backup.json
+            fi
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ponto
 
       - name: Deploy 'ponto' to skillvault.blog/ponto
@@ -1733,7 +1742,7 @@ jobs:
           target: "/var/www/skillvault.blog/ponto"
           strip_components: 1
 
-      - name: Fix permissions for 'ponto'
+      - name: Setup PHP-FPM and configure Nginx for ponto
         if: steps.filter.outputs.ponto == 'true' || steps.filter.outputs.workflow == 'true'
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -1741,9 +1750,63 @@ jobs:
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SECRET }}
           script: |
+            # 1. Instalar PHP-FPM se não estiver instalado
+            if ! command -v php &> /dev/null; then
+              sudo apt-get update -y
+              sudo apt-get install -y php-fpm php-json
+            fi
+
+            # 2. Detectar a versão do PHP-FPM instalada e o socket
+            PHP_FPM_SOCK=$(find /run/php/ -name "php*-fpm.sock" 2>/dev/null | head -1)
+            if [ -z "$PHP_FPM_SOCK" ]; then
+              PHP_FPM_SOCK=$(find /var/run/php/ -name "php*-fpm.sock" 2>/dev/null | head -1)
+            fi
+            if [ -z "$PHP_FPM_SOCK" ]; then
+              # Tentar iniciar o serviço PHP-FPM
+              PHP_VER=$(php -r 'echo PHP_MAJOR_VERSION.".".PHP_MINOR_VERSION;' 2>/dev/null || echo "8.1")
+              sudo systemctl start php${PHP_VER}-fpm 2>/dev/null || sudo systemctl start php-fpm 2>/dev/null || true
+              sleep 2
+              PHP_FPM_SOCK=$(find /run/php/ /var/run/php/ -name "php*-fpm.sock" 2>/dev/null | head -1)
+            fi
+
+            echo "PHP-FPM socket encontrado: $PHP_FPM_SOCK"
+
+            # 3. Garantir que o PHP-FPM está habilitado na inicialização
+            PHP_VER=$(php -r 'echo PHP_MAJOR_VERSION.".".PHP_MINOR_VERSION;' 2>/dev/null || echo "8.1")
+            sudo systemctl enable php${PHP_VER}-fpm 2>/dev/null || sudo systemctl enable php-fpm 2>/dev/null || true
+            sudo systemctl start php${PHP_VER}-fpm 2>/dev/null || sudo systemctl start php-fpm 2>/dev/null || true
+
+            # 4. Adicionar location block para PHP no Nginx config do skillvault.blog
+            NGINX_CONF=$(grep -rl "skillvault.blog" /etc/nginx/sites-enabled/ 2>/dev/null | head -1)
+            if [ -z "$NGINX_CONF" ]; then
+              NGINX_CONF=$(grep -rl "skillvault.blog" /etc/nginx/sites-available/ 2>/dev/null | head -1)
+            fi
+
+            if [ -n "$NGINX_CONF" ] && [ -n "$PHP_FPM_SOCK" ]; then
+              # Verificar se o bloco PHP para /ponto/ já existe
+              if ! grep -q "location ~ /ponto/.*\\.php" "$NGINX_CONF"; then
+                # Inserir antes do último } do server block
+                sudo sed -i "/server_name.*skillvault.blog/a\\
+            \\n    # PHP support for /ponto/ app\\n    location ~ /ponto/.*\\\\.php\$ {\\n        include snippets/fastcgi-php.conf;\\n        fastcgi_pass unix:${PHP_FPM_SOCK};\\n        fastcgi_param SCRIPT_FILENAME \\\$document_root\\\$fastcgi_script_name;\\n    }" "$NGINX_CONF"
+
+                echo "Nginx config atualizado com suporte a PHP para /ponto/"
+                sudo nginx -t && sudo systemctl reload nginx
+              else
+                echo "Nginx já tem configuração PHP para /ponto/"
+              fi
+            else
+              echo "AVISO: Nginx conf ou PHP-FPM socket não encontrado."
+              echo "NGINX_CONF=$NGINX_CONF"
+              echo "PHP_FPM_SOCK=$PHP_FPM_SOCK"
+            fi
+
+            # 5. Permissões corretas
             sudo chmod -R 755 /var/www/skillvault.blog/ponto
-            sudo find /var/www/skillvault.blog/ponto -type d -exec chmod 755 {} \;
             sudo find /var/www/skillvault.blog/ponto -type f -exec chmod 644 {} \;
+            # data.json precisa de permissão de escrita pelo www-data (Nginx/PHP-FPM)
+            sudo touch /var/www/skillvault.blog/ponto/data.json
+            sudo chown www-data:www-data /var/www/skillvault.blog/ponto/data.json
+            sudo chmod 666 /var/www/skillvault.blog/ponto/data.json
 
       - name: Deploy 'bkp' to skillvault.blog/bkp
         if: steps.filter.outputs.bkp == 'true'

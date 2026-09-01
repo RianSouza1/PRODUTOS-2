@@ -1,8 +1,14 @@
 /**
- * store.js - Gerenciamento de Dados e Persistência Dupla (LocalStorage + IndexedDB + Migração)
+ * store.js - Gerenciamento de Dados com Persistência Centralizada no Servidor
+ * 
+ * Hierarquia de dados:
+ * 1. Servidor (api.php + data.json) → fonte da verdade, compartilhado entre todos os dispositivos
+ * 2. LocalStorage → cache local para acesso offline rápido
+ * 3. IndexedDB → backup redundante local
  */
 
 const STORAGE_KEY = 'contabilizador_ponto_v1';
+const API_URL = './api.php';
 
 // Dados iniciais com os funcionários padrão: Eduardo e Públio
 const DEFAULT_DATA = {
@@ -14,13 +20,9 @@ const DEFAULT_DATA = {
       name: 'Eduardo',
       role: 'Funcionário',
       targetHours: 40,
-      color: '#3b82f6', // azul
+      color: '#3b82f6',
       avatar: 'ED',
-      stopwatch: {
-        isRunning: false,
-        startTime: null,
-        accumulatedMs: 0
-      },
+      stopwatch: { isRunning: false, startTime: null, accumulatedMs: 0 },
       entries: [],
       completedCyclesCount: 0,
       completedCyclesHistory: []
@@ -30,29 +32,71 @@ const DEFAULT_DATA = {
       name: 'Públio',
       role: 'Funcionário',
       targetHours: 40,
-      color: '#10b981', // verde
+      color: '#10b981',
       avatar: 'PB',
-      stopwatch: {
-        isRunning: false,
-        startTime: null,
-        accumulatedMs: 0
-      },
+      stopwatch: { isRunning: false, startTime: null, accumulatedMs: 0 },
       entries: [],
       completedCyclesCount: 0,
       completedCyclesHistory: []
     }
   ],
-  undoStack: [] // Para armazenar última ação reversível
+  undoStack: []
 };
 
 class Store {
   constructor() {
     this.db = null;
-    this.data = this.loadData();
-    this.initIndexedDB();
+    this.serverAvailable = false;
+    this.data = this._loadLocal();
+    this._initIndexedDB();
+    // Ao carregar, tenta baixar dados do servidor (fonte da verdade)
+    this._pullFromServer();
   }
 
-  initIndexedDB() {
+  // ========== PERSISTÊNCIA LOCAL ==========
+
+  _loadLocal() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) {
+        const initial = JSON.parse(JSON.stringify(DEFAULT_DATA));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(initial));
+        return initial;
+      }
+      const parsed = JSON.parse(raw);
+      if (!parsed || !parsed.employees || !Array.isArray(parsed.employees) || parsed.employees.length === 0) {
+        return JSON.parse(JSON.stringify(DEFAULT_DATA));
+      }
+      this._migrateData(parsed);
+      return parsed;
+    } catch (e) {
+      console.error('Erro ao carregar LocalStorage:', e);
+      return JSON.parse(JSON.stringify(DEFAULT_DATA));
+    }
+  }
+
+  _migrateData(data) {
+    if (!data || !data.employees) return;
+    data.employees.forEach(emp => {
+      if (!emp.entries || !Array.isArray(emp.entries)) emp.entries = [];
+      if (!emp.completedCyclesHistory || !Array.isArray(emp.completedCyclesHistory)) emp.completedCyclesHistory = [];
+      if (!emp.stopwatch || typeof emp.stopwatch !== 'object') {
+        emp.stopwatch = { isRunning: false, startTime: null, accumulatedMs: 0 };
+      }
+    });
+  }
+
+  _saveLocal() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.data));
+    } catch (e) {
+      console.error('Erro ao salvar LocalStorage:', e);
+    }
+  }
+
+  // ========== IndexedDB (backup redundante) ==========
+
+  _initIndexedDB() {
     try {
       if (!window.indexedDB) return;
       const request = indexedDB.open('ContabilizadorPontoDB_v2', 1);
@@ -64,103 +108,93 @@ class Store {
       };
       request.onsuccess = (e) => {
         this.db = e.target.result;
-        this.syncIndexedDB();
-      };
-    } catch (e) {
-      console.log('IndexedDB não suportado neste navegador:', e);
-    }
-  }
-
-  syncIndexedDB() {
-    if (!this.db) return;
-    try {
-      const tx = this.db.transaction('app_state', 'readwrite');
-      const store = tx.objectStore('app_state');
-      const getReq = store.get(STORAGE_KEY);
-      getReq.onsuccess = (e) => {
-        const res = e.target.result;
-        if (res && res.value && res.value.employees && Array.isArray(res.value.employees)) {
-          // Se IndexedDB tem dados e LocalStorage não tem, recupera do IndexedDB
-          const lsRaw = localStorage.getItem(STORAGE_KEY);
-          if (!lsRaw) {
-            this.data = res.value;
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(res.value));
-            if (window.ui) window.ui.renderAll();
-          }
-        } else {
-          // Salva copia do estado atual no IndexedDB
-          store.put({ key: STORAGE_KEY, value: this.data });
-        }
       };
     } catch (e) {}
   }
 
-  saveToIndexedDB(data) {
+  _saveToIndexedDB(data) {
     if (!this.db) return;
     try {
       const tx = this.db.transaction('app_state', 'readwrite');
-      const store = tx.objectStore('app_state');
-      store.put({ key: STORAGE_KEY, value: data });
+      tx.objectStore('app_state').put({ key: STORAGE_KEY, value: data });
     } catch (e) {}
   }
 
-  loadData() {
+  // ========== SERVIDOR (fonte da verdade) ==========
+
+  async _pullFromServer() {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) {
-        const initial = JSON.parse(JSON.stringify(DEFAULT_DATA));
-        this.saveData(initial);
-        return initial;
-      }
-
-      const parsed = JSON.parse(raw);
-
-      // Validação de integridade do objeto
-      if (!parsed || typeof parsed !== 'object' || !parsed.employees || !Array.isArray(parsed.employees) || parsed.employees.length === 0) {
-        const fallback = JSON.parse(JSON.stringify(DEFAULT_DATA));
-        this.saveData(fallback);
-        return fallback;
-      }
-
-      // Garantia de integridade para cada funcionário (migração de dados antigos)
-      parsed.employees.forEach(emp => {
-        if (!emp.entries || !Array.isArray(emp.entries)) emp.entries = [];
-        if (!emp.completedCyclesHistory || !Array.isArray(emp.completedCyclesHistory)) emp.completedCyclesHistory = [];
-        if (!emp.stopwatch || typeof emp.stopwatch !== 'object') {
-          emp.stopwatch = { isRunning: false, startTime: null, accumulatedMs: 0 };
-        }
-
-        // Se o nome no LocalStorage for de mocks antigos, atualiza para os funcionários reais
-        if (emp.name === 'Rian Souza') {
-          emp.name = 'Eduardo';
-          emp.avatar = 'ED';
-        }
-        if (emp.name === 'João Silva') {
-          emp.name = 'Públio';
-          emp.avatar = 'PB';
-        }
+      const response = await fetch(API_URL, {
+        cache: 'no-store',
+        headers: { 'Cache-Control': 'no-cache' }
       });
-
-      return parsed;
-    } catch (e) {
-      console.error('Erro ao carregar dados do LocalStorage, usando padrão:', e);
-      const fallback = JSON.parse(JSON.stringify(DEFAULT_DATA));
-      this.saveData(fallback);
-      return fallback;
+      if (!response.ok) {
+        console.log('Servidor não disponível (status ' + response.status + '). Usando dados locais.');
+        return;
+      }
+      const serverData = await response.json();
+      if (serverData && serverData.employees && Array.isArray(serverData.employees) && serverData.employees.length > 0) {
+        this.serverAvailable = true;
+        // Servidor é a fonte da verdade — seus dados prevalecem
+        // Preservar tema e activeEmployeeId locais (preferências de cada dispositivo)
+        const localTheme = this.data.theme;
+        const localActiveId = this.data.activeEmployeeId;
+        this.data = serverData;
+        this.data.theme = localTheme || serverData.theme || 'dark';
+        this.data.activeEmployeeId = localActiveId || serverData.activeEmployeeId;
+        this._saveLocal();
+        this._saveToIndexedDB(this.data);
+        // Re-renderizar se UI já estiver disponível
+        if (window.ui) window.ui.renderAll();
+        console.log('✅ Dados sincronizados do servidor com sucesso.');
+      } else if (serverData && serverData.status === 'empty') {
+        // Servidor vazio — enviar dados locais como seed inicial
+        this.serverAvailable = true;
+        await this._pushToServer();
+        console.log('📤 Dados locais enviados ao servidor como seed inicial.');
+      }
+    } catch (err) {
+      console.log('Servidor offline ou inacessível. Operando com dados locais.');
     }
   }
+
+  async _pushToServer() {
+    if (!this.serverAvailable) {
+      // Tentar mesmo assim — pode ser a primeira vez
+      try {
+        const res = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(this.data)
+        });
+        if (res.ok) {
+          this.serverAvailable = true;
+          console.log('✅ Dados enviados ao servidor.');
+        }
+      } catch (e) {}
+      return;
+    }
+    try {
+      await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(this.data)
+      });
+    } catch (e) {
+      console.log('Falha ao enviar dados ao servidor (offline?).');
+    }
+  }
+
+  // ========== SAVE CENTRAL (grava em tudo) ==========
 
   saveData(data = this.data) {
-    try {
-      this.data = data;
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-      this.saveToIndexedDB(data);
-    } catch (e) {
-      console.error('Erro ao salvar dados no LocalStorage:', e);
-    }
+    this.data = data;
+    this._saveLocal();
+    this._saveToIndexedDB(data);
+    this._pushToServer();
   }
 
-  // --- MÉTODOS DE FUNCIONÁRIO ---
+  // ========== MÉTODOS DE FUNCIONÁRIO ==========
 
   getEmployees() {
     return this.data.employees || [];
@@ -180,32 +214,19 @@ class Store {
   }
 
   addEmployee(name, role, targetHours = 40, color = '#6366f1') {
-    const initials = name
-      .trim()
-      .split(' ')
-      .filter(Boolean)
-      .map(n => n[0])
-      .join('')
-      .substring(0, 2)
-      .toUpperCase() || 'FN';
-
+    const initials = name.trim().split(' ').filter(Boolean).map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'FN';
     const newEmp = {
       id: 'emp-' + Date.now(),
       name: name.trim(),
       role: role.trim() || 'Funcionário',
       targetHours: parseInt(targetHours, 10) || 40,
-      color: color,
+      color,
       avatar: initials,
-      stopwatch: {
-        isRunning: false,
-        startTime: null,
-        accumulatedMs: 0
-      },
+      stopwatch: { isRunning: false, startTime: null, accumulatedMs: 0 },
       entries: [],
       completedCyclesCount: 0,
       completedCyclesHistory: []
     };
-
     this.data.employees.push(newEmp);
     this.data.activeEmployeeId = newEmp.id;
     this.saveData();
@@ -217,14 +238,7 @@ class Store {
     if (emp) {
       Object.assign(emp, updatedFields);
       if (updatedFields.name) {
-        emp.avatar = updatedFields.name
-          .trim()
-          .split(' ')
-          .filter(Boolean)
-          .map(n => n[0])
-          .join('')
-          .substring(0, 2)
-          .toUpperCase();
+        emp.avatar = updatedFields.name.trim().split(' ').filter(Boolean).map(n => n[0]).join('').substring(0, 2).toUpperCase();
       }
       this.saveData();
     }
@@ -241,7 +255,7 @@ class Store {
     this.saveData();
   }
 
-  // --- MÉTODOS DE LANÇAMENTOS / HISTÓRICO ---
+  // ========== LANÇAMENTOS / HISTÓRICO ==========
 
   addEntry(employeeId, { hours, minutes, date, type = 'manual', description = '' }) {
     const emp = this.data.employees.find(e => e.id === employeeId);
@@ -250,7 +264,6 @@ class Store {
     const h = parseInt(hours, 10) || 0;
     const m = parseInt(minutes, 10) || 0;
     const totalMinutes = h * 60 + m;
-
     if (totalMinutes <= 0) return null;
 
     let validIsoDate;
@@ -276,14 +289,10 @@ class Store {
     };
 
     if (!emp.entries || !Array.isArray(emp.entries)) emp.entries = [];
-    emp.entries.unshift(entry); // Adiciona no início do histórico
+    emp.entries.unshift(entry);
 
     if (!this.data.undoStack) this.data.undoStack = [];
-    this.data.undoStack.push({
-      action: 'add_entry',
-      employeeId,
-      entry
-    });
+    this.data.undoStack.push({ action: 'add_entry', employeeId, entry });
 
     this.saveData();
     return entry;
@@ -308,7 +317,6 @@ class Store {
         if (!isNaN(d.getTime())) entry.date = d.toISOString();
       } catch (e) {}
     }
-
     if (description !== undefined) entry.description = description.trim();
 
     this.saveData();
@@ -323,12 +331,7 @@ class Store {
     if (index !== -1) {
       const removed = emp.entries.splice(index, 1)[0];
       if (!this.data.undoStack) this.data.undoStack = [];
-      this.data.undoStack.push({
-        action: 'delete_entry',
-        employeeId,
-        entry: removed,
-        index
-      });
+      this.data.undoStack.push({ action: 'delete_entry', employeeId, entry: removed, index });
       this.saveData();
       return removed;
     }
@@ -355,7 +358,7 @@ class Store {
     return null;
   }
 
-  // --- MÉTODOS DE CÁLCULO DE HORAS ---
+  // ========== CÁLCULO DE HORAS ==========
 
   getEmployeeTotalMinutes(employeeId) {
     const emp = this.data.employees.find(e => e.id === employeeId);
@@ -372,13 +375,7 @@ class Store {
     const remainingMinutes = Math.max(0, targetMinutes - totalMinutes);
     const percent = Math.min(100, Math.round((totalMinutes / targetMinutes) * 100));
 
-    return {
-      totalMinutes,
-      targetMinutes,
-      remainingMinutes,
-      percent,
-      isCompleted: totalMinutes >= targetMinutes
-    };
+    return { totalMinutes, targetMinutes, remainingMinutes, percent, isCompleted: totalMinutes >= targetMinutes };
   }
 
   completeCycle(employeeId) {
@@ -399,13 +396,12 @@ class Store {
     emp.completedCyclesCount = (emp.completedCyclesCount || 0) + 1;
     if (!emp.completedCyclesHistory) emp.completedCyclesHistory = [];
     emp.completedCyclesHistory.push(cycleRecord);
-    // Limpa apenas entradas ativas do ciclo atual para o próximo ciclo
     emp.entries = [];
     this.saveData();
     return cycleRecord;
   }
 
-  // --- PERSISTÊNCIA DO CRONÔMETRO ---
+  // ========== CRONÔMETRO ==========
 
   updateStopwatch(employeeId, stopwatchState) {
     const emp = this.data.employees.find(e => e.id === employeeId);
@@ -415,20 +411,14 @@ class Store {
     }
   }
 
-  // --- TEMA E BACKUP ---
+  // ========== TEMA ==========
 
-  getTheme() {
-    return this.data.theme || 'dark';
-  }
+  getTheme() { return this.data.theme || 'dark'; }
+  setTheme(theme) { this.data.theme = theme; this.saveData(); }
 
-  setTheme(theme) {
-    this.data.theme = theme;
-    this.saveData();
-  }
+  // ========== BACKUP ==========
 
-  exportBackup() {
-    return JSON.stringify(this.data, null, 2);
-  }
+  exportBackup() { return JSON.stringify(this.data, null, 2); }
 
   importBackup(jsonString) {
     try {
