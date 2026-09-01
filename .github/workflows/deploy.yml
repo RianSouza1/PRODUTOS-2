@@ -753,6 +753,8 @@ jobs:
               - 'piano-nl-members/**'
             piano-bg-members:
               - 'piano-bg-members/**'
+            piano-sv-members:
+              - 'piano-sv-members/**'
             guitar-fi-members:
               - 'guitar-fi-members/**'
             guitar-cs-members:
@@ -1134,6 +1136,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/piano-da-m
             sudo mkdir -p /var/www/skillvault.blog/piano-nl-m
             sudo mkdir -p /var/www/skillvault.blog/piano-bg-m
+            sudo mkdir -p /var/www/skillvault.blog/piano-sv-m
             sudo mkdir -p /var/www/skillvault.blog/word-hu-m
             sudo mkdir -p /var/www/skillvault.blog/word-he-m
             sudo mkdir -p /var/www/skillvault.blog/word-el-m
@@ -4108,6 +4111,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "piano-bg-members/*"
           target: "/var/www/skillvault.blog/piano-bg-m"
+          strip_components: 1
+
+      - name: Deploy 'piano-sv-members' to skillvault.blog/piano-sv-m
+        if: steps.filter.outputs.piano-sv-members == 'true' || steps.filter.outputs['piano-sv-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "piano-sv-members/*"
+          target: "/var/www/skillvault.blog/piano-sv-m"
           strip_components: 1
 
       - name: Deploy 'guitar-fi-members' to skillvault.blog/guitar-fi-m
@@ -7724,6 +7738,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "piano-bg-members/*"
           target: "/var/www/skillvault.blog/piano-bg-m"
+          strip_components: 1
+
+      - name: Deploy 'piano-sv-members' to skillvault.blog/piano-sv-m
+        if: steps.filter.outputs.piano-sv-members == 'true' || steps.filter.outputs['piano-sv-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "piano-sv-members/*"
+          target: "/var/www/skillvault.blog/piano-sv-m"
           strip_components: 1
 
       - name: Deploy 'guitar-fi-members' to skillvault.blog/guitar-fi-m
