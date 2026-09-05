@@ -1,21 +1,10 @@
-﻿/**
+/**
  * APP CORE ENGINE
  * ÁREA DE MEMBROS (Mobile First & Senior Friendly)
  * Vojaška Kalistenika za Moške — Slovenščina
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-
-  window.toggleActiveYtPlay = function() {
-    if (window.activeYtPlayer && typeof window.activeYtPlayer.getPlayerState === 'function') {
-      const state = window.activeYtPlayer.getPlayerState();
-      if (state === YT.PlayerState.PLAYING) {
-        window.activeYtPlayer.pauseVideo();
-      } else {
-        window.activeYtPlayer.playVideo();
-      }
-    }
-  };
 
   // ----------------------------------------------------------------------
   // 0. REFERÊNCIAS DO DOM ENCAPSULADAS
@@ -40,84 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.lucide) {
       lucide.createIcons();
     }
-  }
-
-  // Inject YouTube Iframe API globally
-  if (!document.getElementById("yt-api-script")) {
-    const tag = document.createElement('script');
-    tag.id = "yt-api-script";
-    tag.src = "https://www.youtube.com/iframe_api";
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  }
-  window.activeYtPlayer = null;
-
-  // Fullscreen CSS injections
-  if (!document.getElementById("fullscreen-css")) {
-      const style = document.createElement('style');
-      style.id = "fullscreen-css";
-      style.textContent = `
-          .video-wrapper-container:fullscreen {
-              background: #000 !important;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-          }
-          .video-wrapper-container:fullscreen > div[id^="yt-player-"] {
-              height: calc(100vh - 68px) !important;
-              flex-grow: 1;
-          }
-          .video-wrapper-container:-webkit-full-screen {
-              background: #000 !important;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-          }
-          .video-wrapper-container:-webkit-full-screen > div[id^="yt-player-"] {
-              height: calc(100vh - 68px) !important;
-              flex-grow: 1;
-          }
-      `;
-      document.head.appendChild(style);
-  }
-
-  window.toggleCustomFullscreen = function(elementId) {
-      const container = document.getElementById(elementId);
-      if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-          if (container.requestFullscreen) {
-              container.requestFullscreen();
-          } else if (container.webkitRequestFullscreen) {
-              container.webkitRequestFullscreen();
-          } else if (container.msRequestFullscreen) {
-              container.msRequestFullscreen();
-          }
-      } else {
-          if (document.exitFullscreen) {
-              document.exitFullscreen();
-          } else if (document.webkitExitFullscreen) {
-              document.webkitExitFullscreen();
-          } else if (document.msExitFullscreen) {
-              document.msExitFullscreen();
-          }
-      }
-  };
-
-  document.addEventListener('fullscreenchange', handleFsUpdate);
-  document.addEventListener('webkitfullscreenchange', handleFsUpdate);
-  document.addEventListener('mozfullscreenchange', handleFsUpdate);
-  document.addEventListener('MSFullscreenChange', handleFsUpdate);
-
-  function handleFsUpdate() {
-      const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
-      document.querySelectorAll('.video-custom-controls').forEach(bar => {
-          const btn = bar.querySelector('.ctrl-btn-fs');
-          if (btn) {
-              btn.innerHTML = isFs 
-                  ? `<i data-lucide="minimize" style="width: 22px; height: 22px; color: #ffffff;"></i><span>Pomanjšaj</span>`
-                  : `<i data-lucide="maximize" style="width: 22px; height: 22px; color: #ffffff;"></i><span>Celozaslonski način</span>`;
-          }
-      });
-      renderIcons();
   }
 
   function initGlobalConfig() {
@@ -146,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderLivros();
         break;
       case "#videos":
-        renderLivros();
+        renderVideos();
         break;
       case "#produtos":
         renderOutrosProdutos();
@@ -214,6 +125,16 @@ document.addEventListener("DOMContentLoaded", () => {
               <div>
                  <div class="home-block-title">Knjige</div>
                  <div class="home-block-subtitle">Knjige & PDF Gradiva</div>
+              </div>
+            </a>
+
+            <a href="#videos" class="home-block glass-panel">
+              <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
+                 <i data-lucide="play-circle"></i>
+              </div>
+              <div>
+                 <div class="home-block-title">Videoposnetki</div>
+                 <div class="home-block-subtitle">Vadbeni Video Posnetki</div>
               </div>
             </a>
 
@@ -312,6 +233,104 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       `;
+  }
+
+  // TELA: VIDEOS
+  function renderVideos() {
+    const allVideos = APP_DATA.videos || [];
+    const safeVideo = allVideos.find(v => v.id === currentVideoId) || allVideos[0] || null;
+
+    rootEl.innerHTML = `
+      <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
+      <div class="playlist-container" style="padding: 24px var(--safe-padding);">
+        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1>Vadbeni Videoposnetki</h1><p>Vojaške vaje z lastno telesno težo in pravilna tehnika za moške 40+.</p></div></div>
+        
+        <div style="background-color: rgba(16, 185, 129, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
+           <i data-lucide="check-circle" style="width: 20px; height: 20px; flex-shrink: 0; color: #10B981;"></i>
+           <span>Kliknite na vajo za ogled demonstracijskega videoposnetka</span>
+        </div>
+
+        <div id="video-playlist-items">
+        </div>
+      </div>
+        </div>
+      `;
+
+    if (safeVideo) {
+      attachPlaylistEvents(allVideos, safeVideo.id);
+    }
+  }
+
+  function attachPlaylistEvents(videosArray, activeVideoId) {
+    const playlistEl = document.getElementById("video-playlist-items");
+    if (!playlistEl) return;
+
+    const playlistHtml = videosArray.map((vid, index) => {
+      const isPlaying = vid.id === activeVideoId;
+      const vidSrc = vid.videoUrl;
+
+      return `
+      <div class="card-bloco play-item glass-panel ${isPlaying ? 'active-play' : ''}" style="margin-bottom:16px; display:flex; flex-direction:column; padding:0; overflow:hidden;" data-video-id="${vid.id}">
+            
+            <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit; align-items:center; gap:12px;">
+              <div style="width:36px;height:36px;background:${isPlaying ? 'var(--primary)' : 'var(--primary-light)'};border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i data-lucide="${isPlaying ? 'play' : 'play-circle'}" style="width:18px;height:18px;color:${isPlaying ? '#FFF' : 'var(--primary)'};"></i>
+              </div>
+              <div style="display:flex; flex-direction:column; justify-content:center; flex:1; min-width:0;">
+                 <h4 style="margin:0 0 4px; font-size:1.05rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'};">${vid.title}</h4>
+                 <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                   <span style="margin:0; font-size:0.82rem; color:var(--text-muted); font-weight:600;">${vid.duration || '0:25'}</span>
+                   ${vid.category ? `<span style="font-size:0.75rem; background:rgba(0,0,0,0.05); padding:2px 8px; border-radius:12px; color:var(--text-muted);">${vid.category}</span>` : ''}
+                 </div>
+              </div>
+              ${isPlaying
+          ? '<i data-lucide="chevron-down" style="color:var(--primary); align-self:center; flex-shrink:0;"></i>'
+          : '<i data-lucide="chevron-right" style="opacity:0.35; align-self:center; flex-shrink:0;"></i>'}
+            </a>
+            
+      ${isPlaying ? `
+              <div class="play-item-body" style="padding: 0 16px 16px 16px; animation: slideDown 0.3s ease;">
+                 <div style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); max-height: 480px; margin: 0 auto;">
+                    <video 
+                       src="${vidSrc}" 
+                       controls 
+                       autoplay 
+                       playsinline 
+                       controlsList="nodownload" 
+                       style="width: 100%; max-height: 480px; display: block; object-fit: contain; border-radius: 12px; background: #000;">
+                    </video>
+                 </div>
+                 ${vid.obs ? `
+                 <div style="margin-top: 10px; padding: 10px 14px; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-light); font-size: 0.88rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
+                    <i data-lucide="info" style="width: 16px; height: 16px; color: var(--primary); flex-shrink: 0;"></i>
+                    <span><strong>Napotek:</strong> ${vid.obs}</span>
+                 </div>
+                 ` : ''}
+              </div>
+            ` : ''}
+      </div>
+    `;
+    }).join('');
+
+    playlistEl.innerHTML = playlistHtml;
+    renderIcons();
+
+    // Eventos de clique na playlist
+    const listHeaders = playlistEl.querySelectorAll(".play-item-header");
+    listHeaders.forEach(header => {
+      header.addEventListener("click", () => {
+        const item = header.closest('.play-item');
+        const clickedId = item.getAttribute("data-video-id");
+        if (clickedId !== currentVideoId) {
+          currentVideoId = clickedId;
+          renderVideos();
+          setTimeout(() => {
+            const activeNode = document.querySelector('.active-play');
+            if (activeNode) activeNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 50);
+        }
+      });
+    });
   }
 
   // TELA: OTHER PRODUCTS

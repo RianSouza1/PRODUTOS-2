@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sl">
 
 <head>
@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="core.css?v=1">
+    <link rel="stylesheet" href="core.css?v=2">
 </head>
 
 <body>
@@ -25,6 +25,7 @@
             <p>Vaš premijski dostop je bil potrjen.<br>Začnite z 28-dnevnim vojaškim programom vadbe za moške 40+ še danes.</p>
             <div class="pre-page-features">
                 <span>📖 Knjige</span>
+                <span>🎬 Videoposnetki</span>
                 <span>💬 Podpora</span>
             </div>
             <button onclick="let el=document.getElementById('pre-page'); el.style.opacity='0'; setTimeout(()=>el.style.display='none',600);">
@@ -54,6 +55,10 @@
                 <i data-lucide="book-open"></i>
                 <span>Knjige</span>
             </a>
+            <a href="#videos" class="tab-item" data-tab="videos">
+                <i data-lucide="play-circle"></i>
+                <span>Videoposnetki</span>
+            </a>
             <a href="#contato" class="tab-item" data-tab="contato">
                 <i data-lucide="message-square"></i>
                 <span>Podpora</span>
@@ -61,9 +66,9 @@
         </nav>
     </div>
 
-    <script src="data.js?v=1"></script>
-    <script src="app.js?v=1"></script>
+    <script src="data.js?v=2"></script>
+    <script src="app.js?v=2"></script>
 
 </body>
-<!-- Deploy v1.0.1 -->
+<!-- Deploy v1.0.2 -->
 </html>

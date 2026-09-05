@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Vojaška Kalistenika za Moške — Območje za Člane (Slovenščina)
  */
 
@@ -11,7 +11,72 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+        {
+                "id": "v1",
+                "title": "Klasične Sklece (Moč Zgornjega Dela)",
+                "duration": "0:25 • Osnovna tehnika",
+                "category": "Moč & Prsni Koš",
+                "obs": "Prikaz s strani s pravilno poravnavo hrbtenice in komolcev.",
+                "videoUrl": "https://videos.pexels.com/video-files/6893306/6893306-hd_1920_1080_25fps.mp4"
+        },
+        {
+                "id": "v2",
+                "title": "Stranska Deska (Plank) za Trup",
+                "duration": "0:20 • Stabilnost & Trup",
+                "category": "Stabilnost & Trup",
+                "obs": "Krepitev stranskih trebušnih mišic in stabilnost sklepov.",
+                "videoUrl": "https://videos.pexels.com/video-files/6023266/6023266-hd_1920_1080_25fps.mp4"
+        },
+        {
+                "id": "v3",
+                "title": "Stabilizacija na Štirih Točkah (Bird-Dog)",
+                "duration": "0:30 • Varna vaja za hrbet",
+                "category": "Drža & Hrbtenica",
+                "obs": "Odlično za razbremenitev hrbtenice in aktivacijo globokih trebušnih mišic.",
+                "videoUrl": "https://videos.pexels.com/video-files/9058239/9058239-hd_1920_1080_25fps.mp4"
+        },
+        {
+                "id": "v4",
+                "title": "Poskoki z Odročenjem (Vojaški Kardio)",
+                "duration": "0:15 • Vzdržljivost & Izgorevanje",
+                "category": "Ogrevanje & Kardio",
+                "obs": "Kardiovaskularna aktivacija in ogrevanje celotnega telesa.",
+                "videoUrl": "https://videos.pexels.com/video-files/7299359/7299359-uhd_2160_3840_30fps.mp4"
+        },
+        {
+                "id": "v5",
+                "title": "Kroženje s Kolki & Gibljivost Sklepov",
+                "duration": "0:25 • Gibčnost kolkov",
+                "category": "Gibljivost Sklepov",
+                "obs": "Sproščanje kolčnega sklepa za večji obseg gibanja.",
+                "videoUrl": "https://videos.pexels.com/video-files/9058019/9058019-hd_1920_1080_25fps.mp4"
+        },
+        {
+                "id": "v6",
+                "title": "Razteg Zadnje Lože & Dotik Prstov",
+                "duration": "0:20 • Raztezanje & Regeneracija",
+                "category": "Raztezanje & Prožnost",
+                "obs": "Raztezanje stegenskih mišic in preprečevanje bolečin v hrbtu.",
+                "videoUrl": "https://videos.pexels.com/video-files/6891847/6891847-hd_1920_1080_25fps.mp4"
+        },
+        {
+                "id": "v7",
+                "title": "Gibljivost Ramen & Prsnega Koša",
+                "duration": "0:20 • Sprostitev ramen",
+                "category": "Gibljivost Zgornjega Dela",
+                "obs": "Odpiranje prsnega koša in sprostitev napetosti v ramenih.",
+                "videoUrl": "https://videos.pexels.com/video-files/7319946/7319946-hd_1920_1080_25fps.mp4"
+        },
+        {
+                "id": "v8",
+                "title": "Viseča Držana na Drogu (Dead Hang)",
+                "duration": "0:20 • Razbremenitev hrbtenice",
+                "category": "Moč Oprijema & Hrbtenica",
+                "obs": "Razbremenitev hrbtenice in krepitev podlakti.",
+                "videoUrl": "https://videos.pexels.com/video-files/10476557/10476557-uhd_4096_2160_25fps.mp4"
+        }
+],
 
     books: [
         {
