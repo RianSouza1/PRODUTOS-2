@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initGlobalConfig() {
     if (APP_DATA.config) {
-      brandTitle.innerText = APP_DATA.config.brandName || "Akustisk Guitar Mastery";
+      brandTitle.innerText = APP_DATA.config.brandName || "Den Komplette Klaversamling";
     }
   }
 
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderLivros();
         break;
       case "#videos":
-        renderVideos();
+        renderLivros();
         break;
       case "#produtos":
         renderOutrosProdutos();
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     rootEl.insertAdjacentHTML('beforeend', `
        <footer class="app-footer" style="text-align:center; font-size:0.75rem; font-weight: 500; color:#6B7280; padding: 2rem 1rem 1.5rem; letter-spacing: 0.5px;">
-         &copy; 2026 ${APP_DATA.config.brandName || "Akustisk Guitar Mastery"}. Alle rettigheder forbeholdes.
+         &copy; 2026 ${APP_DATA.config.brandName || "Den Komplette Klaversamling"}. Alle rettigheder forbeholdes.
        </footer>
     `);
 
@@ -235,16 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
                  <div class="home-block-subtitle">Bøger & PDF Materialer</div>
               </div>
             </a>
-            
-            <a href="#videos" class="home-block glass-panel">
-              <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
-                 <i data-lucide="play-circle"></i>
-              </div>
-              <div>
-                 <div class="home-block-title">Videoer</div>
-                 <div class="home-block-subtitle">Videolektioner & Guides</div>
-              </div>
-            </a>
 
             <a href="#contato" class="home-block glass-panel">
               <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
@@ -275,8 +265,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
       <div class="premium-book-card">
             <div class="premium-badge-wrapper">
-               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIAL'}</span>
-               <span class="premium-format">PDF • Downloadbart Dokument</span>
+               <span class="premium-badge" style="background-color: ${bk.badgeColor || 'var(--primary)'}">${bk.badgeText || 'SPECIEL'}</span>
+               <span class="premium-format">PDF • Dokument til download</span>
             </div>
            
            <div class="premium-info">
@@ -328,7 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="hero-card glass-panel"><div class="hero-text"><h1>Dine Materialer</h1><p>Klik på samlingerne nedenfor for at se og downloade dine bøger.</p></div></div>
           
           <div class="premium-hero-cover-container" style="text-align: center; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-light); box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 480px; margin-left: auto; margin-right: auto;">
-              <img src="assets/covers/gui_IMG1_da.png" alt="${APP_DATA.config.brandName || "Akustisk Guitar Mastery"}" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+              <img src="assets/covers/piano_IMG1_da.png" alt="${APP_DATA.config.brandName || "Den Komplette Klaversamling"}" style="max-width: 260px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
           </div>
 
           <div class="list-container">

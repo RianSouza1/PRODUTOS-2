@@ -569,6 +569,8 @@ jobs:
               - 'smoking-sr-members/**'
             homerepair-en-members:
               - 'homerepair-en-members/**'
+            homerepair-es-members:
+              - 'homerepair-es-members/**'
             homerepair-de-members:
               - 'homerepair-de-members/**'
             homerepair-it-members:
@@ -681,6 +683,14 @@ jobs:
               - 'calistenia-nl-members/**'
             calis-man-nl-members:
               - 'calis-man-nl-members/**'
+            calis-man-sl-members:
+              - 'calis-man-sl-members/**'
+            calis-man-sv-members:
+              - 'calis-man-sv-members/**'
+            calis-man-cs-members:
+              - 'calis-man-cs-members/**'
+            calis-man-es-members:
+              - 'calis-man-es-members/**'
             calistenia-es-members:
               - 'calistenia-es-members/**'
             calistenia-da-members:
@@ -751,6 +761,18 @@ jobs:
               - 'guitar-da-members/**'
             piano-da-members:
               - 'piano-da-members/**'
+            piano-nl-members:
+              - 'piano-nl-members/**'
+            piano-bg-members:
+              - 'piano-bg-members/**'
+            piano-sv-members:
+              - 'piano-sv-members/**'
+            piano-de-members:
+              - 'piano-de-members/**'
+            anti-sv-members:
+              - 'anti-sv-members/**'
+            drums-es-members:
+              - 'drums-es-members/**'
             guitar-fi-members:
               - 'guitar-fi-members/**'
             guitar-cs-members:
@@ -1022,6 +1044,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/smoking-sl-m
             sudo mkdir -p /var/www/skillvault.blog/smoking-sr-m
             sudo mkdir -p /var/www/skillvault.blog/homerepair-en-m
+            sudo mkdir -p /var/www/skillvault.blog/homerepair-es-m
             sudo mkdir -p /var/www/skillvault.blog/homerepair-de-m
             sudo mkdir -p /var/www/skillvault.blog/homerepair-it-m
             sudo mkdir -p /var/www/skillvault.blog/homerepair-nl-m
@@ -1089,6 +1112,10 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/calistenia-da-m
             sudo mkdir -p /var/www/skillvault.blog/calistenia-de-m
             sudo mkdir -p /var/www/skillvault.blog/calis-man-nl-m
+            sudo mkdir -p /var/www/skillvault.blog/calis-man-sl-m
+            sudo mkdir -p /var/www/skillvault.blog/calis-man-sv-m
+            sudo mkdir -p /var/www/skillvault.blog/calis-man-cs-m
+            sudo mkdir -p /var/www/skillvault.blog/calis-man-es-m
             sudo mkdir -p /var/www/skillvault.blog/calistenia-man-nl-m
             sudo mkdir -p /var/www/skillvault.blog/marmita-m
             sudo mkdir -p /var/www/skillvault.blog/historinhas-m
@@ -1133,6 +1160,14 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/guitar-hr-m
             sudo mkdir -p /var/www/skillvault.blog/guitar-bg-m
             sudo mkdir -p /var/www/skillvault.blog/piano-da-m
+            sudo mkdir -p /var/www/skillvault.blog/piano-nl-m
+            sudo mkdir -p /var/www/skillvault.blog/piano-bg-m
+            sudo mkdir -p /var/www/skillvault.blog/piano-sv-m
+            sudo mkdir -p /var/www/skillvault.blog/piano-de-m
+            sudo mkdir -p /var/www/skillvault.blog/anti-sv-m
+            sudo mkdir -p /var/www/skillvault.blog/inflam-sv-m
+            sudo mkdir -p /var/www/skillvault.blog/drums-es-m
+            sudo mkdir -p /var/www/skillvault.blog/bateria-es-m
             sudo mkdir -p /var/www/skillvault.blog/word-hu-m
             sudo mkdir -p /var/www/skillvault.blog/word-he-m
             sudo mkdir -p /var/www/skillvault.blog/word-el-m
@@ -3667,7 +3702,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'calis-man-nl-members' to skillvault.blog/calis-man-nl-m
-        if: steps.filter.outputs['calis-man-nl-members'] == 'true'
+        if: steps.filter.outputs.calis-man-nl-members == 'true' || steps.filter.outputs['calis-man-nl-members'] == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -3675,6 +3710,50 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "calis-man-nl-members/*"
           target: "/var/www/skillvault.blog/calis-man-nl-m"
+          strip_components: 1
+
+      - name: Deploy 'calis-man-sl-members' to skillvault.blog/calis-man-sl-m
+        if: steps.filter.outputs.calis-man-sl-members == 'true' || steps.filter.outputs['calis-man-sl-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calis-man-sl-members/*"
+          target: "/var/www/skillvault.blog/calis-man-sl-m"
+          strip_components: 1
+
+      - name: Deploy 'calis-man-sv-members' to skillvault.blog/calis-man-sv-m
+        if: steps.filter.outputs.calis-man-sv-members == 'true' || steps.filter.outputs['calis-man-sv-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calis-man-sv-members/*"
+          target: "/var/www/skillvault.blog/calis-man-sv-m"
+          strip_components: 1
+
+      - name: Deploy 'calis-man-cs-members' to skillvault.blog/calis-man-cs-m
+        if: steps.filter.outputs.calis-man-cs-members == 'true' || steps.filter.outputs['calis-man-cs-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calis-man-cs-members/*"
+          target: "/var/www/skillvault.blog/calis-man-cs-m"
+          strip_components: 1
+
+      - name: Deploy 'calis-man-es-members' to skillvault.blog/calis-man-es-m
+        if: steps.filter.outputs.calis-man-es-members == 'true' || steps.filter.outputs['calis-man-es-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calis-man-es-members/*"
+          target: "/var/www/skillvault.blog/calis-man-es-m"
           strip_components: 1
 
       - name: Deploy 'calistenia-es-members' to skillvault.blog/calistenia-es-m
@@ -3840,6 +3919,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "homerepair-el-members/*"
           target: "/var/www/skillvault.blog/homerepair-el-m"
+          strip_components: 1
+
+      - name: Deploy 'homerepair-es-members' to skillvault.blog/homerepair-es-m
+        if: steps.filter.outputs.homerepair-es-members == 'true' || steps.filter.outputs['homerepair-es-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "homerepair-es-members/*"
+          target: "/var/www/skillvault.blog/homerepair-es-m"
           strip_components: 1
 
       - name: Deploy 'word-nl-members' to skillvault.blog/word-nl-m
@@ -4148,6 +4238,94 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "piano-da-members/*"
           target: "/var/www/skillvault.blog/piano-da-m"
+          strip_components: 1
+
+      - name: Deploy 'piano-nl-members' to skillvault.blog/piano-nl-m
+        if: steps.filter.outputs.piano-nl-members == 'true' || steps.filter.outputs['piano-nl-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "piano-nl-members/*"
+          target: "/var/www/skillvault.blog/piano-nl-m"
+          strip_components: 1
+
+      - name: Deploy 'piano-bg-members' to skillvault.blog/piano-bg-m
+        if: steps.filter.outputs.piano-bg-members == 'true' || steps.filter.outputs['piano-bg-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "piano-bg-members/*"
+          target: "/var/www/skillvault.blog/piano-bg-m"
+          strip_components: 1
+
+      - name: Deploy 'piano-sv-members' to skillvault.blog/piano-sv-m
+        if: steps.filter.outputs.piano-sv-members == 'true' || steps.filter.outputs['piano-sv-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "piano-sv-members/*"
+          target: "/var/www/skillvault.blog/piano-sv-m"
+          strip_components: 1
+
+      - name: Deploy 'piano-de-members' to skillvault.blog/piano-de-m
+        if: steps.filter.outputs.piano-de-members == 'true' || steps.filter.outputs['piano-de-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "piano-de-members/*"
+          target: "/var/www/skillvault.blog/piano-de-m"
+          strip_components: 1
+
+      - name: Deploy 'anti-sv-members' to skillvault.blog/anti-sv-m
+        if: steps.filter.outputs.anti-sv-members == 'true' || steps.filter.outputs['anti-sv-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "anti-sv-members/*"
+          target: "/var/www/skillvault.blog/anti-sv-m"
+          strip_components: 1
+
+      - name: Deploy 'anti-sv-members' to skillvault.blog/inflam-sv-m
+        if: steps.filter.outputs.anti-sv-members == 'true' || steps.filter.outputs['anti-sv-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "anti-sv-members/*"
+          target: "/var/www/skillvault.blog/inflam-sv-m"
+          strip_components: 1
+
+      - name: Deploy 'drums-es-members' to skillvault.blog/drums-es-m
+        if: steps.filter.outputs.drums-es-members == 'true' || steps.filter.outputs['drums-es-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "drums-es-members/*"
+          target: "/var/www/skillvault.blog/drums-es-m"
+          strip_components: 1
+
+      - name: Deploy 'drums-es-members' to skillvault.blog/bateria-es-m
+        if: steps.filter.outputs.drums-es-members == 'true' || steps.filter.outputs['drums-es-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "drums-es-members/*"
+          target: "/var/www/skillvault.blog/bateria-es-m"
           strip_components: 1
 
       - name: Deploy 'guitar-fi-members' to skillvault.blog/guitar-fi-m
@@ -6723,6 +6901,17 @@ jobs:
           target: "/var/www/skillvault.blog/homerepair-en-m"
           strip_components: 1
 
+      - name: Deploy 'homerepair-es-members' to skillvault.blog/homerepair-es-m
+        if: steps.filter.outputs.homerepair-es-members == 'true' || steps.filter.outputs['homerepair-es-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "homerepair-es-members/*"
+          target: "/var/www/skillvault.blog/homerepair-es-m"
+          strip_components: 1
+
       - name: Deploy 'homerepair-de-members' to skillvault.blog/homerepair-de-m
         if: steps.filter.outputs.homerepair-de-members == 'true'
         uses: appleboy/scp-action@v0.1.7
@@ -7261,7 +7450,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'calis-man-nl-members' to skillvault.blog/calis-man-nl-m
-        if: steps.filter.outputs['calis-man-nl-members'] == 'true'
+        if: steps.filter.outputs.calis-man-nl-members == 'true' || steps.filter.outputs['calis-man-nl-members'] == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -7269,6 +7458,50 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "calis-man-nl-members/*"
           target: "/var/www/skillvault.blog/calis-man-nl-m"
+          strip_components: 1
+
+      - name: Deploy 'calis-man-sl-members' to skillvault.blog/calis-man-sl-m
+        if: steps.filter.outputs.calis-man-sl-members == 'true' || steps.filter.outputs['calis-man-sl-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calis-man-sl-members/*"
+          target: "/var/www/skillvault.blog/calis-man-sl-m"
+          strip_components: 1
+
+      - name: Deploy 'calis-man-sv-members' to skillvault.blog/calis-man-sv-m
+        if: steps.filter.outputs.calis-man-sv-members == 'true' || steps.filter.outputs['calis-man-sv-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calis-man-sv-members/*"
+          target: "/var/www/skillvault.blog/calis-man-sv-m"
+          strip_components: 1
+
+      - name: Deploy 'calis-man-cs-members' to skillvault.blog/calis-man-cs-m
+        if: steps.filter.outputs.calis-man-cs-members == 'true' || steps.filter.outputs['calis-man-cs-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calis-man-cs-members/*"
+          target: "/var/www/skillvault.blog/calis-man-cs-m"
+          strip_components: 1
+
+      - name: Deploy 'calis-man-es-members' to skillvault.blog/calis-man-es-m
+        if: steps.filter.outputs.calis-man-es-members == 'true' || steps.filter.outputs['calis-man-es-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calis-man-es-members/*"
+          target: "/var/www/skillvault.blog/calis-man-es-m"
           strip_components: 1
 
       - name: Deploy 'calistenia-es-members' to skillvault.blog/calistenia-es-m
@@ -7434,6 +7667,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "homerepair-el-members/*"
           target: "/var/www/skillvault.blog/homerepair-el-m"
+          strip_components: 1
+
+      - name: Deploy 'homerepair-es-members' to skillvault.blog/homerepair-es-m
+        if: steps.filter.outputs.homerepair-es-members == 'true' || steps.filter.outputs['homerepair-es-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "homerepair-es-members/*"
+          target: "/var/www/skillvault.blog/homerepair-es-m"
           strip_components: 1
 
       - name: Deploy 'word-nl-members' to skillvault.blog/word-nl-m
@@ -7742,6 +7986,94 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "piano-da-members/*"
           target: "/var/www/skillvault.blog/piano-da-m"
+          strip_components: 1
+
+      - name: Deploy 'piano-nl-members' to skillvault.blog/piano-nl-m
+        if: steps.filter.outputs.piano-nl-members == 'true' || steps.filter.outputs['piano-nl-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "piano-nl-members/*"
+          target: "/var/www/skillvault.blog/piano-nl-m"
+          strip_components: 1
+
+      - name: Deploy 'piano-bg-members' to skillvault.blog/piano-bg-m
+        if: steps.filter.outputs.piano-bg-members == 'true' || steps.filter.outputs['piano-bg-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "piano-bg-members/*"
+          target: "/var/www/skillvault.blog/piano-bg-m"
+          strip_components: 1
+
+      - name: Deploy 'piano-sv-members' to skillvault.blog/piano-sv-m
+        if: steps.filter.outputs.piano-sv-members == 'true' || steps.filter.outputs['piano-sv-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "piano-sv-members/*"
+          target: "/var/www/skillvault.blog/piano-sv-m"
+          strip_components: 1
+
+      - name: Deploy 'piano-de-members' to skillvault.blog/piano-de-m
+        if: steps.filter.outputs.piano-de-members == 'true' || steps.filter.outputs['piano-de-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "piano-de-members/*"
+          target: "/var/www/skillvault.blog/piano-de-m"
+          strip_components: 1
+
+      - name: Deploy 'anti-sv-members' to skillvault.blog/anti-sv-m
+        if: steps.filter.outputs.anti-sv-members == 'true' || steps.filter.outputs['anti-sv-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "anti-sv-members/*"
+          target: "/var/www/skillvault.blog/anti-sv-m"
+          strip_components: 1
+
+      - name: Deploy 'anti-sv-members' to skillvault.blog/inflam-sv-m
+        if: steps.filter.outputs.anti-sv-members == 'true' || steps.filter.outputs['anti-sv-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "anti-sv-members/*"
+          target: "/var/www/skillvault.blog/inflam-sv-m"
+          strip_components: 1
+
+      - name: Deploy 'drums-es-members' to skillvault.blog/drums-es-m
+        if: steps.filter.outputs.drums-es-members == 'true' || steps.filter.outputs['drums-es-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "drums-es-members/*"
+          target: "/var/www/skillvault.blog/drums-es-m"
+          strip_components: 1
+
+      - name: Deploy 'drums-es-members' to skillvault.blog/bateria-es-m
+        if: steps.filter.outputs.drums-es-members == 'true' || steps.filter.outputs['drums-es-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "drums-es-members/*"
+          target: "/var/www/skillvault.blog/bateria-es-m"
           strip_components: 1
 
       - name: Deploy 'guitar-fi-members' to skillvault.blog/guitar-fi-m
