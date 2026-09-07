@@ -767,6 +767,8 @@ jobs:
               - 'piano-sv-members/**'
             piano-de-members:
               - 'piano-de-members/**'
+            anti-sv-members:
+              - 'anti-sv-members/**'
             drums-es-members:
               - 'drums-es-members/**'
             guitar-fi-members:
@@ -1157,6 +1159,8 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/piano-bg-m
             sudo mkdir -p /var/www/skillvault.blog/piano-sv-m
             sudo mkdir -p /var/www/skillvault.blog/piano-de-m
+            sudo mkdir -p /var/www/skillvault.blog/anti-sv-m
+            sudo mkdir -p /var/www/skillvault.blog/inflam-sv-m
             sudo mkdir -p /var/www/skillvault.blog/drums-es-m
             sudo mkdir -p /var/www/skillvault.blog/bateria-es-m
             sudo mkdir -p /var/www/skillvault.blog/word-hu-m
@@ -4210,6 +4214,28 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "piano-de-members/*"
           target: "/var/www/skillvault.blog/piano-de-m"
+          strip_components: 1
+
+      - name: Deploy 'anti-sv-members' to skillvault.blog/anti-sv-m
+        if: steps.filter.outputs.anti-sv-members == 'true' || steps.filter.outputs['anti-sv-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "anti-sv-members/*"
+          target: "/var/www/skillvault.blog/anti-sv-m"
+          strip_components: 1
+
+      - name: Deploy 'anti-sv-members' to skillvault.blog/inflam-sv-m
+        if: steps.filter.outputs.anti-sv-members == 'true' || steps.filter.outputs['anti-sv-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "anti-sv-members/*"
+          target: "/var/www/skillvault.blog/inflam-sv-m"
           strip_components: 1
 
       - name: Deploy 'drums-es-members' to skillvault.blog/drums-es-m
@@ -7936,6 +7962,28 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "piano-de-members/*"
           target: "/var/www/skillvault.blog/piano-de-m"
+          strip_components: 1
+
+      - name: Deploy 'anti-sv-members' to skillvault.blog/anti-sv-m
+        if: steps.filter.outputs.anti-sv-members == 'true' || steps.filter.outputs['anti-sv-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "anti-sv-members/*"
+          target: "/var/www/skillvault.blog/anti-sv-m"
+          strip_components: 1
+
+      - name: Deploy 'anti-sv-members' to skillvault.blog/inflam-sv-m
+        if: steps.filter.outputs.anti-sv-members == 'true' || steps.filter.outputs['anti-sv-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "anti-sv-members/*"
+          target: "/var/www/skillvault.blog/inflam-sv-m"
           strip_components: 1
 
       - name: Deploy 'drums-es-members' to skillvault.blog/drums-es-m
