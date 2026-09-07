@@ -685,6 +685,8 @@ jobs:
               - 'calis-man-sl-members/**'
             calis-man-sv-members:
               - 'calis-man-sv-members/**'
+            calis-man-cs-members:
+              - 'calis-man-cs-members/**'
             calistenia-es-members:
               - 'calistenia-es-members/**'
             calistenia-da-members:
@@ -1103,6 +1105,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/calis-man-nl-m
             sudo mkdir -p /var/www/skillvault.blog/calis-man-sl-m
             sudo mkdir -p /var/www/skillvault.blog/calis-man-sv-m
+            sudo mkdir -p /var/www/skillvault.blog/calis-man-cs-m
             sudo mkdir -p /var/www/skillvault.blog/calistenia-man-nl-m
             sudo mkdir -p /var/www/skillvault.blog/marmita-m
             sudo mkdir -p /var/www/skillvault.blog/historinhas-m
@@ -3654,6 +3657,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "calis-man-sv-members/*"
           target: "/var/www/skillvault.blog/calis-man-sv-m"
+          strip_components: 1
+
+      - name: Deploy 'calis-man-cs-members' to skillvault.blog/calis-man-cs-m
+        if: steps.filter.outputs.calis-man-cs-members == 'true' || steps.filter.outputs['calis-man-cs-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calis-man-cs-members/*"
+          target: "/var/www/skillvault.blog/calis-man-cs-m"
           strip_components: 1
 
       - name: Deploy 'calistenia-es-members' to skillvault.blog/calistenia-es-m
@@ -7358,6 +7372,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "calis-man-sv-members/*"
           target: "/var/www/skillvault.blog/calis-man-sv-m"
+          strip_components: 1
+
+      - name: Deploy 'calis-man-cs-members' to skillvault.blog/calis-man-cs-m
+        if: steps.filter.outputs.calis-man-cs-members == 'true' || steps.filter.outputs['calis-man-cs-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calis-man-cs-members/*"
+          target: "/var/www/skillvault.blog/calis-man-cs-m"
           strip_components: 1
 
       - name: Deploy 'calistenia-es-members' to skillvault.blog/calistenia-es-m
