@@ -595,6 +595,8 @@ jobs:
               - 'homerepair-hu-members/**'
             homerepair-el-members:
               - 'homerepair-el-members/**'
+            homerepair-sl-members:
+              - 'homerepair-sl-members/**'
             whittling-sv-members:
               - 'whittling-sv-members/**'
             whittling-no-members:
@@ -1059,6 +1061,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/homerepair-fr-m
             sudo mkdir -p /var/www/skillvault.blog/homerepair-hu-m
             sudo mkdir -p /var/www/skillvault.blog/homerepair-el-m
+            sudo mkdir -p /var/www/skillvault.blog/homerepair-sl-m
             sudo mkdir -p /var/www/skillvault.blog/whittling-sv-m
             sudo mkdir -p /var/www/skillvault.blog/whittling-no-m
             sudo mkdir -p /var/www/skillvault.blog/whittling-nl-m
@@ -3944,6 +3947,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "homerepair-es-members/*"
           target: "/var/www/skillvault.blog/homerepair-es-m"
+          strip_components: 1
+
+      - name: Deploy 'homerepair-sl-members' to skillvault.blog/homerepair-sl-m
+        if: steps.filter.outputs.homerepair-sl-members == 'true' || steps.filter.outputs['homerepair-sl-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "homerepair-sl-members/*"
+          target: "/var/www/skillvault.blog/homerepair-sl-m"
           strip_components: 1
 
       - name: Deploy 'word-nl-members' to skillvault.blog/word-nl-m
@@ -7692,6 +7706,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "homerepair-es-members/*"
           target: "/var/www/skillvault.blog/homerepair-es-m"
+          strip_components: 1
+
+      - name: Deploy 'homerepair-sl-members' to skillvault.blog/homerepair-sl-m
+        if: steps.filter.outputs.homerepair-sl-members == 'true' || steps.filter.outputs['homerepair-sl-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "homerepair-sl-members/*"
+          target: "/var/www/skillvault.blog/homerepair-sl-m"
           strip_components: 1
 
       - name: Deploy 'word-nl-members' to skillvault.blog/word-nl-m
