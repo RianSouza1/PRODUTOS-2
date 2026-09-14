@@ -773,6 +773,8 @@ jobs:
               - 'piano-sv-members/**'
             piano-de-members:
               - 'piano-de-members/**'
+            piano-no-members:
+              - 'piano-no-members/**'
             anti-sv-members:
               - 'anti-sv-members/**'
             drums-es-members:
@@ -1170,6 +1172,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/piano-bg-m
             sudo mkdir -p /var/www/skillvault.blog/piano-sv-m
             sudo mkdir -p /var/www/skillvault.blog/piano-de-m
+            sudo mkdir -p /var/www/skillvault.blog/piano-no-m
             sudo mkdir -p /var/www/skillvault.blog/anti-sv-m
             sudo mkdir -p /var/www/skillvault.blog/inflam-sv-m
             sudo mkdir -p /var/www/skillvault.blog/drums-es-m
@@ -4310,6 +4313,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "piano-de-members/*"
           target: "/var/www/skillvault.blog/piano-de-m"
+          strip_components: 1
+
+      - name: Deploy 'piano-no-members' to skillvault.blog/piano-no-m
+        if: steps.filter.outputs.piano-no-members == 'true' || steps.filter.outputs['piano-no-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "piano-no-members/*"
+          target: "/var/www/skillvault.blog/piano-no-m"
           strip_components: 1
 
       - name: Deploy 'anti-sv-members' to skillvault.blog/anti-sv-m
@@ -8069,6 +8083,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "piano-de-members/*"
           target: "/var/www/skillvault.blog/piano-de-m"
+          strip_components: 1
+
+      - name: Deploy 'piano-no-members' to skillvault.blog/piano-no-m
+        if: steps.filter.outputs.piano-no-members == 'true' || steps.filter.outputs['piano-no-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "piano-no-members/*"
+          target: "/var/www/skillvault.blog/piano-no-m"
           strip_components: 1
 
       - name: Deploy 'anti-sv-members' to skillvault.blog/anti-sv-m
