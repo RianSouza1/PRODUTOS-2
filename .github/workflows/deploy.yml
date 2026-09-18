@@ -383,6 +383,8 @@ jobs:
               - 'beekeeping-ro-members/**'
             beekeeping-hu-members:
               - 'beekeeping-hu-members/**'
+            beekeeping-sv-members:
+              - 'beekeeping-sv-members/**'
             ww-members:
               - 'ww-members/**'
             ww-cs-members:
@@ -969,6 +971,7 @@ jobs:
             sudo chown -R $USER:$USER /var/www/skillvault.blog/institv3 || true
             sudo chmod -R 755 /var/www/skillvault.blog/institv3 || true
             sudo mkdir -p /var/www/skillvault.blog/bkp-hu-m
+            sudo mkdir -p /var/www/skillvault.blog/bkp-sv-m
             sudo mkdir -p /var/www/skillvault.blog/ww-m
             sudo mkdir -p /var/www/skillvault.blog/ww-cs-m
             sudo chown -R $USER:$USER /var/www/skillvault.blog/ww-cs-m || true
@@ -2083,6 +2086,17 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "beekeeping-hu-members/*"
           target: "/var/www/skillvault.blog/bkp-hu-m"
+          strip_components: 1
+
+      - name: Deploy 'beekeeping-sv-members' to skillvault.blog/bkp-sv-m
+        if: steps.filter.outputs.beekeeping-sv-members == 'true' || steps.filter.outputs['beekeeping-sv-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "beekeeping-sv-members/*"
+          target: "/var/www/skillvault.blog/bkp-sv-m"
           strip_components: 1
 
       # â”€â”€ WOODWORKING MEMBERS AREAS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
