@@ -787,6 +787,8 @@ jobs:
               - 'anti-sv-members/**'
             drums-es-members:
               - 'drums-es-members/**'
+            drums-cs-members:
+              - 'drums-cs-members/**'
             guitar-fi-members:
               - 'guitar-fi-members/**'
             guitar-cs-members:
@@ -1189,6 +1191,8 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/inflam-sv-m
             sudo mkdir -p /var/www/skillvault.blog/drums-es-m
             sudo mkdir -p /var/www/skillvault.blog/bateria-es-m
+            sudo mkdir -p /var/www/skillvault.blog/drums-cs-m
+            sudo mkdir -p /var/www/skillvault.blog/bici-cs-m
             sudo mkdir -p /var/www/skillvault.blog/word-hu-m
             sudo mkdir -p /var/www/skillvault.blog/word-he-m
             sudo mkdir -p /var/www/skillvault.blog/word-el-m
@@ -4424,6 +4428,28 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "drums-es-members/*"
           target: "/var/www/skillvault.blog/bateria-es-m"
+          strip_components: 1
+
+      - name: Deploy 'drums-cs-members' to skillvault.blog/drums-cs-m
+        if: steps.filter.outputs.drums-cs-members == 'true' || steps.filter.outputs['drums-cs-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "drums-cs-members/*"
+          target: "/var/www/skillvault.blog/drums-cs-m"
+          strip_components: 1
+
+      - name: Deploy 'drums-cs-members' to skillvault.blog/bici-cs-m
+        if: steps.filter.outputs.drums-cs-members == 'true' || steps.filter.outputs['drums-cs-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "drums-cs-members/*"
+          target: "/var/www/skillvault.blog/bici-cs-m"
           strip_components: 1
 
       - name: Deploy 'guitar-fi-members' to skillvault.blog/guitar-fi-m
@@ -8249,6 +8275,28 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "drums-es-members/*"
           target: "/var/www/skillvault.blog/bateria-es-m"
+          strip_components: 1
+
+      - name: Deploy 'drums-cs-members' to skillvault.blog/drums-cs-m
+        if: steps.filter.outputs.drums-cs-members == 'true' || steps.filter.outputs['drums-cs-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "drums-cs-members/*"
+          target: "/var/www/skillvault.blog/drums-cs-m"
+          strip_components: 1
+
+      - name: Deploy 'drums-cs-members' to skillvault.blog/bici-cs-m
+        if: steps.filter.outputs.drums-cs-members == 'true' || steps.filter.outputs['drums-cs-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "drums-cs-members/*"
+          target: "/var/www/skillvault.blog/bici-cs-m"
           strip_components: 1
 
       - name: Deploy 'guitar-fi-members' to skillvault.blog/guitar-fi-m
