@@ -20,8 +20,8 @@ const APP_DATA = {
             duration: "0:30 min",
             target: "Quadriceps & Heupbuigers",
             badgeColor: "#0284c7",
+            youtubeId: "LHFhF0itnEQ",
             description: "Versterkt de voorzijde van de dijen en activeert de heupen voor gemakkelijker opstaan uit de stoel en stabieler lopen.",
-            animType: "knee_lift",
             steps: [
                 "Zit rechtop op het voorste deel van de stoel met de voeten plat op de grond op heupbreedte.",
                 "Til één knie rustig en gecontroleerd omhoog tot comfortabele heuphoogte (zonder achterover te leunen).",
@@ -37,8 +37,8 @@ const APP_DATA = {
             duration: "0:25 min",
             target: "Kuitspieren & Enkelmobiliteit",
             badgeColor: "#0284c7",
+            youtubeId: "dUYkIVMlzZQ",
             description: "Stimuleert de bloedsomloop in de onderbenen, vermindert vochtophoping en versterkt de stabiliteit van de enkels.",
-            animType: "calf_raise",
             steps: [
                 "Plaats beide voeten plat op de vloer, recht onder de knieën.",
                 "Duw krachtig op de bal van de voeten en til de hielen zo hoog mogelijk op.",
@@ -54,8 +54,8 @@ const APP_DATA = {
             duration: "0:30 min",
             target: "Buitenste Heupspieren & Dijbenen",
             badgeColor: "#0284c7",
+            youtubeId: "8BcPHWGQO44",
             description: "Versterkt de heupabductoren en bilspieren, essentieel voor zijwaartse balans en stabiliteit bij het stappen.",
-            animType: "hip_abduction",
             steps: [
                 "Zit rechtop met de knieën in een hoek van 90 graden en de handen rustend op de dijen.",
                 "Beweeg één been rustig zijwaarts naar buiten tot u een lichte activatie in de heup voelt.",
@@ -71,8 +71,8 @@ const APP_DATA = {
             duration: "0:30 min",
             target: "Biceps & Onderarmspieren",
             badgeColor: "#0d9488",
+            youtubeId: "K6e3k2_0yPQ",
             description: "Versterkt de armkracht die nodig is voor het tillen van voorwerpen, boodschappentassen en dagelijkse handelingen.",
-            animType: "bicep_curl",
             steps: [
                 "Laat de armen ontspannen langs het lichaam hangen met de handpalmen naar voren gericht.",
                 "Buig beide ellebogen en breng de handen gecontroleerd richting de schouders.",
@@ -88,8 +88,8 @@ const APP_DATA = {
             duration: "0:25 min",
             target: "Schouders & Nek-Trapezius",
             badgeColor: "#0d9488",
+            youtubeId: "tzhx29q4b1Y",
             description: "Maakt het schoudergewricht los, verlicht opgebouwde spierspanning in de nek en verbetert de lichaamshouding.",
-            animType: "shoulder_roll",
             steps: [
                 "Zit ontspannen met de armen losjes langs de stoel.",
                 "Til de schouders rustig op naar de oren, rol ze naar achteren en laat ze gecontroleerd zakken.",
@@ -105,8 +105,8 @@ const APP_DATA = {
             duration: "0:35 min",
             target: "Borstkas & Tussenribspieren",
             badgeColor: "#0d9488",
+            youtubeId: "gC_L9qAHVJ8",
             description: "Corrigeert een gebogen zithouding, vergroot de longcapaciteit en rekt de voorzijde van het bovenlichaam.",
-            animType: "chest_opener",
             steps: [
                 "Breng de ellebogen ter hoogte van de schouders in een hoek van 90 graden (kandelarenhouding).",
                 "Beweeg de ellebogen rustig naar achteren en trek de schouderbladen zachtjes naar elkaar toe.",
@@ -122,8 +122,8 @@ const APP_DATA = {
             duration: "0:20 min",
             target: "Polsgewrichten & Handkracht",
             badgeColor: "#0d9488",
+            youtubeId: "1wXWp3x9wB8",
             description: "Onderhoudt handvaardigheid, voorkomt stijve vingergewrichten en versterkt de noodzakelijke grijpkracht.",
-            animType: "wrist_circles",
             steps: [
                 "Strek de armen ontspannen op borsthoogte voor u uit.",
                 "Draai langzame cirkels met de polsen, 5 keer met de klok mee en 5 keer tegen de klok in.",
@@ -139,8 +139,8 @@ const APP_DATA = {
             duration: "0:30 min",
             target: "Schuine Buikspieren & Wervelkolom",
             badgeColor: "#d97706",
+            youtubeId: "W3lVn1H9TGE",
             description: "Behoudt de natuurlijke draaibaarheid van de wervelkolom, belangrijk voor omkijken en dagelijkse bewegingen.",
-            animType: "torso_twist",
             steps: [
                 "Kruis de armen losjes voor de borst met de handen op de tegenovergestelde schouders.",
                 "Draai het bovenlichaam rustig vanuit de taille naar rechts, zover als comfortabel voelt.",
@@ -156,8 +156,8 @@ const APP_DATA = {
             duration: "0:30 min",
             target: "Diepe Romp & Onderrug",
             badgeColor: "#d97706",
+            youtubeId: "V8jT9E4C5fU",
             description: "Activeert de diepe stabiliserende buikspieren en ontlast de lendenwervels bij langdurig zitten.",
-            animType: "pelvic_tilt",
             steps: [
                 "Plaats de handen op de heupen of dijen en zit met een rechte rug.",
                 "Kantel het bekken naar voren (maak de onderrug licht hol) en open de borstkas.",
@@ -173,8 +173,8 @@ const APP_DATA = {
             duration: "0:30 min",
             target: "Flankspieren & Wervelkolom",
             badgeColor: "#d97706",
+            youtubeId: "3o_6vH1Duxs",
             description: "Rekt en versterkt de zijkant van de romp voor meer flexibiliteit bij het reiken naar voorwerpen.",
-            animType: "side_bend",
             steps: [
                 "Laat beide armen ontspannen langs de zijkanten van de stoel hangen.",
                 "Laat de rechterhand rustig richting de vloer zakken terwijl u het bovenlichaam zijwaarts buigt.",
@@ -190,8 +190,8 @@ const APP_DATA = {
             duration: "0:20 min",
             target: "Diepe Nekspieren & Houding",
             badgeColor: "#6366f1",
+            youtubeId: "yW6H3e7mD0M",
             description: "Verbetert de stand van het hoofd boven de wervelkolom en ontlast overbelaste nek- en achterhoofdspieren.",
-            animType: "chin_tuck",
             steps: [
                 "Kijk recht vooruit met een ontspannen kaak en schouders.",
                 "Trek de kin zachtjes horizontaal naar achteren (alsof u een lichte dubbele kin maakt).",
@@ -207,8 +207,8 @@ const APP_DATA = {
             duration: "0:25 min",
             target: "Nekspieren & Hals",
             badgeColor: "#6366f1",
+            youtubeId: "bO6RRz7VfU0",
             description: "Geeft directe verlichting bij een stijve nek door tocht, lezen of langdurig tv-kijken.",
-            animType: "neck_tilt",
             steps: [
                 "Zit ontspannen rechtop met de schouders laag.",
                 "Beweeg het rechteroor rustig richting de rechterschouder totdat u een lichte, aangename rek voelt.",
@@ -253,7 +253,7 @@ const APP_DATA = {
             id: "b3",
             title: "Zittend Oefenprogramma — 28 Dagen — Boek 3 van 3",
             description: "10 minuten per dag voor kracht, soepelheid, beweeglijkheid en zelfvertrouwen. Een compleet 28-dagen programma opgebouwd in eenvoudige, stapsgewijze sessies voor dagelijks welzijn.",
-            badgeText: "28-Dagen Programma",
+            badgeText: "28-Dages Programma",
             badgeColor: "#d97706",
             features: [
                 "Compleet 28-dagen programma met ~10 minuten dagelijkse zittende sessies",
