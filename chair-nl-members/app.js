@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let activeVideoFilter = "all";
   let activeTimers = {};
+  const ytPlayers = {};
 
   // ----------------------------------------------------------------------
   // 1. BASIS INITIALISATIE
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("hashchange", () => {
     cleanupTimers();
+    cleanupPlayers();
     handleRouting();
   });
 
@@ -48,6 +50,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     activeTimers = {};
+  }
+
+  function cleanupPlayers() {
+    Object.keys(ytPlayers).forEach(id => {
+      try {
+        if (ytPlayers[id] && typeof ytPlayers[id].destroy === 'function') {
+          ytPlayers[id].destroy();
+        }
+      } catch (e) {}
+      delete ytPlayers[id];
+    });
   }
 
   // ----------------------------------------------------------------------
@@ -252,7 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ----------------------------------------------------------------------
-  // 5. WEERGAVE: VIDEODEMONSTRATIES (VIDEOS)
+  // 5. WEERGAVE: VIDEODEMONSTRATIES (VIDEOS - 100% WHITE LABEL & GELUIDLOOS)
   // ----------------------------------------------------------------------
   function renderVideos() {
     const allVideos = APP_DATA.videos || [];
@@ -283,32 +296,34 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
            </div>
 
-           <!-- Embedded Video Player Container (Muted for Seniors) -->
-           <div class="video-embed-wrapper">
-              <div class="video-soundless-tag">
-                 <i data-lucide="volume-x" style="width: 14px; height: 14px;"></i>
-                 <span>Geluidloos (Zonder geluid)</span>
+           <!-- 100% White-Label Video Container (No Channel, No YouTube links) -->
+           <div class="clean-video-wrapper" id="player-wrap-${vid.id}">
+              <div class="video-crop-box">
+                 <div id="yt-player-${vid.id}"></div>
+                 <div class="video-click-shield" onclick="window.toggleCustomVideoPlay('${vid.id}')">
+                    <div class="play-overlay-icon" id="play-overlay-${vid.id}">
+                       <i data-lucide="play" style="width: 28px; height: 28px; color: #FFF; margin-left: 3px;"></i>
+                    </div>
+                 </div>
               </div>
-              
-              <iframe 
-                 class="exercise-iframe"
-                 src="https://www.youtube-nocookie.com/embed/${vid.youtubeId}?mute=1&autoplay=0&controls=1&modestbranding=1&rel=0&playsinline=1&loop=1&playlist=${vid.youtubeId}"
-                 title="${vid.title}"
-                 frameborder="0"
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                 allowfullscreen
-                 loading="lazy">
-              </iframe>
 
-              <!-- Interactive Practice Timer Bar -->
-              <div class="video-bar-actions">
-                 <button class="timer-trigger-btn" id="btn-timer-${vid.id}" onclick="window.togglePracticeTimer('${vid.id}')">
+              <!-- Custom White-Label Control Bar -->
+              <div class="custom-video-controls">
+                 <button class="ctrl-action-btn" id="ctrl-play-${vid.id}" onclick="window.toggleCustomVideoPlay('${vid.id}')">
+                    <i data-lucide="play" style="width: 16px; height: 16px;" id="icon-ctrl-${vid.id}"></i>
+                    <span id="text-ctrl-${vid.id}">Afspelen</span>
+                 </button>
+
+                 <span class="ctrl-mute-badge">
+                    <i data-lucide="volume-x" style="width: 13px; height: 13px;"></i> Geluidloos
+                 </span>
+
+                 <button class="ctrl-timer-btn" id="btn-timer-${vid.id}" onclick="window.togglePracticeTimer('${vid.id}')">
                     <i data-lucide="timer" style="width: 15px; height: 15px;"></i>
-                    <span id="timer-label-${vid.id}">Start 30s Oefentimer</span>
+                    <span id="timer-label-${vid.id}">Start 30s</span>
                  </button>
               </div>
 
-              <!-- Timer Progress Track -->
               <div class="timer-progress-track" id="timer-track-${vid.id}" style="display:none;">
                  <div class="timer-progress-bar" id="timer-bar-${vid.id}"></div>
               </div>
@@ -381,13 +396,104 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
       </div>
     `;
+
+    // Initialize all YouTube players without any UI branding
+    initAllYtPlayers();
   }
 
   window.setExerciseFilter = function(category) {
     activeVideoFilter = category;
+    cleanupPlayers();
     renderVideos();
     renderIcons();
   };
+
+  function initAllYtPlayers() {
+    if (typeof YT === 'undefined' || !YT.Player) {
+      setTimeout(initAllYtPlayers, 150);
+      return;
+    }
+
+    const allVideos = APP_DATA.videos || [];
+    const filteredVideos = activeVideoFilter === "all"
+      ? allVideos
+      : allVideos.filter(v => v.category === activeVideoFilter);
+
+    filteredVideos.forEach(vid => {
+      const container = document.getElementById(`yt-player-${vid.id}`);
+      if (!container) return;
+
+      try {
+        ytPlayers[vid.id] = new YT.Player(`yt-player-${vid.id}`, {
+          videoId: vid.youtubeId,
+          playerVars: {
+            autoplay: 0,
+            mute: 1,
+            controls: 0,
+            showinfo: 0,
+            rel: 0,
+            modestbranding: 1,
+            loop: 1,
+            playlist: vid.youtubeId,
+            disablekb: 1,
+            fs: 0,
+            playsinline: 1,
+            iv_load_policy: 3
+          },
+          events: {
+            onReady: function(event) {
+              event.target.mute();
+            },
+            onStateChange: function(event) {
+              updatePlayerUI(vid.id, event.data);
+            }
+          }
+        });
+      } catch (err) {
+        console.error("Error creating YT player for:", vid.id, err);
+      }
+    });
+  }
+
+  window.toggleCustomVideoPlay = function(vidId) {
+    const player = ytPlayers[vidId];
+    if (!player || typeof player.getPlayerState !== 'function') return;
+
+    try {
+      const state = player.getPlayerState();
+      if (state === 1) { // YT.PlayerState.PLAYING
+        player.pauseVideo();
+      } else {
+        // Pause any other playing video so only one plays
+        Object.keys(ytPlayers).forEach(id => {
+          if (id !== vidId && ytPlayers[id] && typeof ytPlayers[id].pauseVideo === 'function') {
+            try { ytPlayers[id].pauseVideo(); } catch(e) {}
+          }
+        });
+        player.mute();
+        player.playVideo();
+      }
+    } catch (e) {
+      console.error("Playback toggle error:", e);
+    }
+  };
+
+  function updatePlayerUI(vidId, playerState) {
+    const overlay = document.getElementById(`play-overlay-${vidId}`);
+    const iconCtrl = document.getElementById(`icon-ctrl-${vidId}`);
+    const textCtrl = document.getElementById(`text-ctrl-${vidId}`);
+
+    if (playerState === 1) { // PLAYING
+      if (overlay) overlay.style.opacity = '0';
+      if (iconCtrl) iconCtrl.setAttribute('data-lucide', 'pause');
+      if (textCtrl) textCtrl.innerText = 'Pauzeren';
+    } else {
+      if (overlay) overlay.style.opacity = '1';
+      if (iconCtrl) iconCtrl.setAttribute('data-lucide', 'play');
+      if (textCtrl) textCtrl.innerText = 'Afspelen';
+    }
+    renderIcons();
+  }
 
   window.togglePracticeTimer = function(vidId) {
     const track = document.getElementById(`timer-track-${vidId}`);
@@ -398,28 +504,28 @@ document.addEventListener("DOMContentLoaded", () => {
       clearInterval(activeTimers[vidId]);
       delete activeTimers[vidId];
       if (track) track.style.display = 'none';
-      if (label) label.innerText = 'Start 30s Oefentimer';
+      if (label) label.innerText = 'Start 30s';
       return;
     }
 
     let timeLeft = 30;
     if (track) track.style.display = 'block';
-    if (label) label.innerText = `${timeLeft}s resterend...`;
+    if (label) label.innerText = `${timeLeft}s...`;
     if (bar) bar.style.width = '100%';
 
     activeTimers[vidId] = setInterval(() => {
       timeLeft -= 1;
-      if (label) label.innerText = `${timeLeft}s resterend...`;
+      if (label) label.innerText = `${timeLeft}s...`;
       if (bar) bar.style.width = `${(timeLeft / 30) * 100}%`;
 
       if (timeLeft <= 0) {
         clearInterval(activeTimers[vidId]);
         delete activeTimers[vidId];
-        if (label) label.innerText = 'Goed gedaan! Voltooid ✓';
+        if (label) label.innerText = 'Voltooid! ✓';
         if (bar) bar.style.width = '0%';
         setTimeout(() => {
           if (track) track.style.display = 'none';
-          if (label) label.innerText = 'Start 30s Oefentimer';
+          if (label) label.innerText = 'Start 30s';
         }, 3000);
       }
     }, 1000);

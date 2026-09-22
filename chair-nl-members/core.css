@@ -1421,8 +1421,8 @@ html, body {
     font-weight: 500;
 }
 
-/* Container do Player de Vídeo Responsivo */
-.video-embed-wrapper {
+/* Container do Player 100% White Label (Sem canal, sem links do YouTube) */
+.clean-video-wrapper {
     position: relative;
     width: 100%;
     background: #000;
@@ -1433,50 +1433,112 @@ html, body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.video-soundless-tag {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(8px);
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #38bdf8;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    z-index: 5;
-    pointer-events: none;
-}
-
-.exercise-iframe {
+.video-crop-box {
+    position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    border: none;
-    display: block;
+    overflow: hidden;
     background: #000;
 }
 
-.video-bar-actions {
+/* Oculta os cabeçalhos do topo (canal, avatar) e rodapé do YouTube com crop milimétrico */
+.video-crop-box iframe,
+.video-crop-box > div {
+    position: absolute;
+    top: -56px !important;
+    left: -2% !important;
+    width: 104% !important;
+    height: calc(100% + 112px) !important;
+    border: none;
+    pointer-events: none;
+}
+
+/* Escudo de clique: intercepta todos os cliques impedindo que o usuário acesse o canal ou o YouTube */
+.video-click-shield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    background: transparent;
+}
+
+.play-overlay-icon {
+    width: 58px;
+    height: 58px;
+    background: rgba(14, 165, 233, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.25s ease;
+    opacity: 1;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.video-click-shield:hover .play-overlay-icon {
+    transform: scale(1.1);
+    background: var(--primary);
+}
+
+/* Barra de controles 100% customizada */
+.custom-video-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
     padding: 10px 14px;
     background: rgba(15, 23, 42, 0.95);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.timer-trigger-btn {
+.ctrl-action-btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+    background: var(--primary);
+    color: #FFF;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ctrl-action-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.ctrl-mute-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.ctrl-timer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     background: rgba(217, 119, 6, 0.2);
     color: #fbbf24;
     border: 1px solid rgba(251, 191, 36, 0.4);
-    padding: 8px 16px;
+    padding: 8px 14px;
     border-radius: 8px;
     font-size: 0.82rem;
     font-weight: 600;
@@ -1484,18 +1546,18 @@ html, body {
     transition: all 0.2s ease;
 }
 
-.timer-trigger-btn:hover {
+.ctrl-timer-btn:hover {
     background: #d97706;
     color: #FFF;
 }
 
-/* Barra de progresso da repetição / timer */
+/* Barra de progresso do timer */
 .timer-progress-track {
     position: relative;
     width: 100%;
     height: 4px;
     background: rgba(255, 255, 255, 0.1);
-    z-index: 6;
+    z-index: 12;
 }
 
 .timer-progress-bar {
