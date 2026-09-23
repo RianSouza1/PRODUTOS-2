@@ -71,7 +71,7 @@ const APP_DATA = {
             duration: "0:30 min",
             target: "Biceps & Onderarmspieren",
             badgeColor: "#0d9488",
-            youtubeId: "K6e3k2_0yPQ",
+            youtubeId: "NHwWx2OhRMs",
             description: "Versterkt de armkracht die nodig is voor het tillen van voorwerpen, boodschappentassen en dagelijkse handelingen.",
             steps: [
                 "Laat de armen ontspannen langs het lichaam hangen met de handpalmen naar voren gericht.",
@@ -88,7 +88,7 @@ const APP_DATA = {
             duration: "0:25 min",
             target: "Schouders & Nek-Trapezius",
             badgeColor: "#0d9488",
-            youtubeId: "tzhx29q4b1Y",
+            youtubeId: "cczgHuu0ypE",
             description: "Maakt het schoudergewricht los, verlicht opgebouwde spierspanning in de nek en verbetert de lichaamshouding.",
             steps: [
                 "Zit ontspannen met de armen losjes langs de stoel.",
@@ -122,7 +122,7 @@ const APP_DATA = {
             duration: "0:20 min",
             target: "Polsgewrichten & Handkracht",
             badgeColor: "#0d9488",
-            youtubeId: "1wXWp3x9wB8",
+            youtubeId: "irzzT7QOGLk",
             description: "Onderhoudt handvaardigheid, voorkomt stijve vingergewrichten en versterkt de noodzakelijke grijpkracht.",
             steps: [
                 "Strek de armen ontspannen op borsthoogte voor u uit.",
@@ -139,7 +139,7 @@ const APP_DATA = {
             duration: "0:30 min",
             target: "Schuine Buikspieren & Wervelkolom",
             badgeColor: "#d97706",
-            youtubeId: "W3lVn1H9TGE",
+            youtubeId: "ngGS9NJh_8U",
             description: "Behoudt de natuurlijke draaibaarheid van de wervelkolom, belangrijk voor omkijken en dagelijkse bewegingen.",
             steps: [
                 "Kruis de armen losjes voor de borst met de handen op de tegenovergestelde schouders.",
@@ -156,7 +156,7 @@ const APP_DATA = {
             duration: "0:30 min",
             target: "Diepe Romp & Onderrug",
             badgeColor: "#d97706",
-            youtubeId: "V8jT9E4C5fU",
+            youtubeId: "NrUDzOAoGN0",
             description: "Activeert de diepe stabiliserende buikspieren en ontlast de lendenwervels bij langdurig zitten.",
             steps: [
                 "Plaats de handen op de heupen of dijen en zit met een rechte rug.",
@@ -173,7 +173,7 @@ const APP_DATA = {
             duration: "0:30 min",
             target: "Flankspieren & Wervelkolom",
             badgeColor: "#d97706",
-            youtubeId: "3o_6vH1Duxs",
+            youtubeId: "e2h53DwpbvI",
             description: "Rekt en versterkt de zijkant van de romp voor meer flexibiliteit bij het reiken naar voorwerpen.",
             steps: [
                 "Laat beide armen ontspannen langs de zijkanten van de stoel hangen.",
@@ -190,7 +190,7 @@ const APP_DATA = {
             duration: "0:20 min",
             target: "Diepe Nekspieren & Houding",
             badgeColor: "#6366f1",
-            youtubeId: "yW6H3e7mD0M",
+            youtubeId: "Fz4HDmFbl34",
             description: "Verbetert de stand van het hoofd boven de wervelkolom en ontlast overbelaste nek- en achterhoofdspieren.",
             steps: [
                 "Kijk recht vooruit met een ontspannen kaak en schouders.",
@@ -207,7 +207,7 @@ const APP_DATA = {
             duration: "0:25 min",
             target: "Nekspieren & Hals",
             badgeColor: "#6366f1",
-            youtubeId: "bO6RRz7VfU0",
+            youtubeId: "b3tcUN-W758",
             description: "Geeft directe verlichting bij een stijve nek door tocht, lezen of langdurig tv-kijken.",
             steps: [
                 "Zit ontspannen rechtop met de schouders laag.",
