@@ -1813,7 +1813,7 @@ jobs:
           strip_components: 1
 
       - name: Clean ponto directory on VPS (preserve data.json)
-        if: steps.filter.outputs.ponto == 'true' || steps.filter.outputs.workflow == 'true'
+        if: steps.filter.outputs.ponto == 'true'
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -1834,7 +1834,7 @@ jobs:
             sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ponto
 
       - name: Deploy 'ponto' to skillvault.blog/ponto
-        if: steps.filter.outputs.ponto == 'true' || steps.filter.outputs.workflow == 'true'
+        if: steps.filter.outputs.ponto == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -1845,7 +1845,7 @@ jobs:
           strip_components: 1
 
       - name: Setup PHP-FPM and configure Nginx for ponto
-        if: steps.filter.outputs.ponto == 'true' || steps.filter.outputs.workflow == 'true'
+        if: steps.filter.outputs.ponto == 'true'
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -10121,7 +10121,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'ponto' to skillvault.blog/ponto
-        if: steps.filter.outputs.ponto == 'true' || steps.filter.outputs.workflow == 'true'
+        if: steps.filter.outputs.ponto == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -10132,7 +10132,7 @@ jobs:
           strip_components: 1
 
       - name: Deploy 'institv3' to skillvault.blog/institv3
-        if: steps.filter.outputs.institv3 == 'true' || steps.filter.outputs.workflow == 'true'
+        if: steps.filter.outputs.institv3 == 'true'
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
