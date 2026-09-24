@@ -4511,6 +4511,18 @@ jobs:
           target: "/var/www/skillvault.blog/piano-cs-m"
           strip_components: 1
 
+      - name: Prepare VPS Directory for 'ingles-cs-members'
+        if: steps.filter.outputs.ingles-cs-members == 'true' || steps.filter.outputs['ingles-cs-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/ingles-cs-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ingles-cs-m || true
+            sudo chmod -R 777 /var/www/skillvault.blog/ingles-cs-m || true
+
       - name: Deploy 'ingles-cs-members' to skillvault.blog/ingles-cs-m
         if: steps.filter.outputs.ingles-cs-members == 'true' || steps.filter.outputs['ingles-cs-members'] == 'true'
         uses: appleboy/scp-action@v0.1.7
@@ -8489,6 +8501,18 @@ jobs:
           source: "piano-cs-members/*"
           target: "/var/www/skillvault.blog/piano-cs-m"
           strip_components: 1
+
+      - name: Prepare VPS Directory for 'ingles-cs-members'
+        if: steps.filter.outputs.ingles-cs-members == 'true' || steps.filter.outputs['ingles-cs-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/ingles-cs-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/ingles-cs-m || true
+            sudo chmod -R 777 /var/www/skillvault.blog/ingles-cs-m || true
 
       - name: Deploy 'ingles-cs-members' to skillvault.blog/ingles-cs-m
         if: steps.filter.outputs.ingles-cs-members == 'true' || steps.filter.outputs['ingles-cs-members'] == 'true'
