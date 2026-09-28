@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>Reparații & Întreținerea Locuinței — Zonă Membri</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="core.css?v=1">
+</head>
+
+<body>
+
+    <!-- ============ PRE-PAGE WELCOME SCREEN ============ -->
+    <div id="pre-page" class="pre-page-overlay">
+        <div class="pre-page-bg"></div>
+        <div class="pre-page-content">
+            <div class="pre-page-icon" style="display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem;">
+                <div style="width: 82px; height: 82px; border-radius: 22px; background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(217, 119, 6, 0.45)); border: 1.5px solid rgba(251, 191, 36, 0.5); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(245, 158, 11, 0.35); backdrop-filter: blur(10px);">
+                    <svg viewBox="0 0 48 48" width="46" height="46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 6L6 21H12V40C12 41.1 12.9 42 14 42H34C35.1 42 36 41.1 36 40V21H42L24 6Z" fill="url(#house-glow)" stroke="#FBBF24" stroke-width="2.5" stroke-linejoin="round"/>
+                        <path d="M19 28L29 38M29 28L19 38" stroke="#FBBF24" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M24 16V22M21 19H27" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round"/>
+                        <circle cx="24" cy="33" r="3.5" fill="#F59E0B" stroke="#FBBF24" stroke-width="1.5"/>
+                        <defs>
+                            <linearGradient id="house-glow" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#F59E0B" stop-opacity="0.35"/>
+                                <stop offset="1" stop-color="#D97706" stop-opacity="0.1"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+            <h1>Reparații & Întreținerea Locuinței</h1>
+            <p>Accesul tău premium a fost confirmat.<br>Tot ce ai nevoie pentru reparații, instalații electrice și sanitare realizate impecabil.</p>
+            <div class="pre-page-features">
+                <span>📖 Cărți</span>
+                <span>💬 Suport</span>
+            </div>
+            <button onclick="let el=document.getElementById('pre-page'); el.style.opacity='0'; setTimeout(()=>el.style.display='none',600);">
+                Mergi la materiale →
+            </button>
+        </div>
+    </div>
+
+    <div id="floating-help-container"></div>
+
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-logo">
+                <img src="assets/covers/rep_IMG1_ro.png" alt="Logo" id="brand-logo" onerror="this.style.display='none'">
+                <h1 id="brand-title"></h1>
+            </div>
+        </header>
+
+        <main id="app-root" class="main-content">
+            <div class="loader-container">
+                <i data-lucide="loader-2" class="spin-icon"></i>
+            </div>
+        </main>
+
+        <nav class="bottom-tab-bar" id="main-nav">
+            <a href="#livros" class="tab-item" data-tab="livros">
+                <i data-lucide="book-open"></i>
+                <span>Cărți</span>
+            </a>
+            <a href="#contato" class="tab-item" data-tab="contato">
+                <i data-lucide="message-square"></i>
+                <span>Suport</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="data.js?v=1"></script>
+    <script src="app.js?v=1"></script>
+
+</body>
+<!-- Deploy v1.0.0 -->
+</html>

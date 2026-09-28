@@ -599,6 +599,8 @@ jobs:
               - 'homerepair-fr-members/**'
             homerepair-hu-members:
               - 'homerepair-hu-members/**'
+            homerepair-ro-members:
+              - 'homerepair-ro-members/**'
             homerepair-el-members:
               - 'homerepair-el-members/**'
             homerepair-sl-members:
@@ -4058,6 +4060,29 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "homerepair-hu-members/*"
           target: "/var/www/skillvault.blog/homerepair-hu-m"
+          strip_components: 1
+
+      - name: Prepare VPS Directory for 'homerepair-ro-members'
+        if: steps.filter.outputs.homerepair-ro-members == 'true' || steps.filter.outputs['homerepair-ro-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/homerepair-ro-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/homerepair-ro-m || true
+            sudo chmod -R 777 /var/www/skillvault.blog/homerepair-ro-m || true
+
+      - name: Deploy 'homerepair-ro-members' to skillvault.blog/homerepair-ro-m
+        if: steps.filter.outputs.homerepair-ro-members == 'true' || steps.filter.outputs['homerepair-ro-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "homerepair-ro-members/*"
+          target: "/var/www/skillvault.blog/homerepair-ro-m"
           strip_components: 1
 
       - name: Deploy 'homerepair-el-members' to skillvault.blog/homerepair-el-m
@@ -8049,6 +8074,29 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "homerepair-hu-members/*"
           target: "/var/www/skillvault.blog/homerepair-hu-m"
+          strip_components: 1
+
+      - name: Prepare VPS Directory for 'homerepair-ro-members'
+        if: steps.filter.outputs.homerepair-ro-members == 'true' || steps.filter.outputs['homerepair-ro-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/homerepair-ro-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/homerepair-ro-m || true
+            sudo chmod -R 777 /var/www/skillvault.blog/homerepair-ro-m || true
+
+      - name: Deploy 'homerepair-ro-members' to skillvault.blog/homerepair-ro-m
+        if: steps.filter.outputs.homerepair-ro-members == 'true' || steps.filter.outputs['homerepair-ro-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "homerepair-ro-members/*"
+          target: "/var/www/skillvault.blog/homerepair-ro-m"
           strip_components: 1
 
       - name: Deploy 'homerepair-el-members' to skillvault.blog/homerepair-el-m
