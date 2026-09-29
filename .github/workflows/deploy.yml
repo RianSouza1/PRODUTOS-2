@@ -819,6 +819,8 @@ jobs:
               - 'drums-fi-members/**'
             draw-fr-members:
               - 'draw-fr-members/**'
+            draw-it-members:
+              - 'draw-it-members/**'
             guitar-fi-members:
               - 'guitar-fi-members/**'
             guitar-cs-members:
@@ -4717,6 +4719,29 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "draw-fr-members/*"
           target: "/var/www/skillvault.blog/draw-fr-m"
+          strip_components: 1
+
+      - name: Prepare VPS Directory for 'draw-it-members'
+        if: steps.filter.outputs.draw-it-members == 'true' || steps.filter.outputs['draw-it-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/draw-it-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/draw-it-m || true
+            sudo chmod -R 777 /var/www/skillvault.blog/draw-it-m || true
+
+      - name: Deploy 'draw-it-members' to skillvault.blog/draw-it-m
+        if: steps.filter.outputs.draw-it-members == 'true' || steps.filter.outputs['draw-it-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "draw-it-members/*"
+          target: "/var/www/skillvault.blog/draw-it-m"
           strip_components: 1
 
       - name: Deploy 'guitar-fi-members' to skillvault.blog/guitar-fi-m
@@ -8777,6 +8802,29 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "draw-fr-members/*"
           target: "/var/www/skillvault.blog/draw-fr-m"
+          strip_components: 1
+
+      - name: Prepare VPS Directory for 'draw-it-members'
+        if: steps.filter.outputs.draw-it-members == 'true' || steps.filter.outputs['draw-it-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/draw-it-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/draw-it-m || true
+            sudo chmod -R 777 /var/www/skillvault.blog/draw-it-m || true
+
+      - name: Deploy 'draw-it-members' to skillvault.blog/draw-it-m
+        if: steps.filter.outputs.draw-it-members == 'true' || steps.filter.outputs['draw-it-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "draw-it-members/*"
+          target: "/var/www/skillvault.blog/draw-it-m"
           strip_components: 1
 
       - name: Deploy 'guitar-fi-members' to skillvault.blog/guitar-fi-m
