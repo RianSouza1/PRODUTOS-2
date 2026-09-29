@@ -14,67 +14,67 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Beheersing van Potloodgreep & Vrije Lijnen",
-            duration: "0:22 • Basistechniek",
+            title: "Schetstechniek & Potloodcontrole op Papier",
+            duration: "0:25 • Basistechniek",
             category: "Fundamenten",
-            obs: "Houd de pols ontspannen en beweeg vanuit de schouder voor soepele, rechte lijnen.",
-            videoUrl: "https://videos.pexels.com/video-files/6891843/6891843-hd_1920_1080_25fps.mp4"
+            obs: "Houd het potlood soepel vast en zet lichte schetslijnen op voordat u details aanbrengt.",
+            videoUrl: "https://assets.mixkit.co/active_storage/video_items/100488/1724285900/100488-video-720.mp4"
         },
         {
             id: "v2",
-            title: "Hatching & Schaduwopbouw met Grafiet",
-            duration: "0:25 • Schaduwtechniek",
-            category: "Licht & Schaduw",
-            obs: "Bouw lagen geleidelijk op van licht naar donker zonder hard op het papier te drukken.",
-            videoUrl: "https://videos.pexels.com/video-files/6891844/6891844-hd_1920_1080_25fps.mp4"
+            title: "Basislijnen & Perspectiefconstructie",
+            duration: "0:20 • Ruimtelijk inzicht",
+            category: "Perspectief & Lijnen",
+            obs: "Trek loodrechte referentielijnen om de juiste verhoudingen van uw compositie te bepalen.",
+            videoUrl: "https://assets.mixkit.co/videos/5254/5254-720.mp4"
         },
         {
             id: "v3",
-            title: "Constructie van 3D Vormen & Verhoudingen",
-            duration: "0:15 • Ruimtelijk inzicht",
-            category: "Perspectief & Volume",
-            obs: "Gebruik hulplijnen om geometrische basisvormen om te zetten in driedimensionale objecten.",
-            videoUrl: "https://videos.pexels.com/video-files/6891845/6891845-hd_1920_1080_25fps.mp4"
+            title: "Vrije Lijnvoering & Vloeiende Schetsen",
+            duration: "0:22 • Handcontrole",
+            category: "Lijncontrole",
+            obs: "Beweeg vanuit uw onderarm om langere, vloeiende curven te tekenen zonder aarzeling.",
+            videoUrl: "https://assets.mixkit.co/videos/36721/36721-720.mp4"
         },
         {
             id: "v4",
-            title: "Gezichtscontouren & Oogverhoudingen",
-            duration: "0:24 • Portrettekenen",
+            title: "Portrettekenen & Vrouwelijke Gezichtsverhoudingen",
+            duration: "0:30 • Portretkunst",
             category: "Portret & Anatomie",
-            obs: "Let op de centrale as en de afstanden tussen de ogen voor een natuurlijke expressie.",
-            videoUrl: "https://videos.pexels.com/video-files/6891846/6891846-hd_1920_1080_25fps.mp4"
+            obs: "Bouw het gezicht op vanuit een ovaal en plaats de ogen en neus langs de centrale symmetrie-as.",
+            videoUrl: "https://assets.mixkit.co/videos/30232/30232-720.mp4"
         },
         {
             id: "v5",
-            title: "Botanische Schetsen & Natuurlijke Texturen",
-            duration: "0:20 • Organische vormen",
-            category: "Natuur & Planten",
-            obs: "Volg de natuurlijke nerf van bladeren en bloembladen voor levendige organische texturen.",
-            videoUrl: "https://videos.pexels.com/video-files/6891847/6891847-hd_1920_1080_25fps.mp4"
+            title: "Arcering & Gedetailleerde Schaduwopbouw",
+            duration: "0:25 • Licht & Schaduw",
+            category: "Schaduwtechniek",
+            obs: "Werk met zachte kruisarcering in meerdere dunne lagen voor een realistisch volume-effect.",
+            videoUrl: "https://assets.mixkit.co/active_storage/video_items/100485/1724285772/100485-video-720.mp4"
         },
         {
             id: "v6",
-            title: "Dynamische Dierenschetsen & Beweging",
-            duration: "0:25 • Snelle schetsen",
-            category: "Dieren & Dynamiek",
-            obs: "Vang eerst de bewegingslijn (line of action) voordat u details zoals vacht toevoegt.",
-            videoUrl: "https://videos.pexels.com/video-files/6891848/6891848-hd_1920_1080_25fps.mp4"
+            title: "Haartexturen & Fijne Details Tekenen",
+            duration: "0:22 • Textuurweergave",
+            category: "Detail & Textuur",
+            obs: "Teken haar in grotere bundels en voeg pas op het einde individuele highlights toe.",
+            videoUrl: "https://assets.mixkit.co/videos/40306/40306-720.mp4"
         },
         {
             id: "v7",
-            title: "Compositie & Opzet van Stillevens",
-            duration: "0:20 • Beeldopbouw",
-            category: "Compositie",
-            obs: "Kies een duidelijk focuspunt en controleer de overlap tussen voor- en achtergrond.",
-            videoUrl: "https://videos.pexels.com/video-files/6891849/6891849-hd_1920_1080_25fps.mp4"
+            title: "Creatieve Schetsboektechnieken & Dynamiek",
+            duration: "0:25 • Schetsboek",
+            category: "Vrije Expressie",
+            obs: "Oefen dagelijks met snelle schetsen in uw schetsboek om uw observatievermogen te trainen.",
+            videoUrl: "https://assets.mixkit.co/videos/29983/29983-720.mp4"
         },
         {
             id: "v8",
-            title: "Verfijning, Textuur & Hoog Contrast",
-            duration: "0:30 • Eindafwerking",
-            category: "Finishing Touch",
-            obs: "Gebruik een kneedgum om subtiele glimlichten te creëren en het diepste zwart voor maximaal contrast.",
-            videoUrl: "https://videos.pexels.com/video-files/6893300/6893300-hd_1920_1080_25fps.mp4"
+            title: "Anatomische Precisie & Fijne Lijnkunst",
+            duration: "0:28 • Precisietekenen",
+            category: "Anatomie & Precisie",
+            obs: "Let op de onderlinge afstanden en hou de potloodpunt scherp voor fijne anatomische lijnen.",
+            videoUrl: "https://assets.mixkit.co/videos/9339/9339-720.mp4"
         }
     ],
 

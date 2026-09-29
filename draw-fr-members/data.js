@@ -14,67 +14,67 @@ const APP_DATA = {
     videos: [
         {
             id: "v1",
-            title: "Contrôle de la Prise & Lignes Fluides",
-            duration: "0:22 • Technique de base",
+            title: "Technique d'Esquisse & Maîtrise du Crayon",
+            duration: "0:25 • Technique de base",
             category: "Fondamentaux",
-            obs: "Gardez le poignet souple et dessinez depuis l'épaule pour des traits nets et réguliers.",
-            videoUrl: "https://videos.pexels.com/video-files/6891843/6891843-hd_1920_1080_25fps.mp4"
+            obs: "Tenez le crayon avec souplesse et posez des traits légers avant de définir les contours finaux.",
+            videoUrl: "https://assets.mixkit.co/active_storage/video_items/100488/1724285900/100488-video-720.mp4"
         },
         {
             id: "v2",
-            title: "Hachures & Dégradés de Graphite",
-            duration: "0:25 • Ombres & Valeurs",
-            category: "Ombre & Lumière",
-            obs: "Superposez les couches délicatement sans écraser le grain du papier.",
-            videoUrl: "https://videos.pexels.com/video-files/6891844/6891844-hd_1920_1080_25fps.mp4"
+            title: "Lignes de Base & Construction en Perspective",
+            duration: "0:20 • Repères visuels",
+            category: "Perspective & Lignes",
+            obs: "Tracez des lignes de repère pour équilibrer les proportions globales de votre sujet.",
+            videoUrl: "https://assets.mixkit.co/videos/5254/5254-720.mp4"
         },
         {
             id: "v3",
-            title: "Construction des Formes 3D & Volumes",
-            duration: "0:15 • Vision dans l'espace",
-            category: "Perspective & Volume",
-            obs: "Utilisez des lignes de construction pour donner du relief et de la profondeur à vos formes.",
-            videoUrl: "https://videos.pexels.com/video-files/6891845/6891845-hd_1920_1080_25fps.mp4"
+            title: "Tracé Fluide & Contrôle du Geste",
+            duration: "0:22 • Dextérité",
+            category: "Contrôle du Trait",
+            obs: "Accompagnez le mouvement avec l'avant-bras pour obtenir des courbes harmonieuses et nettes.",
+            videoUrl: "https://assets.mixkit.co/videos/36721/36721-720.mp4"
         },
         {
             id: "v4",
-            title: "Structure du Visage & Proportions des Yeux",
-            duration: "0:24 • Dessin de portrait",
+            title: "Dessin de Portrait & Proportions Féminines",
+            duration: "0:30 • Art du portrait",
             category: "Portrait & Anatomie",
-            obs: "Alignez les axes des yeux et du nez pour obtenir une symétrie et une expression harmonieuse.",
-            videoUrl: "https://videos.pexels.com/video-files/6891846/6891846-hd_1920_1080_25fps.mp4"
+            obs: "Construisez la forme globale de la tête avant de placer avec soin le regard et la bouche.",
+            videoUrl: "https://assets.mixkit.co/videos/30232/30232-720.mp4"
         },
         {
             id: "v5",
-            title: "Esquisses Botaniques & Textures Végétales",
-            duration: "0:20 • Formes organiques",
-            category: "Nature & Flore",
-            obs: "Observez les nervures naturelles des feuilles pour rendre le feuillage réaliste.",
-            videoUrl: "https://videos.pexels.com/video-files/6891847/6891847-hd_1920_1080_25fps.mp4"
+            title: "Hachures & Dégradés d'Ombrage Détaillés",
+            duration: "0:25 • Ombre & Lumière",
+            category: "Technique d'Ombrage",
+            obs: "Superposez délicatement les hachures croisées pour modeler les volumes en profondeur.",
+            videoUrl: "https://assets.mixkit.co/active_storage/video_items/100485/1724285772/100485-video-720.mp4"
         },
         {
             id: "v6",
-            title: "Croquis d'Animaux & Dynamique du Geste",
-            duration: "0:25 • Croquis rapide",
-            category: "Animaux & Mouvement",
-            obs: "Posez d'abord la ligne d'action du corps avant de vous attarder sur les détails du pelage.",
-            videoUrl: "https://videos.pexels.com/video-files/6891848/6891848-hd_1920_1080_25fps.mp4"
+            title: "Rendu des Cheveux & Textures Fines",
+            duration: "0:22 • Rendu matière",
+            category: "Détails & Textures",
+            obs: "Dessinez la chevelure par grandes mèches cohérentes avant d'ajouter les rehauts de lumière.",
+            videoUrl: "https://assets.mixkit.co/videos/40306/40306-720.mp4"
         },
         {
             id: "v7",
-            title: "Composition & Mise en Page de Nature Morte",
-            duration: "0:20 • Cadrage visuel",
-            category: "Composition",
-            obs: "Définissez une hiérarchie visuelle claire et soignez les chevauchements d'objets.",
-            videoUrl: "https://videos.pexels.com/video-files/6891849/6891849-hd_1920_1080_25fps.mp4"
+            title: "Carnet de Croquis & Pratique Quotidienne",
+            duration: "0:25 • Carnet d'artiste",
+            category: "Créativité & Pratique",
+            obs: "Prenez l'habitude de croquer rapidement sur le vif pour développer votre sens de l'observation.",
+            videoUrl: "https://assets.mixkit.co/videos/29983/29983-720.mp4"
         },
         {
             id: "v8",
-            title: "Finitions, Textures & Haut Contraste",
-            duration: "0:30 • Rendu final",
-            category: "Finition",
-            obs: "Utilisez la gomme mie de pain pour créer des rehauts de lumière et intensifier les noirs profonds.",
-            videoUrl: "https://videos.pexels.com/video-files/6893300/6893300-hd_1920_1080_25fps.mp4"
+            title: "Précision Anatomique & Finesse du Trait",
+            duration: "0:28 • Dessin de précision",
+            category: "Anatomie & Rigueur",
+            obs: "Conservez une mine de crayon bien taillée pour réussir les tracés anatomiques complexes.",
+            videoUrl: "https://assets.mixkit.co/videos/9339/9339-720.mp4"
         }
     ],
 
