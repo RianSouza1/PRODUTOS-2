@@ -11,7 +11,72 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+        {
+            id: "v1",
+            title: "Controllo dell'Impugnatura & Tratti Fluidi",
+            duration: "0:22 • Tecnica di base",
+            category: "Fondamenti",
+            obs: "Mantieni il polso rilassato e guida il tratto dalla spalla per linee decise e pulite.",
+            videoUrl: "https://videos.pexels.com/video-files/6891843/6891843-hd_1920_1080_25fps.mp4"
+        },
+        {
+            id: "v2",
+            title: "Tratteggio & Chiaroscuro a Matita",
+            duration: "0:25 • Luce & Ombre",
+            category: "Luce & Ombra",
+            obs: "Costruisci gradualmente i toni dal chiaro allo scuro senza calcare eccessivamente la grafite.",
+            videoUrl: "https://videos.pexels.com/video-files/6891844/6891844-hd_1920_1080_25fps.mp4"
+        },
+        {
+            id: "v3",
+            title: "Costruzione di Forme 3D & Volumi",
+            duration: "0:15 • Visione spaziale",
+            category: "Prospettiva & Volume",
+            obs: "Usa linee guida geometriche per trasformare semplici sagome in solidi tridimensionali.",
+            videoUrl: "https://videos.pexels.com/video-files/6891845/6891845-hd_1920_1080_25fps.mp4"
+        },
+        {
+            id: "v4",
+            title: "Proporzioni del Volto & Anatomia degli Occhi",
+            duration: "0:24 • Disegno del ritratto",
+            category: "Ritratto & Anatomia",
+            obs: "Segui gli assi centrali e le distanze proporzionali per catturare un'espressione realistica.",
+            videoUrl: "https://videos.pexels.com/video-files/6891846/6891846-hd_1920_1080_25fps.mp4"
+        },
+        {
+            id: "v5",
+            title: "Schizzo Botanico & Texture Naturali",
+            duration: "0:20 • Forme organiche",
+            category: "Natura & Piante",
+            obs: "Segui l'andamento naturale delle venature fogliari per donare vita e freschezza al disegno.",
+            videoUrl: "https://videos.pexels.com/video-files/6891847/6891847-hd_1920_1080_25fps.mp4"
+        },
+        {
+            id: "v6",
+            title: "Schizzo di Animali & Cattura del Movimento",
+            duration: "0:25 • Schizzo veloce",
+            category: "Animali & Movimento",
+            obs: "Traccia prima la linea d'azione principale del corpo e poi definisci i dettagli del manto.",
+            videoUrl: "https://videos.pexels.com/video-files/6891848/6891848-hd_1920_1080_25fps.mp4"
+        },
+        {
+            id: "v7",
+            title: "Composizione & Studio di Natura Morta",
+            duration: "0:20 • Impaginazione visiva",
+            category: "Composizione",
+            obs: "Stabilisci un punto focale dominante e gestisci con cura le sovrapposizioni degli elementi.",
+            videoUrl: "https://videos.pexels.com/video-files/6891849/6891849-hd_1920_1080_25fps.mp4"
+        },
+        {
+            id: "v8",
+            title: "Rifiniture, Texture & Contrasto Elevato",
+            duration: "0:30 • Resa finale",
+            category: "Finitura",
+            obs: "Utilizza la gomma pane per ricavare punti luce luminosi e intensifica i neri per il massimo contrasto.",
+            videoUrl: "https://videos.pexels.com/video-files/6893300/6893300-hd_1920_1080_25fps.mp4"
+        }
+    ],
 
     books: [
         {

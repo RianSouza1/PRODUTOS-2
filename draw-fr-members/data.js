@@ -11,7 +11,72 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+        {
+            id: "v1",
+            title: "Contrôle de la Prise & Lignes Fluides",
+            duration: "0:22 • Technique de base",
+            category: "Fondamentaux",
+            obs: "Gardez le poignet souple et dessinez depuis l'épaule pour des traits nets et réguliers.",
+            videoUrl: "https://videos.pexels.com/video-files/6891843/6891843-hd_1920_1080_25fps.mp4"
+        },
+        {
+            id: "v2",
+            title: "Hachures & Dégradés de Graphite",
+            duration: "0:25 • Ombres & Valeurs",
+            category: "Ombre & Lumière",
+            obs: "Superposez les couches délicatement sans écraser le grain du papier.",
+            videoUrl: "https://videos.pexels.com/video-files/6891844/6891844-hd_1920_1080_25fps.mp4"
+        },
+        {
+            id: "v3",
+            title: "Construction des Formes 3D & Volumes",
+            duration: "0:15 • Vision dans l'espace",
+            category: "Perspective & Volume",
+            obs: "Utilisez des lignes de construction pour donner du relief et de la profondeur à vos formes.",
+            videoUrl: "https://videos.pexels.com/video-files/6891845/6891845-hd_1920_1080_25fps.mp4"
+        },
+        {
+            id: "v4",
+            title: "Structure du Visage & Proportions des Yeux",
+            duration: "0:24 • Dessin de portrait",
+            category: "Portrait & Anatomie",
+            obs: "Alignez les axes des yeux et du nez pour obtenir une symétrie et une expression harmonieuse.",
+            videoUrl: "https://videos.pexels.com/video-files/6891846/6891846-hd_1920_1080_25fps.mp4"
+        },
+        {
+            id: "v5",
+            title: "Esquisses Botaniques & Textures Végétales",
+            duration: "0:20 • Formes organiques",
+            category: "Nature & Flore",
+            obs: "Observez les nervures naturelles des feuilles pour rendre le feuillage réaliste.",
+            videoUrl: "https://videos.pexels.com/video-files/6891847/6891847-hd_1920_1080_25fps.mp4"
+        },
+        {
+            id: "v6",
+            title: "Croquis d'Animaux & Dynamique du Geste",
+            duration: "0:25 • Croquis rapide",
+            category: "Animaux & Mouvement",
+            obs: "Posez d'abord la ligne d'action du corps avant de vous attarder sur les détails du pelage.",
+            videoUrl: "https://videos.pexels.com/video-files/6891848/6891848-hd_1920_1080_25fps.mp4"
+        },
+        {
+            id: "v7",
+            title: "Composition & Mise en Page de Nature Morte",
+            duration: "0:20 • Cadrage visuel",
+            category: "Composition",
+            obs: "Définissez une hiérarchie visuelle claire et soignez les chevauchements d'objets.",
+            videoUrl: "https://videos.pexels.com/video-files/6891849/6891849-hd_1920_1080_25fps.mp4"
+        },
+        {
+            id: "v8",
+            title: "Finitions, Textures & Haut Contraste",
+            duration: "0:30 • Rendu final",
+            category: "Finition",
+            obs: "Utilisez la gomme mie de pain pour créer des rehauts de lumière et intensifier les noirs profonds.",
+            videoUrl: "https://videos.pexels.com/video-files/6893300/6893300-hd_1920_1080_25fps.mp4"
+        }
+    ],
 
     books: [
         {
