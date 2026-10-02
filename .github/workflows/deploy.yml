@@ -731,6 +731,8 @@ jobs:
               - 'word-nl-members/**'
             wisdom-nl-members:
               - 'wisdom-nl-members/**'
+            wisdom-fr-members:
+              - 'wisdom-fr-members/**'
             word-cs-members:
               - 'word-cs-members/**'
             word-ja-members:
@@ -4190,6 +4192,29 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "wisdom-nl-members/*"
           target: "/var/www/skillvault.blog/wisdom-nl-m"
+          strip_components: 1
+
+      - name: Prepare VPS Directory for 'wisdom-fr-members'
+        if: steps.filter.outputs['wisdom-fr-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/wisdom-fr-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/wisdom-fr-m
+            sudo chmod -R 755 /var/www/skillvault.blog/wisdom-fr-m
+
+      - name: Deploy 'wisdom-fr-members' to skillvault.blog/wisdom-fr-m
+        if: steps.filter.outputs['wisdom-fr-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "wisdom-fr-members/*"
+          target: "/var/www/skillvault.blog/wisdom-fr-m"
           strip_components: 1
 
       - name: Deploy 'word-cs-members' to skillvault.blog/word-cs-m
@@ -8365,6 +8390,29 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "wisdom-nl-members/*"
           target: "/var/www/skillvault.blog/wisdom-nl-m"
+          strip_components: 1
+
+      - name: Prepare VPS Directory for 'wisdom-fr-members'
+        if: steps.filter.outputs['wisdom-fr-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/wisdom-fr-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/wisdom-fr-m
+            sudo chmod -R 755 /var/www/skillvault.blog/wisdom-fr-m
+
+      - name: Deploy 'wisdom-fr-members' to skillvault.blog/wisdom-fr-m
+        if: steps.filter.outputs['wisdom-fr-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "wisdom-fr-members/*"
+          target: "/var/www/skillvault.blog/wisdom-fr-m"
           strip_components: 1
 
       - name: Deploy 'word-cs-members' to skillvault.blog/word-cs-m
