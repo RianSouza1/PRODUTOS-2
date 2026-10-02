@@ -553,6 +553,8 @@ jobs:
               - 'smoking-members/**'
             smoking-en-members:
               - 'smoking-en-members/**'
+            smoking-it-members:
+              - 'smoking-it-members/**'
             smoking-cs-members:
               - 'smoking-cs-members/**'
             smoking-fi-members:
@@ -1090,6 +1092,7 @@ jobs:
             sudo mkdir -p /var/www/skillvault.blog/smoking-fr-m
             sudo mkdir -p /var/www/skillvault.blog/smoking-m
             sudo mkdir -p /var/www/skillvault.blog/smoking-en-m
+            sudo mkdir -p /var/www/skillvault.blog/smoking-it-m
             sudo mkdir -p /var/www/skillvault.blog/smoking-cs-m
             sudo mkdir -p /var/www/skillvault.blog/smoking-fi-m
             sudo mkdir -p /var/www/skillvault.blog/smoking-hu-m
@@ -3160,6 +3163,29 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "smoking-en-members/*"
           target: "/var/www/skillvault.blog/smoking-en-m"
+          strip_components: 1
+
+      - name: Prepare VPS Directory for 'smoking-it-members'
+        if: steps.filter.outputs['smoking-it-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/smoking-it-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/smoking-it-m
+            sudo chmod -R 755 /var/www/skillvault.blog/smoking-it-m
+
+      - name: Deploy 'smoking-it-members' to skillvault.blog/smoking-it-m
+        if: steps.filter.outputs['smoking-it-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "smoking-it-members/*"
+          target: "/var/www/skillvault.blog/smoking-it-m"
           strip_components: 1
 
       - name: Deploy 'smoking-cs-members' to skillvault.blog/smoking-cs-m
@@ -7293,6 +7319,29 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "smoking-en-members/*"
           target: "/var/www/skillvault.blog/smoking-en-m"
+          strip_components: 1
+
+      - name: Prepare VPS Directory for 'smoking-it-members'
+        if: steps.filter.outputs['smoking-it-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/smoking-it-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/smoking-it-m
+            sudo chmod -R 755 /var/www/skillvault.blog/smoking-it-m
+
+      - name: Deploy 'smoking-it-members' to skillvault.blog/smoking-it-m
+        if: steps.filter.outputs['smoking-it-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "smoking-it-members/*"
+          target: "/var/www/skillvault.blog/smoking-it-m"
           strip_components: 1
 
       - name: Deploy 'smoking-cs-members' to skillvault.blog/smoking-cs-m
