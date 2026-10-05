@@ -709,6 +709,8 @@ jobs:
               - 'calis-man-en-members/**'
             calis-man-fr-members:
               - 'calis-man-fr-members/**'
+            calis-man-ro-members:
+              - 'calis-man-ro-members/**'
             calis-man-el-members:
               - 'calis-man-el-members/**'
             calis-man-fi-members:
@@ -3926,6 +3928,29 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "calis-man-fr-members/*"
           target: "/var/www/skillvault.blog/calis-man-fr-m"
+          strip_components: 1
+
+      - name: Prepare VPS Directory for 'calis-man-ro-members'
+        if: steps.filter.outputs['calis-man-ro-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/calis-man-ro-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/calis-man-ro-m
+            sudo chmod -R 755 /var/www/skillvault.blog/calis-man-ro-m
+
+      - name: Deploy 'calis-man-ro-members' to skillvault.blog/calis-man-ro-m
+        if: steps.filter.outputs['calis-man-ro-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calis-man-ro-members/*"
+          target: "/var/www/skillvault.blog/calis-man-ro-m"
           strip_components: 1
 
       - name: Deploy 'calis-man-el-members' to skillvault.blog/calis-man-el-m
@@ -8124,6 +8149,29 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "calis-man-fr-members/*"
           target: "/var/www/skillvault.blog/calis-man-fr-m"
+          strip_components: 1
+
+      - name: Prepare VPS Directory for 'calis-man-ro-members'
+        if: steps.filter.outputs['calis-man-ro-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/calis-man-ro-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/calis-man-ro-m
+            sudo chmod -R 755 /var/www/skillvault.blog/calis-man-ro-m
+
+      - name: Deploy 'calis-man-ro-members' to skillvault.blog/calis-man-ro-m
+        if: steps.filter.outputs['calis-man-ro-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "calis-man-ro-members/*"
+          target: "/var/www/skillvault.blog/calis-man-ro-m"
           strip_components: 1
 
       - name: Deploy 'calis-man-el-members' to skillvault.blog/calis-man-el-m
