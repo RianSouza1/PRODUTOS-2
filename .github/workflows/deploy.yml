@@ -823,6 +823,8 @@ jobs:
               - 'anti-sv-members/**'
             drums-es-members:
               - 'drums-es-members/**'
+            drums-it-members:
+              - 'drums-it-members/**'
             drums-cs-members:
               - 'drums-cs-members/**'
             drums-fi-members:
@@ -4771,6 +4773,29 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "drums-es-members/*"
           target: "/var/www/skillvault.blog/drums-es-m"
+          strip_components: 1
+
+      - name: Prepare VPS Directory for 'drums-it-members'
+        if: steps.filter.outputs['drums-it-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/drums-it-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/drums-it-m
+            sudo chmod -R 755 /var/www/skillvault.blog/drums-it-m
+
+      - name: Deploy 'drums-it-members' to skillvault.blog/drums-it-m
+        if: steps.filter.outputs['drums-it-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "drums-it-members/*"
+          target: "/var/www/skillvault.blog/drums-it-m"
           strip_components: 1
 
       - name: Deploy 'drums-es-members' to skillvault.blog/bateria-es-m
@@ -8992,6 +9017,29 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "drums-es-members/*"
           target: "/var/www/skillvault.blog/drums-es-m"
+          strip_components: 1
+
+      - name: Prepare VPS Directory for 'drums-it-members'
+        if: steps.filter.outputs['drums-it-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/drums-it-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/drums-it-m
+            sudo chmod -R 755 /var/www/skillvault.blog/drums-it-m
+
+      - name: Deploy 'drums-it-members' to skillvault.blog/drums-it-m
+        if: steps.filter.outputs['drums-it-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "drums-it-members/*"
+          target: "/var/www/skillvault.blog/drums-it-m"
           strip_components: 1
 
       - name: Deploy 'drums-es-members' to skillvault.blog/bateria-es-m
