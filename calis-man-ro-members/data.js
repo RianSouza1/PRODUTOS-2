@@ -74,6 +74,36 @@ const APP_DATA = {
   ],
   books: [
     {
+      id: "b1",
+      title: "Antrenament militar cu greutatea corpului pentru bărbați peste 40 de ani",
+      description: "Provocarea de 28 de zile cu antrenamente de 15 minute pe zi. Dezvoltă forța, mobilitatea și rezistența cu exerciții pe care le poți practica oriunde, fără sală de fitness.",
+      badgeText: "Provocarea de 28 de zile",
+      badgeColor: "#c45329",
+      features: [
+        "Program de 28 de zile pentru bărbați peste 40 de ani",
+        "Antrenamente de 15 minute pe zi, fără sală de fitness",
+        "Ghid în limba română, cu tutoriale video"
+      ],
+      downloadUrl: "materials/MAN-1-RO.pdf",
+      coverImage: "assets/covers/man_IMG1_ro.png",
+      buttonText: "Descarcă ghidul (PDF)"
+    },
+    {
+      id: "b2",
+      title: "Antrenament militar funcțional la nivel de elită",
+      description: "Un program tactic de 9 săptămâni cu greutatea propriului corp, dedicat dezvoltării forței, rezistenței, mobilității și performanței fizice.",
+      badgeText: "Program de 9 săptămâni",
+      badgeColor: "#3b5940",
+      features: [
+        "Program tactic de 9 săptămâni cu greutatea propriului corp",
+        "Antrenament funcțional pentru forță, rezistență și mobilitate",
+        "Ghid în limba română, disponibil pentru citire și descărcare"
+      ],
+      downloadUrl: "materials/MAN-2-RO.pdf",
+      coverImage: "assets/covers/man_IMG1_ro.png",
+      buttonText: "Descarcă ghidul (PDF)"
+    },
+    {
       id: "b3",
       title: "Calistenie militară pentru bărbați peste 50 de ani",
       description: "Un ghid de antrenament cu greutatea corpului pentru dezvoltarea forței, echilibrului, flexibilității și rezistenței. Descoperă exerciții pe care le poți practica în aer liber, fără sală de sport.",
