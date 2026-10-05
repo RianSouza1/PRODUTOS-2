@@ -1,6 +1,11 @@
 name: Publish Calis RO and Drums IT
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/deploy-member-recovery.yml'
   workflow_dispatch:
 
 permissions:
@@ -13,7 +18,7 @@ concurrency:
 jobs:
   publish:
     if: github.ref == 'refs/heads/main'
-    runs-on: macos-15
+    runs-on: ubuntu-24.04-arm
     timeout-minutes: 15
     env:
       GIT_LFS_SKIP_SMUDGE: '1'
