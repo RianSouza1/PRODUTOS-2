@@ -28,15 +28,24 @@ jobs:
 
       - name: Download the original PDF files
         shell: bash
+        timeout-minutes: 6
         run: |
           set -euo pipefail
-          git lfs install --local
-          git lfs pull --include="calis-man-ro-members/**,drums-it-members/**" --exclude=""
           for pdf in calis-man-ro-members/materials/*.pdf drums-it-members/materials/*.pdf; do
-            if [ "$(head -c 5 "$pdf")" != '%PDF-' ]; then
-              echo "::error::Original PDF missing: $pdf"
+            expected="$(awk '$1 == "oid" { sub(/^sha256:/, "", $2); print $2 }' "$pdf")"
+            if [[ ! "$expected" =~ ^[a-f0-9]{64}$ ]]; then
+              echo "::error::Invalid LFS reference: $pdf"
               exit 1
             fi
+            curl --fail --location --silent --show-error --retry 2 --connect-timeout 15 --max-time 60 \
+              "https://media.githubusercontent.com/media/$GITHUB_REPOSITORY/$GITHUB_SHA/$pdf" \
+              --output "$pdf.download"
+            actual="$(shasum -a 256 "$pdf.download" | awk '{print $1}')"
+            if [ "$actual" != "$expected" ] || [ "$(head -c 5 "$pdf.download")" != '%PDF-' ]; then
+              echo "::error::Original PDF integrity check failed: $pdf"
+              exit 1
+            fi
+            mv "$pdf.download" "$pdf"
           done
 
       - name: Publish the two areas using SSH
