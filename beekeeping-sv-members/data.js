@@ -131,12 +131,12 @@ const APP_DATA = {
     books: [
         {
             id: "b1",
-            title: "Biodling för alla",
-            description: "Den kompletta guiden till enkel och lönsam biodling - från att sätta upp din första kupa till att hantera en blomstrande bigård året runt.",
+            title: "Biodling för nybörjare",
+            description: "Den kompletta guiden till enkel och lönsam biodling – från att sätta upp din första kupa till att hantera en blomstrande bigård året runt.",
             badgeText: "HUVUDBOK",
             badgeColor: "#E5A817",
             features: [
-                "Komplett Hive Setup Guide",
+                "Komplett guide för kupuppsättning",
                 "Säsongshanteringskalender",
                 "Lönsam honungsproduktion"
             ],
@@ -146,29 +146,29 @@ const APP_DATA = {
         },
         {
             id: "b2",
-            title: "Biodlaren på bakgården",
-            description: "GUIDE",
+            title: "Biodlarens förstaårsplan",
+            description: "Din oumbärliga guide till biodling i hemmet – lär dig hur du håller bin i din trädgård tryggt och framgångsrikt under ditt första år.",
             badgeText: "GUIDE",
             badgeColor: "#6B8F3C",
             features: [
-                "Placering av kupan på bakgården",
-                "Ladda ner guide",
-                "Koloni hälsa och underhåll"
+                "Placering av kupa på bakgården",
+                "Nybörjarvänliga metoder",
+                "Kolonihälsa och underhåll"
             ],
             downloadUrl: "materials/Biodlarens-Forstaarsplan-SU.pdf",
             coverImage: "assets/covers/bee_IMG2_sv.png",
-            buttonText: "Lär dig den uråldriga konsten att tillverka honungsvin hemma - steg-för-steg-recept med din egen skördade honung."
+            buttonText: "Ladda ner guide"
         },
         {
             id: "b3",
-            title: "Bakgårdsmjödtillverkning",
-            description: "Lär dig den uråldriga konsten att tillverka honungsvin hemma - steg-för-steg-recept med din egen skördade honung.",
+            title: "Att brygga mjöd för nybörjare",
+            description: "Lär dig den uråldriga konsten att tillverka honungsvin hemma – steg-för-steg-recept med din egen skördade honung.",
             badgeText: "BONUS",
             badgeColor: "#B45309",
             features: [
                 "Traditionella mjödrecept",
                 "Fermenteringstekniker",
-                "Smakvariationer & tips"
+                "Smakvariationer och tips"
             ],
             downloadUrl: "materials/Att-Brygga-Mjod-for-Nyborjare-SU.pdf",
             coverImage: "assets/covers/bee_IMG3_sv.png",
@@ -187,7 +187,7 @@ const APP_DATA = {
             ],
             downloadUrl: "materials/ENG 04-Beekeeping-Made-Easy-by-Marcus-Williams.pdf",
             coverImage: "assets/covers/bee_IMG4_sv.png",
-            buttonText: "Ladda ner Extra"
+            buttonText: "Ladda ner extra"
         }
     ],
 

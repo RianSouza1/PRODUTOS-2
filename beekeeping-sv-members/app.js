@@ -145,8 +145,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Cria a string `mailto:` dinamicamente com base no contato do data.js
   function mountMailTo() {
-    const { contactEmail, emailSubject, Hej supportteam! Jag behöver hjälp med mitt område för biodlingmedlemmar.%0A%0AMitt namn är: ______. } = APP_DATA.config;
-    return `mailto:${contactEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(Hej supportteam! Jag behöver hjälp med mitt område för biodlingmedlemmar.%0A%0AMitt namn är: ______.)}`;
+    const { contactEmail, emailSubject, emailBodyTemplate } = APP_DATA.config;
+    return `mailto:${contactEmail}?subject=${encodeURIComponent(emailSubject || '')}&body=${encodeURIComponent(emailBodyTemplate || '')}`;
   }
 
   // ----------------------------------------------------------------------

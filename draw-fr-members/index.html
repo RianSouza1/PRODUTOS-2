@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>La Collection Pratique du Dessin — Espace Membres</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="core.css?v=1">
+</head>
+
+<body>
+
+    <!-- ============ PRE-PAGE WELCOME SCREEN ============ -->
+    <div id="pre-page" class="pre-page-overlay">
+        <div class="pre-page-bg"></div>
+        <div class="pre-page-content">
+            <div class="pre-page-icon" style="display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem;">
+                <div style="width: 82px; height: 82px; border-radius: 22px; background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(79, 70, 229, 0.45)); border: 1.5px solid rgba(192, 132, 252, 0.5); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(124, 58, 237, 0.35); backdrop-filter: blur(10px);">
+                    <svg viewBox="0 0 48 48" width="46" height="46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="21" stroke="url(#art-glow)" stroke-width="1.5" stroke-dasharray="4 3"/>
+                        <rect x="12" y="10" width="24" height="28" rx="3" fill="url(#canvas-grad)" stroke="#C084FC" stroke-width="2"/>
+                        <path d="M16 32L32 16" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M30 14L34 18L32 16Z" fill="#FBBF24"/>
+                        <path d="M16 22C19 18 21 24 26 20C28 18 31 21 32 23" stroke="#DDD6FE" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="16" cy="32" r="1.5" fill="#F59E0B"/>
+                        <defs>
+                            <linearGradient id="art-glow" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#C084FC"/>
+                                <stop offset="0.5" stop-color="#7C3AED"/>
+                                <stop offset="1" stop-color="#F59E0B"/>
+                            </linearGradient>
+                            <linearGradient id="canvas-grad" x1="12" y1="10" x2="36" y2="38" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#7C3AED" stop-opacity="0.3"/>
+                                <stop offset="1" stop-color="#4F46E5" stop-opacity="0.1"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+            <h1>La Collection Pratique du Dessin</h1>
+            <p>Votre accès exclusif est confirmé.<br>Tout ce dont vous avez besoin pour apprendre à dessiner, maîtriser les proportions et finaliser vos œuvres.</p>
+            <div class="pre-page-features">
+                <span>📖 Guides & Livres</span>
+                <span>🎥 Vidéos</span>
+                <span>✏️ Cahiers Pratiques</span>
+                <span>💬 Support</span>
+            </div>
+            <button onclick="let el=document.getElementById('pre-page'); el.style.opacity='0'; setTimeout(()=>el.style.display='none',600);">
+                Accéder aux supports →
+            </button>
+        </div>
+    </div>
+
+    <div id="floating-help-container"></div>
+
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-logo">
+                <img src="assets/covers/draw_IMG1_fr.png" alt="Logo" id="brand-logo" onerror="this.style.display='none'">
+                <h1 id="brand-title"></h1>
+            </div>
+        </header>
+
+        <main id="app-root" class="main-content">
+            <div class="loader-container">
+                <i data-lucide="loader-2" class="spin-icon"></i>
+            </div>
+        </main>
+
+        <nav class="bottom-tab-bar" id="main-nav">
+            <a href="#livros" class="tab-item" data-tab="livros">
+                <i data-lucide="book-open"></i>
+                <span>Livres</span>
+            </a>
+            <a href="#videos" class="tab-item" data-tab="videos">
+                <i data-lucide="play-circle"></i>
+                <span>Vidéos</span>
+            </a>
+            <a href="#contato" class="tab-item" data-tab="contato">
+                <i data-lucide="message-square"></i>
+                <span>Support</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="data.js?v=1"></script>
+    <script src="app.js?v=1"></script>
+
+</body>
+<!-- Deploy v1.0.0 -->
+</html>

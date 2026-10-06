@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>Le Livre de la Sagesse Intérieure — Espace membres</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="core.css?v=1">
+</head>
+
+<body>
+
+    <!-- ============ PRE-PAGE WELCOME SCREEN ============ -->
+    <div id="pre-page" class="pre-page-overlay">
+        <div class="pre-page-bg"></div>
+        <div class="pre-page-content">
+            <div class="pre-page-icon" style="display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem;">
+                <div style="width: 82px; height: 82px; border-radius: 22px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(79, 70, 229, 0.35)); border: 1.5px solid rgba(251, 191, 36, 0.5); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); backdrop-filter: blur(10px);">
+                    <svg viewBox="0 0 48 48" width="46" height="46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="21" stroke="url(#gold-glow)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                        <circle cx="24" cy="24" r="17" stroke="#FBBF24" stroke-width="1.2" stroke-opacity="0.6"/>
+                        <path d="M24 33C21 30.5 15 30 11 31.5V17C15 15.5 21 16 24 18.5C27 16 33 15.5 37 17V31.5C33 30 27 30.5 24 33Z" fill="url(#book-glow)" stroke="#FBBF24" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M24 18.5V33" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M24 9V14M18.5 11.5L21.5 14.5M29.5 11.5L26.5 14.5" stroke="#FBBF24" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="24" cy="11" r="1.5" fill="#FBBF24"/>
+                        <defs>
+                            <linearGradient id="gold-glow" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FBBF24"/>
+                                <stop offset="0.5" stop-color="#D4AF37"/>
+                                <stop offset="1" stop-color="#F59E0B"/>
+                            </linearGradient>
+                            <linearGradient id="book-glow" x1="11" y1="16" x2="37" y2="33" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FBBF24" stop-opacity="0.35"/>
+                                <stop offset="1" stop-color="#D4AF37" stop-opacity="0.1"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+            <h1>Le Livre de la Sagesse Intérieure</h1>
+            <p>Votre accès exclusif est confirmé.<br>Découvrez les principes intemporels, les symboles sacrés et la philosophie hermétique pour cultiver votre force intérieure.</p>
+            <div class="pre-page-features">
+                <span>📖 Livres</span>
+                <span>💬 Assistance</span>
+            </div>
+            <button onclick="let el=document.getElementById('pre-page'); el.style.opacity='0'; setTimeout(()=>el.style.display='none',600);">
+                Accéder aux ressources →
+            </button>
+        </div>
+    </div>
+
+    <div id="floating-help-container"></div>
+
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-logo">
+                <img src="assets/covers/wis_IMG1_fr.png" alt="Le Livre de la Sagesse Intérieure" id="brand-logo" onerror="this.style.display='none'">
+                <h1 id="brand-title"></h1>
+            </div>
+        </header>
+
+        <main id="app-root" class="main-content">
+            <div class="loader-container">
+                <i data-lucide="loader-2" class="spin-icon"></i>
+            </div>
+        </main>
+
+        <nav class="bottom-tab-bar" id="main-nav">
+            <a href="#livres" class="tab-item" data-tab="livres">
+                <i data-lucide="book-open"></i>
+                <span>Livres</span>
+            </a>
+            <a href="#assistance" class="tab-item" data-tab="assistance">
+                <i data-lucide="message-square"></i>
+                <span>Assistance</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="data.js?v=1"></script>
+    <script src="app.js?v=1"></script>
+
+</body>
+<!-- Deploy v1.0.0 -->
+</html>

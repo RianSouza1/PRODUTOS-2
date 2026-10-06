@@ -1,0 +1,105 @@
+name: Publish Calis RO and Drums IT
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/deploy-member-recovery.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-calis-ro-drums-it
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 15
+    env:
+      GIT_LFS_SKIP_SMUDGE: '1'
+    steps:
+      - name: Checkout the two member areas
+        uses: actions/checkout@v4
+        with:
+          lfs: false
+          sparse-checkout: |
+            calis-man-ro-members
+            drums-it-members
+
+      - name: Download the original PDF files
+        shell: bash
+        timeout-minutes: 6
+        run: |
+          set -euo pipefail
+          for pdf in calis-man-ro-members/materials/*.pdf drums-it-members/materials/*.pdf; do
+            expected="$(awk '$1 == "oid" { sub(/^sha256:/, "", $2); print $2 }' "$pdf")"
+            if [[ ! "$expected" =~ ^[a-f0-9]{64}$ ]]; then
+              echo "::error::Invalid LFS reference: $pdf"
+              exit 1
+            fi
+            curl --fail --location --silent --show-error --retry 2 --connect-timeout 15 --max-time 60 \
+              "https://media.githubusercontent.com/media/$GITHUB_REPOSITORY/$GITHUB_SHA/$pdf" \
+              --output "$pdf.download"
+            actual="$(shasum -a 256 "$pdf.download" | awk '{print $1}')"
+            if [ "$actual" != "$expected" ] || [ "$(head -c 5 "$pdf.download")" != '%PDF-' ]; then
+              echo "::error::Original PDF integrity check failed: $pdf"
+              exit 1
+            fi
+            mv "$pdf.download" "$pdf"
+          done
+
+      - name: Publish the two areas using SSH
+        shell: bash
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USERNAME: ${{ secrets.VPS_USERNAME }}
+          VPS_SECRET: ${{ secrets.VPS_SECRET }}
+        run: |
+          set -euo pipefail
+          [[ "$VPS_HOST" =~ ^[a-zA-Z0-9.:-]+$ ]]
+          [[ "$VPS_USERNAME" =~ ^[a-zA-Z_][a-zA-Z0-9_-]*$ ]]
+          ssh_dir="$(mktemp -d "$RUNNER_TEMP/member-ssh.XXXXXX")"
+          trap 'rm -f "$ssh_dir/key" "$ssh_dir/known_hosts"' EXIT
+          printf '%s\n' "$VPS_SECRET" | tr -d '\r' > "$ssh_dir/key"
+          chmod 600 "$ssh_dir/key"
+          ssh-keyscan -T 20 -H "$VPS_HOST" > "$ssh_dir/known_hosts" 2>/dev/null
+          ssh_options=(-i "$ssh_dir/key" -o BatchMode=yes -o ConnectTimeout=30 -o StrictHostKeyChecking=yes -o "UserKnownHostsFile=$ssh_dir/known_hosts")
+          remote="$VPS_USERNAME@$VPS_HOST"
+
+          for source in calis-man-ro-members drums-it-members; do
+            case "$source" in
+              calis-man-ro-members) destination='/var/www/skillvault.blog/calis-man-ro-m' ;;
+              drums-it-members) destination='/var/www/skillvault.blog/drums-it-m' ;;
+              *) exit 1 ;;
+            esac
+            archive="$RUNNER_TEMP/$source.tar.gz"
+            remote_archive="/tmp/$source-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT.tar.gz"
+            COPYFILE_DISABLE=1 tar -czf "$archive" -C "$source" .
+            scp "${ssh_options[@]}" "$archive" "$remote:$remote_archive"
+            ssh "${ssh_options[@]}" "$remote" bash -s -- "$remote_archive" "$destination" "$VPS_USERNAME" <<'REMOTE'
+          set -euo pipefail
+          archive="$1"
+          destination="$2"
+          owner="$3"
+          case "$destination" in
+            /var/www/skillvault.blog/calis-man-ro-m|/var/www/skillvault.blog/drums-it-m) ;;
+            *) exit 1 ;;
+          esac
+          case "$archive" in
+            /tmp/calis-man-ro-members-*.tar.gz|/tmp/drums-it-members-*.tar.gz) ;;
+            *) exit 1 ;;
+          esac
+          sudo mkdir -p "$destination"
+          sudo tar -xzf "$archive" -C "$destination"
+          sudo chown -R "$owner:$(id -gn "$owner")" "$destination"
+          sudo find "$destination" -type d -exec chmod 755 {} +
+          sudo find "$destination" -type f -exec chmod 644 {} +
+          rm -f "$archive"
+          REMOTE
+            echo "Published $source"
+          done
