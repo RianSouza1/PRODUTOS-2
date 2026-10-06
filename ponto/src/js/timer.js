@@ -1,5 +1,7 @@
 /**
  * timer.js - Controlador do Cronômetro em Tempo Real por Funcionário
+ * 
+ * Sincronizado com o relógio do servidor via store.getSynchronizedNow()
  */
 
 import { store } from './store.js';
@@ -8,6 +10,11 @@ class StopwatchTimer {
   constructor() {
     this.intervalId = null;
     this.onTickCallbacks = [];
+
+    // Quando o store sincroniza com o servidor, verifica se algum cronômetro começou a rodar
+    store.onSync(() => {
+      this.checkTicker();
+    });
   }
 
   // Registra callback para atualizar a UI a cada segundo
@@ -19,25 +26,40 @@ class StopwatchTimer {
     this.onTickCallbacks.forEach(cb => cb(elapsedMs, this.formatMs(elapsedMs)));
   }
 
-  // Calcula o tempo decorrido total em milissegundos
+  // Calcula o tempo decorrido total em milissegundos com sincronia de servidor
   getElapsedMs(employeeId) {
     const emp = store.getEmployees().find(e => e.id === employeeId);
     if (!emp || !emp.stopwatch) return 0;
 
     const { isRunning, startTime, accumulatedMs = 0 } = emp.stopwatch;
+    const baseMs = Math.max(0, Number(accumulatedMs) || 0);
 
     if (isRunning && startTime) {
-      const now = Date.now();
-      const sessionElapsed = Math.max(0, now - startTime);
-      return accumulatedMs + sessionElapsed;
+      const now = store.getSynchronizedNow();
+      const startMs = Number(startTime) || now;
+      const sessionElapsed = Math.max(0, now - startMs);
+      return baseMs + sessionElapsed;
     }
 
-    return accumulatedMs;
+    return baseMs;
   }
 
-  // Formata ms para HH:MM:SS
+  // Detecta se a sessão contínua do cronômetro passou de um limite (ex: 16h = 57.600.000 ms)
+  // Ajuda a avisar se alguém esqueceu o cronômetro rodando por dias
+  isLongSession(employeeId, thresholdHours = 16) {
+    const emp = store.getEmployees().find(e => e.id === employeeId);
+    if (!emp || !emp.stopwatch || !emp.stopwatch.isRunning || !emp.stopwatch.startTime) {
+      return false;
+    }
+    const now = store.getSynchronizedNow();
+    const sessionMs = now - Number(emp.stopwatch.startTime);
+    return sessionMs > (thresholdHours * 3600 * 1000);
+  }
+
+  // Formata ms para HH:MM:SS (com suporte a mais de 99 horas se necessário)
   formatMs(ms) {
-    const totalSeconds = Math.floor(ms / 1000);
+    const safeMs = Math.max(0, Number(ms) || 0);
+    const totalSeconds = Math.floor(safeMs / 1000);
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
@@ -48,7 +70,8 @@ class StopwatchTimer {
 
   // Formata ms para horas e minutos (ex: 2h 45m)
   getHoursAndMinutes(ms) {
-    const totalMinutes = Math.floor(ms / 60000);
+    const safeMs = Math.max(0, Number(ms) || 0);
+    const totalMinutes = Math.floor(safeMs / 60000);
     const hours = Math.floor(totalMinutes / 60);
     const minutes = totalMinutes % 60;
     return { hours, minutes, totalMinutes };
@@ -59,24 +82,26 @@ class StopwatchTimer {
     const emp = store.getEmployees().find(e => e.id === employeeId);
     if (!emp) return;
 
-    if (emp.stopwatch.isRunning) return; // Já está rodando
+    if (emp.stopwatch && emp.stopwatch.isRunning) return;
 
-    store.updateStopwatch(employeeId, {
+    const now = store.getSynchronizedNow();
+    store.saveStopwatch(employeeId, {
       isRunning: true,
-      startTime: Date.now()
+      startTime: now,
+      accumulatedMs: Number(emp.stopwatch?.accumulatedMs) || 0
     });
 
     this.startTicker();
   }
 
-  // Pausa o cronômetro para o funcionário (autonomia total para pausar quando quiser)
+  // Pausa o cronômetro para o funcionário
   pause(employeeId) {
     const emp = store.getEmployees().find(e => e.id === employeeId);
-    if (!emp || !emp.stopwatch.isRunning) return;
+    if (!emp || !emp.stopwatch || !emp.stopwatch.isRunning) return;
 
     const currentElapsed = this.getElapsedMs(employeeId);
 
-    store.updateStopwatch(employeeId, {
+    store.saveStopwatch(employeeId, {
       isRunning: false,
       startTime: null,
       accumulatedMs: currentElapsed
@@ -90,18 +115,18 @@ class StopwatchTimer {
     const emp = store.getEmployees().find(e => e.id === employeeId);
     if (!emp) return false;
 
-    if (emp.stopwatch.isRunning) {
+    if (emp.stopwatch && emp.stopwatch.isRunning) {
       this.pause(employeeId);
-      return false; // Agora pausado
+      return false;
     } else {
       this.start(employeeId);
-      return true; // Agora rodando
+      return true;
     }
   }
 
   // Zera o cronômetro do funcionário
   reset(employeeId) {
-    store.updateStopwatch(employeeId, {
+    store.saveStopwatch(employeeId, {
       isRunning: false,
       startTime: null,
       accumulatedMs: 0
@@ -133,12 +158,19 @@ class StopwatchTimer {
     }
   }
 
-  // Inicializa o ticker se houver cronômetros salvos como 'rodando' ao recarregar a página
-  init() {
+  // Verifica e sincroniza o ticker de acordo com os estados salvos
+  checkTicker() {
     const anyRunning = store.getEmployees().some(e => e.stopwatch && e.stopwatch.isRunning);
     if (anyRunning) {
       this.startTicker();
+    } else {
+      this.checkStopTicker();
     }
+  }
+
+  // Inicializa o ticker se houver cronômetros rodando ao carregar a página
+  init() {
+    this.checkTicker();
   }
 }
 

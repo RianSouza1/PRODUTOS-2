@@ -1,16 +1,18 @@
 /**
- * store.js - Gerenciamento de Dados com Persistência Centralizada no Servidor
+ * store.js - Gerenciamento de Dados com Sincronização em Tempo Real Centralizada
  * 
- * Hierarquia de dados:
- * 1. Servidor (api.php + data.json) → fonte da verdade, compartilhado entre todos os dispositivos
- * 2. LocalStorage → cache local para acesso offline rápido
- * 3. IndexedDB → backup redundante local
+ * Recursos:
+ * 1. Sincronização contínua com o servidor (api.php) a cada 4 segundos.
+ * 2. Cálculo de desvio de relógio (serverTimeOffset) para sincronização perfeita de cronômetro.
+ * 3. Ações atômicas (stopwatch, entradas, funcionários) para prevenir sobrescrita de dados entre abas e dispositivos.
+ * 4. Cache local redundante (LocalStorage + IndexedDB) para suporte offline imediato.
  */
 
 const STORAGE_KEY = 'contabilizador_ponto_v1';
+const ACTIVE_EMP_KEY = 'contabilizador_active_emp_id';
+const THEME_KEY = 'contabilizador_theme_pref';
 const API_URL = './api.php';
 
-// Dados iniciais com os funcionários padrão: Eduardo e Públio
 const DEFAULT_DATA = {
   activeEmployeeId: 'emp-1',
   theme: 'dark',
@@ -22,7 +24,7 @@ const DEFAULT_DATA = {
       targetHours: 40,
       color: '#3b82f6',
       avatar: 'ED',
-      stopwatch: { isRunning: false, startTime: null, accumulatedMs: 0 },
+      stopwatch: { isRunning: false, startTime: null, accumulatedMs: 0, updatedAt: 0 },
       entries: [],
       completedCyclesCount: 0,
       completedCyclesHistory: []
@@ -34,7 +36,7 @@ const DEFAULT_DATA = {
       targetHours: 40,
       color: '#10b981',
       avatar: 'PB',
-      stopwatch: { isRunning: false, startTime: null, accumulatedMs: 0 },
+      stopwatch: { isRunning: false, startTime: null, accumulatedMs: 0, updatedAt: 0 },
       entries: [],
       completedCyclesCount: 0,
       completedCyclesHistory: []
@@ -47,10 +49,58 @@ class Store {
   constructor() {
     this.db = null;
     this.serverAvailable = false;
+    this.serverTimeOffset = 0; // serverTime - Date.now()
+    this.isPolling = false;
+    this.pollIntervalId = null;
+    this.lastSyncTimestamp = null;
+    this.onSyncCallbacks = [];
+    this.onConnectionChangeCallbacks = [];
+
+    // Carrega dados locais iniciais
     this.data = this._loadLocal();
+
+    // Restaura preferência de funcionário e tema locais
+    const savedActiveId = localStorage.getItem(ACTIVE_EMP_KEY);
+    if (savedActiveId && this.data.employees.some(e => e.id === savedActiveId)) {
+      this.data.activeEmployeeId = savedActiveId;
+    }
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    if (savedTheme) {
+      this.data.theme = savedTheme;
+    }
+
     this._initIndexedDB();
-    // Ao carregar, tenta baixar dados do servidor (fonte da verdade)
-    this._pullFromServer();
+
+    // Sincronização inicial com o servidor
+    this._pullFromServer(false);
+
+    // Inicia polling em segundo plano (a cada 4 segundos)
+    this.startPolling(4000);
+
+    // Atualiza imediatamente quando a aba volta a ficar visível
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        this._pullFromServer(true);
+      }
+    });
+  }
+
+  // Registra callbacks de sincronização
+  onSync(callback) {
+    this.onSyncCallbacks.push(callback);
+  }
+
+  onConnectionChange(callback) {
+    this.onConnectionChangeCallbacks.push(callback);
+  }
+
+  _notifyConnection(status, details) {
+    this.onConnectionChangeCallbacks.forEach(cb => cb(status, details));
+  }
+
+  // Retorna o timestamp atual sincronizado com o fuso do servidor
+  getSynchronizedNow() {
+    return Date.now() + (this.serverTimeOffset || 0);
   }
 
   // ========== PERSISTÊNCIA LOCAL ==========
@@ -81,25 +131,32 @@ class Store {
       if (!emp.entries || !Array.isArray(emp.entries)) emp.entries = [];
       if (!emp.completedCyclesHistory || !Array.isArray(emp.completedCyclesHistory)) emp.completedCyclesHistory = [];
       if (!emp.stopwatch || typeof emp.stopwatch !== 'object') {
-        emp.stopwatch = { isRunning: false, startTime: null, accumulatedMs: 0 };
+        emp.stopwatch = { isRunning: false, startTime: null, accumulatedMs: 0, updatedAt: 0 };
       }
+      if (emp.targetHours === undefined) emp.targetHours = 40;
     });
   }
 
   _saveLocal() {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(this.data));
+      if (this.data.activeEmployeeId) {
+        localStorage.setItem(ACTIVE_EMP_KEY, this.data.activeEmployeeId);
+      }
+      if (this.data.theme) {
+        localStorage.setItem(THEME_KEY, this.data.theme);
+      }
     } catch (e) {
       console.error('Erro ao salvar LocalStorage:', e);
     }
   }
 
-  // ========== IndexedDB (backup redundante) ==========
+  // ========== IndexedDB ==========
 
   _initIndexedDB() {
     try {
       if (!window.indexedDB) return;
-      const request = indexedDB.open('ContabilizadorPontoDB_v2', 1);
+      const request = indexedDB.open('ContabilizadorPontoDB_v3', 1);
       request.onupgradeneeded = (e) => {
         const db = e.target.result;
         if (!db.objectStoreNames.contains('app_state')) {
@@ -120,81 +177,138 @@ class Store {
     } catch (e) {}
   }
 
-  // ========== SERVIDOR (fonte da verdade) ==========
+  // ========== SINCRONIZAÇÃO EM SEGUNDO PLANO (POLLING) ==========
 
-  async _pullFromServer() {
+  startPolling(intervalMs = 4000) {
+    if (this.pollIntervalId) clearInterval(this.pollIntervalId);
+    this.pollIntervalId = setInterval(() => {
+      if (!document.hidden && !this.isPolling) {
+        this._pullFromServer(true);
+      }
+    }, intervalMs);
+  }
+
+  stopPolling() {
+    if (this.pollIntervalId) {
+      clearInterval(this.pollIntervalId);
+      this.pollIntervalId = null;
+    }
+  }
+
+  // ========== SERVIDOR (api.php) ==========
+
+  async _pullFromServer(isBackground = false) {
+    if (this.isPolling) return;
+    this.isPolling = true;
+
     try {
-      const response = await fetch(API_URL, {
+      const cacheBust = Date.now();
+      const response = await fetch(`${API_URL}?t=${cacheBust}`, {
         cache: 'no-store',
         headers: { 'Cache-Control': 'no-cache' }
       });
+
       if (!response.ok) {
-        console.log('Servidor não disponível (status ' + response.status + '). Usando dados locais.');
+        this.serverAvailable = false;
+        this._notifyConnection('offline', `Status ${response.status}`);
+        this.isPolling = false;
         return;
       }
+
       const serverData = await response.json();
+
+      // Ajusta fuso / offset de relógio com o servidor
+      if (serverData && serverData.serverTime) {
+        this.serverTimeOffset = Number(serverData.serverTime) - Date.now();
+      }
+
       if (serverData && serverData.employees && Array.isArray(serverData.employees) && serverData.employees.length > 0) {
         this.serverAvailable = true;
-        // Servidor é a fonte da verdade — seus dados prevalecem
-        // Preservar tema e activeEmployeeId locais (preferências de cada dispositivo)
-        const localTheme = this.data.theme;
-        const localActiveId = this.data.activeEmployeeId;
-        this.data = serverData;
-        this.data.theme = localTheme || serverData.theme || 'dark';
-        this.data.activeEmployeeId = localActiveId || serverData.activeEmployeeId;
-        this._saveLocal();
-        this._saveToIndexedDB(this.data);
-        // Re-renderizar se UI já estiver disponível
-        if (window.ui) window.ui.renderAll();
-        console.log('✅ Dados sincronizados do servidor com sucesso.');
+        this.lastSyncTimestamp = Date.now();
+        this._notifyConnection('connected', 'Online sincronizado');
+
+        // Verifica se houve alteração real nos dados dos funcionários
+        const currentHash = JSON.stringify(this.data.employees);
+        const serverHash = JSON.stringify(serverData.employees);
+
+        if (currentHash !== serverHash) {
+          // Atualiza lista de funcionários preservando seleções locais da interface
+          const localActiveId = this.data.activeEmployeeId;
+          const localTheme = this.data.theme;
+
+          this.data.employees = serverData.employees;
+          this._migrateData(this.data);
+
+          // Se o funcionário ativo não existir mais, seleciona o primeiro
+          if (!this.data.employees.some(e => e.id === localActiveId)) {
+            this.data.activeEmployeeId = this.data.employees[0]?.id || 'emp-1';
+          } else {
+            this.data.activeEmployeeId = localActiveId;
+          }
+
+          this.data.theme = localTheme || 'dark';
+
+          this._saveLocal();
+          this._saveToIndexedDB(this.data);
+
+          // Notifica observadores (UI e Timer)
+          this.onSyncCallbacks.forEach(cb => cb(this.data, isBackground));
+        } else {
+          // Mesmo sem alteração em lista/entradas, avisa timer para checar cronômetros
+          this.onSyncCallbacks.forEach(cb => cb(this.data, true));
+        }
       } else if (serverData && serverData.status === 'empty') {
-        // Servidor vazio — enviar dados locais como seed inicial
+        // Servidor vazio: enviar seed inicial com os dados locais
         this.serverAvailable = true;
-        await this._pushToServer();
-        console.log('📤 Dados locais enviados ao servidor como seed inicial.');
+        this._notifyConnection('connected', 'Sincronizado');
+        await this._postToServer({
+          action: 'full_replace',
+          employees: this.data.employees
+        });
       }
     } catch (err) {
-      console.log('Servidor offline ou inacessível. Operando com dados locais.');
+      this.serverAvailable = false;
+      this._notifyConnection('offline', 'Modo offline');
+    } finally {
+      this.isPolling = false;
     }
   }
 
-  async _pushToServer() {
-    if (!this.serverAvailable) {
-      // Tentar mesmo assim — pode ser a primeira vez
-      try {
-        const res = await fetch(API_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(this.data)
-        });
-        if (res.ok) {
-          this.serverAvailable = true;
-          console.log('✅ Dados enviados ao servidor.');
-        }
-      } catch (e) {}
-      return;
-    }
+  async _postToServer(payload) {
     try {
-      await fetch(API_URL, {
+      this._notifyConnection('syncing', 'Sincronizando...');
+      const response = await fetch(API_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(this.data)
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-cache'
+        },
+        body: JSON.stringify(payload)
       });
-    } catch (e) {
-      console.log('Falha ao enviar dados ao servidor (offline?).');
+
+      if (!response.ok) {
+        this._notifyConnection('offline', 'Falha no envio');
+        return false;
+      }
+
+      const resData = await response.json();
+      if (resData && resData.serverTime) {
+        this.serverTimeOffset = Number(resData.serverTime) - Date.now();
+      }
+
+      this.serverAvailable = true;
+      this.lastSyncTimestamp = Date.now();
+      this._notifyConnection('connected', 'Online sincronizado');
+      return resData;
+    } catch (err) {
+      console.warn('Falha na requisição ao servidor:', err);
+      this.serverAvailable = false;
+      this._notifyConnection('offline', 'Modo offline');
+      return false;
     }
   }
 
-  // ========== SAVE CENTRAL (grava em tudo) ==========
-
-  saveData(data = this.data) {
-    this.data = data;
-    this._saveLocal();
-    this._saveToIndexedDB(data);
-    this._pushToServer();
-  }
-
-  // ========== MÉTODOS DE FUNCIONÁRIO ==========
+  // ========== GERENCIAMENTO DE FUNCIONÁRIOS ==========
 
   getEmployees() {
     return this.data.employees || [];
@@ -209,55 +323,120 @@ class Store {
   setActiveEmployee(id) {
     if (this.data.employees.some(e => e.id === id)) {
       this.data.activeEmployeeId = id;
-      this.saveData();
+      this._saveLocal(); // Preferência local, não envia para o servidor
     }
   }
 
-  addEmployee(name, role, targetHours = 40, color = '#6366f1') {
+  async addEmployee(name, role, targetHours = 40, color = '#3b82f6') {
     const initials = name.trim().split(' ').filter(Boolean).map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'FN';
     const newEmp = {
-      id: 'emp-' + Date.now(),
+      id: 'emp-' + Date.now() + '-' + Math.random().toString(36).substr(2, 4),
       name: name.trim(),
       role: role.trim() || 'Funcionário',
       targetHours: parseInt(targetHours, 10) || 40,
-      color,
+      color: color || '#3b82f6',
       avatar: initials,
-      stopwatch: { isRunning: false, startTime: null, accumulatedMs: 0 },
+      stopwatch: { isRunning: false, startTime: null, accumulatedMs: 0, updatedAt: this.getSynchronizedNow() },
       entries: [],
       completedCyclesCount: 0,
       completedCyclesHistory: []
     };
+
     this.data.employees.push(newEmp);
     this.data.activeEmployeeId = newEmp.id;
-    this.saveData();
+    this._saveLocal();
+    this._saveToIndexedDB(this.data);
+
+    // Envia ação atômica ao servidor
+    await this._postToServer({
+      action: 'add_employee',
+      employee: newEmp
+    });
+
     return newEmp;
   }
 
-  updateEmployee(id, updatedFields) {
+  async updateEmployee(id, updatedFields) {
     const emp = this.data.employees.find(e => e.id === id);
-    if (emp) {
-      Object.assign(emp, updatedFields);
-      if (updatedFields.name) {
-        emp.avatar = updatedFields.name.trim().split(' ').filter(Boolean).map(n => n[0]).join('').substring(0, 2).toUpperCase();
-      }
-      this.saveData();
+    if (!emp) return false;
+
+    if (updatedFields.name) {
+      emp.name = updatedFields.name.trim();
+      emp.avatar = emp.name.split(' ').filter(Boolean).map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'FN';
     }
+    if (updatedFields.role !== undefined) emp.role = updatedFields.role.trim();
+    if (updatedFields.targetHours !== undefined) emp.targetHours = parseInt(updatedFields.targetHours, 10) || 40;
+    if (updatedFields.color !== undefined) emp.color = updatedFields.color;
+
+    this._saveLocal();
+    this._saveToIndexedDB(this.data);
+
+    // Envia ação atômica ao servidor
+    await this._postToServer({
+      action: 'update_employee',
+      employeeId: id,
+      fields: {
+        name: emp.name,
+        role: emp.role,
+        targetHours: emp.targetHours,
+        color: emp.color,
+        avatar: emp.avatar
+      }
+    });
+
+    return true;
   }
 
-  deleteEmployee(id) {
+  async deleteEmployee(id) {
     if (this.data.employees.length <= 1) {
       throw new Error('É necessário ter pelo menos 1 funcionário cadastrado.');
     }
+
+    const removedEmp = this.data.employees.find(e => e.id === id);
     this.data.employees = this.data.employees.filter(e => e.id !== id);
+
     if (this.data.activeEmployeeId === id) {
       this.data.activeEmployeeId = this.data.employees[0].id;
     }
-    this.saveData();
+
+    this._saveLocal();
+    this._saveToIndexedDB(this.data);
+
+    // Envia ação atômica ao servidor
+    await this._postToServer({
+      action: 'delete_employee',
+      employeeId: id
+    });
+
+    return removedEmp;
+  }
+
+  // ========== CRONÔMETRO (ATÔMICO EM TEMPO REAL) ==========
+
+  async saveStopwatch(employeeId, stopwatchState) {
+    const emp = this.data.employees.find(e => e.id === employeeId);
+    if (!emp) return;
+
+    emp.stopwatch = {
+      ...emp.stopwatch,
+      ...stopwatchState,
+      updatedAt: this.getSynchronizedNow()
+    };
+
+    this._saveLocal();
+    this._saveToIndexedDB(this.data);
+
+    // Envia imediatamente ação atômica de cronômetro
+    await this._postToServer({
+      action: 'update_stopwatch',
+      employeeId,
+      stopwatch: emp.stopwatch
+    });
   }
 
   // ========== LANÇAMENTOS / HISTÓRICO ==========
 
-  addEntry(employeeId, { hours, minutes, date, type = 'manual', description = '' }) {
+  async addEntry(employeeId, { hours, minutes, date, type = 'manual', description = '' }) {
     const emp = this.data.employees.find(e => e.id === employeeId);
     if (!emp) return null;
 
@@ -294,11 +473,20 @@ class Store {
     if (!this.data.undoStack) this.data.undoStack = [];
     this.data.undoStack.push({ action: 'add_entry', employeeId, entry });
 
-    this.saveData();
+    this._saveLocal();
+    this._saveToIndexedDB(this.data);
+
+    // Envia ação atômica ao servidor
+    await this._postToServer({
+      action: 'add_entry',
+      employeeId,
+      entry
+    });
+
     return entry;
   }
 
-  updateEntry(employeeId, entryId, { hours, minutes, date, description }) {
+  async updateEntry(employeeId, entryId, { hours, minutes, date, description }) {
     const emp = this.data.employees.find(e => e.id === employeeId);
     if (!emp || !emp.entries) return false;
 
@@ -319,11 +507,27 @@ class Store {
     }
     if (description !== undefined) entry.description = description.trim();
 
-    this.saveData();
+    this._saveLocal();
+    this._saveToIndexedDB(this.data);
+
+    // Envia ação atômica ao servidor
+    await this._postToServer({
+      action: 'update_entry',
+      employeeId,
+      entryId,
+      entry: {
+        hours: entry.hours,
+        minutes: entry.minutes,
+        totalMinutes: entry.totalMinutes,
+        date: entry.date,
+        description: entry.description
+      }
+    });
+
     return true;
   }
 
-  deleteEntry(employeeId, entryId) {
+  async deleteEntry(employeeId, entryId) {
     const emp = this.data.employees.find(e => e.id === employeeId);
     if (!emp || !emp.entries) return false;
 
@@ -332,13 +536,23 @@ class Store {
       const removed = emp.entries.splice(index, 1)[0];
       if (!this.data.undoStack) this.data.undoStack = [];
       this.data.undoStack.push({ action: 'delete_entry', employeeId, entry: removed, index });
-      this.saveData();
+
+      this._saveLocal();
+      this._saveToIndexedDB(this.data);
+
+      // Envia ação atômica ao servidor
+      await this._postToServer({
+        action: 'delete_entry',
+        employeeId,
+        entryId
+      });
+
       return removed;
     }
     return false;
   }
 
-  undoLastAction() {
+  async undoLastAction() {
     if (!this.data.undoStack || this.data.undoStack.length === 0) return null;
 
     const lastAction = this.data.undoStack.pop();
@@ -346,19 +560,24 @@ class Store {
     if (!emp) return null;
 
     if (lastAction.action === 'add_entry') {
-      emp.entries = (emp.entries || []).filter(e => e.id !== lastAction.entry.id);
-      this.saveData();
+      await this.deleteEntry(emp.id, lastAction.entry.id);
       return { message: 'Lançamento desfeito com sucesso.', entry: lastAction.entry };
     } else if (lastAction.action === 'delete_entry') {
       if (!emp.entries) emp.entries = [];
       emp.entries.splice(lastAction.index, 0, lastAction.entry);
-      this.saveData();
+      this._saveLocal();
+      this._saveToIndexedDB(this.data);
+      await this._postToServer({
+        action: 'add_entry',
+        employeeId: emp.id,
+        entry: lastAction.entry
+      });
       return { message: 'Registro restaurado com sucesso.', entry: lastAction.entry };
     }
     return null;
   }
 
-  // ========== CÁLCULO DE HORAS ==========
+  // ========== CÁLCULO DE ESTATÍSTICAS ==========
 
   getEmployeeTotalMinutes(employeeId) {
     const emp = this.data.employees.find(e => e.id === employeeId);
@@ -368,7 +587,7 @@ class Store {
 
   getEmployeeCurrentCycleStats(employeeId) {
     const emp = this.data.employees.find(e => e.id === employeeId);
-    if (!emp) return { currentMinutes: 0, targetMinutes: 2400, percent: 0, remainingMinutes: 2400 };
+    if (!emp) return { currentMinutes: 0, targetMinutes: 2400, percent: 0, remainingMinutes: 2400, isCompleted: false };
 
     const totalMinutes = this.getEmployeeTotalMinutes(employeeId);
     const targetMinutes = (emp.targetHours || 40) * 60;
@@ -378,7 +597,7 @@ class Store {
     return { totalMinutes, targetMinutes, remainingMinutes, percent, isCompleted: totalMinutes >= targetMinutes };
   }
 
-  completeCycle(employeeId) {
+  async completeCycle(employeeId) {
     const emp = this.data.employees.find(e => e.id === employeeId);
     if (!emp) return false;
 
@@ -397,37 +616,56 @@ class Store {
     if (!emp.completedCyclesHistory) emp.completedCyclesHistory = [];
     emp.completedCyclesHistory.push(cycleRecord);
     emp.entries = [];
-    this.saveData();
+
+    this._saveLocal();
+    this._saveToIndexedDB(this.data);
+
+    // Envia ação atômica ao servidor
+    await this._postToServer({
+      action: 'complete_cycle',
+      employeeId,
+      cycle: cycleRecord
+    });
+
     return cycleRecord;
-  }
-
-  // ========== CRONÔMETRO ==========
-
-  updateStopwatch(employeeId, stopwatchState) {
-    const emp = this.data.employees.find(e => e.id === employeeId);
-    if (emp) {
-      emp.stopwatch = { ...emp.stopwatch, ...stopwatchState };
-      this.saveData();
-    }
   }
 
   // ========== TEMA ==========
 
-  getTheme() { return this.data.theme || 'dark'; }
-  setTheme(theme) { this.data.theme = theme; this.saveData(); }
+  getTheme() {
+    return this.data.theme || localStorage.getItem(THEME_KEY) || 'dark';
+  }
+
+  setTheme(theme) {
+    this.data.theme = theme;
+    localStorage.setItem(THEME_KEY, theme);
+  }
 
   // ========== BACKUP ==========
 
-  exportBackup() { return JSON.stringify(this.data, null, 2); }
+  exportBackup() {
+    return JSON.stringify(this.data, null, 2);
+  }
 
-  importBackup(jsonString) {
+  async importBackup(jsonString) {
     try {
       const parsed = JSON.parse(jsonString);
       if (!parsed.employees || !Array.isArray(parsed.employees)) {
         throw new Error('Arquivo JSON inválido para backup de Ponto.');
       }
-      this.data = parsed;
-      this.saveData();
+      this._migrateData(parsed);
+      this.data.employees = parsed.employees;
+      if (parsed.undoStack) this.data.undoStack = parsed.undoStack;
+
+      this._saveLocal();
+      this._saveToIndexedDB(this.data);
+
+      await this._postToServer({
+        action: 'full_replace',
+        employees: this.data.employees,
+        undoStack: this.data.undoStack
+      });
+
       return true;
     } catch (e) {
       console.error('Falha ao importar backup:', e);

@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contabilizador de Horas & Ponto Eletrônico — Ciclo 40h</title>
-  <meta name="description" content="Aplicação moderna de Ponto Eletrônico e Contabilizador de Horas por Ciclo de 40 Horas com suporte a múltiplos funcionários e cronômetro em tempo real.">
+  <meta name="description" content="Aplicação moderna de Ponto Eletrônico e Contabilizador de Horas por Ciclo de 40 Horas com suporte a múltiplos funcionários e sincronização em tempo real.">
   
   <!-- Estilos CSS -->
-  <link rel="stylesheet" href="./src/css/style.css?v=3.0">
+  <link rel="stylesheet" href="./src/css/style.css?v=4.0">
 </head>
 <body>
   <div class="app-container">
@@ -23,6 +23,12 @@
       </div>
       
       <div class="header-actions">
+        <!-- Indicador de Sincronização Online -->
+        <div id="connection-status" class="connection-status connected" title="Sincronização em tempo real com o servidor">
+          <span class="status-dot"></span>
+          <span id="connection-status-text">Online</span>
+        </div>
+
         <button id="btn-report" class="btn-icon" title="Gerar Relatório CSV" aria-label="Gerar Relatório CSV">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
         </button>
@@ -64,15 +70,26 @@
     <div id="single-emp-container">
       
       <!-- Informações do Perfil Ativo -->
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-        <div>
-          <h2 id="emp-active-name" style="font-size: 1.4rem; font-weight: 800;">Nome do Funcionário</h2>
-          <div id="emp-active-role" style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Cargo</div>
+      <div class="emp-profile-header">
+        <div class="emp-profile-info">
+          <div id="emp-active-avatar" class="emp-avatar-lg">ED</div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <h2 id="emp-active-name" style="font-size: 1.4rem; font-weight: 800;">Nome do Funcionário</h2>
+              <button id="btn-edit-active-emp" class="btn-icon" title="Editar dados do funcionário" aria-label="Editar Funcionário" style="width: 28px; height: 28px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+              </button>
+            </div>
+            <div id="emp-active-role" style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Cargo</div>
+          </div>
         </div>
-        <button id="btn-complete-cycle" class="btn-ghost hidden" style="border-color: var(--success); color: var(--success); font-weight: 700;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-          Concluir e Iniciar Novo Ciclo de 40h
-        </button>
+
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <button id="btn-complete-cycle" class="btn-ghost hidden" style="border-color: var(--success); color: var(--success); font-weight: 700;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            Concluir e Iniciar Novo Ciclo de 40h
+          </button>
+        </div>
       </div>
 
       <!-- CRONÔMETRO EM TEMPO REAL CARD -->
@@ -80,7 +97,7 @@
         <div class="card-header" style="margin-bottom: 0.5rem;">
           <h2 class="card-title">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2"></path><path d="M12 2v3"></path></svg>
-            Cronômetro em Tempo Real
+            Cronômetro em Tempo Real (Online)
           </h2>
         </div>
 
@@ -88,6 +105,12 @@
         <div class="stopwatch-hero">
           <div id="stopwatch-status-tag" class="stopwatch-status-tag">PAUSADO</div>
           <div id="stopwatch-display" class="stopwatch-display">00:00:00</div>
+        </div>
+
+        <!-- Aviso de Sessão Muito Longa (>16h) -->
+        <div id="stopwatch-warning" class="stopwatch-warning hidden">
+          <span>⚠️</span>
+          <span>Este cronômetro está rodando há mais de 16h seguidas. Se esqueceu ligado, você pode pausar ou zerar abaixo antes de transferir.</span>
         </div>
 
         <!-- Primary Actions (Iniciar/Pausar + Zerar com total autonomia) -->
@@ -143,7 +166,7 @@
         <!-- STATS SUMMARY GRID -->
         <section class="stats-grid">
           <div class="stat-card">
-            <div class="stat-label">Ciclos de 40h concluídos</div>
+            <div class="stat-label">Ciclos de horas concluídos</div>
             <div class="stat-val" id="completed-cycles">0</div>
           </div>
           <div class="stat-card">
@@ -224,9 +247,15 @@
 
     <!-- CONTAINER PAINEL DA EQUIPE (TEAM DASHBOARD) -->
     <div id="team-container" class="hidden">
-      <div style="margin-bottom: 1.25rem;">
-        <h2 style="font-size: 1.4rem; font-weight: 800;">Painel Geral da Equipe</h2>
-        <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Acompanhe o status e o ciclo de 40h de todos os funcionários cadastrados</div>
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+        <div>
+          <h2 style="font-size: 1.4rem; font-weight: 800;">Painel Geral da Equipe</h2>
+          <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Acompanhe o status ao vivo e o ciclo de horas de todos os funcionários</div>
+        </div>
+        <button id="btn-add-employee-team" class="btn-add-emp" style="height: 42px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          Novo Funcionário
+        </button>
       </div>
 
       <div id="team-grid-container" class="team-grid">
@@ -234,7 +263,7 @@
       </div>
     </div>
 
-    <!-- MODAL EDITAR REGISTRO -->
+    <!-- MODAL EDITAR REGISTRO DE HORAS -->
     <div id="edit-modal" class="modal-backdrop" role="dialog" aria-modal="true">
       <div class="modal-card">
         <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 1.25rem;">Editar Registro de Horas</h3>
@@ -268,7 +297,7 @@
       </div>
     </div>
 
-    <!-- MODAL ADICIONAR FUNCIONÁRIO -->
+    <!-- MODAL CADASTRAR NOVO FUNCIONÁRIO -->
     <div id="employee-modal" class="modal-backdrop" role="dialog" aria-modal="true">
       <div class="modal-card">
         <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 1.25rem;">Cadastrar Novo Funcionário</h3>
@@ -299,9 +328,44 @@
       </div>
     </div>
 
+    <!-- NOVO MODAL: EDITAR DADOS DO FUNCIONÁRIO -->
+    <div id="edit-employee-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 1.25rem;">Editar Funcionário</h3>
+        <form id="edit-employee-form">
+          <input type="hidden" id="edit-emp-id">
+          <div class="input-field" style="margin-bottom: 1rem;">
+            <label for="edit-emp-name">Nome Completo</label>
+            <input type="text" id="edit-emp-name" class="text-input" required>
+          </div>
+          <div class="input-field" style="margin-bottom: 1rem;">
+            <label for="edit-emp-role">Cargo / Função</label>
+            <input type="text" id="edit-emp-role" class="text-input" required>
+          </div>
+          <div class="inputs-row">
+            <div class="input-field">
+              <label for="edit-emp-target">Meta do Ciclo (Horas)</label>
+              <input type="number" id="edit-emp-target" class="number-input" min="1" max="200" required>
+            </div>
+            <div class="input-field">
+              <label for="edit-emp-color">Cor da Badge</label>
+              <input type="color" id="edit-emp-color" class="text-input" style="padding: 2px;">
+            </div>
+          </div>
+          <div class="modal-actions" style="justify-content: space-between; align-items: center; margin-top: 1.5rem;">
+            <button type="button" id="btn-delete-emp-from-modal" class="btn-ghost" style="color: var(--danger); border-color: var(--danger);" title="Excluir funcionário">Excluir</button>
+            <div style="display: flex; gap: 0.5rem;">
+              <button type="button" id="btn-cancel-edit-employee" class="btn-ghost">Cancelar</button>
+              <button type="submit" class="btn-primary" style="width: auto; padding: 0 1.25rem; height: 44px;">Salvar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
   </div>
 
-  <!-- Scripts ES Modules -->
-  <script type="module" src="./src/js/app.js?v=3.0"></script>
+  <!-- Scripts ES Modules com Cache-Busting -->
+  <script type="module" src="./src/js/app.js?v=4.0"></script>
 </body>
 </html>

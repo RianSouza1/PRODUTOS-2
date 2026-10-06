@@ -150,6 +150,47 @@ body {
   gap: 0.5rem;
 }
 
+.connection-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card-subtle);
+  color: var(--text-muted);
+  user-select: none;
+}
+
+.connection-status .status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-subtle);
+  display: inline-block;
+  transition: all var(--transition-fast);
+}
+
+.connection-status.connected .status-dot {
+  background: var(--success);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+.connection-status.connected {
+  color: var(--text-main);
+}
+
+.connection-status.syncing .status-dot {
+  background: var(--warning);
+  animation: pulse 1s infinite;
+}
+
+.connection-status.offline .status-dot {
+  background: var(--danger);
+}
+
 .btn-icon {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -755,6 +796,70 @@ body {
   justify-content: flex-end;
   gap: 0.75rem;
   margin-top: 1.5rem;
+}
+
+/* Perfil do Funcionário no Topo */
+.emp-profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.emp-profile-info {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.emp-avatar-lg {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Aviso de Sessão Longa */
+.stopwatch-warning {
+  background: var(--warning-bg);
+  border: 1px solid var(--warning);
+  color: var(--warning);
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1.4;
+}
+
+/* Animação Pulse para Indicadores ao Vivo */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.15);
+  }
+}
+
+/* Botões do Card da Equipe */
+.team-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* Utilities */

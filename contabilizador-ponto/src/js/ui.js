@@ -1,5 +1,7 @@
 /**
  * ui.js - Renderização da Interface do Usuário (DOM & Eventos)
+ * 
+ * Atualizações em tempo real com preservação de foco em formulários
  */
 
 import { store } from './store.js';
@@ -13,6 +15,61 @@ class UI {
 
   init() {
     this.applyTheme(store.getTheme());
+
+    // Observa mudanças de conectividade com o servidor
+    store.onConnectionChange((status, details) => {
+      this.updateConnectionStatus(status, details);
+    });
+
+    // Observa sincronizações em tempo real vindas do servidor
+    store.onSync((data, isBackground) => {
+      this.onStoreSync(data, isBackground);
+    });
+
+    this.renderAll();
+  }
+
+  // --- STATUS DE CONECTIVIDADE ---
+  updateConnectionStatus(status, details) {
+    const container = document.getElementById('connection-status');
+    const textElem = document.getElementById('connection-status-text');
+    if (!container || !textElem) return;
+
+    container.className = `connection-status ${status}`;
+    if (status === 'connected') {
+      textElem.textContent = 'Online';
+      container.title = 'Conectado e sincronizado em tempo real com o servidor';
+    } else if (status === 'syncing') {
+      textElem.textContent = 'Sincronizando...';
+      container.title = 'Enviando alterações para o servidor';
+    } else {
+      textElem.textContent = 'Offline (Local)';
+      container.title = details || 'Servidor inacessível. Usando dados locais salvos.';
+    }
+  }
+
+  // --- TRATAMENTO INTELIGENTE DE SINCRONIZAÇÃO ---
+  onStoreSync(data, isBackground) {
+    // Se o usuário estiver interagindo com um input de formulário ou com modal aberto,
+    // não reconstrói o DOM inteiro para não roubar o foco da digitação.
+    const isTyping = document.activeElement && (
+      document.activeElement.tagName === 'INPUT' ||
+      document.activeElement.tagName === 'TEXTAREA' ||
+      document.activeElement.tagName === 'SELECT'
+    );
+    const hasActiveModal = document.querySelector('.modal-backdrop.active');
+
+    if (isTyping || hasActiveModal) {
+      // Atualização suave: apenas cronômetro, pills e barra de progresso
+      this.renderEmployeeTabs();
+      const activeEmp = store.getActiveEmployee();
+      if (activeEmp) {
+        this.updateStopwatchUI(activeEmp.id);
+      }
+      return;
+    }
+
+    // Renderização completa se a tela estiver livre
     this.renderAll();
   }
 
@@ -43,7 +100,7 @@ class UI {
     }
   }
 
-  // --- SELETOR DE FUNCIONÁRIOS ---
+  // --- SELETOR DE FUNCIONÁRIOS (PILLS) ---
   renderEmployeeTabs() {
     const container = document.getElementById('employee-pills-container');
     if (!container) return;
@@ -63,10 +120,10 @@ class UI {
       const isRunning = emp.stopwatch && emp.stopwatch.isRunning;
 
       html += `
-        <button class="emp-pill ${isActive ? 'active' : ''}" data-emp-id="${emp.id}">
-          <span class="emp-avatar" style="background: ${emp.color || '#3b82f6'};">${emp.avatar}</span>
+        <button class="emp-pill ${isActive ? 'active' : ''}" data-emp-id="${emp.id}" title="${this.escapeHtml(emp.name)} (${emp.role || 'Funcionário'})">
+          <span class="emp-avatar" style="background: ${emp.color || '#3b82f6'};">${emp.avatar || 'FN'}</span>
           <span>${this.escapeHtml(emp.name)}</span>
-          ${isRunning ? '<span style="color: var(--success); font-size: 0.7rem; animation: pulse 1s infinite;">●</span>' : ''}
+          ${isRunning ? '<span style="color: var(--success); font-size: 0.8rem; animation: pulse 1s infinite;" title="Cronômetro Ativo">●</span>' : ''}
         </button>
       `;
     });
@@ -126,7 +183,6 @@ class UI {
 
     const totalGenVal = document.getElementById('total-general');
     if (totalGenVal) {
-      // Total de todos os ciclos passados + ciclo atual
       const pastMinutes = (emp.completedCyclesHistory || []).reduce((acc, c) => acc + (c.totalMinutes || 0), 0);
       const grandTotalMin = pastMinutes + stats.totalMinutes;
       const gH = Math.floor(grandTotalMin / 60);
@@ -135,11 +191,17 @@ class UI {
     }
 
     // Header do perfil ativo
+    const empAvatarHeader = document.getElementById('emp-active-avatar');
+    if (empAvatarHeader) {
+      empAvatarHeader.textContent = emp.avatar || 'FN';
+      empAvatarHeader.style.background = emp.color || '#3b82f6';
+    }
+
     const empNameHeader = document.getElementById('emp-active-name');
     if (empNameHeader) empNameHeader.textContent = emp.name;
 
     const empRoleHeader = document.getElementById('emp-active-role');
-    if (empRoleHeader) empRoleHeader.textContent = emp.role || 'Funcionário';
+    if (empRoleHeader) empRoleHeader.textContent = `${emp.role || 'Funcionário'} • Meta: ${emp.targetHours || 40}h`;
 
     // Cronômetro do funcionário ativo
     this.updateStopwatchUI(emp.id);
@@ -159,6 +221,7 @@ class UI {
     const startBtn = document.getElementById('btn-stopwatch-start');
     const startText = document.getElementById('stopwatch-start-text');
     const startIcon = document.getElementById('stopwatch-start-icon');
+    const warningBanner = document.getElementById('stopwatch-warning');
 
     const elapsedMs = timer.getElapsedMs(employeeId);
     const timeFormatted = timer.formatMs(elapsedMs);
@@ -166,10 +229,19 @@ class UI {
 
     if (display) display.textContent = timeFormatted;
 
+    // Alerta de sessão prolongada (>16h)
+    if (warningBanner) {
+      if (timer.isLongSession(employeeId, 16)) {
+        warningBanner.classList.remove('hidden');
+      } else {
+        warningBanner.classList.add('hidden');
+      }
+    }
+
     if (isRunning) {
       stopwatchCard?.classList.add('running');
       if (statusTag) {
-        statusTag.textContent = 'RODANDO (EM ANDAMENTO)';
+        statusTag.textContent = 'RODANDO (AO VIVO)';
         statusTag.className = 'stopwatch-status-tag running';
       }
       if (startBtn) startBtn.className = 'btn-stopwatch-main running';
@@ -215,7 +287,6 @@ class UI {
     const groups = {};
     entries.forEach(entry => {
       const d = new Date(entry.date);
-      // Ajusta timezone local para agrupar pela data correta
       const dateKey = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
       if (!groups[dateKey]) {
         groups[dateKey] = {
@@ -307,15 +378,22 @@ class UI {
     employees.forEach(emp => {
       const stats = store.getEmployeeCurrentCycleStats(emp.id);
       const isRunning = emp.stopwatch && emp.stopwatch.isRunning;
+      const elapsedMs = timer.getElapsedMs(emp.id);
+      const timeStr = timer.formatMs(elapsedMs);
 
       html += `
         <div class="team-card">
           <div>
             <div class="team-card-header">
-              <div class="team-avatar-lg" style="background: ${emp.color || '#3b82f6'};">${emp.avatar}</div>
-              <div>
-                <h3 style="font-size: 1.1rem; font-weight: 800;">${this.escapeHtml(emp.name)}</h3>
-                <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">${this.escapeHtml(emp.role)}</div>
+              <div class="team-avatar-lg" style="background: ${emp.color || '#3b82f6'};">${emp.avatar || 'FN'}</div>
+              <div style="flex: 1; min-width: 0;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <h3 style="font-size: 1.1rem; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${this.escapeHtml(emp.name)}</h3>
+                  <button class="btn-icon btn-edit-emp-trigger" data-emp-id="${emp.id}" title="Editar Funcionário" style="width: 28px; height: 28px; flex-shrink: 0;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                  </button>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">${this.escapeHtml(emp.role || 'Funcionário')}</div>
               </div>
             </div>
 
@@ -334,13 +412,13 @@ class UI {
             </div>
           </div>
 
-          <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+          <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--border-color); flex-wrap: wrap; gap: 0.5rem;">
             <div style="font-size: 0.8rem;">
-              <span class="stopwatch-status-tag ${isRunning ? 'running' : ''}" style="margin: 0;">
-                ${isRunning ? 'CRONÔMETRO ATIVO' : 'PAUSADO'}
+              <span class="stopwatch-status-tag ${isRunning ? 'running' : ''}" style="margin: 0; font-size: 0.72rem;">
+                ${isRunning ? `● AO VIVO: ${timeStr}` : 'PAUSADO'}
               </span>
             </div>
-            <button class="btn-ghost btn-select-employee" data-emp-id="${emp.id}">
+            <button class="btn-ghost btn-select-employee" data-emp-id="${emp.id}" style="font-weight: 700; padding: 0.4rem 0.8rem;">
               Ver Detalhes →
             </button>
           </div>
@@ -349,6 +427,25 @@ class UI {
     });
 
     container.innerHTML = html;
+  }
+
+  // --- MODAL DE EDIÇÃO DE FUNCIONÁRIO ---
+  openEditEmployeeModal(empId) {
+    const emp = store.getEmployees().find(e => e.id === empId);
+    if (!emp) return;
+
+    const modal = document.getElementById('edit-employee-modal');
+    document.getElementById('edit-emp-id').value = emp.id;
+    document.getElementById('edit-emp-name').value = emp.name;
+    document.getElementById('edit-emp-role').value = emp.role || '';
+    document.getElementById('edit-emp-target').value = emp.targetHours || 40;
+    document.getElementById('edit-emp-color').value = emp.color || '#3b82f6';
+
+    modal?.classList.add('active');
+  }
+
+  closeEditEmployeeModal() {
+    document.getElementById('edit-employee-modal')?.classList.remove('active');
   }
 
   // --- TOAST NOTIFICATIONS ---
