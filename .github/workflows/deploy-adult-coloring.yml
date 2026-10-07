@@ -1,4 +1,4 @@
-name: Publish Adult Coloring SV DE NL
+name: Publish Adult Coloring
 
 on:
   push:
@@ -9,6 +9,8 @@ on:
       - 'adult-coloring-sv-members/**'
       - 'adult-coloring-de-members/**'
       - 'adult-coloring-nl-members/**'
+      - 'adult-coloring-it-members/**'
+      - 'adult-coloring-fr-members/**'
   workflow_dispatch:
 
 permissions:
@@ -26,21 +28,49 @@ jobs:
     env:
       GIT_LFS_SKIP_SMUDGE: '1'
     steps:
-      - name: Checkout the three member areas
+      - name: Checkout member areas
         uses: actions/checkout@v4
         with:
           lfs: false
+          fetch-depth: 2
           sparse-checkout: |
             adult-coloring-sv-members
             adult-coloring-de-members
             adult-coloring-nl-members
+            adult-coloring-it-members
+            adult-coloring-fr-members
+
+      - name: Select member areas to publish
+        id: areas
+        shell: bash
+        run: |
+          set -euo pipefail
+          all_sources='adult-coloring-sv-members adult-coloring-de-members adult-coloring-nl-members adult-coloring-it-members adult-coloring-fr-members'
+          before='${{ github.event.before }}'
+          sources=''
+          if [ '${{ github.event_name }}' = 'push' ] && [ -n "$before" ] && [[ ! "$before" =~ ^0+$ ]]; then
+            if ! git cat-file -e "$before^{commit}" 2>/dev/null; then
+              git fetch --no-tags --depth=1 origin "$before"
+            fi
+            changed="$(git diff --name-only "$before" "$GITHUB_SHA" | cut -d/ -f1 | sort -u)"
+            for source in $all_sources; do
+              if printf '%s\n' "$changed" | grep -Fxq "$source"; then
+                sources="$sources $source"
+              fi
+            done
+          fi
+          if [ -z "$sources" ]; then sources="$all_sources"; fi
+          echo "sources=$sources" >> "$GITHUB_OUTPUT"
 
       - name: Download the original PDF files
         shell: bash
         timeout-minutes: 6
+        env:
+          SOURCES: ${{ steps.areas.outputs.sources }}
         run: |
           set -euo pipefail
-          for pdf in adult-coloring-{sv,de,nl}-members/materials/*.pdf; do
+          for source in $SOURCES; do
+          for pdf in "$source"/materials/*.pdf; do
             expected="$(awk '$1 == "oid" { sub(/^sha256:/, "", $2); print $2 }' "$pdf")"
             if [[ ! "$expected" =~ ^[a-f0-9]{64}$ ]]; then
               echo "::error::Invalid LFS reference: $pdf"
@@ -56,13 +86,15 @@ jobs:
             fi
             mv "$pdf.download" "$pdf"
           done
+          done
 
-      - name: Publish the three areas using SSH
+      - name: Publish selected member areas using SSH
         shell: bash
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
           VPS_USERNAME: ${{ secrets.VPS_USERNAME }}
           VPS_SECRET: ${{ secrets.VPS_SECRET }}
+          SOURCES: ${{ steps.areas.outputs.sources }}
         run: |
           set -euo pipefail
           [[ "$VPS_HOST" =~ ^[a-zA-Z0-9.:-]+$ ]]
@@ -75,11 +107,13 @@ jobs:
           ssh_options=(-i "$ssh_dir/key" -o BatchMode=yes -o ConnectTimeout=30 -o StrictHostKeyChecking=yes -o "UserKnownHostsFile=$ssh_dir/known_hosts")
           remote="$VPS_USERNAME@$VPS_HOST"
 
-          for source in adult-coloring-sv-members adult-coloring-de-members adult-coloring-nl-members; do
+          for source in $SOURCES; do
             case "$source" in
               adult-coloring-sv-members) destination='/var/www/skillvault.blog/adult-coloring-sv-m' ;;
               adult-coloring-de-members) destination='/var/www/skillvault.blog/adult-coloring-de-m' ;;
               adult-coloring-nl-members) destination='/var/www/skillvault.blog/adult-coloring-nl-m' ;;
+              adult-coloring-it-members) destination='/var/www/skillvault.blog/adult-coloring-it-m' ;;
+              adult-coloring-fr-members) destination='/var/www/skillvault.blog/adult-coloring-fr-m' ;;
               *) exit 1 ;;
             esac
             archive="$RUNNER_TEMP/$source.tar.gz"
@@ -92,11 +126,11 @@ jobs:
           destination="$2"
           owner="$3"
           case "$destination" in
-            /var/www/skillvault.blog/adult-coloring-sv-m|/var/www/skillvault.blog/adult-coloring-de-m|/var/www/skillvault.blog/adult-coloring-nl-m) ;;
+            /var/www/skillvault.blog/adult-coloring-sv-m|/var/www/skillvault.blog/adult-coloring-de-m|/var/www/skillvault.blog/adult-coloring-nl-m|/var/www/skillvault.blog/adult-coloring-it-m|/var/www/skillvault.blog/adult-coloring-fr-m) ;;
             *) exit 1 ;;
           esac
           case "$archive" in
-            /tmp/adult-coloring-sv-members-*.tar.gz|/tmp/adult-coloring-de-members-*.tar.gz|/tmp/adult-coloring-nl-members-*.tar.gz) ;;
+            /tmp/adult-coloring-sv-members-*.tar.gz|/tmp/adult-coloring-de-members-*.tar.gz|/tmp/adult-coloring-nl-members-*.tar.gz|/tmp/adult-coloring-it-members-*.tar.gz|/tmp/adult-coloring-fr-members-*.tar.gz) ;;
             *) exit 1 ;;
           esac
           sudo mkdir -p "$destination"

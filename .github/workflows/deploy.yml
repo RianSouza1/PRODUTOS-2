@@ -62,6 +62,10 @@ jobs:
               - 'adult-coloring-de-members/**'
             adult-coloring-nl-members:
               - 'adult-coloring-nl-members/**'
+            adult-coloring-it-members:
+              - 'adult-coloring-it-members/**'
+            adult-coloring-fr-members:
+              - 'adult-coloring-fr-members/**'
             workflow:
               - '.github/workflows/deploy.yml'
             institv3:
@@ -10744,4 +10748,48 @@ jobs:
           key: ${{ secrets.VPS_SECRET }}
           source: "adult-coloring-nl-members/*"
           target: "/var/www/skillvault.blog/adult-coloring-nl-m"
+          strip_components: 1
+
+      - name: Prepare VPS Directory for 'adult-coloring-it-members'
+        if: steps.filter.outputs['adult-coloring-it-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/adult-coloring-it-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/adult-coloring-it-m
+
+      - name: Deploy 'adult-coloring-it-members' to skillvault.blog/adult-coloring-it-m
+        if: steps.filter.outputs['adult-coloring-it-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "adult-coloring-it-members/*"
+          target: "/var/www/skillvault.blog/adult-coloring-it-m"
+          strip_components: 1
+
+      - name: Prepare VPS Directory for 'adult-coloring-fr-members'
+        if: steps.filter.outputs['adult-coloring-fr-members'] == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script: |
+            sudo mkdir -p /var/www/skillvault.blog/adult-coloring-fr-m
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/skillvault.blog/adult-coloring-fr-m
+
+      - name: Deploy 'adult-coloring-fr-members' to skillvault.blog/adult-coloring-fr-m
+        if: steps.filter.outputs['adult-coloring-fr-members'] == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: "adult-coloring-fr-members/*"
+          target: "/var/www/skillvault.blog/adult-coloring-fr-m"
           strip_components: 1
