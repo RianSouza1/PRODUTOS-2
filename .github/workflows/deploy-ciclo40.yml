@@ -1,0 +1,82 @@
+name: Deploy Ciclo40
+on:
+  push:
+    branches: [main]
+    paths: ['ciclo40/**', '.github/ciclo40/**', '.github/workflows/deploy-ciclo40.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ciclo40-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          sparse-checkout: |
+            ciclo40
+            .github/ciclo40
+      - name: Prepare application directory
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script_stop: true
+          script: |
+            sudo mkdir -p /var/www/storeinfocus.com/ciclo40 /tmp/ciclo40-deploy
+            sudo chown ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /var/www/storeinfocus.com/ciclo40 /tmp/ciclo40-deploy
+      - name: Upload application
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: 'ciclo40/*'
+          target: '/var/www/storeinfocus.com/ciclo40'
+          strip_components: 1
+      - name: Upload route configuration
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: '.github/ciclo40/*'
+          target: '/tmp/ciclo40-deploy'
+          strip_components: 2
+      - name: Enable routes
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          CICLO40_BACKEND_TOKEN: ${{ secrets.CICLO40_BACKEND_TOKEN }}
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          envs: CICLO40_BACKEND_TOKEN
+          script_stop: true
+          script: |
+            sudo --preserve-env=CICLO40_BACKEND_TOKEN python3 /tmp/ciclo40-deploy/configure-nginx.py
+            sudo find /var/www/storeinfocus.com/ciclo40 -type d -exec chmod 755 {} \;
+            sudo find /var/www/storeinfocus.com/ciclo40 -type f -exec chmod 644 {} \;
+      - name: Verify public login and protected records
+        run: |
+          python3 - <<'PY'
+          import json, urllib.request, urllib.error
+          root = 'https://storeinfocus.com/ciclo40/'
+          with urllib.request.urlopen(root, timeout=20) as response:
+              assert response.status == 200
+              assert 'Ciclo40' in response.read().decode()
+          with urllib.request.urlopen(root + 'api/auth', timeout=20) as response:
+              state = json.load(response)
+              assert state['signedIn'] is False
+              assert state['bootstrapAllowed'] is False
+          try:
+              urllib.request.urlopen(root + 'api/data', timeout=20)
+              raise AssertionError('Records must require a session')
+          except urllib.error.HTTPError as error:
+              assert error.code == 401, error.code
+          print('Online login verified; records require an authorized account')
+          PY

@@ -1,0 +1,16 @@
+# Ciclo40: static interface and authenticated private API.
+location = /ciclo40 { return 301 /ciclo40/; }
+location ^~ /ciclo40/ {
+    alias /var/www/storeinfocus.com/ciclo40/;
+    index index.html;
+    autoindex off;
+    add_header X-Content-Type-Options nosniff always;
+}
+location = /ciclo40/api/auth {
+    include /etc/nginx/snippets/ciclo40-api.conf;
+    proxy_pass https://ciclo40-equipe.estudoscaso3.chatgpt.site/api/auth;
+}
+location = /ciclo40/api/data {
+    include /etc/nginx/snippets/ciclo40-api.conf;
+    proxy_pass https://ciclo40-equipe.estudoscaso3.chatgpt.site/api/data;
+}
