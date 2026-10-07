@@ -33,7 +33,7 @@ for i, (p, content) in enumerate(originals.items()):
         target.chmod(0o600)
 try:
     snippet.write_text((templates / 'nginx-location.conf.template').read_text())
-    api.write_text((templates / 'nginx-api.conf.template').read_text().replace('__TOKEN__', json.dumps(token)))
+    api.write_text((templates / 'nginx-api.conf.template').read_text().replace('__TOKEN__', json.dumps('Bearer ' + token)))
     snippet.chmod(0o600)
     api.chmod(0o600)
     for path in config_files:
