@@ -23,7 +23,7 @@ Lojas iniciais: Best Library, New Library e Store Today. Os domínios são preen
 
 ## Importação do Trello
 
-O responsável pode abrir **Configurações → Importar arquivo** e enviar um snapshot JSON no formato `offervault-trello-v1`. O arquivo contém `niches`, cada um com `name`, `cards` (`id` e `url`) e `languages` (`code`, `name` e `complete`). Os dados operacionais da equipe não são incluídos no repositório.
+O responsável pode abrir **Configurações → Importar arquivo** e enviar um snapshot JSON no formato `offervault-trello-v1`. Como alternativa ao envio, pode colar o conteúdo em **Dados JSON**. O arquivo contém `niches`, cada um com `name`, `cards` (`id` e `url`) e `languages` (`code`, `name` e `complete`). Os dados operacionais da equipe não são incluídos no repositório.
 
 A importação cria ou integra cada nicho pela correspondência de nome, mantendo uma única base inglesa. Itens concluídos vinculam o idioma à Shopify escolhida. A equipe escolhe se eles também significam Facebook em operação e resultado positivo. Publicação não implica resultado positivo: na opção **Publicado na Shopify e no Facebook; resultado a confirmar**, o idioma conserva situação **Em preparação** até decisão manual. Itens pendentes não são tratados como idiomas que falharam.
 

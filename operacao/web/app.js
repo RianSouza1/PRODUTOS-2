@@ -141,13 +141,14 @@ function shopForm(id){const r=byId('shops',id);entityForm('shops',r,input('name'
 function showAccess(result){if(result.needs_new_link)return toast('A pessoa já foi cadastrada. Clique em Gerar link para obter um novo acesso.',true);if(!result.access_token)return;const url=new URL(location.pathname,location.origin);url.hash='acesso='+result.access_token;dialog('Link pessoal de acesso',result.name+' · Compartilhe somente com essa pessoa.',input('access_link','Link pessoal',url.href,'text','readonly')+`<p class="smallhint wide">Este link abre o app sem senha. Guarde-o. Os links anteriores dessa pessoa foram substituídos.</p>`,async()=>{await navigator.clipboard.writeText(url.href);toast('Link copiado.');},'Copiar link');}
 function trelloImportForm(){
  let importedFile=null;
- const fields=input('import_file','Arquivo de importação','','file','accept=".json,application/json" required')+select('shop_id','Shopify de destino',state.shops.filter(x=>x.active).map(x=>[x.id,x.name]),state.shops.find(x=>x.name==='New Library')?.id)+select('mode','Significado dos itens concluídos',[
+ const fields=input('import_file','Arquivo de importação','','file','accept=".json,application/json"')+select('shop_id','Shopify de destino',state.shops.filter(x=>x.active).map(x=>[x.id,x.name]),state.shops.find(x=>x.name==='New Library')?.id)+select('mode','Significado dos itens concluídos',[
  ['shop_only','Publicado na Shopify; Facebook e resultado a confirmar'],
  ['shop_facebook','Publicado na Shopify e no Facebook; resultado a confirmar'],
  ['active','Publicado, no Facebook e atendendo às expectativas']
- ],'shop_only')+`<p class="wide smallhint" id="import-preview">Selecione o arquivo. Itens desmarcados ficam em preparação, sem vincular a loja. Dados existentes e ciclos reiniciados são preservados.</p><p class="wide" id="import-progress" role="status"></p>`;
+ ],'shop_only')+area('import_text','Dados JSON (alternativa ao arquivo)')+`<p class="wide smallhint" id="import-preview">Selecione o arquivo ou cole seu conteúdo acima. Itens desmarcados ficam em preparação, sem vincular a loja. Dados existentes e ciclos reiniciados são preservados.</p><p class="wide" id="import-progress" role="status"></p>`;
  dialog('Importar nichos do Trello','Cada nicho recebe sua matriz de idiomas e os cartões de origem.',fields,async(v,command_id,form)=>{
-  if(!importedFile)throw new Error('Selecione um arquivo válido.');
+  if(v.import_text.trim())readImport(v.import_text);
+  if(!importedFile)throw new Error('Selecione um arquivo válido ou cole seus dados JSON.');
   importing=true;const results=[];
   try{
    for(let index=0;index<importedFile.niches.length;index++){
@@ -159,14 +160,22 @@ function trelloImportForm(){
   finally{importing=false;}
  },'Importar nichos');
  const form=modalRoot.querySelector('form');
+ function readImport(text){
+  if(text.length>2000000)throw new Error('O conteúdo precisa ter até 2 MB.');
+  const data=JSON.parse(text);if(data?.format!=='offervault-trello-v1'||!Array.isArray(data.niches)||!data.niches.length||data.niches.length>150)throw new Error('Formato de importação inválido.');
+  if(data.niches.some(n=>!n?.name||!Array.isArray(n.languages)||!Array.isArray(n.cards)))throw new Error('Nicho ou checklist incompleto.');
+  importedFile=data;const languageCount=data.niches.reduce((sum,n)=>sum+n.languages.length,0),published=data.niches.reduce((sum,n)=>sum+n.languages.filter(l=>l.complete).length,0);
+  form.querySelector('#import-preview').textContent=`${data.niches.length} nichos · ${languageCount} idiomas do checklist · ${published} publicações marcadas. Itens pendentes não serão tratados como resultado negativo.`;
+ }
+ form.querySelector('[name=import_text]').addEventListener('input',e=>{
+  importedFile=null;
+  try{readImport(e.target.value);}catch(err){form.querySelector('#import-preview').textContent=err.message;}
+ });
  form.querySelector('[name=import_file]').addEventListener('change',async e=>{
   importedFile=null;const preview=form.querySelector('#import-preview');
   try{
    const file=e.target.files[0];if(!file||file.size>2000000)throw new Error('Selecione um arquivo JSON de até 2 MB.');
-   const data=JSON.parse(await file.text());if(data.format!=='offervault-trello-v1'||!Array.isArray(data.niches)||!data.niches.length||data.niches.length>150)throw new Error('Formato de importação inválido.');
-   if(data.niches.some(n=>!n.name||!Array.isArray(n.languages)||!Array.isArray(n.cards)))throw new Error('Nicho ou checklist incompleto.');
-   importedFile=data;const languageCount=data.niches.reduce((sum,n)=>sum+n.languages.length,0),published=data.niches.reduce((sum,n)=>sum+n.languages.filter(l=>l.complete).length,0);
-   preview.textContent=`${data.niches.length} nichos · ${languageCount} idiomas do checklist · ${published} publicações marcadas. Itens pendentes não serão tratados como resultado negativo.`;
+   form.querySelector('[name=import_text]').value='';readImport(await file.text());
   }catch(err){preview.textContent=err.message;}
  });
 }
