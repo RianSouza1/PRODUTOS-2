@@ -1,0 +1,85 @@
+name: Deploy OfferVault
+on:
+  push:
+    branches: [main]
+    paths: ['operacao/**', '.github/operacao/**', '.github/workflows/deploy-operacao.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: offervault-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+          sparse-checkout: |
+            operacao
+            .github/operacao
+      - name: Verify access and operational rules
+        run: |
+          python3 -m pip install -r operacao/requirements.txt
+          python3 -B -m unittest discover -s operacao/tests -v
+          node --check operacao/web/app.js
+      - name: Prepare isolated staging directory
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script_stop: true
+          script: |
+            sudo mkdir -p /tmp/offervault-deploy/app
+            sudo chown -R ${{ secrets.VPS_USERNAME }}:${{ secrets.VPS_USERNAME }} /tmp/offervault-deploy
+      - name: Upload application
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: 'operacao/*'
+          target: '/tmp/offervault-deploy/app'
+          strip_components: 1
+      - name: Upload deployment configuration
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          source: '.github/operacao/*'
+          target: '/tmp/offervault-deploy'
+          strip_components: 2
+      - name: Install application and private database
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SECRET }}
+          script_stop: true
+          script: |
+            sudo python3 -B /tmp/offervault-deploy/install.py
+      - name: Verify public page and protected records
+        run: |
+          python3 - <<'PY'
+          import json, urllib.request, urllib.error
+          root='https://storeinfocus.com/operacao/'
+          with urllib.request.urlopen(root,timeout=20) as response:
+              assert response.status==200
+              assert 'OfferVault' in response.read().decode()
+          with urllib.request.urlopen(root+'api/health',timeout=20) as response:assert json.load(response)['ok'] is True
+          with urllib.request.urlopen(root+'api/auth',timeout=20) as response:assert json.load(response)['signed_in'] is False
+          for path in ('api/state','api/export','api/history?id=unknown','api/credentials?niche_id=unknown'):
+              try:
+                  urllib.request.urlopen(root+path,timeout=20)
+                  raise AssertionError('Records require a session')
+              except urllib.error.HTTPError as error:assert error.code==401,error.code
+          for path in ('server.py','schema.sql','data.sqlite3'):
+              try:
+                  urllib.request.urlopen(root+path,timeout=20)
+                  raise AssertionError('Private application files cannot be exposed')
+              except urllib.error.HTTPError as error:assert error.code==404,error.code
+          print('OfferVault is online; records and private files are protected')
+          PY

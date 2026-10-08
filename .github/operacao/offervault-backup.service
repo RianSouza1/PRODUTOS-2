@@ -1,0 +1,9 @@
+[Unit]
+Description=Back up OfferVault records
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 -B /opt/offervault-operacao/backup.py
+UMask=0077
+NoNewPrivileges=true
+ProtectHome=true
