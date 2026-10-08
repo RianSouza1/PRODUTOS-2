@@ -1,0 +1,144 @@
+name: Publish Sax
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/deploy-sax.yml'
+      - 'sax-pl-members/**'
+      - 'sax-de-members/**'
+      - 'sax-nl-members/**'
+      - 'sax-it-members/**'
+      - 'sax-fr-members/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-sax
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 15
+    env:
+      GIT_LFS_SKIP_SMUDGE: '1'
+    steps:
+      - name: Checkout member areas
+        uses: actions/checkout@v4
+        with:
+          lfs: false
+          fetch-depth: 2
+          sparse-checkout: |
+            sax-pl-members
+            sax-de-members
+            sax-nl-members
+            sax-it-members
+            sax-fr-members
+
+      - name: Select member areas to publish
+        id: areas
+        shell: bash
+        run: |
+          set -euo pipefail
+          all_sources='sax-pl-members sax-de-members sax-nl-members sax-it-members sax-fr-members'
+          before='${{ github.event.before }}'
+          sources=''
+          if [ '${{ github.event_name }}' = 'push' ] && [ -n "$before" ] && [[ ! "$before" =~ ^0+$ ]]; then
+            if ! git cat-file -e "$before^{commit}" 2>/dev/null; then
+              git fetch --no-tags --depth=1 origin "$before"
+            fi
+            changed="$(git diff --name-only "$before" "$GITHUB_SHA" | cut -d/ -f1 | sort -u)"
+            for source in $all_sources; do
+              if printf '%s\n' "$changed" | grep -Fxq "$source"; then
+                sources="$sources $source"
+              fi
+            done
+          fi
+          if [ -z "$sources" ]; then sources="$all_sources"; fi
+          echo "sources=$sources" >> "$GITHUB_OUTPUT"
+
+      - name: Download the original PDF files
+        shell: bash
+        timeout-minutes: 6
+        env:
+          SOURCES: ${{ steps.areas.outputs.sources }}
+        run: |
+          set -euo pipefail
+          for source in $SOURCES; do
+          for pdf in "$source"/materials/*.pdf; do
+            expected="$(awk '$1 == "oid" { sub(/^sha256:/, "", $2); print $2 }' "$pdf")"
+            if [[ ! "$expected" =~ ^[a-f0-9]{64}$ ]]; then
+              echo "::error::Invalid LFS reference: $pdf"
+              exit 1
+            fi
+            curl --fail --location --silent --show-error --retry 2 --connect-timeout 15 --max-time 60 \
+              "https://media.githubusercontent.com/media/$GITHUB_REPOSITORY/$GITHUB_SHA/$pdf" \
+              --output "$pdf.download"
+            actual="$(shasum -a 256 "$pdf.download" | awk '{print $1}')"
+            if [ "$actual" != "$expected" ] || [ "$(head -c 5 "$pdf.download")" != '%PDF-' ]; then
+              echo "::error::Original PDF integrity check failed: $pdf"
+              exit 1
+            fi
+            mv "$pdf.download" "$pdf"
+          done
+          done
+
+      - name: Publish selected member areas using SSH
+        shell: bash
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USERNAME: ${{ secrets.VPS_USERNAME }}
+          VPS_SECRET: ${{ secrets.VPS_SECRET }}
+          SOURCES: ${{ steps.areas.outputs.sources }}
+        run: |
+          set -euo pipefail
+          [[ "$VPS_HOST" =~ ^[a-zA-Z0-9.:-]+$ ]]
+          [[ "$VPS_USERNAME" =~ ^[a-zA-Z_][a-zA-Z0-9_-]*$ ]]
+          ssh_dir="$(mktemp -d "$RUNNER_TEMP/member-ssh.XXXXXX")"
+          trap 'rm -f "$ssh_dir/key" "$ssh_dir/known_hosts"' EXIT
+          printf '%s\n' "$VPS_SECRET" | tr -d '\r' > "$ssh_dir/key"
+          chmod 600 "$ssh_dir/key"
+          ssh-keyscan -T 20 -H "$VPS_HOST" > "$ssh_dir/known_hosts" 2>/dev/null
+          ssh_options=(-i "$ssh_dir/key" -o BatchMode=yes -o ConnectTimeout=30 -o StrictHostKeyChecking=yes -o "UserKnownHostsFile=$ssh_dir/known_hosts")
+          remote="$VPS_USERNAME@$VPS_HOST"
+
+          for source in $SOURCES; do
+            case "$source" in
+              sax-pl-members) destination='/var/www/skillvault.blog/sax-pl-m' ;;
+              sax-de-members) destination='/var/www/skillvault.blog/sax-de-m' ;;
+              sax-nl-members) destination='/var/www/skillvault.blog/sax-nl-m' ;;
+              sax-it-members) destination='/var/www/skillvault.blog/sax-it-m' ;;
+              sax-fr-members) destination='/var/www/skillvault.blog/sax-fr-m' ;;
+              *) exit 1 ;;
+            esac
+            archive="$RUNNER_TEMP/$source.tar.gz"
+            remote_archive="/tmp/$source-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT.tar.gz"
+            COPYFILE_DISABLE=1 tar -czf "$archive" -C "$source" .
+            scp "${ssh_options[@]}" "$archive" "$remote:$remote_archive"
+            ssh "${ssh_options[@]}" "$remote" bash -s -- "$remote_archive" "$destination" "$VPS_USERNAME" <<'REMOTE'
+          set -euo pipefail
+          archive="$1"
+          destination="$2"
+          owner="$3"
+          case "$destination" in
+            /var/www/skillvault.blog/sax-pl-m|/var/www/skillvault.blog/sax-de-m|/var/www/skillvault.blog/sax-nl-m|/var/www/skillvault.blog/sax-it-m|/var/www/skillvault.blog/sax-fr-m) ;;
+            *) exit 1 ;;
+          esac
+          case "$archive" in
+            /tmp/sax-pl-members-*.tar.gz|/tmp/sax-de-members-*.tar.gz|/tmp/sax-nl-members-*.tar.gz|/tmp/sax-it-members-*.tar.gz|/tmp/sax-fr-members-*.tar.gz) ;;
+            *) exit 1 ;;
+          esac
+          sudo mkdir -p "$destination"
+          sudo tar -xzf "$archive" -C "$destination"
+          sudo chown -R "$owner:$(id -gn "$owner")" "$destination"
+          sudo find "$destination" -type d -exec chmod 755 {} +
+          sudo find "$destination" -type f -exec chmod 644 {} +
+          rm -f "$archive"
+          REMOTE
+            echo "Published $source"
+          done
