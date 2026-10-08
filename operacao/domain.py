@@ -45,6 +45,7 @@ NICHES_STAGES=('idea','research','approved','production','ready','testing','acti
 FIELDS['categories']={'name','color'}
 FIELDS['niches'].update({'category_id','description','audience','owner_id','priority','stage','tags','cover_url','commercial_model'})
 TABLES+=('categories',)
+TABLES+=('trello_sources',)
 FIELDS['languages'].update({'deliverables_url','creatives_url','site_images_url','operational_status','facebook'})
 
 class Problem(Exception):

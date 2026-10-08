@@ -19,7 +19,15 @@ Fundação: acesso individual sem senha, controle de acesso no servidor, papéis
 
 Operação: produção da base inglesa, tradução e revisão, atribuição de responsáveis, prazos, bloqueios, checklist editável, quatro links de pastas Drive e um campo de texto Gamma por nicho, matriz e situação dos idiomas dentro do nicho, múltiplas Shopifys, migrações atribuídas, reinício de ciclos, histórico de alterações e exportação JSON.
 
-Lojas iniciais: Best Library, New Library e Store Today. Os domínios são preenchidos pela equipe. Nature é o nicho informado pelo usuário; seus idiomas reais devem ser cadastrados. Não foram inventados idiomas ativos, campanhas ou métricas.
+Lojas iniciais: Best Library, New Library e Store Today. Os domínios são preenchidos pela equipe. Nature é o nicho inicial informado pelo usuário. Seus idiomas reais podem ser cadastrados manualmente ou importados de checklists revisados do Trello. Não são inventadas campanhas, métricas ou resultados.
+
+## Importação do Trello
+
+O responsável pode abrir **Configurações → Importar arquivo** e enviar um snapshot JSON no formato `offervault-trello-v1`. O arquivo contém `niches`, cada um com `name`, `cards` (`id` e `url`) e `languages` (`code`, `name` e `complete`). Os dados operacionais da equipe não são incluídos no repositório.
+
+A importação cria ou integra cada nicho pela correspondência de nome, mantendo uma única base inglesa. Itens concluídos vinculam o idioma à Shopify escolhida. A equipe escolhe se eles também significam Facebook em operação e resultado positivo. Publicação não implica resultado positivo: na opção **Publicado na Shopify e no Facebook; resultado a confirmar**, o idioma conserva situação **Em preparação** até decisão manual. Itens pendentes não são tratados como idiomas que falharam.
+
+Os cartões de origem ficam dentro do nicho. IDs dos cartões e o conteúdo importado impedem duplicações e preservam edições manuais em tentativas repetidas. Ciclos reiniciados não recebem dados antigos. Cada nicho é importado em uma transação; um lote parcialmente concluído pode continuar com o mesmo arquivo. Não há sincronização contínua nem escrita no Trello. Drive, Gamma, responsáveis e URLs de produtos não são inferidos quando ausentes na origem.
 
 ## Executar localmente
 
@@ -71,7 +79,8 @@ operacao/
   server.py        HTTP, sessões, bootstrap autenticado e respostas
   store.py         Transações, regras operacionais, CRUD e histórico
   domain.py        Campos, estados, templates e validações
-  schema.sql       Modelo relacional da versão 1
+  trello_import.py Importação revisada por nicho e proteção contra duplicações
+  schema.sql       Modelo relacional até a versão 2
   web/             Interface, estilos e navegação
   tests/           Testes de acesso, conflitos e regras operacionais
   ARCHITECTURE.md   Modelo, contratos e próximas fases

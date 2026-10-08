@@ -23,6 +23,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 from domain import Problem, SCHEMA, TABLES, FIELDS, PHASES, LAUNCH_STATES, STATUSES, SESSION_SECONDS, OWNER_EMAIL, NICHES_STAGES, identifier, now, text_value, url_value, token_hash, PRODUCTION, TRANSLATION, PUBLICATION
+from trello_import import import_niche
 
 class Store:
     def __init__(self, path):
@@ -33,9 +34,10 @@ class Store:
         with contextlib.closing(self.connect()) as db:
             db.execute('CREATE TABLE IF NOT EXISTS schema_migrations(version INTEGER PRIMARY KEY,applied_at INTEGER NOT NULL)')
             version=db.execute('SELECT COALESCE(MAX(version),0) FROM schema_migrations').fetchone()[0]
-            if version>1:raise RuntimeError('Database schema is newer than this application')
+            if version>2:raise RuntimeError('Database schema is newer than this application')
             db.executescript(SCHEMA)
             db.execute('INSERT OR IGNORE INTO schema_migrations VALUES(1,?)',(now(),))
+            if version<2:db.execute('INSERT OR IGNORE INTO schema_migrations VALUES(2,?)',(now(),))
         with self.transaction() as db:
             if not db.execute("SELECT 1 FROM meta WHERE key='initial_seed'").fetchone():
                 for name in ('Best Library','New Library','Store Today'):
@@ -94,6 +96,7 @@ class Store:
             enabled_launches={r['id'] for r in state['launches']}
             state['tasks']=[r for r in state['tasks'] if r['scope']!='launch' or r['scope_id'] in enabled_launches]
             state['niche_gamma']=[r for r in state['niche_gamma'] if any(n['id']==r['niche_id'] and n['cycle']==r['cycle'] for n in state['niches'])]
+            state['trello_sources']=[r for r in state['trello_sources'] if any(n['id']==r['niche_id'] and n['cycle']==r['cycle'] for n in state['niches'])]
             state['users']=[dict(r) for r in db.execute('SELECT id,name,email,role,active,version,created_at FROM users')]
             state['activity']=[dict(r) for r in db.execute('SELECT a.*,u.name AS user_name FROM activity a JOIN users u ON u.id=a.user_id ORDER BY a.created_at DESC,a.rowid DESC LIMIT 150')]
             state['gamma_access']=[dict(r) for r in db.execute("SELECT niche_id,cycle,version,updated_at,updated_by,(encrypted_text<>'') AS has_text FROM niche_secrets")]
@@ -224,6 +227,7 @@ class Store:
         languages={r['id'] for r in data['languages']}
         for table in ('launches','migrations'):data[table]=[dict(r) for r in db.execute('SELECT * FROM '+table) if r['language_id'] in languages]
         data['niche_gamma']=[dict(r) for r in db.execute('SELECT * FROM niche_gamma WHERE niche_id=? AND cycle=?',(niche['id'],niche['cycle']))]
+        data['trello_sources']=[dict(r) for r in db.execute('SELECT * FROM trello_sources WHERE niche_id=? AND cycle=?',(niche['id'],niche['cycle']))]
         return data
 
     def historical(self,user,key):
@@ -263,6 +267,7 @@ class Store:
     def mutate(self,db,user,body):
         action=body.get('action')
         table=body.get('entity')
+        if action=='import_trello':return import_niche(self,db,user,body)
         if action=='save_credentials':
             niche=self.row(db,'niches',body.get('niche_id'))
             if niche['cycle']!=body.get('cycle'):raise Problem('Este acesso pertence a um ciclo anterior. Abra o ciclo atual.',409)

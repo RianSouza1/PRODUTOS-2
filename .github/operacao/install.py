@@ -35,7 +35,7 @@ compile((source/'app/server.py').read_text(),'server.py','exec')
 subprocess.run(['systemd-analyze','verify',str(source/'offervault-operacao.service'),str(source/'offervault-backup.service'),str(source/'offervault-backup.timer')],check=True)
 backup=Path('/var/backups/offervault-operacao/deploy')/datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S')
 backup.mkdir(parents=True,exist_ok=True,mode=0o700)
-changed=[snippet,*configs,*units,*(private/n for n in ('server.py','store.py','domain.py','schema.sql','backup.py')),*(public/n for n in ('index.html','app.js','styles.css','favicon.svg'))]
+changed=[snippet,*configs,*units,*(private/n for n in ('server.py','store.py','domain.py','trello_import.py','schema.sql','backup.py')),*(public/n for n in ('index.html','app.js','styles.css','favicon.svg'))]
 envfile=Path('/etc/offervault-operacao.env')
 changed.append(envfile)
 originals={p:(p.read_bytes(),p.stat().st_mode&0o777) if p.exists() else None for p in changed}
@@ -59,7 +59,7 @@ try:
     if database.exists():
         for existing in data.iterdir():
             if existing.is_file():os.chown(existing,account.pw_uid,account.pw_gid)
-    for name in ('server.py','store.py','domain.py','schema.sql','backup.py'):
+    for name in ('server.py','store.py','domain.py','trello_import.py','schema.sql','backup.py'):
         shutil.copyfile(source/('backup.py' if name=='backup.py' else 'app/'+name),private/name);(private/name).chmod(0o644)
     version=hashlib.sha256((source/'app/web/app.js').read_bytes()+(source/'app/web/styles.css').read_bytes()).hexdigest()[:12]
     for name in ('index.html','app.js','styles.css','favicon.svg'):

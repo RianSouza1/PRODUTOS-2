@@ -28,3 +28,5 @@ CREATE INDEX IF NOT EXISTS tasks_owner_status ON tasks(owner_id,status);
 CREATE INDEX IF NOT EXISTS launches_shop_status ON launches(shop_id,status);
 CREATE INDEX IF NOT EXISTS deliverables_gamma ON deliverables(gamma_id);
 CREATE TABLE IF NOT EXISTS niche_secrets(niche_id TEXT NOT NULL REFERENCES niches(id),cycle INTEGER NOT NULL,encrypted_text TEXT NOT NULL,version INTEGER NOT NULL DEFAULT 1,updated_by TEXT NOT NULL REFERENCES users(id),updated_at INTEGER NOT NULL,PRIMARY KEY(niche_id,cycle));
+-- Migration 2: additive provenance records; existing operational data is preserved.
+CREATE TABLE IF NOT EXISTS trello_sources(id TEXT PRIMARY KEY,card_id TEXT NOT NULL UNIQUE,card_url TEXT NOT NULL,niche_id TEXT NOT NULL REFERENCES niches(id),cycle INTEGER NOT NULL,shop_id TEXT NOT NULL REFERENCES shops(id),payload_hash TEXT NOT NULL,imported_by TEXT NOT NULL REFERENCES users(id),imported_at INTEGER NOT NULL,source_name TEXT NOT NULL);

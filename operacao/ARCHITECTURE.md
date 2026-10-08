@@ -6,7 +6,7 @@ A aplicação usa módulos Python e cryptography/Fernet, SQLite em WAL e fronten
 
 O transporte é JSON sob `/operacao/api/`. O servidor verifica sessão em toda leitura privada e escrita. POSTs exigem Origin exata e formato JSON. URLs aceitam somente HTTP(S). Dados inseridos pela equipe são escapados na interface. Credenciais de infraestrutura ficam nos GitHub Secrets existentes.
 
-## Modelo relacional da versão 1
+## Modelo relacional até a versão 2
 
 ```mermaid
 erDiagram
@@ -20,6 +20,8 @@ erDiagram
   LANGUAGES ||--o{ LAUNCHES : publica
   SHOPS ||--o{ LAUNCHES : recebe
   NICHES ||--o{ NICHE_SECRETS : cifra_por_ciclo
+  NICHES ||--o{ TRELLO_SOURCES : referencia_por_ciclo
+  SHOPS ||--o{ TRELLO_SOURCES : recebe_importacao
   LANGUAGES ||--o{ MIGRATIONS : migra
   TASKS ||--o{ MIGRATIONS : executa
 ```
@@ -40,7 +42,15 @@ Registros editáveis têm `version`. A escrita de uma versão antiga retorna 409
 
 A situação do idioma é manual. A regra de migração usa somente `operational_status == active`. Desativado e em preparação não migram. O plano registra origem, destino, responsável e tarefa; a tradução não é recriada. O checklist do destino começa sem copiar IDs/URLs da loja de origem.
 
-`schema_migrations` registra a versão aplicada. A versão 1 é a fundação inicial. Novas versões deverão ser migrações explícitas e testadas, com backup antes da atualização e sem reconstruir o banco de produção.
+`schema_migrations` registra a versão aplicada. A versão 1 é a fundação inicial. A versão 2 acrescenta somente `trello_sources`, preservando os registros existentes. A atualização é testada contra um banco da versão 1, e o instalador salva um backup consistente antes do deploy. Novas versões deverão ser migrações explícitas e testadas, sem reconstruir o banco de produção.
+
+## Importação revisada do Trello
+
+Somente o responsável executa `import_trello`. O backend valida nomes, códigos de idioma, identificadores e links HTTPS de cartões Trello antes da escrita. Cada comando importa um nicho atomicamente, associa seus cartões e registra a origem no histórico. Um digest do payload com Shopify e interpretação do checklist torna a repetição idempotente. Dados diferentes de um cartão já importado recebem 409 para não substituir edições da equipe.
+
+O importador mantém a base inglesa, reaproveita idiomas existentes e não sobrescreve situações, Facebook ou lojas já ajustadas pela equipe. Novos idiomas concluídos recebem a Shopify, a tarefa de tradução concluída e as tarefas de produto/página concluídas. A revisão e o checkout permanecem pendentes por falta de evidência. Facebook só é marcado quando a interpretação escolhida confirma sua operação; resultado positivo requer a opção explícita correspondente. Nichos novos com Facebook confirmado e resultado desconhecido começam **Em teste**, enquanto a situação de cada idioma continua **Em preparação**. As fontes são limitadas ao ciclo atual e integram o snapshot do ciclo anterior ao reiniciar.
+
+O arquivo é um snapshot revisado obtido do Trello, não uma conexão automática do app com a API. Nenhuma chave Trello chega ao frontend. Não há atualizações periódicas nem alterações nos cartões originais.
 
 ## Próximas fases
 
