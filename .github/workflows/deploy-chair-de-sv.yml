@@ -70,7 +70,7 @@ jobs:
               echo "::error::Invalid LFS reference: $pdf"
               exit 1
             fi
-            curl --fail --location --silent --show-error --retry 2 --connect-timeout 15 --max-time 180 \
+            curl --http1.1 --fail --location --silent --show-error --retry 3 --retry-all-errors --connect-timeout 15 --max-time 180 \
               "https://media.githubusercontent.com/media/$GITHUB_REPOSITORY/$GITHUB_SHA/$pdf" \
               --output "$pdf.download"
             actual="$(shasum -a 256 "$pdf.download" | awk '{print $1}')"
