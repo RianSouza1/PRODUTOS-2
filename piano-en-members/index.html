@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="core.css?v=1">
+    <link rel="stylesheet" href="core.css?v=piano-videos-20261013">
 </head>
 
 <body>
@@ -25,6 +25,7 @@
             <p>Your premium access is confirmed.<br>Everything you need to start, play, and master your piano skills.</p>
             <div class="pre-page-features">
                 <span>📖 Books</span>
+                <span>▶ Video demonstrations</span>
                 <span>💬 Customer Support</span>
             </div>
             <button onclick="let el=document.getElementById('pre-page'); el.style.opacity='0'; setTimeout(()=>el.style.display='none',600);">
@@ -43,7 +44,7 @@
             </div>
         </header>
 
-        <main id="app-root" class="main-content">
+        <main id="app-root" class="main-content" tabindex="-1">
             <div class="loader-container">
                 <i data-lucide="loader-2" class="spin-icon"></i>
             </div>
@@ -54,6 +55,10 @@
                 <i data-lucide="book-open"></i>
                 <span>Books</span>
             </a>
+            <a href="#videos" class="tab-item" data-tab="videos">
+                <i data-lucide="play-circle" aria-hidden="true"></i>
+                <span>Videos</span>
+            </a>
             <a href="#contato" class="tab-item" data-tab="contato">
                 <i data-lucide="message-square"></i>
                 <span>Support</span>
@@ -61,8 +66,9 @@
         </nav>
     </div>
 
-    <script src="data.js?v=1"></script>
-    <script src="app.js?v=1"></script>
+    <script src="data.js?v=piano-videos-20261013"></script>
+    <script src="video-section.js?v=piano-videos-20261013"></script>
+    <script src="app.js?v=piano-videos-20261013"></script>
 
 </body>
 <!-- Deploy v1.0.0 -->

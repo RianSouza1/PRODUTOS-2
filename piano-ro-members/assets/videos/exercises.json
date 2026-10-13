@@ -1,0 +1,1409 @@
+[
+  {
+    "id": "v1",
+    "slug": "01-five-fingers",
+    "title": "Cinci degete: Do, Re, Mi, Fa, Sol",
+    "category": "Primii pași",
+    "subtitle": "Mâna dreaptă · 60 de bătăi pe minut",
+    "instruction": "Cântă Do, Re, Mi, Fa, Sol cu degetele 1, 2, 3, 4, 5.",
+    "description": "Urmărește cele cinci clape evidențiate. Numărul arată ce deget să folosești.",
+    "steps": [
+      "Așază degetul mare drept pe Do central.",
+      "Cântă Do, Re, Mi, Fa, Sol cu degetele 1, 2, 3, 4, 5.",
+      "Revino prin Fa, Mi, Re, Do. Repetă încet."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 4.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 5.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 6.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 7.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 8.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 9.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 11.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 12.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 14.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 16.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 17.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 19.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 20.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      }
+    ],
+    "duration": "0:24",
+    "seconds": 24,
+    "videoUrl": "assets/videos/01-five-fingers.mp4",
+    "poster": "assets/videos/01-five-fingers.jpg"
+  },
+  {
+    "id": "v2",
+    "slug": "02-c-major-scale",
+    "title": "Gama Do major",
+    "category": "Game",
+    "subtitle": "Mâna dreaptă · 60 de bătăi pe minut",
+    "instruction": "După Mi, trece degetul mare pe sub mână spre Fa.",
+    "description": "O gamă de o octavă, ascendentă și descendentă, cu numerele degetelor pe clape.",
+    "steps": [
+      "La urcare folosește degetele 1, 2, 3, 1, 2, 3, 4, 5.",
+      "După Mi, trece degetul mare pe sub mână spre Fa.",
+      "La coborâre: 5, 4, 3, 2, 1, 3, 2, 1. Păstrează un ritm regulat."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 4.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 5.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 6.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 7.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 8.0,
+        "hold": 0.82,
+        "notes": [
+          69
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 9.0,
+        "hold": 0.82,
+        "notes": [
+          71
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.0,
+        "hold": 0.82,
+        "notes": [
+          72
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 11.0,
+        "hold": 0.82,
+        "notes": [
+          71
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 12.0,
+        "hold": 0.82,
+        "notes": [
+          69
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 14.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 16.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 17.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 19.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 20.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 21.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 22.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 23.0,
+        "hold": 0.82,
+        "notes": [
+          69
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 24.0,
+        "hold": 0.82,
+        "notes": [
+          71
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 25.0,
+        "hold": 0.82,
+        "notes": [
+          72
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 26.0,
+        "hold": 0.82,
+        "notes": [
+          71
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 27.0,
+        "hold": 0.82,
+        "notes": [
+          69
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 28.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 29.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 30.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 31.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 32.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      }
+    ],
+    "duration": "0:36",
+    "seconds": 36,
+    "videoUrl": "assets/videos/02-c-major-scale.mp4",
+    "poster": "assets/videos/02-c-major-scale.jpg"
+  },
+  {
+    "id": "v3",
+    "slug": "03-c-major-chord",
+    "title": "Primul tău acord: Do major",
+    "category": "Acorduri",
+    "subtitle": "Mâna dreaptă · Do + Mi + Sol",
+    "instruction": "Cântă cele trei note pe rând.",
+    "description": "Ascultă notele acordului Do major mai întâi separat, apoi împreună.",
+    "steps": [
+      "Așază degetul mare pe Do, mijlociul pe Mi și degetul mic pe Sol.",
+      "Cântă cele trei note pe rând.",
+      "Apasă Do, Mi și Sol împreună cu degetele 1, 3 și 5."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 1.23,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 4.5,
+        "hold": 1.23,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 6.0,
+        "hold": 1.23,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 7.5,
+        "hold": 1.23,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 9.0,
+        "hold": 1.23,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.5,
+        "hold": 1.23,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 12.0,
+        "hold": 1.23,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.5,
+        "hold": 1.23,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.0,
+        "hold": 1.23,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 16.5,
+        "hold": 1.23,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 1.23,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 19.5,
+        "hold": 1.23,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      }
+    ],
+    "duration": "0:24",
+    "seconds": 24,
+    "videoUrl": "assets/videos/03-c-major-chord.mp4",
+    "poster": "assets/videos/03-c-major-chord.jpg"
+  },
+  {
+    "id": "v4",
+    "slug": "04-c-major-arpeggio",
+    "title": "Arpegiu în Do major",
+    "category": "Arpegii",
+    "subtitle": "Mâna dreaptă · 60 de bătăi pe minut",
+    "instruction": "Ascultă fiecare notă și menține mâna relaxată.",
+    "description": "Transformă acordul în arpegiu: Do, Mi, Sol, Do acut, apoi înapoi.",
+    "steps": [
+      "Folosește degetele 1, 2, 3 și 5 pentru Do, Mi, Sol și Do acut.",
+      "Ascultă fiecare notă și menține mâna relaxată.",
+      "Coboară prin Sol, Mi, Do cu degetele 3, 2, 1."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 4.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 5.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 6.0,
+        "hold": 0.82,
+        "notes": [
+          72
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 7.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 8.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 9.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 11.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 12.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.0,
+        "hold": 0.82,
+        "notes": [
+          72
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 14.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 16.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 17.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 19.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 20.0,
+        "hold": 0.82,
+        "notes": [
+          72
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 21.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 22.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 23.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      }
+    ],
+    "duration": "0:27",
+    "seconds": 27,
+    "videoUrl": "assets/videos/04-c-major-arpeggio.mp4",
+    "poster": "assets/videos/04-c-major-arpeggio.jpg"
+  },
+  {
+    "id": "v5",
+    "slug": "05-chord-changes",
+    "title": "Schimbarea acordurilor: Do, Fa, Sol",
+    "category": "Acorduri",
+    "subtitle": "Mâna dreaptă · Trei note împreună",
+    "instruction": "Treci la Fa major: Fa, La, Do; apoi Sol major: Sol, Si, Re.",
+    "description": "Observă cele trei poziții de acord și treci calm de la una la alta.",
+    "steps": [
+      "Cântă Do major: Do, Mi, Sol.",
+      "Treci la Fa major: Fa, La, Do; apoi Sol major: Sol, Si, Re.",
+      "Folosește degetele 1, 3 și 5 pentru fiecare acord. Încheie cu Do major."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 2.05,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 5.5,
+        "hold": 2.05,
+        "notes": [
+          65,
+          69,
+          72
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 8.0,
+        "hold": 2.05,
+        "notes": [
+          55,
+          59,
+          62
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.5,
+        "hold": 2.05,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.0,
+        "hold": 2.05,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.5,
+        "hold": 2.05,
+        "notes": [
+          65,
+          69,
+          72
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 2.05,
+        "notes": [
+          55,
+          59,
+          62
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 20.5,
+        "hold": 2.05,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      }
+    ],
+    "duration": "0:26",
+    "seconds": 26,
+    "videoUrl": "assets/videos/05-chord-changes.mp4",
+    "poster": "assets/videos/05-chord-changes.jpg"
+  },
+  {
+    "id": "v6",
+    "slug": "06-hands-together",
+    "title": "Ambele mâini împreună",
+    "category": "Coordonare",
+    "subtitle": "Dreapta: melodie · Stânga: notă de bas",
+    "instruction": "Dreapta cântă Do, Re, Mi, Fa, Sol, Fa, Mi, Re, Do.",
+    "description": "Dreapta cântă cinci note, iar stânga acompaniază cu Do și Sol.",
+    "steps": [
+      "Pregătește dreapta pe Do central și stânga pe Do grav.",
+      "Dreapta cântă Do, Re, Mi, Fa, Sol, Fa, Mi, Re, Do.",
+      "Stânga ține Do patru bătăi, apoi Sol patru bătăi. Încheie pe Do."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 4.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 5.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 6.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 7.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 8.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 9.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 11.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 12.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 14.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 16.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 17.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 19.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 20.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 3,
+        "hold": 3.9,
+        "notes": [
+          48
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "left"
+      },
+      {
+        "start": 7,
+        "hold": 3.9,
+        "notes": [
+          55
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "left"
+      },
+      {
+        "start": 11,
+        "hold": 0.82,
+        "notes": [
+          48
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "left"
+      },
+      {
+        "start": 12,
+        "hold": 3.9,
+        "notes": [
+          48
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "left"
+      },
+      {
+        "start": 16,
+        "hold": 3.9,
+        "notes": [
+          55
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "left"
+      },
+      {
+        "start": 20,
+        "hold": 0.82,
+        "notes": [
+          48
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "left"
+      }
+    ],
+    "duration": "0:24",
+    "seconds": 24,
+    "videoUrl": "assets/videos/06-hands-together.mp4",
+    "poster": "assets/videos/06-hands-together.jpg"
+  }
+]

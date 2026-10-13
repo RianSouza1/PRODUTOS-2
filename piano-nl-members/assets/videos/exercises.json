@@ -1,0 +1,1409 @@
+[
+  {
+    "id": "v1",
+    "slug": "01-five-fingers",
+    "title": "Vijf vingers: C, D, E, F, G",
+    "category": "Eerste stappen",
+    "subtitle": "Rechterhand · 60 tellen per minuut",
+    "instruction": "Speel C, D, E, F, G met vingers 1, 2, 3, 4, 5.",
+    "description": "Volg de vijf verlichte toetsen. Het nummer geeft aan welke vinger je gebruikt.",
+    "steps": [
+      "Leg je rechterduim op de centrale C.",
+      "Speel C, D, E, F, G met vingers 1, 2, 3, 4, 5.",
+      "Ga terug via F, E, D, C. Herhaal rustig."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 4.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 5.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 6.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 7.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 8.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 9.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 11.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 12.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 14.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 16.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 17.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 19.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 20.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      }
+    ],
+    "duration": "0:24",
+    "seconds": 24,
+    "videoUrl": "assets/videos/01-five-fingers.mp4",
+    "poster": "assets/videos/01-five-fingers.jpg"
+  },
+  {
+    "id": "v2",
+    "slug": "02-c-major-scale",
+    "title": "Toonladder van C majeur",
+    "category": "Toonladders",
+    "subtitle": "Rechterhand · 60 tellen per minuut",
+    "instruction": "Breng na E je duim onder je hand naar F.",
+    "description": "Een toonladder van één octaaf omhoog en omlaag, met de vingerzetting op de toetsen.",
+    "steps": [
+      "Omhoog: vingers 1, 2, 3, 1, 2, 3, 4, 5.",
+      "Breng na E je duim onder je hand naar F.",
+      "Omlaag: 5, 4, 3, 2, 1, 3, 2, 1. Houd een gelijkmatig ritme."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 4.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 5.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 6.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 7.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 8.0,
+        "hold": 0.82,
+        "notes": [
+          69
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 9.0,
+        "hold": 0.82,
+        "notes": [
+          71
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.0,
+        "hold": 0.82,
+        "notes": [
+          72
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 11.0,
+        "hold": 0.82,
+        "notes": [
+          71
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 12.0,
+        "hold": 0.82,
+        "notes": [
+          69
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 14.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 16.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 17.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 19.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 20.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 21.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 22.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 23.0,
+        "hold": 0.82,
+        "notes": [
+          69
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 24.0,
+        "hold": 0.82,
+        "notes": [
+          71
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 25.0,
+        "hold": 0.82,
+        "notes": [
+          72
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 26.0,
+        "hold": 0.82,
+        "notes": [
+          71
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 27.0,
+        "hold": 0.82,
+        "notes": [
+          69
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 28.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 29.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 30.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 31.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 32.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      }
+    ],
+    "duration": "0:36",
+    "seconds": 36,
+    "videoUrl": "assets/videos/02-c-major-scale.mp4",
+    "poster": "assets/videos/02-c-major-scale.jpg"
+  },
+  {
+    "id": "v3",
+    "slug": "03-c-major-chord",
+    "title": "Je eerste akkoord: C majeur",
+    "category": "Akkoorden",
+    "subtitle": "Rechterhand · C + E + G",
+    "instruction": "Speel de drie noten één voor één.",
+    "description": "Luister naar de noten van C majeur, eerst apart en daarna samen.",
+    "steps": [
+      "Leg je duim op C, middelvinger op E en pink op G.",
+      "Speel de drie noten één voor één.",
+      "Druk C, E en G tegelijk in met vingers 1, 3 en 5."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 1.23,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 4.5,
+        "hold": 1.23,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 6.0,
+        "hold": 1.23,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 7.5,
+        "hold": 1.23,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 9.0,
+        "hold": 1.23,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.5,
+        "hold": 1.23,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 12.0,
+        "hold": 1.23,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.5,
+        "hold": 1.23,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.0,
+        "hold": 1.23,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 16.5,
+        "hold": 1.23,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 1.23,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 19.5,
+        "hold": 1.23,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      }
+    ],
+    "duration": "0:24",
+    "seconds": 24,
+    "videoUrl": "assets/videos/03-c-major-chord.mp4",
+    "poster": "assets/videos/03-c-major-chord.jpg"
+  },
+  {
+    "id": "v4",
+    "slug": "04-c-major-arpeggio",
+    "title": "Arpeggio van C majeur",
+    "category": "Arpeggio’s",
+    "subtitle": "Rechterhand · 60 tellen per minuut",
+    "instruction": "Luister naar elke noot en houd je hand ontspannen.",
+    "description": "Speel het akkoord als arpeggio: C, E, G, hoge C en weer terug.",
+    "steps": [
+      "Gebruik vingers 1, 2, 3 en 5 voor C, E, G en hoge C.",
+      "Luister naar elke noot en houd je hand ontspannen.",
+      "Ga terug via G, E, C met vingers 3, 2, 1."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 4.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 5.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 6.0,
+        "hold": 0.82,
+        "notes": [
+          72
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 7.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 8.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 9.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 11.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 12.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.0,
+        "hold": 0.82,
+        "notes": [
+          72
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 14.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 16.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 17.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 19.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 20.0,
+        "hold": 0.82,
+        "notes": [
+          72
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 21.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 22.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 23.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      }
+    ],
+    "duration": "0:27",
+    "seconds": 27,
+    "videoUrl": "assets/videos/04-c-major-arpeggio.mp4",
+    "poster": "assets/videos/04-c-major-arpeggio.jpg"
+  },
+  {
+    "id": "v5",
+    "slug": "05-chord-changes",
+    "title": "Akkoorden wisselen: C, F, G",
+    "category": "Akkoorden",
+    "subtitle": "Rechterhand · Drie noten samen",
+    "instruction": "Ga naar F majeur: F, A, C; daarna G majeur: G, B, D.",
+    "description": "Bekijk de drie akkoordposities en wissel rustig van het ene naar het andere.",
+    "steps": [
+      "Speel C majeur: C, E, G.",
+      "Ga naar F majeur: F, A, C; daarna G majeur: G, B, D.",
+      "Gebruik telkens vingers 1, 3 en 5. Eindig met C majeur."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 2.05,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 5.5,
+        "hold": 2.05,
+        "notes": [
+          65,
+          69,
+          72
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 8.0,
+        "hold": 2.05,
+        "notes": [
+          55,
+          59,
+          62
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.5,
+        "hold": 2.05,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.0,
+        "hold": 2.05,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.5,
+        "hold": 2.05,
+        "notes": [
+          65,
+          69,
+          72
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 2.05,
+        "notes": [
+          55,
+          59,
+          62
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 20.5,
+        "hold": 2.05,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      }
+    ],
+    "duration": "0:26",
+    "seconds": 26,
+    "videoUrl": "assets/videos/05-chord-changes.mp4",
+    "poster": "assets/videos/05-chord-changes.jpg"
+  },
+  {
+    "id": "v6",
+    "slug": "06-hands-together",
+    "title": "Beide handen samen",
+    "category": "Coördinatie",
+    "subtitle": "Rechts: melodie · Links: basnoot",
+    "instruction": "Rechts speel je C, D, E, F, G, F, E, D, C.",
+    "description": "De rechterhand speelt vijf noten terwijl de linkerhand begeleidt met C en G.",
+    "steps": [
+      "Bereid rechts de centrale C en links de lage C voor.",
+      "Rechts speel je C, D, E, F, G, F, E, D, C.",
+      "Links houd je C vier tellen vast, daarna G vier tellen. Eindig op C."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 4.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 5.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 6.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 7.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 8.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 9.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 11.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 12.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 14.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 16.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 17.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 19.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 20.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 3,
+        "hold": 3.9,
+        "notes": [
+          48
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "left"
+      },
+      {
+        "start": 7,
+        "hold": 3.9,
+        "notes": [
+          55
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "left"
+      },
+      {
+        "start": 11,
+        "hold": 0.82,
+        "notes": [
+          48
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "left"
+      },
+      {
+        "start": 12,
+        "hold": 3.9,
+        "notes": [
+          48
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "left"
+      },
+      {
+        "start": 16,
+        "hold": 3.9,
+        "notes": [
+          55
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "left"
+      },
+      {
+        "start": 20,
+        "hold": 0.82,
+        "notes": [
+          48
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "left"
+      }
+    ],
+    "duration": "0:24",
+    "seconds": 24,
+    "videoUrl": "assets/videos/06-hands-together.mp4",
+    "poster": "assets/videos/06-hands-together.jpg"
+  }
+]

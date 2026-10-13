@@ -1,0 +1,1409 @@
+[
+  {
+    "id": "v1",
+    "slug": "01-five-fingers",
+    "title": "Pět prstů: C, D, E, F, G",
+    "category": "První kroky",
+    "subtitle": "Pravá ruka · 60 úderů za minutu",
+    "instruction": "Hrajte C, D, E, F, G prsty 1, 2, 3, 4, 5.",
+    "description": "Sledujte pět zvýrazněných kláves. Číslo ukazuje, který prst použít.",
+    "steps": [
+      "Položte pravý palec na střední C.",
+      "Hrajte C, D, E, F, G prsty 1, 2, 3, 4, 5.",
+      "Vraťte se přes F, E, D, C. Pomalu opakujte."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 4.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 5.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 6.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 7.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 8.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 9.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 11.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 12.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 14.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 16.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 17.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 19.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 20.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      }
+    ],
+    "duration": "0:24",
+    "seconds": 24,
+    "videoUrl": "assets/videos/01-five-fingers.mp4",
+    "poster": "assets/videos/01-five-fingers.jpg"
+  },
+  {
+    "id": "v2",
+    "slug": "02-c-major-scale",
+    "title": "Stupnice C dur",
+    "category": "Stupnice",
+    "subtitle": "Pravá ruka · 60 úderů za minutu",
+    "instruction": "Po E podložte palec pod ruku na F.",
+    "description": "Stupnice v rozsahu jedné oktávy nahoru a dolů, s prstokladem na klávesách.",
+    "steps": [
+      "Nahoru použijte prsty 1, 2, 3, 1, 2, 3, 4, 5.",
+      "Po E podložte palec pod ruku na F.",
+      "Dolů: 5, 4, 3, 2, 1, 3, 2, 1. Udržujte pravidelný rytmus."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 4.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 5.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 6.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 7.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 8.0,
+        "hold": 0.82,
+        "notes": [
+          69
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 9.0,
+        "hold": 0.82,
+        "notes": [
+          71
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.0,
+        "hold": 0.82,
+        "notes": [
+          72
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 11.0,
+        "hold": 0.82,
+        "notes": [
+          71
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 12.0,
+        "hold": 0.82,
+        "notes": [
+          69
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 14.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 16.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 17.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 19.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 20.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 21.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 22.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 23.0,
+        "hold": 0.82,
+        "notes": [
+          69
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 24.0,
+        "hold": 0.82,
+        "notes": [
+          71
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 25.0,
+        "hold": 0.82,
+        "notes": [
+          72
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 26.0,
+        "hold": 0.82,
+        "notes": [
+          71
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 27.0,
+        "hold": 0.82,
+        "notes": [
+          69
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 28.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 29.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 30.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 31.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 32.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      }
+    ],
+    "duration": "0:36",
+    "seconds": 36,
+    "videoUrl": "assets/videos/02-c-major-scale.mp4",
+    "poster": "assets/videos/02-c-major-scale.jpg"
+  },
+  {
+    "id": "v3",
+    "slug": "03-c-major-chord",
+    "title": "Váš první akord: C dur",
+    "category": "Akordy",
+    "subtitle": "Pravá ruka · C + E + G",
+    "instruction": "Zahrajte tři tóny postupně.",
+    "description": "Poslechněte si tóny akordu C dur nejprve zvlášť a pak společně.",
+    "steps": [
+      "Položte palec na C, prostředník na E a malíček na G.",
+      "Zahrajte tři tóny postupně.",
+      "Stiskněte C, E a G společně prsty 1, 3 a 5."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 1.23,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 4.5,
+        "hold": 1.23,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 6.0,
+        "hold": 1.23,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 7.5,
+        "hold": 1.23,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 9.0,
+        "hold": 1.23,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.5,
+        "hold": 1.23,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 12.0,
+        "hold": 1.23,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.5,
+        "hold": 1.23,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.0,
+        "hold": 1.23,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 16.5,
+        "hold": 1.23,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 1.23,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 19.5,
+        "hold": 1.23,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      }
+    ],
+    "duration": "0:24",
+    "seconds": 24,
+    "videoUrl": "assets/videos/03-c-major-chord.mp4",
+    "poster": "assets/videos/03-c-major-chord.jpg"
+  },
+  {
+    "id": "v4",
+    "slug": "04-c-major-arpeggio",
+    "title": "Arpeggio C dur",
+    "category": "Arpeggia",
+    "subtitle": "Pravá ruka · 60 úderů za minutu",
+    "instruction": "Poslouchejte každý tón a nechte ruku uvolněnou.",
+    "description": "Zahrajte akord jako arpeggio: C, E, G, vysoké C a zpět.",
+    "steps": [
+      "Pro C, E, G a vysoké C použijte prsty 1, 2, 3 a 5.",
+      "Poslouchejte každý tón a nechte ruku uvolněnou.",
+      "Vraťte se přes G, E, C prsty 3, 2, 1."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 4.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 5.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 6.0,
+        "hold": 0.82,
+        "notes": [
+          72
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 7.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 8.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 9.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 11.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 12.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.0,
+        "hold": 0.82,
+        "notes": [
+          72
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 14.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 16.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 17.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 19.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 20.0,
+        "hold": 0.82,
+        "notes": [
+          72
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 21.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 22.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 23.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      }
+    ],
+    "duration": "0:27",
+    "seconds": 27,
+    "videoUrl": "assets/videos/04-c-major-arpeggio.mp4",
+    "poster": "assets/videos/04-c-major-arpeggio.jpg"
+  },
+  {
+    "id": "v5",
+    "slug": "05-chord-changes",
+    "title": "Střídání akordů: C, F, G",
+    "category": "Akordy",
+    "subtitle": "Pravá ruka · Tři tóny společně",
+    "instruction": "Přejděte na F dur: F, A, C; pak G dur: G, H, D.",
+    "description": "Sledujte tři polohy akordů a pomalu mezi nimi přecházejte.",
+    "steps": [
+      "Zahrajte C dur: C, E, G.",
+      "Přejděte na F dur: F, A, C; pak G dur: G, H, D.",
+      "Pro každý akord použijte prsty 1, 3 a 5. Zakončete akordem C dur."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 2.05,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 5.5,
+        "hold": 2.05,
+        "notes": [
+          65,
+          69,
+          72
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 8.0,
+        "hold": 2.05,
+        "notes": [
+          55,
+          59,
+          62
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.5,
+        "hold": 2.05,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.0,
+        "hold": 2.05,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.5,
+        "hold": 2.05,
+        "notes": [
+          65,
+          69,
+          72
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 2.05,
+        "notes": [
+          55,
+          59,
+          62
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 20.5,
+        "hold": 2.05,
+        "notes": [
+          60,
+          64,
+          67
+        ],
+        "fingers": [
+          1,
+          3,
+          5
+        ],
+        "hand": "right"
+      }
+    ],
+    "duration": "0:26",
+    "seconds": 26,
+    "videoUrl": "assets/videos/05-chord-changes.mp4",
+    "poster": "assets/videos/05-chord-changes.jpg"
+  },
+  {
+    "id": "v6",
+    "slug": "06-hands-together",
+    "title": "Obě ruce společně",
+    "category": "Koordinace",
+    "subtitle": "Pravá: melodie · Levá: basový tón",
+    "instruction": "Pravá hraje C, D, E, F, G, F, E, D, C.",
+    "description": "Pravá ruka hraje pět tónů a levá doprovází tóny C a G.",
+    "steps": [
+      "Připravte pravou ruku na středním C a levou na nízkém C.",
+      "Pravá hraje C, D, E, F, G, F, E, D, C.",
+      "Levá drží C čtyři doby, poté G čtyři doby. Zakončete na C."
+    ],
+    "events": [
+      {
+        "start": 3.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 4.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 5.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 6.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 7.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 8.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 9.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 10.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 11.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 12.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 13.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 14.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 15.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 16.0,
+        "hold": 0.82,
+        "notes": [
+          67
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 17.0,
+        "hold": 0.82,
+        "notes": [
+          65
+        ],
+        "fingers": [
+          4
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 18.0,
+        "hold": 0.82,
+        "notes": [
+          64
+        ],
+        "fingers": [
+          3
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 19.0,
+        "hold": 0.82,
+        "notes": [
+          62
+        ],
+        "fingers": [
+          2
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 20.0,
+        "hold": 0.82,
+        "notes": [
+          60
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "right"
+      },
+      {
+        "start": 3,
+        "hold": 3.9,
+        "notes": [
+          48
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "left"
+      },
+      {
+        "start": 7,
+        "hold": 3.9,
+        "notes": [
+          55
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "left"
+      },
+      {
+        "start": 11,
+        "hold": 0.82,
+        "notes": [
+          48
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "left"
+      },
+      {
+        "start": 12,
+        "hold": 3.9,
+        "notes": [
+          48
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "left"
+      },
+      {
+        "start": 16,
+        "hold": 3.9,
+        "notes": [
+          55
+        ],
+        "fingers": [
+          1
+        ],
+        "hand": "left"
+      },
+      {
+        "start": 20,
+        "hold": 0.82,
+        "notes": [
+          48
+        ],
+        "fingers": [
+          5
+        ],
+        "hand": "left"
+      }
+    ],
+    "duration": "0:24",
+    "seconds": 24,
+    "videoUrl": "assets/videos/06-hands-together.mp4",
+    "poster": "assets/videos/06-hands-together.jpg"
+  }
+]

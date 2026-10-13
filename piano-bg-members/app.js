@@ -172,6 +172,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function handleRouting() {
     let currentHash = window.location.hash || "#home";
+    if (currentHash === "#video") {
+      currentHash = "#videos";
+      history.replaceState(null, "", currentHash);
+    }
+    window.PIANO_DEMOS.pause();
 
     rootEl.innerHTML = "";
     updateBottomNavBar(currentHash);
@@ -185,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderLivros();
         break;
       case "#videos":
-        renderLivros();
+        window.PIANO_DEMOS.render();
         break;
       case "#produtos":
         renderOutrosProdutos();
@@ -205,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `);
 
     renderIcons();
-    document.querySelector('.app-container').scrollTo(0, 0);
+    rootEl.scrollTo(0, 0);
   }
 
   function updateBottomNavBar(hash) {
@@ -256,6 +261,11 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
             </a>
 
+            <a href="#videos" class="home-block glass-panel">
+              <div class="home-block-icon"><i data-lucide="play-circle" aria-hidden="true"></i></div>
+              <div><h2 class="home-block-title">${APP_DATA.videoUI.homeTitle}</h2>
+              <p class="home-block-subtitle">${APP_DATA.videoUI.homeText}</p></div>
+            </a>
             <a href="#contato" class="home-block glass-panel">
               <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
                  <i data-lucide="message-square"></i>

@@ -11,7 +11,92 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+    {
+        "id": "v1",
+        "title": "Pět prstů: C, D, E, F, G",
+        "category": "První kroky",
+        "description": "Sledujte pět zvýrazněných kláves. Číslo ukazuje, který prst použít.",
+        "steps": [
+            "Položte pravý palec na střední C.",
+            "Hrajte C, D, E, F, G prsty 1, 2, 3, 4, 5.",
+            "Vraťte se přes F, E, D, C. Pomalu opakujte."
+        ],
+        "duration": "0:24",
+        "videoUrl": "assets/videos/01-five-fingers.mp4",
+        "poster": "assets/videos/01-five-fingers.jpg"
+    },
+    {
+        "id": "v2",
+        "title": "Stupnice C dur",
+        "category": "Stupnice",
+        "description": "Stupnice v rozsahu jedné oktávy nahoru a dolů, s prstokladem na klávesách.",
+        "steps": [
+            "Nahoru použijte prsty 1, 2, 3, 1, 2, 3, 4, 5.",
+            "Po E podložte palec pod ruku na F.",
+            "Dolů: 5, 4, 3, 2, 1, 3, 2, 1. Udržujte pravidelný rytmus."
+        ],
+        "duration": "0:36",
+        "videoUrl": "assets/videos/02-c-major-scale.mp4",
+        "poster": "assets/videos/02-c-major-scale.jpg"
+    },
+    {
+        "id": "v3",
+        "title": "Váš první akord: C dur",
+        "category": "Akordy",
+        "description": "Poslechněte si tóny akordu C dur nejprve zvlášť a pak společně.",
+        "steps": [
+            "Položte palec na C, prostředník na E a malíček na G.",
+            "Zahrajte tři tóny postupně.",
+            "Stiskněte C, E a G společně prsty 1, 3 a 5."
+        ],
+        "duration": "0:24",
+        "videoUrl": "assets/videos/03-c-major-chord.mp4",
+        "poster": "assets/videos/03-c-major-chord.jpg"
+    },
+    {
+        "id": "v4",
+        "title": "Arpeggio C dur",
+        "category": "Arpeggia",
+        "description": "Zahrajte akord jako arpeggio: C, E, G, vysoké C a zpět.",
+        "steps": [
+            "Pro C, E, G a vysoké C použijte prsty 1, 2, 3 a 5.",
+            "Poslouchejte každý tón a nechte ruku uvolněnou.",
+            "Vraťte se přes G, E, C prsty 3, 2, 1."
+        ],
+        "duration": "0:27",
+        "videoUrl": "assets/videos/04-c-major-arpeggio.mp4",
+        "poster": "assets/videos/04-c-major-arpeggio.jpg"
+    },
+    {
+        "id": "v5",
+        "title": "Střídání akordů: C, F, G",
+        "category": "Akordy",
+        "description": "Sledujte tři polohy akordů a pomalu mezi nimi přecházejte.",
+        "steps": [
+            "Zahrajte C dur: C, E, G.",
+            "Přejděte na F dur: F, A, C; pak G dur: G, H, D.",
+            "Pro každý akord použijte prsty 1, 3 a 5. Zakončete akordem C dur."
+        ],
+        "duration": "0:26",
+        "videoUrl": "assets/videos/05-chord-changes.mp4",
+        "poster": "assets/videos/05-chord-changes.jpg"
+    },
+    {
+        "id": "v6",
+        "title": "Obě ruce společně",
+        "category": "Koordinace",
+        "description": "Pravá ruka hraje pět tónů a levá doprovází tóny C a G.",
+        "steps": [
+            "Připravte pravou ruku na středním C a levou na nízkém C.",
+            "Pravá hraje C, D, E, F, G, F, E, D, C.",
+            "Levá drží C čtyři doby, poté G čtyři doby. Zakončete na C."
+        ],
+        "duration": "0:24",
+        "videoUrl": "assets/videos/06-hands-together.mp4",
+        "poster": "assets/videos/06-hands-together.jpg"
+    }
+],
 
     books: [
         {
@@ -62,4 +147,34 @@ const APP_DATA = {
     ],
 
     otherProducts: []
+};
+
+/* Localized interface for the piano demonstrations. */
+APP_DATA.videoUI = {
+    "label": "Videa",
+    "homeTitle": "Názorná videa",
+    "homeText": "Šest krátkých cvičení pouze se zvukem klavíru",
+    "heading": "Sledujte, poslouchejte a zkuste to",
+    "intro": "Šest krátkých animovaných ukázek. Sledujte zvýrazněné klávesy a čísla prstů. Uslyšíte pouze klavír, bez mluveného komentáře nebo hlasů v pozadí.",
+    "demo": "Ukázka",
+    "of": "z",
+    "sound": "Pouze klavír",
+    "unsupported": "Váš prohlížeč toto video nepodporuje.",
+    "open": "Otevřít ukázku",
+    "speed": "Rychlost přehrávání",
+    "replay": "Spustit znovu",
+    "practice": "Zkuste to sami",
+    "choose": "Vyberte si ukázku",
+    "fingers": "Prsty",
+    "fingerNames": [
+        "palec",
+        "ukazovák",
+        "prostředník",
+        "prsteník",
+        "malíček"
+    ],
+    "creditsLabel": "Zvuky",
+    "creditsAdapted": "upravené pro tato cvičení",
+    "loadError": "Video se nepodařilo načíst. Obnovte stránku nebo to za chvíli zkuste znovu.",
+    "playHint": "Začněte stisknutím tlačítka přehrávání."
 };

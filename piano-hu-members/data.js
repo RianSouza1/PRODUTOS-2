@@ -11,7 +11,92 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [],
+    videos: [
+    {
+        "id": "v1",
+        "title": "Öt ujj: C, D, E, F, G",
+        "category": "Első lépések",
+        "description": "Kövesd az öt kiemelt billentyűt. A szám mutatja, melyik ujjat használd.",
+        "steps": [
+            "Tedd a jobb hüvelykujjadat a középső C-re.",
+            "Játszd a C, D, E, F, G hangokat az 1, 2, 3, 4, 5 ujjakkal.",
+            "Haladj vissza az F, E, D, C hangokon. Ismételd lassan."
+        ],
+        "duration": "0:24",
+        "videoUrl": "assets/videos/01-five-fingers.mp4",
+        "poster": "assets/videos/01-five-fingers.jpg"
+    },
+    {
+        "id": "v2",
+        "title": "C-dúr skála",
+        "category": "Skálák",
+        "description": "Egyoktávos skála felfelé és lefelé, a billentyűkön jelzett ujjrenddel.",
+        "steps": [
+            "Felfelé az ujjrend: 1, 2, 3, 1, 2, 3, 4, 5.",
+            "Az E után vezesd a hüvelykujjadat a kéz alatt az F-re.",
+            "Lefelé: 5, 4, 3, 2, 1, 3, 2, 1. Tarts egyenletes ritmust."
+        ],
+        "duration": "0:36",
+        "videoUrl": "assets/videos/02-c-major-scale.mp4",
+        "poster": "assets/videos/02-c-major-scale.jpg"
+    },
+    {
+        "id": "v3",
+        "title": "Az első akkordod: C-dúr",
+        "category": "Akkordok",
+        "description": "Hallgasd meg a C-dúr akkord hangjait először külön, majd együtt.",
+        "steps": [
+            "Tedd a hüvelykujjadat C-re, a középső ujjadat E-re, a kisujjadat G-re.",
+            "Játszd el a három hangot egymás után.",
+            "Nyomd le egyszerre a C, E, G hangokat az 1, 3, 5 ujjakkal."
+        ],
+        "duration": "0:24",
+        "videoUrl": "assets/videos/03-c-major-chord.mp4",
+        "poster": "assets/videos/03-c-major-chord.jpg"
+    },
+    {
+        "id": "v4",
+        "title": "C-dúr arpeggio",
+        "category": "Arpeggiók",
+        "description": "Bontsd fel az akkordot: C, E, G, magas C, majd vissza.",
+        "steps": [
+            "A C, E, G és magas C hanghoz használd az 1, 2, 3, 5 ujjakat.",
+            "Figyelj minden hangra, és tartsd lazán a kezed.",
+            "Haladj lefelé a G, E, C hangokon a 3, 2, 1 ujjakkal."
+        ],
+        "duration": "0:27",
+        "videoUrl": "assets/videos/04-c-major-arpeggio.mp4",
+        "poster": "assets/videos/04-c-major-arpeggio.jpg"
+    },
+    {
+        "id": "v5",
+        "title": "Akkordváltás: C, F, G",
+        "category": "Akkordok",
+        "description": "Figyeld meg a három akkord helyzetét, és válts közöttük nyugodtan.",
+        "steps": [
+            "Játszd a C-dúrt: C, E, G.",
+            "Válts F-dúrra: F, A, C; majd G-dúrra: G, H, D.",
+            "Minden akkordhoz az 1, 3, 5 ujjakat használd. C-dúrral fejezd be."
+        ],
+        "duration": "0:26",
+        "videoUrl": "assets/videos/05-chord-changes.mp4",
+        "poster": "assets/videos/05-chord-changes.jpg"
+    },
+    {
+        "id": "v6",
+        "title": "A két kéz együtt",
+        "category": "Koordináció",
+        "description": "A jobb kéz öt hangot játszik, a bal pedig C és G hangokkal kísér.",
+        "steps": [
+            "Készítsd elő a jobb kezet a középső C-n, a balt a mély C-n.",
+            "A jobb kéz: C, D, E, F, G, F, E, D, C.",
+            "A bal kéz négy ütésig tartja a C-t, majd négyig a G-t. C-n fejezd be."
+        ],
+        "duration": "0:24",
+        "videoUrl": "assets/videos/06-hands-together.mp4",
+        "poster": "assets/videos/06-hands-together.jpg"
+    }
+],
 
     books: [
         {
@@ -62,4 +147,34 @@ const APP_DATA = {
     ],
 
     otherProducts: []
+};
+
+/* Localized interface for the piano demonstrations. */
+APP_DATA.videoUI = {
+    "label": "Videók",
+    "homeTitle": "Bemutató videók",
+    "homeText": "Hat rövid gyakorlat, kizárólag zongorahangokkal",
+    "heading": "Nézd, hallgasd és próbáld ki",
+    "intro": "Hat rövid animált bemutató. Kövesd a kiemelt billentyűket és az ujjak számozását. Csak zongorahang hallható, beszéd és háttérben hallható hangok nélkül.",
+    "demo": "Bemutató",
+    "of": "/",
+    "sound": "Csak zongora",
+    "unsupported": "A böngésződ nem támogatja ezt a videót.",
+    "open": "Bemutató megnyitása",
+    "speed": "Lejátszási sebesség",
+    "replay": "Újrakezdés",
+    "practice": "Próbáld ki te is",
+    "choose": "Válassz egy bemutatót",
+    "fingers": "Ujjak",
+    "fingerNames": [
+        "hüvelykujj",
+        "mutatóujj",
+        "középső ujj",
+        "gyűrűsujj",
+        "kisujj"
+    ],
+    "creditsLabel": "Hangok",
+    "creditsAdapted": "a gyakorlatokhoz átdolgozva",
+    "loadError": "A videót nem sikerült betölteni. Frissítsd az oldalt, vagy próbáld újra később.",
+    "playHint": "Az indításhoz nyomd meg a lejátszás gombot."
 };
