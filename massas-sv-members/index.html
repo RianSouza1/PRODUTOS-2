@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Din pastasamling: tre kokböcker med pasta, såser, ugnspasta och lasagne att läsa och ladda ner som PDF.">
+  <title>Pastasamlingen — Medlemsområde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="core.css?v=20261013">
+</head>
+<body>
+  <div id="pre-page" class="pre-page-overlay">
+    <div class="pre-page-bg"></div>
+    <div class="pre-page-content">
+      <div class="pre-page-icon" aria-hidden="true">🍝</div>
+      <h1>Pastasamlingen</h1>
+      <p>Din tillgång är bekräftad. Upptäck dina tre kokböcker med pasta, såser och ugnsrätter och välj ditt nästa recept.</p>
+      <div class="pre-page-features"><span>📖 3 kokböcker i PDF</span><span>🍝 Pasta, såser och lasagne</span><span>💬 Hjälp</span></div>
+      <button type="button" id="enter-members">Till mina kokböcker →</button>
+    </div>
+  </div>
+  <div class="app-container">
+    <header class="app-header"><div class="header-logo"><img src="assets/covers/massas_IMG1_sv.png" alt="Den kompletta pastasamlingen" id="brand-logo"><h1 id="brand-title">Pastasamlingen</h1></div></header>
+    <main id="app-root" class="main-content"><p class="loading-message" role="status">Dina kokböcker laddas…</p></main>
+    <nav class="bottom-tab-bar" id="main-nav" aria-label="Medlemsområde">
+      <a href="#bocker" class="tab-item"><span data-icon="book-open" aria-hidden="true"></span><span>Kokböcker</span></a>
+      <a href="#hjalp" class="tab-item"><span data-icon="message-square" aria-hidden="true"></span><span>Hjälp</span></a>
+    </nav>
+  </div>
+  <noscript><div class="noscript-message"><h1>Pastasamlingen</h1><p>Aktivera JavaScript för att använda medlemsområdet. Du kan också öppna dina PDF-filer direkt via länkarna nedan.</p><a href="materials/PASTA-1-SV.pdf">Den kompletta pastakokboken</a><a href="materials/PASTA-2-SV.pdf">Kokbok för pastasåser</a><a href="materials/PASTA-3-SV.pdf">Kokbok för ugnspasta och lasagne</a><a href="mailto:trinityag01@gmail.com">Hjälp</a></div></noscript>
+  <script src="data.js?v=20261013"></script><script src="app.js?v=20261013"></script>
+</body>
+</html>
