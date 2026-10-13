@@ -1262,7 +1262,7 @@ html, body {
 .main-content { min-height: 0; min-width: 0; padding-bottom: calc(var(--nav-height) + env(safe-area-inset-bottom) + 1rem); }
 .header-logo #brand-title { color: var(--accent); font-size: 0.9rem; font-weight: 600; text-align: center; line-height: 1.35; }
 .header-logo img { flex-shrink: 0; }
-.tab-item { width: 50%; }
+.tab-item { width: 33.333%; }
 .tab-item.active { color: var(--accent); }
 .home-block-icon { background: var(--primary-light); color: var(--accent); }
 .home-block-title { line-height: 1.4; }
@@ -1308,3 +1308,36 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Dimostrazioni di pianoforte. */
+.piano-lesson-card { border: 1px solid var(--border-light); border-radius: 20px; background: var(--bg-card); overflow: hidden; margin-bottom: 2.5rem; }
+.piano-lesson-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.5rem; flex-wrap: wrap; }
+.piano-lesson-eyebrow { color: var(--accent); font-size: .78rem; margin-bottom: .5rem; line-height: 1.5; }
+.piano-lesson-heading h2 { font-size: 1.35rem; line-height: 1.4; }
+.piano-lesson-badge { display: inline-block; background: var(--primary-light); border: 1px solid var(--border-light); color: var(--text-muted); border-radius: 100px; padding: .5rem .75rem; font-size: .78rem; line-height: 1.4; }
+.piano-demo-player { display: block; width: 100%; aspect-ratio: 16 / 9; background: #0d141c; object-fit: contain; }
+.piano-playback-tools { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-light); }
+.piano-speed-tools { display: flex; align-items: center; gap: .5rem; }
+.piano-speed-tools > span { font-size: .9rem; color: var(--text-muted); margin-right: .25rem; }
+.piano-playback-tools button { min-height: 44px; padding: .65rem .85rem; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font: inherit; font-size: .9rem; color: var(--text-dark); background: transparent; border: 1px solid var(--border-light); border-radius: 10px; cursor: pointer; }
+.piano-playback-tools button[aria-pressed="true"] { background: var(--secondary); border-color: var(--secondary); }
+.piano-playback-tools svg { width: 18px; height: 18px; }
+.piano-lesson-details { padding: 1.5rem; }
+.piano-lesson-details p { color: var(--text-muted); font-size: .95rem; line-height: 1.7; }
+.piano-lesson-details h3 { margin-top: 1.5rem; font-size: 1.05rem; }
+.piano-lesson-details ol { padding-left: 1.4rem; margin-top: .75rem; }
+.piano-lesson-details li { font-size: .95rem; line-height: 1.7; padding: .25rem 0 .25rem .25rem; }
+.piano-lesson-details .piano-finger-legend { font-size: .8rem; padding-top: 1rem; margin-top: 1rem; border-top: 1px solid var(--border-light); }
+.piano-player-status { padding: 1rem 1.5rem; color: var(--accent); line-height: 1.5; }
+.piano-lesson-library h2 { font-size: 1.25rem; margin-bottom: 1rem; }
+.piano-lesson-list { display: grid; grid-template-columns: 1fr; gap: .75rem; }
+.piano-lesson-choice { display: flex; width: 100%; align-items: center; text-align: left; gap: 1rem; min-height: 88px; padding: 1rem; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 14px; color: var(--text-dark); font: inherit; cursor: pointer; }
+.piano-lesson-choice.selected { border-color: var(--accent); background: #213043; }
+.piano-lesson-number { color: var(--accent); font-size: 1.2rem; font-weight: 700; }
+.piano-lesson-choice-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .3rem; }
+.piano-lesson-choice-text strong { font-size: .95rem; line-height: 1.4; }
+.piano-lesson-choice-text > span { font-size: .78rem; color: var(--text-muted); }
+.piano-lesson-choice svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--accent); }
+.piano-sound-credits { color: var(--text-muted); font-size: .75rem; line-height: 1.7; margin-top: 1.5rem; }
+.piano-sound-credits a { color: var(--accent); }
+@media (min-width: 768px) { .piano-lesson-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
