@@ -1296,7 +1296,7 @@ html, body {
 .noscript-message a { color: var(--accent); }
 a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 @media (min-width: 1024px) {
-    .bottom-tab-bar { order: -1; flex-shrink: 0; }
+    .bottom-tab-bar { flex-shrink: 0; }
     .tab-item { width: calc(100% - 2rem); }
     .main-content { padding-bottom: 3rem; }
 }
