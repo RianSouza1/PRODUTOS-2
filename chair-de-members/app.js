@@ -15,9 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const floatingHelp = document.getElementById("floating-help-container");
   const tabItems = document.querySelectorAll(".tab-item");
 
-  let activeVideoFilter = "all";
-  let activeTimers = {};
-  const ytPlayers = {};
+
 
   // ----------------------------------------------------------------------
   // 1. BASIS INITIALISATIE
@@ -25,17 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById('enter-members').addEventListener('click', () => {
     const overlay = document.getElementById('pre-page');
     overlay.style.opacity = '0';
-    window.location.hash = 'buecher';
+    if (!['#buecher', '#videos', '#hilfe', '#programme'].includes(window.location.hash)) window.location.hash = 'buecher';
     setTimeout(() => { overlay.hidden = true; rootEl.querySelector('h1')?.focus(); }, 600);
   });
   initGlobalConfig();
   handleRouting();
 
-  window.addEventListener("hashchange", () => {
-    cleanupTimers();
-    cleanupPlayers();
-    handleRouting();
-  });
+  window.addEventListener("hashchange", handleRouting);
 
   function renderIcons() {
     if (window.lucide) {
@@ -49,31 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function cleanupTimers() {
-    Object.keys(activeTimers).forEach(id => {
-      if (activeTimers[id]) {
-        clearInterval(activeTimers[id]);
-      }
-    });
-    activeTimers = {};
-  }
-
-  function cleanupPlayers() {
-    Object.keys(ytPlayers).forEach(id => {
-      try {
-        if (ytPlayers[id] && typeof ytPlayers[id].destroy === 'function') {
-          ytPlayers[id].destroy();
-        }
-      } catch (e) {}
-      delete ytPlayers[id];
-    });
-  }
-
   // ----------------------------------------------------------------------
   // 2. ROUTING
   // ----------------------------------------------------------------------
   function handleRouting() {
     let currentHash = window.location.hash || "#home";
+    if (["#video"].includes(currentHash)) {
+      currentHash = "#videos";
+      history.replaceState(null, "", currentHash);
+    }
+    window.CHAIR_DEMOS.pause();
 
     rootEl.innerHTML = "";
     updateBottomNavBar(currentHash);
@@ -274,274 +253,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // 5. WEERGAVE: VIDEODEMONSTRATIES (VIDEOS - 100% WHITE LABEL & GELUIDLOOS)
   // ----------------------------------------------------------------------
   function renderVideos() {
-    const allVideos = APP_DATA.videos || [];
-    const filteredVideos = activeVideoFilter === "all"
-      ? allVideos
-      : allVideos.filter(v => v.category === activeVideoFilter);
-
-    const cardsHTML = filteredVideos.map(vid => {
-      const stepsHTML = vid.steps.map((step, idx) => `
-        <div class="exercise-step-item">
-           <span class="step-num">${idx + 1}</span>
-           <span class="step-desc">${step}</span>
-        </div>
-      `).join('');
-
-      return `
-        <div class="exercise-video-card glass-panel" id="card-${vid.id}">
-           
-           <!-- Top header of the card -->
-           <div class="exercise-header">
-              <div class="exercise-title-wrap">
-                 <h3 class="exercise-title">${vid.title}</h3>
-                 <span class="exercise-target"><i data-lucide="crosshair" style="width: 13px; height: 13px;"></i> ${vid.target}</span>
-              </div>
-              <div class="exercise-badges">
-                 <span class="exercise-badge" style="background-color: ${vid.badgeColor || '#0284c7'}">${vid.categoryName}</span>
-                 <span class="exercise-duration"><i data-lucide="clock" style="width: 12px; height: 12px;"></i> ${vid.duration}</span>
-              </div>
-           </div>
-
-           <!-- 100% White-Label Video Container (No Channel, No YouTube links) -->
-           <div class="clean-video-wrapper" id="player-wrap-${vid.id}">
-              <div class="video-crop-box">
-                 <div id="yt-player-${vid.id}"></div>
-                 <div class="video-click-shield" onclick="window.toggleCustomVideoPlay('${vid.id}')">
-                    <div class="play-overlay-icon" id="play-overlay-${vid.id}">
-                       <i data-lucide="play" style="width: 28px; height: 28px; color: #FFF; margin-left: 3px;"></i>
-                    </div>
-                 </div>
-              </div>
-
-              <!-- Custom White-Label Control Bar -->
-              <div class="custom-video-controls">
-                 <button class="ctrl-action-btn" id="ctrl-play-${vid.id}" onclick="window.toggleCustomVideoPlay('${vid.id}')">
-                    <i data-lucide="play" style="width: 16px; height: 16px;" id="icon-ctrl-${vid.id}"></i>
-                    <span id="text-ctrl-${vid.id}">Abspielen</span>
-                 </button>
-
-                 <span class="ctrl-mute-badge">
-                    <i data-lucide="volume-x" style="width: 13px; height: 13px;"></i> Ohne Ton
-                 </span>
-
-                 <button class="ctrl-timer-btn" id="btn-timer-${vid.id}" onclick="window.togglePracticeTimer('${vid.id}')">
-                    <i data-lucide="timer" style="width: 15px; height: 15px;"></i>
-                    <span id="timer-label-${vid.id}">30 Sek. starten</span>
-                 </button>
-              </div>
-
-              <div class="timer-progress-track" id="timer-track-${vid.id}" style="display:none;">
-                 <div class="timer-progress-bar" id="timer-bar-${vid.id}"></div>
-              </div>
-           </div>
-
-           <!-- Exercise details -->
-           <div class="exercise-body">
-              <p class="exercise-description">${vid.description}</p>
-              
-              <div class="exercise-steps-box">
-                 <div class="steps-heading">
-                    <i data-lucide="list-checks" style="width: 16px; height: 16px; color: var(--primary);"></i>
-                    Schritt für Schritt:
-                 </div>
-                 ${stepsHTML}
-              </div>
-
-              <div class="exercise-tip-box">
-                 <i data-lucide="info" style="width: 18px; height: 18px; color: #38bdf8; flex-shrink: 0; margin-top: 2px;"></i>
-                 <span><strong>Praktischer Hinweis:</strong> ${vid.tip}</span>
-              </div>
-           </div>
-
-        </div>
-      `;
-    }).join('');
-
-    rootEl.innerHTML = `
-      <div class="page-view" style="padding-bottom: 1rem;">
-          <div class="hero-card glass-panel">
-            <div class="hero-text">
-              <h1 tabindex="-1">Videodemonstrationen</h1>
-              <p>Kurze Übungsdemonstrationen ohne Ton für Seniorinnen und Senioren.</p>
-            </div>
-          </div>
-
-          <!-- Soundless info banner -->
-          <div class="soundless-banner glass-panel">
-             <div class="soundless-icon-box">
-                <i data-lucide="volume-x" style="color: #38bdf8; width: 24px; height: 24px;"></i>
-             </div>
-             <div class="soundless-text">
-                <strong>Videodemonstrationen ohne Ton</strong>
-                <span>Sehen Sie sich die Bewegungen in Ruhe an und nutzen Sie die schriftlichen Anleitungen in Ihrem eigenen Tempo.</span>
-             </div>
-          </div>
-
-          <!-- Category filter pills -->
-          <div class="video-filter-bar">
-             <button class="filter-pill ${activeVideoFilter === 'all' ? 'active' : ''}" onclick="window.setExerciseFilter('all')">
-               <i data-lucide="layers" style="width: 15px; height: 15px;"></i> Alle (${allVideos.length})
-             </button>
-             <button class="filter-pill ${activeVideoFilter === 'benen' ? 'active' : ''}" onclick="window.setExerciseFilter('benen')">
-               <i data-lucide="activity" style="width: 15px; height: 15px;"></i> Beine und Hüften
-             </button>
-             <button class="filter-pill ${activeVideoFilter === 'bovenlichaam' ? 'active' : ''}" onclick="window.setExerciseFilter('bovenlichaam')">
-               <i data-lucide="zap" style="width: 15px; height: 15px;"></i> Oberkörper
-             </button>
-             <button class="filter-pill ${activeVideoFilter === 'romp' ? 'active' : ''}" onclick="window.setExerciseFilter('romp')">
-               <i data-lucide="shield" style="width: 15px; height: 15px;"></i> Rumpf
-             </button>
-             <button class="filter-pill ${activeVideoFilter === 'nek' ? 'active' : ''}" onclick="window.setExerciseFilter('nek')">
-               <i data-lucide="smile" style="width: 15px; height: 15px;"></i> Nacken und Beweglichkeit
-             </button>
-          </div>
-
-          <!-- Video cards grid -->
-          <div class="exercise-videos-grid" id="exercise-grid">
-             ${cardsHTML || '<p style="text-align:center; color:var(--text-muted); padding:2rem;">Keine Übungen gefunden.</p>'}
-          </div>
-      </div>
-    `;
-
-    // Initialize all YouTube players without any UI branding
-    initAllYtPlayers();
+    window.CHAIR_DEMOS.render();
   }
 
-  window.setExerciseFilter = function(category) {
-    cleanupTimers();
-    activeVideoFilter = category;
-    cleanupPlayers();
-    renderVideos();
-    renderIcons();
-  };
-
-  function initAllYtPlayers() {
-    if (typeof YT === 'undefined' || !YT.Player) {
-      setTimeout(initAllYtPlayers, 150);
-      return;
-    }
-
-    const allVideos = APP_DATA.videos || [];
-    const filteredVideos = activeVideoFilter === "all"
-      ? allVideos
-      : allVideos.filter(v => v.category === activeVideoFilter);
-
-    filteredVideos.forEach(vid => {
-      const container = document.getElementById(`yt-player-${vid.id}`);
-      if (!container) return;
-
-      try {
-        ytPlayers[vid.id] = new YT.Player(`yt-player-${vid.id}`, {
-          videoId: vid.youtubeId,
-          playerVars: {
-            hl: 'de',
-            autoplay: 0,
-            mute: 1,
-            controls: 0,
-            showinfo: 0,
-            rel: 0,
-            modestbranding: 1,
-            loop: 1,
-            playlist: vid.youtubeId,
-            disablekb: 1,
-            fs: 0,
-            playsinline: 1,
-            iv_load_policy: 3
-          },
-          events: {
-            onReady: function(event) {
-              event.target.mute();
-            },
-            onStateChange: function(event) {
-              updatePlayerUI(vid.id, event.data);
-            }
-          }
-        });
-      } catch (err) {
-        console.error("Error creating YT player for:", vid.id, err);
-      }
-    });
-  }
-
-  window.toggleCustomVideoPlay = function(vidId) {
-    const player = ytPlayers[vidId];
-    if (!player || typeof player.getPlayerState !== 'function') return;
-
-    try {
-      const state = player.getPlayerState();
-      if (state === 1) { // YT.PlayerState.PLAYING
-        player.pauseVideo();
-      } else {
-        // Pause any other playing video so only one plays
-        Object.keys(ytPlayers).forEach(id => {
-          if (id !== vidId && ytPlayers[id] && typeof ytPlayers[id].pauseVideo === 'function') {
-            try { ytPlayers[id].pauseVideo(); } catch(e) {}
-          }
-        });
-        player.mute();
-        player.playVideo();
-      }
-    } catch (e) {
-      console.error("Playback toggle error:", e);
-    }
-  };
-
-  function updatePlayerUI(vidId, playerState) {
-    const overlay = document.getElementById(`play-overlay-${vidId}`);
-    const iconCtrl = document.getElementById(`icon-ctrl-${vidId}`);
-    const textCtrl = document.getElementById(`text-ctrl-${vidId}`);
-
-    if (playerState === 1) { // PLAYING
-      if (overlay) overlay.style.opacity = '0';
-      if (iconCtrl) iconCtrl.setAttribute('data-lucide', 'pause');
-      if (textCtrl) textCtrl.innerText = 'Pausieren';
-    } else {
-      if (overlay) overlay.style.opacity = '1';
-      if (iconCtrl) iconCtrl.setAttribute('data-lucide', 'play');
-      if (textCtrl) textCtrl.innerText = 'Abspielen';
-    }
-    renderIcons();
-  }
-
-  window.togglePracticeTimer = function(vidId) {
-    const track = document.getElementById(`timer-track-${vidId}`);
-    const bar = document.getElementById(`timer-bar-${vidId}`);
-    const label = document.getElementById(`timer-label-${vidId}`);
-
-    if (activeTimers[vidId]) {
-      clearInterval(activeTimers[vidId]);
-      delete activeTimers[vidId];
-      if (track) track.style.display = 'none';
-      if (label) label.innerText = '30 Sek. starten';
-      return;
-    }
-
-    let timeLeft = 30;
-    if (track) track.style.display = 'block';
-    if (label) label.innerText = `${timeLeft}s...`;
-    if (bar) bar.style.width = '100%';
-
-    activeTimers[vidId] = setInterval(() => {
-      timeLeft -= 1;
-      if (label) label.innerText = `${timeLeft}s...`;
-      if (bar) bar.style.width = `${(timeLeft / 30) * 100}%`;
-
-      if (timeLeft <= 0) {
-        clearInterval(activeTimers[vidId]);
-        delete activeTimers[vidId];
-        if (label) label.innerText = 'Geschafft! ✓';
-        if (bar) bar.style.width = '0%';
-        setTimeout(() => {
-          if (track) track.style.display = 'none';
-          if (label) label.innerText = '30 Sek. starten';
-        }, 3000);
-      }
-    }, 1000);
-  };
-
-  // ----------------------------------------------------------------------
-  // 6. WEERGAVE: ANDERE PRODUKTEN
-  // ----------------------------------------------------------------------
   function renderOutrosProdutos() {
     const prodsHTML = (APP_DATA.otherProducts || []).map(prod => {
       const featuresHTML = prod.features

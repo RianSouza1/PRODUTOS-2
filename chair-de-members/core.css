@@ -1657,3 +1657,49 @@ html, body {
 .custom-video-controls { flex-wrap:wrap; gap:.5rem; }
 a:focus-visible, button:focus-visible { outline:3px solid #38bdf8; outline-offset:4px; }
 @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+/* Short, silent chair-exercise demonstrations. */
+:root { --chair-accent: #7dd3fc; }
+
+.chair-lesson-card { border: 1px solid var(--border-light); border-radius: 20px; background: var(--bg-card); overflow: hidden; margin-bottom: 2.5rem; }
+.chair-lesson-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.5rem; flex-wrap: wrap; }
+.chair-lesson-eyebrow { color: var(--chair-accent); font-size: .78rem; margin-bottom: .5rem; line-height: 1.5; }
+.chair-lesson-heading h2 { font-size: 1.35rem; line-height: 1.4; }
+.chair-lesson-badge { display: inline-block; background: var(--primary-light); border: 1px solid var(--border-light); color: var(--text-muted); border-radius: 100px; padding: .5rem .75rem; font-size: .78rem; line-height: 1.4; }
+.chair-demo-player { display: block; width: 100%; aspect-ratio: 16 / 9; background: #0d141c; object-fit: contain; }
+.chair-playback-tools { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-light); }
+.chair-speed-tools { display: flex; align-items: center; gap: .5rem; }
+.chair-speed-tools > span { font-size: .9rem; color: var(--text-muted); margin-right: .25rem; }
+.chair-playback-tools button { min-height: 44px; padding: .65rem .85rem; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font: inherit; font-size: .9rem; color: var(--text-dark); background: transparent; border: 1px solid var(--border-light); border-radius: 10px; cursor: pointer; }
+.chair-playback-tools button[aria-pressed="true"] { background: var(--secondary); border-color: var(--secondary); }
+.chair-playback-tools svg { width: 18px; height: 18px; }
+.chair-lesson-details { padding: 1.5rem; }
+.chair-lesson-details p { color: var(--text-muted); font-size: .95rem; line-height: 1.7; }
+.chair-lesson-details h3 { margin-top: 1.5rem; font-size: 1.05rem; }
+.chair-lesson-details ol { padding-left: 1.4rem; margin-top: .75rem; }
+.chair-lesson-details li { font-size: .95rem; line-height: 1.7; padding: .25rem 0 .25rem .25rem; }
+.chair-lesson-details .chair-guide-note { font-size: .8rem; padding-top: 1rem; margin-top: 1rem; border-top: 1px solid var(--border-light); }
+.chair-player-status { padding: 1rem 1.5rem; color: var(--chair-accent); line-height: 1.5; }
+.chair-lesson-library h2 { font-size: 1.25rem; margin-bottom: 1rem; }
+.chair-lesson-list { display: grid; grid-template-columns: 1fr; gap: .75rem; }
+.chair-lesson-choice { display: flex; width: 100%; align-items: center; text-align: left; gap: 1rem; min-height: 88px; padding: 1rem; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 14px; color: var(--text-dark); font: inherit; cursor: pointer; }
+.chair-lesson-choice.selected { border-color: var(--chair-accent); background: #213043; }
+.chair-lesson-number { color: var(--chair-accent); font-size: 1.2rem; font-weight: 700; }
+.chair-lesson-choice-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .3rem; }
+.chair-lesson-choice-text strong { font-size: .95rem; line-height: 1.4; }
+.chair-lesson-choice-text > span { font-size: .78rem; color: var(--text-muted); }
+.chair-lesson-choice svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--chair-accent); }
+.chair-sound-credits { color: var(--text-muted); font-size: .75rem; line-height: 1.7; margin-top: 1.5rem; }
+.chair-sound-credits a { color: var(--chair-accent); }
+@media (min-width: 768px) { .chair-lesson-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.chair-player-status[hidden] { display: none; }
+.chair-videos-view { overflow-wrap: anywhere; }
+.chair-videos-view button:focus-visible { outline: 3px solid var(--chair-accent); outline-offset: 4px; }
+.tab-item { width: 33.333333%; }
+@media (max-width: 600px) {
+    .chair-lesson-heading, .chair-lesson-details, .chair-playback-tools { padding: 1rem; }
+    .chair-speed-tools { flex-wrap: wrap; }
+    .chair-speed-tools > span { flex-basis: 100%; }
+}
+@media (min-width: 1024px) { .tab-item { width: calc(100% - 2rem); } }

@@ -1,3 +1,4 @@
+/* Chair exercises — localized silent demonstrations. */
 const APP_DATA = {
   "config": {
     "brandName": "Stolsgymnastik för seniorer",
@@ -9,207 +10,231 @@ const APP_DATA = {
   "videos": [
     {
       "id": "v1",
-      "title": "1. Knälyft i sittande",
+      "title": "Knälyft i sittande",
       "category": "benen",
       "categoryName": "Ben och höfter",
-      "duration": "0:30 min",
+      "duration": "0:30",
       "target": "Lår och höfter",
       "badgeColor": "#0284c7",
-      "youtubeId": "LHFhF0itnEQ",
       "description": "En enkel rörelse där du lyfter knäna kontrollerat från en sittande position.",
       "steps": [
         "Sitt upprätt med fötterna plant på golvet.",
         "Lyft ett knä långsamt till en bekväm höjd.",
         "Sänk benet kontrollerat och byt sida."
       ],
-      "tip": "Håll överkroppen upprätt och undvik ryckiga rörelser."
+      "tip": "Håll överkroppen upprätt och undvik ryckiga rörelser.",
+      "durationSeconds": 30,
+      "videoUrl": "assets/videos/01-knee-lifts.mp4",
+      "poster": "assets/videos/01-knee-lifts.jpg"
     },
     {
       "id": "v2",
-      "title": "2. Hällyft och fotrörelser",
+      "title": "Hällyft och fotrörelser",
       "category": "benen",
       "categoryName": "Ben och höfter",
-      "duration": "0:25 min",
+      "duration": "0:25",
       "target": "Vader och fotleder",
       "badgeColor": "#0284c7",
-      "youtubeId": "dUYkIVMlzZQ",
       "description": "Rör fötter och fotleder medan du sitter stadigt.",
       "steps": [
         "Placera båda fötterna under knäna.",
         "Lyft hälarna och låt tårna vara kvar på golvet.",
         "Sänk hälarna och lyft sedan tårna."
       ],
-      "tip": "Gör rörelsen långsamt och utan att pressa."
+      "tip": "Gör rörelsen långsamt och utan att pressa.",
+      "durationSeconds": 25,
+      "videoUrl": "assets/videos/02-heel-toe-lifts.mp4",
+      "poster": "assets/videos/02-heel-toe-lifts.jpg"
     },
     {
       "id": "v3",
-      "title": "3. För benet åt sidan",
+      "title": "För benet åt sidan",
       "category": "benen",
       "categoryName": "Ben och höfter",
-      "duration": "0:30 min",
+      "duration": "0:30",
       "target": "Höfter och lår",
       "badgeColor": "#0284c7",
-      "youtubeId": "8BcPHWGQO44",
       "description": "För ett ben åt sidan medan överkroppen hålls stilla.",
       "steps": [
         "Sitt upprätt med händerna på låren.",
         "För ena foten långsamt ut åt sidan.",
         "För foten tillbaka till mitten och byt sida."
       ],
-      "tip": "Håll överkroppen och det andra benet stilla."
+      "tip": "Håll överkroppen och det andra benet stilla.",
+      "durationSeconds": 30,
+      "videoUrl": "assets/videos/03-side-taps.mp4",
+      "poster": "assets/videos/03-side-taps.jpg"
     },
     {
       "id": "v4",
-      "title": "4. Armböjningar i sittande",
+      "title": "Armböjningar i sittande",
       "category": "bovenlichaam",
       "categoryName": "Överkropp",
-      "duration": "0:30 min",
+      "duration": "0:30",
       "target": "Överarmar och underarmar",
       "badgeColor": "#0d9488",
-      "youtubeId": "NHwWx2OhRMs",
       "description": "Böj och sträck armbågarna med kontrollerade rörelser.",
       "steps": [
         "Låt armarna hänga längs sidorna med handflatorna framåt.",
         "Böj armbågarna och för händerna mot axlarna.",
         "Sänk underarmarna långsamt igen."
       ],
-      "tip": "Håll armbågarna nära kroppen."
+      "tip": "Håll armbågarna nära kroppen.",
+      "durationSeconds": 30,
+      "videoUrl": "assets/videos/04-arm-curls.mp4",
+      "poster": "assets/videos/04-arm-curls.jpg"
     },
     {
       "id": "v5",
-      "title": "5. Axelrullningar",
+      "title": "Axelrullningar",
       "category": "bovenlichaam",
       "categoryName": "Överkropp",
-      "duration": "0:25 min",
+      "duration": "0:25",
       "target": "Axlar och övre rygg",
       "badgeColor": "#0d9488",
-      "youtubeId": "cczgHuu0ypE",
       "description": "Rulla axlarna i små, lugna cirklar.",
       "steps": [
         "Sitt avslappnat med armarna längs sidorna.",
         "Lyft axlarna lätt, rulla dem bakåt och sänk dem.",
         "Gör några cirklar och byt sedan riktning."
       ],
-      "tip": "Andas lugnt och håll rörelsen bekväm."
+      "tip": "Andas lugnt och håll rörelsen bekväm.",
+      "durationSeconds": 25,
+      "videoUrl": "assets/videos/05-shoulder-rolls.mp4",
+      "poster": "assets/videos/05-shoulder-rolls.jpg"
     },
     {
       "id": "v6",
-      "title": "6. Öppna bröstet och rör övre ryggen",
+      "title": "Öppna bröstet och rör övre ryggen",
       "category": "bovenlichaam",
       "categoryName": "Överkropp",
-      "duration": "0:35 min",
+      "duration": "0:35",
       "target": "Bröst och övre rygg",
       "badgeColor": "#0d9488",
-      "youtubeId": "gC_L9qAHVJ8",
       "description": "Öppna armarna inom ett bekvämt rörelseomfång.",
       "steps": [
-        "Böj armbågarna och lyft armarna bara så högt som känns bekvämt.",
-        "För armbågarna försiktigt bakåt.",
-        "Håll en kort stund och för sedan armarna framåt igen."
+        "Sitt upprätt och placera händerna på höfterna.",
+        "För armbågarna försiktigt bakåt och öppna bröstet lätt.",
+        "Håll en kort stund och återgå till startläget."
       ],
-      "tip": "Titta framåt och undvik att böja nacken för långt bakåt."
+      "tip": "Titta framåt och undvik att böja nacken för långt bakåt.",
+      "durationSeconds": 35,
+      "videoUrl": "assets/videos/06-chest-opening.mp4",
+      "poster": "assets/videos/06-chest-opening.jpg"
     },
     {
       "id": "v7",
-      "title": "7. Handledscirklar och fingerrörelser",
+      "title": "Handledscirklar och fingerrörelser",
       "category": "bovenlichaam",
       "categoryName": "Överkropp",
-      "duration": "0:20 min",
+      "duration": "0:20",
       "target": "Handleder och händer",
       "badgeColor": "#0d9488",
-      "youtubeId": "irzzT7QOGLk",
       "description": "Kombinera små handledscirklar med att öppna händerna.",
       "steps": [
         "Håll armarna avslappnat framför kroppen.",
         "Gör långsamma cirklar med handlederna åt båda håll.",
         "Slut händerna löst och öppna sedan fingrarna."
       ],
-      "tip": "Rör händerna utan att pressa hårt."
+      "tip": "Rör händerna utan att pressa hårt.",
+      "durationSeconds": 20,
+      "videoUrl": "assets/videos/07-wrists-fingers.mp4",
+      "poster": "assets/videos/07-wrists-fingers.jpg"
     },
     {
       "id": "v8",
-      "title": "8. Bålrotation i sittande",
+      "title": "Bålrotation i sittande",
       "category": "romp",
-      "categoryName": "Bål",
-      "duration": "0:30 min",
+      "categoryName": "Bål och hållning",
+      "duration": "0:30",
       "target": "Bål och ryggrad",
       "badgeColor": "#d97706",
-      "youtubeId": "ngGS9NJh_8U",
       "description": "Vrid överkroppen långsamt åt båda sidor.",
       "steps": [
         "Korsa armarna löst framför bröstet.",
         "Vrid överkroppen försiktigt åt höger så långt det känns bekvämt.",
         "Återgå till mitten och upprepa åt vänster."
       ],
-      "tip": "Höfter och knän fortsätter att peka framåt."
+      "tip": "Höfter och knän fortsätter att peka framåt.",
+      "durationSeconds": 30,
+      "videoUrl": "assets/videos/08-trunk-rotation.mp4",
+      "poster": "assets/videos/08-trunk-rotation.jpg"
     },
     {
       "id": "v9",
-      "title": "9. Bäckentippning i sittande",
+      "title": "Bäckentippning i sittande",
       "category": "romp",
-      "categoryName": "Bål",
-      "duration": "0:30 min",
+      "categoryName": "Bål och hållning",
+      "duration": "0:30",
       "target": "Bäcken och nedre rygg",
       "badgeColor": "#d97706",
-      "youtubeId": "NrUDzOAoGN0",
       "description": "Tippa bäckenet med en liten, mjuk rörelse.",
       "steps": [
         "Sitt upprätt med händerna på höfterna eller låren.",
         "Tippa bäckenet lätt framåt.",
         "Tippa det sedan försiktigt bakåt."
       ],
-      "tip": "Håll rörelsen bekväm och undvik att tvinga kroppen."
+      "tip": "Håll rörelsen bekväm och undvik att tvinga kroppen.",
+      "durationSeconds": 30,
+      "videoUrl": "assets/videos/09-pelvic-tilts.mp4",
+      "poster": "assets/videos/09-pelvic-tilts.jpg"
     },
     {
       "id": "v10",
-      "title": "10. Sidoböjning av bålen",
+      "title": "Sidoböjning av bålen",
       "category": "romp",
-      "categoryName": "Bål",
-      "duration": "0:30 min",
+      "categoryName": "Bål och hållning",
+      "duration": "0:30",
       "target": "Bålens sidor",
       "badgeColor": "#d97706",
-      "youtubeId": "e2h53DwpbvI",
       "description": "Luta överkroppen kontrollerat åt ena sidan.",
       "steps": [
         "Låt armarna hänga längs stolens sidor.",
         "För en hand långsamt mot golvet och luta överkroppen åt sidan.",
         "Återgå till mitten och byt sida."
       ],
-      "tip": "Behåll båda sittbenen på stolen."
+      "tip": "Behåll båda sittbenen på stolen.",
+      "durationSeconds": 30,
+      "videoUrl": "assets/videos/10-side-bends.mp4",
+      "poster": "assets/videos/10-side-bends.jpg"
     },
     {
       "id": "v11",
-      "title": "11. Dra in hakan försiktigt",
+      "title": "Dra in hakan försiktigt",
       "category": "nek",
       "categoryName": "Nacke och rörlighet",
-      "duration": "0:20 min",
+      "duration": "0:20",
       "target": "Nacke och hållning",
       "badgeColor": "#6366f1",
-      "youtubeId": "Fz4HDmFbl34",
       "description": "Dra hakan lätt bakåt utan att titta ner.",
       "steps": [
         "Titta rakt fram och slappna av i käke och axlar.",
         "Dra hakan försiktigt rakt bakåt.",
         "Håll en kort stund och återgå till utgångsläget."
       ],
-      "tip": "Håll blicken på samma höjd."
+      "tip": "Håll blicken på samma höjd.",
+      "durationSeconds": 20,
+      "videoUrl": "assets/videos/11-chin-retraction.mp4",
+      "poster": "assets/videos/11-chin-retraction.jpg"
     },
     {
       "id": "v12",
-      "title": "12. Mjuk sidoböjning av nacken",
+      "title": "Mjuk sidoböjning av nacken",
       "category": "nek",
       "categoryName": "Nacke och rörlighet",
-      "duration": "0:25 min",
+      "duration": "0:25",
       "target": "Nacke",
       "badgeColor": "#6366f1",
-      "youtubeId": "b3tcUN-W758",
       "description": "Luta huvudet försiktigt åt sidan utan att lyfta axeln.",
       "steps": [
         "Sitt upprätt med avslappnade axlar.",
         "Luta ena örat mot axeln, bara så långt det känns bekvämt.",
         "Återgå till mitten och byt sida."
       ],
-      "tip": "Håll axlarna sänkta och dra inte i huvudet med handen."
+      "tip": "Håll axlarna sänkta och dra inte i huvudet med handen.",
+      "durationSeconds": 25,
+      "videoUrl": "assets/videos/12-neck-side-bends.mp4",
+      "poster": "assets/videos/12-neck-side-bends.jpg"
     }
   ],
   "books": [
@@ -259,5 +284,34 @@ const APP_DATA = {
       "buttonText": "Ladda ner PDF"
     }
   ],
-  "otherProducts": []
+  "otherProducts": [],
+  "videoUI": {
+    "label": "Filmer",
+    "homeTitle": "Videodemonstrationer",
+    "homeText": "12 korta övningar utan ljud på 20–35 sekunder",
+    "heading": "Se rörelsen och prova i din egen takt",
+    "intro": "12 korta animerade demonstrationer på 20–35 sekunder. Filmerna har inget ljudspår, tal eller musik. Följ rörelserna och de skriftliga instruktionerna.",
+    "demo": "Demonstration",
+    "of": "av",
+    "sound": "Utan ljud",
+    "unsupported": "Din webbläsare stöder inte den här videon.",
+    "open": "Öppna demonstrationen",
+    "speed": "Uppspelningshastighet",
+    "replay": "Börja om",
+    "practice": "Steg för steg",
+    "choose": "Välj en övning",
+    "tip": "Praktiskt tips",
+    "creditsLabel": "Originalanimationer",
+    "creditsAdapted": "skapade för detta medlemsområde",
+    "loadError": "Filmen kunde inte laddas. Uppdatera sidan eller försök igen om en stund.",
+    "playHint": "Tryck på uppspelningsknappen för att börja.",
+    "categories": [
+      "Ben och höfter",
+      "Överkropp",
+      "Bål och hållning",
+      "Nacke och rörlighet"
+    ],
+    "overlay": "STOLSGYMNASTIK",
+    "overlayTip": "Lugna, kontrollerade rörelser"
+  }
 };

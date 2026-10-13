@@ -1,4 +1,4 @@
-name: Publish Chair German and Swedish
+name: Publish Chair Member Areas
 
 on:
   push:
@@ -6,7 +6,9 @@ on:
       - main
     paths:
       - '.github/workflows/deploy-chair-de-sv.yml'
+      - 'chair-da-members/**'
       - 'chair-de-members/**'
+      - 'chair-nl-members/**'
       - 'chair-sv-members/**'
   workflow_dispatch:
 
@@ -31,7 +33,9 @@ jobs:
           lfs: false
           fetch-depth: 2
           sparse-checkout: |
+            chair-da-members
             chair-de-members
+            chair-nl-members
             chair-sv-members
 
       - name: Select member areas to publish
@@ -39,14 +43,20 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          all_sources='chair-de-members chair-sv-members'
+          all_sources='chair-da-members chair-de-members chair-nl-members chair-sv-members'
           before='${{ github.event.before }}'
           sources=''
+          include_materials='true'
           if [ '${{ github.event_name }}' = 'push' ] && [ -n "$before" ] && [[ ! "$before" =~ ^0+$ ]]; then
             if ! git cat-file -e "$before^{commit}" 2>/dev/null; then
               git fetch --no-tags --depth=1 origin "$before"
             fi
-            changed="$(git diff --name-only "$before" "$GITHUB_SHA" | cut -d/ -f1 | sort -u)"
+            changed_files="$(git diff --name-only "$before" "$GITHUB_SHA")"
+            changed="$(printf '%s\n' "$changed_files" | cut -d/ -f1 | sort -u)"
+            include_materials='false'
+            if printf '%s\n' "$changed_files" | grep -Eq '^chair-(da|de|nl|sv)-members/materials/'; then
+              include_materials='true'
+            fi
             for source in $all_sources; do
               if printf '%s\n' "$changed" | grep -Fxq "$source"; then
                 sources="$sources $source"
@@ -55,8 +65,10 @@ jobs:
           fi
           if [ -z "$sources" ]; then sources="$all_sources"; fi
           echo "sources=$sources" >> "$GITHUB_OUTPUT"
+          echo "include_materials=$include_materials" >> "$GITHUB_OUTPUT"
 
       - name: Download the original PDF files
+        if: steps.areas.outputs.include_materials == 'true'
         shell: bash
         timeout-minutes: 10
         env:
@@ -89,6 +101,7 @@ jobs:
           VPS_USERNAME: ${{ secrets.VPS_USERNAME }}
           VPS_SECRET: ${{ secrets.VPS_SECRET }}
           SOURCES: ${{ steps.areas.outputs.sources }}
+          INCLUDE_MATERIALS: ${{ steps.areas.outputs.include_materials }}
         run: |
           set -euo pipefail
           [[ "$VPS_HOST" =~ ^[a-zA-Z0-9.:-]+$ ]]
@@ -103,13 +116,19 @@ jobs:
 
           for source in $SOURCES; do
             case "$source" in
+              chair-da-members) destination='/var/www/skillvault.blog/chair-da-m' ;;
               chair-de-members) destination='/var/www/skillvault.blog/chair-de-m' ;;
+              chair-nl-members) destination='/var/www/skillvault.blog/chair-nl-m' ;;
               chair-sv-members) destination='/var/www/skillvault.blog/chair-sv-m' ;;
               *) exit 1 ;;
             esac
             archive="$RUNNER_TEMP/$source.tar.gz"
             remote_archive="/tmp/$source-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT.tar.gz"
-            COPYFILE_DISABLE=1 tar -czf "$archive" -C "$source" .
+            if [ "$INCLUDE_MATERIALS" = 'true' ]; then
+              COPYFILE_DISABLE=1 tar -czf "$archive" -C "$source" .
+            else
+              COPYFILE_DISABLE=1 tar -czf "$archive" -C "$source" index.html core.css data.js app.js video-section.js assets
+            fi
             scp "${ssh_options[@]}" "$archive" "$remote:$remote_archive"
             ssh "${ssh_options[@]}" "$remote" bash -s -- "$remote_archive" "$destination" "$VPS_USERNAME" <<'REMOTE'
           set -euo pipefail
@@ -117,11 +136,11 @@ jobs:
           destination="$2"
           owner="$3"
           case "$destination" in
-            /var/www/skillvault.blog/chair-de-m|/var/www/skillvault.blog/chair-sv-m) ;;
+            /var/www/skillvault.blog/chair-da-m|/var/www/skillvault.blog/chair-de-m|/var/www/skillvault.blog/chair-nl-m|/var/www/skillvault.blog/chair-sv-m) ;;
             *) exit 1 ;;
           esac
           case "$archive" in
-            /tmp/chair-de-members-*.tar.gz|/tmp/chair-sv-members-*.tar.gz) ;;
+            /tmp/chair-da-members-*.tar.gz|/tmp/chair-de-members-*.tar.gz|/tmp/chair-nl-members-*.tar.gz|/tmp/chair-sv-members-*.tar.gz) ;;
             *) exit 1 ;;
           esac
           sudo mkdir -p "$destination"

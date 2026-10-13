@@ -40,84 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Inject YouTube Iframe API globally (if needed)
-  if (!document.getElementById("yt-api-script")) {
-    const tag = document.createElement('script');
-    tag.id = "yt-api-script";
-    tag.src = "https://www.youtube.com/iframe_api";
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  }
-  window.activeYtPlayer = null;
-
-  // Fullscreen CSS injections
-  if (!document.getElementById("fullscreen-css")) {
-      const style = document.createElement('style');
-      style.id = "fullscreen-css";
-      style.textContent = `
-          .video-wrapper-container:fullscreen {
-              background: #000 !important;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-          }
-          .video-wrapper-container:fullscreen > div[id^="yt-player-"] {
-              height: calc(100vh - 68px) !important;
-              flex-grow: 1;
-          }
-          .video-wrapper-container:-webkit-full-screen {
-              background: #000 !important;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-          }
-          .video-wrapper-container:-webkit-full-screen > div[id^="yt-player-"] {
-              height: calc(100vh - 68px) !important;
-              flex-grow: 1;
-          }
-      `;
-      document.head.appendChild(style);
-  }
-
-  window.toggleCustomFullscreen = function(elementId) {
-      const container = document.getElementById(elementId);
-      if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-          if (container.requestFullscreen) {
-              container.requestFullscreen();
-          } else if (container.webkitRequestFullscreen) {
-              container.webkitRequestFullscreen();
-          } else if (container.msRequestFullscreen) {
-              container.msRequestFullscreen();
-          }
-      } else {
-          if (document.exitFullscreen) {
-              document.exitFullscreen();
-          } else if (document.webkitExitFullscreen) {
-              document.webkitExitFullscreen();
-          } else if (document.msExitFullscreen) {
-              document.msExitFullscreen();
-          }
-      }
-  };
-
-  document.addEventListener('fullscreenchange', handleFsUpdate);
-  document.addEventListener('webkitfullscreenchange', handleFsUpdate);
-  document.addEventListener('mozfullscreenchange', handleFsUpdate);
-  document.addEventListener('MSFullscreenChange', handleFsUpdate);
-
-  function handleFsUpdate() {
-      const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
-      document.querySelectorAll('.video-custom-controls').forEach(bar => {
-          const btn = bar.querySelector('.ctrl-btn-fs');
-          if (btn) {
-              btn.innerHTML = isFs 
-                  ? `<i data-lucide="minimize" style="width: 22px; height: 22px; color: #ffffff;"></i><span>Minimer</span>`
-                  : `<i data-lucide="maximize" style="width: 22px; height: 22px; color: #ffffff;"></i><span>Fuld skærm</span>`;
-          }
-      });
-      renderIcons();
-  }
-
   function initGlobalConfig() {
     if (APP_DATA.config) {
       brandTitle.innerText = APP_DATA.config.brandName || "Stolegymnastik for Seniorer";
@@ -131,6 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function handleRouting() {
     let currentHash = window.location.hash || "#home";
+    if (["#video"].includes(currentHash)) {
+      currentHash = "#videos";
+      history.replaceState(null, "", currentHash);
+    }
+    window.CHAIR_DEMOS.pause();
 
     rootEl.innerHTML = "";
     updateBottomNavBar(currentHash);
@@ -144,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderLivros();
         break;
       case "#videos":
-        renderLivros();
+        window.CHAIR_DEMOS.render();
         break;
       case "#produtos":
         renderOutrosProdutos();
@@ -164,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `);
 
     renderIcons();
-    document.querySelector('.app-container').scrollTo(0, 0);
+    rootEl.scrollTo(0, 0);
   }
 
   function updateBottomNavBar(hash) {
@@ -205,6 +132,11 @@ document.addEventListener("DOMContentLoaded", () => {
           
           <div class="home-grid">
             
+            <a href="#videos" class="home-block glass-panel">
+              <div class="home-block-icon"><i data-lucide="play-circle" aria-hidden="true"></i></div>
+              <div><div class="home-block-title">${APP_DATA.videoUI.homeTitle}</div>
+              <div class="home-block-subtitle">${APP_DATA.videoUI.homeText}</div></div>
+            </a>
             <a href="#livros" class="home-block glass-panel">
               <div class="home-block-icon" style="background: var(--primary-light); color: var(--primary);">
                  <i data-lucide="book-open"></i>
