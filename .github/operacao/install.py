@@ -12,6 +12,13 @@ import time
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+
+def restore_additive_schema_marker(database, original_version):
+    if original_version is None or not database.exists():return
+    with sqlite3.connect(database) as db:
+        current=db.execute('SELECT COALESCE(MAX(version),0) FROM schema_migrations').fetchone()[0]
+        if original_version<current<=3:db.execute('DELETE FROM schema_migrations WHERE version>?',(original_version,))
+
 if sys.version_info<(3,9):raise SystemExit('Python 3.9 or newer is required')
 try:
     from cryptography.fernet import Fernet
@@ -35,15 +42,17 @@ compile((source/'app/server.py').read_text(),'server.py','exec')
 subprocess.run(['systemd-analyze','verify',str(source/'offervault-operacao.service'),str(source/'offervault-backup.service'),str(source/'offervault-backup.timer')],check=True)
 backup=Path('/var/backups/offervault-operacao/deploy')/datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S')
 backup.mkdir(parents=True,exist_ok=True,mode=0o700)
-changed=[snippet,*configs,*units,*(private/n for n in ('server.py','store.py','domain.py','trello_import.py','schema.sql','backup.py')),*(public/n for n in ('index.html','app.js','styles.css','favicon.svg'))]
+changed=[snippet,*configs,*units,*(private/n for n in ('server.py','store.py','domain.py','trello_import.py','ad_ops.py','schema.sql','backup.py')),*(public/n for n in ('index.html','app.js','styles.css','favicon.svg'))]
 envfile=Path('/etc/offervault-operacao.env')
 changed.append(envfile)
 originals={p:(p.read_bytes(),p.stat().st_mode&0o777) if p.exists() else None for p in changed}
 for i,(path,entry) in enumerate(originals.items()):
     if entry:(backup/str(i)).write_bytes(entry[0])
 database=data/'data.sqlite3'
+original_db_version=None
 if database.exists():
     with sqlite3.connect('file:'+str(database)+'?mode=ro',uri=True) as origin,sqlite3.connect(backup/'data.sqlite3') as destination:origin.backup(destination)
+    with sqlite3.connect('file:'+str(database)+'?mode=ro',uri=True) as origin:original_db_version=origin.execute('SELECT COALESCE(MAX(version),0) FROM schema_migrations').fetchone()[0]
 try:
     for folder in (private,public):folder.mkdir(parents=True,exist_ok=True);folder.chmod(0o755)
     data.mkdir(parents=True,exist_ok=True);data.chmod(0o700)
@@ -59,7 +68,7 @@ try:
     if database.exists():
         for existing in data.iterdir():
             if existing.is_file():os.chown(existing,account.pw_uid,account.pw_gid)
-    for name in ('server.py','store.py','domain.py','trello_import.py','schema.sql','backup.py'):
+    for name in ('server.py','store.py','domain.py','trello_import.py','ad_ops.py','schema.sql','backup.py'):
         shutil.copyfile(source/('backup.py' if name=='backup.py' else 'app/'+name),private/name);(private/name).chmod(0o644)
     version=hashlib.sha256((source/'app/web/app.js').read_bytes()+(source/'app/web/styles.css').read_bytes()).hexdigest()[:12]
     for name in ('index.html','app.js','styles.css','favicon.svg'):
@@ -88,6 +97,10 @@ try:
     subprocess.run(['systemctl','start','offervault-backup.service'],check=True)
     subprocess.run(['systemctl','reload','nginx'],check=True)
 except Exception:
+    subprocess.run(['systemctl','stop','offervault-operacao.service'],check=False)
+    # Versions 2 and 3 only add tables. Keep all records while allowing the
+    # preceding code to start after rollback; extra tables remain untouched.
+    restore_additive_schema_marker(database,original_db_version)
     for path,entry in originals.items():
         if entry:path.write_bytes(entry[0]);path.chmod(entry[1])
         else:path.unlink(missing_ok=True)

@@ -46,6 +46,8 @@ FIELDS['categories']={'name','color'}
 FIELDS['niches'].update({'category_id','description','audience','owner_id','priority','stage','tags','cover_url','commercial_model'})
 TABLES+=('categories',)
 TABLES+=('trello_sources',)
+FIELDS['ad_accounts']={'name','meta_id','notes','active'}
+TABLES+=('ad_accounts','language_ad_accounts','utmify_sources')
 FIELDS['languages'].update({'deliverables_url','creatives_url','site_images_url','operational_status','facebook'})
 
 class Problem(Exception):

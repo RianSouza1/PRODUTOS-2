@@ -6,7 +6,7 @@ A aplicação usa módulos Python e cryptography/Fernet, SQLite em WAL e fronten
 
 O transporte é JSON sob `/operacao/api/`. O servidor verifica sessão em toda leitura privada e escrita. POSTs exigem Origin exata e formato JSON. URLs aceitam somente HTTP(S). Dados inseridos pela equipe são escapados na interface. Credenciais de infraestrutura ficam nos GitHub Secrets existentes.
 
-## Modelo relacional até a versão 2
+## Modelo relacional até a versão 3
 
 ```mermaid
 erDiagram
@@ -22,6 +22,9 @@ erDiagram
   NICHES ||--o{ NICHE_SECRETS : cifra_por_ciclo
   NICHES ||--o{ TRELLO_SOURCES : referencia_por_ciclo
   SHOPS ||--o{ TRELLO_SOURCES : recebe_importacao
+  AD_ACCOUNTS ||--o{ LANGUAGE_AD_ACCOUNTS : recebe_idiomas
+  LANGUAGES ||--o{ LANGUAGE_AD_ACCOUNTS : vincula_contas
+  NICHES ||--o{ UTMIFY_SOURCES : consulta_por_ciclo
   LANGUAGES ||--o{ MIGRATIONS : migra
   TASKS ||--o{ MIGRATIONS : executa
 ```
@@ -42,7 +45,11 @@ Registros editáveis têm `version`. A escrita de uma versão antiga retorna 409
 
 A situação do idioma é manual. A regra de migração usa somente `operational_status == active`. Desativado e em preparação não migram. O plano registra origem, destino, responsável e tarefa; a tradução não é recriada. O checklist do destino começa sem copiar IDs/URLs da loja de origem.
 
-`schema_migrations` registra a versão aplicada. A versão 1 é a fundação inicial. A versão 2 acrescenta somente `trello_sources`, preservando os registros existentes. A atualização é testada contra um banco da versão 1, e o instalador salva um backup consistente antes do deploy. Novas versões deverão ser migrações explícitas e testadas, sem reconstruir o banco de produção.
+`schema_migrations` registra a versão aplicada. A versão 1 é a fundação inicial. A versão 2 acrescenta `trello_sources`; a versão 3 acrescenta `ad_accounts`, `language_ad_accounts` e `utmify_sources`, sem modificar registros existentes. As atualizações são testadas contra bancos das versões 1 e 2, e o instalador salva um backup consistente antes do deploy. Se precisar restaurar o código anterior nas migrações aditivas 2/3, o instalador remove somente os marcadores novos de versão; as tabelas e dados permanecem intactos. Novas versões deverão ser migrações explícitas e testadas, sem reconstruir o banco de produção.
+
+Contas Meta são um cadastro operacional, sem acesso à API de anúncios. IDs Meta são opcionais em contas manuais e únicos quando informados. `language_ad_accounts` é único por idioma/conta; desmarcar preserva o vínculo como desabilitado. A escrita usa a versão do idioma para detectar concorrência. Os vínculos e nomes das contas integram o histórico do ciclo, enquanto a nova base começa sem contas marcadas.
+
+`import_utmify` valida uma consulta revisada pelo responsável e importa cada nicho atomicamente. Reutiliza a base inglesa, preserva resultados, tarefas, notas, Shopifys e nomes de contas ajustados pela equipe. Somente confirmações positivas adicionam Facebook e vínculos; ausência na cobertura não remove marcas antigas. Uma consulta já importada é idempotente e não reativa vínculos desmarcados manualmente. Nichos reiniciados recebem conflito 409 para impedir que uma campanha de um desenvolvimento anterior repovoe o novo ciclo. A origem guarda data, campanhas, contas, identificação dos idiomas e observações, sem métricas financeiras ou dados de clientes.
 
 ## Importação revisada do Trello
 

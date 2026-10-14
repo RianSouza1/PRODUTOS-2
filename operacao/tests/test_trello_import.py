@@ -111,9 +111,12 @@ class TrelloImportTests(unittest.TestCase):
     def test_additive_schema_upgrade_preserves_existing_data(self):
         original = self.state()['niches'][0]['id']
         with self.store.transaction() as db:
+            db.execute('DROP TABLE language_ad_accounts')
+            db.execute('DROP TABLE utmify_sources')
+            db.execute('DROP TABLE ad_accounts')
             db.execute('DROP TABLE trello_sources')
-            db.execute('DELETE FROM schema_migrations WHERE version=2')
+            db.execute('DELETE FROM schema_migrations WHERE version>=2')
         upgraded = Store(self.path)
         self.assertEqual(upgraded.state(self.owner)['niches'][0]['id'], original)
         with contextlib.closing(upgraded.connect()) as db:
-            self.assertEqual(db.execute('SELECT MAX(version) FROM schema_migrations').fetchone()[0], 2)
+            self.assertEqual(db.execute('SELECT MAX(version) FROM schema_migrations').fetchone()[0], 3)

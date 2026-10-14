@@ -7,6 +7,7 @@ Central online da operação. O nicho é a entrada principal: sua matriz de idio
 - Cada ciclo de um nicho possui uma base em inglês, produzida uma vez.
 - As demais versões recebem tradução integral e revisão, sem repetir a criação da oferta.
 - Um idioma pode operar simultaneamente em várias Shopifys. As lojas são marcadas por caixas de seleção, junto ao Facebook. As tarefas de publicação são independentes por loja.
+- A matriz também permite marcar várias contas de anúncios por idioma. O cadastro das contas fica em Configurações; nome e ID Meta identificam a conta, sem guardar credenciais nem alterar anúncios.
 - Situação manual do idioma: **Em preparação**, **Ativo** ou **Desativado**. Ativo indica que atende às expectativas; desativado indica que não atendeu.
 - Migrações são permitidas apenas para idiomas ativos. Reutilizam a tradução e criam tarefas de publicação no destino com responsável.
 - **Novo desenvolvimento** cria um ciclo zerado apenas para aquele nicho. O anterior é preservado em histórico consultável e exportável.
@@ -80,12 +81,21 @@ operacao/
   store.py         Transações, regras operacionais, CRUD e histórico
   domain.py        Campos, estados, templates e validações
   trello_import.py Importação revisada por nicho e proteção contra duplicações
-  schema.sql       Modelo relacional até a versão 2
+  ad_ops.py        Contas de anúncios por idioma e consultas revisadas da Utmify
+  schema.sql       Modelo relacional até a versão 3
   web/             Interface, estilos e navegação
   tests/           Testes de acesso, conflitos e regras operacionais
   ARCHITECTURE.md   Modelo, contratos e próximas fases
 .github/operacao/  Instalação, Nginx, serviços e backups
 ```
+
+## Consulta da Utmify e contas Meta
+
+O responsável abre **Configurações → Importar da Utmify** e cola uma consulta revisada no formato `offervault-utmify-v1`. Cada nicho recebe seus idiomas, Facebook ON, as contas onde foram identificados, campanhas de origem e observações para revisão. A mesma conta pode receber vários idiomas e um idioma pode estar em várias contas. As caixinhas são editáveis pela equipe e preservam a seleção das demais contas quando uma é alterada. As cinco contas ficam cadastradas; a matriz começa destacando as duas em uso na consulta. As demais podem ser disponibilizadas em Configurações quando a equipe precisar.
+
+A importação reutiliza a base inglesa e os idiomas existentes, adiciona nichos ausentes e registra a data e a cobertura da consulta dentro do nicho. Uma consulta confirma veiculação, sem atribuir uma Shopify nem aprovar resultados. A fonte de 13/10/2026 cobre cinco contas habilitadas; as 42 contas fora da consulta não são usadas para inferir que um idioma está desligado. Dados da equipe e ciclos reiniciados permanecem preservados, e a repetição da mesma consulta não desfaz ajustes manuais. Não há sincronização automática nem alterações na Meta ou Utmify.
+
+Temas claro e escuro usam superfícies neutras em branco e preto. A escolha fica salva no navegador e pode ser trocada na barra superior. A matriz contém a disponibilidade de lojas, Facebook e contas Meta, mantendo o resultado separado.
 
 ## Acesso da equipe
 
