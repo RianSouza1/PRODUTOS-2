@@ -10,11 +10,13 @@ Central online da operação. O nicho é a entrada principal: sua matriz de idio
 - A matriz também permite marcar várias contas de anúncios por idioma. O cadastro das contas fica em Configurações; nome e ID Meta identificam a conta, sem guardar credenciais nem alterar anúncios.
 - Situação manual do idioma: **Em preparação**, **Ativo** ou **Desativado**. Ativo indica que atende às expectativas; desativado indica que não atendeu.
 - Migrações são permitidas apenas para idiomas ativos. Reutilizam a tradução e criam tarefas de publicação no destino com responsável.
-- **Novo desenvolvimento** cria um ciclo zerado apenas para aquele nicho. O anterior é preservado em histórico consultável e exportável.
+- **Novo desenvolvimento** cria um ciclo zerado apenas para aquele nicho. O anterior é preservado no histórico e na exportação de dados.
 - **Drive & acessos** tem um único campo para a pasta correspondente ao nicho, com opções de salvar o link e abrir o Drive. Os arquivos permanecem no Drive e usam as permissões dele.
 - Métricas, ROAS e análise de testes serão acrescentados posteriormente. Não há coleta automática de dados, decisão automática ou exigência de resultados numéricos nesta entrega.
 
 ## Implementado
+
+Menu do nicho: Visão geral, Base em inglês, Matriz de idiomas, Drive & acessos, Contas Gamma e Atividade.
 
 Fundação: acesso individual sem senha, controle de acesso no servidor, papéis de responsável e membro, banco relacional persistente, tema escuro padrão e claro opcional, sidebar recolhível, dashboard, categorias, cadastro completo de nichos, busca global e configurações.
 
