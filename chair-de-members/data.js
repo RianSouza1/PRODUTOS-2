@@ -1,4 +1,4 @@
-/* Chair exercises — short real-person demonstrations. */
+/* Chair exercises — filmed demonstrations with real people. */
 const APP_DATA = {
   "config": {
     "brandName": "Stuhlübungen für Senioren",
@@ -34,7 +34,7 @@ const APP_DATA = {
       "title": "Fersenheben im Sitzen",
       "category": "benen",
       "categoryName": "Beine und Hüften",
-      "duration": "0:25",
+      "duration": "0:18",
       "target": "Waden und Sprunggelenke",
       "badgeColor": "#0284c7",
       "description": "Heben und senken Sie die Fersen, während die Zehen auf dem Boden bleiben.",
@@ -44,10 +44,10 @@ const APP_DATA = {
         "Senken Sie die Fersen langsam wieder ab und wiederholen Sie die Bewegung."
       ],
       "tip": "Führen Sie die Bewegung langsam und ohne starken Druck aus.",
-      "durationSeconds": 25,
+      "durationSeconds": 18,
       "youtubeId": "HYYi5jYGZ70",
-      "start": 3,
-      "end": 28,
+      "start": 6,
+      "end": 24,
       "creator": "OrthoIndy"
     },
     {
@@ -76,7 +76,7 @@ const APP_DATA = {
       "title": "Armbeugen im Sitzen",
       "category": "bovenlichaam",
       "categoryName": "Oberkörper",
-      "duration": "0:30",
+      "duration": "0:10",
       "target": "Oberarme und Unterarme",
       "badgeColor": "#0d9488",
       "description": "Sehen Sie, wie die Ellenbogen im Sitzen langsam gebeugt und wieder gestreckt werden.",
@@ -85,19 +85,19 @@ const APP_DATA = {
         "Beugen Sie einen Ellenbogen und führen Sie die Hand Richtung Schulter.",
         "Senken Sie die Hand langsam ab und wiederholen Sie die Bewegung mit dem anderen Arm."
       ],
-      "tip": "Das Video zeigt leichte Hanteln. Zum Kennenlernen können Sie die Bewegung ohne Zusatzgewicht üben.",
-      "durationSeconds": 30,
-      "youtubeId": "8I640AY2j-U",
+      "tip": "Im Video werden Hanteln verwendet. Zum Kennenlernen können Sie die Bewegung ohne Zusatzgewicht üben.",
+      "durationSeconds": 10,
+      "youtubeId": "eZAvPxEB5Dw",
       "start": 4,
-      "end": 34,
-      "creator": "Rehab My Patient"
+      "end": 14,
+      "creator": "OPEX Fitness"
     },
     {
       "id": "v5",
       "title": "Schulterkreisen",
       "category": "bovenlichaam",
       "categoryName": "Oberkörper",
-      "duration": "0:30",
+      "duration": "0:24",
       "target": "Schultern und oberer Rücken",
       "badgeColor": "#0d9488",
       "description": "Bewegen Sie die Schultern mit kleinen, ruhigen Kreisen.",
@@ -107,10 +107,10 @@ const APP_DATA = {
         "Wiederholen Sie einige Kreise und wechseln Sie dann die Richtung."
       ],
       "tip": "Atmen Sie ruhig und halten Sie den Bewegungsumfang angenehm.",
-      "durationSeconds": 30,
+      "durationSeconds": 24,
       "youtubeId": "XbzY45Z5DE8",
       "start": 10,
-      "end": 40,
+      "end": 34,
       "creator": "Vive Health"
     },
     {
@@ -118,28 +118,29 @@ const APP_DATA = {
       "title": "Schulterblätter zusammenführen",
       "category": "bovenlichaam",
       "categoryName": "Oberkörper",
-      "duration": "0:30",
+      "duration": "0:26",
       "target": "Schultern und oberer Rücken",
       "badgeColor": "#0d9488",
-      "description": "Ziehen Sie die Arme leicht nach hinten und führen Sie die Schulterblätter zusammen.",
+      "description": "Sehen Sie, wie die Schulterblätter im Sitzen sanft zusammengeführt werden.",
       "steps": [
-        "Sitzen Sie aufrecht und lassen Sie die Arme seitlich locker hängen.",
-        "Drehen Sie die Handflächen nach vorne und bewegen Sie die Arme leicht nach hinten und außen.",
-        "Führen Sie die Schulterblätter sanft zusammen, lösen Sie die Spannung und wiederholen Sie."
+        "Sitzen Sie aufrecht und entspannen Sie die Schultern.",
+        "Ziehen Sie die Schulterblätter sanft nach hinten und zueinander.",
+        "Halten Sie kurz inne, lösen Sie die Spannung und wiederholen Sie die Bewegung."
       ],
       "tip": "Halten Sie die Schultern unten und vermeiden Sie ein starkes Hohlkreuz.",
-      "durationSeconds": 30,
-      "youtubeId": "pU5hXD_ll3A",
-      "start": 4,
-      "end": 34,
-      "creator": "Rehab My Patient"
+      "durationSeconds": 26,
+      "youtubeId": "eiFEbTDOtao",
+      "thumbnail": "https://i.ytimg.com/vi/eiFEbTDOtao/hqdefault.jpg",
+      "start": 3,
+      "end": 29,
+      "creator": "ChildrensOrtho"
     },
     {
       "id": "v7",
       "title": "Handgelenke kreisen",
       "category": "bovenlichaam",
       "categoryName": "Oberkörper",
-      "duration": "0:26",
+      "duration": "0:27",
       "target": "Handgelenke",
       "badgeColor": "#0d9488",
       "description": "Sehen Sie die kreisende Bewegung der Handgelenke aus der Nähe.",
@@ -149,11 +150,11 @@ const APP_DATA = {
         "Wechseln Sie die Richtung und wiederholen Sie mit der anderen Hand."
       ],
       "tip": "Bewegen Sie die Hände ohne übermäßigen Druck.",
-      "durationSeconds": 26,
-      "youtubeId": "wRSk1_C6yOM",
+      "durationSeconds": 27,
+      "youtubeId": "p8pHQpJfVdU",
       "start": 0,
-      "end": 26,
-      "creator": "Rehab My Patient"
+      "end": 27,
+      "creator": "E3 Rehab Exercise Library"
     },
     {
       "id": "v8",
@@ -202,7 +203,7 @@ const APP_DATA = {
       "title": "Seitliche Rumpfneigung",
       "category": "romp",
       "categoryName": "Rumpf und Haltung",
-      "duration": "0:30",
+      "duration": "0:26",
       "target": "Seitlicher Rumpf",
       "badgeColor": "#d97706",
       "description": "Neigen Sie den Oberkörper kontrolliert zu einer Seite.",
@@ -212,9 +213,9 @@ const APP_DATA = {
         "Kehren Sie zur Mitte zurück und wechseln Sie die Seite."
       ],
       "tip": "Bleiben Sie mit beiden Seiten des Beckens auf dem Stuhl.",
-      "durationSeconds": 30,
+      "durationSeconds": 26,
       "youtubeId": "qBi3bRc4Adw",
-      "start": 4,
+      "start": 8,
       "end": 34,
       "creator": "Rehab My Patient"
     },
@@ -244,7 +245,7 @@ const APP_DATA = {
       "title": "Sanfte seitliche Nackenbewegung",
       "category": "nek",
       "categoryName": "Nacken und Beweglichkeit",
-      "duration": "0:27",
+      "duration": "0:21",
       "target": "Nacken",
       "badgeColor": "#6366f1",
       "description": "Neigen Sie den Kopf sanft zur Seite, ohne die Schulter anzuheben.",
@@ -254,11 +255,11 @@ const APP_DATA = {
         "Kehren Sie zur Mitte zurück und wechseln Sie die Seite."
       ],
       "tip": "Halten Sie die Schultern unten und ziehen Sie nicht mit der Hand am Kopf.",
-      "durationSeconds": 27,
-      "youtubeId": "PTz8tnICXYQ",
-      "start": 3,
-      "end": 30,
-      "creator": "Rehab My Patient"
+      "durationSeconds": 21,
+      "youtubeId": "P7T_9ittmwY",
+      "start": 0,
+      "end": 21,
+      "creator": "E3 Rehab Exercise Library"
     }
   ],
   "books": [
@@ -332,7 +333,7 @@ const APP_DATA = {
       "Nacken und Beweglichkeit"
     ],
     "eyebrow": "BEWEGUNG SCHRITT FÜR SCHRITT",
-    "shortLessons": "Übungen · 12–30 Sekunden",
+    "shortLessons": "Übungen · 10–27 Sekunden",
     "noSound": "Ohne Ton",
     "closeUp": "Echte Personen",
     "lesson": "Übung",

@@ -1,4 +1,4 @@
-/* Chair exercises — short real-person demonstrations. */
+/* Chair exercises — filmed demonstrations with real people. */
 const APP_DATA = {
   "config": {
     "brandName": "Stolsgymnastik för seniorer",
@@ -34,7 +34,7 @@ const APP_DATA = {
       "title": "Hällyft i sittande",
       "category": "benen",
       "categoryName": "Ben och höfter",
-      "duration": "0:25",
+      "duration": "0:18",
       "target": "Vader och fotleder",
       "badgeColor": "#0284c7",
       "description": "Lyft och sänk hälarna medan tårna är kvar på golvet.",
@@ -44,10 +44,10 @@ const APP_DATA = {
         "Sänk hälarna långsamt igen och upprepa rörelsen."
       ],
       "tip": "Gör rörelsen långsamt och utan att pressa.",
-      "durationSeconds": 25,
+      "durationSeconds": 18,
       "youtubeId": "HYYi5jYGZ70",
-      "start": 3,
-      "end": 28,
+      "start": 6,
+      "end": 24,
       "creator": "OrthoIndy"
     },
     {
@@ -76,7 +76,7 @@ const APP_DATA = {
       "title": "Armböjningar i sittande",
       "category": "bovenlichaam",
       "categoryName": "Överkropp",
-      "duration": "0:30",
+      "duration": "0:10",
       "target": "Överarmar och underarmar",
       "badgeColor": "#0d9488",
       "description": "Se hur armbågarna böjs och sträcks långsamt i sittande.",
@@ -85,19 +85,19 @@ const APP_DATA = {
         "Böj ena armbågen och för handen mot axeln.",
         "Sänk handen långsamt och upprepa med den andra armen."
       ],
-      "tip": "Filmen visar lätta hantlar. Du kan lära dig rörelsen utan extra vikt.",
-      "durationSeconds": 30,
-      "youtubeId": "8I640AY2j-U",
+      "tip": "I filmen används hantlar. Du kan lära dig rörelsen utan extra vikt.",
+      "durationSeconds": 10,
+      "youtubeId": "eZAvPxEB5Dw",
       "start": 4,
-      "end": 34,
-      "creator": "Rehab My Patient"
+      "end": 14,
+      "creator": "OPEX Fitness"
     },
     {
       "id": "v5",
       "title": "Axelrullningar",
       "category": "bovenlichaam",
       "categoryName": "Överkropp",
-      "duration": "0:30",
+      "duration": "0:24",
       "target": "Axlar och övre rygg",
       "badgeColor": "#0d9488",
       "description": "Rulla axlarna i små, lugna cirklar.",
@@ -107,10 +107,10 @@ const APP_DATA = {
         "Gör några cirklar och byt sedan riktning."
       ],
       "tip": "Andas lugnt och håll rörelsen bekväm.",
-      "durationSeconds": 30,
+      "durationSeconds": 24,
       "youtubeId": "XbzY45Z5DE8",
       "start": 10,
-      "end": 40,
+      "end": 34,
       "creator": "Vive Health"
     },
     {
@@ -118,28 +118,29 @@ const APP_DATA = {
       "title": "Dra ihop skulderbladen",
       "category": "bovenlichaam",
       "categoryName": "Överkropp",
-      "duration": "0:30",
+      "duration": "0:26",
       "target": "Axlar och övre rygg",
       "badgeColor": "#0d9488",
-      "description": "För armarna lätt bakåt och dra ihop skulderbladen.",
+      "description": "Se hur skulderbladen dras försiktigt ihop i sittande.",
       "steps": [
-        "Sitt upprätt med armarna avslappnade längs sidorna.",
-        "Vrid handflatorna framåt och för armarna lite bakåt och utåt.",
-        "Dra försiktigt ihop skulderbladen, slappna av och upprepa."
+        "Sitt upprätt och slappna av i axlarna.",
+        "Dra skulderbladen försiktigt bakåt och mot varandra.",
+        "Håll en kort stund, slappna av och upprepa rörelsen."
       ],
       "tip": "Håll axlarna nere och undvik att svanka kraftigt.",
-      "durationSeconds": 30,
-      "youtubeId": "pU5hXD_ll3A",
-      "start": 4,
-      "end": 34,
-      "creator": "Rehab My Patient"
+      "durationSeconds": 26,
+      "youtubeId": "eiFEbTDOtao",
+      "thumbnail": "https://i.ytimg.com/vi/eiFEbTDOtao/hqdefault.jpg",
+      "start": 3,
+      "end": 29,
+      "creator": "ChildrensOrtho"
     },
     {
       "id": "v7",
       "title": "Cirklar med handlederna",
       "category": "bovenlichaam",
       "categoryName": "Överkropp",
-      "duration": "0:26",
+      "duration": "0:27",
       "target": "Handleder",
       "badgeColor": "#0d9488",
       "description": "Se handledens cirkelrörelse på nära håll.",
@@ -149,11 +150,11 @@ const APP_DATA = {
         "Byt riktning och upprepa med den andra handen."
       ],
       "tip": "Rör händerna utan att pressa hårt.",
-      "durationSeconds": 26,
-      "youtubeId": "wRSk1_C6yOM",
+      "durationSeconds": 27,
+      "youtubeId": "p8pHQpJfVdU",
       "start": 0,
-      "end": 26,
-      "creator": "Rehab My Patient"
+      "end": 27,
+      "creator": "E3 Rehab Exercise Library"
     },
     {
       "id": "v8",
@@ -202,7 +203,7 @@ const APP_DATA = {
       "title": "Sidoböjning av bålen",
       "category": "romp",
       "categoryName": "Bål och hållning",
-      "duration": "0:30",
+      "duration": "0:26",
       "target": "Bålens sidor",
       "badgeColor": "#d97706",
       "description": "Luta överkroppen kontrollerat åt ena sidan.",
@@ -212,9 +213,9 @@ const APP_DATA = {
         "Återgå till mitten och byt sida."
       ],
       "tip": "Behåll båda sittbenen på stolen.",
-      "durationSeconds": 30,
+      "durationSeconds": 26,
       "youtubeId": "qBi3bRc4Adw",
-      "start": 4,
+      "start": 8,
       "end": 34,
       "creator": "Rehab My Patient"
     },
@@ -244,7 +245,7 @@ const APP_DATA = {
       "title": "Mjuk sidoböjning av nacken",
       "category": "nek",
       "categoryName": "Nacke och rörlighet",
-      "duration": "0:27",
+      "duration": "0:21",
       "target": "Nacke",
       "badgeColor": "#6366f1",
       "description": "Luta huvudet försiktigt åt sidan utan att lyfta axeln.",
@@ -254,11 +255,11 @@ const APP_DATA = {
         "Återgå till mitten och byt sida."
       ],
       "tip": "Håll axlarna sänkta och dra inte i huvudet med handen.",
-      "durationSeconds": 27,
-      "youtubeId": "PTz8tnICXYQ",
-      "start": 3,
-      "end": 30,
-      "creator": "Rehab My Patient"
+      "durationSeconds": 21,
+      "youtubeId": "P7T_9ittmwY",
+      "start": 0,
+      "end": 21,
+      "creator": "E3 Rehab Exercise Library"
     }
   ],
   "books": [
@@ -332,7 +333,7 @@ const APP_DATA = {
       "Nacke och rörlighet"
     ],
     "eyebrow": "RÖRELSE STEG FÖR STEG",
-    "shortLessons": "övningar · 12–30 sekunder",
+    "shortLessons": "övningar · 10–27 sekunder",
     "noSound": "Utan ljud",
     "closeUp": "Riktiga människor",
     "lesson": "Övning",

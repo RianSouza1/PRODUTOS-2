@@ -145,6 +145,12 @@ jobs:
           esac
           sudo mkdir -p "$destination"
           sudo tar -xzf "$archive" -C "$destination"
+          # Remove only the superseded generated chair demonstrations.
+          # The destination is constrained to the four member areas above.
+          legacy_stems=(01-knee-lifts 02-heel-toe-lifts 03-side-taps 04-arm-curls 05-shoulder-rolls 06-chest-opening 07-wrists-fingers 08-trunk-rotation 09-pelvic-tilts 10-side-bends 11-chin-retraction 12-neck-side-bends)
+          for legacy_stem in "${legacy_stems[@]}"; do
+            sudo rm -f -- "$destination/assets/videos/$legacy_stem.mp4" "$destination/assets/videos/$legacy_stem.jpg"
+          done
           sudo chown -R "$owner:$(id -gn "$owner")" "$destination"
           sudo find "$destination" -type d -exec chmod 755 {} +
           sudo find "$destination" -type f -exec chmod 644 {} +

@@ -1309,3 +1309,7 @@ html, body {
 .chair-lesson-choice img { background:#fff; }
 .chair-poster { background:#fff; }
 .chair-source a { overflow-wrap:anywhere; }
+
+/* Keep this video section static: the filmed person provides the movement. */
+.chair-videos-view, .chair-videos-view *, .chair-videos-view *::before, .chair-videos-view *::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
+.pre-page-overlay[hidden] { display:none!important; }
