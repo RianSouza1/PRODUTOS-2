@@ -63,3 +63,8 @@ html[data-theme=dark] .pill.performance.bad{background:#3b1b22;color:#fca5a5;bor
 .drive-link-form .formgrid{grid-template-columns:1fr}
 .drive-link-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:18px}
 @media(max-width:560px){.drive-link-form{padding:17px}}
+
+.language-group-section{margin-bottom:30px}
+.language-group-heading{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-top:6px}
+.language-group-heading h3{font-size:16px}
+.language-group-heading>span{font-size:12px;color:var(--muted);background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:4px 8px}

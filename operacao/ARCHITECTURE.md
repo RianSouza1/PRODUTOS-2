@@ -51,6 +51,10 @@ Contas Meta são um cadastro operacional, sem acesso à API de anúncios. IDs Me
 
 `import_utmify` valida uma consulta revisada pelo responsável e importa cada nicho atomicamente. Reutiliza a base inglesa, preserva resultados, tarefas, notas, Shopifys e nomes de contas ajustados pela equipe. Somente confirmações positivas adicionam Facebook e vínculos; ausência na cobertura não remove marcas antigas. Uma consulta já importada é idempotente e não reativa vínculos desmarcados manualmente. Nichos reiniciados recebem conflito 409 para impedir que uma campanha de um desenvolvimento anterior repovoe o novo ciclo. A origem guarda data, campanhas, contas, identificação dos idiomas e observações, sem métricas financeiras ou dados de clientes.
 
+## Catálogo de idiomas
+
+O catálogo operacional de idiomas é fornecido em `state.language_catalog`, com 15 principais (inglês primeiro) e 23 secundários. `complete_language_catalog` valida o ciclo e a versão da oferta e acrescenta somente códigos ausentes. Cada tradução recebe duas tarefas pendentes; os registros existentes, lojas, contas, materiais e resultados não são alterados. A classificação organiza a matriz e não representa desempenho. Idiomas adicionados manualmente fora do catálogo aparecem nos secundários. Não há migração de esquema nesta alteração.
+
 ## Importação revisada do Trello
 
 Somente o responsável executa `import_trello`. O backend valida nomes, códigos de idioma, identificadores e links HTTPS de cartões Trello antes da escrita. Cada comando importa um nicho atomicamente, associa seus cartões e registra a origem no histórico. Um digest do payload com Shopify e interpretação do checklist torna a repetição idempotente. Dados diferentes de um cartão já importado recebem 409 para não substituir edições da equipe.

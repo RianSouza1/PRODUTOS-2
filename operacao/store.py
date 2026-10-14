@@ -25,6 +25,7 @@ from pathlib import Path
 from domain import Problem, SCHEMA, TABLES, FIELDS, PHASES, LAUNCH_STATES, STATUSES, SESSION_SECONDS, OWNER_EMAIL, NICHES_STAGES, identifier, now, text_value, url_value, token_hash, PRODUCTION, TRANSLATION, PUBLICATION
 from trello_import import import_niche
 from ad_ops import import_snapshot, configure_accounts, select_accounts
+from language_catalog import LANGUAGE_CATALOG, complete_catalog
 
 class Store:
     def __init__(self, path):
@@ -105,6 +106,7 @@ class Store:
             state['activity']=[dict(r) for r in db.execute('SELECT a.*,u.name AS user_name FROM activity a JOIN users u ON u.id=a.user_id ORDER BY a.created_at DESC,a.rowid DESC LIMIT 150')]
             state['gamma_access']=[dict(r) for r in db.execute("SELECT niche_id,cycle,version,updated_at,updated_by,(encrypted_text<>'') AS has_text FROM niche_secrets")]
             state['revision']=db.execute("SELECT value FROM meta WHERE key='revision'").fetchone()[0]
+            state['language_catalog']=[dict(item) for item in LANGUAGE_CATALOG]
             state['me']={k:user[k] for k in ('id','name','email','role')}
             state['server_now']=now()
             db.commit()
@@ -282,6 +284,7 @@ class Store:
         if action=='import_trello':return import_niche(self,db,user,body)
         if action=='import_utmify':return import_snapshot(self,db,user,body)
         if action=='configure_ad_accounts':return configure_accounts(self,db,user,body)
+        if action=='complete_language_catalog':return complete_catalog(self,db,user,body)
         if action=='complete_published_bases':
             if user['role']!='owner':raise Problem('Somente o responsável pode concluir as bases em lote.',403)
             items=body.get('tasks')

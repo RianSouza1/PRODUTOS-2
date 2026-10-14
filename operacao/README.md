@@ -8,6 +8,7 @@ Central online da operação. O nicho é a entrada principal: sua matriz de idio
 - As demais versões recebem tradução integral e revisão, sem repetir a criação da oferta.
 - Um idioma pode operar simultaneamente em várias Shopifys. As lojas e as contas Meta são marcadas por caixas de seleção, sem um campo separado de Facebook. As tarefas de publicação são independentes por loja.
 - A matriz também permite marcar várias contas de anúncios por idioma. O cadastro das contas fica em Configurações; nome e ID Meta identificam a conta, sem guardar credenciais nem alterar anúncios.
+- Os idiomas da matriz são separados em 15 principais e secundários. **Completar lista** acrescenta as opções faltantes do catálogo de 38 idiomas usados na operação, sem modificar os idiomas existentes. Os novos começam Em preparação, com tradução e revisão pendentes e sem lojas ou contas marcadas. O inglês continua sendo a única base original.
 - Situação manual do idioma: **Em preparação**, **Ativo** ou **Desativado**. Ativo indica que atende às expectativas; desativado indica que não atendeu.
 - Migrações são permitidas apenas para idiomas ativos. Reutilizam a tradução e criam tarefas de publicação no destino com responsável.
 - **Novo desenvolvimento** cria um ciclo zerado apenas para aquele nicho. O anterior é preservado no histórico e na exportação de dados.
@@ -86,6 +87,7 @@ operacao/
   domain.py        Campos, estados, templates e validações
   trello_import.py Importação revisada por nicho e proteção contra duplicações
   ad_ops.py        Contas de anúncios por idioma e consultas revisadas da Utmify
+  language_catalog.py Idiomas principais/secundários e inclusão de opções pendentes
   schema.sql       Modelo relacional até a versão 3
   web/             Interface, estilos e navegação
   tests/           Testes de acesso, conflitos e regras operacionais
