@@ -282,6 +282,27 @@ class Store:
         if action=='import_trello':return import_niche(self,db,user,body)
         if action=='import_utmify':return import_snapshot(self,db,user,body)
         if action=='configure_ad_accounts':return configure_accounts(self,db,user,body)
+        if action=='complete_published_bases':
+            if user['role']!='owner':raise Problem('Somente o responsável pode concluir as bases em lote.',403)
+            items=body.get('tasks')
+            if not isinstance(items,list) or not 1<=len(items)<=800 or any(not isinstance(i,dict) or not isinstance(i.get('id'),str) or type(i.get('version'))!=int for i in items):raise Problem('Seleção de etapas inválida.')
+            if len({i['id'] for i in items})!=len(items):raise Problem('Há etapas repetidas na seleção.')
+            prepared=[];keys={key for key,_ in PRODUCTION}
+            for item in items:
+                task=self.row(db,'tasks',item['id']);self.active_record(db,'tasks',task)
+                if task['version']!=item['version']:raise Problem('Outra pessoa alterou uma etapa. Atualize a tela e confira as bases antes de continuar.',409)
+                offer=self.row(db,'offers',task['offer_id']);niche=self.row(db,'niches',offer['niche_id'])
+                if task['scope']!='offer' or task['scope_id']!=offer['id'] or task['template_key'] not in keys:raise Problem('Selecione somente as etapas da base inglesa.')
+                published=db.execute('SELECT 1 FROM trello_sources WHERE niche_id=? AND cycle=? UNION ALL SELECT 1 FROM utmify_sources WHERE niche_id=? AND cycle=? LIMIT 1',(niche['id'],niche['cycle'],niche['id'],niche['cycle'])).fetchone()
+                if niche['archived'] or not published:raise Problem('Esta base não possui uma publicação registrada no ciclo atual.',409)
+                prepared.append((task,offer,niche))
+            completed=0;changed={}
+            for task,offer,niche in prepared:
+                if task['status']=='done':continue
+                db.execute("UPDATE tasks SET status='done',blocked_reason='',version=version+1,updated_at=? WHERE id=?",(now(),task['id']))
+                completed+=1;changed[offer['id']]=niche['name']
+            for key,name in changed.items():self.audit(db,user,'offers',key,'complete_base','Concluiu a base inglesa de '+name)
+            return {'niches_completed':len(changed),'tasks_completed':completed}
         if action=='save_credentials':
             niche=self.row(db,'niches',body.get('niche_id'))
             if niche['cycle']!=body.get('cycle'):raise Problem('Este acesso pertence a um ciclo anterior. Abra o ciclo atual.',409)

@@ -18,9 +18,11 @@ Central online da operação. O nicho é a entrada principal: sua matriz de idio
 
 Menu do nicho: Visão geral, Base em inglês, Matriz de idiomas, Drive & acessos, Contas Gamma e Atividade.
 
+Os indicadores e formulários não usam bloqueios. O responsável pode concluir em lote as sete etapas das bases já publicadas em **Configurações → Concluir bases**, quando houver etapas pendentes. A atualização preserva os resultados dos idiomas, as traduções, tarefas adicionais, responsáveis e materiais; ciclos novos sem publicação registrada começam pendentes.
+
 Fundação: acesso individual sem senha, controle de acesso no servidor, papéis de responsável e membro, banco relacional persistente, tema escuro padrão e claro opcional, sidebar recolhível, dashboard, categorias, cadastro completo de nichos, busca global e configurações.
 
-Operação: produção da base inglesa, tradução e revisão, atribuição de responsáveis, prazos, bloqueios, checklist editável, um link Drive e um campo de texto Gamma por nicho, matriz e situação dos idiomas dentro do nicho, múltiplas Shopifys, migrações atribuídas, reinício de ciclos, histórico de alterações e exportação JSON.
+Operação: produção da base inglesa, tradução e revisão, atribuição de responsáveis, prazos, checklist editável, um link Drive e um campo de texto Gamma por nicho, matriz e situação dos idiomas dentro do nicho, múltiplas Shopifys, migrações atribuídas, reinício de ciclos, histórico de alterações e exportação JSON.
 
 Lojas iniciais: Best Library, New Library e Store Today. Os domínios são preenchidos pela equipe. Nature é o nicho inicial informado pelo usuário. Seus idiomas reais podem ser cadastrados manualmente ou importados de checklists revisados do Trello. Não são inventadas campanhas, métricas ou resultados.
 

@@ -129,3 +129,55 @@ class AdOperationsTests(unittest.TestCase):
             db.execute('INSERT INTO schema_migrations VALUES(4,0)')
         restore(self.path,2)
         with self.store.transaction() as db:self.assertEqual(db.execute('SELECT MAX(version) FROM schema_migrations').fetchone()[0],4)
+
+    def base_selection(self):
+        return [{'id':t['id'],'version':t['version']} for t in self.state()['tasks'] if t['scope']=='offer' and t['template_key']]
+
+    def test_complete_published_base_preserves_results_custom_tasks_and_materials(self):
+        self.import_data();before=self.state();task=next(t for t in before['tasks'] if t['scope']=='offer')
+        self.command(action='update',entity='tasks',id=task['id'],version=task['version'],values={'owner_id':self.owner['id'],'notes':'Material já produzido','result_url':'https://drive.google.com/drive/folders/base'})
+        custom=self.command(action='create',entity='tasks',scope='offer',scope_id=task['offer_id'],values={'title':'Nova revisão solicitada'})
+        result=self.command(action='complete_published_bases',tasks=self.base_selection());after=self.state()
+        self.assertEqual(result,{'niches_completed':1,'tasks_completed':7})
+        self.assertTrue(all(t['status']=='done' for t in after['tasks'] if t['scope']=='offer' and t['template_key']))
+        self.assertEqual(next(t for t in after['tasks'] if t['id']==custom['id'])['status'],'todo')
+        saved=next(t for t in after['tasks'] if t['id']==task['id'])
+        self.assertEqual((saved['owner_id'],saved['notes'],saved['result_url']),(self.owner['id'],'Material já produzido','https://drive.google.com/drive/folders/base'))
+        self.assertEqual(after['languages'],before['languages']);self.assertEqual(after['language_ad_accounts'],before['language_ad_accounts']);self.assertEqual(after['launches'],before['launches'])
+        self.assertTrue(all(t['status']=='todo' for t in after['tasks'] if t['scope']=='language'))
+
+    def test_stale_base_selection_is_atomic_and_retry_does_not_reclose_manual_work(self):
+        self.import_data();selection=self.base_selection();last=selection[-1]
+        self.command(action='update',entity='tasks',id=last['id'],version=last['version'],values={'notes':'Alterado pela equipe'})
+        with self.assertRaises(Problem) as error:self.command(action='complete_published_bases',tasks=selection)
+        self.assertEqual(error.exception.status,409);self.assertTrue(all(t['status']=='todo' for t in self.state()['tasks'] if t['scope']=='offer'))
+        body={'command_id':str(uuid.uuid4()),'action':'complete_published_bases','tasks':self.base_selection()}
+        result=self.store.command(self.owner,body)
+        task=next(t for t in self.state()['tasks'] if t['scope']=='offer')
+        self.command(action='update',entity='tasks',id=task['id'],version=task['version'],values={'status':'todo'})
+        self.assertEqual(self.store.command(self.owner,body),result)
+        self.assertEqual(next(t for t in self.state()['tasks'] if t['id']==task['id'])['status'],'todo')
+
+    def test_unpublished_restarted_and_archived_bases_cannot_be_completed_in_batch(self):
+        with self.assertRaises(Problem):self.command(action='complete_published_bases',tasks=self.base_selection())
+        self.import_data();old=self.base_selection();niche=self.state()['niches'][0]
+        self.command(action='restart_niche',id=niche['id'],version=niche['version'],notes='Novo ciclo')
+        with self.assertRaises(Problem):self.command(action='complete_published_bases',tasks=old)
+        with self.assertRaises(Problem):self.command(action='complete_published_bases',tasks=self.base_selection())
+        self.assertTrue(all(t['status']=='todo' for t in self.state()['tasks']))
+        other=Store(Path(self.tmp.name)/'archived.sqlite3');_,owner=other.bootstrap('Rian',OWNER_EMAIL)
+        other.command(owner,{'command_id':str(uuid.uuid4()),'action':'import_utmify','snapshot_id':'archived-check','observed_date':'2026-10-14','dashboard':'Principal','accounts':self.accounts,'payload':self.payload})
+        with other.transaction() as db:
+            niche=db.execute('SELECT id FROM niches').fetchone()[0]
+            db.execute('UPDATE niches SET archived=1 WHERE id=?',(niche,))
+        task=other.state(owner)['tasks'][0]
+        with self.assertRaises(Problem):other.command(owner,{'command_id':str(uuid.uuid4()),'action':'complete_published_bases','tasks':[{'id':task['id'],'version':task['version']}]})
+
+    def test_base_batch_rejects_members_duplicates_and_translation_tasks(self):
+        self.import_data();selection=self.base_selection()
+        with self.assertRaises(Problem) as error:self.store.command({**self.owner,'role':'member'},{'command_id':str(uuid.uuid4()),'action':'complete_published_bases','tasks':selection})
+        self.assertEqual(error.exception.status,403)
+        with self.assertRaises(Problem):self.command(action='complete_published_bases',tasks=selection[:1]*2)
+        translation=next(t for t in self.state()['tasks'] if t['scope']=='language')
+        with self.assertRaises(Problem):self.command(action='complete_published_bases',tasks=[selection[0],{'id':translation['id'],'version':translation['version']}])
+        self.assertTrue(all(t['status']=='todo' for t in self.state()['tasks']))
