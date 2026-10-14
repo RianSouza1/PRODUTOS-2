@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       history.replaceState(null, "", currentHash);
     }
     window.CHAIR_DEMOS.pause();
+    if(currentHash === "#videos") { const welcome=document.getElementById("pre-page"); if(welcome) welcome.hidden=true; }
 
     rootEl.innerHTML = "";
     updateBottomNavBar(currentHash);

@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       history.replaceState(null, "", currentHash);
     }
     window.CHAIR_DEMOS.pause();
+    if(currentHash === "#videos") { const welcome=document.getElementById("pre-page"); if(welcome) welcome.hidden=true; }
 
     rootEl.innerHTML = "";
     updateBottomNavBar(currentHash);
@@ -244,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ----------------------------------------------------------------------
-  // 5. WEERGAVE: VIDEODEMONSTRATIES (VIDEOS - 100% WHITE LABEL & GELUIDLOOS)
+  // 5. WEERGAVE: VIDEODEMONSTRATIES (SHORT REAL-PERSON EXERCISE VIDEOS)
   // ----------------------------------------------------------------------
   function renderVideos() {
     window.CHAIR_DEMOS.render();

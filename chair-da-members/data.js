@@ -1,4 +1,4 @@
-/* Chair exercises — localized silent demonstrations. */
+/* Chair exercises — short real-person demonstrations. */
 const APP_DATA = {
   "config": {
     "brandName": "Stolegymnastik for Seniorer",
@@ -13,7 +13,7 @@ const APP_DATA = {
       "title": "Knæløft i siddende",
       "category": "benen",
       "categoryName": "Ben og hofter",
-      "duration": "0:30",
+      "duration": "0:14",
       "target": "Lår og hofter",
       "badgeColor": "#0284c7",
       "description": "Løft knæene skiftevis med en rolig bevægelse.",
@@ -23,35 +23,39 @@ const APP_DATA = {
         "Sænk benet roligt, og skift side."
       ],
       "tip": "Hold overkroppen oprejst, og undgå ryk.",
-      "durationSeconds": 30,
-      "videoUrl": "assets/videos/01-knee-lifts.mp4",
-      "poster": "assets/videos/01-knee-lifts.jpg"
+      "durationSeconds": 14,
+      "youtubeId": "Q2fsp3p0Buc",
+      "start": 0,
+      "end": 14,
+      "creator": "HEP2go Inc"
     },
     {
       "id": "v2",
-      "title": "Hæl- og tåhævninger",
+      "title": "Hælløft i siddende stilling",
       "category": "benen",
       "categoryName": "Ben og hofter",
       "duration": "0:25",
       "target": "Lægge og ankler",
       "badgeColor": "#0284c7",
-      "description": "Bevæg fødder og ankler, mens du sidder stabilt.",
+      "description": "Løft og sænk hælene, mens tæerne bliver på gulvet.",
       "steps": [
-        "Placér fødderne under knæene.",
-        "Løft hælene med tæerne i gulvet.",
-        "Sænk hælene, og løft derefter tæerne."
+        "Sid oprejst med begge fødder under knæene.",
+        "Pres forfoden let mod gulvet, og løft hælene.",
+        "Sænk hælene langsomt igen, og gentag bevægelsen."
       ],
       "tip": "Hold bevægelsen rolig og behagelig.",
       "durationSeconds": 25,
-      "videoUrl": "assets/videos/02-heel-toe-lifts.mp4",
-      "poster": "assets/videos/02-heel-toe-lifts.jpg"
+      "youtubeId": "HYYi5jYGZ70",
+      "start": 3,
+      "end": 28,
+      "creator": "OrthoIndy"
     },
     {
       "id": "v3",
       "title": "Før benet til siden",
       "category": "benen",
       "categoryName": "Ben og hofter",
-      "duration": "0:30",
+      "duration": "0:20",
       "target": "Hofter og lår",
       "badgeColor": "#0284c7",
       "description": "Før ét ben til siden, mens overkroppen er stille.",
@@ -61,35 +65,39 @@ const APP_DATA = {
         "Før foden tilbage til midten, og skift side."
       ],
       "tip": "Hold hofterne og det andet ben stabile.",
-      "durationSeconds": 30,
-      "videoUrl": "assets/videos/03-side-taps.mp4",
-      "poster": "assets/videos/03-side-taps.jpg"
+      "durationSeconds": 20,
+      "youtubeId": "oN9yENov8kE",
+      "start": 0,
+      "end": 20,
+      "creator": "HEP2go Inc"
     },
     {
       "id": "v4",
-      "title": "Armbøjninger i siddende",
+      "title": "Armbøjninger i siddende stilling",
       "category": "bovenlichaam",
       "categoryName": "Overkrop",
       "duration": "0:30",
       "target": "Overarme og underarme",
       "badgeColor": "#0d9488",
-      "description": "Bøj og stræk albuerne med rolige bevægelser.",
+      "description": "Se, hvordan albuerne bøjes og strækkes langsomt, mens du sidder.",
       "steps": [
-        "Lad armene hænge langs siden med håndfladerne fremad.",
-        "Bøj albuerne, og før hænderne mod skuldrene.",
-        "Sænk underarmene langsomt igen."
+        "Sid oprejst, og hold overarmene tæt ved kroppen.",
+        "Bøj den ene albue, og før hånden mod skulderen.",
+        "Sænk hånden langsomt, og gentag med den anden arm."
       ],
-      "tip": "Hold albuerne tæt på kroppen.",
+      "tip": "Videoen viser lette håndvægte. Du kan lære bevægelsen uden ekstra vægt.",
       "durationSeconds": 30,
-      "videoUrl": "assets/videos/04-arm-curls.mp4",
-      "poster": "assets/videos/04-arm-curls.jpg"
+      "youtubeId": "8I640AY2j-U",
+      "start": 4,
+      "end": 34,
+      "creator": "Rehab My Patient"
     },
     {
       "id": "v5",
       "title": "Skulderrulninger",
       "category": "bovenlichaam",
       "categoryName": "Overkrop",
-      "duration": "0:25",
+      "duration": "0:30",
       "target": "Skuldre og øvre ryg",
       "badgeColor": "#0d9488",
       "description": "Rul skuldrene i små, rolige cirkler.",
@@ -99,54 +107,60 @@ const APP_DATA = {
         "Gentag nogle cirkler, og skift derefter retning."
       ],
       "tip": "Træk vejret roligt, og hold bevægelsen behagelig.",
-      "durationSeconds": 25,
-      "videoUrl": "assets/videos/05-shoulder-rolls.mp4",
-      "poster": "assets/videos/05-shoulder-rolls.jpg"
+      "durationSeconds": 30,
+      "youtubeId": "XbzY45Z5DE8",
+      "start": 10,
+      "end": 40,
+      "creator": "Vive Health"
     },
     {
       "id": "v6",
-      "title": "Åbn brystet",
+      "title": "Saml skulderbladene",
       "category": "bovenlichaam",
       "categoryName": "Overkrop",
-      "duration": "0:35",
-      "target": "Bryst og øvre ryg",
+      "duration": "0:30",
+      "target": "Skuldre og øvre ryg",
       "badgeColor": "#0d9488",
-      "description": "Før albuerne forsigtigt bagud med hænderne på hofterne.",
+      "description": "Før armene let bagud, og saml skulderbladene.",
       "steps": [
-        "Sid oprejst, og læg hænderne på hofterne.",
-        "Før albuerne roligt bagud, og åbn brystet let.",
-        "Hold kort, og vend tilbage til start."
+        "Sid oprejst med armene afslappede langs siden.",
+        "Drej håndfladerne fremad, og før armene lidt bagud og udad.",
+        "Saml skulderbladene forsigtigt, slap af, og gentag."
       ],
-      "tip": "Hold skuldrene nede og blikket fremad.",
-      "durationSeconds": 35,
-      "videoUrl": "assets/videos/06-chest-opening.mp4",
-      "poster": "assets/videos/06-chest-opening.jpg"
+      "tip": "Hold skuldrene nede, og undgå at svaje kraftigt i ryggen.",
+      "durationSeconds": 30,
+      "youtubeId": "pU5hXD_ll3A",
+      "start": 4,
+      "end": 34,
+      "creator": "Rehab My Patient"
     },
     {
       "id": "v7",
-      "title": "Håndled og fingre",
+      "title": "Cirkler med håndleddene",
       "category": "bovenlichaam",
       "categoryName": "Overkrop",
-      "duration": "0:20",
-      "target": "Håndled og hænder",
+      "duration": "0:26",
+      "target": "Håndled",
       "badgeColor": "#0d9488",
-      "description": "Lav små håndledscirkler, og åbn og luk hænderne.",
+      "description": "Se håndleddets cirkelbevægelse på tæt hold.",
       "steps": [
-        "Hold hænderne afslappet foran kroppen.",
-        "Drej håndleddene roligt i begge retninger.",
-        "Luk hænderne løst, og stræk derefter fingrene."
+        "Hold den ene arm afslappet foran kroppen.",
+        "Lav langsomme cirkler med hånden fra håndleddet.",
+        "Skift retning, og gentag med den anden hånd."
       ],
       "tip": "Undgå at knytte hænderne hårdt.",
-      "durationSeconds": 20,
-      "videoUrl": "assets/videos/07-wrists-fingers.mp4",
-      "poster": "assets/videos/07-wrists-fingers.jpg"
+      "durationSeconds": 26,
+      "youtubeId": "wRSk1_C6yOM",
+      "start": 0,
+      "end": 26,
+      "creator": "Rehab My Patient"
     },
     {
       "id": "v8",
       "title": "Rotation af overkroppen",
       "category": "romp",
       "categoryName": "Krop og holdning",
-      "duration": "0:30",
+      "duration": "0:12",
       "target": "Krop og rygsøjle",
       "badgeColor": "#d97706",
       "description": "Drej overkroppen roligt fra side til side.",
@@ -156,16 +170,18 @@ const APP_DATA = {
         "Vend tilbage til midten, og skift side."
       ],
       "tip": "Hold hofter og knæ rettet fremad.",
-      "durationSeconds": 30,
-      "videoUrl": "assets/videos/08-trunk-rotation.mp4",
-      "poster": "assets/videos/08-trunk-rotation.jpg"
+      "durationSeconds": 12,
+      "youtubeId": "_71vJV2fZng",
+      "start": 0,
+      "end": 12,
+      "creator": "E3 Rehab Exercise Library"
     },
     {
       "id": "v9",
       "title": "Bækkenvip i siddende",
       "category": "romp",
       "categoryName": "Krop og holdning",
-      "duration": "0:30",
+      "duration": "0:12",
       "target": "Bækken og lænd",
       "badgeColor": "#d97706",
       "description": "Vip bækkenet med en lille, blød bevægelse.",
@@ -175,9 +191,11 @@ const APP_DATA = {
         "Vip det derefter forsigtigt bagud."
       ],
       "tip": "Bevæg bækkenet roligt uden at presse ryggen.",
-      "durationSeconds": 30,
-      "videoUrl": "assets/videos/09-pelvic-tilts.mp4",
-      "poster": "assets/videos/09-pelvic-tilts.jpg"
+      "durationSeconds": 12,
+      "youtubeId": "ep5OpYmyCps",
+      "start": 0,
+      "end": 12,
+      "creator": "E3 Rehab Exercise Library"
     },
     {
       "id": "v10",
@@ -195,8 +213,10 @@ const APP_DATA = {
       ],
       "tip": "Hold begge sider af bækkenet på stolen.",
       "durationSeconds": 30,
-      "videoUrl": "assets/videos/10-side-bends.mp4",
-      "poster": "assets/videos/10-side-bends.jpg"
+      "youtubeId": "qBi3bRc4Adw",
+      "start": 4,
+      "end": 34,
+      "creator": "Rehab My Patient"
     },
     {
       "id": "v11",
@@ -212,17 +232,19 @@ const APP_DATA = {
         "Træk hagen forsigtigt vandret bagud.",
         "Hold kort, og vend tilbage til start."
       ],
-      "tip": "Kig ikke ned, og bevæg hovedet uden at tvinge det.",
+      "tip": "En finger på hagen kan bruges som en let rettesnor. Pres ikke hovedet bagud.",
       "durationSeconds": 20,
-      "videoUrl": "assets/videos/11-chin-retraction.mp4",
-      "poster": "assets/videos/11-chin-retraction.jpg"
+      "youtubeId": "IEF6zU9tBpQ",
+      "start": 0,
+      "end": 20,
+      "creator": "Whole Health Partners"
     },
     {
       "id": "v12",
       "title": "Blid sidebøjning af nakken",
       "category": "nek",
       "categoryName": "Nakke og bevægelighed",
-      "duration": "0:25",
+      "duration": "0:27",
       "target": "Nakke",
       "badgeColor": "#6366f1",
       "description": "Bøj hovedet roligt til siden uden at løfte skulderen.",
@@ -232,9 +254,11 @@ const APP_DATA = {
         "Vend tilbage til midten, og skift side."
       ],
       "tip": "Hold skuldrene nede, og træk ikke i hovedet med hånden.",
-      "durationSeconds": 25,
-      "videoUrl": "assets/videos/12-neck-side-bends.mp4",
-      "poster": "assets/videos/12-neck-side-bends.jpg"
+      "durationSeconds": 27,
+      "youtubeId": "PTz8tnICXYQ",
+      "start": 3,
+      "end": 30,
+      "creator": "Rehab My Patient"
     }
   ],
   "books": [
@@ -288,21 +312,17 @@ const APP_DATA = {
   "videoUI": {
     "label": "Videoer",
     "homeTitle": "Videodemonstrationer",
-    "homeText": "12 korte, lydløse øvelser på 20–35 sekunder",
+    "homeText": "12 korte øvelser med rigtige mennesker, uden lyd",
     "heading": "Se bevægelsen, og prøv i dit eget tempo",
-    "intro": "12 korte animerede demonstrationer på 20–35 sekunder. Videoerne har ingen lydspor, tale eller musik. Følg bevægelserne og den skriftlige vejledning.",
+    "intro": "12 korte videoer med rigtige mennesker. Se bevægelsen, læs trinene, og prøv i dit eget tempo. Afspilning uden lyd.",
     "demo": "Demonstration",
     "of": "af",
     "sound": "Uden lyd",
-    "unsupported": "Din browser understøtter ikke denne video.",
-    "open": "Åbn demonstrationen",
     "speed": "Afspilningshastighed",
     "replay": "Start forfra",
     "practice": "Trin for trin",
     "choose": "Vælg en øvelse",
     "tip": "Praktisk tip",
-    "creditsLabel": "Originale animationer",
-    "creditsAdapted": "skabt til dette medlemsområde",
     "loadError": "Videoen kunne ikke indlæses. Opdater siden, eller prøv igen om lidt.",
     "playHint": "Tryk på afspilningsknappen for at begynde.",
     "categories": [
@@ -311,7 +331,27 @@ const APP_DATA = {
       "Krop og holdning",
       "Nakke og bevægelighed"
     ],
-    "overlay": "SIDDENDE ØVELSER",
-    "overlayTip": "Rolige, kontrollerede bevægelser"
+    "eyebrow": "BEVÆGELSE TRIN FOR TRIN",
+    "shortLessons": "øvelser · 12–30 sekunder",
+    "noSound": "Uden lyd",
+    "closeUp": "Rigtige mennesker",
+    "lesson": "Øvelse",
+    "seconds": "sek.",
+    "excerpt": "Videoklip",
+    "play": "Afspil",
+    "pause": "Pause",
+    "watch": "Se bevægelsen",
+    "loading": "Videoen indlæses …",
+    "ready": "Se først bevægelsen. Gentag klippet efter behov.",
+    "playing": "Læg mærke til kropsholdningen og den langsomme bevægelse.",
+    "paused": "Sat på pause. Læs trinene i ro og mag.",
+    "finished": "Klippet er slut. Gentag bevægelsen, eller vælg den næste øvelse.",
+    "next": "Næste øvelse",
+    "first": "Til den første øvelse",
+    "progress": "Klippets forløb",
+    "source": "Videodemonstration",
+    "original": "Se den originale video",
+    "error": "Videoen er ikke tilgængelig lige nu. Prøv igen, eller åbn den originale video.",
+    "note": "Brug en stabil stol uden hjul. Bevæg dig langsomt inden for et behageligt område, og stop ved smerter."
   }
 };

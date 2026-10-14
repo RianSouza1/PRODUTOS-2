@@ -1658,48 +1658,67 @@ html, body {
 a:focus-visible, button:focus-visible { outline:3px solid #38bdf8; outline-offset:4px; }
 @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
 
-/* Short, silent chair-exercise demonstrations. */
-:root { --chair-accent: #7dd3fc; }
+:root { --chair-accent:#7dd3fc; }
+/* Real-person chair-exercise video library. */
+.tab-item { width:33.333%; }
+.chair-eyebrow { color:var(--chair-accent)!important; font-size:.75rem!important; font-weight:600; letter-spacing:.07em; line-height:1.6; margin-bottom:.55rem; }
+.chair-hero-tags,.chair-lesson-tags { display:flex; gap:.55rem; flex-wrap:wrap; margin-top:1rem; }
+.chair-hero-tags span,.chair-lesson-tags span { border:1px solid var(--border-light); border-radius:100px; padding:.35rem .7rem; color:var(--text-muted); background:rgba(255,255,255,.03); font-size:.75rem; line-height:1.5; }
+.chair-lesson-layout { display:grid; gap:1.5rem; align-items:start; }
+.chair-lesson-card { min-width:0; border:1px solid var(--border-light); background:var(--bg-card); border-radius:20px; overflow:hidden; }
+.chair-lesson-heading { padding:1.5rem; }
+.chair-lesson-heading h2 { font-size:1.5rem; line-height:1.4; }
+.chair-video-frame { position:relative; width:100%; aspect-ratio:16/9; min-height:200px; background:#0a1011; }
+.chair-video-frame iframe,.chair-video-frame #chair-player { display:block; width:100%; height:100%; position:absolute; inset:0; border:0; }
+.chair-poster { position:absolute; inset:0; width:100%; height:100%; border:0; padding:0; background:#0a1011; cursor:pointer; color:#fff; font:inherit; }
+.chair-poster img { display:block; width:100%; height:100%; object-fit:contain; }
+.chair-poster::after { content:''; position:absolute; inset:0; background:linear-gradient(0deg,rgba(0,0,0,.65),transparent 65%); }
+.chair-poster-action { position:absolute; z-index:1; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:1rem; text-shadow:0 2px 8px #000; }
+.chair-poster-action svg { width:64px; height:64px; padding:18px; border-radius:50%; background:var(--primary); color:#fff; box-shadow:0 5px 30px rgba(0,0,0,.4); }
+.chair-playback-controls { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; padding:1rem 1.25rem .5rem; }
+.chair-playback-controls button,.chair-ended button,.chair-practice-button { min-height:44px; padding:.65rem .8rem; border:1px solid var(--border-light); border-radius:10px; color:var(--text-dark); background:transparent; font:inherit; font-size:.85rem; cursor:pointer; }
+.chair-playback-controls .chair-play-button,.chair-ended button { background:var(--primary); border-color:var(--primary); color:#fff; }
+.chair-playback-controls button:disabled { opacity:.5; cursor:wait; }
+.chair-speed-buttons { display:flex; gap:.4rem; margin-left:auto; }
+.chair-speed-buttons button[aria-pressed="true"] { background:var(--primary-light); border-color:var(--chair-accent); }
+.chair-progress-wrap { padding:.75rem 1.25rem 1rem; }
+.chair-progress-wrap progress { display:block; width:100%; height:6px; border:0; border-radius:100px; overflow:hidden; accent-color:var(--chair-accent); background:var(--bg-body); }
+.chair-progress-wrap progress::-webkit-progress-bar { background:var(--bg-body); }
+.chair-progress-wrap progress::-webkit-progress-value { background:var(--chair-accent); }
+#chair-status { min-height:2.8em; color:var(--text-muted); font-size:.8rem; line-height:1.5; margin-top:.7rem; }
+.chair-ended { display:flex; flex-wrap:wrap; align-items:center; gap:1rem; margin:0 1.25rem 1.25rem; padding:1rem; border:1px solid var(--border-light); border-radius:12px; background:var(--primary-light); }
+.chair-ended p { flex:1; min-width:180px; font-size:.85rem; line-height:1.6; }
+.chair-lesson-details { padding:1.5rem; border-top:1px solid var(--border-light); }
+.chair-lesson-details>p { color:var(--text-muted); line-height:1.7; font-size:.95rem; }
+.chair-lesson-details h3 { font-size:1.05rem; margin:1.5rem 0 .75rem; }
+.chair-lesson-details ol { padding-left:1.3rem; }
+.chair-lesson-details li { font-size:.9rem; line-height:1.7; padding:.25rem 0 .25rem .25rem; }
+.chair-lesson-details .chair-tip { padding:1rem; background:var(--bg-body); border-radius:10px; font-size:.85rem; margin:1.25rem 0; }
+.chair-practice-button.done { border-color:var(--chair-accent); background:var(--primary-light); }
+.chair-lesson-details .chair-source { font-size:.72rem; line-height:1.6; margin-top:1.25rem; }
+.chair-source a { color:var(--chair-accent); }
+.chair-library { min-width:0; }
+.chair-library-heading { margin-bottom:1rem; }
+.chair-library-heading h2 { font-size:1.15rem; line-height:1.5; }
+.chair-library-heading p { color:var(--text-muted); font-size:.8rem; margin-top:.35rem; }
+.chair-lesson-list { display:grid; gap:.65rem; }
+.chair-lesson-choice { display:flex; align-items:center; width:100%; gap:.8rem; border:1px solid var(--border-light); border-radius:12px; background:var(--bg-card); padding:.75rem; color:var(--text-dark); text-align:left; font:inherit; cursor:pointer; }
+.chair-lesson-choice.selected { background:#213043; border-color:var(--chair-accent); }
+.chair-lesson-choice img { width:80px; height:60px; object-fit:contain; border-radius:8px; flex-shrink:0; }
+.chair-choice-copy { flex:1; min-width:0; display:flex; flex-direction:column; gap:.2rem; }
+.chair-choice-copy strong { font-size:.88rem; line-height:1.35; }
+.chair-choice-copy>span { font-size:.7rem; color:var(--text-muted); line-height:1.4; }
+.chair-choice-copy .chair-choice-number { color:var(--chair-accent); }
+.chair-lesson-choice>svg { width:18px; height:18px; color:var(--chair-accent); flex-shrink:0; }
+.chair-library-note { font-size:.75rem; color:var(--text-muted); line-height:1.7; margin-top:1.5rem; }
+@media (min-width:760px) { .chair-lesson-layout { grid-template-columns:minmax(0,1.65fr) minmax(250px,1fr); } .chair-library { position:sticky; top:0; } .chair-lesson-list { max-height:calc(100dvh - 240px); overflow-y:auto; padding:2px 6px 2px 2px; } }
+@media (min-width:1024px) { .tab-item { width:calc(100% - 2rem); } }
+@media (max-width:400px) { .chair-playback-controls { padding:1rem .75rem .5rem; } .chair-speed-buttons { margin-left:0; } .chair-lesson-choice img { width:60px; height:50px; } }
+@media (max-width:759px) { .chair-videos-view .hero-card { padding:1.5rem; margin-bottom:1.25rem; } .chair-videos-view .hero-text h1 { font-size:1.6rem; } .chair-videos-view .chair-eyebrow { font-size:.7rem!important; letter-spacing:.04em; } .chair-lesson-heading { padding:1.25rem; } .chair-lesson-heading h2 { font-size:1.3rem; } }
 
-.chair-lesson-card { border: 1px solid var(--border-light); border-radius: 20px; background: var(--bg-card); overflow: hidden; margin-bottom: 2.5rem; }
-.chair-lesson-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.5rem; flex-wrap: wrap; }
-.chair-lesson-eyebrow { color: var(--chair-accent); font-size: .78rem; margin-bottom: .5rem; line-height: 1.5; }
-.chair-lesson-heading h2 { font-size: 1.35rem; line-height: 1.4; }
-.chair-lesson-badge { display: inline-block; background: var(--primary-light); border: 1px solid var(--border-light); color: var(--text-muted); border-radius: 100px; padding: .5rem .75rem; font-size: .78rem; line-height: 1.4; }
-.chair-demo-player { display: block; width: 100%; aspect-ratio: 16 / 9; background: #0d141c; object-fit: contain; }
-.chair-playback-tools { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-light); }
-.chair-speed-tools { display: flex; align-items: center; gap: .5rem; }
-.chair-speed-tools > span { font-size: .9rem; color: var(--text-muted); margin-right: .25rem; }
-.chair-playback-tools button { min-height: 44px; padding: .65rem .85rem; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font: inherit; font-size: .9rem; color: var(--text-dark); background: transparent; border: 1px solid var(--border-light); border-radius: 10px; cursor: pointer; }
-.chair-playback-tools button[aria-pressed="true"] { background: var(--secondary); border-color: var(--secondary); }
-.chair-playback-tools svg { width: 18px; height: 18px; }
-.chair-lesson-details { padding: 1.5rem; }
-.chair-lesson-details p { color: var(--text-muted); font-size: .95rem; line-height: 1.7; }
-.chair-lesson-details h3 { margin-top: 1.5rem; font-size: 1.05rem; }
-.chair-lesson-details ol { padding-left: 1.4rem; margin-top: .75rem; }
-.chair-lesson-details li { font-size: .95rem; line-height: 1.7; padding: .25rem 0 .25rem .25rem; }
-.chair-lesson-details .chair-guide-note { font-size: .8rem; padding-top: 1rem; margin-top: 1rem; border-top: 1px solid var(--border-light); }
-.chair-player-status { padding: 1rem 1.5rem; color: var(--chair-accent); line-height: 1.5; }
-.chair-lesson-library h2 { font-size: 1.25rem; margin-bottom: 1rem; }
-.chair-lesson-list { display: grid; grid-template-columns: 1fr; gap: .75rem; }
-.chair-lesson-choice { display: flex; width: 100%; align-items: center; text-align: left; gap: 1rem; min-height: 88px; padding: 1rem; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 14px; color: var(--text-dark); font: inherit; cursor: pointer; }
-.chair-lesson-choice.selected { border-color: var(--chair-accent); background: #213043; }
-.chair-lesson-number { color: var(--chair-accent); font-size: 1.2rem; font-weight: 700; }
-.chair-lesson-choice-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .3rem; }
-.chair-lesson-choice-text strong { font-size: .95rem; line-height: 1.4; }
-.chair-lesson-choice-text > span { font-size: .78rem; color: var(--text-muted); }
-.chair-lesson-choice svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--chair-accent); }
-.chair-sound-credits { color: var(--text-muted); font-size: .75rem; line-height: 1.7; margin-top: 1.5rem; }
-.chair-sound-credits a { color: var(--chair-accent); }
-@media (min-width: 768px) { .chair-lesson-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-
-.chair-player-status[hidden] { display: none; }
-.chair-videos-view { overflow-wrap: anywhere; }
-.chair-videos-view button:focus-visible { outline: 3px solid var(--chair-accent); outline-offset: 4px; }
-.tab-item { width: 33.333333%; }
-@media (max-width: 600px) {
-    .chair-lesson-heading, .chair-lesson-details, .chair-playback-tools { padding: 1rem; }
-    .chair-speed-tools { flex-wrap: wrap; }
-    .chair-speed-tools > span { flex-basis: 100%; }
-}
-@media (min-width: 1024px) { .tab-item { width: calc(100% - 2rem); } }
+.chair-videos-view [hidden] { display:none!important; }
+.chair-videos-view { overflow-wrap:anywhere; }
+.chair-lesson-layout>* { min-width:0; }
+.chair-lesson-choice img { background:#fff; }
+.chair-poster { background:#fff; }
+.chair-source a { overflow-wrap:anywhere; }

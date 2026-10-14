@@ -1,4 +1,4 @@
-/* Chair exercises — localized silent demonstrations. */
+/* Chair exercises — short real-person demonstrations. */
 const APP_DATA = {
   "config": {
     "brandName": "Stuhlübungen für Senioren",
@@ -13,7 +13,7 @@ const APP_DATA = {
       "title": "Knieheben im Sitzen",
       "category": "benen",
       "categoryName": "Beine und Hüften",
-      "duration": "0:30",
+      "duration": "0:14",
       "target": "Oberschenkel und Hüften",
       "badgeColor": "#0284c7",
       "description": "Eine einfache Bewegung zum kontrollierten Anheben der Knie im Sitzen.",
@@ -23,35 +23,39 @@ const APP_DATA = {
         "Senken Sie das Bein kontrolliert ab und wechseln Sie die Seite."
       ],
       "tip": "Bleiben Sie aufrecht und vermeiden Sie ruckartige Bewegungen.",
-      "durationSeconds": 30,
-      "videoUrl": "assets/videos/01-knee-lifts.mp4",
-      "poster": "assets/videos/01-knee-lifts.jpg"
+      "durationSeconds": 14,
+      "youtubeId": "Q2fsp3p0Buc",
+      "start": 0,
+      "end": 14,
+      "creator": "HEP2go Inc"
     },
     {
       "id": "v2",
-      "title": "Fersenheben und Fußbewegungen",
+      "title": "Fersenheben im Sitzen",
       "category": "benen",
       "categoryName": "Beine und Hüften",
       "duration": "0:25",
       "target": "Waden und Sprunggelenke",
       "badgeColor": "#0284c7",
-      "description": "Bewegen Sie Füße und Sprunggelenke in einer ruhigen Sitzposition.",
+      "description": "Heben und senken Sie die Fersen, während die Zehen auf dem Boden bleiben.",
       "steps": [
-        "Stellen Sie beide Füße unter die Knie.",
-        "Heben Sie die Fersen an und lassen Sie die Zehen auf dem Boden.",
-        "Senken Sie die Fersen und heben Sie anschließend die Zehen an."
+        "Sitzen Sie aufrecht mit beiden Füßen unter den Knien.",
+        "Drücken Sie den Vorderfuß sanft in den Boden und heben Sie die Fersen an.",
+        "Senken Sie die Fersen langsam wieder ab und wiederholen Sie die Bewegung."
       ],
       "tip": "Führen Sie die Bewegung langsam und ohne starken Druck aus.",
       "durationSeconds": 25,
-      "videoUrl": "assets/videos/02-heel-toe-lifts.mp4",
-      "poster": "assets/videos/02-heel-toe-lifts.jpg"
+      "youtubeId": "HYYi5jYGZ70",
+      "start": 3,
+      "end": 28,
+      "creator": "OrthoIndy"
     },
     {
       "id": "v3",
       "title": "Seitliches Öffnen der Beine",
       "category": "benen",
       "categoryName": "Beine und Hüften",
-      "duration": "0:30",
+      "duration": "0:20",
       "target": "Hüften und Oberschenkel",
       "badgeColor": "#0284c7",
       "description": "Bewegen Sie ein Bein zur Seite, während der Oberkörper ruhig bleibt.",
@@ -61,9 +65,11 @@ const APP_DATA = {
         "Führen Sie den Fuß zurück zur Mitte und wechseln Sie die Seite."
       ],
       "tip": "Halten Sie den Oberkörper und das andere Bein stabil.",
-      "durationSeconds": 30,
-      "videoUrl": "assets/videos/03-side-taps.mp4",
-      "poster": "assets/videos/03-side-taps.jpg"
+      "durationSeconds": 20,
+      "youtubeId": "oN9yENov8kE",
+      "start": 0,
+      "end": 20,
+      "creator": "HEP2go Inc"
     },
     {
       "id": "v4",
@@ -73,23 +79,25 @@ const APP_DATA = {
       "duration": "0:30",
       "target": "Oberarme und Unterarme",
       "badgeColor": "#0d9488",
-      "description": "Beugen und strecken Sie die Ellenbogen mit kontrollierten Bewegungen.",
+      "description": "Sehen Sie, wie die Ellenbogen im Sitzen langsam gebeugt und wieder gestreckt werden.",
       "steps": [
-        "Lassen Sie die Arme seitlich hängen, die Handflächen zeigen nach vorne.",
-        "Beugen Sie die Ellenbogen und führen Sie die Hände Richtung Schultern.",
-        "Senken Sie die Unterarme langsam wieder ab."
+        "Sitzen Sie aufrecht und halten Sie die Oberarme nah am Körper.",
+        "Beugen Sie einen Ellenbogen und führen Sie die Hand Richtung Schulter.",
+        "Senken Sie die Hand langsam ab und wiederholen Sie die Bewegung mit dem anderen Arm."
       ],
-      "tip": "Halten Sie die Ellenbogen nah am Körper.",
+      "tip": "Das Video zeigt leichte Hanteln. Zum Kennenlernen können Sie die Bewegung ohne Zusatzgewicht üben.",
       "durationSeconds": 30,
-      "videoUrl": "assets/videos/04-arm-curls.mp4",
-      "poster": "assets/videos/04-arm-curls.jpg"
+      "youtubeId": "8I640AY2j-U",
+      "start": 4,
+      "end": 34,
+      "creator": "Rehab My Patient"
     },
     {
       "id": "v5",
       "title": "Schulterkreisen",
       "category": "bovenlichaam",
       "categoryName": "Oberkörper",
-      "duration": "0:25",
+      "duration": "0:30",
       "target": "Schultern und oberer Rücken",
       "badgeColor": "#0d9488",
       "description": "Bewegen Sie die Schultern mit kleinen, ruhigen Kreisen.",
@@ -99,54 +107,60 @@ const APP_DATA = {
         "Wiederholen Sie einige Kreise und wechseln Sie dann die Richtung."
       ],
       "tip": "Atmen Sie ruhig und halten Sie den Bewegungsumfang angenehm.",
-      "durationSeconds": 25,
-      "videoUrl": "assets/videos/05-shoulder-rolls.mp4",
-      "poster": "assets/videos/05-shoulder-rolls.jpg"
+      "durationSeconds": 30,
+      "youtubeId": "XbzY45Z5DE8",
+      "start": 10,
+      "end": 40,
+      "creator": "Vive Health"
     },
     {
       "id": "v6",
-      "title": "Brust öffnen und oberen Rücken bewegen",
+      "title": "Schulterblätter zusammenführen",
       "category": "bovenlichaam",
       "categoryName": "Oberkörper",
-      "duration": "0:35",
-      "target": "Brust und oberer Rücken",
+      "duration": "0:30",
+      "target": "Schultern und oberer Rücken",
       "badgeColor": "#0d9488",
-      "description": "Öffnen Sie die Arme in einem angenehmen Bewegungsbereich.",
+      "description": "Ziehen Sie die Arme leicht nach hinten und führen Sie die Schulterblätter zusammen.",
       "steps": [
-        "Sitzen Sie aufrecht und legen Sie die Hände auf die Hüften.",
-        "Führen Sie die Ellenbogen sanft nach hinten und öffnen Sie den Brustkorb leicht.",
-        "Halten Sie kurz inne und kehren Sie zur Ausgangsposition zurück."
+        "Sitzen Sie aufrecht und lassen Sie die Arme seitlich locker hängen.",
+        "Drehen Sie die Handflächen nach vorne und bewegen Sie die Arme leicht nach hinten und außen.",
+        "Führen Sie die Schulterblätter sanft zusammen, lösen Sie die Spannung und wiederholen Sie."
       ],
-      "tip": "Halten Sie den Blick nach vorne und überstrecken Sie den Nacken nicht.",
-      "durationSeconds": 35,
-      "videoUrl": "assets/videos/06-chest-opening.mp4",
-      "poster": "assets/videos/06-chest-opening.jpg"
+      "tip": "Halten Sie die Schultern unten und vermeiden Sie ein starkes Hohlkreuz.",
+      "durationSeconds": 30,
+      "youtubeId": "pU5hXD_ll3A",
+      "start": 4,
+      "end": 34,
+      "creator": "Rehab My Patient"
     },
     {
       "id": "v7",
-      "title": "Handgelenke und Finger bewegen",
+      "title": "Handgelenke kreisen",
       "category": "bovenlichaam",
       "categoryName": "Oberkörper",
-      "duration": "0:20",
-      "target": "Handgelenke und Hände",
+      "duration": "0:26",
+      "target": "Handgelenke",
       "badgeColor": "#0d9488",
-      "description": "Kombinieren Sie kleine Handgelenkskreise mit dem Öffnen der Hände.",
+      "description": "Sehen Sie die kreisende Bewegung der Handgelenke aus der Nähe.",
       "steps": [
-        "Halten Sie die Arme locker vor dem Körper.",
-        "Kreisen Sie langsam mit den Handgelenken in beide Richtungen.",
-        "Schließen Sie die Hände locker und öffnen Sie anschließend die Finger."
+        "Halten Sie einen Arm entspannt vor dem Körper.",
+        "Kreisen Sie langsam mit der Hand aus dem Handgelenk.",
+        "Wechseln Sie die Richtung und wiederholen Sie mit der anderen Hand."
       ],
       "tip": "Bewegen Sie die Hände ohne übermäßigen Druck.",
-      "durationSeconds": 20,
-      "videoUrl": "assets/videos/07-wrists-fingers.mp4",
-      "poster": "assets/videos/07-wrists-fingers.jpg"
+      "durationSeconds": 26,
+      "youtubeId": "wRSk1_C6yOM",
+      "start": 0,
+      "end": 26,
+      "creator": "Rehab My Patient"
     },
     {
       "id": "v8",
       "title": "Rumpfdrehung im Sitzen",
       "category": "romp",
       "categoryName": "Rumpf und Haltung",
-      "duration": "0:30",
+      "duration": "0:12",
       "target": "Rumpf und Wirbelsäule",
       "badgeColor": "#d97706",
       "description": "Drehen Sie den Oberkörper langsam zu beiden Seiten.",
@@ -156,16 +170,18 @@ const APP_DATA = {
         "Kehren Sie zur Mitte zurück und wiederholen Sie die Bewegung nach links."
       ],
       "tip": "Hüften und Knie bleiben nach vorne ausgerichtet.",
-      "durationSeconds": 30,
-      "videoUrl": "assets/videos/08-trunk-rotation.mp4",
-      "poster": "assets/videos/08-trunk-rotation.jpg"
+      "durationSeconds": 12,
+      "youtubeId": "_71vJV2fZng",
+      "start": 0,
+      "end": 12,
+      "creator": "E3 Rehab Exercise Library"
     },
     {
       "id": "v9",
       "title": "Beckenkippen im Sitzen",
       "category": "romp",
       "categoryName": "Rumpf und Haltung",
-      "duration": "0:30",
+      "duration": "0:12",
       "target": "Becken und unterer Rücken",
       "badgeColor": "#d97706",
       "description": "Kippen Sie das Becken mit einer kleinen, sanften Bewegung.",
@@ -175,9 +191,11 @@ const APP_DATA = {
         "Kippen Sie es anschließend behutsam nach hinten."
       ],
       "tip": "Bleiben Sie in einem angenehmen Bewegungsbereich und erzwingen Sie nichts.",
-      "durationSeconds": 30,
-      "videoUrl": "assets/videos/09-pelvic-tilts.mp4",
-      "poster": "assets/videos/09-pelvic-tilts.jpg"
+      "durationSeconds": 12,
+      "youtubeId": "ep5OpYmyCps",
+      "start": 0,
+      "end": 12,
+      "creator": "E3 Rehab Exercise Library"
     },
     {
       "id": "v10",
@@ -195,8 +213,10 @@ const APP_DATA = {
       ],
       "tip": "Bleiben Sie mit beiden Seiten des Beckens auf dem Stuhl.",
       "durationSeconds": 30,
-      "videoUrl": "assets/videos/10-side-bends.mp4",
-      "poster": "assets/videos/10-side-bends.jpg"
+      "youtubeId": "qBi3bRc4Adw",
+      "start": 4,
+      "end": 34,
+      "creator": "Rehab My Patient"
     },
     {
       "id": "v11",
@@ -212,17 +232,19 @@ const APP_DATA = {
         "Ziehen Sie das Kinn sanft waagerecht nach hinten.",
         "Halten Sie kurz inne und kehren Sie in die Ausgangsposition zurück."
       ],
-      "tip": "Halten Sie den Blick auf gleicher Höhe.",
+      "tip": "Ein Finger am Kinn kann als leichte Orientierung dienen. Drücken Sie den Kopf nicht nach hinten.",
       "durationSeconds": 20,
-      "videoUrl": "assets/videos/11-chin-retraction.mp4",
-      "poster": "assets/videos/11-chin-retraction.jpg"
+      "youtubeId": "IEF6zU9tBpQ",
+      "start": 0,
+      "end": 20,
+      "creator": "Whole Health Partners"
     },
     {
       "id": "v12",
       "title": "Sanfte seitliche Nackenbewegung",
       "category": "nek",
       "categoryName": "Nacken und Beweglichkeit",
-      "duration": "0:25",
+      "duration": "0:27",
       "target": "Nacken",
       "badgeColor": "#6366f1",
       "description": "Neigen Sie den Kopf sanft zur Seite, ohne die Schulter anzuheben.",
@@ -232,9 +254,11 @@ const APP_DATA = {
         "Kehren Sie zur Mitte zurück und wechseln Sie die Seite."
       ],
       "tip": "Halten Sie die Schultern unten und ziehen Sie nicht mit der Hand am Kopf.",
-      "durationSeconds": 25,
-      "videoUrl": "assets/videos/12-neck-side-bends.mp4",
-      "poster": "assets/videos/12-neck-side-bends.jpg"
+      "durationSeconds": 27,
+      "youtubeId": "PTz8tnICXYQ",
+      "start": 3,
+      "end": 30,
+      "creator": "Rehab My Patient"
     }
   ],
   "books": [
@@ -288,21 +312,17 @@ const APP_DATA = {
   "videoUI": {
     "label": "Videos",
     "homeTitle": "Videodemonstrationen",
-    "homeText": "12 kurze Übungen ohne Ton, jeweils 20–35 Sekunden",
+    "homeText": "12 kurze Übungen mit echten Personen, ohne Ton",
     "heading": "Bewegung ansehen und in Ruhe ausprobieren",
-    "intro": "12 kurze animierte Demonstrationen von 20–35 Sekunden. Die Videos haben keine Tonspur, keine Sprache und keine Musik. Folgen Sie den Bewegungen und der schriftlichen Anleitung.",
+    "intro": "12 kurze Videos mit echten Personen. Sehen Sie sich die Bewegung an, lesen Sie die Schritte und probieren Sie sie in Ihrem eigenen Tempo. Wiedergabe ohne Ton.",
     "demo": "Demonstration",
     "of": "von",
     "sound": "Ohne Ton",
-    "unsupported": "Ihr Browser unterstützt dieses Video nicht.",
-    "open": "Demonstration öffnen",
     "speed": "Wiedergabegeschwindigkeit",
     "replay": "Neu starten",
     "practice": "Schritt für Schritt",
     "choose": "Wählen Sie eine Übung",
     "tip": "Praktischer Hinweis",
-    "creditsLabel": "Originalanimationen",
-    "creditsAdapted": "für diesen Mitgliederbereich erstellt",
     "loadError": "Das Video konnte nicht geladen werden. Laden Sie die Seite neu oder versuchen Sie es gleich noch einmal.",
     "playHint": "Drücken Sie die Wiedergabetaste, um zu beginnen.",
     "categories": [
@@ -311,7 +331,27 @@ const APP_DATA = {
       "Rumpf und Haltung",
       "Nacken und Beweglichkeit"
     ],
-    "overlay": "STUHLÜBUNGEN",
-    "overlayTip": "Ruhige, kontrollierte Bewegungen"
+    "eyebrow": "BEWEGUNG SCHRITT FÜR SCHRITT",
+    "shortLessons": "Übungen · 12–30 Sekunden",
+    "noSound": "Ohne Ton",
+    "closeUp": "Echte Personen",
+    "lesson": "Übung",
+    "seconds": "Sek.",
+    "excerpt": "Videoausschnitt",
+    "play": "Abspielen",
+    "pause": "Pause",
+    "watch": "Bewegung ansehen",
+    "loading": "Das Video wird geladen …",
+    "ready": "Sehen Sie zuerst die Bewegung an. Wiederholen Sie den Ausschnitt bei Bedarf.",
+    "playing": "Achten Sie auf die Haltung und den langsamen Bewegungsablauf.",
+    "paused": "Pausiert. Sie können in Ruhe die Schritte lesen.",
+    "finished": "Ausschnitt beendet. Wiederholen Sie die Bewegung oder wählen Sie die nächste Übung.",
+    "next": "Nächste Übung",
+    "first": "Zur ersten Übung",
+    "progress": "Fortschritt des Ausschnitts",
+    "source": "Videodemonstration",
+    "original": "Originalvideo ansehen",
+    "error": "Das Video ist gerade nicht verfügbar. Versuchen Sie es erneut oder öffnen Sie das Originalvideo.",
+    "note": "Nutzen Sie einen stabilen Stuhl ohne Rollen. Bewegen Sie sich langsam in einem angenehmen Bereich und hören Sie bei Schmerzen auf."
   }
 };

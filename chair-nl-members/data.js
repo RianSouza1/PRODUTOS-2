@@ -1,4 +1,4 @@
-/* Chair exercises — localized silent demonstrations. */
+/* Chair exercises — short real-person demonstrations. */
 const APP_DATA = {
   "config": {
     "brandName": "Stoelgymnastiek voor Senioren",
@@ -13,7 +13,7 @@ const APP_DATA = {
       "title": "Zittende Knieheffing",
       "category": "benen",
       "categoryName": "Benen en heupen",
-      "duration": "0:30",
+      "duration": "0:14",
       "target": "Quadriceps & Heupbuigers",
       "badgeColor": "#0284c7",
       "description": "Til de knieën beurtelings op met een rustige beweging.",
@@ -23,35 +23,39 @@ const APP_DATA = {
         "Laat het been rustig zakken en wissel van kant."
       ],
       "tip": "Houd de rug lang en de buikspieren licht aangespannen. Vermijd schokkerige bewegingen.",
-      "durationSeconds": 30,
-      "videoUrl": "assets/videos/01-knee-lifts.mp4",
-      "poster": "assets/videos/01-knee-lifts.jpg"
+      "durationSeconds": 14,
+      "youtubeId": "Q2fsp3p0Buc",
+      "start": 0,
+      "end": 14,
+      "creator": "HEP2go Inc"
     },
     {
       "id": "v2",
-      "title": "Kuitheffen & Enkelpompen",
+      "title": "Hielen heffen in zit",
       "category": "benen",
       "categoryName": "Benen en heupen",
       "duration": "0:25",
       "target": "Kuitspieren & Enkelmobiliteit",
       "badgeColor": "#0284c7",
-      "description": "Beweeg de voeten en enkels terwijl u stabiel zit.",
+      "description": "Til uw hielen op en laat ze zakken terwijl uw tenen op de vloer blijven.",
       "steps": [
-        "Plaats beide voeten onder de knieën.",
-        "Til de hielen op terwijl de tenen op de vloer blijven.",
-        "Laat de hielen zakken en til daarna de tenen op."
+        "Zit rechtop met beide voeten onder uw knieën.",
+        "Druk de voorvoeten licht in de vloer en til uw hielen op.",
+        "Laat de hielen langzaam zakken en herhaal de beweging."
       ],
       "tip": "Ideaal om ook tussendoor tijdens het zitten te herhalen om stijve benen te voorkomen.",
       "durationSeconds": 25,
-      "videoUrl": "assets/videos/02-heel-toe-lifts.mp4",
-      "poster": "assets/videos/02-heel-toe-lifts.jpg"
+      "youtubeId": "HYYi5jYGZ70",
+      "start": 3,
+      "end": 28,
+      "creator": "OrthoIndy"
     },
     {
       "id": "v3",
       "title": "Beenspreiding & Sluiting",
       "category": "benen",
       "categoryName": "Benen en heupen",
-      "duration": "0:30",
+      "duration": "0:20",
       "target": "Buitenste Heupspieren & Dijbenen",
       "badgeColor": "#0284c7",
       "description": "Beweeg één been opzij terwijl de romp stil blijft.",
@@ -61,35 +65,39 @@ const APP_DATA = {
         "Breng de voet terug naar het midden en wissel van kant."
       ],
       "tip": "Beweeg alleen het been; houd het bovenlichaam en de andere knie stabiel in het midden.",
-      "durationSeconds": 30,
-      "videoUrl": "assets/videos/03-side-taps.mp4",
-      "poster": "assets/videos/03-side-taps.jpg"
+      "durationSeconds": 20,
+      "youtubeId": "oN9yENov8kE",
+      "start": 0,
+      "end": 20,
+      "creator": "HEP2go Inc"
     },
     {
       "id": "v4",
-      "title": "Bicep Curls Zittend",
+      "title": "Armen buigen in zit",
       "category": "bovenlichaam",
       "categoryName": "Bovenlichaam",
       "duration": "0:30",
       "target": "Biceps & Onderarmspieren",
       "badgeColor": "#0d9488",
-      "description": "Buig en strek de ellebogen met rustige bewegingen.",
+      "description": "Bekijk hoe u de ellebogen in zit langzaam buigt en weer strekt.",
       "steps": [
-        "Laat de armen langs het lichaam hangen met de handpalmen naar voren.",
-        "Buig de ellebogen en breng de handen richting de schouders.",
-        "Laat de onderarmen langzaam weer zakken."
+        "Zit rechtop en houd de bovenarmen dicht bij uw lichaam.",
+        "Buig één elleboog en breng de hand naar uw schouder.",
+        "Laat de hand langzaam zakken en herhaal met de andere arm."
       ],
-      "tip": "Houd de ellebogen dicht bij de zij en beweeg uitsluitend de onderarmen.",
+      "tip": "De video toont lichte halters. U kunt de beweging eerst zonder extra gewicht oefenen.",
       "durationSeconds": 30,
-      "videoUrl": "assets/videos/04-arm-curls.mp4",
-      "poster": "assets/videos/04-arm-curls.jpg"
+      "youtubeId": "8I640AY2j-U",
+      "start": 4,
+      "end": 34,
+      "creator": "Rehab My Patient"
     },
     {
       "id": "v5",
       "title": "Schouderrollen & Mobiliteit",
       "category": "bovenlichaam",
       "categoryName": "Bovenlichaam",
-      "duration": "0:25",
+      "duration": "0:30",
       "target": "Schouders & Nek-Trapezius",
       "badgeColor": "#0d9488",
       "description": "Rol de schouders in kleine, rustige cirkels.",
@@ -99,54 +107,60 @@ const APP_DATA = {
         "Herhaal een paar cirkels en wissel daarna van richting."
       ],
       "tip": "Adem diep in wanneer de schouders omhoog gaan en adem rustig uit bij het laten zakken.",
-      "durationSeconds": 25,
-      "videoUrl": "assets/videos/05-shoulder-rolls.mp4",
-      "poster": "assets/videos/05-shoulder-rolls.jpg"
+      "durationSeconds": 30,
+      "youtubeId": "XbzY45Z5DE8",
+      "start": 10,
+      "end": 40,
+      "creator": "Vive Health"
     },
     {
       "id": "v6",
-      "title": "Borst Openen & Bovenrug Strekken",
+      "title": "Schouderbladen naar elkaar toe bewegen",
       "category": "bovenlichaam",
       "categoryName": "Bovenlichaam",
-      "duration": "0:35",
-      "target": "Borstkas & Tussenribspieren",
+      "duration": "0:30",
+      "target": "Schouders en bovenrug",
       "badgeColor": "#0d9488",
-      "description": "Breng de ellebogen zachtjes naar achteren met de handen op de heupen.",
+      "description": "Beweeg de armen iets naar achteren en breng de schouderbladen naar elkaar toe.",
       "steps": [
-        "Zit rechtop en leg de handen op de heupen.",
-        "Breng de ellebogen zachtjes naar achteren en open de borstkas licht.",
-        "Houd kort vast en keer terug naar de beginpositie."
+        "Zit rechtop met uw armen ontspannen langs uw lichaam.",
+        "Draai de handpalmen naar voren en beweeg de armen iets naar achteren en opzij.",
+        "Breng de schouderbladen rustig naar elkaar toe, ontspan en herhaal."
       ],
-      "tip": "Strek de nek niet te ver naar achteren; houd de kin horizontaal en de blik naar voren.",
-      "durationSeconds": 35,
-      "videoUrl": "assets/videos/06-chest-opening.mp4",
-      "poster": "assets/videos/06-chest-opening.jpg"
+      "tip": "Houd de schouders laag en maak de onderrug niet overdreven hol.",
+      "durationSeconds": 30,
+      "youtubeId": "pU5hXD_ll3A",
+      "start": 4,
+      "end": 34,
+      "creator": "Rehab My Patient"
     },
     {
       "id": "v7",
-      "title": "Polscirkels & Vingergrijpkracht",
+      "title": "Polscirkels",
       "category": "bovenlichaam",
       "categoryName": "Bovenlichaam",
-      "duration": "0:20",
-      "target": "Polsgewrichten & Handkracht",
+      "duration": "0:26",
+      "target": "Polsen",
       "badgeColor": "#0d9488",
-      "description": "Maak kleine polscirkels en open en sluit de handen.",
+      "description": "Bekijk de cirkelbeweging van de pols van dichtbij.",
       "steps": [
-        "Houd de handen ontspannen voor het lichaam.",
-        "Draai kleine, rustige cirkels met de polsen in beide richtingen.",
-        "Sluit de handen losjes en strek vervolgens de vingers."
+        "Houd één arm ontspannen voor uw lichaam.",
+        "Maak langzaam cirkels met de hand vanuit de pols.",
+        "Wissel van richting en herhaal met de andere hand."
       ],
       "tip": "Maak de beweging rustig en zet geen kracht.",
-      "durationSeconds": 20,
-      "videoUrl": "assets/videos/07-wrists-fingers.mp4",
-      "poster": "assets/videos/07-wrists-fingers.jpg"
+      "durationSeconds": 26,
+      "youtubeId": "wRSk1_C6yOM",
+      "start": 0,
+      "end": 26,
+      "creator": "Rehab My Patient"
     },
     {
       "id": "v8",
       "title": "Zittende Romprotatie",
       "category": "romp",
       "categoryName": "Romp en houding",
-      "duration": "0:30",
+      "duration": "0:12",
       "target": "Schuine Buikspieren & Wervelkolom",
       "badgeColor": "#d97706",
       "description": "Draai het bovenlichaam rustig van links naar rechts.",
@@ -156,16 +170,18 @@ const APP_DATA = {
         "Keer terug naar het midden en wissel van kant."
       ],
       "tip": "Houd de heupen en knieën recht naar voren; laat alleen het bovenlichaam soepel draaien.",
-      "durationSeconds": 30,
-      "videoUrl": "assets/videos/08-trunk-rotation.mp4",
-      "poster": "assets/videos/08-trunk-rotation.jpg"
+      "durationSeconds": 12,
+      "youtubeId": "_71vJV2fZng",
+      "start": 0,
+      "end": 12,
+      "creator": "E3 Rehab Exercise Library"
     },
     {
       "id": "v9",
       "title": "Bekkenkanteling & Houdingscontrole",
       "category": "romp",
       "categoryName": "Romp en houding",
-      "duration": "0:30",
+      "duration": "0:12",
       "target": "Diepe Romp & Onderrug",
       "badgeColor": "#d97706",
       "description": "Kantel het bekken met een kleine, zachte beweging.",
@@ -175,9 +191,11 @@ const APP_DATA = {
         "Kantel het daarna voorzichtig naar achteren."
       ],
       "tip": "Maak een vloeiende, zachte golfbeweging zonder forceren in de rug.",
-      "durationSeconds": 30,
-      "videoUrl": "assets/videos/09-pelvic-tilts.mp4",
-      "poster": "assets/videos/09-pelvic-tilts.jpg"
+      "durationSeconds": 12,
+      "youtubeId": "ep5OpYmyCps",
+      "start": 0,
+      "end": 12,
+      "creator": "E3 Rehab Exercise Library"
     },
     {
       "id": "v10",
@@ -195,8 +213,10 @@ const APP_DATA = {
       ],
       "tip": "Blijf met beide zitbotten stevig op de stoel; leun niet naar voren of naar achteren.",
       "durationSeconds": 30,
-      "videoUrl": "assets/videos/10-side-bends.mp4",
-      "poster": "assets/videos/10-side-bends.jpg"
+      "youtubeId": "qBi3bRc4Adw",
+      "start": 4,
+      "end": 34,
+      "creator": "Rehab My Patient"
     },
     {
       "id": "v11",
@@ -212,17 +232,19 @@ const APP_DATA = {
         "Trek de kin zachtjes horizontaal naar achteren.",
         "Houd kort vast en keer terug naar de beginpositie."
       ],
-      "tip": "Kijk niet naar beneden tijdens het intrekken van de kin; houd de ooghoogte gelijk.",
+      "tip": "Een vinger tegen de kin kan als lichte aanwijzing dienen. Duw het hoofd niet naar achteren.",
       "durationSeconds": 20,
-      "videoUrl": "assets/videos/11-chin-retraction.mp4",
-      "poster": "assets/videos/11-chin-retraction.jpg"
+      "youtubeId": "IEF6zU9tBpQ",
+      "start": 0,
+      "end": 20,
+      "creator": "Whole Health Partners"
     },
     {
       "id": "v12",
       "title": "Zachte Zijwaartse Nekrek",
       "category": "nek",
       "categoryName": "Nek en mobiliteit",
-      "duration": "0:25",
+      "duration": "0:27",
       "target": "Nekspieren & Hals",
       "badgeColor": "#6366f1",
       "description": "Buig het hoofd rustig opzij zonder de schouder op te trekken.",
@@ -232,9 +254,11 @@ const APP_DATA = {
         "Houd kort vast, keer terug naar het midden en wissel van kant."
       ],
       "tip": "Til de schouder niet op naar het oor; laat het oor rustig naar de schouder zakken.",
-      "durationSeconds": 25,
-      "videoUrl": "assets/videos/12-neck-side-bends.mp4",
-      "poster": "assets/videos/12-neck-side-bends.jpg"
+      "durationSeconds": 27,
+      "youtubeId": "PTz8tnICXYQ",
+      "start": 3,
+      "end": 30,
+      "creator": "Rehab My Patient"
     }
   ],
   "books": [
@@ -288,21 +312,17 @@ const APP_DATA = {
   "videoUI": {
     "label": "Video’s",
     "homeTitle": "Videodemonstraties",
-    "homeText": "12 korte, geluidloze oefeningen van 20–35 seconden",
+    "homeText": "12 korte oefeningen met echte mensen, zonder geluid",
     "heading": "Bekijk de beweging en probeer in uw eigen tempo",
-    "intro": "12 korte geanimeerde demonstraties van 20–35 seconden. De video’s hebben geen geluidsspoor, gesproken uitleg of muziek. Volg de bewegingen en de geschreven instructies.",
+    "intro": "12 korte video's met echte mensen. Bekijk de beweging, lees de stappen en probeer het in uw eigen tempo. Afspelen zonder geluid.",
     "demo": "Demonstratie",
     "of": "van",
     "sound": "Zonder geluid",
-    "unsupported": "Uw browser ondersteunt deze video niet.",
-    "open": "Open de demonstratie",
     "speed": "Afspeelsnelheid",
     "replay": "Opnieuw beginnen",
     "practice": "Stap voor stap",
     "choose": "Kies een oefening",
     "tip": "Praktische tip",
-    "creditsLabel": "Originele animaties",
-    "creditsAdapted": "gemaakt voor deze ledenomgeving",
     "loadError": "De video kon niet worden geladen. Vernieuw de pagina of probeer het straks opnieuw.",
     "playHint": "Druk op de afspeelknop om te beginnen.",
     "categories": [
@@ -311,7 +331,27 @@ const APP_DATA = {
       "Romp en houding",
       "Nek en mobiliteit"
     ],
-    "overlay": "STOELGYMNASTIEK",
-    "overlayTip": "Rustige, gecontroleerde bewegingen"
+    "eyebrow": "BEWEGEN STAP VOOR STAP",
+    "shortLessons": "oefeningen · 12–30 seconden",
+    "noSound": "Zonder geluid",
+    "closeUp": "Echte mensen",
+    "lesson": "Oefening",
+    "seconds": "sec.",
+    "excerpt": "Videofragment",
+    "play": "Afspelen",
+    "pause": "Pauze",
+    "watch": "Bekijk de beweging",
+    "loading": "De video wordt geladen …",
+    "ready": "Bekijk eerst de beweging. Herhaal het fragment wanneer u wilt.",
+    "playing": "Let op de houding en de rustige uitvoering.",
+    "paused": "Gepauzeerd. Lees de stappen op uw gemak.",
+    "finished": "Het fragment is afgelopen. Herhaal de beweging of kies de volgende oefening.",
+    "next": "Volgende oefening",
+    "first": "Naar de eerste oefening",
+    "progress": "Voortgang van het fragment",
+    "source": "Videodemonstratie",
+    "original": "Bekijk de originele video",
+    "error": "De video is nu niet beschikbaar. Probeer het opnieuw of open de originele video.",
+    "note": "Gebruik een stevige stoel zonder wielen. Beweeg langzaam binnen een comfortabele bewegingsruimte en stop bij pijn."
   }
 };
