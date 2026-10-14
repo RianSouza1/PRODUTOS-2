@@ -6,7 +6,7 @@ Central online da operação. O nicho é a entrada principal: sua matriz de idio
 
 - Cada ciclo de um nicho possui uma base em inglês, produzida uma vez.
 - As demais versões recebem tradução integral e revisão, sem repetir a criação da oferta.
-- Um idioma pode operar simultaneamente em várias Shopifys. As lojas são marcadas por caixas de seleção, junto ao Facebook. As tarefas de publicação são independentes por loja.
+- Um idioma pode operar simultaneamente em várias Shopifys. As lojas e as contas Meta são marcadas por caixas de seleção, sem um campo separado de Facebook. As tarefas de publicação são independentes por loja.
 - A matriz também permite marcar várias contas de anúncios por idioma. O cadastro das contas fica em Configurações; nome e ID Meta identificam a conta, sem guardar credenciais nem alterar anúncios.
 - Situação manual do idioma: **Em preparação**, **Ativo** ou **Desativado**. Ativo indica que atende às expectativas; desativado indica que não atendeu.
 - Migrações são permitidas apenas para idiomas ativos. Reutilizam a tradução e criam tarefas de publicação no destino com responsável.
@@ -95,7 +95,7 @@ O responsável abre **Configurações → Importar da Utmify** e cola uma consul
 
 A importação reutiliza a base inglesa e os idiomas existentes, adiciona nichos ausentes e registra a data e a cobertura da consulta dentro do nicho. Uma consulta confirma veiculação, sem atribuir uma Shopify nem aprovar resultados. A fonte de 13/10/2026 cobre cinco contas habilitadas; as 42 contas fora da consulta não são usadas para inferir que um idioma está desligado. Dados da equipe e ciclos reiniciados permanecem preservados, e a repetição da mesma consulta não desfaz ajustes manuais. Não há sincronização automática nem alterações na Meta ou Utmify.
 
-Temas claro e escuro usam superfícies neutras em branco e preto. A escolha fica salva no navegador e pode ser trocada na barra superior. A matriz contém a disponibilidade de lojas, Facebook e contas Meta, mantendo o resultado separado.
+Temas claro e escuro usam superfícies neutras em branco e preto. A escolha fica salva no navegador e pode ser trocada na barra superior. A matriz contém as lojas e as contas Meta, mantendo o resultado separado. Marcar uma conta indica onde o idioma está rodando; o resumo conta os idiomas com ao menos uma conta marcada.
 
 ## Acesso da equipe
 
