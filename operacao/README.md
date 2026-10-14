@@ -1,6 +1,6 @@
 # OfferVault — primeira entrega operacional
 
-Central online da operação. O nicho é a entrada principal: sua matriz de idiomas, acesso Gamma, pastas Drive e histórico ficam dentro de seu workspace.
+Central online da operação. O nicho é a entrada principal: sua matriz de idiomas, acesso Gamma, pasta Drive e histórico ficam dentro de seu workspace.
 
 ## Decisões confirmadas com a equipe
 
@@ -11,14 +11,14 @@ Central online da operação. O nicho é a entrada principal: sua matriz de idio
 - Situação manual do idioma: **Em preparação**, **Ativo** ou **Desativado**. Ativo indica que atende às expectativas; desativado indica que não atendeu.
 - Migrações são permitidas apenas para idiomas ativos. Reutilizam a tradução e criam tarefas de publicação no destino com responsável.
 - **Novo desenvolvimento** cria um ciclo zerado apenas para aquele nicho. O anterior é preservado em histórico consultável e exportável.
-- Entregáveis, criativos, imagens do site e área de membros são referências por URL, principalmente pastas do Drive. Os arquivos permanecem no Drive e usam as permissões dele.
+- **Drive & acessos** tem um único campo para a pasta correspondente ao nicho, com opções de salvar o link e abrir o Drive. Os arquivos permanecem no Drive e usam as permissões dele.
 - Métricas, ROAS e análise de testes serão acrescentados posteriormente. Não há coleta automática de dados, decisão automática ou exigência de resultados numéricos nesta entrega.
 
 ## Implementado
 
 Fundação: acesso individual sem senha, controle de acesso no servidor, papéis de responsável e membro, banco relacional persistente, tema escuro padrão e claro opcional, sidebar recolhível, dashboard, categorias, cadastro completo de nichos, busca global e configurações.
 
-Operação: produção da base inglesa, tradução e revisão, atribuição de responsáveis, prazos, bloqueios, checklist editável, quatro links de pastas Drive e um campo de texto Gamma por nicho, matriz e situação dos idiomas dentro do nicho, múltiplas Shopifys, migrações atribuídas, reinício de ciclos, histórico de alterações e exportação JSON.
+Operação: produção da base inglesa, tradução e revisão, atribuição de responsáveis, prazos, bloqueios, checklist editável, um link Drive e um campo de texto Gamma por nicho, matriz e situação dos idiomas dentro do nicho, múltiplas Shopifys, migrações atribuídas, reinício de ciclos, histórico de alterações e exportação JSON.
 
 Lojas iniciais: Best Library, New Library e Store Today. Os domínios são preenchidos pela equipe. Nature é o nicho inicial informado pelo usuário. Seus idiomas reais podem ser cadastrados manualmente ou importados de checklists revisados do Trello. Não são inventadas campanhas, métricas ou resultados.
 
@@ -95,7 +95,7 @@ O responsável abre **Configurações → Importar da Utmify** e cola uma consul
 
 A importação reutiliza a base inglesa e os idiomas existentes, adiciona nichos ausentes e registra a data e a cobertura da consulta dentro do nicho. Uma consulta confirma veiculação, sem atribuir uma Shopify nem aprovar resultados. A fonte de 13/10/2026 cobre cinco contas habilitadas; as 42 contas fora da consulta não são usadas para inferir que um idioma está desligado. Dados da equipe e ciclos reiniciados permanecem preservados, e a repetição da mesma consulta não desfaz ajustes manuais. Não há sincronização automática nem alterações na Meta ou Utmify.
 
-Temas claro e escuro usam superfícies neutras em branco e preto. A escolha fica salva no navegador e pode ser trocada na barra superior. A matriz contém as lojas e as contas Meta, mantendo o resultado separado. Marcar uma conta indica onde o idioma está rodando; o resumo conta os idiomas com ao menos uma conta marcada.
+Temas claro e escuro usam superfícies neutras em branco e preto. Os resultados são destacados em azul (Em preparação), amarelo (A confirmar), verde (Ativo) e vermelho (Desativado), com contraste próprio em cada tema. A escolha do tema fica salva no navegador e pode ser trocada na barra superior. A matriz contém as lojas e as contas Meta, mantendo o resultado separado. Marcar uma conta indica onde o idioma está rodando; o resumo conta os idiomas com ao menos uma conta marcada.
 
 ## Acesso da equipe
 

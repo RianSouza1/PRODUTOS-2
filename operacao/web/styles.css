@@ -47,3 +47,19 @@ body,.sidebar,.topbar{background:var(--canvas);color:var(--ink)}
 .primary:active,.secondary:active{transform:translateY(1px)}
 .formgrid input:focus,.formgrid textarea:focus,.formgrid select:focus{border-color:var(--line-strong);outline:2px solid var(--line);outline-offset:2px}
 @media(max-width:560px){.theme-toggle{padding:7px 9px;font-size:11px}.topbar>div{gap:6px}.simple-matrix th,.simple-matrix td{padding:12px 10px}.simple-matrix tbody th:first-child{min-width:130px;max-width:155px}}
+
+/* Result colors are scoped to language outcomes; the interface stays neutral. */
+.pill.performance{border:1px solid;font-weight:650}
+.pill.performance.preparing{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.pill.performance.awaiting{background:#fef3c7;color:#92400e;border-color:#fcd34d}
+.pill.performance.good{background:#dcfce7;color:#166534;border-color:#86efac}
+.pill.performance.bad{background:#fee2e2;color:#991b1b;border-color:#fca5a5}
+html[data-theme=dark] .pill.performance.preparing{background:#172b4d;color:#93c5fd;border-color:#335b8e}
+html[data-theme=dark] .pill.performance.awaiting{background:#3a2c12;color:#fcd34d;border-color:#806325}
+html[data-theme=dark] .pill.performance.good{background:#123324;color:#86efac;border-color:#2d6b49}
+html[data-theme=dark] .pill.performance.bad{background:#3b1b22;color:#fca5a5;border-color:#80404b}
+
+.drive-link-form{padding:23px}
+.drive-link-form .formgrid{grid-template-columns:1fr}
+.drive-link-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:18px}
+@media(max-width:560px){.drive-link-form{padding:17px}}
