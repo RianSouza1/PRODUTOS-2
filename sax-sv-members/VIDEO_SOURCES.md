@@ -6,7 +6,7 @@ Tiderna anger det valda utdragets början och slut i originalvideon, inte origin
 
 | Övning | Lärare | Original | Utdrag | Längd |
 |---|---|---|---|---|
-| C-dur: uppåt och nedåt | Alexander Mathias · Saxophone Masterclass | https://www.youtube.com/watch?v=Kv7ChZmcjKA | 2:55–3:08 | 13 sek |
+| C-dur: uppåt och nedåt | Alexander Mathias · Saxophone Masterclass | https://www.youtube.com/watch?v=Kv7ChZmcjKA | 2:55–3:09 | 14 sek |
 | En jämn, lång ton | Dr. Noa Even · VandorenUSA | https://www.youtube.com/watch?v=A6xNAGql8nM | 1:35–1:51 | 16 sek |
 | Starta tonen rent | Jamie Anderson · Get Your Sax Together | https://www.youtube.com/watch?v=-ko5qsJAesY | 5:46–5:53 | 7 sek |
 | Legato: mjuka tonstarter | Jamie Anderson · Get Your Sax Together | https://www.youtube.com/watch?v=-ko5qsJAesY | 8:20–8:27 | 7 sek |

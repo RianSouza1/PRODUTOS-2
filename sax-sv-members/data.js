@@ -156,7 +156,7 @@ const APP_DATA = {
       "categoryName": "Fingrar och skala",
       "youtubeId": "Kv7ChZmcjKA",
       "start": 175,
-      "end": 188,
+      "end": 189,
       "creator": "Alexander Mathias · Saxophone Masterclass",
       "description": "Följ fingrarna när C-durskalan spelas uppåt och nedåt. Samma grepp används på alt-, tenor-, baryton- och sopransaxofon.",
       "steps": [
