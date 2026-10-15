@@ -76,3 +76,16 @@
 .draw-videos-view .hero-card .draw-eyebrow { color:#fff!important; }
 .draw-hero-tags span { color:#fff; background:rgba(0,0,0,.12); border-color:rgba(255,255,255,.3); }
 .draw-choice-copy .draw-choice-number,.draw-lesson-choice>svg,.draw-source a { color:#a8d8ff; }
+
+/* Focus the visible aperture on the filmed technique. Page controls remain
+   outside the aperture; the original embedded player is still used. */
+.draw-video-frame { overflow:hidden; isolation:isolate; }
+.draw-video-frame #draw-player {
+    inset:auto; left:-100px; top:-110px;
+    width:calc(100% + 200px); height:calc(100% + 220px);
+    pointer-events:none;
+}
+.draw-video-frame:fullscreen,.draw-video-frame:-webkit-full-screen {
+    width:100vw; height:100dvh; min-height:0; max-height:none;
+    aspect-ratio:auto; border-radius:0; background:#000;
+}

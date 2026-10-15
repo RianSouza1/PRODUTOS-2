@@ -227,6 +227,7 @@ const APP_DATA = {
   "pause": "Pausa",
   "watch": "Guarda la tecnica",
   "replay": "Riguarda",
+  "fullscreen": "Schermo intero",
   "speed": "Velocità",
   "loading": "Caricamento del video…",
   "ready": "Osserva prima il movimento della mano, poi riproducilo sul tuo foglio.",

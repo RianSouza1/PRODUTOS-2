@@ -68,13 +68,14 @@
       player=new YT.Player('draw-player',{
         host:'https://www.youtube-nocookie.com',
         width:'100%',height:'100%',videoId:lesson.youtubeId,
-        playerVars:{autoplay:0,controls:1,playsinline:1,rel:0,hl:document.documentElement.lang,cc_load_policy:0,mute:1,start:lesson.start,end:lesson.end,origin:window.location.origin},
+        playerVars:{autoplay:0,controls:0,disablekb:1,fs:0,iv_load_policy:3,playsinline:1,rel:0,hl:document.documentElement.lang,cc_load_policy:0,mute:1,start:lesson.start,end:lesson.end,origin:window.location.origin},
         events:{
           onReady:event=>{
             if(token!==generation)return;
             loading=false;
             button.disabled=false;
             event.target.getIframe().setAttribute('title',lesson.title);
+            event.target.getIframe().setAttribute('tabindex','-1');
             event.target.mute();event.target.setVolume(0);
             event.target.setPlaybackRate(speed);
             event.target.playVideo();
@@ -127,10 +128,10 @@
         <section class="draw-lesson-card" id="draw-lesson-card" data-player-state="ready" aria-labelledby="draw-lesson-title">
           <div class="draw-lesson-heading"><p class="draw-eyebrow">${escape(ui.lesson)} ${selected+1} / ${lessons.length} · ${escape(lesson.categoryName)}</p><h2 id="draw-lesson-title">${escape(lesson.title)}</h2><div class="draw-lesson-tags"><span>${lesson.end-lesson.start} ${escape(ui.seconds)} · ${escape(ui.excerpt)}</span><span>${escape(ui.noSound)}</span></div></div>
           <div class="draw-video-frame" id="draw-video-frame"><div id="draw-player"></div><button type="button" id="draw-poster" class="draw-poster" data-draw-start aria-label="${escape(ui.play)}: ${escape(lesson.title)}"><img src="${escape(thumbnail(lesson))}" alt="${escape(lesson.title)}" referrerpolicy="strict-origin-when-cross-origin"><span class="draw-poster-action">${playIcon}<strong>${escape(ui.watch)}</strong></span></button></div>
-          <div class="draw-playback-controls"><button type="button" class="draw-play-button" data-draw-play aria-pressed="false">${escape(ui.play)}</button><button type="button" data-draw-replay>${escape(ui.replay)}</button><div class="draw-speed-buttons" role="group" aria-label="${escape(ui.speed)}"><button type="button" data-draw-speed="0.5" aria-pressed="${speed===0.5}">0,5×</button><button type="button" data-draw-speed="0.75" aria-pressed="${speed===0.75}">0,75×</button><button type="button" data-draw-speed="1" aria-pressed="${speed===1}">1×</button></div></div>
+          <div class="draw-playback-controls"><button type="button" class="draw-play-button" data-draw-play aria-pressed="false">${escape(ui.play)}</button><button type="button" data-draw-replay>${escape(ui.replay)}</button><button type="button" data-draw-fullscreen>${escape(ui.fullscreen)}</button><div class="draw-speed-buttons" role="group" aria-label="${escape(ui.speed)}"><button type="button" data-draw-speed="0.5" aria-pressed="${speed===0.5}">0,5×</button><button type="button" data-draw-speed="0.75" aria-pressed="${speed===0.75}">0,75×</button><button type="button" data-draw-speed="1" aria-pressed="${speed===1}">1×</button></div></div>
           <div class="draw-progress-wrap"><progress id="draw-progress" max="100" value="0" aria-label="${escape(ui.progress)}"></progress><p id="draw-status" role="status">${escape(ui.ready)}</p></div>
           <div class="draw-ended" id="draw-ended" hidden><p>${escape(ui.finished)}</p><button type="button" data-draw-next>${escape(selected<lessons.length-1?ui.next:ui.first)}</button></div>
-          <div class="draw-lesson-details"><p>${escape(lesson.description)}</p><h3>${escape(ui.practice)}</h3><ol>${lesson.steps.map(step=>`<li>${escape(step)}</li>`).join('')}</ol><p class="draw-tip"><strong>${escape(ui.tip)}:</strong> ${escape(lesson.tip)}</p><p class="draw-source">${escape(ui.source)}: ${escape(lesson.creator)} · <a href="https://www.youtube.com/watch?v=${lesson.youtubeId}&t=${lesson.start}s" target="_blank" rel="noopener">${escape(ui.original)}</a></p></div>
+          <div class="draw-lesson-details"><p>${escape(lesson.description)}</p><h3>${escape(ui.practice)}</h3><ol>${lesson.steps.map(step=>`<li>${escape(step)}</li>`).join('')}</ol><p class="draw-tip"><strong>${escape(ui.tip)}:</strong> ${escape(lesson.tip)}</p></div>
         </section>
         <aside class="draw-library" aria-labelledby="draw-choose"><div class="draw-library-heading"><h2 id="draw-choose">${escape(ui.choose)}</h2></div><div class="draw-lesson-list">${lessons.map((item,index)=>`<button type="button" class="draw-lesson-choice ${index===selected?'selected':''}" data-draw-lesson="${index}" aria-pressed="${index===selected}"><img src="${escape(thumbnail(item))}" loading="lazy" alt="" referrerpolicy="strict-origin-when-cross-origin"><span class="draw-choice-copy"><span class="draw-choice-number">${String(index+1).padStart(2,'0')} · ${escape(item.categoryName)}</span><strong>${escape(item.title)}</strong><span>${item.end-item.start} ${escape(ui.seconds)}</span></span>${playIcon}</button>`).join('')}</div></aside>
       </div><p class="draw-library-note">${escape(ui.note)}</p>
@@ -145,6 +146,13 @@
       if(change!==undefined){const index=Number(change);if(!Number.isInteger(index)||index<0||index>=APP_DATA.videos.length)return;selected=index;window.dispatchEvent(new Event('hashchange'));requestAnimationFrame(()=>document.getElementById('draw-lesson-title')?.scrollIntoView({block:'start'}));return;}
       if(button.hasAttribute('data-draw-next')){selected=selected<APP_DATA.videos.length-1?selected+1:0;window.dispatchEvent(new Event('hashchange'));return;}
       if(button.hasAttribute('data-draw-replay')){if(loading)return;if(!player){start();return;}document.getElementById('draw-ended').hidden=true;player.mute();player.loadVideoById({videoId:APP_DATA.videos[selected].youtubeId,startSeconds:APP_DATA.videos[selected].start,endSeconds:APP_DATA.videos[selected].end});player.setPlaybackRate(speed);return;}
+      if(button.hasAttribute('data-draw-fullscreen')){
+        const frame=document.getElementById('draw-video-frame');
+        if(document.fullscreenElement){document.exitFullscreen?.();}
+        else if(frame.requestFullscreen){frame.requestFullscreen().catch(()=>{});}
+        else if(frame.webkitRequestFullscreen){frame.webkitRequestFullscreen();}
+        return;
+      }
       if(button.dataset.drawSpeed){speed=Number(button.dataset.drawSpeed);if(typeof player?.setPlaybackRate==='function')player.setPlaybackRate(speed);document.querySelectorAll('[data-draw-speed]').forEach(item=>item.setAttribute('aria-pressed',String(Number(item.dataset.drawSpeed)===speed)));return;}
     });
   });

@@ -221,6 +221,7 @@ const APP_DATA = {
   "pause": "Pausa",
   "watch": "Se tekniken",
   "replay": "Spela igen",
+  "fullscreen": "Helskärm",
   "speed": "Hastighet",
   "loading": "Filmen laddas…",
   "ready": "Se först hur handen rör sig. Upprepa sedan på ditt eget papper.",
