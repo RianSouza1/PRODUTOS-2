@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const floatingHelp = document.getElementById("floating-help-container");
   const tabItems = document.querySelectorAll(".tab-item");
 
-  let currentVideoId = APP_DATA.videos && APP_DATA.videos.length > 0 ? APP_DATA.videos[0].id : null;
 
   // ----------------------------------------------------------------------
   // 1. INIZIALIZZAZIONE
@@ -52,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2. ROUTING SPA
   // ----------------------------------------------------------------------
   function handleRouting() {
+    window.DRAW_DEMOS.pause();
     let currentHash = window.location.hash || "#home";
     const aliases = { '#books':'#bocker', '#videos':'#filmer', '#video':'#filmer', '#help':'#support' };
     if(aliases[currentHash]) { currentHash=aliases[currentHash]; history.replaceState(null,'',currentHash); }
@@ -167,106 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // VISTA: VIDEOS
   function renderVideos() {
-    const allVideos = APP_DATA.videos || [];
-    const safeVideo = allVideos.find(v => v.id === currentVideoId) || allVideos[0] || null;
-
-    rootEl.innerHTML = `
-      <div class="page-view" style="padding-top:0; padding-left:0; padding-right:0; background: var(--bg-body);">
-      <div class="playlist-container" style="padding: 24px var(--safe-padding);">
-        <div class="hero-card glass-panel" style="margin-top:-24px;"><div class="hero-text"><h1 tabindex="-1">Filmer och övningar</h1><p>Korta demonstrationer av penngrepp, skuggläggning, perspektiv och porträtteckning.</p></div></div>
-        
-        <div style="background-color: rgba(124, 58, 237, 0.1); color: var(--primary); border: 1px solid var(--border-light); padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 0.95rem;" class="glass-panel">
-           <i data-lucide="play-circle" style="width: 20px; height: 20px; flex-shrink: 0; color: var(--primary);"></i>
-           <span>Välj en demonstration nedan för att se filmen</span>
-        </div>
-
-        <div id="video-playlist-items">
-        </div>
-      </div>
-        </div>
-      `;
-
-    if (safeVideo) {
-      attachPlaylistEvents(allVideos, safeVideo.id);
-    }
-  }
-
-  function attachPlaylistEvents(videosArray, activeVideoId) {
-    const playlistEl = document.getElementById("video-playlist-items");
-    if (!playlistEl) return;
-
-    const playlistHtml = videosArray.map((vid) => {
-      const isPlaying = vid.id === activeVideoId;
-      const vidSrc = vid.videoUrl;
-
-      return `
-      <div class="card-bloco play-item glass-panel ${isPlaying ? 'active-play' : ''}" style="margin-bottom:16px; display:flex; flex-direction:column; padding:0; overflow:hidden;" data-video-id="${vid.id}">
-            
-            <a href="javascript:void(0)" class="play-item-header" style="display:flex; padding: 16px; text-decoration:none; color:inherit; align-items:center; gap:12px;">
-              <div style="width:36px;height:36px;background:${isPlaying ? 'var(--primary)' : 'var(--primary-light)'};border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <i data-lucide="${isPlaying ? 'play' : 'play-circle'}" style="width:18px;height:18px;color:${isPlaying ? '#FFF' : 'var(--primary)'};"></i>
-              </div>
-              <div style="display:flex; flex-direction:column; justify-content:center; flex:1; min-width:0;">
-                 <h4 style="margin:0 0 4px; font-size:1.05rem; color:${isPlaying ? 'var(--primary)' : 'var(--text-dark)'};">${vid.title}</h4>
-                 <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                   <span style="margin:0; font-size:0.82rem; color:var(--text-muted); font-weight:600;">${vid.duration || '0:25'}</span>
-                   ${vid.category ? `<span style="font-size:0.75rem; background:rgba(0,0,0,0.05); padding:2px 8px; border-radius:12px; color:var(--text-muted);">${vid.category}</span>` : ''}
-                 </div>
-              </div>
-              ${isPlaying
-          ? '<i data-lucide="chevron-down" style="color:var(--primary); align-self:center; flex-shrink:0;"></i>'
-          : '<i data-lucide="chevron-right" style="opacity:0.35; align-self:center; flex-shrink:0;"></i>'}
-            </a>
-            
-      ${isPlaying ? `
-              <div class="play-item-body" style="padding: 0 16px 16px 16px; animation: slideDown 0.3s ease;">
-                 <div style="position: relative; border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); max-height: 480px; margin: 0 auto;">
-                    <video 
-                       src="${vidSrc}" 
-                       controls 
-                       muted
-                       preload="metadata"
-                       playsinline 
-                       loop
-                       controlsList="nodownload" 
-                       style="width: 100%; max-height: 480px; display: block; object-fit: contain; border-radius: 12px; background: #000;">
-                    </video>
-                 </div>
-                 ${vid.obs ? `
-                 <div style="margin-top: 10px; padding: 10px 14px; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-light); font-size: 0.88rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
-                    <i data-lucide="info" style="width: 16px; height: 16px; color: var(--primary); flex-shrink: 0;"></i>
-                    <span><strong>Praktiskt tips:</strong> ${vid.obs}</span>
-                 </div>
-                 ` : ''}
-              </div>
-            ` : ''}
-      </div>
-    `;
-    }).join('');
-
-    playlistEl.innerHTML = playlistHtml;
-    renderIcons();
-    playlistEl.querySelectorAll('video').forEach(video => {
-      video.muted=true; video.volume=0;
-      video.addEventListener('volumechange',()=>{ if(!video.muted) video.muted=true; if(video.volume!==0) video.volume=0; });
-    });
-
-    // Playlist interaction
-    const listHeaders = playlistEl.querySelectorAll(".play-item-header");
-    listHeaders.forEach(header => {
-      header.addEventListener("click", () => {
-        const item = header.closest('.play-item');
-        const clickedId = item.getAttribute("data-video-id");
-        if (clickedId !== currentVideoId) {
-          currentVideoId = clickedId;
-          renderVideos();
-          setTimeout(() => {
-            const activeNode = document.querySelector('.active-play');
-            if (activeNode) activeNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }, 50);
-        }
-      });
-    });
+    window.DRAW_DEMOS.render();
   }
 
   // VISTA: LIBRI & MATERIALI (BOOKS)

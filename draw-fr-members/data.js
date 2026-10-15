@@ -11,72 +11,128 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [
-        {
-            id: "v1",
-            title: "Technique d'Esquisse & Maîtrise du Crayon",
-            duration: "0:25 • Technique de base",
-            category: "Fondamentaux",
-            obs: "Tenez le crayon avec souplesse et posez des traits légers avant de définir les contours finaux.",
-            videoUrl: "https://assets.mixkit.co/active_storage/video_items/100488/1724285900/100488-video-720.mp4"
-        },
-        {
-            id: "v2",
-            title: "Lignes de Base & Construction en Perspective",
-            duration: "0:20 • Repères visuels",
-            category: "Perspective & Lignes",
-            obs: "Tracez des lignes de repère pour équilibrer les proportions globales de votre sujet.",
-            videoUrl: "https://assets.mixkit.co/videos/5254/5254-720.mp4"
-        },
-        {
-            id: "v3",
-            title: "Tracé Fluide & Contrôle du Geste",
-            duration: "0:22 • Dextérité",
-            category: "Contrôle du Trait",
-            obs: "Accompagnez le mouvement avec l'avant-bras pour obtenir des courbes harmonieuses et nettes.",
-            videoUrl: "https://assets.mixkit.co/videos/36721/36721-720.mp4"
-        },
-        {
-            id: "v4",
-            title: "Dessin de Portrait & Proportions Féminines",
-            duration: "0:30 • Art du portrait",
-            category: "Portrait & Anatomie",
-            obs: "Construisez la forme globale de la tête avant de placer avec soin le regard et la bouche.",
-            videoUrl: "https://assets.mixkit.co/videos/30232/30232-720.mp4"
-        },
-        {
-            id: "v5",
-            title: "Hachures & Dégradés d'Ombrage Détaillés",
-            duration: "0:25 • Ombre & Lumière",
-            category: "Technique d'Ombrage",
-            obs: "Superposez délicatement les hachures croisées pour modeler les volumes en profondeur.",
-            videoUrl: "https://assets.mixkit.co/active_storage/video_items/100485/1724285772/100485-video-720.mp4"
-        },
-        {
-            id: "v6",
-            title: "Rendu des Cheveux & Textures Fines",
-            duration: "0:22 • Rendu matière",
-            category: "Détails & Textures",
-            obs: "Dessinez la chevelure par grandes mèches cohérentes avant d'ajouter les rehauts de lumière.",
-            videoUrl: "https://assets.mixkit.co/videos/40306/40306-720.mp4"
-        },
-        {
-            id: "v7",
-            title: "Carnet de Croquis & Pratique Quotidienne",
-            duration: "0:25 • Carnet d'artiste",
-            category: "Créativité & Pratique",
-            obs: "Prenez l'habitude de croquer rapidement sur le vif pour développer votre sens de l'observation.",
-            videoUrl: "https://assets.mixkit.co/videos/29983/29983-720.mp4"
-        },
-        {
-            id: "v8",
-            title: "Précision Anatomique & Finesse du Trait",
-            duration: "0:28 • Dessin de précision",
-            category: "Anatomie & Rigueur",
-            obs: "Conservez une mine de crayon bien taillée pour réussir les tracés anatomiques complexes.",
-            videoUrl: "https://assets.mixkit.co/videos/9339/9339-720.mp4"
-        }
+    "videos": [
+  {
+    "id": "v1",
+    "youtubeId": "b6UuTWm9MIQ",
+    "start": 0,
+    "end": 14,
+    "creator": "Circle Line Art School",
+    "title": "Tracer un cercle à main levée",
+    "categoryName": "01",
+    "description": "Observe le mouvement de la main et du papier pour construire un cercle régulier.",
+    "steps": [
+      "Tiens le crayon sans crispation et suis un mouvement arrondi.",
+      "Essaie de tourner progressivement le papier pendant le tracé."
     ],
+    "tip": "Commence avec un trait léger avant de renforcer le contour."
+  },
+  {
+    "id": "v2",
+    "youtubeId": "fIfi4QcNdZY",
+    "start": 0,
+    "end": 19,
+    "creator": "Marissa Purnell",
+    "title": "Ombrer avec de petits cercles",
+    "categoryName": "02",
+    "description": "Des cercles qui se chevauchent créent une ombre douce, sans traits marqués.",
+    "steps": [
+      "Commence avec de petits mouvements circulaires légers.",
+      "Superpose davantage de couches dans les zones sombres."
+    ],
+    "tip": "Préserve le papier dans la zone la plus éclairée."
+  },
+  {
+    "id": "v3",
+    "youtubeId": "A0Vsu7VtV_o",
+    "start": 0,
+    "end": 7,
+    "creator": "Marissa Purnell",
+    "title": "Ombrer avec des boucles libres",
+    "categoryName": "03",
+    "description": "De petites boucles superposées construisent une texture expressive.",
+    "steps": [
+      "Dessine des boucles libres sans appuyer fortement.",
+      "Superpose davantage les boucles dans les ombres."
+    ],
+    "tip": "Repasse le court extrait et reproduis le geste sur une feuille d’essai."
+  },
+  {
+    "id": "v4",
+    "youtubeId": "HtKuG9CDRQg",
+    "start": 0,
+    "end": 28,
+    "creator": "Marissa Purnell",
+    "title": "Estomper le graphite",
+    "categoryName": "04",
+    "description": "Observe comment un outil adoucit le graphite et les transitions de valeurs.",
+    "steps": [
+      "Dépose d’abord une fine couche de graphite.",
+      "Estompe doucement sans salir la zone de lumière."
+    ],
+    "tip": "Procède par couches légères plutôt que par une forte pression."
+  },
+  {
+    "id": "v5",
+    "youtubeId": "0HSZTTc-Byc",
+    "start": 0,
+    "end": 14,
+    "creator": "Marissa Purnell",
+    "title": "Créer du volume avec des points",
+    "categoryName": "05",
+    "description": "L’espacement des points rend une surface plus claire ou plus sombre.",
+    "steps": [
+      "Espace les points du côté éclairé.",
+      "Rapproche et multiplie les points dans les ombres."
+    ],
+    "tip": "Fais varier la densité des points plutôt que la pression."
+  },
+  {
+    "id": "v6",
+    "youtubeId": "5miv178rZLQ",
+    "start": 0,
+    "end": 21,
+    "creator": "Marissa Purnell",
+    "title": "Ombrer avec des hachures",
+    "categoryName": "06",
+    "description": "Des traits parallèles construisent progressivement les valeurs.",
+    "steps": [
+      "Trace de petits traits dans une même direction.",
+      "Resserre les traits et ajoute des couches dans les ombres."
+    ],
+    "tip": "Garde une direction cohérente et laisse des espaces clairs."
+  },
+  {
+    "id": "v7",
+    "youtubeId": "bUo52UvO3SY",
+    "start": 0,
+    "end": 25,
+    "creator": "Marissa Purnell",
+    "title": "Des hachures qui suivent la forme",
+    "categoryName": "07",
+    "description": "Des lignes courbes suivent la surface et suggèrent son volume.",
+    "steps": [
+      "Trace des lignes courbes qui épousent la forme arrondie.",
+      "Ajoute des lignes là où la surface s’éloigne de la lumière."
+    ],
+    "tip": "Imagine comment les lignes se poseraient sur une vraie balle."
+  },
+  {
+    "id": "v8",
+    "youtubeId": "1eAe7axDCKc",
+    "start": 0,
+    "end": 32,
+    "creator": "Circle Line Art School",
+    "title": "Une rue en perspective à un point",
+    "categoryName": "08",
+    "description": "Observe comment les lignes de la rue et des maisons convergent vers un même point.",
+    "steps": [
+      "Place un point de fuite et dirige les bords de la rue vers lui.",
+      "Construis les maisons avec des verticales et des lignes vers ce point."
+    ],
+    "tip": "Réduis les détails à mesure qu’ils s’éloignent."
+  }
+],
 
     books: [
         {
@@ -156,5 +212,36 @@ const APP_DATA = {
         }
     ],
 
-    otherProducts: []
+    otherProducts: [],
+  "videoUI": {
+  "eyebrow": "LE DESSIN PAS À PAS",
+  "heading": "Observe le geste. À toi de dessiner.",
+  "intro": "Huit démonstrations courtes avec de vraies mains, un crayon et du papier. Regarde sans son, puis exerce-toi avec les étapes sous la vidéo.",
+  "shortLessons": "démonstrations · 7–32 secondes",
+  "noSound": "Sans son",
+  "closeUp": "De vraies mains",
+  "lesson": "Technique",
+  "seconds": "s",
+  "excerpt": "Démonstration courte",
+  "play": "Lire",
+  "pause": "Pause",
+  "watch": "Voir la technique",
+  "replay": "Revoir",
+  "speed": "Vitesse",
+  "loading": "Chargement de la vidéo…",
+  "ready": "Observe d’abord le mouvement de la main, puis reproduis-le sur ta feuille.",
+  "playing": "Suis le mouvement du crayon et la construction des traits.",
+  "paused": "En pause. Consulte les étapes à ton rythme.",
+  "finished": "Démonstration terminée. Revois-la ou choisis la technique suivante.",
+  "next": "Technique suivante",
+  "first": "Revenir au début",
+  "progress": "Progression",
+  "practice": "À toi de pratiquer",
+  "tip": "Conseil pratique",
+  "choose": "Choisis une technique",
+  "source": "Démonstration originale",
+  "original": "Ouvrir la vidéo originale",
+  "error": "La vidéo ne peut pas être chargée. Réessaie ou ouvre la vidéo originale.",
+  "note": "Prépare du papier, un crayon et une gomme. Observe d’abord, ralentis la vidéo si besoin, puis reproduis le geste."
+}
 };

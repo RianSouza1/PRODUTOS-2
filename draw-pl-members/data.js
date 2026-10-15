@@ -7,71 +7,127 @@ const APP_DATA = {
     "showFloatingHelp": false
   },
   "videos": [
-    {
-      "id": "v1",
-      "title": "Szkicowanie i kontrola ołówka",
-      "duration": "0:25 • Podstawowa technika",
-      "category": "Podstawy",
-      "obs": "Trzymaj ołówek swobodnie i zacznij od lekkich linii, zanim dopracujesz ostateczne kontury.",
-      "videoUrl": "https://assets.mixkit.co/active_storage/video_items/100488/1724285900/100488-video-720.mp4"
-    },
-    {
-      "id": "v2",
-      "title": "Linie pomocnicze i perspektywa",
-      "duration": "0:20 • Linie odniesienia",
-      "category": "Perspektywa i linie",
-      "obs": "Używaj prostych linii konstrukcyjnych, aby zachować proporcje całego rysunku.",
-      "videoUrl": "https://assets.mixkit.co/videos/5254/5254-720.mp4"
-    },
-    {
-      "id": "v3",
-      "title": "Płynna kreska i siła nacisku",
-      "duration": "0:22 • Sprawność ręki",
-      "category": "Kontrola kreski",
-      "obs": "Poruszaj całym przedramieniem, aby rysować płynne, ciągłe krzywe.",
-      "videoUrl": "https://assets.mixkit.co/videos/36721/36721-720.mp4"
-    },
-    {
-      "id": "v4",
-      "title": "Portret i proporcje twarzy",
-      "duration": "0:30 • Rysunek portretowy",
-      "category": "Portret i anatomia",
-      "obs": "Najpierw zbuduj owal głowy, a następnie zaznacz położenie oczu, nosa i ust na osiach pomocniczych.",
-      "videoUrl": "https://assets.mixkit.co/videos/30232/30232-720.mp4"
-    },
-    {
-      "id": "v5",
-      "title": "Kreskowanie oraz światło i cień",
-      "duration": "0:25 • Światło i cień",
-      "category": "Cieniowanie",
-      "obs": "Nakładaj cienkie warstwy kreskowania krzyżowego, aby nadać rysunkowi głębię i objętość.",
-      "videoUrl": "https://assets.mixkit.co/active_storage/video_items/100485/1724285772/100485-video-720.mp4"
-    },
-    {
-      "id": "v6",
-      "title": "Włosy i precyzyjne faktury",
-      "duration": "0:22 • Rysowanie faktury",
-      "category": "Szczegóły i faktura",
-      "obs": "Zacznij od głównych mas i objętości włosów, a dopiero później dodaj pojedyncze refleksy.",
-      "videoUrl": "https://assets.mixkit.co/videos/40306/40306-720.mp4"
-    },
-    {
-      "id": "v7",
-      "title": "Szkicownik i rysowanie z obserwacji",
-      "duration": "0:25 • Codzienna praktyka",
-      "category": "Kreatywność i ćwiczenia",
-      "obs": "Ćwicz codziennie w szkicowniku, aby rozwijać obserwację i sprawność rysowania.",
-      "videoUrl": "https://assets.mixkit.co/videos/29983/29983-720.mp4"
-    },
-    {
-      "id": "v8",
-      "title": "Anatomia i cienkie linie",
-      "duration": "0:28 • Precyzyjny rysunek",
-      "category": "Anatomia i precyzja",
-      "obs": "Dbaj o ostro zakończony ołówek podczas rysowania drobnych szczegółów i złożonych struktur.",
-      "videoUrl": "https://assets.mixkit.co/videos/9339/9339-720.mp4"
-    }
-  ],
+  {
+    "id": "v1",
+    "youtubeId": "b6UuTWm9MIQ",
+    "start": 0,
+    "end": 14,
+    "creator": "Circle Line Art School",
+    "title": "Okrąg rysowany odręcznie",
+    "categoryName": "01",
+    "description": "Zobacz, jak ruch dłoni i kartki pomaga narysować równy okrąg.",
+    "steps": [
+      "Trzymaj ołówek swobodnie i prowadź go po łuku.",
+      "Spróbuj stopniowo obracać kartkę podczas rysowania."
+    ],
+    "tip": "Zacznij lekką linią, a dopiero potem wzmocnij kontur."
+  },
+  {
+    "id": "v2",
+    "youtubeId": "fIfi4QcNdZY",
+    "start": 0,
+    "end": 19,
+    "creator": "Marissa Purnell",
+    "title": "Cieniowanie małymi kółkami",
+    "categoryName": "02",
+    "description": "Nakładające się kółka tworzą łagodny cień bez wyraźnych kresek.",
+    "steps": [
+      "Zacznij od małych, lekkich ruchów okrężnych.",
+      "Dodaj więcej warstw w ciemnych miejscach."
+    ],
+    "tip": "Pozostaw najjaśniejszy fragment papieru prawie nietknięty."
+  },
+  {
+    "id": "v3",
+    "youtubeId": "A0Vsu7VtV_o",
+    "start": 0,
+    "end": 7,
+    "creator": "Marissa Purnell",
+    "title": "Cieniowanie swobodnymi pętlami",
+    "categoryName": "03",
+    "description": "Krótkie, nakładające się pętle budują wyrazistą fakturę.",
+    "steps": [
+      "Rysuj niewielkie swobodne pętle bez mocnego nacisku.",
+      "Zagęszczaj pętle w miejscach zacienionych."
+    ],
+    "tip": "Powtórz krótki film i przećwicz ruch na osobnej kartce."
+  },
+  {
+    "id": "v4",
+    "youtubeId": "HtKuG9CDRQg",
+    "start": 0,
+    "end": 28,
+    "creator": "Marissa Purnell",
+    "title": "Rozcieranie grafitu",
+    "categoryName": "04",
+    "description": "Zobacz, jak narzędzie wygładza grafit i przejścia między jasnym a ciemnym tonem.",
+    "steps": [
+      "Najpierw nałóż cienką warstwę grafitu.",
+      "Rozcieraj delikatnie, pozostawiając najjaśniejsze miejsce czyste."
+    ],
+    "tip": "Pracuj lekkimi warstwami zamiast mocno naciskać."
+  },
+  {
+    "id": "v5",
+    "youtubeId": "0HSZTTc-Byc",
+    "start": 0,
+    "end": 14,
+    "creator": "Marissa Purnell",
+    "title": "Budowanie objętości kropkami",
+    "categoryName": "05",
+    "description": "Odstępy między kropkami sprawiają, że powierzchnia jest jaśniejsza lub ciemniejsza.",
+    "steps": [
+      "Stawiaj luźno rozmieszczone kropki po jasnej stronie.",
+      "Zagęszczaj kropki w miejscach zacienionych."
+    ],
+    "tip": "Zmieniaj gęstość kropek, a nie siłę nacisku."
+  },
+  {
+    "id": "v6",
+    "youtubeId": "5miv178rZLQ",
+    "start": 0,
+    "end": 21,
+    "creator": "Marissa Purnell",
+    "title": "Cieniowanie kreskowaniem",
+    "categoryName": "06",
+    "description": "Równoległe kreski stopniowo budują tony rysunku.",
+    "steps": [
+      "Rysuj krótkie linie w tym samym kierunku.",
+      "Zagęszczaj kreski i dodawaj warstwy w cieniu."
+    ],
+    "tip": "Zachowaj jeden kierunek i pozostaw jasne odstępy."
+  },
+  {
+    "id": "v7",
+    "youtubeId": "bUo52UvO3SY",
+    "start": 0,
+    "end": 25,
+    "creator": "Marissa Purnell",
+    "title": "Kreski podążające za formą",
+    "categoryName": "07",
+    "description": "Zakrzywione kreski podążają za powierzchnią i pokazują jej objętość.",
+    "steps": [
+      "Zacznij od łuków zgodnych z zaokrągloną formą.",
+      "Dodaj linie tam, gdzie powierzchnia odwraca się od światła."
+    ],
+    "tip": "Wyobraź sobie, jak linie układałyby się na prawdziwej piłce."
+  },
+  {
+    "id": "v8",
+    "youtubeId": "1eAe7axDCKc",
+    "start": 0,
+    "end": 32,
+    "creator": "Circle Line Art School",
+    "title": "Ulica w perspektywie jednopunktowej",
+    "categoryName": "08",
+    "description": "Zobacz, jak linie ulicy i domów zbiegają się w jednym punkcie.",
+    "steps": [
+      "Zaznacz punkt zbiegu i poprowadź do niego krawędzie ulicy.",
+      "Buduj domy z linii pionowych i linii biegnących do tego punktu."
+    ],
+    "tip": "Zmniejszaj szczegóły wraz ze wzrostem odległości."
+  }
+],
   "books": [
     {
       "id": "b1",
@@ -149,5 +205,36 @@ const APP_DATA = {
       "coverImage": "assets/covers/draw_IMG1_pl.png"
     }
   ],
-  "otherProducts": []
+  "otherProducts": [],
+  "videoUI": {
+  "eyebrow": "RYSOWANIE KROK PO KROKU",
+  "heading": "Obserwuj ruch. Potem spróbuj samodzielnie.",
+  "intro": "Osiem krótkich demonstracji z prawdziwymi dłońmi, ołówkiem i papierem. Oglądaj bez dźwięku i ćwicz według kroków pod filmem.",
+  "shortLessons": "demonstracji · 7–32 sekundy",
+  "noSound": "Bez dźwięku",
+  "closeUp": "Prawdziwe dłonie",
+  "lesson": "Technika",
+  "seconds": "s",
+  "excerpt": "Krótka demonstracja",
+  "play": "Odtwórz",
+  "pause": "Pauza",
+  "watch": "Zobacz technikę",
+  "replay": "Obejrzyj ponownie",
+  "speed": "Prędkość",
+  "loading": "Ładowanie filmu…",
+  "ready": "Najpierw obserwuj ruch dłoni, a potem powtórz go na własnej kartce.",
+  "playing": "Śledź ruch ołówka i sposób budowania kresek.",
+  "paused": "Wstrzymano. Przeczytaj kroki w swoim tempie.",
+  "finished": "Koniec demonstracji. Obejrzyj ponownie lub wybierz następną technikę.",
+  "next": "Następna technika",
+  "first": "Wróć do początku",
+  "progress": "Postęp",
+  "practice": "Spróbuj na własnej kartce",
+  "tip": "Praktyczna wskazówka",
+  "choose": "Wybierz technikę",
+  "source": "Oryginalna demonstracja",
+  "original": "Otwórz oryginalny film",
+  "error": "Nie można załadować filmu. Spróbuj ponownie lub otwórz oryginał.",
+  "note": "Przygotuj papier, ołówek i gumkę. Najpierw obserwuj, w razie potrzeby zwolnij film, a potem przećwicz ruch samodzielnie."
+}
 };

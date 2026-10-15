@@ -11,72 +11,128 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [
-        {
-            id: "v1",
-            title: "Tecnica di Schizzo & Controllo della Matita",
-            duration: "0:25 • Tecnica di base",
-            category: "Fondamenti",
-            obs: "Impugna la matita in modo rilassato e traccia linee leggere prima di definire i contorni finali.",
-            videoUrl: "https://assets.mixkit.co/active_storage/video_items/100488/1724285900/100488-video-720.mp4"
-        },
-        {
-            id: "v2",
-            title: "Linee Guida & Costruzione Prospettica",
-            duration: "0:20 • Punti di riferimento",
-            category: "Prospettiva & Linee",
-            obs: "Usa linee di costruzione geometriche per equilibrare perfettamente le proporzioni complessive.",
-            videoUrl: "https://assets.mixkit.co/videos/5254/5254-720.mp4"
-        },
-        {
-            id: "v3",
-            title: "Tratto Fluido & Durezza del Segno",
-            duration: "0:22 • Destrezza",
-            category: "Controllo del Segno",
-            obs: "Muovi l'intero avambraccio per ottenere curve continue e prive di incertezze.",
-            videoUrl: "https://assets.mixkit.co/videos/36721/36721-720.mp4"
-        },
-        {
-            id: "v4",
-            title: "Disegno del Ritratto & Proporzioni del Volto",
-            duration: "0:30 • Arte del ritratto",
-            category: "Ritratto & Anatomia",
-            obs: "Imposta prima l'ovale della testa e posiziona con precisione occhi, naso e bocca sugli assi.",
-            videoUrl: "https://assets.mixkit.co/videos/30232/30232-720.mp4"
-        },
-        {
-            id: "v5",
-            title: "Tratteggio & Chiaroscuro Dettagliato",
-            duration: "0:25 • Luce & Ombra",
-            category: "Ombreggiatura",
-            obs: "Lavora a strati sottili con tratteggio incrociato per donare profondità e tridimensionalità.",
-            videoUrl: "https://assets.mixkit.co/active_storage/video_items/100485/1724285772/100485-video-720.mp4"
-        },
-        {
-            id: "v6",
-            title: "Resa dei Capelli & Texture di Precisione",
-            duration: "0:22 • Resa materica",
-            category: "Dettaglio & Texture",
-            obs: "Tratta i capelli come masse e volumi principali prima di inserire i riflessi di luce singoli.",
-            videoUrl: "https://assets.mixkit.co/videos/40306/40306-720.mp4"
-        },
-        {
-            id: "v7",
-            title: "Taccuino di Schizzi & Studio dal Vero",
-            duration: "0:25 • Taccuino d'artista",
-            category: "Creatività & Pratica",
-            obs: "Esercitati quotidianamente sul tuo sketchbook per affinare l'occhio e la velocità di esecuzione.",
-            videoUrl: "https://assets.mixkit.co/videos/29983/29983-720.mp4"
-        },
-        {
-            id: "v8",
-            title: "Precisione Anatomica & Tratti Sottili",
-            duration: "0:28 • Disegno di precisione",
-            category: "Anatomia & Rigore",
-            obs: "Mantieni la punta della matita sempre ben affilata per le strutture anatomiche più complesse.",
-            videoUrl: "https://assets.mixkit.co/videos/9339/9339-720.mp4"
-        }
+    "videos": [
+  {
+    "id": "v1",
+    "youtubeId": "b6UuTWm9MIQ",
+    "start": 0,
+    "end": 14,
+    "creator": "Circle Line Art School",
+    "title": "Disegnare un cerchio a mano libera",
+    "categoryName": "01",
+    "description": "Osserva il movimento della mano e del foglio per ottenere un cerchio regolare.",
+    "steps": [
+      "Impugna la matita senza tensione e segui un movimento arrotondato.",
+      "Prova a ruotare gradualmente il foglio mentre tracci il cerchio."
     ],
+    "tip": "Inizia con un segno leggero prima di rinforzare il contorno."
+  },
+  {
+    "id": "v2",
+    "youtubeId": "fIfi4QcNdZY",
+    "start": 0,
+    "end": 19,
+    "creator": "Marissa Purnell",
+    "title": "Ombreggiare con piccoli cerchi",
+    "categoryName": "02",
+    "description": "Piccoli cerchi sovrapposti creano un’ombra uniforme senza tratti evidenti.",
+    "steps": [
+      "Inizia con piccoli movimenti circolari leggeri.",
+      "Aggiungi più strati nelle zone scure."
+    ],
+    "tip": "Lascia quasi intatta la parte più illuminata del foglio."
+  },
+  {
+    "id": "v3",
+    "youtubeId": "A0Vsu7VtV_o",
+    "start": 0,
+    "end": 7,
+    "creator": "Marissa Purnell",
+    "title": "Ombreggiare con segni liberi",
+    "categoryName": "03",
+    "description": "Piccoli riccioli sovrapposti costruiscono una trama espressiva.",
+    "steps": [
+      "Traccia piccoli riccioli liberi senza premere forte.",
+      "Sovrapponi maggiormente i segni nelle zone d’ombra."
+    ],
+    "tip": "Ripeti il breve filmato e prova il gesto su un foglio di esercizio."
+  },
+  {
+    "id": "v4",
+    "youtubeId": "HtKuG9CDRQg",
+    "start": 0,
+    "end": 28,
+    "creator": "Marissa Purnell",
+    "title": "Sfumare la grafite",
+    "categoryName": "04",
+    "description": "Osserva come uno strumento ammorbidisce la grafite e i passaggi di tono.",
+    "steps": [
+      "Stendi prima un sottile strato di grafite.",
+      "Sfuma delicatamente senza sporcare la zona di luce."
+    ],
+    "tip": "Lavora con strati leggeri anziché con una forte pressione."
+  },
+  {
+    "id": "v5",
+    "youtubeId": "0HSZTTc-Byc",
+    "start": 0,
+    "end": 14,
+    "creator": "Marissa Purnell",
+    "title": "Creare volume con i punti",
+    "categoryName": "05",
+    "description": "La distanza tra i punti rende la superficie più chiara o più scura.",
+    "steps": [
+      "Distanzia i punti sul lato illuminato.",
+      "Avvicina e moltiplica i punti nelle ombre."
+    ],
+    "tip": "Varia la densità dei punti anziché la pressione della matita."
+  },
+  {
+    "id": "v6",
+    "youtubeId": "5miv178rZLQ",
+    "start": 0,
+    "end": 21,
+    "creator": "Marissa Purnell",
+    "title": "Ombreggiare con il tratteggio",
+    "categoryName": "06",
+    "description": "Tratti paralleli costruiscono gradualmente i toni del disegno.",
+    "steps": [
+      "Traccia brevi linee nella stessa direzione.",
+      "Avvicina le linee e aggiungi strati nelle zone d’ombra."
+    ],
+    "tip": "Mantieni una direzione coerente e lascia visibili gli spazi chiari."
+  },
+  {
+    "id": "v7",
+    "youtubeId": "bUo52UvO3SY",
+    "start": 0,
+    "end": 25,
+    "creator": "Marissa Purnell",
+    "title": "Tratti che seguono la forma",
+    "categoryName": "07",
+    "description": "Le linee curve seguono la superficie e ne mostrano il volume.",
+    "steps": [
+      "Inizia con linee curve che seguono la forma arrotondata.",
+      "Aggiungi linee dove la superficie si allontana dalla luce."
+    ],
+    "tip": "Immagina come si disporrebbero le linee su una vera palla."
+  },
+  {
+    "id": "v8",
+    "youtubeId": "1eAe7axDCKc",
+    "start": 0,
+    "end": 32,
+    "creator": "Circle Line Art School",
+    "title": "Una strada in prospettiva a un punto",
+    "categoryName": "08",
+    "description": "Osserva come le linee della strada e delle case convergono verso un unico punto.",
+    "steps": [
+      "Segna un punto di fuga e orienta verso di esso i bordi della strada.",
+      "Costruisci le case con verticali e linee dirette allo stesso punto."
+    ],
+    "tip": "Riduci i dettagli man mano che si allontanano."
+  }
+],
 
     books: [
         {
@@ -156,5 +212,36 @@ const APP_DATA = {
         }
     ],
 
-    otherProducts: []
+    otherProducts: [],
+  "videoUI": {
+  "eyebrow": "DISEGNO PASSO DOPO PASSO",
+  "heading": "Osserva il gesto. Poi prova tu.",
+  "intro": "Otto brevi dimostrazioni con mani reali, matita e carta. Guarda senza audio e fai pratica con i passaggi sotto il video.",
+  "shortLessons": "dimostrazioni · 7–32 secondi",
+  "noSound": "Senza audio",
+  "closeUp": "Mani reali",
+  "lesson": "Tecnica",
+  "seconds": "s",
+  "excerpt": "Breve dimostrazione",
+  "play": "Riproduci",
+  "pause": "Pausa",
+  "watch": "Guarda la tecnica",
+  "replay": "Riguarda",
+  "speed": "Velocità",
+  "loading": "Caricamento del video…",
+  "ready": "Osserva prima il movimento della mano, poi riproducilo sul tuo foglio.",
+  "playing": "Segui il movimento della matita e la costruzione dei segni.",
+  "paused": "In pausa. Leggi i passaggi con calma.",
+  "finished": "Dimostrazione terminata. Riguardala oppure scegli la tecnica successiva.",
+  "next": "Tecnica successiva",
+  "first": "Torna alla prima tecnica",
+  "progress": "Avanzamento",
+  "practice": "Prova sul tuo foglio",
+  "tip": "Consiglio pratico",
+  "choose": "Scegli una tecnica",
+  "source": "Dimostrazione originale",
+  "original": "Apri il video originale",
+  "error": "Il video non è disponibile. Riprova oppure apri il video originale.",
+  "note": "Prepara carta, matita e gomma. Osserva prima il gesto, rallenta il video se necessario e poi prova sul tuo foglio."
+}
 };

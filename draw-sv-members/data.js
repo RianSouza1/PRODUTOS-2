@@ -8,71 +8,127 @@ const APP_DATA = {
     "showFloatingHelp": false
   },
   "videos": [
-    {
-      "id": "v1",
-      "title": "Skissa och kontrollera pennan",
-      "duration": "Grundläggande teknik",
-      "category": "Grunderna",
-      "obs": "Håll pennan avslappnat och börja med lätta linjer innan du förtydligar de slutliga konturerna.",
-      "videoUrl": "https://assets.mixkit.co/active_storage/video_items/100488/1724285900/100488-video-720.mp4"
-    },
-    {
-      "id": "v2",
-      "title": "Hjälplinjer och perspektiv",
-      "duration": "Hjälplinjer",
-      "category": "Perspektiv och linjer",
-      "obs": "Använd enkla konstruktionslinjer för att behålla proportionerna genom hela teckningen.",
-      "videoUrl": "https://assets.mixkit.co/videos/5254/5254-720.mp4"
-    },
-    {
-      "id": "v3",
-      "title": "Mjuka linjer och penntryck",
-      "duration": "Linjekontroll",
-      "category": "Kontroll över linjen",
-      "obs": "Låt hela underarmen följa med för att rita mjuka, sammanhängande kurvor.",
-      "videoUrl": "https://assets.mixkit.co/videos/36721/36721-720.mp4"
-    },
-    {
-      "id": "v4",
-      "title": "Porträtt och ansiktets proportioner",
-      "duration": "Porträtteckning",
-      "category": "Porträtt och anatomi",
-      "obs": "Börja med huvudets grundform och markera sedan ögonens, näsans och munnens placering med hjälplinjer.",
-      "videoUrl": "https://assets.mixkit.co/videos/30232/30232-720.mp4"
-    },
-    {
-      "id": "v5",
-      "title": "Skraffering samt ljus och skugga",
-      "duration": "Ljus och skugga",
-      "category": "Skuggläggning",
-      "obs": "Bygg upp tunna lager av korsskraffering för att skapa djup och volym i teckningen.",
-      "videoUrl": "https://assets.mixkit.co/active_storage/video_items/100485/1724285772/100485-video-720.mp4"
-    },
-    {
-      "id": "v6",
-      "title": "Hår och fina strukturer",
-      "duration": "Teckna struktur",
-      "category": "Detaljer och struktur",
-      "obs": "Börja med hårets stora former och volym. Lägg till enskilda ljusa partier först därefter.",
-      "videoUrl": "https://assets.mixkit.co/videos/40306/40306-720.mp4"
-    },
-    {
-      "id": "v7",
-      "title": "Skissboken och att teckna efter verkligheten",
-      "duration": "Daglig övning",
-      "category": "Kreativitet och övning",
-      "obs": "Öva regelbundet i en skissbok för att utveckla din iakttagelseförmåga och bli säkrare med pennan.",
-      "videoUrl": "https://assets.mixkit.co/videos/29983/29983-720.mp4"
-    },
-    {
-      "id": "v8",
-      "title": "Anatomi och tunna linjer",
-      "duration": "Noggrann teckning",
-      "category": "Anatomi och precision",
-      "obs": "Håll pennan vässad när du arbetar med små detaljer och mer komplexa former.",
-      "videoUrl": "https://assets.mixkit.co/videos/9339/9339-720.mp4"
-    }
-  ],
+  {
+    "id": "v1",
+    "youtubeId": "b6UuTWm9MIQ",
+    "start": 0,
+    "end": 14,
+    "creator": "Circle Line Art School",
+    "title": "En cirkel på fri hand",
+    "categoryName": "01",
+    "description": "Se hur handen och papperet samverkar för att skapa en jämn cirkel.",
+    "steps": [
+      "Håll pennan lätt och följ handens runda rörelse.",
+      "Prova att vrida papperet i små steg medan du ritar."
+    ],
+    "tip": "Öva med lätta linjer innan du gör konturen mörkare."
+  },
+  {
+    "id": "v2",
+    "youtubeId": "fIfi4QcNdZY",
+    "start": 0,
+    "end": 19,
+    "creator": "Marissa Purnell",
+    "title": "Skugga med små cirklar",
+    "categoryName": "02",
+    "description": "Små överlappande cirklar ger en jämn skugga utan tydliga streck.",
+    "steps": [
+      "Börja med små, lätta cirkelrörelser.",
+      "Lägg fler lager där formen ska vara mörkare."
+    ],
+    "tip": "Låt den ljusaste delen av papperet vara nästan orörd."
+  },
+  {
+    "id": "v3",
+    "youtubeId": "A0Vsu7VtV_o",
+    "start": 0,
+    "end": 7,
+    "creator": "Marissa Purnell",
+    "title": "Skugga med fria slingor",
+    "categoryName": "03",
+    "description": "Korta, överlappande slingor bygger upp en levande struktur.",
+    "steps": [
+      "Rita små fria slingor utan att pressa hårt.",
+      "Låt slingorna överlappa mer i de mörka partierna."
+    ],
+    "tip": "Upprepa den korta filmen och prova samma rörelse på ett kladdpapper."
+  },
+  {
+    "id": "v4",
+    "youtubeId": "HtKuG9CDRQg",
+    "start": 0,
+    "end": 28,
+    "creator": "Marissa Purnell",
+    "title": "Jämna ut grafiten",
+    "categoryName": "04",
+    "description": "Se hur ett verktyg mjukar upp grafiten och övergången mellan ljus och mörker.",
+    "steps": [
+      "Lägg först ett tunt lager grafit.",
+      "Jämna försiktigt ut lagret utan att dra in grafit i högdagern."
+    ],
+    "tip": "Arbeta lätt och bygg upp mörkret i flera omgångar."
+  },
+  {
+    "id": "v5",
+    "youtubeId": "0HSZTTc-Byc",
+    "start": 0,
+    "end": 14,
+    "creator": "Marissa Purnell",
+    "title": "Skapa volym med punkter",
+    "categoryName": "05",
+    "description": "Avståndet mellan punkterna gör formen ljusare eller mörkare.",
+    "steps": [
+      "Gör glest placerade punkter på den ljusa sidan.",
+      "Placera fler punkter tätt tillsammans i skuggan."
+    ],
+    "tip": "Ändra avståndet mellan punkterna snarare än penntrycket."
+  },
+  {
+    "id": "v6",
+    "youtubeId": "5miv178rZLQ",
+    "start": 0,
+    "end": 21,
+    "creator": "Marissa Purnell",
+    "title": "Skugga med parallella linjer",
+    "categoryName": "06",
+    "description": "Parallella streck bygger upp en skugga steg för steg.",
+    "steps": [
+      "Dra korta linjer i samma riktning.",
+      "Placera linjerna tätare och lägg fler lager i skuggan."
+    ],
+    "tip": "Behåll samma riktning och låt ljusa mellanrum synas."
+  },
+  {
+    "id": "v7",
+    "youtubeId": "bUo52UvO3SY",
+    "start": 0,
+    "end": 25,
+    "creator": "Marissa Purnell",
+    "title": "Linjer som följer formen",
+    "categoryName": "07",
+    "description": "Böjda skrafferingar följer ytan och visar formens volym.",
+    "steps": [
+      "Börja med böjda linjer som följer den runda formen.",
+      "Bygg vidare med fler linjer där ytan vänder bort från ljuset."
+    ],
+    "tip": "Tänk på hur linjerna skulle ligga på en verklig boll."
+  },
+  {
+    "id": "v8",
+    "youtubeId": "1eAe7axDCKc",
+    "start": 0,
+    "end": 32,
+    "creator": "Circle Line Art School",
+    "title": "En gata i enpunktsperspektiv",
+    "categoryName": "08",
+    "description": "Se hur gatans och husens linjer leder blicken mot en gemensam flyktpunkt.",
+    "steps": [
+      "Markera en flyktpunkt och dra gatans kanter mot den.",
+      "Bygg husen med lodräta linjer och linjer mot samma punkt."
+    ],
+    "tip": "Gör detaljerna mindre ju längre bort de ligger."
+  }
+],
   "books": [
     {
       "id": "b1",
@@ -150,5 +206,36 @@ const APP_DATA = {
       "coverImage": "assets/covers/draw_IMG1_sv.png"
     }
   ],
-  "otherProducts": []
+  "otherProducts": [],
+  "videoUI": {
+  "eyebrow": "TECKNA STEG FÖR STEG",
+  "heading": "Se rörelsen. Prova själv.",
+  "intro": "Åtta korta demonstrationer med riktiga händer, penna och papper. Se tekniken utan ljud och öva med stegen under filmen.",
+  "shortLessons": "demonstrationer · 7–32 sekunder",
+  "noSound": "Utan ljud",
+  "closeUp": "Riktiga händer",
+  "lesson": "Teknik",
+  "seconds": "s",
+  "excerpt": "Kort demonstration",
+  "play": "Spela upp",
+  "pause": "Pausa",
+  "watch": "Se tekniken",
+  "replay": "Spela igen",
+  "speed": "Hastighet",
+  "loading": "Filmen laddas…",
+  "ready": "Se först hur handen rör sig. Upprepa sedan på ditt eget papper.",
+  "playing": "Följ pennans rörelse och hur linjerna byggs upp.",
+  "paused": "Pausad. Läs stegen i lugn och ro.",
+  "finished": "Demonstrationen är klar. Spela igen eller välj nästa teknik.",
+  "next": "Nästa teknik",
+  "first": "Till den första tekniken",
+  "progress": "Förlopp",
+  "practice": "Prova på ditt papper",
+  "tip": "Praktiskt tips",
+  "choose": "Välj en teknik",
+  "source": "Originaldemonstration",
+  "original": "Öppna originalfilmen",
+  "error": "Filmen kunde inte laddas. Försök igen eller öppna originalfilmen.",
+  "note": "Du behöver papper, en penna och ett suddgummi. Titta först, välj en långsammare hastighet om du vill och öva sedan själv."
+}
 };

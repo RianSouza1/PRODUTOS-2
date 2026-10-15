@@ -11,72 +11,128 @@ const APP_DATA = {
         showFloatingHelp: true
     },
 
-    videos: [
-        {
-            id: "v1",
-            title: "Schetstechniek & Potloodcontrole op Papier",
-            duration: "0:25 • Basistechniek",
-            category: "Fundamenten",
-            obs: "Houd het potlood soepel vast en zet lichte schetslijnen op voordat u details aanbrengt.",
-            videoUrl: "https://assets.mixkit.co/active_storage/video_items/100488/1724285900/100488-video-720.mp4"
-        },
-        {
-            id: "v2",
-            title: "Basislijnen & Perspectiefconstructie",
-            duration: "0:20 • Ruimtelijk inzicht",
-            category: "Perspectief & Lijnen",
-            obs: "Trek loodrechte referentielijnen om de juiste verhoudingen van uw compositie te bepalen.",
-            videoUrl: "https://assets.mixkit.co/videos/5254/5254-720.mp4"
-        },
-        {
-            id: "v3",
-            title: "Vrije Lijnvoering & Vloeiende Schetsen",
-            duration: "0:22 • Handcontrole",
-            category: "Lijncontrole",
-            obs: "Beweeg vanuit uw onderarm om langere, vloeiende curven te tekenen zonder aarzeling.",
-            videoUrl: "https://assets.mixkit.co/videos/36721/36721-720.mp4"
-        },
-        {
-            id: "v4",
-            title: "Portrettekenen & Vrouwelijke Gezichtsverhoudingen",
-            duration: "0:30 • Portretkunst",
-            category: "Portret & Anatomie",
-            obs: "Bouw het gezicht op vanuit een ovaal en plaats de ogen en neus langs de centrale symmetrie-as.",
-            videoUrl: "https://assets.mixkit.co/videos/30232/30232-720.mp4"
-        },
-        {
-            id: "v5",
-            title: "Arcering & Gedetailleerde Schaduwopbouw",
-            duration: "0:25 • Licht & Schaduw",
-            category: "Schaduwtechniek",
-            obs: "Werk met zachte kruisarcering in meerdere dunne lagen voor een realistisch volume-effect.",
-            videoUrl: "https://assets.mixkit.co/active_storage/video_items/100485/1724285772/100485-video-720.mp4"
-        },
-        {
-            id: "v6",
-            title: "Haartexturen & Fijne Details Tekenen",
-            duration: "0:22 • Textuurweergave",
-            category: "Detail & Textuur",
-            obs: "Teken haar in grotere bundels en voeg pas op het einde individuele highlights toe.",
-            videoUrl: "https://assets.mixkit.co/videos/40306/40306-720.mp4"
-        },
-        {
-            id: "v7",
-            title: "Creatieve Schetsboektechnieken & Dynamiek",
-            duration: "0:25 • Schetsboek",
-            category: "Vrije Expressie",
-            obs: "Oefen dagelijks met snelle schetsen in uw schetsboek om uw observatievermogen te trainen.",
-            videoUrl: "https://assets.mixkit.co/videos/29983/29983-720.mp4"
-        },
-        {
-            id: "v8",
-            title: "Anatomische Precisie & Fijne Lijnkunst",
-            duration: "0:28 • Precisietekenen",
-            category: "Anatomie & Precisie",
-            obs: "Let op de onderlinge afstanden en hou de potloodpunt scherp voor fijne anatomische lijnen.",
-            videoUrl: "https://assets.mixkit.co/videos/9339/9339-720.mp4"
-        }
+    "videos": [
+  {
+    "id": "v1",
+    "youtubeId": "b6UuTWm9MIQ",
+    "start": 0,
+    "end": 14,
+    "creator": "Circle Line Art School",
+    "title": "Een cirkel uit de vrije hand",
+    "categoryName": "01",
+    "description": "Bekijk hoe hand en papier samenwerken om een gelijkmatige cirkel te tekenen.",
+    "steps": [
+      "Houd het potlood ontspannen vast en volg een ronde beweging.",
+      "Probeer het papier tijdens het tekenen geleidelijk te draaien."
     ],
+    "tip": "Begin met een lichte lijn voordat je de omtrek donkerder maakt."
+  },
+  {
+    "id": "v2",
+    "youtubeId": "fIfi4QcNdZY",
+    "start": 0,
+    "end": 19,
+    "creator": "Marissa Purnell",
+    "title": "Schaduwen met kleine cirkels",
+    "categoryName": "02",
+    "description": "Kleine overlappende cirkels zorgen voor een zachte schaduw zonder opvallende strepen.",
+    "steps": [
+      "Begin met kleine, lichte cirkelbewegingen.",
+      "Voeg meer lagen toe waar de vorm donkerder moet worden."
+    ],
+    "tip": "Laat het lichtste deel van het papier bijna onaangeraakt."
+  },
+  {
+    "id": "v3",
+    "youtubeId": "A0Vsu7VtV_o",
+    "start": 0,
+    "end": 7,
+    "creator": "Marissa Purnell",
+    "title": "Schaduwen met vrije lusjes",
+    "categoryName": "03",
+    "description": "Korte, overlappende lusjes bouwen een levendige structuur op.",
+    "steps": [
+      "Teken kleine vrije lusjes zonder hard te drukken.",
+      "Laat de lusjes in de schaduw meer overlappen."
+    ],
+    "tip": "Herhaal het korte filmpje en probeer de beweging op kladpapier."
+  },
+  {
+    "id": "v4",
+    "youtubeId": "HtKuG9CDRQg",
+    "start": 0,
+    "end": 28,
+    "creator": "Marissa Purnell",
+    "title": "Grafiet zacht uitwrijven",
+    "categoryName": "04",
+    "description": "Bekijk hoe een hulpmiddel het grafiet en de overgangen tussen licht en donker verzacht.",
+    "steps": [
+      "Breng eerst een dun laagje grafiet aan.",
+      "Werk het laagje voorzichtig uit en houd de lichtste plek schoon."
+    ],
+    "tip": "Werk met lichte lagen in plaats van hard te drukken."
+  },
+  {
+    "id": "v5",
+    "youtubeId": "0HSZTTc-Byc",
+    "start": 0,
+    "end": 14,
+    "creator": "Marissa Purnell",
+    "title": "Volume opbouwen met stippen",
+    "categoryName": "05",
+    "description": "De afstand tussen de stippen maakt het oppervlak lichter of donkerder.",
+    "steps": [
+      "Plaats de stippen verder uit elkaar aan de lichte kant.",
+      "Zet meer stippen dicht bij elkaar in de schaduw."
+    ],
+    "tip": "Verander de dichtheid van de stippen in plaats van de druk."
+  },
+  {
+    "id": "v6",
+    "youtubeId": "5miv178rZLQ",
+    "start": 0,
+    "end": 21,
+    "creator": "Marissa Purnell",
+    "title": "Schaduwen met arceringen",
+    "categoryName": "06",
+    "description": "Evenwijdige lijnen bouwen de toonwaarden stap voor stap op.",
+    "steps": [
+      "Trek korte lijnen in dezelfde richting.",
+      "Zet de lijnen dichter bij elkaar en voeg lagen toe in de schaduw."
+    ],
+    "tip": "Houd dezelfde richting aan en laat lichte openingen zichtbaar."
+  },
+  {
+    "id": "v7",
+    "youtubeId": "bUo52UvO3SY",
+    "start": 0,
+    "end": 25,
+    "creator": "Marissa Purnell",
+    "title": "Lijnen die de vorm volgen",
+    "categoryName": "07",
+    "description": "Gebogen arceringen volgen het oppervlak en laten het volume zien.",
+    "steps": [
+      "Begin met gebogen lijnen die de ronde vorm volgen.",
+      "Voeg lijnen toe waar het oppervlak van het licht af draait."
+    ],
+    "tip": "Stel je voor hoe de lijnen op een echte bal zouden liggen."
+  },
+  {
+    "id": "v8",
+    "youtubeId": "1eAe7axDCKc",
+    "start": 0,
+    "end": 32,
+    "creator": "Circle Line Art School",
+    "title": "Een straat in eenpuntsperspectief",
+    "categoryName": "08",
+    "description": "Bekijk hoe de lijnen van de straat en de huizen naar hetzelfde verdwijnpunt lopen.",
+    "steps": [
+      "Zet een verdwijnpunt en trek de straatranden naar dat punt.",
+      "Bouw de huizen met verticale lijnen en lijnen naar hetzelfde punt."
+    ],
+    "tip": "Maak details kleiner naarmate ze verder weg liggen."
+  }
+],
 
     books: [
         {
@@ -156,5 +212,36 @@ const APP_DATA = {
         }
     ],
 
-    otherProducts: []
+    otherProducts: [],
+  "videoUI": {
+  "eyebrow": "STAP VOOR STAP TEKENEN",
+  "heading": "Bekijk de beweging. Probeer het zelf.",
+  "intro": "Acht korte demonstraties met echte handen, potlood en papier. Kijk zonder geluid en oefen met de stappen onder de video.",
+  "shortLessons": "demonstraties · 7–32 seconden",
+  "noSound": "Zonder geluid",
+  "closeUp": "Echte handen",
+  "lesson": "Techniek",
+  "seconds": "s",
+  "excerpt": "Korte demonstratie",
+  "play": "Afspelen",
+  "pause": "Pauzeren",
+  "watch": "Bekijk de techniek",
+  "replay": "Opnieuw bekijken",
+  "speed": "Snelheid",
+  "loading": "De video wordt geladen…",
+  "ready": "Bekijk eerst de handbeweging en herhaal die daarna op je eigen papier.",
+  "playing": "Volg de potloodbeweging en de opbouw van de lijnen.",
+  "paused": "Gepauzeerd. Lees de stappen op je gemak.",
+  "finished": "Demonstratie afgelopen. Bekijk hem opnieuw of kies de volgende techniek.",
+  "next": "Volgende techniek",
+  "first": "Terug naar het begin",
+  "progress": "Voortgang",
+  "practice": "Probeer het op je eigen papier",
+  "tip": "Praktische tip",
+  "choose": "Kies een techniek",
+  "source": "Oorspronkelijke demonstratie",
+  "original": "Open de oorspronkelijke video",
+  "error": "De video kan niet worden geladen. Probeer opnieuw of open de oorspronkelijke video.",
+  "note": "Leg papier, een potlood en een gum klaar. Kijk eerst, vertraag de video als dat helpt en oefen daarna zelf."
+}
 };
