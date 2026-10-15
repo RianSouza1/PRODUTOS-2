@@ -14,27 +14,12 @@ const APP_DATA = {
     "videos": [
   {
     "id": "v1",
-    "youtubeId": "b6UuTWm9MIQ",
-    "start": 0,
-    "end": 14,
-    "creator": "Circle Line Art School",
-    "title": "Disegnare un cerchio a mano libera",
-    "categoryName": "01",
-    "description": "Osserva il movimento della mano e del foglio per ottenere un cerchio regolare.",
-    "steps": [
-      "Impugna la matita senza tensione e segui un movimento arrotondato.",
-      "Prova a ruotare gradualmente il foglio mentre tracci il cerchio."
-    ],
-    "tip": "Inizia con un segno leggero prima di rinforzare il contorno."
-  },
-  {
-    "id": "v2",
     "youtubeId": "fIfi4QcNdZY",
     "start": 0,
     "end": 19,
     "creator": "Marissa Purnell",
     "title": "Ombreggiare con piccoli cerchi",
-    "categoryName": "02",
+    "categoryName": "Ombreggiatura",
     "description": "Piccoli cerchi sovrapposti creano un’ombra uniforme senza tratti evidenti.",
     "steps": [
       "Inizia con piccoli movimenti circolari leggeri.",
@@ -43,13 +28,28 @@ const APP_DATA = {
     "tip": "Lascia quasi intatta la parte più illuminata del foglio."
   },
   {
+    "id": "v2",
+    "youtubeId": "b6UuTWm9MIQ",
+    "start": 0,
+    "end": 14,
+    "creator": "Circle Line Art School",
+    "title": "Disegnare un cerchio a mano libera",
+    "categoryName": "Le basi",
+    "description": "Osserva il movimento della mano e del foglio per ottenere un cerchio regolare.",
+    "steps": [
+      "Impugna la matita senza tensione e segui un movimento arrotondato.",
+      "Prova a ruotare gradualmente il foglio mentre tracci il cerchio."
+    ],
+    "tip": "Inizia con un segno leggero prima di rinforzare il contorno."
+  },
+  {
     "id": "v3",
     "youtubeId": "A0Vsu7VtV_o",
     "start": 0,
     "end": 7,
     "creator": "Marissa Purnell",
     "title": "Ombreggiare con segni liberi",
-    "categoryName": "03",
+    "categoryName": "Ombreggiatura",
     "description": "Piccoli riccioli sovrapposti costruiscono una trama espressiva.",
     "steps": [
       "Traccia piccoli riccioli liberi senza premere forte.",
@@ -64,7 +64,7 @@ const APP_DATA = {
     "end": 28,
     "creator": "Marissa Purnell",
     "title": "Sfumare la grafite",
-    "categoryName": "04",
+    "categoryName": "Ombreggiatura",
     "description": "Osserva come uno strumento ammorbidisce la grafite e i passaggi di tono.",
     "steps": [
       "Stendi prima un sottile strato di grafite.",
@@ -79,7 +79,7 @@ const APP_DATA = {
     "end": 14,
     "creator": "Marissa Purnell",
     "title": "Creare volume con i punti",
-    "categoryName": "05",
+    "categoryName": "Ombreggiatura",
     "description": "La distanza tra i punti rende la superficie più chiara o più scura.",
     "steps": [
       "Distanzia i punti sul lato illuminato.",
@@ -94,7 +94,7 @@ const APP_DATA = {
     "end": 21,
     "creator": "Marissa Purnell",
     "title": "Ombreggiare con il tratteggio",
-    "categoryName": "06",
+    "categoryName": "Ombreggiatura",
     "description": "Tratti paralleli costruiscono gradualmente i toni del disegno.",
     "steps": [
       "Traccia brevi linee nella stessa direzione.",
@@ -109,7 +109,7 @@ const APP_DATA = {
     "end": 25,
     "creator": "Marissa Purnell",
     "title": "Tratti che seguono la forma",
-    "categoryName": "07",
+    "categoryName": "Ombreggiatura",
     "description": "Le linee curve seguono la superficie e ne mostrano il volume.",
     "steps": [
       "Inizia con linee curve che seguono la forma arrotondata.",
@@ -124,7 +124,7 @@ const APP_DATA = {
     "end": 32,
     "creator": "Circle Line Art School",
     "title": "Una strada in prospettiva a un punto",
-    "categoryName": "08",
+    "categoryName": "Prospettiva",
     "description": "Osserva come le linee della strada e delle case convergono verso un unico punto.",
     "steps": [
       "Segna un punto di fuga e orienta verso di esso i bordi della strada.",

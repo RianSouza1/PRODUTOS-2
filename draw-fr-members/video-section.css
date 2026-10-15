@@ -70,3 +70,9 @@
 .draw-video-frame { aspect-ratio:4/5; min-height:320px; max-height:620px; }
 .draw-videos-view .hero-card { display:block; }
 .draw-videos-view .hero-text { max-width:none; }
+
+/* Keep labels readable against the existing blue drawing theme. */
+.draw-videos-view .draw-eyebrow { color:#a8d8ff!important; }
+.draw-videos-view .hero-card .draw-eyebrow { color:#fff!important; }
+.draw-hero-tags span { color:#fff; background:rgba(0,0,0,.12); border-color:rgba(255,255,255,.3); }
+.draw-choice-copy .draw-choice-number,.draw-lesson-choice>svg,.draw-source a { color:#a8d8ff; }

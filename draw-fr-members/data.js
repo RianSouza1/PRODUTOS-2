@@ -14,27 +14,12 @@ const APP_DATA = {
     "videos": [
   {
     "id": "v1",
-    "youtubeId": "b6UuTWm9MIQ",
-    "start": 0,
-    "end": 14,
-    "creator": "Circle Line Art School",
-    "title": "Tracer un cercle à main levée",
-    "categoryName": "01",
-    "description": "Observe le mouvement de la main et du papier pour construire un cercle régulier.",
-    "steps": [
-      "Tiens le crayon sans crispation et suis un mouvement arrondi.",
-      "Essaie de tourner progressivement le papier pendant le tracé."
-    ],
-    "tip": "Commence avec un trait léger avant de renforcer le contour."
-  },
-  {
-    "id": "v2",
     "youtubeId": "fIfi4QcNdZY",
     "start": 0,
     "end": 19,
     "creator": "Marissa Purnell",
     "title": "Ombrer avec de petits cercles",
-    "categoryName": "02",
+    "categoryName": "Ombrage",
     "description": "Des cercles qui se chevauchent créent une ombre douce, sans traits marqués.",
     "steps": [
       "Commence avec de petits mouvements circulaires légers.",
@@ -43,13 +28,28 @@ const APP_DATA = {
     "tip": "Préserve le papier dans la zone la plus éclairée."
   },
   {
+    "id": "v2",
+    "youtubeId": "b6UuTWm9MIQ",
+    "start": 0,
+    "end": 14,
+    "creator": "Circle Line Art School",
+    "title": "Tracer un cercle à main levée",
+    "categoryName": "Les bases",
+    "description": "Observe le mouvement de la main et du papier pour construire un cercle régulier.",
+    "steps": [
+      "Tiens le crayon sans crispation et suis un mouvement arrondi.",
+      "Essaie de tourner progressivement le papier pendant le tracé."
+    ],
+    "tip": "Commence avec un trait léger avant de renforcer le contour."
+  },
+  {
     "id": "v3",
     "youtubeId": "A0Vsu7VtV_o",
     "start": 0,
     "end": 7,
     "creator": "Marissa Purnell",
     "title": "Ombrer avec des boucles libres",
-    "categoryName": "03",
+    "categoryName": "Ombrage",
     "description": "De petites boucles superposées construisent une texture expressive.",
     "steps": [
       "Dessine des boucles libres sans appuyer fortement.",
@@ -64,7 +64,7 @@ const APP_DATA = {
     "end": 28,
     "creator": "Marissa Purnell",
     "title": "Estomper le graphite",
-    "categoryName": "04",
+    "categoryName": "Ombrage",
     "description": "Observe comment un outil adoucit le graphite et les transitions de valeurs.",
     "steps": [
       "Dépose d’abord une fine couche de graphite.",
@@ -79,7 +79,7 @@ const APP_DATA = {
     "end": 14,
     "creator": "Marissa Purnell",
     "title": "Créer du volume avec des points",
-    "categoryName": "05",
+    "categoryName": "Ombrage",
     "description": "L’espacement des points rend une surface plus claire ou plus sombre.",
     "steps": [
       "Espace les points du côté éclairé.",
@@ -94,7 +94,7 @@ const APP_DATA = {
     "end": 21,
     "creator": "Marissa Purnell",
     "title": "Ombrer avec des hachures",
-    "categoryName": "06",
+    "categoryName": "Ombrage",
     "description": "Des traits parallèles construisent progressivement les valeurs.",
     "steps": [
       "Trace de petits traits dans une même direction.",
@@ -109,7 +109,7 @@ const APP_DATA = {
     "end": 25,
     "creator": "Marissa Purnell",
     "title": "Des hachures qui suivent la forme",
-    "categoryName": "07",
+    "categoryName": "Ombrage",
     "description": "Des lignes courbes suivent la surface et suggèrent son volume.",
     "steps": [
       "Trace des lignes courbes qui épousent la forme arrondie.",
@@ -124,7 +124,7 @@ const APP_DATA = {
     "end": 32,
     "creator": "Circle Line Art School",
     "title": "Une rue en perspective à un point",
-    "categoryName": "08",
+    "categoryName": "Perspective",
     "description": "Observe comment les lignes de la rue et des maisons convergent vers un même point.",
     "steps": [
       "Place un point de fuite et dirige les bords de la rue vers lui.",

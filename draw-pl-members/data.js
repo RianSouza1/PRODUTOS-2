@@ -9,27 +9,12 @@ const APP_DATA = {
   "videos": [
   {
     "id": "v1",
-    "youtubeId": "b6UuTWm9MIQ",
-    "start": 0,
-    "end": 14,
-    "creator": "Circle Line Art School",
-    "title": "Okrąg rysowany odręcznie",
-    "categoryName": "01",
-    "description": "Zobacz, jak ruch dłoni i kartki pomaga narysować równy okrąg.",
-    "steps": [
-      "Trzymaj ołówek swobodnie i prowadź go po łuku.",
-      "Spróbuj stopniowo obracać kartkę podczas rysowania."
-    ],
-    "tip": "Zacznij lekką linią, a dopiero potem wzmocnij kontur."
-  },
-  {
-    "id": "v2",
     "youtubeId": "fIfi4QcNdZY",
     "start": 0,
     "end": 19,
     "creator": "Marissa Purnell",
     "title": "Cieniowanie małymi kółkami",
-    "categoryName": "02",
+    "categoryName": "Cieniowanie",
     "description": "Nakładające się kółka tworzą łagodny cień bez wyraźnych kresek.",
     "steps": [
       "Zacznij od małych, lekkich ruchów okrężnych.",
@@ -38,13 +23,28 @@ const APP_DATA = {
     "tip": "Pozostaw najjaśniejszy fragment papieru prawie nietknięty."
   },
   {
+    "id": "v2",
+    "youtubeId": "b6UuTWm9MIQ",
+    "start": 0,
+    "end": 14,
+    "creator": "Circle Line Art School",
+    "title": "Okrąg rysowany odręcznie",
+    "categoryName": "Podstawy",
+    "description": "Zobacz, jak ruch dłoni i kartki pomaga narysować równy okrąg.",
+    "steps": [
+      "Trzymaj ołówek swobodnie i prowadź go po łuku.",
+      "Spróbuj stopniowo obracać kartkę podczas rysowania."
+    ],
+    "tip": "Zacznij lekką linią, a dopiero potem wzmocnij kontur."
+  },
+  {
     "id": "v3",
     "youtubeId": "A0Vsu7VtV_o",
     "start": 0,
     "end": 7,
     "creator": "Marissa Purnell",
     "title": "Cieniowanie swobodnymi pętlami",
-    "categoryName": "03",
+    "categoryName": "Cieniowanie",
     "description": "Krótkie, nakładające się pętle budują wyrazistą fakturę.",
     "steps": [
       "Rysuj niewielkie swobodne pętle bez mocnego nacisku.",
@@ -59,7 +59,7 @@ const APP_DATA = {
     "end": 28,
     "creator": "Marissa Purnell",
     "title": "Rozcieranie grafitu",
-    "categoryName": "04",
+    "categoryName": "Cieniowanie",
     "description": "Zobacz, jak narzędzie wygładza grafit i przejścia między jasnym a ciemnym tonem.",
     "steps": [
       "Najpierw nałóż cienką warstwę grafitu.",
@@ -74,7 +74,7 @@ const APP_DATA = {
     "end": 14,
     "creator": "Marissa Purnell",
     "title": "Budowanie objętości kropkami",
-    "categoryName": "05",
+    "categoryName": "Cieniowanie",
     "description": "Odstępy między kropkami sprawiają, że powierzchnia jest jaśniejsza lub ciemniejsza.",
     "steps": [
       "Stawiaj luźno rozmieszczone kropki po jasnej stronie.",
@@ -89,7 +89,7 @@ const APP_DATA = {
     "end": 21,
     "creator": "Marissa Purnell",
     "title": "Cieniowanie kreskowaniem",
-    "categoryName": "06",
+    "categoryName": "Cieniowanie",
     "description": "Równoległe kreski stopniowo budują tony rysunku.",
     "steps": [
       "Rysuj krótkie linie w tym samym kierunku.",
@@ -104,7 +104,7 @@ const APP_DATA = {
     "end": 25,
     "creator": "Marissa Purnell",
     "title": "Kreski podążające za formą",
-    "categoryName": "07",
+    "categoryName": "Cieniowanie",
     "description": "Zakrzywione kreski podążają za powierzchnią i pokazują jej objętość.",
     "steps": [
       "Zacznij od łuków zgodnych z zaokrągloną formą.",
@@ -119,7 +119,7 @@ const APP_DATA = {
     "end": 32,
     "creator": "Circle Line Art School",
     "title": "Ulica w perspektywie jednopunktowej",
-    "categoryName": "08",
+    "categoryName": "Perspektywa",
     "description": "Zobacz, jak linie ulicy i domów zbiegają się w jednym punkcie.",
     "steps": [
       "Zaznacz punkt zbiegu i poprowadź do niego krawędzie ulicy.",

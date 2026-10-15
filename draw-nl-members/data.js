@@ -14,27 +14,12 @@ const APP_DATA = {
     "videos": [
   {
     "id": "v1",
-    "youtubeId": "b6UuTWm9MIQ",
-    "start": 0,
-    "end": 14,
-    "creator": "Circle Line Art School",
-    "title": "Een cirkel uit de vrije hand",
-    "categoryName": "01",
-    "description": "Bekijk hoe hand en papier samenwerken om een gelijkmatige cirkel te tekenen.",
-    "steps": [
-      "Houd het potlood ontspannen vast en volg een ronde beweging.",
-      "Probeer het papier tijdens het tekenen geleidelijk te draaien."
-    ],
-    "tip": "Begin met een lichte lijn voordat je de omtrek donkerder maakt."
-  },
-  {
-    "id": "v2",
     "youtubeId": "fIfi4QcNdZY",
     "start": 0,
     "end": 19,
     "creator": "Marissa Purnell",
     "title": "Schaduwen met kleine cirkels",
-    "categoryName": "02",
+    "categoryName": "Schaduw",
     "description": "Kleine overlappende cirkels zorgen voor een zachte schaduw zonder opvallende strepen.",
     "steps": [
       "Begin met kleine, lichte cirkelbewegingen.",
@@ -43,13 +28,28 @@ const APP_DATA = {
     "tip": "Laat het lichtste deel van het papier bijna onaangeraakt."
   },
   {
+    "id": "v2",
+    "youtubeId": "b6UuTWm9MIQ",
+    "start": 0,
+    "end": 14,
+    "creator": "Circle Line Art School",
+    "title": "Een cirkel uit de vrije hand",
+    "categoryName": "De basis",
+    "description": "Bekijk hoe hand en papier samenwerken om een gelijkmatige cirkel te tekenen.",
+    "steps": [
+      "Houd het potlood ontspannen vast en volg een ronde beweging.",
+      "Probeer het papier tijdens het tekenen geleidelijk te draaien."
+    ],
+    "tip": "Begin met een lichte lijn voordat je de omtrek donkerder maakt."
+  },
+  {
     "id": "v3",
     "youtubeId": "A0Vsu7VtV_o",
     "start": 0,
     "end": 7,
     "creator": "Marissa Purnell",
     "title": "Schaduwen met vrije lusjes",
-    "categoryName": "03",
+    "categoryName": "Schaduw",
     "description": "Korte, overlappende lusjes bouwen een levendige structuur op.",
     "steps": [
       "Teken kleine vrije lusjes zonder hard te drukken.",
@@ -64,7 +64,7 @@ const APP_DATA = {
     "end": 28,
     "creator": "Marissa Purnell",
     "title": "Grafiet zacht uitwrijven",
-    "categoryName": "04",
+    "categoryName": "Schaduw",
     "description": "Bekijk hoe een hulpmiddel het grafiet en de overgangen tussen licht en donker verzacht.",
     "steps": [
       "Breng eerst een dun laagje grafiet aan.",
@@ -79,7 +79,7 @@ const APP_DATA = {
     "end": 14,
     "creator": "Marissa Purnell",
     "title": "Volume opbouwen met stippen",
-    "categoryName": "05",
+    "categoryName": "Schaduw",
     "description": "De afstand tussen de stippen maakt het oppervlak lichter of donkerder.",
     "steps": [
       "Plaats de stippen verder uit elkaar aan de lichte kant.",
@@ -94,7 +94,7 @@ const APP_DATA = {
     "end": 21,
     "creator": "Marissa Purnell",
     "title": "Schaduwen met arceringen",
-    "categoryName": "06",
+    "categoryName": "Schaduw",
     "description": "Evenwijdige lijnen bouwen de toonwaarden stap voor stap op.",
     "steps": [
       "Trek korte lijnen in dezelfde richting.",
@@ -109,7 +109,7 @@ const APP_DATA = {
     "end": 25,
     "creator": "Marissa Purnell",
     "title": "Lijnen die de vorm volgen",
-    "categoryName": "07",
+    "categoryName": "Schaduw",
     "description": "Gebogen arceringen volgen het oppervlak en laten het volume zien.",
     "steps": [
       "Begin met gebogen lijnen die de ronde vorm volgen.",
@@ -124,7 +124,7 @@ const APP_DATA = {
     "end": 32,
     "creator": "Circle Line Art School",
     "title": "Een straat in eenpuntsperspectief",
-    "categoryName": "08",
+    "categoryName": "Perspectief",
     "description": "Bekijk hoe de lijnen van de straat en de huizen naar hetzelfde verdwijnpunt lopen.",
     "steps": [
       "Zet een verdwijnpunt en trek de straatranden naar dat punt.",

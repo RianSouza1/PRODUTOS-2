@@ -10,27 +10,12 @@ const APP_DATA = {
   "videos": [
   {
     "id": "v1",
-    "youtubeId": "b6UuTWm9MIQ",
-    "start": 0,
-    "end": 14,
-    "creator": "Circle Line Art School",
-    "title": "En cirkel på fri hand",
-    "categoryName": "01",
-    "description": "Se hur handen och papperet samverkar för att skapa en jämn cirkel.",
-    "steps": [
-      "Håll pennan lätt och följ handens runda rörelse.",
-      "Prova att vrida papperet i små steg medan du ritar."
-    ],
-    "tip": "Öva med lätta linjer innan du gör konturen mörkare."
-  },
-  {
-    "id": "v2",
     "youtubeId": "fIfi4QcNdZY",
     "start": 0,
     "end": 19,
     "creator": "Marissa Purnell",
     "title": "Skugga med små cirklar",
-    "categoryName": "02",
+    "categoryName": "Skuggläggning",
     "description": "Små överlappande cirklar ger en jämn skugga utan tydliga streck.",
     "steps": [
       "Börja med små, lätta cirkelrörelser.",
@@ -39,13 +24,28 @@ const APP_DATA = {
     "tip": "Låt den ljusaste delen av papperet vara nästan orörd."
   },
   {
+    "id": "v2",
+    "youtubeId": "b6UuTWm9MIQ",
+    "start": 0,
+    "end": 14,
+    "creator": "Circle Line Art School",
+    "title": "En cirkel på fri hand",
+    "categoryName": "Grunderna",
+    "description": "Se hur handen och papperet samverkar för att skapa en jämn cirkel.",
+    "steps": [
+      "Håll pennan lätt och följ handens runda rörelse.",
+      "Prova att vrida papperet i små steg medan du ritar."
+    ],
+    "tip": "Öva med lätta linjer innan du gör konturen mörkare."
+  },
+  {
     "id": "v3",
     "youtubeId": "A0Vsu7VtV_o",
     "start": 0,
     "end": 7,
     "creator": "Marissa Purnell",
     "title": "Skugga med fria slingor",
-    "categoryName": "03",
+    "categoryName": "Skuggläggning",
     "description": "Korta, överlappande slingor bygger upp en levande struktur.",
     "steps": [
       "Rita små fria slingor utan att pressa hårt.",
@@ -60,7 +60,7 @@ const APP_DATA = {
     "end": 28,
     "creator": "Marissa Purnell",
     "title": "Jämna ut grafiten",
-    "categoryName": "04",
+    "categoryName": "Skuggläggning",
     "description": "Se hur ett verktyg mjukar upp grafiten och övergången mellan ljus och mörker.",
     "steps": [
       "Lägg först ett tunt lager grafit.",
@@ -75,7 +75,7 @@ const APP_DATA = {
     "end": 14,
     "creator": "Marissa Purnell",
     "title": "Skapa volym med punkter",
-    "categoryName": "05",
+    "categoryName": "Skuggläggning",
     "description": "Avståndet mellan punkterna gör formen ljusare eller mörkare.",
     "steps": [
       "Gör glest placerade punkter på den ljusa sidan.",
@@ -90,7 +90,7 @@ const APP_DATA = {
     "end": 21,
     "creator": "Marissa Purnell",
     "title": "Skugga med parallella linjer",
-    "categoryName": "06",
+    "categoryName": "Skuggläggning",
     "description": "Parallella streck bygger upp en skugga steg för steg.",
     "steps": [
       "Dra korta linjer i samma riktning.",
@@ -105,7 +105,7 @@ const APP_DATA = {
     "end": 25,
     "creator": "Marissa Purnell",
     "title": "Linjer som följer formen",
-    "categoryName": "07",
+    "categoryName": "Skuggläggning",
     "description": "Böjda skrafferingar följer ytan och visar formens volym.",
     "steps": [
       "Börja med böjda linjer som följer den runda formen.",
@@ -120,7 +120,7 @@ const APP_DATA = {
     "end": 32,
     "creator": "Circle Line Art School",
     "title": "En gata i enpunktsperspektiv",
-    "categoryName": "08",
+    "categoryName": "Perspektiv",
     "description": "Se hur gatans och husens linjer leder blicken mot en gemensam flyktpunkt.",
     "steps": [
       "Markera en flyktpunkt och dra gatans kanter mot den.",
