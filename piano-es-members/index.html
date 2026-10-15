@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta name="description" content="La colección completa de piano: tres libros en español, seis demostraciones con manos reales al piano y soporte para miembros.">
+    <title>La colección completa de piano — Zona de miembros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <link rel="stylesheet" href="core.css?v=piano-es-20261014-v1">
+</head>
+<body>
+    <div id="pre-page" class="pre-page-overlay">
+        <div class="pre-page-bg"></div>
+        <div class="pre-page-content">
+            <div class="pre-page-icon" aria-hidden="true">🎹</div>
+            <h1>La colección completa de piano</h1>
+            <p>Tu acceso está confirmado.<br>Todo lo que necesitas para empezar, tocar y mejorar tus habilidades al piano.</p>
+            <div class="pre-page-features">
+                <span>📖 Tres libros en español</span>
+                <span>🎹 Seis vídeos demostrativos</span>
+                <span>💬 Soporte</span>
+            </div>
+            <button type="button" id="enter-resources">Accede a tus materiales →</button>
+        </div>
+    </div>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-logo">
+                <img src="assets/covers/piano_IMG1_es.png" alt="Colección de piano" id="brand-logo">
+                <p id="brand-title">La colección completa de piano</p>
+            </div>
+        </header>
+        <main id="app-root" class="main-content" aria-live="polite" tabindex="-1">
+            <p class="loading-message" role="status">Cargando tus libros…</p>
+        </main>
+        <nav class="bottom-tab-bar" id="main-nav" aria-label="Navegación de la zona de miembros">
+            <a href="#libros" class="tab-item">
+                <i data-lucide="book-open" aria-hidden="true"></i><span>Libros</span>
+            </a>
+            <a href="#videos" class="tab-item">
+                <i data-lucide="play-circle" aria-hidden="true"></i><span>Vídeos</span>
+            </a>
+            <a href="#soporte" class="tab-item">
+                <i data-lucide="message-square" aria-hidden="true"></i><span>Soporte</span>
+            </a>
+        </nav>
+    </div>
+    <noscript><p class="noscript-message">Activa JavaScript para navegar por la zona de miembros. También puedes abrir los libros: <a href="materials/PIANO-1-ES.pdf">Libro 1</a>, <a href="materials/PIANO-2-ES.pdf">Libro 2</a>, <a href="materials/PIANO-3-ES.pdf">Libro 3</a>.</p></noscript>
+    <script src="data.js?v=piano-es-20261014-v1" defer></script>
+    <script src="video-section.js?v=piano-es-20261014-v1" defer></script>
+    <script src="app.js?v=piano-es-20261014-v1" defer></script>
+</body>
+</html>
