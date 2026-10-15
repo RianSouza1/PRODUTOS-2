@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderHome() {
     return `<div class="page-view">${hero(text('welcome'), text('homeIntro'))}<div class="home-grid">
       <a href="#${config.booksRoute}" class="home-block glass-panel"><div class="home-block-icon"><i data-lucide="book-open"></i></div><div><div class="home-block-title">${text('books')}</div><div class="home-block-subtitle">${text('booksSubtitle')}</div></div></a>
+      <a href="#${config.videosRoute}" class="home-block glass-panel"><div class="home-block-icon"><i data-lucide="play-circle"></i></div><div><div class="home-block-title">${text('videos')}</div><div class="home-block-subtitle">${text('videosSubtitle')}</div></div></a>
       <a href="#${config.supportRoute}" class="home-block glass-panel"><div class="home-block-icon"><i data-lucide="message-square"></i></div><div><div class="home-block-title">${text('support')}</div><div class="home-block-subtitle">${text('supportSubtitle')}</div></div></a>
     </div></div>`;
   }
@@ -48,22 +49,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function render() {
-    const aliases = {books:config.booksRoute, libri:config.booksRoute, support:config.supportRoute, assistenza:config.supportRoute};
+    const aliases = {books:config.booksRoute, libri:config.booksRoute, support:config.supportRoute, assistenza:config.supportRoute, videos:config.videosRoute, video:config.videosRoute};
     let hash = window.location.hash.slice(1);
     if(aliases[hash]) { hash=aliases[hash]; history.replaceState(null,'',`#${hash}`); }
     const isBooks = hash === config.booksRoute;
     const isSupport = hash === config.supportRoute;
-    if(isBooks || isSupport) document.getElementById('pre-page').hidden=true;
-    root.innerHTML = isBooks ? renderBooks() : isSupport ? renderSupport() : renderHome();
+    const isVideos = hash === config.videosRoute;
+    window.SAX_DEMOS?.pause();
+    if(isBooks || isSupport || isVideos) document.getElementById('pre-page').hidden=true;
+    root.innerHTML = isBooks ? renderBooks() : isSupport ? renderSupport() : isVideos ? '' : renderHome();
+    if(isVideos) window.SAX_DEMOS.render();
     root.insertAdjacentHTML('beforeend', `<footer class="app-footer">&copy; 2026 ${escape(config.brandName)}. ${text('rights')}</footer>`);
-    nav.classList.toggle('hidden-on-home', !isBooks && !isSupport);
+    nav.classList.toggle('hidden-on-home', !isBooks && !isSupport && !isVideos);
     document.querySelectorAll('.tab-item').forEach(tab => {
       const active = tab.getAttribute('href') === `#${hash}`;
       tab.classList.toggle('active', active);
       if (active) tab.setAttribute('aria-current','page'); else tab.removeAttribute('aria-current');
     });
     icons();
-    document.querySelector('.app-container').scrollTo(0, 0);
+    root.scrollTo(0, 0);
   }
   window.addEventListener('hashchange', render);
   render();
