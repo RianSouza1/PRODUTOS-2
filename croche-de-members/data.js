@@ -88,8 +88,8 @@ const APP_DATA = {
   ],
   "videoUI": {
     "eyebrow": "HÄKELN SCHRITT FÜR SCHRITT",
-    "heading": "Deine erste Masche beginnt hier",
-    "intro": "Von der ersten Schlinge bis zu Stäbchengruppen und sauberen Fadenenden: Schau auf die Hände, wiederhole die Bewegung und häkle in deinem Tempo mit.",
+    "heading": "Schau auf die Hände. Probiere die Masche.",
+    "intro": "Acht kurze Nahaufnahmen mit echten Händen, Garn und Häkelnadel. Entdecke Schlingen, plastische Muster und saubere Abschlüsse. Alle Demonstrationen laufen ohne Ton.",
     "shortLessons": "Kurzlektionen",
     "noSound": "Ohne Ton",
     "closeUp": "Hände in Nahaufnahme",
@@ -114,207 +114,147 @@ const APP_DATA = {
     "markPractice": "Als geübt markieren",
     "practiced": "Geübt",
     "practiceCount": "Techniken geübt",
-    "source": "Videoquelle",
-    "original": "Originalvideo ansehen",
     "choose": "Wähle deine nächste Technik",
-    "note": "Die Kurzlektionen ergänzen deine Häkelbücher. Die Videos werden über YouTube abgespielt; die Originalaufnahmen von DROPS enthalten keinen Ton.",
-    "error": "Das Video konnte nicht geladen werden. Versuche es erneut oder öffne das Originalvideo unten."
+    "note": "Lege Garn und Häkelnadel bereit. Schau zuerst zu, wähle bei Bedarf 0,5× und übe die gezeigte Bewegung in deinem Tempo.",
+    "error": "Die Demonstration konnte nicht geladen werden. Versuche es mit „Wiederholen“ erneut oder wähle eine andere Technik.",
+    "fullscreen": "Vollbild"
   },
   "videos": [
     {
-      "id": "startschlinge",
-      "title": "Die Anfangsschlinge",
-      "category": "Loslegen",
-      "youtubeId": "f6_kWH7WCao",
-      "start": 4,
-      "end": 50,
-      "description": "Aus einer lockeren Schlaufe wird der erste Knoten auf deiner Häkelnadel.",
-      "steps": [
-        "Lege das Fadenende über den Arbeitsfaden und forme eine Schlaufe.",
-        "Ziehe den Arbeitsfaden durch die Schlaufe und stecke die Häkelnadel hinein.",
-        "Ziehe die Schlinge vorsichtig an, sodass sie auf der Nadel beweglich bleibt."
-      ],
-      "tip": "Die Schlinge soll gleiten können — ziehe sie nicht fest auf der Nadel an."
-    },
-    {
-      "id": "luftmaschen",
-      "title": "Luftmaschen häkeln",
-      "category": "Grundmaschen",
-      "youtubeId": "Osneqv3a67E",
-      "start": 15,
-      "end": 60,
-      "description": "Eine Luftmaschenkette ist der Anfang vieler Häkelprojekte. Beobachte, wie der Faden durch die Schlinge gezogen wird.",
-      "steps": [
-        "Halte die Anfangsschlinge mit Daumen und Mittelfinger fest.",
-        "Hole den Arbeitsfaden mit der Häkelnadel und ziehe ihn durch die Schlinge.",
-        "Wiederhole den Handgriff und halte die Luftmaschen gleichmäßig locker."
-      ],
-      "tip": "Die Schlinge auf der Nadel zählt nicht als fertige Luftmasche."
-    },
-    {
-      "id": "feste-maschen",
-      "title": "Feste Maschen",
-      "category": "Grundmaschen",
-      "youtubeId": "IjeliqYUf1Y",
-      "start": 25,
-      "end": 75,
-      "description": "Feste Maschen ergeben ein dichtes Maschenbild und gehören zu den wichtigsten Grundlagen für kleine Figuren.",
-      "steps": [
-        "Stich mit der Häkelnadel in die nächste Masche ein.",
-        "Hole den Faden durch die Masche: Jetzt liegen zwei Schlingen auf der Nadel.",
-        "Hole den Faden erneut und ziehe ihn durch beide Schlingen."
-      ],
-      "tip": "Beginne langsam und zähle die fertigen Maschen."
-    },
-    {
-      "id": "kettmaschen",
-      "title": "Kettmaschen",
-      "category": "Grundmaschen",
-      "youtubeId": "nV_vqz1-Qus",
-      "start": 5,
-      "end": 45,
-      "description": "Mit einer Kettmasche verbindest du Maschen oder schließt eine Runde, ohne zusätzliche Höhe zu schaffen.",
-      "steps": [
-        "Stich in die gewünschte Masche ein.",
-        "Hole den Arbeitsfaden mit der Häkelnadel.",
-        "Ziehe ihn durch die Masche und die Schlinge auf der Nadel."
-      ],
-      "tip": "Arbeite locker, damit der Rand nicht zusammengezogen wird."
-    },
-    {
-      "id": "fadenring-start",
-      "title": "Fadenring: den Anfang bilden",
-      "category": "Amigurumi",
-      "youtubeId": "2gxY2_Cwbqk",
+      "id": "fresh-relief-two-colors",
+      "title": "Reliefstruktur in zwei Farben",
+      "category": "Textur und Farbe",
+      "youtubeId": "-6avnfCNO-c",
+      "creator": "Knitting By Gözde",
+      "videoShape": "portrait",
       "start": 0,
+      "end": 44,
+      "description": "Rosa und graue Schlingen bilden eine plastische Struktur. Die Nahaufnahme zeigt die Einstichstellen, das Aufnehmen der Schlingen und das Schließen der Gruppe.",
+      "steps": [
+        "Suche die gezeigte Einstichstelle an der vorhandenen Maschenstruktur.",
+        "Nimm die Schlingen gleichmäßig auf und halte ihre Höhe möglichst gleich.",
+        "Schließe die Gruppe wie im Video und vergleiche die neue Struktur mit der vorherigen Gruppe."
+      ],
+      "tip": "Wähle zunächst 0,5×. Übe eine einzelne Gruppe an einer kleinen Probe und halte die Schlingen locker."
+    },
+    {
+      "id": "fresh-magic-ring",
+      "title": "Magischer Ring in Nahaufnahme",
+      "category": "Runder Anfang",
+      "youtubeId": "4eZkklGW0Uk",
+      "creator": "naztazia",
+      "videoShape": "portrait",
+      "start": 0,
+      "end": 10,
+      "description": "Sieh die Schlaufe, die ersten Maschen im Ring und das Zusammenziehen der Mitte. Der schnelle Überblick lässt sich beliebig wiederholen.",
+      "steps": [
+        "Lege die Fadenschlaufe an und halte das kurze Ende fest.",
+        "Sichere die Schlaufe und arbeite die Maschen deiner Anleitung in den Ring.",
+        "Halte die Maschen fest und ziehe am kurzen Fadenende, um die Mitte zu schließen."
+      ],
+      "tip": "Die Demonstration ist sehr kurz. Spiele sie mit 0,5× ab und pausiere nach jedem Handgriff."
+    },
+    {
+      "id": "fresh-secure-chain",
+      "title": "Neuen Faden mit einer Schlinge sichern",
+      "category": "Faden und Luftmaschen",
+      "youtubeId": "awksFMEElAM",
+      "creator": "Hilaria Fina",
+      "videoShape": "portrait",
+      "start": 27,
+      "end": 54,
+      "description": "Beim Ansetzen eines neuen Fadens sorgt eine Anfangsschlinge für einen festen Beginn. Beobachte, wie daraus die nächsten Luftmaschen entstehen.",
+      "steps": [
+        "Forme mit dem neuen Faden eine bewegliche Anfangsschlinge.",
+        "Lege sie auf die Häkelnadel und führe den Faden an die Anschlussstelle.",
+        "Häkle die benötigten Luftmaschen mit gleichmäßiger Fadenspannung."
+      ],
+      "tip": "Die Schlinge soll auf der Nadel gleiten. Ziehe sie so an, dass sie sich noch leicht bewegen lässt."
+    },
+    {
+      "id": "fresh-back-loop",
+      "title": "Rippen aus festen Maschen",
+      "category": "Einstichstelle erkennen",
+      "youtubeId": "Q6WB45LdXHM",
+      "creator": "Hilaria Fina",
+      "videoShape": "portrait",
+      "start": 5,
       "end": 55,
-      "description": "Der Fadenring lässt sich später zusammenziehen. Hier siehst du, wie du die Schlaufe anlegst und die ersten festen Maschen hinein häkelst.",
+      "description": "Feste Maschen in der hinteren Maschenschlinge ergeben eine gerippte Struktur. Sieh genau hin, wo die Nadel unter den Maschenkopf geführt wird.",
       "steps": [
-        "Lege den Faden um deinen Finger und halte das kurze Ende fest.",
-        "Ziehe den Arbeitsfaden durch den Ring und sichere den Anfang.",
-        "Häkle die ersten festen Maschen um den Ring und das Fadenende."
+        "Erkenne die beiden Schlingen oben auf der nächsten Masche.",
+        "Stich nur unter die hintere Schlinge und häkle eine feste Masche.",
+        "Wiederhole die Einstichstelle entlang der Reihe und wende nach deiner Anleitung."
       ],
-      "tip": "Halte den Ring zunächst locker. Im nächsten Video ziehst du ihn zusammen."
+      "tip": "Halte den Maschenkopf mit Daumen und Zeigefinger leicht offen, damit die hintere Schlinge gut sichtbar bleibt."
     },
     {
-      "id": "fadenring-schliessen",
-      "title": "Fadenring: die Mitte schließen",
-      "category": "Amigurumi",
-      "youtubeId": "2gxY2_Cwbqk",
-      "start": 75,
-      "end": 115,
-      "description": "Nach den Maschen im Ring wird die offene Mitte zusammengezogen. Beobachte den Unterschied zwischen Arbeitsfaden und kurzem Fadenende.",
+      "id": "fresh-combined-stitch",
+      "title": "Zwei Maschenhöhen kombinieren",
+      "category": "Maschen kombinieren",
+      "youtubeId": "YRiWA90y5Ok",
+      "creator": "The Crochet Crowd",
+      "videoShape": "portrait",
+      "start": 2,
+      "end": 29,
+      "description": "Die Demonstration verbindet Stäbchen und halbe Stäbchen in einer gemeinsamen Maschengruppe. Achte auf den Wechsel der Höhe und die letzte Durchziehbewegung.",
       "steps": [
-        "Arbeite die für dein Muster benötigten Maschen in den Ring.",
-        "Halte die Maschen fest und ziehe vorsichtig am kurzen Fadenende.",
-        "Kontrolliere die geschlossene Mitte und arbeite nach deiner Anleitung weiter."
+        "Beobachte, wie das Stäbchen für die gemeinsame Gruppe vorbereitet wird.",
+        "Arbeite die im Video gezeigte Verbindung mit dem halben Stäbchen.",
+        "Schließe die Schlingen wie gezeigt und übe die Gruppe mehrmals an einer Probe."
       ],
-      "tip": "Ziehe am Fadenende, nicht am Faden, der zum Knäuel führt."
+      "tip": "Pausiere kurz vor dem letzten Durchziehen und vergleiche die Schlingen auf deiner Nadel mit der Nahaufnahme."
     },
     {
-      "id": "zunahmen",
-      "title": "Zwei Maschen in eine Masche",
-      "category": "Formen",
-      "youtubeId": "K8bPolfY3yI",
-      "start": 10,
-      "end": 60,
-      "description": "Eine Zunahme macht dein Häkelstück breiter. Im Video werden zwei Maschen in dieselbe Einstichstelle gearbeitet.",
+      "id": "fresh-contrast-border",
+      "title": "Kontrastkante: Schlingen bündeln",
+      "category": "Dekorative Ränder",
+      "youtubeId": "g06hLz5NTB4",
+      "creator": "Create by K",
+      "videoShape": "portrait",
+      "start": 0,
+      "end": 16,
+      "description": "Eine blaue, plastische Kante hebt sich vom grauen Häkelstück ab. Folge den aufgenommenen Schlingen und ihrem Abschluss direkt am Rand.",
       "steps": [
-        "Häkle die erste Masche wie gewohnt.",
-        "Stich erneut in dieselbe Masche der Vorreihe ein.",
-        "Arbeite die zweite Masche und zähle die Zunahme mit."
+        "Suche die gezeigte Einstichstelle am Rand der Vorreihe.",
+        "Nimm die Schlingen wie in der Nahaufnahme auf und halte sie gleichmäßig locker.",
+        "Schließe die Gruppe wie gezeigt und gehe zur nächsten Einstichstelle weiter."
       ],
-      "tip": "Die Maschenart und die Anzahl der Zunahmen richten sich nach deiner Anleitung."
+      "tip": "Die Farbe hilft dir, den neuen Faden vom Untergrund zu unterscheiden. Wiederhole den Clip in 0,5×."
     },
     {
-      "id": "abnahmen",
-      "title": "Zwei feste Maschen zusammenhäkeln",
-      "category": "Formen",
-      "youtubeId": "rreE7ZQpfWg",
-      "start": 10,
-      "end": 60,
-      "description": "Eine Abnahme verbindet zwei Maschen zu einer. So formst du dein Häkelstück, ohne einfach eine Masche zu überspringen.",
+      "id": "fresh-mesh-arches",
+      "title": "Luftmaschenbögen für ein Netzmuster",
+      "category": "Luftige Muster",
+      "youtubeId": "HDvVTgH8auk",
+      "creator": "Hilaria Fina",
+      "videoShape": "landscape",
+      "start": 120,
+      "end": 175,
+      "description": "Aus Luftmaschenbögen und Verbindungspunkten entsteht eine offene Struktur. Der Ausschnitt zeigt die Handbewegung und das Einstechen in die vorbereitete Luftmaschenkette.",
       "steps": [
-        "Stich in die nächste Masche ein und hole den Faden.",
-        "Stich in die folgende Masche ein und hole den Faden noch einmal.",
-        "Hole den Faden und ziehe ihn durch die Schlingen auf der Nadel."
+        "Arbeite die für dein Muster vorgesehene Anzahl Luftmaschen.",
+        "Zähle die Einstichstelle in der vorbereiteten Kette ab.",
+        "Verankere den Bogen an dieser Stelle und beginne den nächsten Bogen nach deiner Anleitung."
       ],
-      "tip": "Zähle die Maschen vor und nach der Abnahme."
+      "tip": "Zähle die Luftmaschen vor dem Einstechen. Gleich große Bögen ergeben ein regelmäßiges Netzmuster."
     },
     {
-      "id": "farbwechsel",
-      "title": "Eine neue Farbe beginnen",
-      "category": "Gestalten",
-      "youtubeId": "YFa7cJPFSHc",
-      "start": 60,
-      "end": 115,
-      "description": "Mit einer neuen Garnfarbe verändert sich dein Projekt sofort. Die Nahaufnahme zeigt den Farbwechsel beim Schließen einer Häkelrunde.",
+      "id": "fresh-invisible-join",
+      "title": "Eine Runde unsichtbar schließen",
+      "category": "Sauberer Abschluss",
+      "youtubeId": "PlESZRcZA5o",
+      "creator": "Hilaria Fina",
+      "videoShape": "portrait",
+      "start": 2,
+      "end": 37,
+      "description": "Mit einer Wollnadel entsteht am Rundenende ein nachgebildeter Maschenkopf. Beobachte die Fadenführung und wie der Übergang in die übrigen Maschen passt.",
       "steps": [
-        "Arbeite bis zum Farbwechsel deiner Anleitung.",
-        "Hole den Faden der neuen Farbe für die verbindende Kettmasche.",
-        "Häkle mit der neuen Farbe weiter und lasse die Fadenenden lang genug zum Vernähen."
+        "Ziehe das Fadenende aus der letzten Schlinge und fädle es in eine Wollnadel.",
+        "Führe die Nadel durch die gezeigten Maschenglieder, um den letzten Maschenkopf nachzubilden.",
+        "Passe die Fadenspannung an die Nachbarmaschen an und sichere das Ende auf der Rückseite."
       ],
-      "tip": "Ziehe den neuen Faden nicht zu fest an, damit der Übergang locker bleibt."
-    },
-    {
-      "id": "halbe-staebchen",
-      "title": "Halbe Stäbchen",
-      "category": "Grundmaschen",
-      "youtubeId": "pFTtB8EBnVY",
-      "start": 20,
-      "end": 65,
-      "description": "Ein Umschlag, ein Einstich und drei Schlingen: Beobachte, wie ein halbes Stäbchen entsteht und wie du die Bewegung gleichmäßig wiederholst.",
-      "steps": [
-        "Lege den Arbeitsfaden einmal um die Häkelnadel.",
-        "Stich in die nächste Masche ein und hole den Faden: Jetzt liegen drei Schlingen auf der Nadel.",
-        "Hole den Faden erneut und ziehe ihn durch alle drei Schlingen."
-      ],
-      "tip": "Zähle die drei Schlingen vor dem letzten Durchziehen. Halte den Faden dabei locker."
-    },
-    {
-      "id": "staebchen",
-      "title": "Stäbchen: zweimal durch zwei Schlingen",
-      "category": "Grundmaschen",
-      "youtubeId": "mC9dbsuIA80",
-      "start": 35,
-      "end": 85,
-      "description": "Stäbchen ergeben ein höheres, luftigeres Maschenbild. Die Nahaufnahme zeigt die beiden Durchziehbewegungen und das fertige Maschenbild.",
-      "steps": [
-        "Mache einen Umschlag, stich in die nächste Masche ein und hole den Faden.",
-        "Hole den Faden und ziehe ihn durch die ersten zwei Schlingen.",
-        "Hole den Faden noch einmal und ziehe ihn durch die letzten zwei Schlingen."
-      ],
-      "tip": "Sprich beim Üben für dich „zwei und zwei“. So bleibt die Reihenfolge leichter im Gedächtnis."
-    },
-    {
-      "id": "granny-staebchengruppen",
-      "title": "Granny Square: Stäbchengruppen",
-      "category": "Muster und Quadrate",
-      "youtubeId": "bZT8f15sx9A",
-      "start": 300,
-      "end": 355,
-      "description": "Sieh dir an, wie Stäbchengruppen und Luftmaschenbögen ein Granny-Muster aufbauen. Der Ausschnitt zeigt die Arbeit an einem bereits begonnenen Quadrat.",
-      "steps": [
-        "Suche den Luftmaschenbogen zwischen den Stäbchengruppen.",
-        "Häkle nacheinander drei Stäbchen in denselben Bogen.",
-        "Arbeite die Luftmaschen deiner Anleitung und gehe zum nächsten Bogen weiter."
-      ],
-      "tip": "Übe die Gruppe zunächst an einem vorbereiteten Quadrat und prüfe nach jeder Gruppe die Maschenzahl."
-    },
-    {
-      "id": "fadenenden-mitfuehren",
-      "title": "Fadenenden beim Häkeln mitführen",
-      "category": "Fertigstellen",
-      "youtubeId": "WUnQBBOOvIg",
-      "start": 15,
-      "end": 70,
-      "description": "Nach einem Farbwechsel können lose Fadenenden beim Weiterhäkeln mit eingefasst werden. Beobachte, wie die Enden entlang der Vorreihe liegen und von den neuen Maschen umschlossen werden.",
-      "steps": [
-        "Lege die losen Fadenenden entlang der Oberkante der Vorreihe.",
-        "Halte die Enden an der Kante und greife beim Einstechen um sie herum.",
-        "Häkle gleichmäßig weiter und kontrolliere, dass die Enden in den neuen Maschen liegen."
-      ],
-      "tip": "Ziehe die mitgeführten Fäden nicht straff. Die Kante soll locker und gleichmäßig bleiben."
+      "tip": "Ziehe den Übergang vorsichtig an. Er soll ungefähr so groß wie die übrigen Maschenköpfe bleiben."
     }
   ]
 };

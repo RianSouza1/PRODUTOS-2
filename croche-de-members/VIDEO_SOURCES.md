@@ -1,41 +1,30 @@
-# Crochet technique pilot — German member area
+# Crochet member-area video collection
 
-The page embeds the original videos from **Garnstudio DROPS Design** with the YouTube IFrame API. No source recordings are downloaded or redistributed. DROPS states that its tutorial recordings have no sound; playback in this member area also stays muted.
+Replaced on 2026-10-15 at the user’s request. All 13 previous DROPS lessons were removed from the active collection. None of their video IDs is retained.
 
-The interface calls each lesson a `Videoausschnitt` and displays the duration of the selected excerpt. Playback stops at the end of the excerpt, including after seeking with the YouTube controls. Repeat returns to its beginning. The original-video link remains available for the complete tutorial.
+Eight new filmed demonstrations show real hands using a crochet hook, yarn or finishing needle. Every selected passage is 10–55 seconds long. The member-area player permanently mutes audio and sets volume to zero; this does not claim that every original recording is silent.
 
-| Lesson | Original video | Excerpt | Length |
-| --- | --- | --- | --- |
-| Anfangsschlinge | https://www.youtube.com/watch?v=f6_kWH7WCao | 00:04–00:50 | 46 s |
-| Luftmaschen | https://www.youtube.com/watch?v=Osneqv3a67E | 00:15–01:00 | 45 s |
-| Feste Maschen | https://www.youtube.com/watch?v=IjeliqYUf1Y | 00:25–01:15 | 50 s |
-| Kettmaschen | https://www.youtube.com/watch?v=nV_vqz1-Qus | 00:05–00:45 | 40 s |
-| Fadenring, beginning | https://www.youtube.com/watch?v=2gxY2_Cwbqk | 00:00–00:55 | 55 s |
-| Fadenring, closing | https://www.youtube.com/watch?v=2gxY2_Cwbqk | 01:15–01:55 | 40 s |
-| Increase | https://www.youtube.com/watch?v=K8bPolfY3yI | 00:10–01:00 | 50 s |
-| Single-crochet decrease | https://www.youtube.com/watch?v=rreE7ZQpfWg | 00:10–01:00 | 50 s |
-| Colour change in rounds | https://www.youtube.com/watch?v=YFa7cJPFSHc | 01:00–01:55 | 55 s |
+Original public creator embeds are used. No recordings are downloaded or rehosted. Creator marks baked into the source image remain part of the original recording.
 
-Creator references:
+| Lesson | Creator | Original | Selected seconds | Length |
+|---|---|---|---|---|
+| Reliefstruktur in zwei Farben | Knitting By Gözde | https://www.youtube.com/watch?v=-6avnfCNO-c | 0–44 | 44 s |
+| Magischer Ring in Nahaufnahme | naztazia | https://www.youtube.com/watch?v=4eZkklGW0Uk | 0–10 | 10 s |
+| Neuen Faden mit einer Schlinge sichern | Hilaria Fina | https://www.youtube.com/watch?v=awksFMEElAM | 27–54 | 27 s |
+| Rippen aus festen Maschen | Hilaria Fina | https://www.youtube.com/watch?v=Q6WB45LdXHM | 5–55 | 50 s |
+| Zwei Maschenhöhen kombinieren | The Crochet Crowd | https://www.youtube.com/watch?v=YRiWA90y5Ok | 2–29 | 27 s |
+| Kontrastkante: Schlingen bündeln | Create by K | https://www.youtube.com/watch?v=g06hLz5NTB4 | 0–16 | 16 s |
+| Luftmaschenbögen für ein Netzmuster | Hilaria Fina | https://www.youtube.com/watch?v=HDvVTgH8auk | 120–175 | 55 s |
+| Eine Runde unsichtbar schließen | Hilaria Fina | https://www.youtube.com/watch?v=PlESZRcZA5o | 2–37 | 35 s |
 
-- https://www.garnstudio.com/videos.php?c=crochet-videos&lang=de
-- https://www.garnstudio.com/video.php?id=1903&lang=de
-- https://www.garnstudio.com/video.php?id=23&lang=de
-- https://www.garnstudio.com/video.php?id=24&lang=de
-- https://www.garnstudio.com/video.php?id=98&lang=de
-- https://www.garnstudio.com/video.php?id=214&lang=de
+## Creator references
 
-Selected on 2026-10-13. Original author, public availability and embedding support were checked on the creator's YouTube pages. The provider's advertising and platform availability remain outside this site's control.
+- https://hilariafina.com/en/secure-chains/
+- https://hilariafina.com/en/single-crochet-through-back-loop/
+- https://hilariafina.com/en/mesh-crochet-stitch/
 
-## Four additional techniques — 2026-10-15
+The Crochet Crowd’s description for YRiWA90y5Ok explicitly identifies the recording as a demonstration with no sound. Its first technique chapter covers double crochet and half double crochet together from 0:02; the selected passage ends before the next chapter at 0:30.
 
-The official creator pages identify these recordings as silent tutorials. The original embeds were reviewed visually for real hands, clear stitch work and availability. Member-area playback remains muted and stops at each selected endpoint. These lessons complement the nine existing excerpts.
+The presentation uses native portrait or landscape proportions, page controls for play/pause, repeat, fullscreen and 0.5×/0.75×/1× speed. The provider iframe is not interactive. A preview image covers loading and seeking until the selected passage is playing. Duration and progress refer to the selected passage.
 
-| Lesson | Original video | Excerpt | Length | Creator reference |
-| --- | --- | --- | --- | --- |
-| Halbe Stäbchen | https://www.youtube.com/watch?v=pFTtB8EBnVY | 00:20–01:05 | 45 s | https://www.garnstudio.com/video.php?id=25&lang=de |
-| Stäbchen | https://www.youtube.com/watch?v=mC9dbsuIA80 | 00:35–01:25 | 50 s | https://www.garnstudio.com/video.php?id=26&lang=de |
-| Granny Square: Stäbchengruppen | https://www.youtube.com/watch?v=bZT8f15sx9A | 05:00–05:55 | 55 s | https://www.garnstudio.com/video.php?id=84&lang=de |
-| Fadenenden beim Häkeln mitführen | https://www.youtube.com/watch?v=WUnQBBOOvIg | 00:15–01:10 | 55 s | https://www.garnstudio.com/video.php?id=1322&lang=de |
-
-The Granny Square lesson is a focused study of stitch groups on an existing square, with instructions in German. The full project continues in the creator's source video and pattern. Original provider marks remain part of the source recordings.
+Previous practice marks remain in their original local-storage namespace. The replacement collection starts a separate practice record.

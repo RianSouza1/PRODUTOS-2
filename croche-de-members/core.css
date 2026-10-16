@@ -1393,3 +1393,37 @@ a:focus-visible,button:focus-visible { outline:3px solid var(--accent); outline-
 @media (min-width:1024px) { .tab-item { width:calc(100% - 2rem); } }
 @media (max-width:400px) { .crochet-playback-controls { padding:1rem .75rem .5rem; } .crochet-speed-buttons { margin-left:0; } .crochet-lesson-choice img { width:60px; height:50px; } }
 @media (max-width:759px) { .crochet-videos-view .hero-card { padding:1.5rem; margin-bottom:1.25rem; } .crochet-videos-view .hero-text h1 { font-size:1.6rem; } .crochet-videos-view .crochet-eyebrow { font-size:.7rem!important; letter-spacing:.04em; } .crochet-lesson-heading { padding:1.25rem; } .crochet-lesson-heading h2 { font-size:1.3rem; } }
+
+
+/* Native recording proportions keep the hook, yarn and hands in view. */
+.crochet-videos-view [hidden] { display:none!important; }
+.crochet-video-frame { overflow:hidden; isolation:isolate; min-height:0; }
+.crochet-video-frame[data-video-shape="portrait"] { width:min(100%,349px); aspect-ratio:9/16; margin-inline:auto; }
+.crochet-video-frame[data-video-shape="landscape"] { aspect-ratio:16/9; }
+.crochet-video-frame #crochet-player {
+    inset:auto; left:0; top:-110px; width:100%; height:calc(100% + 220px); pointer-events:none;
+}
+.crochet-loading-cover { position:absolute; inset:0; z-index:2; background:#0a1011; pointer-events:none; }
+.crochet-loading-cover img { display:block; width:100%; height:100%; object-fit:contain; }
+.crochet-video-frame[data-video-shape="portrait"] .crochet-poster img,
+.crochet-video-frame[data-video-shape="portrait"] .crochet-loading-cover img {
+    position:absolute; left:50%; top:0; height:100%; width:auto; max-width:none; transform:translateX(-50%);
+}
+.crochet-lesson-choice[data-video-shape="portrait"] img { width:45px; height:80px; object-fit:cover; }
+.crochet-lesson-layout>* { min-width:0; }
+.crochet-lesson-list { overflow-x:hidden; }
+.crochet-lesson-choice { min-width:0; }
+.crochet-choice-copy { overflow-wrap:anywhere; }
+.crochet-videos-view .hero-card { display:block; }
+.crochet-videos-view .hero-text { max-width:none; }
+.crochet-video-frame:fullscreen,.crochet-video-frame:-webkit-full-screen {
+    width:100vw; height:100dvh; aspect-ratio:auto; margin:0; border-radius:0; background:#000;
+}
+.crochet-video-frame[data-video-shape="portrait"]:fullscreen #crochet-player,
+.crochet-video-frame[data-video-shape="portrait"]:-webkit-full-screen #crochet-player {
+    width:min(100vw,calc(100dvh * 9 / 16)); left:50%; transform:translateX(-50%);
+}
+.crochet-video-frame[data-video-shape="landscape"]:fullscreen #crochet-player,
+.crochet-video-frame[data-video-shape="landscape"]:-webkit-full-screen #crochet-player {
+    width:min(100vw,calc(100dvh * 16 / 9)); left:50%; transform:translateX(-50%);
+}
