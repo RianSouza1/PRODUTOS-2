@@ -171,7 +171,7 @@ const APP_DATA = {
   {
     "id": "v11",
     "youtubeId": "m7Ds8TVJ4aQ",
-    "start": 0,
+    "start": 10,
     "end": 30,
     "creator": "Paintellectual PriyA",
     "videoShape": "portrait",
@@ -184,7 +184,17 @@ const APP_DATA = {
       "Maak de donkere delen stap voor stap dieper en houd het oogwit licht."
     ],
     "tip": "De clip gaat snel. Pauzeer regelmatig en kies 0,5×; besteed meer tijd aan verhoudingen dan aan details.",
-    "thumbnail": "https://i.ytimg.com/vi/m7Ds8TVJ4aQ/hq2.jpg"
+    "thumbnail": "https://i.ytimg.com/vi/m7Ds8TVJ4aQ/hq2.jpg",
+    "segments": [
+      {
+        "start": 10,
+        "end": 22
+      },
+      {
+        "start": 27,
+        "end": 30
+      }
+    ]
   },
   {
     "id": "v12",

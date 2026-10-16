@@ -22,7 +22,9 @@ The selected passages were visually reviewed in the official embedded player: fi
 |---|---|---|---|
 | Sphere: graphite shading and cast shadow | Evas art | https://www.youtube.com/watch?v=6gNhCei6d0w | 0–33 |
 | Cube: two-point perspective | Riar Art | https://www.youtube.com/watch?v=fvyQlOY8OAw | 5–64 (59 seconds) |
-| Eye: construction, iris and shading | Paintellectual PriyA | https://www.youtube.com/watch?v=m7Ds8TVJ4aQ | 0–30 |
+| Eye: construction, iris and shading | Paintellectual PriyA | https://www.youtube.com/watch?v=m7Ds8TVJ4aQ | 10–22 and 27–30 (15 seconds) |
 | Leafy branch: contours, veins and green pencil | Nura Art Gallery | https://www.youtube.com/watch?v=48SS7HTCH4M | 0–55 |
 
 New recordings use a matching portrait or landscape aperture to preserve the whole drawing. Original artist signatures or marks inside a recording remain part of its source image.
+
+Eye lesson correction: omit the opening presentation, the initial comparison sketch, and the presenter interludes. Play only the main eye construction (10–22 s) and final shading (27–30 s). Keep a drawing thumbnail over the player during seeks so excluded shots cannot flash between passages. Progress and duration count only these selected passages.

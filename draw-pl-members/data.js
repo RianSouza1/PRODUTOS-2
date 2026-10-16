@@ -166,7 +166,7 @@ const APP_DATA = {
   {
     "id": "v11",
     "youtubeId": "m7Ds8TVJ4aQ",
-    "start": 0,
+    "start": 10,
     "end": 30,
     "creator": "Paintellectual PriyA",
     "videoShape": "portrait",
@@ -179,7 +179,17 @@ const APP_DATA = {
       "Stopniowo pogłębiaj ciemne miejsca i zachowaj jasną białkówkę."
     ],
     "tip": "Film jest szybki. Często zatrzymuj odtwarzanie i wybierz 0,5×; poświęć więcej czasu proporcjom niż detalom.",
-    "thumbnail": "https://i.ytimg.com/vi/m7Ds8TVJ4aQ/hq2.jpg"
+    "thumbnail": "https://i.ytimg.com/vi/m7Ds8TVJ4aQ/hq2.jpg",
+    "segments": [
+      {
+        "start": 10,
+        "end": 22
+      },
+      {
+        "start": 27,
+        "end": 30
+      }
+    ]
   },
   {
     "id": "v12",

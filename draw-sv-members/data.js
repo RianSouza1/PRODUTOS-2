@@ -167,7 +167,7 @@ const APP_DATA = {
   {
     "id": "v11",
     "youtubeId": "m7Ds8TVJ4aQ",
-    "start": 0,
+    "start": 10,
     "end": 30,
     "creator": "Paintellectual PriyA",
     "videoShape": "portrait",
@@ -180,7 +180,17 @@ const APP_DATA = {
       "Fördjupa de mörka partierna stegvis och håll ögonvitan ljus."
     ],
     "tip": "Filmen går snabbt. Pausa ofta och välj 0,5×; lägg mer tid på proportionerna än på detaljerna.",
-    "thumbnail": "https://i.ytimg.com/vi/m7Ds8TVJ4aQ/hq2.jpg"
+    "thumbnail": "https://i.ytimg.com/vi/m7Ds8TVJ4aQ/hq2.jpg",
+    "segments": [
+      {
+        "start": 10,
+        "end": 22
+      },
+      {
+        "start": 27,
+        "end": 30
+      }
+    ]
   },
   {
     "id": "v12",

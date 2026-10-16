@@ -115,3 +115,7 @@
 .draw-video-frame[data-video-shape="landscape"]:-webkit-full-screen #draw-player {
     width:min(100vw, calc(100dvh * 16 / 9)); left:50%; transform:translateX(-50%);
 }
+
+/* Keep only the drawing visible while the player skips a presentation shot. */
+.draw-cut-cover { position:absolute; inset:0; z-index:2; background:#0a1011; pointer-events:none; }
+.draw-cut-cover img { width:100%; height:100%; display:block; object-fit:contain; }

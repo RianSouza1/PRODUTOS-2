@@ -171,7 +171,7 @@ const APP_DATA = {
   {
     "id": "v11",
     "youtubeId": "m7Ds8TVJ4aQ",
-    "start": 0,
+    "start": 10,
     "end": 30,
     "creator": "Paintellectual PriyA",
     "videoShape": "portrait",
@@ -184,7 +184,17 @@ const APP_DATA = {
       "Renforce progressivement les zones foncées et préserve le blanc de l’œil."
     ],
     "tip": "Le clip est rapide. Fais des pauses et choisis 0,5× ; consacre plus de temps aux proportions qu’aux détails.",
-    "thumbnail": "https://i.ytimg.com/vi/m7Ds8TVJ4aQ/hq2.jpg"
+    "thumbnail": "https://i.ytimg.com/vi/m7Ds8TVJ4aQ/hq2.jpg",
+    "segments": [
+      {
+        "start": 10,
+        "end": 22
+      },
+      {
+        "start": 27,
+        "end": 30
+      }
+    ]
   },
   {
     "id": "v12",
