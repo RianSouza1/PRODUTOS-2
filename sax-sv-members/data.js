@@ -134,7 +134,7 @@ const APP_DATA = {
     "playing": "Titta på rörelsen och lyssna på tonen.",
     "paused": "Pausad. Fortsätt när du är redo.",
     "finished": "Bra! Prova själv och upprepa gärna övningen.",
-    "error": "Videon kunde inte spelas upp. Försök igen eller öppna källvideon nedan.",
+    "error": "Videon kunde inte spelas upp. Kontrollera anslutningen och tryck på Spela upp för att försöka igen.",
     "watch": "Se demonstrationen",
     "practice": "Prova själv – steg för steg",
     "tip": "Att tänka på",

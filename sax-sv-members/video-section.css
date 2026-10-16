@@ -83,3 +83,14 @@
 .sax-lesson-card:fullscreen { width:100vw; max-width:none; height:100dvh; overflow-y:auto; border:0; border-radius:0; background:var(--bg-main); }
 .sax-lesson-card:fullscreen .sax-video-frame { max-width:1100px; max-height:68dvh; margin:auto; }
 .sax-playback-controls button:focus-visible { outline:3px solid var(--primary-hover); outline-offset:3px; }
+
+/* Put the filmed technique in the page's own viewing window. Extra vertical
+   space stays outside the window; the original 16:9 image keeps its full width. */
+.sax-video-frame { overflow:hidden; isolation:isolate; }
+.sax-video-frame #sax-player {
+    inset:auto; left:0; top:-110px;
+    width:100%; height:calc(100% + 220px);
+    pointer-events:none;
+}
+.sax-lesson-card[data-player-state="loading"] #sax-player,
+.sax-lesson-card[data-player-state="error"] #sax-player { visibility:hidden; }

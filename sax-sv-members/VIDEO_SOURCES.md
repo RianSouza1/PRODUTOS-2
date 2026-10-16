@@ -21,4 +21,4 @@ Tiderna anger det valda utdragets början och slut i originalvideon, inte origin
 
 Övningarna med Noa Even och de tre korta artikulationsövningarna med Jamie Anderson visar munstycke och saxofonhals. Eleven kan också öva på hela saxofonen. Skal- och melodidemonstrationerna visar spel på en hel saxofon. Eventuella greppbilder och noter kompletterar den filmade personen.
 
-Videornas tillgänglighet och externa spelare hanteras av YouTube. Källor och upphovspersoner finns även under “Videokälla” i varje övning.
+Videornas tillgänglighet och externa spelare hanteras av YouTube. Källor och upphovspersoner dokumenteras här. Sidans egna knappar används för uppspelning, paus, repetition, ljud och hastighet. Den ursprungliga videobilden behåller hela sin bredd i sidans visningsfönster.

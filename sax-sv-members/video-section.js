@@ -76,6 +76,7 @@
             button.disabled=false;
             event.target.getIframe().setAttribute('title',lesson.title);
             event.target.getIframe().setAttribute('tabindex','-1');
+            event.target.getIframe().setAttribute('aria-hidden','true');
             event.target.mute();event.target.setVolume(0);
             event.target.setPlaybackRate(speed);
             event.target.playVideo();
@@ -136,7 +137,7 @@
           <div class="sax-playback-controls"><button type="button" class="sax-play-button" data-sax-play aria-pressed="false">${escape(ui.play)}</button><button type="button" data-sax-replay>${escape(ui.replay)}</button><button type="button" data-sax-sound aria-label="${escape(ui.soundLabel)}" aria-pressed="${sound}">${escape(sound?ui.soundOn:ui.soundOff)}</button><button type="button" data-sax-fullscreen>${escape(ui.fullscreen)}</button><div class="sax-speed-buttons" role="group" aria-label="${escape(ui.speed)}"><button type="button" data-sax-speed="0.75" aria-pressed="${speed===0.75}">0,75×</button><button type="button" data-sax-speed="1" aria-pressed="${speed===1}">1×</button></div></div>
           <div class="sax-progress-wrap"><progress id="sax-progress" max="100" value="0" aria-label="${escape(ui.progress)}"></progress><span id="sax-clock">0 / ${lesson.end-lesson.start} ${escape(ui.seconds)}</span><p id="sax-status" role="status">${escape(ui.ready)}</p></div>
           <div class="sax-ended" id="sax-ended" hidden><p>${escape(ui.finished)}</p><button type="button" data-sax-next>${escape(selected<lessons.length-1?ui.next:ui.first)}</button></div>
-          <div class="sax-lesson-details"><p>${escape(lesson.description)}</p><h3>${escape(ui.practice)}</h3><ol>${lesson.steps.map(step=>`<li>${escape(step)}</li>`).join('')}</ol><p class="sax-tip"><strong>${escape(ui.tip)}:</strong> ${escape(lesson.tip)}</p><details class="sax-source"><summary>${escape(ui.source)}</summary><p>${escape(lesson.creator)} · <a href="https://www.youtube.com/watch?v=${lesson.youtubeId}&t=${lesson.start}s" target="_blank" rel="noopener">${escape(ui.original)}</a></p></details></div>
+          <div class="sax-lesson-details"><p>${escape(lesson.description)}</p><h3>${escape(ui.practice)}</h3><ol>${lesson.steps.map(step=>`<li>${escape(step)}</li>`).join('')}</ol><p class="sax-tip"><strong>${escape(ui.tip)}:</strong> ${escape(lesson.tip)}</p></div>
         </section>
         <aside class="sax-library" aria-labelledby="sax-choose"><div class="sax-library-heading"><h2 id="sax-choose">${escape(ui.choose)}</h2></div><div class="sax-lesson-list">${lessons.map((item,index)=>`<button type="button" class="sax-lesson-choice ${index===selected?'selected':''}" data-sax-lesson="${index}" aria-pressed="${index===selected}"><img src="${escape(thumbnail(item))}" loading="lazy" alt="" referrerpolicy="strict-origin-when-cross-origin"><span class="sax-choice-copy"><span class="sax-choice-number">${String(index+1).padStart(2,'0')} · ${escape(item.categoryName)}</span><strong>${escape(item.title)}</strong><span>${item.end-item.start} ${escape(ui.seconds)}</span></span>${playIcon}</button>`).join('')}</div></aside>
       </div><p class="sax-library-note">${escape(ui.note)}</p>
