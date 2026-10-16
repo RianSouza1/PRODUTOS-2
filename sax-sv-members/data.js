@@ -310,6 +310,38 @@ const APP_DATA = {
       ],
       "tip": "A-mollpentatonik använder samma fem toner som C-durpentatonik, men börjar på A. Jämför de två klippen och lyssna på skillnaden.",
       "thumbnail": "https://i.ytimg.com/vi/nZonyMH61io/hq2.jpg"
+    },
+    {
+      "title": "G-dur: följ fingrarna genom skalan",
+      "categoryName": "Fingrar och skala",
+      "youtubeId": "jORVSjwr0HE",
+      "start": 178,
+      "end": 199,
+      "creator": "Alexander Mathias · Saxophone Masterclass",
+      "description": "Följ händerna i närbild när G-durskalan spelas uppåt och nedåt. Greppbilden visar hur fingrarna och oktavklaffen samverkar.",
+      "steps": [
+        "Se och lyssna på tonerna G–A–B–C–D–E–F♯–G.",
+        "Öva långsamt och håll fingrarna nära klaffarna. Samordna båda händerna när du går från C till D.",
+        "Spela tillbaka nedåt med jämn luft och jämna tonlängder. Upprepa innan du ökar tempot."
+      ],
+      "tip": "G-dur har ett korsförtecken: F♯. Välj 0,75× för att följa varje grepp i lugnare tempo.",
+      "thumbnail": "https://i.ytimg.com/vi/jORVSjwr0HE/hq2.jpg"
+    },
+    {
+      "title": "C till D: byt oktav med kontroll",
+      "categoryName": "Fingerkoordination",
+      "youtubeId": "EU28xswTQaU",
+      "start": 392,
+      "end": 403,
+      "creator": "Alexander Mathias · Saxophone Masterclass",
+      "description": "En kort demonstration av övergången mellan C och D. Lägg märke till hur händerna byter grepp tillsammans för att få rena, jämna tonbyten.",
+      "steps": [
+        "Börja med C: tryck ned vänster långfingers klaff och håll oktavklaffen släppt.",
+        "Gå till D: tryck ned pek-, lång- och ringfinger på båda händerna samtidigt som vänster tumme trycker på oktavklaffen.",
+        "Gå tillbaka till C och släpp oktavklaffen i tid. Öva först greppbytet utan att blåsa och lägg sedan till en jämn luftström."
+      ],
+      "tip": "Håll vänster tumme nära oktavklaffen. Små rörelser gör det lättare att samordna tummen med de andra fingrarna.",
+      "thumbnail": "https://i.ytimg.com/vi/EU28xswTQaU/hq2.jpg"
     }
   ]
 };

@@ -16,6 +16,8 @@ Tiderna anger det valda utdragets början och slut i originalvideon, inte origin
 | A-dur: säkra fingergrepp | Alexander Mathias · Saxophone Masterclass | https://www.youtube.com/watch?v=WOZYG9Ibghg | 2:58–3:15 | 17 sek |
 | C-durpentatonik: fem toner i följd | Alexander Mathias · Saxophone Masterclass | https://www.youtube.com/watch?v=QoqGUYBC_oM | 1:59–2:04 | 5 sek |
 | A-mollpentatonik: jämna tonbyten | Alexander Mathias · Saxophone Masterclass | https://www.youtube.com/watch?v=nZonyMH61io | 1:49–1:55 | 6 sek |
+| G-dur: följ fingrarna genom skalan | Alexander Mathias · Saxophone Masterclass | https://www.youtube.com/watch?v=jORVSjwr0HE | 2:58–3:19 | 21 sek |
+| C till D: byt oktav med kontroll | Alexander Mathias · Saxophone Masterclass | https://www.youtube.com/watch?v=EU28xswTQaU | 6:32–6:43 | 11 sek |
 
 ## Lärarnas undervisningssidor
 
@@ -23,9 +25,12 @@ Tiderna anger det valda utdragets början och slut i originalvideon, inte origin
 - https://www.getyoursaxtogether.com/blog/articulation1
 - https://www.saxophonemasterclass.com/
 - https://www.saxophonemasterclass.com/blog/a-minor-pentatonic-scale-on-saxophone
+- https://www.saxophonemasterclass.com/blog/g-major-scale-fingerings-sax
 
 Övningarna med Noa Even och de tre korta artikulationsövningarna med Jamie Anderson visar munstycke och saxofonhals. Eleven kan också öva på hela saxofonen. Skal- och melodidemonstrationerna visar spel på en hel saxofon. Eventuella greppbilder och noter kompletterar den filmade personen.
 
 De fyra tillagda skalövningarna visar verkliga händer på saxofonens klaffar. D-dur och A-dur har en greppbild bredvid närbilden. De två pentatoniska övningarna visar närbild och en vidare bild av saxofonisten samtidigt. Utdragen har valts inom framförandet, mellan talavsnitten i originalet.
+
+Övningarna G-dur och C till D kompletterar fingersättning och samordning med oktavklaffen. Endast framförandet används; originalens muntliga förklaringar före och efter ingår inte. TikTok-videor undersöktes men kunde inte spelas upp för granskning. Dessa två alternativ från Saxophone Masterclass valdes efter att beställaren godkänt en annan källa.
 
 Videornas tillgänglighet och externa spelare hanteras av YouTube. Källor och upphovspersoner dokumenteras här. Sidans egna knappar används för uppspelning, paus, repetition, ljud och hastighet. Den ursprungliga videobilden behåller hela sin bredd i sidans visningsfönster.
