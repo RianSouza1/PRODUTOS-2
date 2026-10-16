@@ -89,7 +89,7 @@ const APP_DATA = {
   "videoUI": {
     "eyebrow": "HÄKELN SCHRITT FÜR SCHRITT",
     "heading": "Deine erste Masche beginnt hier",
-    "intro": "Schau auf die Hände und häkle mit. Pausiere oder wiederhole die Technik in deinem Tempo.",
+    "intro": "Von der ersten Schlinge bis zu Stäbchengruppen und sauberen Fadenenden: Schau auf die Hände, wiederhole die Bewegung und häkle in deinem Tempo mit.",
     "shortLessons": "Kurzlektionen",
     "noSound": "Ohne Ton",
     "closeUp": "Hände in Nahaufnahme",
@@ -255,6 +255,66 @@ const APP_DATA = {
         "Häkle mit der neuen Farbe weiter und lasse die Fadenenden lang genug zum Vernähen."
       ],
       "tip": "Ziehe den neuen Faden nicht zu fest an, damit der Übergang locker bleibt."
+    },
+    {
+      "id": "halbe-staebchen",
+      "title": "Halbe Stäbchen",
+      "category": "Grundmaschen",
+      "youtubeId": "pFTtB8EBnVY",
+      "start": 20,
+      "end": 65,
+      "description": "Ein Umschlag, ein Einstich und drei Schlingen: Beobachte, wie ein halbes Stäbchen entsteht und wie du die Bewegung gleichmäßig wiederholst.",
+      "steps": [
+        "Lege den Arbeitsfaden einmal um die Häkelnadel.",
+        "Stich in die nächste Masche ein und hole den Faden: Jetzt liegen drei Schlingen auf der Nadel.",
+        "Hole den Faden erneut und ziehe ihn durch alle drei Schlingen."
+      ],
+      "tip": "Zähle die drei Schlingen vor dem letzten Durchziehen. Halte den Faden dabei locker."
+    },
+    {
+      "id": "staebchen",
+      "title": "Stäbchen: zweimal durch zwei Schlingen",
+      "category": "Grundmaschen",
+      "youtubeId": "mC9dbsuIA80",
+      "start": 35,
+      "end": 85,
+      "description": "Stäbchen ergeben ein höheres, luftigeres Maschenbild. Die Nahaufnahme zeigt die beiden Durchziehbewegungen und das fertige Maschenbild.",
+      "steps": [
+        "Mache einen Umschlag, stich in die nächste Masche ein und hole den Faden.",
+        "Hole den Faden und ziehe ihn durch die ersten zwei Schlingen.",
+        "Hole den Faden noch einmal und ziehe ihn durch die letzten zwei Schlingen."
+      ],
+      "tip": "Sprich beim Üben für dich „zwei und zwei“. So bleibt die Reihenfolge leichter im Gedächtnis."
+    },
+    {
+      "id": "granny-staebchengruppen",
+      "title": "Granny Square: Stäbchengruppen",
+      "category": "Muster und Quadrate",
+      "youtubeId": "bZT8f15sx9A",
+      "start": 300,
+      "end": 355,
+      "description": "Sieh dir an, wie Stäbchengruppen und Luftmaschenbögen ein Granny-Muster aufbauen. Der Ausschnitt zeigt die Arbeit an einem bereits begonnenen Quadrat.",
+      "steps": [
+        "Suche den Luftmaschenbogen zwischen den Stäbchengruppen.",
+        "Häkle nacheinander drei Stäbchen in denselben Bogen.",
+        "Arbeite die Luftmaschen deiner Anleitung und gehe zum nächsten Bogen weiter."
+      ],
+      "tip": "Übe die Gruppe zunächst an einem vorbereiteten Quadrat und prüfe nach jeder Gruppe die Maschenzahl."
+    },
+    {
+      "id": "fadenenden-mitfuehren",
+      "title": "Fadenenden beim Häkeln mitführen",
+      "category": "Fertigstellen",
+      "youtubeId": "WUnQBBOOvIg",
+      "start": 15,
+      "end": 70,
+      "description": "Nach einem Farbwechsel können lose Fadenenden beim Weiterhäkeln mit eingefasst werden. Beobachte, wie die Enden entlang der Vorreihe liegen und von den neuen Maschen umschlossen werden.",
+      "steps": [
+        "Lege die losen Fadenenden entlang der Oberkante der Vorreihe.",
+        "Halte die Enden an der Kante und greife beim Einstechen um sie herum.",
+        "Häkle gleichmäßig weiter und kontrolliere, dass die Enden in den neuen Maschen liegen."
+      ],
+      "tip": "Ziehe die mitgeführten Fäden nicht straff. Die Kante soll locker und gleichmäßig bleiben."
     }
   ]
 };

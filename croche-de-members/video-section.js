@@ -70,7 +70,7 @@
       player=new YT.Player('crochet-player',{
         host:'https://www.youtube-nocookie.com',
         width:'100%',height:'100%',videoId:lesson.youtubeId,
-        playerVars:{autoplay:0,controls:1,playsinline:1,rel:0,hl:'de',mute:1,start:lesson.start,end:lesson.end,origin:window.location.origin},
+        playerVars:{autoplay:0,controls:1,playsinline:1,rel:0,hl:'de',cc_load_policy:0,mute:1,start:lesson.start,end:lesson.end,origin:window.location.origin},
         events:{
           onReady:event=>{
             if(token!==generation)return;
