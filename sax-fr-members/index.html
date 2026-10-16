@@ -2,14 +2,17 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="La collection complète de saxophone. Trois livres pour apprendre et pratiquer.">
+  <meta name="description" content="Trois livres de saxophone et douze courtes démonstrations avec de vrais saxophonistes. Gros plans sur les mains, son de l’instrument sans paroles et exercices pas à pas.">
   <title>La collection complète de saxophone — Espace membres</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="core.css?v=20261008">
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <link rel="stylesheet" href="core.css?v=sax-videos-20261015-v1">
+  <link rel="stylesheet" href="video-section.css?v=sax-videos-20261015-v1">
 </head>
 <body>
   <div id="pre-page" class="pre-page-overlay">
@@ -17,18 +20,21 @@
     <div class="pre-page-content">
       <div class="pre-page-icon" aria-hidden="true">🎷</div>
       <h1>La collection complète de saxophone</h1><p>Ton accès est confirmé. Découvre tes trois livres de saxophone et progresse pas à pas.</p>
-      <div class="pre-page-features"><span>📖 3 livres PDF</span><span>🎵 Apprendre et pratiquer</span><span>💬 Assistance</span></div>
+      <div class="pre-page-features"><span>📖 3 livres PDF</span><span>🎷 12 courtes vidéos de technique</span><span>💬 Assistance</span></div>
       <button type="button" id="enter-members">Accéder aux ressources →</button>
     </div>
   </div>
   <div class="app-container">
     <header class="app-header"><div class="header-logo"><img src="assets/covers/saxo_IMG1_fr.png" alt="La collection complète de saxophone" id="brand-logo"><h1 id="brand-title">La collection complète de saxophone</h1></div></header>
-    <main id="app-root" class="main-content"><div class="loader-container"><i data-lucide="loader-2" class="spin-icon"></i></div></main>
+    <main id="app-root" class="main-content" tabindex="-1"><div class="loader-container"><i data-lucide="loader-2" class="spin-icon"></i></div></main>
     <nav class="bottom-tab-bar" id="main-nav" aria-label="Espace membres">
       <a href="#livres" class="tab-item"><i data-lucide="book-open"></i><span>Livres</span></a>
+      <a href="#videos" class="tab-item"><i data-lucide="play-circle" aria-hidden="true"></i><span>Vidéos</span></a>
       <a href="#assistance" class="tab-item"><i data-lucide="message-square"></i><span>Assistance</span></a>
     </nav>
   </div>
-  <script src="data.js?v=20261008"></script><script src="app.js?v=20261008"></script>
+  <script src="data.js?v=sax-videos-20261015-v1" defer></script>
+  <script src="video-section.js?v=sax-videos-20261015-v1" defer></script>
+  <script src="app.js?v=sax-videos-20261015-v1" defer></script>
 </body>
 </html>

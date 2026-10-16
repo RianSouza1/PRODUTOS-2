@@ -1,0 +1,99 @@
+/* Short filmed saxophone demonstrations. */
+
+.tab-item { width:33.333%; }
+.sax-eyebrow { color:var(--primary)!important; font-size:.75rem!important; font-weight:600; letter-spacing:.07em; line-height:1.6; margin-bottom:.55rem; }
+.sax-hero-tags,.sax-lesson-tags { display:flex; gap:.55rem; flex-wrap:wrap; margin-top:1rem; }
+.sax-hero-tags span,.sax-lesson-tags span { border:1px solid var(--border-light); border-radius:100px; padding:.35rem .7rem; color:var(--text-muted); background:rgba(255,255,255,.03); font-size:.75rem; line-height:1.5; }
+.sax-lesson-layout { display:grid; gap:1.5rem; align-items:start; }
+.sax-lesson-card { min-width:0; border:1px solid var(--border-light); background:var(--bg-card); border-radius:20px; overflow:hidden; }
+.sax-lesson-heading { padding:1.5rem; }
+.sax-lesson-heading h2 { font-size:1.5rem; line-height:1.4; }
+.sax-video-frame { position:relative; width:100%; aspect-ratio:16/9; min-height:200px; background:#0a1011; }
+.sax-video-frame iframe,.sax-video-frame #sax-player { display:block; width:100%; height:100%; position:absolute; inset:0; border:0; }
+.sax-poster { position:absolute; inset:0; width:100%; height:100%; border:0; padding:0; background:#0a1011; cursor:pointer; color:#fff; font:inherit; }
+.sax-poster img { display:block; width:100%; height:100%; object-fit:contain; }
+.sax-poster::after { content:''; position:absolute; inset:0; background:linear-gradient(0deg,rgba(0,0,0,.65),transparent 65%); }
+.sax-poster-action { position:absolute; z-index:1; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:1rem; text-shadow:0 2px 8px #000; }
+.sax-poster-action svg { width:64px; height:64px; padding:18px; border-radius:50%; background:var(--primary); color:#fff; box-shadow:0 5px 30px rgba(0,0,0,.4); }
+.sax-playback-controls { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; padding:1rem 1.25rem .5rem; }
+.sax-playback-controls button,.sax-ended button,.sax-practice-button { min-height:44px; padding:.65rem .8rem; border:1px solid var(--border-light); border-radius:10px; color:var(--text-dark); background:transparent; font:inherit; font-size:.85rem; cursor:pointer; }
+.sax-playback-controls .sax-play-button,.sax-ended button { background:var(--primary); border-color:var(--primary); color:#fff; }
+.sax-playback-controls button:disabled { opacity:.5; cursor:wait; }
+.sax-speed-buttons { display:flex; gap:.4rem; margin-left:auto; }
+.sax-speed-buttons button[aria-pressed="true"] { background:var(--primary-light); border-color:var(--primary); }
+.sax-progress-wrap { padding:.75rem 1.25rem 1rem; }
+.sax-progress-wrap progress { display:block; width:100%; height:6px; border:0; border-radius:100px; overflow:hidden; accent-color:var(--primary); background:var(--bg-main); }
+.sax-progress-wrap progress::-webkit-progress-bar { background:var(--bg-main); }
+.sax-progress-wrap progress::-webkit-progress-value { background:var(--primary); }
+#sax-status { min-height:2.8em; color:var(--text-muted); font-size:.8rem; line-height:1.5; margin-top:.7rem; }
+.sax-ended { display:flex; flex-wrap:wrap; align-items:center; gap:1rem; margin:0 1.25rem 1.25rem; padding:1rem; border:1px solid var(--border-light); border-radius:12px; background:var(--primary-light); }
+.sax-ended p { flex:1; min-width:180px; font-size:.85rem; line-height:1.6; }
+.sax-lesson-details { padding:1.5rem; border-top:1px solid var(--border-light); }
+.sax-lesson-details>p { color:var(--text-muted); line-height:1.7; font-size:.95rem; }
+.sax-lesson-details h3 { font-size:1.05rem; margin:1.5rem 0 .75rem; }
+.sax-lesson-details ol { padding-left:1.3rem; }
+.sax-lesson-details li { font-size:.9rem; line-height:1.7; padding:.25rem 0 .25rem .25rem; }
+.sax-lesson-details .sax-tip { padding:1rem; background:var(--bg-main); border-radius:10px; font-size:.85rem; margin:1.25rem 0; }
+.sax-practice-button.done { border-color:var(--primary); background:var(--primary-light); }
+.sax-lesson-details .sax-source { font-size:.72rem; line-height:1.6; margin-top:1.25rem; }
+.sax-source a { color:var(--primary); }
+.sax-library { min-width:0; }
+.sax-library-heading { margin-bottom:1rem; }
+.sax-library-heading h2 { font-size:1.15rem; line-height:1.5; }
+.sax-library-heading p { color:var(--text-muted); font-size:.8rem; margin-top:.35rem; }
+.sax-lesson-list { display:grid; gap:.65rem; }
+.sax-lesson-choice { display:flex; align-items:center; width:100%; gap:.8rem; border:1px solid var(--border-light); border-radius:12px; background:var(--bg-card); padding:.75rem; color:var(--text-dark); text-align:left; font:inherit; cursor:pointer; }
+.sax-lesson-choice.selected { background:#263b31; border-color:var(--primary); }
+.sax-lesson-choice img { width:80px; height:60px; object-fit:contain; border-radius:8px; flex-shrink:0; }
+.sax-choice-copy { flex:1; min-width:0; display:flex; flex-direction:column; gap:.2rem; }
+.sax-choice-copy strong { font-size:.88rem; line-height:1.35; }
+.sax-choice-copy>span { font-size:.7rem; color:var(--text-muted); line-height:1.4; }
+.sax-choice-copy .sax-choice-number { color:var(--primary); }
+.sax-lesson-choice>svg { width:18px; height:18px; color:var(--primary); flex-shrink:0; }
+.sax-library-note { font-size:.75rem; color:var(--text-muted); line-height:1.7; margin-top:1.5rem; }
+@media (min-width:760px) { .sax-lesson-layout { grid-template-columns:minmax(0,1.65fr) minmax(250px,1fr); } .sax-library { position:sticky; top:0; } .sax-lesson-list { max-height:calc(100dvh - 240px); overflow-y:auto; padding:2px 6px 2px 2px; } }
+@media (min-width:1024px) { .tab-item { width:calc(100% - 2rem); } }
+@media (max-width:400px) { .sax-playback-controls { padding:1rem .75rem .5rem; } .sax-speed-buttons { margin-left:0; } .sax-lesson-choice img { width:60px; height:50px; } }
+@media (max-width:759px) { .sax-videos-view .hero-card { padding:1.5rem; margin-bottom:1.25rem; } .sax-videos-view .hero-text h1 { font-size:1.6rem; } .sax-videos-view .sax-eyebrow { font-size:.7rem!important; letter-spacing:.04em; } .sax-lesson-heading { padding:1.25rem; } .sax-lesson-heading h2 { font-size:1.3rem; } }
+
+.sax-videos-view [hidden] { display:none!important; }
+.sax-videos-view { overflow-wrap:anywhere; }
+.sax-lesson-layout>* { min-width:0; }
+.sax-lesson-choice img { background:#fff; }
+.sax-poster { background:#fff; }
+.sax-source a { overflow-wrap:anywhere; }
+
+/* Keep this video section static: the filmed person provides the movement. */
+.sax-videos-view, .sax-videos-view *, .sax-videos-view *::before, .sax-videos-view *::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
+.pre-page-overlay[hidden] { display:none!important; }
+
+/* Saxophone demonstrations. Keep the whole filmed instrument visible. */
+.sax-video-frame { background:#080d0b; }
+.sax-poster,.sax-lesson-choice img { background:#080d0b; }
+.sax-playback-controls .sax-play-button,.sax-ended button,.sax-poster-action svg { color:#101817; }
+.sax-lesson-choice.selected { background:#263b31; }
+.bottom-tab-bar { flex-shrink:0; }
+.sax-source summary { cursor:pointer; color:var(--primary); padding:.5rem 0; }
+.sax-source p { margin-top:.5rem; }
+.sax-source a { color:var(--primary); }
+.sax-video-frame:fullscreen { width:100vw; height:100dvh; aspect-ratio:auto; }
+@media(min-width:1024px) { .sax-lesson-layout { grid-template-columns:minmax(0,1.65fr) minmax(220px,1fr); } }
+
+#sax-clock { display:block; color:var(--text-muted); font-size:.75rem; margin-top:.65rem; font-variant-numeric:tabular-nums; }
+.sax-lesson-card:fullscreen { width:100vw; max-width:none; height:100dvh; overflow-y:auto; border:0; border-radius:0; background:var(--bg-main); }
+.sax-lesson-card:fullscreen .sax-video-frame { max-width:1100px; max-height:68dvh; margin:auto; }
+.sax-playback-controls button:focus-visible { outline:3px solid var(--primary-hover); outline-offset:3px; }
+
+/* Put the filmed technique in the page's own viewing window. Extra vertical
+   space stays outside the window; the original 16:9 image keeps its full width. */
+.sax-video-frame { overflow:hidden; isolation:isolate; }
+.sax-video-frame #sax-player {
+    inset:auto; left:0; top:-110px;
+    width:100%; height:calc(100% + 220px);
+    pointer-events:none;
+}
+.sax-lesson-card[data-player-state="loading"] #sax-player,
+.sax-lesson-card[data-player-state="error"] #sax-player { visibility:hidden; }
+
+/* Allow translated headings to fit inside the page layout. */
+.main-content { min-width:0; }
