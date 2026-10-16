@@ -131,6 +131,78 @@ const APP_DATA = {
       "Construis les maisons avec des verticales et des lignes vers ce point."
     ],
     "tip": "Réduis les détails à mesure qu’ils s’éloignent."
+  },
+  {
+    "id": "v9",
+    "youtubeId": "6gNhCei6d0w",
+    "start": 0,
+    "end": 33,
+    "creator": "Evas art",
+    "videoShape": "portrait",
+    "title": "Du cercle à la sphère : lumière et ombre",
+    "categoryName": "Lumière et volume",
+    "description": "Observe comment un cercle prend du volume avec le graphite, une face éclairée et une ombre portée.",
+    "steps": [
+      "Esquisse un cercle léger et choisis la direction de la lumière.",
+      "Construis l’ombre par couches fines en préservant la partie claire du papier.",
+      "Ajoute une ombre sous la sphère et compare la forme avant et après."
+    ],
+    "tip": "Commence légèrement. Choisis 0,5× pour suivre le crayon, puis pratique à ton rythme.",
+    "thumbnail": "https://i.ytimg.com/vi/6gNhCei6d0w/hq2.jpg"
+  },
+  {
+    "id": "v10",
+    "youtubeId": "fvyQlOY8OAw",
+    "start": 5,
+    "end": 64,
+    "creator": "Riar Art",
+    "videoShape": "landscape",
+    "title": "Construire un cube aux arêtes nettes",
+    "categoryName": "Forme et construction",
+    "description": "Suis des lignes simples qui s’assemblent en un cube. Apprends à distinguer la face avant, le côté et le dessus.",
+    "steps": [
+      "Trace une ligne d’horizon et place deux points de fuite.",
+      "Place l’arête verticale avant et trace des lignes de construction vers les deux points de fuite.",
+      "Ajoute les arêtes verticales latérales, puis relie les sommets pour former le cube."
+    ],
+    "tip": "Dessine petit et léger au début. Vérifie la forme avant d’appuyer davantage.",
+    "thumbnail": "https://i.ytimg.com/vi/fvyQlOY8OAw/hq2.jpg"
+  },
+  {
+    "id": "v11",
+    "youtubeId": "m7Ds8TVJ4aQ",
+    "start": 0,
+    "end": 30,
+    "creator": "Paintellectual PriyA",
+    "videoShape": "portrait",
+    "title": "Un œil : forme, iris et contraste",
+    "categoryName": "Détails et observation",
+    "description": "Observe la construction du contour, de l’iris et des zones foncées de l’œil. Utilise ce clip pour étudier les formes et les contrastes.",
+    "steps": [
+      "Esquisse la forme générale de l’œil avec des traits légers.",
+      "Place l’iris et la pupille en gardant un petit reflet blanc.",
+      "Renforce progressivement les zones foncées et préserve le blanc de l’œil."
+    ],
+    "tip": "Le clip est rapide. Fais des pauses et choisis 0,5× ; consacre plus de temps aux proportions qu’aux détails.",
+    "thumbnail": "https://i.ytimg.com/vi/m7Ds8TVJ4aQ/hq2.jpg"
+  },
+  {
+    "id": "v12",
+    "youtubeId": "48SS7HTCH4M",
+    "start": 0,
+    "end": 55,
+    "creator": "Nura Art Gallery",
+    "videoShape": "portrait",
+    "title": "Un rameau feuillu : contours, nervures et couleur",
+    "categoryName": "Nature et tracé",
+    "description": "Observe la construction d’un rameau avec des feuilles, des contours nets et des couches de vert.",
+    "steps": [
+      "Trace une tige courbe et dispose les feuilles le long de celle-ci.",
+      "Ajoute les nervures centrales et secondaires.",
+      "Applique légèrement le vert en laissant les nervures visibles."
+    ],
+    "tip": "Commence par une feuille simple. Garde les petites différences entre ses deux côtés.",
+    "thumbnail": "https://i.ytimg.com/vi/48SS7HTCH4M/hq2.jpg"
   }
 ],
 
@@ -216,8 +288,8 @@ const APP_DATA = {
   "videoUI": {
   "eyebrow": "LE DESSIN PAS À PAS",
   "heading": "Observe le geste. À toi de dessiner.",
-  "intro": "Huit démonstrations courtes avec de vraies mains, un crayon et du papier. Regarde sans son, puis exerce-toi avec les étapes sous la vidéo.",
-  "shortLessons": "démonstrations · 7–32 secondes",
+  "intro": "Douze démonstrations courtes avec de vraies mains, un crayon et du papier. Travaille les techniques de base, puis applique-les aux formes et aux détails. Les vidéos sont lues sans son.",
+  "shortLessons": "démonstrations courtes",
   "noSound": "Sans son",
   "closeUp": "De vraies mains",
   "lesson": "Technique",

@@ -127,6 +127,78 @@ const APP_DATA = {
       "Bygg husen med lodräta linjer och linjer mot samma punkt."
     ],
     "tip": "Gör detaljerna mindre ju längre bort de ligger."
+  },
+  {
+    "id": "v9",
+    "youtubeId": "6gNhCei6d0w",
+    "start": 0,
+    "end": 33,
+    "creator": "Evas art",
+    "videoShape": "portrait",
+    "title": "Från cirkel till klot: ljus och skugga",
+    "categoryName": "Ljus och volym",
+    "description": "Se hur en cirkel får volym med grafit, en ljus sida och en skugga på underlaget.",
+    "steps": [
+      "Skissa en lätt cirkel och bestäm varifrån ljuset kommer.",
+      "Bygg upp skuggan i tunna lager och bevara den ljusa delen av papperet.",
+      "Lägg till en skugga under klotet och jämför formen före och efter."
+    ],
+    "tip": "Arbeta lätt i början. Prova 0,5× för att följa pennans rörelse och öva sedan utan att stressa.",
+    "thumbnail": "https://i.ytimg.com/vi/6gNhCei6d0w/hq2.jpg"
+  },
+  {
+    "id": "v10",
+    "youtubeId": "fvyQlOY8OAw",
+    "start": 5,
+    "end": 64,
+    "creator": "Riar Art",
+    "videoShape": "landscape",
+    "title": "Bygg en kub med tydliga kanter",
+    "categoryName": "Form och konstruktion",
+    "description": "Följ hur enkla linjer kopplas ihop till en kub. Övningen hjälper dig att se framsida, sida och ovansida.",
+    "steps": [
+      "Rita en horisontlinje och markera två flyktpunkter.",
+      "Placera kubens främre lodräta kant och dra hjälplinjer mot båda flyktpunkterna.",
+      "Lägg till sidornas lodräta kanter och koppla ihop hörnen till en kub."
+    ],
+    "tip": "Rita litet och lätt först. Kontrollera formen innan du trycker hårdare med pennan.",
+    "thumbnail": "https://i.ytimg.com/vi/fvyQlOY8OAw/hq2.jpg"
+  },
+  {
+    "id": "v11",
+    "youtubeId": "m7Ds8TVJ4aQ",
+    "start": 0,
+    "end": 30,
+    "creator": "Paintellectual PriyA",
+    "videoShape": "portrait",
+    "title": "Ett öga: form, iris och kontrast",
+    "categoryName": "Detaljer och observation",
+    "description": "Se hur ögats kontur, iris och mörka partier byggs upp. Använd demonstrationen som en kort studie av form och kontrast.",
+    "steps": [
+      "Skissa ögats grundform med lätta linjer.",
+      "Placera iris och pupill och lämna en liten ljusreflex orörd.",
+      "Fördjupa de mörka partierna stegvis och håll ögonvitan ljus."
+    ],
+    "tip": "Filmen går snabbt. Pausa ofta och välj 0,5×; lägg mer tid på proportionerna än på detaljerna.",
+    "thumbnail": "https://i.ytimg.com/vi/m7Ds8TVJ4aQ/hq2.jpg"
+  },
+  {
+    "id": "v12",
+    "youtubeId": "48SS7HTCH4M",
+    "start": 0,
+    "end": 55,
+    "creator": "Nura Art Gallery",
+    "videoShape": "portrait",
+    "title": "En kvist med blad: kontur, nerver och färg",
+    "categoryName": "Natur och linjeföring",
+    "description": "Se hur en enkel kvist byggs upp med blad, tydliga konturer och gröna färglager.",
+    "steps": [
+      "Rita en böjd stjälk och placera bladen längs den.",
+      "Lägg till mittnerver och mindre bladnerver.",
+      "Färglägg lätt med grönt och låt nerverna vara synliga."
+    ],
+    "tip": "Börja med ett enkelt blad. Låt sidornas små skillnader synas i stället för att göra dem helt identiska.",
+    "thumbnail": "https://i.ytimg.com/vi/48SS7HTCH4M/hq2.jpg"
   }
 ],
   "books": [
@@ -210,8 +282,8 @@ const APP_DATA = {
   "videoUI": {
   "eyebrow": "TECKNA STEG FÖR STEG",
   "heading": "Se rörelsen. Prova själv.",
-  "intro": "Åtta korta demonstrationer med riktiga händer, penna och papper. Se tekniken utan ljud och öva med stegen under filmen.",
-  "shortLessons": "demonstrationer · 7–32 sekunder",
+  "intro": "Tolv korta demonstrationer med riktiga händer, penna och papper. Öva grundtekniker och använd dem sedan i former och detaljer. Filmerna spelas utan ljud.",
+  "shortLessons": "korta demonstrationer",
   "noSound": "Utan ljud",
   "closeUp": "Riktiga händer",
   "lesson": "Teknik",

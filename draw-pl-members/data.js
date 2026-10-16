@@ -126,6 +126,78 @@ const APP_DATA = {
       "Buduj domy z linii pionowych i linii biegnących do tego punktu."
     ],
     "tip": "Zmniejszaj szczegóły wraz ze wzrostem odległości."
+  },
+  {
+    "id": "v9",
+    "youtubeId": "6gNhCei6d0w",
+    "start": 0,
+    "end": 33,
+    "creator": "Evas art",
+    "videoShape": "portrait",
+    "title": "Od koła do kuli: światło i cień",
+    "categoryName": "Światło i bryła",
+    "description": "Zobacz, jak koło zyskuje objętość dzięki grafitowi, jasnej stronie i cieniowi na podłożu.",
+    "steps": [
+      "Lekko naszkicuj koło i wybierz kierunek światła.",
+      "Buduj cień cienkimi warstwami, zachowując jasny fragment papieru.",
+      "Dodaj cień pod kulą i porównaj formę przed i po cieniowaniu."
+    ],
+    "tip": "Na początku nie dociskaj mocno ołówka. Wybierz 0,5×, aby śledzić ruch, a potem ćwicz spokojnie.",
+    "thumbnail": "https://i.ytimg.com/vi/6gNhCei6d0w/hq2.jpg"
+  },
+  {
+    "id": "v10",
+    "youtubeId": "fvyQlOY8OAw",
+    "start": 5,
+    "end": 64,
+    "creator": "Riar Art",
+    "videoShape": "landscape",
+    "title": "Zbuduj sześcian z wyraźnymi krawędziami",
+    "categoryName": "Forma i konstrukcja",
+    "description": "Obserwuj, jak proste linie łączą się w sześcian. Ćwiczenie pomaga rozróżniać przód, bok i górę bryły.",
+    "steps": [
+      "Narysuj linię horyzontu i zaznacz dwa punkty zbiegu.",
+      "Umieść przednią pionową krawędź i poprowadź linie pomocnicze do obu punktów zbiegu.",
+      "Dodaj boczne pionowe krawędzie i połącz wierzchołki, tworząc sześcian."
+    ],
+    "tip": "Na początku rysuj mały szkic i używaj lekkich linii. Sprawdź formę, zanim mocniej dociśniesz ołówek.",
+    "thumbnail": "https://i.ytimg.com/vi/fvyQlOY8OAw/hq2.jpg"
+  },
+  {
+    "id": "v11",
+    "youtubeId": "m7Ds8TVJ4aQ",
+    "start": 0,
+    "end": 30,
+    "creator": "Paintellectual PriyA",
+    "videoShape": "portrait",
+    "title": "Oko: kształt, tęczówka i kontrast",
+    "categoryName": "Detale i obserwacja",
+    "description": "Obserwuj budowę konturu oka, tęczówki i ciemnych partii. Wykorzystaj pokaz jako krótkie studium kształtu i kontrastu.",
+    "steps": [
+      "Naszkicuj ogólny kształt oka lekkimi liniami.",
+      "Umieść tęczówkę i źrenicę, pozostawiając mały biały refleks.",
+      "Stopniowo pogłębiaj ciemne miejsca i zachowaj jasną białkówkę."
+    ],
+    "tip": "Film jest szybki. Często zatrzymuj odtwarzanie i wybierz 0,5×; poświęć więcej czasu proporcjom niż detalom.",
+    "thumbnail": "https://i.ytimg.com/vi/m7Ds8TVJ4aQ/hq2.jpg"
+  },
+  {
+    "id": "v12",
+    "youtubeId": "48SS7HTCH4M",
+    "start": 0,
+    "end": 55,
+    "creator": "Nura Art Gallery",
+    "videoShape": "portrait",
+    "title": "Gałązka z liśćmi: kontury, nerwy i kolor",
+    "categoryName": "Natura i prowadzenie linii",
+    "description": "Zobacz, jak powstaje gałązka z liśćmi, wyraźnymi konturami i warstwami zielonego koloru.",
+    "steps": [
+      "Narysuj zakrzywioną łodyżkę i rozmieść wzdłuż niej liście.",
+      "Dodaj nerwy główne i mniejsze nerwy liści.",
+      "Delikatnie nałóż zieleń, pozostawiając widoczne nerwy."
+    ],
+    "tip": "Zacznij od prostego liścia. Zachowaj drobne różnice między jego stronami.",
+    "thumbnail": "https://i.ytimg.com/vi/48SS7HTCH4M/hq2.jpg"
   }
 ],
   "books": [
@@ -209,8 +281,8 @@ const APP_DATA = {
   "videoUI": {
   "eyebrow": "RYSOWANIE KROK PO KROKU",
   "heading": "Obserwuj ruch. Potem spróbuj samodzielnie.",
-  "intro": "Osiem krótkich demonstracji z prawdziwymi dłońmi, ołówkiem i papierem. Oglądaj bez dźwięku i ćwicz według kroków pod filmem.",
-  "shortLessons": "demonstracji · 7–32 sekundy",
+  "intro": "Dwanaście krótkich pokazów z prawdziwymi dłońmi, ołówkiem i papierem. Przećwicz podstawowe techniki, a potem zastosuj je w formach i detalach. Filmy są odtwarzane bez dźwięku.",
+  "shortLessons": "krótkich pokazów",
   "noSound": "Bez dźwięku",
   "closeUp": "Prawdziwe dłonie",
   "lesson": "Technika",

@@ -131,6 +131,78 @@ const APP_DATA = {
       "Bouw de huizen met verticale lijnen en lijnen naar hetzelfde punt."
     ],
     "tip": "Maak details kleiner naarmate ze verder weg liggen."
+  },
+  {
+    "id": "v9",
+    "youtubeId": "6gNhCei6d0w",
+    "start": 0,
+    "end": 33,
+    "creator": "Evas art",
+    "videoShape": "portrait",
+    "title": "Van cirkel naar bol: licht en schaduw",
+    "categoryName": "Licht en volume",
+    "description": "Zie hoe een cirkel volume krijgt met grafiet, een lichte kant en een schaduw op de ondergrond.",
+    "steps": [
+      "Schets een lichte cirkel en kies waar het licht vandaan komt.",
+      "Bouw de schaduw in dunne lagen op en houd de lichte plek op het papier vrij.",
+      "Voeg een schaduw onder de bol toe en vergelijk de vorm voor en na."
+    ],
+    "tip": "Begin met weinig druk. Kies 0,5× om het potlood te volgen en oefen daarna rustig zelf.",
+    "thumbnail": "https://i.ytimg.com/vi/6gNhCei6d0w/hq2.jpg"
+  },
+  {
+    "id": "v10",
+    "youtubeId": "fvyQlOY8OAw",
+    "start": 5,
+    "end": 64,
+    "creator": "Riar Art",
+    "videoShape": "landscape",
+    "title": "Een kubus met duidelijke randen opbouwen",
+    "categoryName": "Vorm en constructie",
+    "description": "Volg hoe eenvoudige lijnen samen een kubus vormen. Leer de voorkant, zijkant en bovenkant te onderscheiden.",
+    "steps": [
+      "Teken een horizonlijn en markeer twee verdwijnpunten.",
+      "Plaats de voorste verticale rand en trek hulplijnen naar beide verdwijnpunten.",
+      "Voeg de verticale zijranden toe en verbind de hoekpunten tot een kubus."
+    ],
+    "tip": "Teken eerst klein en licht. Controleer de vorm voordat je harder drukt.",
+    "thumbnail": "https://i.ytimg.com/vi/fvyQlOY8OAw/hq2.jpg"
+  },
+  {
+    "id": "v11",
+    "youtubeId": "m7Ds8TVJ4aQ",
+    "start": 0,
+    "end": 30,
+    "creator": "Paintellectual PriyA",
+    "videoShape": "portrait",
+    "title": "Een oog: vorm, iris en contrast",
+    "categoryName": "Details en observatie",
+    "description": "Bekijk de opbouw van de oogcontour, iris en donkere delen. Gebruik de clip als korte studie van vorm en contrast.",
+    "steps": [
+      "Schets de basisvorm van het oog met lichte lijnen.",
+      "Plaats iris en pupil en laat een klein lichtpuntje wit.",
+      "Maak de donkere delen stap voor stap dieper en houd het oogwit licht."
+    ],
+    "tip": "De clip gaat snel. Pauzeer regelmatig en kies 0,5×; besteed meer tijd aan verhoudingen dan aan details.",
+    "thumbnail": "https://i.ytimg.com/vi/m7Ds8TVJ4aQ/hq2.jpg"
+  },
+  {
+    "id": "v12",
+    "youtubeId": "48SS7HTCH4M",
+    "start": 0,
+    "end": 55,
+    "creator": "Nura Art Gallery",
+    "videoShape": "portrait",
+    "title": "Een tak met bladeren: contour, nerven en kleur",
+    "categoryName": "Natuur en lijnvoering",
+    "description": "Zie hoe een eenvoudige tak ontstaat met bladeren, duidelijke contouren en groene kleurlagen.",
+    "steps": [
+      "Teken een gebogen stengel en plaats de bladeren erlangs.",
+      "Voeg de hoofdnerven en kleinere nerven toe.",
+      "Kleur licht met groen en laat de nerven zichtbaar."
+    ],
+    "tip": "Begin met een eenvoudig blad. Laat de kleine verschillen tussen beide kanten zichtbaar.",
+    "thumbnail": "https://i.ytimg.com/vi/48SS7HTCH4M/hq2.jpg"
   }
 ],
 
@@ -216,8 +288,8 @@ const APP_DATA = {
   "videoUI": {
   "eyebrow": "STAP VOOR STAP TEKENEN",
   "heading": "Bekijk de beweging. Probeer het zelf.",
-  "intro": "Acht korte demonstraties met echte handen, potlood en papier. Kijk zonder geluid en oefen met de stappen onder de video.",
-  "shortLessons": "demonstraties · 7–32 seconden",
+  "intro": "Twaalf korte demonstraties met echte handen, potlood en papier. Oefen de basistechnieken en pas ze daarna toe op vormen en details. De video’s worden zonder geluid afgespeeld.",
+  "shortLessons": "korte demonstraties",
   "noSound": "Zonder geluid",
   "closeUp": "Echte handen",
   "lesson": "Techniek",

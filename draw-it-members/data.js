@@ -131,6 +131,78 @@ const APP_DATA = {
       "Costruisci le case con verticali e linee dirette allo stesso punto."
     ],
     "tip": "Riduci i dettagli man mano che si allontanano."
+  },
+  {
+    "id": "v9",
+    "youtubeId": "6gNhCei6d0w",
+    "start": 0,
+    "end": 33,
+    "creator": "Evas art",
+    "videoShape": "portrait",
+    "title": "Dal cerchio alla sfera: luce e ombra",
+    "categoryName": "Luce e volume",
+    "description": "Osserva come un cerchio acquista volume con la grafite, una parte illuminata e un’ombra sul piano.",
+    "steps": [
+      "Abbozza un cerchio leggero e scegli la direzione della luce.",
+      "Costruisci l’ombra con strati sottili e conserva la parte chiara della carta.",
+      "Aggiungi un’ombra sotto la sfera e confronta la forma prima e dopo."
+    ],
+    "tip": "Inizia con un tratto leggero. Scegli 0,5× per seguire la matita e poi esercitati con calma.",
+    "thumbnail": "https://i.ytimg.com/vi/6gNhCei6d0w/hq2.jpg"
+  },
+  {
+    "id": "v10",
+    "youtubeId": "fvyQlOY8OAw",
+    "start": 5,
+    "end": 64,
+    "creator": "Riar Art",
+    "videoShape": "landscape",
+    "title": "Costruire un cubo con spigoli chiari",
+    "categoryName": "Forma e costruzione",
+    "description": "Segui linee semplici che si uniscono in un cubo. L’esercizio aiuta a distinguere la faccia frontale, il lato e la parte superiore.",
+    "steps": [
+      "Traccia la linea dell’orizzonte e segna due punti di fuga.",
+      "Posiziona lo spigolo verticale anteriore e traccia le linee guida verso entrambi i punti di fuga.",
+      "Aggiungi gli spigoli verticali laterali e unisci i vertici per formare il cubo."
+    ],
+    "tip": "Disegna piccolo e leggero all’inizio. Controlla la forma prima di premere di più.",
+    "thumbnail": "https://i.ytimg.com/vi/fvyQlOY8OAw/hq2.jpg"
+  },
+  {
+    "id": "v11",
+    "youtubeId": "m7Ds8TVJ4aQ",
+    "start": 0,
+    "end": 30,
+    "creator": "Paintellectual PriyA",
+    "videoShape": "portrait",
+    "title": "Un occhio: forma, iride e contrasto",
+    "categoryName": "Dettagli e osservazione",
+    "description": "Osserva la costruzione del contorno, dell’iride e delle zone scure dell’occhio. Usa il video come breve studio di forme e contrasti.",
+    "steps": [
+      "Abbozza la forma generale dell’occhio con linee leggere.",
+      "Posiziona iride e pupilla lasciando un piccolo riflesso bianco.",
+      "Scurisci gradualmente le zone d’ombra e conserva chiara la parte bianca dell’occhio."
+    ],
+    "tip": "Il video è veloce. Metti spesso in pausa e scegli 0,5×; dedica più tempo alle proporzioni che ai dettagli.",
+    "thumbnail": "https://i.ytimg.com/vi/m7Ds8TVJ4aQ/hq2.jpg"
+  },
+  {
+    "id": "v12",
+    "youtubeId": "48SS7HTCH4M",
+    "start": 0,
+    "end": 55,
+    "creator": "Nura Art Gallery",
+    "videoShape": "portrait",
+    "title": "Un ramo con foglie: contorni, nervature e colore",
+    "categoryName": "Natura e tratto",
+    "description": "Osserva come nasce un ramo con foglie, contorni chiari e strati di colore verde.",
+    "steps": [
+      "Disegna uno stelo curvo e disponi le foglie lungo il ramo.",
+      "Aggiungi le nervature centrali e quelle più piccole.",
+      "Stendi il verde con leggerezza, lasciando visibili le nervature."
+    ],
+    "tip": "Comincia con una foglia semplice. Mantieni le piccole differenze tra i due lati.",
+    "thumbnail": "https://i.ytimg.com/vi/48SS7HTCH4M/hq2.jpg"
   }
 ],
 
@@ -216,8 +288,8 @@ const APP_DATA = {
   "videoUI": {
   "eyebrow": "DISEGNO PASSO DOPO PASSO",
   "heading": "Osserva il gesto. Poi prova tu.",
-  "intro": "Otto brevi dimostrazioni con mani reali, matita e carta. Guarda senza audio e fai pratica con i passaggi sotto il video.",
-  "shortLessons": "dimostrazioni · 7–32 secondi",
+  "intro": "Dodici brevi dimostrazioni con mani vere, matita e carta. Esercita le tecniche di base e applicale poi a forme e dettagli. I video vengono riprodotti senza audio.",
+  "shortLessons": "brevi dimostrazioni",
   "noSound": "Senza audio",
   "closeUp": "Mani reali",
   "lesson": "Tecnica",
