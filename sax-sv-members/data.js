@@ -117,7 +117,7 @@ const APP_DATA = {
   "videoUI": {
     "eyebrow": "SE · LYSSNA · SPELA",
     "heading": "Saxofonteknik i korta videor",
-    "intro": "Se hur riktiga saxofonister spelar. Lyssna på instrumentet utan tal, följ stegen och upprepa varje övning i din egen takt.",
+    "intro": "Se hur riktiga saxofonister spelar, med närbilder av händerna och klaffarna. Lyssna på instrumentet utan tal, följ stegen och upprepa varje övning i din egen takt.",
     "shortLessons": "korta demonstrationer",
     "noSound": "Instrumentljud · utan tal",
     "closeUp": "Riktiga saxofonister",
@@ -246,6 +246,70 @@ const APP_DATA = {
       ],
       "tip": "Fokusera på en fras i taget. Målet är en jämn, tydlig melodi – hastigheten kan komma senare.",
       "thumbnail": "https://i.ytimg.com/vi/-ko5qsJAesY/hq2.jpg"
+    },
+    {
+      "title": "D-dur: samordna båda händerna",
+      "categoryName": "Fingrar och skala",
+      "youtubeId": "F_qfE0OLwZw",
+      "start": 215,
+      "end": 235,
+      "creator": "Alexander Mathias · Saxophone Masterclass",
+      "description": "Följ närbilden av händerna när D-durskalan spelas. Greppbilden bredvid visar vilka klaffar som trycks ned för varje ton.",
+      "steps": [
+        "Titta på båda händerna och följ tonerna D–E–F♯–G–A–B–C♯–D.",
+        "Öva tonbytena långsamt. Släpp och tryck ned fingrarna tillsammans och håll dem nära klaffarna.",
+        "Spela skalan nedåt och uppåt med jämn luft. Pausa och upprepa de byten som känns svåra."
+      ],
+      "tip": "D-dur har F♯ och C♯. Använd 0,75× för att se hur fingrarna samordnas och lägg märke till oktavklaffens läge.",
+      "thumbnail": "https://i.ytimg.com/vi/F_qfE0OLwZw/hq2.jpg"
+    },
+    {
+      "title": "A-dur: säkra fingergrepp",
+      "categoryName": "Fingrar och skala",
+      "youtubeId": "WOZYG9Ibghg",
+      "start": 178,
+      "end": 195,
+      "creator": "Alexander Mathias · Saxophone Masterclass",
+      "description": "En närbild gör det lätt att följa fingrarnas rörelser i A-dur. Jämför händerna med greppbilden och lyssna på skalan uppåt och nedåt.",
+      "steps": [
+        "Följ tonerna A–B–C♯–D–E–F♯–G♯–A medan du ser på händerna.",
+        "Öva övergången F♯–G♯–A långsamt. Se hur vänster lillfinger använder G♯-klaffen.",
+        "Sätt ihop hela skalan och spela tillbaka nedåt med samma lugna tempo."
+      ],
+      "tip": "A-dur har tre korsförtecken: F♯, C♯ och G♯. Börja med två toner i taget innan du spelar hela skalan.",
+      "thumbnail": "https://i.ytimg.com/vi/WOZYG9Ibghg/hq2.jpg"
+    },
+    {
+      "title": "C-durpentatonik: fem toner i följd",
+      "categoryName": "Pentatoniska grepp",
+      "youtubeId": "QoqGUYBC_oM",
+      "start": 119,
+      "end": 124,
+      "creator": "Alexander Mathias · Saxophone Masterclass",
+      "description": "Se händerna i närbild samtidigt som saxofonisten spelar C-durpentatonik. Fem olika toner bildar en enkel grund för små melodier.",
+      "steps": [
+        "Följ fingrarna genom C–D–E–G–A–C. Här utelämnas F och B från C-durskalan.",
+        "Pausa efter varje ton och prova samma grepp på din saxofon.",
+        "Spela följden långsamt och jämnt. Upprepa klippet innan du ökar tempot."
+      ],
+      "tip": "Klippet är mycket kort. Välj 0,75× och använd Se igen för att lättare följa varje grepp.",
+      "thumbnail": "https://i.ytimg.com/vi/QoqGUYBC_oM/hq2.jpg"
+    },
+    {
+      "title": "A-mollpentatonik: jämna tonbyten",
+      "categoryName": "Pentatoniska grepp",
+      "youtubeId": "nZonyMH61io",
+      "start": 109,
+      "end": 115,
+      "creator": "Alexander Mathias · Saxophone Masterclass",
+      "description": "Följ båda händerna i en kort demonstration av A-mollpentatonik. Närbilden visar hur fingrarna växlar mellan skalans fem toner.",
+      "steps": [
+        "Se och lyssna på följden A–C–D–E–G–A.",
+        "Öva övergången C–D långsamt och samordna händerna med vänster tumme på oktavklaffen.",
+        "Spela hela följden med jämna tonlängder. Upprepa och håll fingrarna nära klaffarna."
+      ],
+      "tip": "A-mollpentatonik använder samma fem toner som C-durpentatonik, men börjar på A. Jämför de två klippen och lyssna på skillnaden.",
+      "thumbnail": "https://i.ytimg.com/vi/nZonyMH61io/hq2.jpg"
     }
   ]
 };
