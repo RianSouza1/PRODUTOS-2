@@ -1249,4 +1249,13 @@ html, body {
     transform: scale(0.95);
 }
 
-/* trigger rebuild */
+/* Gold accents keep navigation and reading aids legible on the dark theme. */
+.tab-item.active {
+    color: #f2c76c;
+    background: rgba(242, 199, 108, 0.1);
+}
+
+.home-block-icon,
+.premium-checklist svg {
+    color: #f2c76c !important;
+}
