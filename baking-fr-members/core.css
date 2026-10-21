@@ -1410,10 +1410,32 @@ a:focus-visible,button:focus-visible { outline:3px solid var(--accent); outline-
 .baking-player:fullscreen .baking-frame { flex:1; min-height:0; aspect-ratio:auto; }
 .baking-player:fullscreen .baking-transport { flex-shrink:0; }
 .tab-item { width:33.333%; }
+.baking-preparation { margin:0; padding:0 1.5rem 1.2rem; color:var(--text-muted); font-size:.85rem; line-height:1.6; }
+.baking-preparation strong { display:block; color:var(--accent); margin-bottom:.2rem; }
+.baking-caption { padding:1rem 1.25rem; border-top:2px solid var(--accent); background:#152219; min-height:100px; }
+.baking-caption > span { display:block; color:var(--accent); font-size:.7rem; font-weight:700; letter-spacing:.03em; margin-bottom:.35rem; }
+.baking-caption p { color:#fff8ed; font-size:1rem; line-height:1.6; margin:0; max-width:75ch; }
+.baking-chapter-hint { color:var(--text-muted); font-size:.8rem; line-height:1.5; margin:-.4rem 0 1rem; }
+.baking-guidance li { padding:0; border:0; background:none; }
+.baking-guidance li::before { display:none; }
+.baking-guidance li button { width:100%; height:100%; padding:1rem; text-align:left; color:var(--text-muted); background:rgba(0,0,0,.12); border:1px solid var(--border-light); border-radius:12px; cursor:pointer; font:inherit; line-height:1.65; }
+.baking-guidance li button[aria-current="step"] { background:rgba(228,196,123,.08); border-color:var(--accent); }
+.baking-chapter-heading { display:flex; flex-wrap:wrap; justify-content:space-between; gap:.5rem; color:var(--text-dark); font-weight:600; margin-bottom:.55rem; }
+.baking-chapter-heading > span { color:var(--accent); font-variant-numeric:tabular-nums; font-size:.75rem; }
+.baking-result { margin-top:1.25rem; padding:1rem; border-radius:12px; background:#183c28; color:#e3f3e5; font-size:.87rem; line-height:1.65; }
+.baking-result strong { display:block; color:#a9dfb7; margin-bottom:.25rem; }
+.baking-source { margin-top:1.25rem; font-size:.75rem; color:var(--text-muted); line-height:1.7; }
+.baking-source summary { cursor:pointer; padding:.5rem 0; }
+.baking-source p { margin-top:.4rem; }
+.baking-source a { color:var(--accent); text-decoration:underline; }
+.baking-player:fullscreen .baking-caption { flex-shrink:0; min-height:0; }
 @media (min-width:1024px) { .tab-item { width:calc(100% - 2rem); } }
 @media (max-width:600px) {
  .baking-video-hero { padding:1.2rem; }
  .baking-lesson-heading,.baking-guidance { padding:1.15rem; }
+ .baking-preparation { padding:0 1.15rem 1.1rem; }
+ .baking-caption { padding:.8rem 1rem; }
+ .baking-caption p { font-size:.87rem; }
  .baking-lesson-heading { gap:.5rem; }
  .baking-duration { padding:.35rem .5rem; }
  .baking-guidance ol,.baking-lessons { grid-template-columns:1fr; }

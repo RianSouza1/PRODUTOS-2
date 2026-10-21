@@ -1,18 +1,24 @@
-# Sources des démonstrations de pâtisserie
+# Sources des mini-ateliers de pâtisserie
 
-Sélection et préparation : 20 octobre 2026.
+Nouvelle sélection : 20 octobre 2026. Les huit anciennes scènes de banque d’images sont remplacées par des extraits de démonstrations pédagogiques réelles du Lycée Georges Baptiste.
 
-Les vidéos sont intégrées à des fiches pédagogiques originales en français. Les copies publiées sont réencodées, limitées à 7–20 secondes et ne contiennent aucune piste audio. Le clip au fouet est recadré sur les mains et le bol. Aucun habillage de plateforme n’est ajouté aux images.
+Les trois œuvres sources sont publiées sous [Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/deed.fr). Les pages Commons ci-dessous comportent une vérification de cette licence. Crédit public et liens figurent dans chaque fiche, sous « Source et licence de la démonstration ». Aucun soutien du lycée à ce site n’est suggéré.
 
-Licence : [Pexels License](https://www.pexels.com/license/). La licence autorise l’utilisation et la modification sur un site ou une application ; aucune attribution publique n’est obligatoire. Les vidéos ne sont pas proposées comme banque de séquences à redistribuer.
+Modifications : extraits temporels, réencodage en 1280 × 720 / H.264, suppression de toute piste audio, affiches extraites des images, textes pédagogiques originaux en français synchronisés avec les gestes et étapes relisibles. Pas d’accélération. Aucun générique ou habillage de plateforme ajouté. Les crédits présents dans les images sont conservés.
 
-| Technique | Créateur | Source | Durée publiée |
+Ces ateliers expliquent un geste, pas une recette complète : ingrédients, quantités, repos et cuisson suivent la recette choisie. Les passages montrant un résultat après cuisson sont identifiés comme tels.
+
+| Mini-atelier | Œuvre source · Lycée Georges Baptiste | Extrait source | Durée publiée |
 |---|---|---|---|
-| Tamiser la farine | Nicole Michalou | [Vidéo originale](https://www.pexels.com/video/using-a-strainer-to-loosen-flour-powder-6138108/) | 12 s |
-| Mélanger au fouet | fey wardhani | [Vidéo originale](https://www.pexels.com/video/whisking-ingredients-for-homemade-cake-batter-37312841/) | 18 s |
-| Étaler la pâte au rouleau | ROMAN ODINTSOV | [Vidéo originale](https://www.pexels.com/video/person-using-rolling-pin-to-flatten-dough-5951648/) | 7 s |
-| Découper des étoiles | Nicole Michalou | [Vidéo originale](https://www.pexels.com/video/woman-using-star-cookie-cutter-6139589/) | 12 s |
-| Dessiner au glaçage sur un biscuit | ROMAN ODINTSOV | [Vidéo originale](https://www.pexels.com/video/close-up-shot-of-a-person-putting-frosting-on-differently-shaped-cookies-using-a-piping-bag-6089265/) | 14 s |
-| Pocher une rosette sur un cupcake | Los Muertos Crew | [Vidéo originale](https://www.pexels.com/video/a-person-putting-icing-on-the-top-of-a-cupcake-8478022/) | 20 s |
-| Créer des vagues dans la crème | Taryn Elliott | [Vidéo originale](https://www.pexels.com/video/a-person-icing-a-baked-cake-with-white-meringue-3325986/) | 7 s |
-| Lisser un nappage au chocolat | ROMAN ODINTSOV | [Vidéo originale](https://www.pexels.com/video/a-person-spreading-chocolate-syrup-on-the-ice-cream-cake-5318764/) | 17 s |
+| Fraiser une pâte sucrée | [Ma première tarte abricot](https://commons.wikimedia.org/wiki/File:Ma_premi%C3%A8re_tarte_abricot.webm) | 32–47 s | 15 s |
+| Abaisser une pâte au rouleau | [Ma première tarte abricot](https://commons.wikimedia.org/wiki/File:Ma_premi%C3%A8re_tarte_abricot.webm) | 46–66 s | 20 s |
+| Foncer et pincer une tarte | [Ma première tarte abricot](https://commons.wikimedia.org/wiki/File:Ma_premi%C3%A8re_tarte_abricot.webm) | 66–100 s | 34 s |
+| Pocher une crème en spirale | [Montage galette des rois](https://commons.wikimedia.org/wiki/File:Montage_galette_des_rois.webm) | 52–77 s | 25 s |
+| Garnir une tarte aux fruits | [Ma première tarte abricot](https://commons.wikimedia.org/wiki/File:Ma_premi%C3%A8re_tarte_abricot.webm) | 103–124 s | 21 s |
+| Rayer une galette sans la percer | [Montage galette des rois](https://commons.wikimedia.org/wiki/File:Montage_galette_des_rois.webm) | 84–118 s | 34 s |
+| Garnir des petits cakes aux fruits | [Classe ULIS — Mon premier quatre-quarts](https://commons.wikimedia.org/wiki/File:Classe_ulis._Mon_premier_4-4.webm) | 59–109 s | 50 s |
+| Napper une tarte au pinceau | [Ma première tarte abricot](https://commons.wikimedia.org/wiki/File:Ma_premi%C3%A8re_tarte_abricot.webm) | 136–166 s | 30 s |
+
+Les séquences ont été examinées aux points de coupe et aux changements de geste. Les gestes importants sont conservés ; les instructions ne décrivent pas une préparation absente de l’extrait.
+
+Référence pédagogique complémentaire pour le rayage : [Chef Damien — Rayer et décorer une galette](https://www.750g.com/rayer-decorer-une-galette-a11387.htm).
