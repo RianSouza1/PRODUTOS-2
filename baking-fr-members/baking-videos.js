@@ -71,11 +71,12 @@
             </div>
           </div>
           <p class="baking-play-status" role="status" aria-live="polite">Prêt à observer ? Lancez la vidéo.</p>
+          ${lesson.ingredients ? `<details class="baking-ingredients"><summary>Ingrédients et repères pour commencer de zéro</summary><p>${esc(lesson.measureNote)}</p><ul>${lesson.ingredients.map(item => `<li>${esc(item)}</li>`).join('')}</ul><p class="baking-recipe-time">${esc(lesson.realTime)}</p></details>` : ''}
 
           <div class="baking-guidance"><h3>Revoir une étape</h3><p class="baking-chapter-hint">Choisissez une étape pour relancer la vidéo à ce moment précis.</p><ol>${lesson.chapters.map((chapter, number) => `<li><button type="button" data-chapter="${number}" aria-label="Revoir l’étape ${number + 1} : ${esc(chapter.label)}"><span class="baking-chapter-heading">${number + 1}. ${esc(chapter.label)} <span>${clock(chapter.at)}</span></span>${esc(chapter.text)}</button></li>`).join('')}</ol>
             <p class="baking-result"><strong>Le résultat à rechercher</strong> ${esc(lesson.result)}</p>
             <p class="baking-tip"><strong>À éviter</strong> ${esc(lesson.tip)}</p>
-            <details class="baking-source"><summary>Source et licence de la démonstration</summary><p>Images : ${esc(lesson.creator)} · <a href="${esc(lesson.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(lesson.sourceTitle)}</a>. Licence <a href="https://creativecommons.org/licenses/by/3.0/deed.fr" target="_blank" rel="noopener noreferrer">CC BY 3.0</a>. Extrait monté, son supprimé, indications pédagogiques ajoutées. La licence s’applique aux images de cette démonstration.</p></details>
+            <details class="baking-source"><summary>Source et licence de la démonstration</summary><p>Images : ${esc(lesson.creator)} · <a href="${esc(lesson.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(lesson.sourceTitle)}</a>. Licence <a href="https://creativecommons.org/licenses/by/3.0/deed.fr" target="_blank" rel="noopener noreferrer">CC BY 3.0</a>. ${esc(lesson.changes || 'Extrait monté, son supprimé, indications pédagogiques ajoutées.')} La licence s’applique aux images de cette démonstration.</p></details>
             <div class="baking-practice-row"><button type="button" class="baking-mark-practice" aria-pressed="${isPracticed}">${icon('check')}<span>${isPracticed ? 'Geste essayé' : 'J’ai essayé ce geste'}</span></button>
               <button type="button" class="baking-next">${index === lessons.length - 1 ? 'Revenir à la première technique' : 'Technique suivante'}${icon('next')}</button></div>
           </div>

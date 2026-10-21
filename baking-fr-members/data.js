@@ -7,7 +7,7 @@ const APP_DATA = {
     "booksRoute": "livres",
     "supportRoute": "assistance",
     "videosRoute": "videos",
-    "featuredVideo": "foncer-une-tarte"
+    "featuredVideo": "gateau-fruits-rouges-zero"
   },
   "labels": {
     "member": "Espace membres",
@@ -41,7 +41,7 @@ const APP_DATA = {
     "loading": "Chargement de vos livres…",
     "noscript": "Activez JavaScript pour utiliser l’espace membres. Vous pouvez aussi ouvrir directement vos PDF grâce aux liens ci-dessous.",
     "videos": "Vidéos",
-    "videosSubtitle": "Huit mini-ateliers guidés, sans paroles"
+    "videosSubtitle": "Dix mini-ateliers guidés, dont deux préparations de zéro"
   },
   "books": [
     {
@@ -94,6 +94,114 @@ const APP_DATA = {
     }
   ],
   "videos": [
+    {
+      "sourceId": "berry-cake",
+      "sourceTitle": "Easy Berry Cake with Lemon Whipped Cream",
+      "creator": "rapidcitylibrary — Rapid City Public Library",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Easy_Berry_Cake_with_Lemon_Whipped_Cream.webm",
+      "changes": "Montage de plusieurs passages, son retiré, textes de recette traduits en français et repères pédagogiques ajoutés.",
+      "measureNote": "Mesures rases : 1 tasse = 240 ml ; 1 cuillère à soupe = 15 ml ; 1 cuillère à café = 5 ml.",
+      "id": "gateau-fruits-rouges-zero",
+      "duration": 50,
+      "title": "Un gâteau aux fruits rouges, de zéro",
+      "category": "Nouveau · Recette complète · Débutant",
+      "description": "Des ingrédients séparés jusqu’à la part de gâteau : suivez le mélange, l’ajout des fruits, le moulage et le résultat après cuisson.",
+      "preparation": "Graissez un moule rond de 23 cm. Préchauffez le four à 175 °C. Préparez les quantités ci-dessous, un batteur, un bol et une spatule.",
+      "ingredients": [
+        "8 cuillères à soupe de beurre doux ramolli (environ 115 g)",
+        "¾ de tasse de sucre, plus 2 cuillères à soupe pour la finition",
+        "2 gros œufs entiers et 1 blanc d’œuf",
+        "1 cuillère à café d’extrait de vanille",
+        "1½ tasse de farine",
+        "1½ cuillère à café de levure chimique",
+        "½ cuillère à café de sel",
+        "⅓ de tasse de lait entier (80 ml)",
+        "2 tasses de fruits rouges frais, préparés et bien égouttés"
+      ],
+      "realTime": "La vidéo dure 50 secondes ; la cuisson prend réellement 35 à 45 minutes à 175 °C. Laissez refroidir au moins 30 minutes dans le moule avant de servir.",
+      "chapters": [
+        {
+          "at": 0,
+          "label": "Crémer le beurre et le sucre",
+          "text": "Battez le beurre ramolli avec les ¾ de tasse de sucre jusqu’à obtenir un mélange pâle et aéré. Comptez environ 3 minutes en cuisine."
+        },
+        {
+          "at": 10,
+          "label": "Ajouter les œufs et la vanille",
+          "text": "Incorporez progressivement les 2 œufs et le blanc, puis ajoutez la vanille. Arrêtez le batteur pour racler le bol si nécessaire."
+        },
+        {
+          "at": 17,
+          "label": "Former la pâte",
+          "text": "Mélangez farine, levure et sel. Incorporez ce mélange en alternant avec le lait, à faible vitesse ; arrêtez dès que la pâte est homogène."
+        },
+        {
+          "at": 27,
+          "label": "Incorporer les fruits",
+          "text": "Ajoutez les fruits et soulevez délicatement la pâte avec la spatule pour les répartir sans les écraser."
+        },
+        {
+          "at": 35,
+          "label": "Garnir le moule",
+          "text": "Versez dans le moule graissé, égalisez la surface et saupoudrez les 2 cuillères à soupe de sucre réservées."
+        },
+        {
+          "at": 43,
+          "label": "Cuire le gâteau",
+          "text": "Enfournez à 175 °C pendant 35 à 45 minutes. Vérifiez avec une pique au centre : elle doit ressortir sans pâte crue."
+        },
+        {
+          "at": 46,
+          "label": "Reconnaître le résultat",
+          "text": "Le plan final est tourné après cuisson et refroidissement. Attendez au moins 30 minutes avant de découper."
+        }
+      ],
+      "result": "Un gâteau doré, une mie cuite au centre et des fruits répartis dans la pâte. La crème fouettée au citron se prépare dans l’atelier suivant.",
+      "tip": "Après l’ajout de la farine, ne battez pas longuement et ne confondez pas les 50 secondes du montage avec les temps réels de préparation, de cuisson et de refroidissement.",
+      "videoUrl": "assets/videos/atelier-gateau-fruits-rouges-zero.mp4",
+      "poster": "assets/videos/atelier-gateau-fruits-rouges-zero.jpg"
+    },
+    {
+      "sourceId": "berry-cake",
+      "sourceTitle": "Easy Berry Cake with Lemon Whipped Cream",
+      "creator": "rapidcitylibrary — Rapid City Public Library",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Easy_Berry_Cake_with_Lemon_Whipped_Cream.webm",
+      "changes": "Montage de plusieurs passages, son retiré, textes de recette traduits en français et repères pédagogiques ajoutés.",
+      "measureNote": "Mesures rases : 1 tasse = 240 ml ; 1 cuillère à soupe = 15 ml ; 1 cuillère à café = 5 ml.",
+      "id": "creme-fouettee-citron-zero",
+      "duration": 28,
+      "title": "Une crème fouettée au citron, de zéro",
+      "category": "Nouveau · Préparation complète · Débutant",
+      "description": "Partez d’un bol vide et de crème liquide, puis observez l’épaississement avant de déposer la crème sur le dessert.",
+      "preparation": "Utilisez de la crème entière très froide, un bol froid et un fouet de batteur propre. Une crème allégée ne convient pas à cette démonstration.",
+      "ingredients": [
+        "1 tasse de crème liquide entière à fouetter, très froide (240 ml ; environ 35 % de matière grasse)",
+        "1 cuillère à café de zeste fin de citron",
+        "1 cuillère à café de jus de citron"
+      ],
+      "realTime": "La vidéo dure 28 secondes ; le fouettage prend réellement environ 1 à 3 minutes selon le batteur. Arrêtez dès que la crème tient souplement.",
+      "chapters": [
+        {
+          "at": 0,
+          "label": "Partir de la crème liquide",
+          "text": "Versez la crème très froide dans le bol froid. Ajoutez le zeste et le jus de citron mesurés."
+        },
+        {
+          "at": 11,
+          "label": "Fouetter et surveiller",
+          "text": "Démarrez doucement, puis augmentez la vitesse. Surveillez les traces du fouet et arrêtez lorsque la crème tient souplement : environ 1 à 3 minutes en temps réel."
+        },
+        {
+          "at": 18,
+          "label": "Utiliser la crème obtenue",
+          "text": "La crème épaissie doit former une cuillerée qui se tient. Déposez-la sur le dessert refroidi ; conservez le reste au réfrigérateur."
+        }
+      ],
+      "result": "Une crème aérée et souple qui tient sur le dessert, sans texture granuleuse ni liquide séparé.",
+      "tip": "Ne poursuivez pas le fouettage une fois le point atteint : la crème peut devenir granuleuse, puis se transformer en beurre.",
+      "videoUrl": "assets/videos/atelier-creme-fouettee-citron-zero.mp4",
+      "poster": "assets/videos/atelier-creme-fouettee-citron-zero.jpg"
+    },
     {
       "id": "fraiser-la-pate",
       "sourceId": "tarte-abricot",

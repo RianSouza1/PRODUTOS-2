@@ -1412,6 +1412,11 @@ a:focus-visible,button:focus-visible { outline:3px solid var(--accent); outline-
 .tab-item { width:33.333%; }
 .baking-preparation { margin:0; padding:0 1.5rem 1.2rem; color:var(--text-muted); font-size:.85rem; line-height:1.6; }
 .baking-preparation strong { display:block; color:var(--accent); margin-bottom:.2rem; }
+.baking-ingredients { margin:0 1.5rem 1.25rem; border:1px solid var(--border-light); border-radius:12px; padding:.8rem 1rem; color:var(--text-muted); font-size:.85rem; line-height:1.65; }
+.baking-ingredients summary { cursor:pointer; color:var(--accent); font-weight:600; min-height:30px; }
+.baking-ingredients p { margin-top:.75rem; }
+.baking-ingredients ul { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:1.5rem; row-gap:.4rem; margin:.8rem 0 .8rem 1.1rem; }
+.baking-recipe-time { border-top:1px solid var(--border-light); padding-top:.75rem; color:var(--text-dark); }
 .baking-caption { padding:1rem 1.25rem; border-top:2px solid var(--accent); background:#152219; min-height:100px; }
 .baking-caption > span { display:block; color:var(--accent); font-size:.7rem; font-weight:700; letter-spacing:.03em; margin-bottom:.35rem; }
 .baking-caption p { color:#fff8ed; font-size:1rem; line-height:1.6; margin:0; max-width:75ch; }
@@ -1434,6 +1439,8 @@ a:focus-visible,button:focus-visible { outline:3px solid var(--accent); outline-
  .baking-video-hero { padding:1.2rem; }
  .baking-lesson-heading,.baking-guidance { padding:1.15rem; }
  .baking-preparation { padding:0 1.15rem 1.1rem; }
+ .baking-ingredients { margin:0 1.15rem 1.1rem; }
+ .baking-ingredients ul { grid-template-columns:1fr; }
  .baking-caption { padding:.8rem 1rem; }
  .baking-caption p { font-size:.87rem; }
  .baking-lesson-heading { gap:.5rem; }

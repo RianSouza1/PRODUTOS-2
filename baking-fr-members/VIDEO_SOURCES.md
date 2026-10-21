@@ -2,7 +2,7 @@
 
 Nouvelle sélection : 20 octobre 2026. Les huit anciennes scènes de banque d’images sont remplacées par des extraits de démonstrations pédagogiques réelles du Lycée Georges Baptiste.
 
-Les trois œuvres sources sont publiées sous [Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/deed.fr). Les pages Commons ci-dessous comportent une vérification de cette licence. Crédit public et liens figurent dans chaque fiche, sous « Source et licence de la démonstration ». Aucun soutien du lycée à ce site n’est suggéré.
+Les œuvres sources sont publiées sous [Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/deed.fr). Les crédits et liens de licence sont indiqués sur les pages Commons citées. Crédit public et liens figurent dans chaque fiche, sous « Source et licence de la démonstration ». Aucun soutien du lycée à ce site n’est suggéré.
 
 Modifications : extraits temporels, réencodage en 1280 × 720 / H.264, suppression de toute piste audio, affiches extraites des images, textes pédagogiques originaux en français synchronisés avec les gestes et étapes relisibles. Pas d’accélération. Aucun générique ou habillage de plateforme ajouté. Les crédits présents dans les images sont conservés.
 
@@ -22,3 +22,16 @@ Ces ateliers expliquent un geste, pas une recette complète : ingrédients, quan
 Les séquences ont été examinées aux points de coupe et aux changements de geste. Les gestes importants sont conservés ; les instructions ne décrivent pas une préparation absente de l’extrait.
 
 Référence pédagogique complémentaire pour le rayage : [Chef Damien — Rayer et décorer une galette](https://www.750g.com/rayer-decorer-une-galette-a11387.htm).
+
+## Deux préparations supplémentaires depuis les ingrédients
+
+Source des deux nouveaux ateliers : **rapidcitylibrary — Rapid City Public Library**, [Easy Berry Cake with Lemon Whipped Cream](https://commons.wikimedia.org/wiki/File:Easy_Berry_Cake_with_Lemon_Whipped_Cream.webm), sous CC BY 3.0 selon la fiche Commons. Original : https://www.youtube.com/watch?v=ShGegqe7NqA.
+
+Le film présente une recette issue du *America’s Test Kitchen Menu Cookbook*. Les quantités et les gestes des fiches sont relevés dans le film ; les volumes des tasses sont explicités. [Repères complémentaires pour le moule de 23 cm et le refroidissement](https://fortheloveofcooking.net/2016/01/berry-cake-with-lemon-whipped-cream.html).
+
+Modifications : montage de passages, retrait de la piste audio, remplacement des indications de recette anglaises par du français, affiches extraites des vidéos et instructions synchronisées originales. Pas de changement de vitesse. La cuisson, le fouettage prolongé et le refroidissement sont indiqués en temps réel ; leurs passages répétitifs sont raccourcis au montage. Le début animé et le générique ne sont pas utilisés. Les images retenues montrent exclusivement une préparation réelle avec les mains.
+
+| Atelier | Durée | Passages originaux en secondes |
+|---|---|---|
+| Un gâteau aux fruits rouges, de zéro | 50 s | 21–28, 36–39, 41–48, 48–51, 52–55, 58–62, 67–75, 80–86, 88–90, 92–95, 125–129 |
+| Une crème fouettée au citron, de zéro | 28 s | 100–111, 112–119, 122–132 |
