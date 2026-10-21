@@ -7,7 +7,7 @@ const APP_DATA = {
     "booksRoute": "livres",
     "supportRoute": "assistance",
     "videosRoute": "videos",
-    "featuredVideo": "gateau-fruits-rouges-zero"
+    "featuredVideo": "biscuits-vanille-zero"
   },
   "labels": {
     "member": "Espace membres",
@@ -41,7 +41,7 @@ const APP_DATA = {
     "loading": "Chargement de vos livres…",
     "noscript": "Activez JavaScript pour utiliser l’espace membres. Vous pouvez aussi ouvrir directement vos PDF grâce aux liens ci-dessous.",
     "videos": "Vidéos",
-    "videosSubtitle": "Dix mini-ateliers guidés, dont deux préparations de zéro"
+    "videosSubtitle": "Douze mini-ateliers guidés, dont quatre préparations de zéro"
   },
   "books": [
     {
@@ -94,6 +94,133 @@ const APP_DATA = {
     }
   ],
   "videos": [
+    {
+      "sourceId": "sunspot-cookies",
+      "sourceTitle": "A Kid’s Guide to Making Sunspot Cookies",
+      "sourceUrl": "https://svs.gsfc.nasa.gov/13579",
+      "creator": "NASA’s Goddard Space Flight Center",
+      "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "licenseLabel": "Conditions de réutilisation des images NASA",
+      "rightsNote": "Images utilisées à titre pédagogique avec crédit de la source. Montage et textes indépendants, sans affiliation ni soutien de la NASA.",
+      "changes": "Extraits remontés, narration et musique entièrement retirées, indications de recette traduites en français, repères pédagogiques ajoutés.",
+      "measureNote": "Mesures rases : 1 tasse = 240 ml ; 1 cuillère à soupe = 15 ml ; 1 cuillère à café = 5 ml.",
+      "id": "biscuits-vanille-zero",
+      "duration": 50,
+      "title": "Des biscuits à la vanille, de zéro",
+      "category": "Nouveau · Recette complète · Débutant",
+      "description": "Commencez avec le beurre, le sucre, l’œuf et la farine. Suivez ensuite la pâte, les découpes et le résultat après cuisson.",
+      "preparation": "Préchauffez le four à 190 °C. Préparez une plaque avec du papier cuisson, un batteur, une spatule, un rouleau et un emporte-pièce.",
+      "ingredients": [
+        "¼ de tasse de beurre doux ramolli (4 cuillères à soupe ; environ 57 g)",
+        "¼ de tasse de sucre",
+        "1 œuf entier",
+        "½ cuillère à café d’extrait de vanille",
+        "1¼ tasse de farine, plus un peu pour le plan de travail",
+        "1 cuillère à café de levure chimique"
+      ],
+      "realTime": "La vidéo dure 50 secondes ; la cuisson prend réellement 10 à 12 minutes à 190 °C dans un four préchauffé. Laissez refroidir complètement avant de glacer.",
+      "chapters": [
+        {
+          "at": 0,
+          "label": "Mélanger beurre et sucre",
+          "text": "Mettez le beurre ramolli et le sucre dans le bol. Battez jusqu’à ce qu’ils soient bien mélangés, puis raclez les parois."
+        },
+        {
+          "at": 10,
+          "label": "Ajouter l’œuf et la vanille",
+          "text": "Ajoutez l’œuf entier et la vanille. Mélangez et raclez le bol avec le batteur arrêté."
+        },
+        {
+          "at": 18,
+          "label": "Incorporer les poudres",
+          "text": "Ajoutez la farine et la levure chimique. Mélangez à faible vitesse, juste assez pour obtenir une pâte uniforme."
+        },
+        {
+          "at": 27,
+          "label": "Rassembler et étaler",
+          "text": "Réunissez la pâte à la main. Farinez légèrement le plan, puis étalez dans les deux directions sur environ 6 mm d’épaisseur."
+        },
+        {
+          "at": 37,
+          "label": "Découper et déposer",
+          "text": "Découpez les formes et soulevez-les délicatement pour les poser sur la plaque, en les espaçant."
+        },
+        {
+          "at": 43,
+          "label": "Cuire les biscuits",
+          "text": "Enfournez à 190 °C pendant 10 à 12 minutes. Surveillez les bords : ils commencent à peine à colorer."
+        },
+        {
+          "at": 47,
+          "label": "Laisser refroidir",
+          "text": "Le dernier plan est pris après cuisson. Laissez reposer brièvement sur la plaque, puis refroidir sur une grille avant le glaçage."
+        }
+      ],
+      "result": "Des biscuits réguliers, cuits et refroidis, prêts à recevoir le glaçage marbré de l’atelier suivant.",
+      "tip": "Gardez une épaisseur régulière et arrêtez de travailler la pâte dès qu’elle est réunie. Les temps de cuisson et de refroidissement ne sont pas ceux du montage.",
+      "videoUrl": "assets/videos/atelier-biscuits-vanille-zero.mp4",
+      "poster": "assets/videos/atelier-biscuits-vanille-zero.jpg"
+    },
+    {
+      "sourceId": "sunspot-cookies",
+      "sourceTitle": "A Kid’s Guide to Making Sunspot Cookies",
+      "sourceUrl": "https://svs.gsfc.nasa.gov/13579",
+      "creator": "NASA’s Goddard Space Flight Center",
+      "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "licenseLabel": "Conditions de réutilisation des images NASA",
+      "rightsNote": "Images utilisées à titre pédagogique avec crédit de la source. Montage et textes indépendants, sans affiliation ni soutien de la NASA.",
+      "changes": "Extraits remontés, narration et musique entièrement retirées, indications de recette traduites en français, repères pédagogiques ajoutés.",
+      "measureNote": "Mesures rases : 1 tasse = 240 ml ; 1 cuillère à soupe = 15 ml ; 1 cuillère à café = 5 ml.",
+      "id": "glacage-marbre-zero",
+      "duration": 45,
+      "title": "Un glaçage marbré pour biscuits, de zéro",
+      "category": "Nouveau · Préparation complète · Débutant",
+      "description": "Du sucre glace et du lait jusqu’au motif final : préparez le glaçage, colorez-le et dessinez les marbrures avec un cure-dent.",
+      "preparation": "Utilisez des biscuits déjà cuits et totalement refroidis. Préparez un bol, deux petits récipients, des cuillères, une petite spatule et un cure-dent.",
+      "ingredients": [
+        "1½ tasse de sucre glace",
+        "3 à 8 cuillères à café de lait, à ajouter progressivement",
+        "Colorants alimentaires jaune et rouge",
+        "Des biscuits cuits et complètement refroidis"
+      ],
+      "realTime": "La vidéo dure 45 secondes. Ajustez la consistance à chaque ajout de lait. Décorez avant que le glaçage commence à sécher, puis laissez-le durcir avant d’empiler les biscuits.",
+      "chapters": [
+        {
+          "at": 0,
+          "label": "Commencer par le sucre glace",
+          "text": "Versez le sucre glace dans un bol propre. Gardez le lait dans un récipient séparé pour le doser progressivement."
+        },
+        {
+          "at": 6,
+          "label": "Ajouter le lait petit à petit",
+          "text": "Ajoutez le lait une cuillère à café à la fois et mélangez entre chaque ajout. Arrêtez quand le glaçage devient lisse, épais et étalable."
+        },
+        {
+          "at": 15,
+          "label": "Préparer deux couleurs",
+          "text": "Répartissez entre deux bols. Pour le jaune : environ 3 gouttes jaunes. Pour l’orange : 2 gouttes jaunes et 1 rouge ; adaptez au colorant utilisé."
+        },
+        {
+          "at": 26,
+          "label": "Recouvrir le biscuit",
+          "text": "Étalez une couche jaune sur un biscuit froid avec une petite spatule, sans laisser le glaçage couler sur les bords."
+        },
+        {
+          "at": 33,
+          "label": "Déposer la seconde couleur",
+          "text": "Avant que la base sèche, déposez quelques traits ou petites touches de glaçage orange."
+        },
+        {
+          "at": 38,
+          "label": "Dessiner les marbrures",
+          "text": "Faites glisser doucement le cure-dent à travers les deux couleurs. Arrêtez après quelques passages pour conserver des motifs distincts."
+        }
+      ],
+      "result": "Une couche lisse et un motif marbré jaune et orange, avec des couleurs encore distinctes. Laissez sécher avant de manipuler ou d’empiler.",
+      "tip": "Ne versez pas tout le lait d’un coup. Si le glaçage devient trop liquide, incorporez un peu de sucre glace avant de décorer.",
+      "videoUrl": "assets/videos/atelier-glacage-marbre-zero.mp4",
+      "poster": "assets/videos/atelier-glacage-marbre-zero.jpg"
+    },
     {
       "sourceId": "berry-cake",
       "sourceTitle": "Easy Berry Cake with Lemon Whipped Cream",
