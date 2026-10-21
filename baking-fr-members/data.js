@@ -7,7 +7,7 @@ const APP_DATA = {
     "booksRoute": "livres",
     "supportRoute": "assistance",
     "videosRoute": "videos",
-    "featuredVideo": "biscuits-vanille-zero"
+    "featuredVideo": "cake-banane-chocolat-zero"
   },
   "labels": {
     "member": "Espace membres",
@@ -41,7 +41,7 @@ const APP_DATA = {
     "loading": "Chargement de vos livres…",
     "noscript": "Activez JavaScript pour utiliser l’espace membres. Vous pouvez aussi ouvrir directement vos PDF grâce aux liens ci-dessous.",
     "videos": "Vidéos",
-    "videosSubtitle": "Douze mini-ateliers guidés, dont quatre préparations de zéro"
+    "videosSubtitle": "Douze recettes et préparations de zéro, en français"
   },
   "books": [
     {
@@ -94,6 +94,493 @@ const APP_DATA = {
     }
   ],
   "videos": [
+    {
+      "id": "cake-banane-chocolat-zero",
+      "title": "Un cake banane et chocolat, de zéro",
+      "sourceId": "banana",
+      "creator": "CrlNvl",
+      "sourceTitle": "BananaBreadRecipe",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:BananaBreadRecipe.ogv",
+      "licenseLabel": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.fr",
+      "rightsNote": "Cette adaptation vidéo et son affiche sont également proposées sous CC BY-SA 4.0.",
+      "changes": "Montage raccourci, son entièrement retiré, indications de recette en français et étapes synchronisées ajoutées.",
+      "category": "Recette de zéro · Pas à pas",
+      "description": "Enfournez environ 35 minutes à 180 °C. Après cuisson, laissez tiédir, démoulez et coupez le cake.",
+      "preparation": "Préchauffez le four à 180 °C. Préparez un moule à cake en silicone, un grand bol, une fourchette et une spatule.",
+      "measureNote": "Pesez les ingrédients avant de commencer. Les durées de cuisson et de repos sont des temps réels, distincts de la durée du montage.",
+      "ingredients": [
+        "2 bananes mûres",
+        "150 g de sucre",
+        "2 œufs",
+        "125 g de yaourt nature",
+        "80 g de farine",
+        "80 g de fécule de maïs",
+        "10 g de levure chimique",
+        "50 g de pépites de chocolat"
+      ],
+      "realTime": "Le montage dure 57 secondes. Cuisson réelle : environ 35 minutes à 180 °C. Contrôlez la cuisson avec une pique et laissez tiédir avant de démouler.",
+      "tip": "Ne confondez pas fécule, farine et levure. Vérifiez la cuisson au centre ; le temps peut varier selon le moule et le four.",
+      "result": "Enfournez environ 35 minutes à 180 °C. Après cuisson, laissez tiédir, démoulez et coupez le cake.",
+      "duration": 57,
+      "chapters": [
+        {
+          "at": 0,
+          "label": "Écraser les bananes",
+          "text": "Pelez les deux bananes, puis écrasez-les à la fourchette jusqu’à obtenir une purée."
+        },
+        {
+          "at": 9,
+          "label": "Ajouter le sucre et les œufs",
+          "text": "Mélangez la purée avec 150 g de sucre. Ajoutez les deux œufs et remuez jusqu’à ce que le mélange soit homogène."
+        },
+        {
+          "at": 23,
+          "label": "Incorporer le yaourt",
+          "text": "Ajoutez les 125 g de yaourt nature et mélangez de nouveau."
+        },
+        {
+          "at": 28,
+          "label": "Réunir les poudres",
+          "text": "Réunissez 80 g de farine, 80 g de fécule et 10 g de levure chimique. Incorporez-les progressivement, sans prolonger le mélange."
+        },
+        {
+          "at": 39,
+          "label": "Remplir le moule",
+          "text": "Versez dans le moule, raclez le bol puis répartissez les 50 g de pépites sur la pâte."
+        },
+        {
+          "at": 48,
+          "label": "Cuire et servir",
+          "text": "Enfournez environ 35 minutes à 180 °C. Après cuisson, laissez tiédir, démoulez et coupez le cake."
+        }
+      ],
+      "videoUrl": "assets/videos/atelier-cake-banane-chocolat-zero.mp4",
+      "poster": "assets/videos/atelier-cake-banane-chocolat-zero.jpg"
+    },
+    {
+      "id": "gateau-chocolat-zero",
+      "title": "Un gâteau au chocolat, de zéro",
+      "sourceId": "chocolate",
+      "creator": "Fanny Schertzer et Ludovic Péron",
+      "sourceTitle": "Chocolate cake",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chocolate_cake.ogv",
+      "licenseLabel": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/deed.fr",
+      "rightsNote": "La licence indiquée s’applique aux images de la démonstration.",
+      "changes": "Montage raccourci, son entièrement retiré, indications de recette en français et étapes synchronisées ajoutées.",
+      "category": "Recette de zéro · Pas à pas",
+      "description": "Faites cuire 45 minutes à 150 °C. Le dernier plan montre le gâteau après cuisson ; laissez-le refroidir avant de le glacer.",
+      "preparation": "Préchauffez le four à 150 °C. Préparez un moule à charnière de 22 cm, deux bols, une spatule et un batteur. Séparez les blancs des jaunes.",
+      "measureNote": "Pesez les ingrédients avant de commencer. Les durées de cuisson et de repos sont des temps réels, distincts de la durée du montage.",
+      "ingredients": [
+        "150 g de margarine, plus un peu pour le moule",
+        "225 g de sucre",
+        "6 œufs, blancs et jaunes séparés",
+        "225 g de chocolat en poudre",
+        "100 g de farine, plus un peu pour le moule"
+      ],
+      "realTime": "Le montage dure 60 secondes. Cuisson réelle : 45 minutes à 150 °C. Laissez refroidir avant d’ajouter le glaçage de l’atelier suivant.",
+      "tip": "Mélangez les blancs à la spatule, sans fouetter. Le chocolat en poudre de cette recette ne se remplace pas à quantité égale par du cacao pur.",
+      "result": "Faites cuire 45 minutes à 150 °C. Le dernier plan montre le gâteau après cuisson ; laissez-le refroidir avant de le glacer.",
+      "duration": 60,
+      "chapters": [
+        {
+          "at": 0,
+          "label": "Travailler la base",
+          "text": "Travaillez ensemble les 150 g de margarine ramollie et les 225 g de sucre pour obtenir un mélange crémeux."
+        },
+        {
+          "at": 10,
+          "label": "Ajouter les jaunes et le chocolat",
+          "text": "Incorporez les six jaunes, puis les 225 g de chocolat en poudre. Réservez les blancs dans un récipient propre."
+        },
+        {
+          "at": 22,
+          "label": "Monter les blancs",
+          "text": "Battez les six blancs en neige jusqu’à ce qu’ils tiennent au fouet."
+        },
+        {
+          "at": 28,
+          "label": "Incorporer sans casser les blancs",
+          "text": "Ajoutez une première portion de blancs pour détendre la pâte. Alternez ensuite farine et blancs, en soulevant doucement avec la spatule."
+        },
+        {
+          "at": 43,
+          "label": "Préparer le moule",
+          "text": "Graissez et farinez le moule de 22 cm. Retirez l’excédent de farine puis versez la pâte."
+        },
+        {
+          "at": 55,
+          "label": "Cuire et refroidir",
+          "text": "Faites cuire 45 minutes à 150 °C. Le dernier plan montre le gâteau après cuisson ; laissez-le refroidir avant de le glacer."
+        }
+      ],
+      "videoUrl": "assets/videos/atelier-gateau-chocolat-zero.mp4",
+      "poster": "assets/videos/atelier-gateau-chocolat-zero.jpg"
+    },
+    {
+      "id": "ganache-chocolat-zero",
+      "title": "Un glaçage au chocolat, de zéro",
+      "sourceId": "chocolate",
+      "creator": "Fanny Schertzer et Ludovic Péron",
+      "sourceTitle": "Chocolate cake — glaçage",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chocolate_cake.ogv",
+      "licenseLabel": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/deed.fr",
+      "rightsNote": "La licence indiquée s’applique aux images de la démonstration.",
+      "changes": "Montage raccourci, son entièrement retiré, indications de recette en français et étapes synchronisées ajoutées.",
+      "category": "Recette de zéro · Pas à pas",
+      "description": "Laissez le reste épaissir pour le mettre dans une poche. Le glaçage doit être lisse et assez souple pour napper ou décorer.",
+      "preparation": "Pesez le chocolat et la crème. Préparez une petite casserole, un bain-marie frémissant, une spatule et un gâteau froid à glacer.",
+      "measureNote": "Pesez les ingrédients avant de commencer. Les durées de cuisson et de repos sont des temps réels, distincts de la durée du montage.",
+      "ingredients": [
+        "250 g de chocolat noir",
+        "250 ml de crème liquide",
+        "Un gâteau déjà cuit et refroidi, pour l’application"
+      ],
+      "realTime": "La vidéo dure 32 secondes. Faites fondre doucement et laissez épaissir hors du feu selon l’usage. Le gâteau doit être cuit puis refroidi auparavant.",
+      "tip": "Évitez le feu vif et les projections d’eau dans le chocolat. Ne versez pas ce glaçage sur un gâteau encore chaud.",
+      "result": "Laissez le reste épaissir pour le mettre dans une poche. Le glaçage doit être lisse et assez souple pour napper ou décorer.",
+      "duration": 32,
+      "chapters": [
+        {
+          "at": 0,
+          "label": "Préparer le chocolat",
+          "text": "Commencez avec 250 g de chocolat noir et 250 ml de crème liquide. Faites fondre le chocolat doucement au bain-marie."
+        },
+        {
+          "at": 10,
+          "label": "Ajouter la crème",
+          "text": "Versez progressivement la crème dans le chocolat fondu et remuez pour obtenir un glaçage lisse."
+        },
+        {
+          "at": 21,
+          "label": "Napper le gâteau froid",
+          "text": "Versez une partie du glaçage sur le gâteau froid. Répartissez-le délicatement à la spatule."
+        },
+        {
+          "at": 27,
+          "label": "Terminer la décoration",
+          "text": "Laissez le reste épaissir pour le mettre dans une poche. Le glaçage doit être lisse et assez souple pour napper ou décorer."
+        }
+      ],
+      "videoUrl": "assets/videos/atelier-ganache-chocolat-zero.mp4",
+      "poster": "assets/videos/atelier-ganache-chocolat-zero.jpg"
+    },
+    {
+      "id": "pain-sucre-cannelle-zero",
+      "title": "Un pain sucré à la cannelle, de zéro",
+      "sourceId": "sugarbread",
+      "creator": "Kloot Industries",
+      "sourceTitle": "Sûkerbôle — Suikerbrood — Sugar bread",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sûkerbôle_-_Suikerbrood_-_Sugar_bread.webm",
+      "licenseLabel": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/deed.fr",
+      "rightsNote": "La licence indiquée s’applique aux images de la démonstration.",
+      "changes": "Montage raccourci, son entièrement retiré, indications de recette en français et étapes synchronisées ajoutées.",
+      "category": "Recette de zéro · Pas à pas",
+      "description": "Faites cuire trente minutes à 200 °C. Le dernier plan montre le pain après cuisson ; laissez-le tiédir avant de le trancher.",
+      "preparation": "Préparez un moule à cake chemisé de papier cuisson. Le lait doit être tiède, jamais brûlant. Réservez le sucre perlé et la cannelle pour après la première levée.",
+      "measureNote": "Pesez les ingrédients avant de commencer. Les durées de cuisson et de repos sont des temps réels, distincts de la durée du montage.",
+      "ingredients": [
+        "500 g de farine",
+        "75 g de beurre ramolli",
+        "6 g de sel",
+        "1 sachet de levure boulangère sèche, dosé pour 500 g de farine",
+        "150 ml de lait tiède",
+        "3 cuillères à soupe de sirop de gingembre",
+        "2 œufs",
+        "1 cuillère à café de cannelle",
+        "200 à 250 g de sucre perlé"
+      ],
+      "realTime": "Montage : 65 secondes. Activation de la levure : 5 min ; pétrissage : 5 à 10 min ; première levée : environ 1 h 30 ; seconde levée : 15 à 20 min ; cuisson : 30 min à 200 °C.",
+      "tip": "Le lait trop chaud empêche la levure d’agir. Respectez les levées : elles ne durent pas seulement les quelques secondes montrées dans le montage.",
+      "result": "Faites cuire trente minutes à 200 °C. Le dernier plan montre le pain après cuisson ; laissez-le tiédir avant de le trancher.",
+      "duration": 65,
+      "chapters": [
+        {
+          "at": 0,
+          "label": "Activer la levure",
+          "text": "Versez la levure et le sirop de gingembre dans le lait tiède. Mélangez puis attendez environ cinq minutes."
+        },
+        {
+          "at": 12,
+          "label": "Réunir la pâte",
+          "text": "Formez un puits avec la farine et le sel. Ajoutez les deux œufs, le beurre et le mélange lait-levure, puis rassemblez."
+        },
+        {
+          "at": 29,
+          "label": "Pétrir et laisser lever",
+          "text": "Pétrissez cinq à dix minutes pour obtenir une pâte souple. Déposez-la dans un bol, couvrez et laissez lever environ une heure trente."
+        },
+        {
+          "at": 41,
+          "label": "Ajouter sucre et cannelle",
+          "text": "Après la première levée, incorporez le sucre perlé et la cannelle. Travaillez brièvement pour bien les répartir."
+        },
+        {
+          "at": 49,
+          "label": "Façonner et laisser lever",
+          "text": "Façonnez un pâton, placez-le dans le moule, couvrez et laissez lever encore quinze à vingt minutes. Préchauffez le four à 200 °C."
+        },
+        {
+          "at": 57,
+          "label": "Cuire et laisser tiédir",
+          "text": "Faites cuire trente minutes à 200 °C. Le dernier plan montre le pain après cuisson ; laissez-le tiédir avant de le trancher."
+        }
+      ],
+      "videoUrl": "assets/videos/atelier-pain-sucre-cannelle-zero.mp4",
+      "poster": "assets/videos/atelier-pain-sucre-cannelle-zero.jpg"
+    },
+    {
+      "id": "cheesecake-fraise-zero",
+      "title": "Un cheesecake à la fraise, de zéro",
+      "sourceId": "cheesecake",
+      "creator": "Bea Poey",
+      "sourceTitle": "Day 5 — Cheese cake",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Day_5_Cheese_cake.webm",
+      "licenseLabel": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/deed.fr",
+      "rightsNote": "La licence indiquée s’applique aux images de la démonstration.",
+      "changes": "Montage raccourci, son entièrement retiré, indications de recette en français et étapes synchronisées ajoutées.",
+      "category": "Recette de zéro · Pas à pas",
+      "description": "Après refroidissement, étalez la confiture de fraises sur toute la surface. Placez au réfrigérateur avant de découper.",
+      "preparation": "Préchauffez le four à 170 °C. Préparez un grand bol, un fouet, un mixeur plongeant et un moule à gâteau. Gardez la boîte vide de lait concentré : elle sert à mesurer le lait.",
+      "measureNote": "Pesez les ingrédients avant de commencer. Les durées de cuisson et de repos sont des temps réels, distincts de la durée du montage.",
+      "ingredients": [
+        "4 œufs",
+        "1 boîte de lait concentré sucré",
+        "Du lait : le même volume que la boîte de lait concentré vidée",
+        "1 barquette de fromage frais nature à tartiner, utilisée entière",
+        "De la confiture de fraises pour couvrir le dessus"
+      ],
+      "realTime": "Montage : 45 secondes. Cuisson indiquée dans la démonstration : 25 min à 170 °C. Vérifiez que le centre est pris, laissez refroidir, puis réservez au réfrigérateur avant de servir.",
+      "tip": "La boîte vide sert de mesure pour le lait. N’ajoutez pas la confiture sur le gâteau encore brûlant et gardez le dessert au réfrigérateur.",
+      "result": "Après refroidissement, étalez la confiture de fraises sur toute la surface. Placez au réfrigérateur avant de découper.",
+      "duration": 45,
+      "chapters": [
+        {
+          "at": 0,
+          "label": "Commencer par les œufs",
+          "text": "Cassez les quatre œufs dans un grand bol et fouettez pour réunir blancs et jaunes."
+        },
+        {
+          "at": 14,
+          "label": "Doser les deux laits",
+          "text": "Ajoutez la boîte de lait concentré sucré. Remplissez ensuite cette boîte vide de lait et versez cette même mesure dans le bol."
+        },
+        {
+          "at": 22,
+          "label": "Ajouter le fromage",
+          "text": "Ajoutez la barquette de fromage frais nature, puis mixez pour obtenir une préparation lisse."
+        },
+        {
+          "at": 31,
+          "label": "Verser et cuire",
+          "text": "Versez dans le moule. Enfournez à 170 °C pendant environ 25 minutes ; le centre doit être pris avant le refroidissement."
+        },
+        {
+          "at": 36,
+          "label": "Refroidir et garnir",
+          "text": "Après refroidissement, étalez la confiture de fraises sur toute la surface. Placez au réfrigérateur avant de découper."
+        }
+      ],
+      "videoUrl": "assets/videos/atelier-cheesecake-fraise-zero.mp4",
+      "poster": "assets/videos/atelier-cheesecake-fraise-zero.jpg"
+    },
+    {
+      "id": "crepes-garnies-zero",
+      "title": "Des crêpes garnies, de zéro",
+      "sourceId": "crepes",
+      "creator": "J.pmandich",
+      "sourceTitle": "Serbian Palacinke Alverno",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Serbian_Palacinke_Alverno.webmhd.webm",
+      "licenseLabel": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.fr",
+      "rightsNote": "Cette adaptation vidéo et son affiche sont également proposées sous CC BY-SA 4.0.",
+      "changes": "Montage raccourci, son entièrement retiré, indications de recette en français et étapes synchronisées ajoutées.",
+      "category": "Recette de zéro · Pas à pas",
+      "description": "Étalez la garniture, repliez la crêpe et servez-la chaude.",
+      "preparation": "Faites fondre puis refroidir le beurre. Dosez les ingrédients de la fiche et préparez un bol, un fouet, une louche et une poêle antiadhésive.",
+      "measureNote": "Version maison basée sur la recette Le Creuset. Les images illustrent les gestes ; utilisez les quantités de cette fiche. Pour la farine, la tasse-mesure contient 250 ml de volume, pas 250 g.",
+      "ingredients": [
+        "250 ml de farine (une tasse-mesure de 250 ml)",
+        "22,5 ml de sucre glace (4½ cuillères à café)",
+        "¼ de cuillère à café de sel",
+        "2 œufs",
+        "250 ml de lait",
+        "62,5 ml d’eau",
+        "22,5 ml de beurre doux fondu puis refroidi, plus un peu pour la poêle",
+        "Confiture ou pâte à tartiner pour la garniture"
+      ],
+      "realTime": "Montage : 60 secondes. Repos réel : 1 h au réfrigérateur. Comptez environ 2 à 3 min par crêpe, en la retournant une fois.",
+      "tip": "Évitez une couche de pâte épaisse. Attendez que la première face se détache avant de retourner.",
+      "result": "Étalez la garniture, repliez la crêpe et servez-la chaude.",
+      "recipeUrl": "https://www.lecreuset.ca/fr_CA/blogue/a-festive-crepe-brunch.html",
+      "recipeTitle": "Base de crêpes · Le Creuset",
+      "duration": 60,
+      "chapters": [
+        {
+          "at": 0,
+          "label": "Réunir les ingrédients",
+          "text": "Réunissez farine, sucre et sel. Ajoutez les œufs au centre."
+        },
+        {
+          "at": 8,
+          "label": "Préparer une pâte lisse",
+          "text": "Incorporez progressivement lait, eau et beurre refroidi. Fouettez puis laissez reposer une heure au frais."
+        },
+        {
+          "at": 23,
+          "label": "Chauffer et verser",
+          "text": "Chauffez la poêle à feu moyen-doux et graissez-la légèrement. Versez environ 60 ml de pâte."
+        },
+        {
+          "at": 33,
+          "label": "Étaler et retourner",
+          "text": "Inclinez la poêle. Attendez que les bords se détachent, puis retournez et terminez la cuisson."
+        },
+        {
+          "at": 46,
+          "label": "Garnir et servir",
+          "text": "Étalez la garniture, repliez la crêpe et servez-la chaude."
+        }
+      ],
+      "videoUrl": "assets/videos/atelier-crepes-garnies-zero.mp4",
+      "poster": "assets/videos/atelier-crepes-garnies-zero.jpg"
+    },
+    {
+      "id": "cookies-pepites-zero",
+      "title": "Des cookies aux pépites, de zéro",
+      "sourceId": "chocookies",
+      "creator": "Figuerda",
+      "sourceTitle": "Cookies2",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cookies2.webmhd.webm",
+      "licenseLabel": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.fr",
+      "rightsNote": "Cette adaptation vidéo et son affiche sont également proposées sous CC BY-SA 3.0.",
+      "changes": "Montage raccourci, son entièrement retiré, indications de recette en français et étapes synchronisées ajoutées.",
+      "category": "Recette de zéro · Pas à pas",
+      "description": "Attendez deux minutes sur la plaque, puis transférez les cookies sur une grille.",
+      "preparation": "Préchauffez à 190 °C. Préparez deux bols, un batteur, une spatule et des plaques non graissées.",
+      "measureNote": "Mesures rases : 1 tasse = 240 ml ; 1 cuillère à soupe = 15 ml ; 1 cuillère à café = 5 ml. La cassonade se mesure tassée. Version sans noix basée sur la recette Toll House ; les images illustrent les gestes, et les quantités de cette fiche servent à la reproduction.",
+      "ingredients": [
+        "2¼ tasses de farine, plus 1 à 2 cuillères à soupe pour la version sans noix",
+        "1 cuillère à café de bicarbonate alimentaire",
+        "1 cuillère à café de sel",
+        "227 g de beurre ramolli",
+        "¾ de tasse de sucre blanc",
+        "¾ de tasse de cassonade tassée",
+        "1 cuillère à café de vanille",
+        "2 gros œufs",
+        "340 g de pépites de chocolat"
+      ],
+      "realTime": "Montage : 58 secondes. Cuisson réelle : 9 à 11 min à 190 °C. Attendez 2 min sur la plaque puis laissez refroidir sur une grille.",
+      "tip": "Utilisez du beurre ramolli, pas fondu. Espacez les portions : elles s’étalent à la cuisson.",
+      "result": "Attendez deux minutes sur la plaque, puis transférez les cookies sur une grille.",
+      "recipeUrl": "https://www.verybestbaking.com/toll-house/recipes/chocolate-chip-cookies/",
+      "recipeTitle": "Recette de référence · Nestlé Toll House",
+      "duration": 58,
+      "chapters": [
+        {
+          "at": 0,
+          "label": "Mélanger les poudres",
+          "text": "Réunissez farine, bicarbonate alimentaire et sel."
+        },
+        {
+          "at": 8,
+          "label": "Préparer la base",
+          "text": "Battez beurre et sucres. Ajoutez les œufs un par un et la vanille."
+        },
+        {
+          "at": 27,
+          "label": "Ajouter farine et chocolat",
+          "text": "Incorporez les poudres puis les pépites, à la spatule."
+        },
+        {
+          "at": 41,
+          "label": "Former et cuire",
+          "text": "Espacez les portions sur la plaque. Faites cuire jusqu’à coloration des bords."
+        },
+        {
+          "at": 54,
+          "label": "Refroidir",
+          "text": "Attendez deux minutes sur la plaque, puis transférez les cookies sur une grille."
+        }
+      ],
+      "videoUrl": "assets/videos/atelier-cookies-pepites-zero.mp4",
+      "poster": "assets/videos/atelier-cookies-pepites-zero.jpg"
+    },
+    {
+      "id": "gateau-vanille-zero",
+      "title": "Un gâteau à la vanille, de zéro",
+      "sourceId": "yellowcake",
+      "creator": "ArielEBarry",
+      "sourceTitle": "Yellow Cake Recipe",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:YellowCakeRecipe.ogv",
+      "licenseLabel": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.fr",
+      "rightsNote": "Cette adaptation vidéo et son affiche sont également proposées sous CC BY-SA 3.0.",
+      "changes": "Montage raccourci, son entièrement retiré, indications de recette en français et étapes synchronisées ajoutées.",
+      "category": "Recette de zéro · Pas à pas",
+      "description": "Contrôlez la cuisson au centre avec une pique. Laissez refroidir le gâteau avant de découper ou de glacer.",
+      "preparation": "Préchauffez le four à 175 °C. Préparez un moule de 23 × 33 cm, deux bols et une spatule. Graissez et farinez le moule.",
+      "measureNote": "Mesures rases : 1 tasse = 240 ml ; 1 cuillère à soupe = 15 ml ; 1 cuillère à café = 5 ml. La cassonade se mesure tassée.",
+      "ingredients": [
+        "2 tasses de farine",
+        "1½ tasse de sucre blanc",
+        "½ tasse de graisse végétale solide pour pâtisserie, ramollie",
+        "3 œufs",
+        "1 tasse de lait",
+        "3½ cuillères à café de levure chimique",
+        "1 cuillère à café de sel",
+        "1 cuillère à café de vanille"
+      ],
+      "realTime": "Le montage dure 58 secondes. Cuisson réelle : 40 à 45 min à 175 °C (350 °F). Vérifiez le centre avec une pique et laissez refroidir avant de découper.",
+      "tip": "La graisse végétale solide de pâtisserie n’est pas de l’huile liquide. Évitez de battre longuement après l’ajout de farine.",
+      "result": "Contrôlez la cuisson au centre avec une pique. Laissez refroidir le gâteau avant de découper ou de glacer.",
+      "duration": 58,
+      "chapters": [
+        {
+          "at": 0,
+          "label": "Préparer le moule",
+          "text": "Préchauffez le four et graissez puis farinez un moule de 23 × 33 cm."
+        },
+        {
+          "at": 7,
+          "label": "Réunir les poudres",
+          "text": "Mélangez la farine, la levure chimique et le sel dans un premier bol."
+        },
+        {
+          "at": 12,
+          "label": "Crémer la matière grasse",
+          "text": "Dans un second bol, travaillez le sucre avec la graisse végétale ramollie jusqu’à obtenir un mélange crémeux."
+        },
+        {
+          "at": 21,
+          "label": "Ajouter les œufs",
+          "text": "Incorporez les trois œufs un à un, en mélangeant après chaque ajout."
+        },
+        {
+          "at": 27,
+          "label": "Incorporer farine, lait et vanille",
+          "text": "Ajoutez les poudres en alternance avec le lait. Mélangez juste assez, puis parfumez avec la vanille."
+        },
+        {
+          "at": 42,
+          "label": "Verser et cuire",
+          "text": "Versez dans le moule. Faites cuire quarante à quarante-cinq minutes à 175 °C."
+        },
+        {
+          "at": 51,
+          "label": "Contrôler et refroidir",
+          "text": "Contrôlez la cuisson au centre avec une pique. Laissez refroidir le gâteau avant de découper ou de glacer."
+        }
+      ],
+      "videoUrl": "assets/videos/atelier-gateau-vanille-zero.mp4",
+      "poster": "assets/videos/atelier-gateau-vanille-zero.jpg"
+    },
     {
       "sourceId": "sunspot-cookies",
       "sourceTitle": "A Kid’s Guide to Making Sunspot Cookies",
@@ -328,270 +815,6 @@ const APP_DATA = {
       "tip": "Ne poursuivez pas le fouettage une fois le point atteint : la crème peut devenir granuleuse, puis se transformer en beurre.",
       "videoUrl": "assets/videos/atelier-creme-fouettee-citron-zero.mp4",
       "poster": "assets/videos/atelier-creme-fouettee-citron-zero.jpg"
-    },
-    {
-      "id": "fraiser-la-pate",
-      "sourceId": "tarte-abricot",
-      "sourceTitle": "Ma première tarte abricot",
-      "creator": "Lycée Georges Baptiste",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ma_premi%C3%A8re_tarte_abricot.webm",
-      "duration": 15,
-      "title": "Fraiser une pâte sucrée",
-      "category": "La pâte · 1",
-      "description": "Voyez comment réunir une pâte avec le talon de la main, puis la rassembler sans la pétrir longtemps.",
-      "preparation": "Une pâte sucrée dont les ingrédients sont déjà amalgamés, un plan de travail propre et une corne. Les quantités suivent votre recette.",
-      "chapters": [
-        {
-          "at": 0,
-          "label": "Écraser une petite portion",
-          "text": "Poussez une portion de pâte devant vous avec le talon de la main."
-        },
-        {
-          "at": 5,
-          "label": "Réunir la pâte",
-          "text": "Rassemblez la pâte et répétez brièvement pour homogénéiser les morceaux."
-        },
-        {
-          "at": 10,
-          "label": "Former un pâton",
-          "text": "Ramenez les bords vers le centre, puis rassemblez avec la corne."
-        }
-      ],
-      "result": "Un pâton rassemblé et homogène, sans longs pétrissages. Le repos au froid se fait ensuite selon votre recette.",
-      "tip": "Ne prolongez pas le travail une fois la pâte réunie : elle ne doit pas devenir élastique.",
-      "videoUrl": "assets/videos/atelier-fraiser-la-pate.mp4",
-      "poster": "assets/videos/atelier-fraiser-la-pate.jpg"
-    },
-    {
-      "id": "abaisser-la-pate",
-      "sourceId": "tarte-abricot",
-      "sourceTitle": "Ma première tarte abricot",
-      "creator": "Lycée Georges Baptiste",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ma_premi%C3%A8re_tarte_abricot.webm",
-      "duration": 20,
-      "title": "Abaisser une pâte au rouleau",
-      "category": "La pâte · 2",
-      "description": "Suivez les passages du rouleau et la pression des deux mains pour obtenir une abaisse régulière.",
-      "preparation": "Une pâte reposée, un rouleau et un plan de travail légèrement fariné. L’épaisseur finale dépend de votre recette.",
-      "chapters": [
-        {
-          "at": 0,
-          "label": "Poser les deux mains",
-          "text": "Placez les deux mains sur le rouleau pour répartir la pression."
-        },
-        {
-          "at": 6,
-          "label": "Étaler régulièrement",
-          "text": "Faites des passages réguliers du centre vers les bords, sans écraser une seule zone."
-        },
-        {
-          "at": 13,
-          "label": "Garder une épaisseur uniforme",
-          "text": "Poursuivez sur les zones plus épaisses. L’abaisse doit dépasser le diamètre du cercle."
-        }
-      ],
-      "result": "Une abaisse plus large que le cercle, d’épaisseur régulière et sans bord exagérément aminci.",
-      "tip": "N’ajoutez pas une grosse quantité de farine pour empêcher la pâte de coller ; utilisez-en juste assez sur le plan.",
-      "videoUrl": "assets/videos/atelier-abaisser-la-pate.mp4",
-      "poster": "assets/videos/atelier-abaisser-la-pate.jpg"
-    },
-    {
-      "id": "foncer-une-tarte",
-      "sourceId": "tarte-abricot",
-      "sourceTitle": "Ma première tarte abricot",
-      "creator": "Lycée Georges Baptiste",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ma_premi%C3%A8re_tarte_abricot.webm",
-      "duration": 34,
-      "title": "Foncer et pincer une tarte",
-      "category": "La pâte · 3",
-      "description": "Du transfert au bord fini : observez comment placer la pâte dans le cercle et façonner le pourtour.",
-      "preparation": "Une pâte abaissée plus large que le cercle, un cercle sur une plaque, un rouleau et un petit couteau.",
-      "chapters": [
-        {
-          "at": 0,
-          "label": "Transférer sans tirer",
-          "text": "Enroulez doucement la pâte sur le rouleau, puis déroulez-la sur le cercle."
-        },
-        {
-          "at": 8,
-          "label": "Ajuster le pourtour",
-          "text": "Faites épouser la pâte au fond et au bord. Retirez l’excédent sans étirer l’abaisse."
-        },
-        {
-          "at": 21,
-          "label": "Pincer le bord",
-          "text": "Avec le pouce et l’index, pincez régulièrement le pourtour pour former une bordure nette."
-        }
-      ],
-      "result": "Un fond couvert, une pâte en contact avec le cercle et une bordure régulière, prête à être garnie.",
-      "tip": "Ne tirez pas sur la pâte pour combler un manque : elle risque de se rétracter à la cuisson.",
-      "videoUrl": "assets/videos/atelier-foncer-une-tarte.mp4",
-      "poster": "assets/videos/atelier-foncer-une-tarte.jpg"
-    },
-    {
-      "id": "pocher-une-spirale",
-      "sourceId": "galette",
-      "sourceTitle": "Montage galette des rois",
-      "creator": "Lycée Georges Baptiste",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Montage_galette_des_rois.webm",
-      "duration": 25,
-      "title": "Pocher une crème en spirale",
-      "category": "La poche à douille",
-      "description": "La spirale est montrée du centre jusqu’au dernier tour, avec plusieurs angles sur la position des mains.",
-      "preparation": "Une poche remplie de garniture prête à pocher et un disque de pâte. Le cercle sert ici de repère de diamètre.",
-      "chapters": [
-        {
-          "at": 0,
-          "label": "Commencer au centre",
-          "text": "Tenez la poche au-dessus du centre. Pressez avec la main du haut et guidez avec l’autre."
-        },
-        {
-          "at": 7,
-          "label": "Former des tours jointifs",
-          "text": "Avancez en spirale avec une pression régulière pour éviter les trous entre les tours."
-        },
-        {
-          "at": 18,
-          "label": "Finir avant le bord",
-          "text": "Gardez une bande de pâte libre autour de la garniture. Arrêtez la pression avant de relever la douille."
-        }
-      ],
-      "result": "Une couche de crème régulière et un bord libre pour assembler la galette.",
-      "tip": "Ne garnissez pas jusqu’au bord : la crème ne doit pas gêner la soudure des deux disques.",
-      "videoUrl": "assets/videos/atelier-pocher-une-spirale.mp4",
-      "poster": "assets/videos/atelier-pocher-une-spirale.jpg"
-    },
-    {
-      "id": "garnir-une-tarte",
-      "sourceId": "tarte-abricot",
-      "sourceTitle": "Ma première tarte abricot",
-      "creator": "Lycée Georges Baptiste",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ma_premi%C3%A8re_tarte_abricot.webm",
-      "duration": 21,
-      "title": "Garnir une tarte aux fruits",
-      "category": "Le montage",
-      "description": "Observez l’ordre du montage : fond de tarte, couche de crème, puis fruits disposés jusqu’au centre.",
-      "preparation": "Un fond de tarte prêt à garnir, la crème prévue dans la recette, une poche et des quartiers d’abricots préparés.",
-      "chapters": [
-        {
-          "at": 0,
-          "label": "Répartir la crème",
-          "text": "Pochez la crème en spirale sur le fond de tarte pour former une couche régulière."
-        },
-        {
-          "at": 11,
-          "label": "Disposer les fruits",
-          "text": "Placez les quartiers d’abricots sur la crème, en rangées rapprochées, de l’extérieur vers le centre."
-        },
-        {
-          "at": 17,
-          "label": "Observer le montage fini",
-          "text": "Vérifiez que les fruits couvrent le fond de manière régulière. La cuisson suit les indications de votre recette."
-        }
-      ],
-      "result": "Une garniture répartie sur toute la tarte, avec un contour net et des fruits disposés régulièrement.",
-      "tip": "Ne surchargez pas le fond au hasard : répartissez les fruits pour obtenir une cuisson plus uniforme.",
-      "videoUrl": "assets/videos/atelier-garnir-une-tarte.mp4",
-      "poster": "assets/videos/atelier-garnir-une-tarte.jpg"
-    },
-    {
-      "id": "rayer-une-galette",
-      "sourceId": "galette",
-      "sourceTitle": "Montage galette des rois",
-      "creator": "Lycée Georges Baptiste",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Montage_galette_des_rois.webm",
-      "duration": 34,
-      "title": "Rayer une galette sans la percer",
-      "category": "La décoration",
-      "description": "Regardez la pointe du couteau dessiner des courbes légères, puis découvrez le motif après cuisson.",
-      "preparation": "Une galette assemblée et déjà dorée, posée sur une plaque, et un petit couteau. La démonstration commence après la dorure.",
-      "chapters": [
-        {
-          "at": 0,
-          "label": "Tracer légèrement",
-          "text": "Avec la pointe du couteau, marquez des courbes peu profondes à la surface de la pâte."
-        },
-        {
-          "at": 10,
-          "label": "Répéter le motif",
-          "text": "Répétez le même mouvement tout autour pour garder un dessin régulier, sans traverser la pâte."
-        },
-        {
-          "at": 30,
-          "label": "Voir le résultat après cuisson",
-          "text": "Le plan final montre la galette cuite : les traits sont ouverts et le feuilletage a gonflé. La cuisson n’est pas montrée ici."
-        }
-      ],
-      "result": "Un motif visible sur une pâte intacte, puis des rainures bien dessinées après cuisson.",
-      "tip": "Ne faites pas des entailles profondes : le rayage dessine la surface et ne doit pas ouvrir la galette.",
-      "videoUrl": "assets/videos/atelier-rayer-une-galette.mp4",
-      "poster": "assets/videos/atelier-rayer-une-galette.jpg"
-    },
-    {
-      "id": "garnir-des-petits-cakes",
-      "sourceId": "quatre-quarts",
-      "sourceTitle": "Classe ULIS — Mon premier quatre-quarts",
-      "creator": "Lycée Georges Baptiste",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Classe_ulis._Mon_premier_4-4.webm",
-      "duration": 50,
-      "title": "Garnir des petits cakes aux fruits",
-      "category": "Les gâteaux individuels",
-      "description": "Suivez les trois couches : une base de pâte, les morceaux de fruits, puis la pâte qui les recouvre.",
-      "preparation": "Des caissettes de cuisson sur une plaque, une pâte à cake prête dans une poche et des fruits préparés selon votre recette.",
-      "chapters": [
-        {
-          "at": 0,
-          "label": "Déposer une base de pâte",
-          "text": "Pochez une première couche de pâte dans les caissettes, en gardant de la place pour les fruits et la levée."
-        },
-        {
-          "at": 10,
-          "label": "Répartir les morceaux de fruits",
-          "text": "Disposez les fruits sur cette première couche, sans les entasser dans un seul endroit."
-        },
-        {
-          "at": 38,
-          "label": "Recouvrir avec la pâte",
-          "text": "Ajoutez de la pâte au-dessus des fruits. Gardez un bord libre : la préparation gonflera au four."
-        }
-      ],
-      "result": "Des fruits répartis entre deux couches de pâte et des caissettes non remplies à ras bord, prêtes pour la cuisson de la recette.",
-      "tip": "Ne remplissez pas les caissettes jusqu’en haut et ne confondez pas le temps de démonstration avec le temps de cuisson.",
-      "videoUrl": "assets/videos/atelier-garnir-des-petits-cakes.mp4",
-      "poster": "assets/videos/atelier-garnir-des-petits-cakes.jpg"
-    },
-    {
-      "id": "napper-une-tarte",
-      "sourceId": "tarte-abricot",
-      "sourceTitle": "Ma première tarte abricot",
-      "creator": "Lycée Georges Baptiste",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ma_premi%C3%A8re_tarte_abricot.webm",
-      "duration": 30,
-      "title": "Napper une tarte au pinceau",
-      "category": "Les finitions",
-      "description": "Observez la pression du pinceau et le passage progressif d’une tarte cuite à une surface brillante.",
-      "preparation": "Une tarte cuite, un pinceau alimentaire souple et un nappage préparé à la température indiquée sur sa recette ou son emballage.",
-      "chapters": [
-        {
-          "at": 0,
-          "label": "Poser une couche fine",
-          "text": "Déposez le nappage par petites touches avec le pinceau, sans écraser les fruits."
-        },
-        {
-          "at": 10,
-          "label": "Couvrir régulièrement",
-          "text": "Progressez sur les fruits et les zones encore mates, en répartissant une fine pellicule."
-        },
-        {
-          "at": 23,
-          "label": "Uniformiser la brillance",
-          "text": "Terminez les zones oubliées. Les fruits doivent briller sans baigner dans une couche épaisse."
-        }
-      ],
-      "result": "Une surface brillante, une fine couche de nappage et des fruits restés en place.",
-      "tip": "Ne versez pas un gros volume de nappage d’un coup : travaillez par petites touches.",
-      "videoUrl": "assets/videos/atelier-napper-une-tarte.mp4",
-      "poster": "assets/videos/atelier-napper-une-tarte.jpg"
     }
   ]
 };

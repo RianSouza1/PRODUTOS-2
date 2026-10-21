@@ -41,14 +41,14 @@
       page.innerHTML = `
         <div class="hero-card glass-panel baking-video-hero">
           <div class="hero-text"><p class="baking-kicker">L’ATELIER DE PÂTISSERIE</p>
-            <h1 id="page-heading" tabindex="-1">Les techniques en vidéo</h1>
-            <p>Suivez une vraie démonstration d’atelier : chaque étape est expliquée au moment du geste. Rejouez un passage avant de vous lancer.</p>
+            <h1 id="page-heading" tabindex="-1">Des recettes de zéro, en vidéo</h1>
+            <p>Des ingrédients au résultat final : suivez le déroulé en images, avec les quantités et les consignes en français. Ouvrez la liste d’ingrédients et rejouez chaque étape à votre rythme.</p>
           </div>
-          <div class="baking-facts"><span>${lessons.length} mini-ateliers guidés</span><span>${durationRange}</span><span>Sans paroles · sans son</span></div>
+          <div class="baking-facts"><span>${lessons.length} recettes et préparations complètes</span><span>${durationRange}</span><span>Sans paroles · sans son</span></div>
         </div>
 
         <section class="baking-feature" aria-labelledby="baking-lesson-heading">
-          <div class="baking-lesson-heading"><div><p class="baking-category">${esc(lesson.category)} · Technique ${index + 1} / ${lessons.length}</p>
+          <div class="baking-lesson-heading"><div><p class="baking-category">${esc(lesson.category)} · Atelier ${index + 1} / ${lessons.length}</p>
             <h2 id="baking-lesson-heading" tabindex="-1">${esc(lesson.title)}</h2>
             <p>${esc(lesson.description)}</p></div><span class="baking-duration">${lesson.duration} s</span></div>
 
@@ -56,7 +56,7 @@
           <div class="baking-player" id="baking-player">
             <div class="baking-frame">
               <video class="baking-media" src="${esc(lesson.videoUrl)}" poster="${esc(lesson.poster)}" preload="none" muted playsinline aria-label="${esc(lesson.title)} — démonstration sans son"></video>
-              <button class="baking-big-play" type="button" aria-label="Voir la technique : ${esc(lesson.title)}">${icon('play')}<span>Voir le geste</span></button>
+              <button class="baking-big-play" type="button" aria-label="Voir la recette : ${esc(lesson.title)}">${icon('play')}<span>Voir la recette</span></button>
               <span class="baking-silent-tag">SANS SON</span>
             </div>
             <div class="baking-caption"><span data-chapter-label></span><p data-chapter-text></p></div>
@@ -76,15 +76,15 @@
           <div class="baking-guidance"><h3>Revoir une étape</h3><p class="baking-chapter-hint">Choisissez une étape pour relancer la vidéo à ce moment précis.</p><ol>${lesson.chapters.map((chapter, number) => `<li><button type="button" data-chapter="${number}" aria-label="Revoir l’étape ${number + 1} : ${esc(chapter.label)}"><span class="baking-chapter-heading">${number + 1}. ${esc(chapter.label)} <span>${clock(chapter.at)}</span></span>${esc(chapter.text)}</button></li>`).join('')}</ol>
             <p class="baking-result"><strong>Le résultat à rechercher</strong> ${esc(lesson.result)}</p>
             <p class="baking-tip"><strong>À éviter</strong> ${esc(lesson.tip)}</p>
-            <details class="baking-source"><summary>Source et droits d’utilisation de la démonstration</summary><p>Images : ${esc(lesson.creator)} · <a href="${esc(lesson.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(lesson.sourceTitle)}</a>. Droits d’utilisation : <a href="${esc(lesson.licenseUrl || 'https://creativecommons.org/licenses/by/3.0/deed.fr')}" target="_blank" rel="noopener noreferrer">${esc(lesson.licenseLabel || 'CC BY 3.0')}</a>. ${esc(lesson.changes || 'Extrait monté, son supprimé, indications pédagogiques ajoutées.')} ${esc(lesson.rightsNote || 'La licence s’applique aux images de cette démonstration.')}</p></details>
-            <div class="baking-practice-row"><button type="button" class="baking-mark-practice" aria-pressed="${isPracticed}">${icon('check')}<span>${isPracticed ? 'Geste essayé' : 'J’ai essayé ce geste'}</span></button>
-              <button type="button" class="baking-next">${index === lessons.length - 1 ? 'Revenir à la première technique' : 'Technique suivante'}${icon('next')}</button></div>
+            <details class="baking-source"><summary>Source et droits d’utilisation de la démonstration</summary><p>Images : ${esc(lesson.creator)} · <a href="${esc(lesson.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(lesson.sourceTitle)}</a>. Droits d’utilisation : <a href="${esc(lesson.licenseUrl || 'https://creativecommons.org/licenses/by/3.0/deed.fr')}" target="_blank" rel="noopener noreferrer">${esc(lesson.licenseLabel || 'CC BY 3.0')}</a>. ${esc(lesson.changes || 'Extrait monté, son supprimé, indications pédagogiques ajoutées.')} ${esc(lesson.rightsNote || 'La licence s’applique aux images de cette démonstration.')}</p>${lesson.recipeUrl ? `<p>Quantités de la version maison : <a href="${esc(lesson.recipeUrl)}" target="_blank" rel="noopener noreferrer">${esc(lesson.recipeTitle)}</a>.</p>` : ''}</details>
+            <div class="baking-practice-row"><button type="button" class="baking-mark-practice" aria-pressed="${isPracticed}">${icon('check')}<span>${isPracticed ? 'Recette essayée' : 'J’ai essayé cette recette'}</span></button>
+              <button type="button" class="baking-next">${index === lessons.length - 1 ? 'Revenir au premier atelier' : 'Atelier suivant'}${icon('next')}</button></div>
           </div>
         </section>
 
-        <section class="baking-library" aria-labelledby="baking-library-heading"><div class="baking-library-heading"><div><p class="baking-kicker">VOTRE PARCOURS</p><h2 id="baking-library-heading">Choisissez votre prochain geste</h2></div><span class="baking-practice-count">${practiced.size} / ${lessons.length} gestes essayés</span></div>
+        <section class="baking-library" aria-labelledby="baking-library-heading"><div class="baking-library-heading"><div><p class="baking-kicker">VOTRE PARCOURS</p><h2 id="baking-library-heading">Choisissez votre prochaine recette</h2></div><span class="baking-practice-count">${practiced.size} / ${lessons.length} recettes essayées</span></div>
           <div class="baking-lessons">${lessons.map((item, number) => `<button type="button" class="baking-lesson-card${item.id === lesson.id ? ' is-current' : ''}" data-lesson="${esc(item.id)}" aria-pressed="${item.id === lesson.id}">
-            <img src="${esc(item.poster)}" alt="" loading="lazy" width="128" height="90"><span class="baking-card-copy"><span class="baking-card-category">${number + 1}. ${esc(item.category)}</span><strong>${esc(item.title)}</strong><span class="baking-card-meta">${item.duration} s · ${practiced.has(item.id) ? 'Geste essayé' : 'Sans son'}</span></span>${icon('play')}
+            <img src="${esc(item.poster)}" alt="" loading="lazy" width="128" height="90"><span class="baking-card-copy"><span class="baking-card-category">${number + 1}. ${esc(item.category)}</span><strong>${esc(item.title)}</strong><span class="baking-card-meta">${item.duration} s · ${practiced.has(item.id) ? 'Recette essayée' : 'Sans son'}</span></span>${icon('play')}
           </button>`).join('')}</div>
         </section>`;
 
@@ -121,7 +121,7 @@
         toggle.innerHTML = `${icon(playing ? 'pause' : 'play')}<span>${playing ? 'Pause' : 'Lire'}</span>`;
         toggle.setAttribute('aria-label', playing ? 'Mettre la vidéo en pause' : 'Lire la vidéo');
         bigPlay.hidden = playing;
-        bigPlay.querySelector('span').textContent = currentMedia.ended ? 'Revoir le geste' : currentMedia.currentTime > 0 ? 'Continuer' : 'Voir le geste';
+        bigPlay.querySelector('span').textContent = currentMedia.ended ? 'Revoir la recette' : currentMedia.currentTime > 0 ? 'Continuer' : 'Voir la recette';
       }
 
       async function play() {
@@ -143,7 +143,7 @@
       currentMedia.addEventListener('loadedmetadata', () => {
         seek.max = currentMedia.duration;
         seek.disabled = false;
-        total.textContent = clock(currentMedia.duration);
+        total.textContent = clock(Math.round(currentMedia.duration));
         if (requestedTime !== null) { currentMedia.currentTime = requestedTime; requestedTime = null; }
       });
       currentMedia.addEventListener('timeupdate', () => {
@@ -163,7 +163,7 @@
       seek.addEventListener('input', () => { currentMedia.currentTime = Number(seek.value); });
       currentMedia.addEventListener('playing', () => { updatePlayback(); status.textContent = 'Observez la position des mains et le mouvement de l’ustensile.'; });
       currentMedia.addEventListener('pause', () => { updatePlayback(); if (!currentMedia.ended) status.textContent = 'En pause : prenez le temps de regarder le geste.'; });
-      currentMedia.addEventListener('ended', () => { updatePlayback(); status.textContent = 'Démonstration terminée. Rejouez le geste ou essayez la technique suivante.'; });
+      currentMedia.addEventListener('ended', () => { updatePlayback(); status.textContent = 'Recette terminée. Rejouez une étape ou découvrez l’atelier suivant.'; });
       currentMedia.addEventListener('error', () => { updatePlayback(); status.textContent = 'La vidéo n’a pas pu être chargée. Utilisez Revoir pour réessayer.'; });
 
       page.querySelector('.baking-fullscreen').addEventListener('click', async () => {
@@ -180,9 +180,9 @@
         try { localStorage.setItem(storageKey, JSON.stringify([...practiced])); } catch { /* Optional local progress. */ }
         const marked = practiced.has(lesson.id);
         event.currentTarget.setAttribute('aria-pressed', marked);
-        event.currentTarget.querySelector('span').textContent = marked ? 'Geste essayé' : 'J’ai essayé ce geste';
-        page.querySelector('.baking-practice-count').textContent = `${practiced.size} / ${lessons.length} gestes essayés`;
-        page.querySelector(`[data-lesson="${lesson.id}"] .baking-card-meta`).textContent = `${lesson.duration} s · ${marked ? 'Geste essayé' : 'Sans son'}`;
+        event.currentTarget.querySelector('span').textContent = marked ? 'Recette essayée' : 'J’ai essayé cette recette';
+        page.querySelector('.baking-practice-count').textContent = `${practiced.size} / ${lessons.length} recettes essayées`;
+        page.querySelector(`[data-lesson="${lesson.id}"] .baking-card-meta`).textContent = `${lesson.duration} s · ${marked ? 'Recette essayée' : 'Sans son'}`;
       });
       page.querySelector('.baking-next').addEventListener('click', () => select(lessons[(index + 1) % lessons.length].id));
       page.querySelectorAll('[data-lesson]').forEach(button => button.addEventListener('click', () => select(button.dataset.lesson)));
