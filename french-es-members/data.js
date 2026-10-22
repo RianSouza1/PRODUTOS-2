@@ -68,7 +68,7 @@ const APP_DATA = {
       ]
     ],
     "videos": "Vídeos",
-    "videosSubtitle": "Clases guiadas, consejos de pronunciación y práctica oral en francés"
+    "videosSubtitle": "Vídeos de hasta un minuto, vocabulario útil y consejos de pronunciación"
   },
   "books": [
     {
@@ -123,9 +123,9 @@ const APP_DATA = {
   "videoCourse": {
     "ui": {
       "nav": "Vídeos",
-      "subtitle": "Clases guiadas, consejos de pronunciación y práctica oral en francés",
-      "title": "Francés paso a paso: clases y consejos",
-      "intro": "Empieza por las seis clases de base y continúa con tres vídeos de consejos y práctica oral. Aprende con profesores que explican en francés y utiliza la guía en español para preparar tu propia respuesta.",
+      "subtitle": "Vídeos de hasta un minuto, vocabulario útil y consejos de pronunciación",
+      "title": "Francés en menos de un minuto",
+      "intro": "Seis microclases y tres consejos prácticos, todos con una duración total inferior a un minuto. Escucha francés, consulta la ayuda en español y practica una idea cada vez.",
       "kicker": "APRENDE · REPITE · PONLO EN PRÁCTICA",
       "lesson": "Clase",
       "audio": "Audio original en francés",
@@ -141,11 +141,11 @@ const APP_DATA = {
       "library": "Tu recorrido de aprendizaje",
       "progress": "clases practicadas",
       "source": "Sobre estas clases",
-      "sourceText": "Vídeos de Français avec Pierre, reproducidos con sus players oficiales. Se conservan la autoría y los controles de origen. La guía en español y las actividades son un complemento propio.",
+      "sourceText": "Vídeos cortos de Français avec Pierre, Français avec Pierre Shorts y Français avec Nelly, reproducidos completos mediante sus players oficiales. La ayuda en español y los ejercicios son un complemento propio.",
       "original": "Fuente original",
       "bookLink": "Abrir mis libros",
       "play": "Reproducir el vídeo",
-      "duration": "Duración original",
+      "duration": "Duración del vídeo",
       "lessons": "clases y consejos",
       "menu": "Abrir la clase en vídeo",
       "basics": "Clases de base",
@@ -159,296 +159,307 @@ const APP_DATA = {
       ],
       "playerHelp": "Usa los controles del vídeo para pausar y ajustar la velocidad cuando esté disponible. Si no se reproduce aquí, abre la clase original.",
       "teacher": "Profesor y fuente",
-      "openOriginal": "Abrir la clase original"
+      "openOriginal": "Abrir la clase original",
+      "maxDuration": "Máximo 1 minuto"
     },
+    "maxDurationSeconds": 60,
     "lessons": [
       {
-        "id": "hello",
-        "title": "Saludar y dirigirte a alguien",
-        "goal": "Aprende las primeras fórmulas de saludo con demostraciones y explicaciones para principiantes.",
-        "task": "Representa dos encuentros: uno con un amigo y otro con alguien a quien no conoces.",
-        "tip": "Practica primero una fórmula de saludo. Después añade una pregunta; no intentes memorizar toda la clase a la vez.",
+        "id": "day-parts",
+        "title": "Las partes del día",
+        "goal": "Relaciona las palabras francesas con los momentos del día en una demostración rápida.",
+        "task": "Nombra tres momentos del día y añade uno a una frase sobre tu rutina.",
+        "tip": "Aprende cada palabra con su artículo: le matin, pero la nuit.",
+        "phrases": [
+          {
+            "fr": "le matin",
+            "translation": "la mañana"
+          },
+          {
+            "fr": "l’après-midi",
+            "translation": "la tarde, después del mediodía"
+          },
+          {
+            "fr": "le soir",
+            "translation": "la tarde-noche"
+          },
+          {
+            "fr": "la nuit",
+            "translation": "la noche"
+          }
+        ],
+        "category": "basics",
+        "duration": 30,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/FbFeGYLeCrU",
+        "poster": "https://i.ytimg.com/vi/FbFeGYLeCrU/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYZSBNKEUwDw==&rs=AOn4CLBnG6ujvDjyN4B7bT5V4k6NyWv1Iw",
+        "sourceUrl": "https://www.youtube.com/watch?v=FbFeGYLeCrU",
+        "sourceTitle": "Les moments de la journée en français #shorts",
+        "authorName": "Français avec Pierre Shorts"
+      },
+      {
+        "id": "telling-time",
+        "title": "Preguntar y decir la hora",
+        "goal": "Aprende a preguntar la hora y observa ejemplos breves para responder.",
+        "task": "Mira un reloj y di dos horas en francés. Empieza por las horas en punto.",
+        "tip": "Para responder, empieza por Il est… . Practica primero horas sencillas antes de añadir los minutos.",
+        "phrases": [
+          {
+            "fr": "Quelle heure est-il ?",
+            "translation": "¿Qué hora es?"
+          },
+          {
+            "fr": "Il est deux heures.",
+            "translation": "Son las dos."
+          },
+          {
+            "fr": "Il est midi.",
+            "translation": "Es mediodía."
+          },
+          {
+            "fr": "Il est minuit.",
+            "translation": "Es medianoche."
+          }
+        ],
+        "category": "basics",
+        "duration": 42,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/QDa8e_gXEKI",
+        "poster": "https://i.ytimg.com/vi/QDa8e_gXEKI/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYZSBlKGUwDw==&rs=AOn4CLAanP9QufFwbkSQTMoR8RDDTwyLkA",
+        "sourceUrl": "https://www.youtube.com/watch?v=QDa8e_gXEKI",
+        "sourceTitle": "Dire l’heure en français #shorts",
+        "authorName": "Français avec Pierre Shorts"
+      },
+      {
+        "id": "animals",
+        "title": "Reconocer nombres de animales",
+        "goal": "Asocia los nombres de animales con los ejemplos visuales y escucha su pronunciación.",
+        "task": "Elige tres animales, nómbralos en francés y repite cada palabra dos veces.",
+        "tip": "Repite el artículo y el nombre juntos para recordar también el género de la palabra.",
+        "phrases": [
+          {
+            "fr": "un chat",
+            "translation": "un gato"
+          },
+          {
+            "fr": "un chien",
+            "translation": "un perro"
+          },
+          {
+            "fr": "un cheval",
+            "translation": "un caballo"
+          },
+          {
+            "fr": "une vache",
+            "translation": "una vaca"
+          }
+        ],
+        "category": "basics",
+        "duration": 50,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/TTnL4rOudZc",
+        "poster": "https://i.ytimg.com/vi/TTnL4rOudZc/maxresdefault.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYZSBVKFMwDw==&rs=AOn4CLBAQ9jhoxShwos0f6KEskPeuOaqQw",
+        "sourceUrl": "https://www.youtube.com/watch?v=TTnL4rOudZc",
+        "sourceTitle": "Le nom des ANIMAUX en français 🐄 #shorts",
+        "authorName": "Français avec Pierre"
+      },
+      {
+        "id": "cafe-order",
+        "title": "Hacer un pedido en un café",
+        "goal": "Escucha una interacción real y observa cómo se hace un pedido sencillo.",
+        "task": "Simula un pedido: saluda, pide un café, di por favor y da las gracias.",
+        "tip": "La grabación es una situación real. Apóyate en las fórmulas de cortesía de la guía para practicar tu propia versión.",
         "phrases": [
           {
             "fr": "Bonjour.",
             "translation": "Buenos días / Hola."
           },
           {
-            "fr": "Bonsoir.",
-            "translation": "Buenas tardes / noches, al llegar."
+            "fr": "Je voudrais un café.",
+            "translation": "Quisiera un café."
           },
           {
-            "fr": "Salut.",
-            "translation": "Hola, en un contexto informal."
+            "fr": "S’il vous plaît.",
+            "translation": "Por favor."
           },
+          {
+            "fr": "Merci, bonne journée.",
+            "translation": "Gracias, que tenga un buen día."
+          }
+        ],
+        "category": "basics",
+        "duration": 26,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/6iYqV5doyXA",
+        "poster": "https://i.ytimg.com/vi/6iYqV5doyXA/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYfyBBKCcwDw==&rs=AOn4CLBESCyOnSgf4taeZDuMnExsVGZSSQ",
+        "sourceUrl": "https://www.youtube.com/watch?v=6iYqV5doyXA",
+        "sourceTitle": "je commande au café à Paris ☕️🇫🇷 #learnfrench",
+        "authorName": "Français avec Nelly"
+      },
+      {
+        "id": "goodbyes",
+        "title": "Despedirte de distintas maneras",
+        "goal": "Descubre formas breves de terminar una conversación en francés.",
+        "task": "Practica una despedida para alguien a quien verás mañana y otra para alguien a quien verás más adelante.",
+        "tip": "Au revoir es correcto. Las alternativas sirven para adaptar tu despedida a la situación.",
+        "phrases": [
           {
             "fr": "Au revoir.",
             "translation": "Adiós."
+          },
+          {
+            "fr": "À bientôt.",
+            "translation": "Hasta pronto."
+          },
+          {
+            "fr": "À demain.",
+            "translation": "Hasta mañana."
+          },
+          {
+            "fr": "Bonne journée.",
+            "translation": "Que tenga un buen día."
           }
         ],
         "category": "basics",
-        "duration": 750,
-        "provider": "vimeo",
-        "embedUrl": "https://player.vimeo.com/video/673498337?h=f706355069",
-        "poster": "https://i.vimeocdn.com/video/1364839503-90bb80462efd30f53098657e5db75cc62656f8f41165e70ac3cee336493386a2-d_295x166?region=us",
-        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-1/",
-        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 1)"
+        "duration": 23,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/p7ANAceV6aA",
+        "poster": "https://i.ytimg.com/vi/p7ANAceV6aA/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4Ad4EgAK4CIoCDAgAEAEYZSBQKEMwDw==&rs=AOn4CLCO-Sj7-QJOip-uBv0FWqsVcoLNFw",
+        "sourceUrl": "https://www.youtube.com/watch?v=p7ANAceV6aA",
+        "sourceTitle": "STOP saying \"Au revoir\" In French",
+        "authorName": "Français avec Nelly"
       },
       {
-        "id": "alphabet",
-        "title": "El alfabeto y cómo deletrear",
-        "goal": "Escucha las letras del alfabeto francés y practica cómo decir y deletrear un nombre.",
-        "task": "Deletrea tu nombre y apellido. Anota las letras que te cuesten y vuelve a escucharlas.",
-        "tip": "No leas las letras como en español. Escucha el modelo y repite antes de pasar a la siguiente.",
+        "id": "apologies",
+        "title": "Disculparte en francés",
+        "goal": "Escucha distintas formas de disculparte y practica las expresiones más sencillas.",
+        "task": "Imagina que interrumpes a alguien o llegas tarde. Elige una disculpa apropiada y dila en voz alta.",
+        "tip": "Empieza con Pardon o Excusez-moi. Practica después Je suis désolé(e) con una entonación natural.",
         "phrases": [
           {
-            "fr": "Comment ça s’écrit ?",
-            "translation": "¿Cómo se escribe?"
+            "fr": "Excusez-moi.",
+            "translation": "Disculpe."
           },
           {
-            "fr": "Pouvez-vous épeler ?",
-            "translation": "¿Puede deletrear?"
+            "fr": "Je suis désolé(e).",
+            "translation": "Lo siento."
           },
           {
-            "fr": "Je m’appelle…",
-            "translation": "Me llamo…"
+            "fr": "Pardon.",
+            "translation": "Perdón."
           },
           {
-            "fr": "Mon prénom est…",
-            "translation": "Mi nombre es…"
+            "fr": "C’est ma faute.",
+            "translation": "Es culpa mía."
           }
         ],
         "category": "basics",
-        "duration": 510,
-        "provider": "vimeo",
-        "embedUrl": "https://player.vimeo.com/video/673558969?h=7ccbcd527a",
-        "poster": "https://i.vimeocdn.com/video/1364961947-240080491efd1c95e0c405045143c23c23c66505e560b58903b538ff79382f30-d_295x166?region=us",
-        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-2/",
-        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 2)"
+        "duration": 57,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/5ZvzBwDpc4o",
+        "poster": "https://i.ytimg.com/vi/5ZvzBwDpc4o/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYTiBOKGUwDw==&rs=AOn4CLCGlteDmyXfTnBahxA38E1EvM3Zyg",
+        "sourceUrl": "https://www.youtube.com/watch?v=5ZvzBwDpc4o",
+        "sourceTitle": "Comment s’excuser en français ? #shorts",
+        "authorName": "Français avec Pierre Shorts"
       },
       {
-        "id": "sounds",
-        "title": "Los sonidos del francés",
-        "goal": "Descubre cómo relacionar sonidos y grafías. Observa la boca del profesor y repite despacio.",
-        "task": "Practica tu/tout y rue/roue. Grábate y comprueba si mantienes distintos los dos sonidos.",
-        "tip": "Trabaja una pareja de sonidos por sesión. Observa cómo cambian los labios en lugar de aumentar la velocidad.",
+        "id": "saying-no",
+        "title": "Consejo: decir que no",
+        "goal": "Observa diferentes maneras de expresar una negativa y fíjate en el tono.",
+        "task": "Rechaza una invitación de forma educada utilizando Non, merci. Después añade una frase breve.",
+        "tip": "Algunas respuestas son más tajantes que otras. Para empezar, utiliza Non, merci con un tono amable.",
         "phrases": [
           {
-            "fr": "tu / tout",
-            "translation": "tú / todo"
+            "fr": "Non, merci.",
+            "translation": "No, gracias."
           },
           {
-            "fr": "rue / roue",
-            "translation": "calle / rueda"
+            "fr": "Pas aujourd’hui.",
+            "translation": "Hoy no."
           },
           {
-            "fr": "le / les",
-            "translation": "el / los"
+            "fr": "Je préfère pas.",
+            "translation": "Prefiero que no."
           },
           {
-            "fr": "bon / bonne",
-            "translation": "bueno, masculino / buena, femenino"
-          }
-        ],
-        "category": "basics",
-        "duration": 864,
-        "provider": "vimeo",
-        "embedUrl": "https://player.vimeo.com/video/673559796?h=9f6cdbfc18",
-        "poster": "https://i.vimeocdn.com/video/1364962474-b26017136cdf2c3364b34ffda4c662ec7f369ba8e2b5353e88e757fc34395712-d_295x166?region=us",
-        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-3/",
-        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 3)"
-      },
-      {
-        "id": "howareyou",
-        "title": "Preguntar y responder cómo estás",
-        "goal": "Practica preguntas y respuestas sencillas para iniciar una conversación.",
-        "task": "Di un saludo, pregunta cómo está la otra persona y responde antes de devolverle la pregunta.",
-        "tip": "Aprende la pregunta y la respuesta juntas; así podrás participar en el intercambio completo.",
-        "phrases": [
-          {
-            "fr": "Comment ça va ?",
-            "translation": "¿Cómo estás?"
-          },
-          {
-            "fr": "Ça va bien, merci.",
-            "translation": "Estoy bien, gracias."
-          },
-          {
-            "fr": "Et vous ?",
-            "translation": "¿Y usted / ustedes?"
-          },
-          {
-            "fr": "Pas mal, merci.",
-            "translation": "No está mal, gracias."
-          }
-        ],
-        "category": "basics",
-        "duration": 602,
-        "provider": "vimeo",
-        "embedUrl": "https://player.vimeo.com/video/673559835?h=192d20965a",
-        "poster": "https://i.vimeocdn.com/video/1364963274-f31f4e784d5954c4b9eca43dc1f278fee1496c4ce3e752bb52bbcf72b8b4d29f-d_295x166?region=us",
-        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-5/",
-        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 5)"
-      },
-      {
-        "id": "introduce",
-        "title": "Presentarte con frases sencillas",
-        "goal": "Aprende a decir tu nombre y a construir una presentación breve con información personal.",
-        "task": "Haz una presentación de 20 segundos con tu nombre, tu ciudad y una información sobre ti.",
-        "tip": "Cambia los datos del ejemplo por los tuyos. Empieza con dos frases y añade una tercera cuando estés cómodo.",
-        "phrases": [
-          {
-            "fr": "Je m’appelle…",
-            "translation": "Me llamo…"
-          },
-          {
-            "fr": "J’habite à…",
-            "translation": "Vivo en…"
-          },
-          {
-            "fr": "Je suis…",
-            "translation": "Soy…"
-          },
-          {
-            "fr": "Enchanté(e).",
-            "translation": "Encantado / encantada."
-          }
-        ],
-        "category": "basics",
-        "duration": 684,
-        "provider": "vimeo",
-        "embedUrl": "https://player.vimeo.com/video/673562856?h=289d29f943",
-        "poster": "https://i.vimeocdn.com/video/1364968468-b7dfb7eacbfb8d9207c9217abee897529a47c88ed9c0528f0e31c5d3feec8a3d-d_295x166?region=us",
-        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-6/",
-        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 6)"
-      },
-      {
-        "id": "present",
-        "title": "Tus primeras frases en presente",
-        "goal": "Identifica los pronombres y observa cómo funciona el presente en frases sencillas.",
-        "task": "Elige parler o habiter. Crea una frase con je y otra con tu y dilas sin mirar.",
-        "tip": "Practica el verbo dentro de una frase corta. Evita aprender una lista sin utilizarla en un ejemplo.",
-        "phrases": [
-          {
-            "fr": "Je parle français.",
-            "translation": "Hablo francés."
-          },
-          {
-            "fr": "Tu habites ici.",
-            "translation": "Vives aquí."
-          },
-          {
-            "fr": "Elle travaille.",
-            "translation": "Ella trabaja."
-          },
-          {
-            "fr": "Nous apprenons le français.",
-            "translation": "Aprendemos francés."
-          }
-        ],
-        "category": "basics",
-        "duration": 901,
-        "provider": "vimeo",
-        "embedUrl": "https://player.vimeo.com/video/673562868?h=83de323bbc",
-        "poster": "https://i.vimeocdn.com/video/1364968740-660b59defd42009e4b37c821aa1bbca67103170e9e64b245ca97802f0f1b651c-d_295x166?region=us",
-        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-7/",
-        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 7)"
-      },
-      {
-        "id": "mistakes",
-        "title": "Consejos: cinco errores de pronunciación",
-        "goal": "Comprende errores frecuentes relacionados con las uniones entre palabras, las letras finales y los sonidos nasales.",
-        "task": "Elige una dificultad de la clase y practica cinco ejemplos antes de pasar a otra.",
-        "tip": "Vuelve a la clase de sonidos si un ejemplo es difícil. El objetivo es corregir una dificultad, no hacerlo todo perfecto hoy.",
-        "phrases": [
-          {
-            "fr": "les amis",
-            "translation": "los amigos"
-          },
-          {
-            "fr": "les enfants",
-            "translation": "los niños"
-          },
-          {
-            "fr": "un bonbon",
-            "translation": "un caramelo"
-          },
-          {
-            "fr": "parler",
-            "translation": "hablar"
+            "fr": "Je ne peux pas.",
+            "translation": "No puedo."
           }
         ],
         "category": "tips",
-        "duration": 698,
+        "duration": 21,
         "provider": "youtube",
-        "embedUrl": "https://www.youtube-nocookie.com/embed/gDwUE5lAGzw",
-        "poster": "https://i.ytimg.com/vi/gDwUE5lAGzw/maxresdefault.jpg",
-        "sourceUrl": "https://www.francaisavecpierre.com/5-erreurs-de-prononciation-a-eviter-en-francais/",
-        "sourceTitle": "Prononciation française : 5 erreurs à éviter 🤐 🇫🇷"
+        "embedUrl": "https://www.youtube-nocookie.com/embed/sdTK6H0YeKo",
+        "poster": "https://i.ytimg.com/vi/sdTK6H0YeKo/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYfyBFKDMwDw==&rs=AOn4CLBv9bzYfETLHPr2lt5AZfjDByxQyQ",
+        "sourceUrl": "https://www.youtube.com/watch?v=sdTK6H0YeKo",
+        "sourceTitle": "dire NON en français #speakfrench #learnfrench",
+        "authorName": "Français avec Nelly"
       },
       {
-        "id": "routine",
-        "title": "Consejos: organizar tu práctica diaria",
-        "goal": "Descubre recomendaciones para combinar vocabulario, escucha, pronunciación y conversación.",
-        "task": "Prepara una sesión de diez minutos: escucha, repite y utiliza tres expresiones en frases propias.",
-        "tip": "Este vídeo contiene consejos de estudio y puede exigir más comprensión. Usa la guía para elegir una acción concreta.",
+        "id": "word-gender",
+        "title": "Consejo: recordar el género",
+        "goal": "Presta atención a los artículos y a los errores frecuentes con el género de las palabras.",
+        "task": "Anota cuatro palabras nuevas con un o une y léelas como una sola unidad.",
+        "tip": "El género puede cambiar respecto al español. Memoriza el artículo francés junto con el nombre.",
         "phrases": [
           {
-            "fr": "Je comprends.",
-            "translation": "Entiendo."
+            "fr": "un problème",
+            "translation": "un problema"
           },
           {
-            "fr": "Je ne comprends pas.",
-            "translation": "No entiendo."
+            "fr": "une photo",
+            "translation": "una foto"
           },
           {
-            "fr": "Pouvez-vous répéter ?",
-            "translation": "¿Puede repetir?"
+            "fr": "une personne",
+            "translation": "una persona"
           },
           {
-            "fr": "Plus lentement, s’il vous plaît.",
-            "translation": "Más despacio, por favor."
+            "fr": "une vidéo",
+            "translation": "un vídeo"
           }
         ],
         "category": "tips",
-        "duration": 775,
+        "duration": 48,
         "provider": "youtube",
-        "embedUrl": "https://www.youtube-nocookie.com/embed/SacO9mFFnhk",
-        "poster": "https://i.ytimg.com/vi/SacO9mFFnhk/maxresdefault.jpg",
-        "sourceUrl": "https://www.francaisavecpierre.com/parler-francais-rapidement/",
-        "sourceTitle": "Comment Parler Français Rapidement 🚀"
+        "embedUrl": "https://www.youtube-nocookie.com/embed/BJ2B6vkapm4",
+        "poster": "https://i.ytimg.com/vi/BJ2B6vkapm4/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYZSBWKE0wDw==&rs=AOn4CLD79H_WxHHYVc4qMQFJOddBEXplvg",
+        "sourceUrl": "https://www.youtube.com/watch?v=BJ2B6vkapm4",
+        "sourceTitle": "LES ERREURS DE GENRE !",
+        "authorName": "Français avec Nelly"
       },
       {
-        "id": "repeat",
-        "title": "Escucha y repite en situaciones cotidianas",
-        "goal": "Practica expresiones con un modelo hablado para situaciones como un restaurante o un hotel.",
-        "task": "Elige una sola situación. Repite tres frases y después representa un diálogo con tus propios datos.",
-        "tip": "Pausa después de cada frase. Repite primero el ritmo y después comprueba el significado; avanza por bloques.",
+        "id": "singular-plural-sounds",
+        "title": "Consejo: escuchar el singular y el plural",
+        "goal": "Observa una dificultad de pronunciación: algunas palabras cambian de sonido entre singular y plural.",
+        "task": "Escucha el modelo y repite un os y des os. Compara los sonidos antes de aumentar la velocidad.",
+        "tip": "No deduzcas la pronunciación solo de la escritura. Escucha y compara el ejemplo en singular con el plural.",
         "phrases": [
           {
-            "fr": "Une table pour deux, s’il vous plaît.",
-            "translation": "Una mesa para dos, por favor."
+            "fr": "un os",
+            "translation": "un hueso"
           },
           {
-            "fr": "J’aimerais réserver une chambre.",
-            "translation": "Quisiera reservar una habitación."
+            "fr": "des os",
+            "translation": "unos huesos"
           },
           {
-            "fr": "J’ai une réservation.",
-            "translation": "Tengo una reserva."
+            "fr": "un œuf",
+            "translation": "un huevo"
           },
           {
-            "fr": "Est-ce que le petit déjeuner est inclus ?",
-            "translation": "¿Está incluido el desayuno?"
+            "fr": "des œufs",
+            "translation": "unos huevos"
           }
         ],
         "category": "tips",
-        "duration": 1050,
+        "duration": 37,
         "provider": "youtube",
-        "embedUrl": "https://www.youtube-nocookie.com/embed/zHrhNgGYgOY",
-        "poster": "https://i.ytimg.com/vi/zHrhNgGYgOY/maxresdefault.jpg",
-        "sourceUrl": "https://www.francaisavecpierre.com/ecoutez-et-repetez/",
-        "sourceTitle": "Écoutez et Répétez ces Phrases pour améliorer votre Expression Orale en Français !"
+        "embedUrl": "https://www.youtube-nocookie.com/embed/fGe4ruDBfPo",
+        "poster": "https://i.ytimg.com/vi/fGe4ruDBfPo/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AeQEgAK4CIoCDAgAEAEYZSBZKE8wDw==&rs=AOn4CLDiiqIRNI3qQYTg0BD58fETJAtZeQ",
+        "sourceUrl": "https://www.youtube.com/watch?v=fGe4ruDBfPo",
+        "sourceTitle": "French pronuncitation is tricky... listen",
+        "authorName": "Français avec Nelly"
       }
     ]
   }

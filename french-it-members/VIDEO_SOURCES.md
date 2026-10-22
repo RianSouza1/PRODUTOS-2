@@ -1,30 +1,29 @@
-# French learning: guided lessons and practical tips
+# French learning: complete videos under one minute
 
-Selection updated: 22 October 2026. Audio: original French.
-Six foundation lessons and three supplementary tips/practice videos.
-The previous University of Texas clips are no longer used by this course.
+Updated: 22 October 2026. Requirement: maximum 60 seconds per complete video.
+All nine selected source videos are 21–57 seconds long according to their public YouTube player metadata. Videos over 60 seconds were excluded.
+Six everyday-language micro-lessons and three short tips. Original French speech; localized supplementary support in German, Spanish, Dutch, Italian or Polish.
 
 ## Source and playback
 
-Teacher/source: Français avec Pierre. Every video uses the official Vimeo or YouTube embed discovered on the teacher’s public lesson page.
-Videos have not been downloaded, rehosted, cropped, or stripped of attribution. Original controls and identification are preserved.
-Do not apply the previous CC BY 3.0 attribution to these videos. No redistribution license is claimed.
-The page has a direct link to the official lesson beside every player as a fallback.
+Teachers: Français avec Pierre / Français avec Pierre Shorts, and Français avec Nelly.
+The complete source videos use official YouTube embeds. No long lesson is shortened by playback parameters, no media is rehosted, and the original controls and attribution are retained.
+The portrait player shows the entire video frame without cropping. A direct source link accompanies each video.
+No Creative Commons or redistribution license is claimed. Source identification is specific to the author of each video.
 
 ## Learning support
 
-Localized goals, practice prompts and bilingual phrase cards are our supplementary learning aids. They are not a transcript or full translated subtitles.
-Foundation lessons start from zero. Tips use more sustained French and are labeled separately.
-Durations below refer to complete source lessons, not shortened clips. A learner can work in small sections using pause/replay.
+Localized goals, tips, practice tasks and bilingual examples complement each topic. The examples are not transcripts or complete translated subtitles.
+A maximum-one-minute badge and the individual source durations are visible on every language page.
 
-| Lesson | Source title | Duration | Official lesson |
-|---|---|---|---|
-| hello | Cours de Français Gratuit pour Débutants (Leçon 1) | 12:30 | https://www.francaisavecpierre.com/cours-debutants-lecon-1/ |
-| alphabet | Cours de Français Gratuit pour Débutants (Leçon 2) | 8:30 | https://www.francaisavecpierre.com/cours-debutants-lecon-2/ |
-| sounds | Cours de Français Gratuit pour Débutants (Leçon 3) | 14:24 | https://www.francaisavecpierre.com/cours-debutants-lecon-3/ |
-| howareyou | Cours de Français Gratuit pour Débutants (Leçon 5) | 10:02 | https://www.francaisavecpierre.com/cours-debutants-lecon-5/ |
-| introduce | Cours de Français Gratuit pour Débutants (Leçon 6) | 11:24 | https://www.francaisavecpierre.com/cours-debutants-lecon-6/ |
-| present | Cours de Français Gratuit pour Débutants (Leçon 7) | 15:01 | https://www.francaisavecpierre.com/cours-debutants-lecon-7/ |
-| mistakes | Prononciation française : 5 erreurs à éviter 🤐 🇫🇷 | 11:38 | https://www.francaisavecpierre.com/5-erreurs-de-prononciation-a-eviter-en-francais/ |
-| routine | Comment Parler Français Rapidement 🚀 | 12:55 | https://www.francaisavecpierre.com/parler-francais-rapidement/ |
-| repeat | Écoutez et Répétez ces Phrases pour améliorer votre Expression Orale en Français ! | 17:30 | https://www.francaisavecpierre.com/ecoutez-et-repetez/ |
+| Lesson | Author | Source title | Complete duration | Source |
+|---|---|---|---|---|
+| day-parts | Français avec Pierre Shorts | Les moments de la journée en français #shorts | 30 s | https://www.youtube.com/watch?v=FbFeGYLeCrU |
+| telling-time | Français avec Pierre Shorts | Dire l’heure en français #shorts | 42 s | https://www.youtube.com/watch?v=QDa8e_gXEKI |
+| animals | Français avec Pierre | Le nom des ANIMAUX en français 🐄 #shorts | 50 s | https://www.youtube.com/watch?v=TTnL4rOudZc |
+| cafe-order | Français avec Nelly | je commande au café à Paris ☕️🇫🇷 #learnfrench | 26 s | https://www.youtube.com/watch?v=6iYqV5doyXA |
+| goodbyes | Français avec Nelly | STOP saying "Au revoir" In French | 23 s | https://www.youtube.com/watch?v=p7ANAceV6aA |
+| apologies | Français avec Pierre Shorts | Comment s’excuser en français ? #shorts | 57 s | https://www.youtube.com/watch?v=5ZvzBwDpc4o |
+| saying-no | Français avec Nelly | dire NON en français #speakfrench #learnfrench | 21 s | https://www.youtube.com/watch?v=sdTK6H0YeKo |
+| word-gender | Français avec Nelly | LES ERREURS DE GENRE ! | 48 s | https://www.youtube.com/watch?v=BJ2B6vkapm4 |
+| singular-plural-sounds | Français avec Nelly | French pronuncitation is tricky... listen | 37 s | https://www.youtube.com/watch?v=fGe4ruDBfPo |

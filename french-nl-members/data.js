@@ -68,7 +68,7 @@ const APP_DATA = {
       ]
     ],
     "videos": "Video’s",
-    "videosSubtitle": "Begeleide lessen, uitspraaktips en spreekoefeningen in het Frans"
+    "videosSubtitle": "Video's tot één minuut, nuttige woorden en uitspraaktips"
   },
   "books": [
     {
@@ -123,9 +123,9 @@ const APP_DATA = {
   "videoCourse": {
     "ui": {
       "nav": "Video’s",
-      "subtitle": "Begeleide lessen, uitspraaktips en spreekoefeningen in het Frans",
-      "title": "Frans stap voor stap: lessen en tips",
-      "intro": "Begin met zes basislessen en ga daarna verder met drie video's vol tips en spreekoefeningen. De docenten leggen uit in het Frans; de Nederlandse leerhulp helpt je om zelf antwoorden te maken.",
+      "subtitle": "Video's tot één minuut, nuttige woorden en uitspraaktips",
+      "title": "Frans in minder dan een minuut",
+      "intro": "Zes microlessen en drie praktische tips: elke volledige video duurt minder dan een minuut. Luister naar het Frans, gebruik de Nederlandse leerhulp en oefen telkens één klein onderdeel.",
       "kicker": "LEREN · NAZEGGEN · TOEPASSEN",
       "lesson": "Les",
       "audio": "Oorspronkelijk Frans geluid",
@@ -141,11 +141,11 @@ const APP_DATA = {
       "library": "Jouw leerroute",
       "progress": "lessen geoefend",
       "source": "Over deze lessen",
-      "sourceText": "Video's van Français avec Pierre, afgespeeld via de officiële spelers. De bronvermelding en oorspronkelijke bediening blijven behouden. De Nederlandse leerhulp en de opdrachten zijn een eigen aanvulling.",
+      "sourceText": "Korte video's van Français avec Pierre, Français avec Pierre Shorts en Français avec Nelly, volledig afgespeeld via hun officiële spelers. De Nederlandse leerhulp en oefeningen zijn een eigen aanvulling.",
       "original": "Oorspronkelijke bron",
       "bookLink": "Mijn boeken openen",
       "play": "Video afspelen",
-      "duration": "Oorspronkelijke duur",
+      "duration": "Videoduur",
       "lessons": "lessen en tips",
       "menu": "Videoles openen",
       "basics": "Basislessen",
@@ -159,296 +159,307 @@ const APP_DATA = {
       ],
       "playerHelp": "Gebruik de videoknoppen om te pauzeren en, indien beschikbaar, de snelheid aan te passen. Start de video hier niet? Open dan de oorspronkelijke les.",
       "teacher": "Docent en bron",
-      "openOriginal": "Oorspronkelijke les openen"
+      "openOriginal": "Oorspronkelijke les openen",
+      "maxDuration": "Maximaal 1 minuut"
     },
+    "maxDurationSeconds": 60,
     "lessons": [
       {
-        "id": "hello",
-        "title": "Groeten en iemand aanspreken",
-        "goal": "Leer de eerste begroetingen met voorgedane voorbeelden en uitleg voor beginners.",
-        "task": "Speel twee ontmoetingen na: één met een vriend en één met iemand die je niet kent.",
-        "tip": "Oefen eerst één begroeting en voeg daarna een vraag toe. Je hoeft niet de hele les in één keer te onthouden.",
+        "id": "day-parts",
+        "title": "De delen van de dag",
+        "goal": "Koppel de Franse woorden aan de delen van de dag met een korte demonstratie.",
+        "task": "Noem drie delen van de dag en gebruik er één in een zin over je dagelijkse routine.",
+        "tip": "Leer ieder woord met het lidwoord: le matin, maar la nuit.",
+        "phrases": [
+          {
+            "fr": "le matin",
+            "translation": "de ochtend"
+          },
+          {
+            "fr": "l’après-midi",
+            "translation": "de middag, na twaalf uur"
+          },
+          {
+            "fr": "le soir",
+            "translation": "de avond"
+          },
+          {
+            "fr": "la nuit",
+            "translation": "de nacht"
+          }
+        ],
+        "category": "basics",
+        "duration": 30,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/FbFeGYLeCrU",
+        "poster": "https://i.ytimg.com/vi/FbFeGYLeCrU/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYZSBNKEUwDw==&rs=AOn4CLBnG6ujvDjyN4B7bT5V4k6NyWv1Iw",
+        "sourceUrl": "https://www.youtube.com/watch?v=FbFeGYLeCrU",
+        "sourceTitle": "Les moments de la journée en français #shorts",
+        "authorName": "Français avec Pierre Shorts"
+      },
+      {
+        "id": "telling-time",
+        "title": "Vragen en zeggen hoe laat het is",
+        "goal": "Leer naar de tijd te vragen en luister naar korte voorbeelden van antwoorden.",
+        "task": "Kijk op een klok en noem twee tijden in het Frans. Begin met de hele uren.",
+        "tip": "Begin je antwoord met Il est… . Oefen eerst eenvoudige tijden voordat je minuten toevoegt.",
+        "phrases": [
+          {
+            "fr": "Quelle heure est-il ?",
+            "translation": "Hoe laat is het?"
+          },
+          {
+            "fr": "Il est deux heures.",
+            "translation": "Het is twee uur."
+          },
+          {
+            "fr": "Il est midi.",
+            "translation": "Het is twaalf uur 's middags."
+          },
+          {
+            "fr": "Il est minuit.",
+            "translation": "Het is middernacht."
+          }
+        ],
+        "category": "basics",
+        "duration": 42,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/QDa8e_gXEKI",
+        "poster": "https://i.ytimg.com/vi/QDa8e_gXEKI/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYZSBlKGUwDw==&rs=AOn4CLAanP9QufFwbkSQTMoR8RDDTwyLkA",
+        "sourceUrl": "https://www.youtube.com/watch?v=QDa8e_gXEKI",
+        "sourceTitle": "Dire l’heure en français #shorts",
+        "authorName": "Français avec Pierre Shorts"
+      },
+      {
+        "id": "animals",
+        "title": "Dierennamen herkennen",
+        "goal": "Koppel de Franse dierennamen aan de beelden en luister naar de uitspraak.",
+        "task": "Kies drie dieren, benoem ze in het Frans en herhaal elk woord twee keer.",
+        "tip": "Zeg het lidwoord en het zelfstandig naamwoord samen na, zodat je ook het woordgeslacht onthoudt.",
+        "phrases": [
+          {
+            "fr": "un chat",
+            "translation": "een kat"
+          },
+          {
+            "fr": "un chien",
+            "translation": "een hond"
+          },
+          {
+            "fr": "un cheval",
+            "translation": "een paard"
+          },
+          {
+            "fr": "une vache",
+            "translation": "een koe"
+          }
+        ],
+        "category": "basics",
+        "duration": 50,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/TTnL4rOudZc",
+        "poster": "https://i.ytimg.com/vi/TTnL4rOudZc/maxresdefault.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYZSBVKFMwDw==&rs=AOn4CLBAQ9jhoxShwos0f6KEskPeuOaqQw",
+        "sourceUrl": "https://www.youtube.com/watch?v=TTnL4rOudZc",
+        "sourceTitle": "Le nom des ANIMAUX en français 🐄 #shorts",
+        "authorName": "Français avec Pierre"
+      },
+      {
+        "id": "cafe-order",
+        "title": "Bestellen in een café",
+        "goal": "Luister naar een echt kort gesprek en bekijk hoe je iets eenvoudigs bestelt.",
+        "task": "Speel een bestelling na: groet, bestel een koffie, zeg alstublieft en bedank.",
+        "tip": "De opname toont een echte situatie. Gebruik de beleefde zinnen in de leerhulp voor je eigen bestelling.",
         "phrases": [
           {
             "fr": "Bonjour.",
             "translation": "Goedendag / Hallo."
           },
           {
-            "fr": "Bonsoir.",
-            "translation": "Goedenavond, bij aankomst."
+            "fr": "Je voudrais un café.",
+            "translation": "Ik wil graag een koffie."
           },
           {
-            "fr": "Salut.",
-            "translation": "Hoi, in een informele situatie."
+            "fr": "S’il vous plaît.",
+            "translation": "Alstublieft."
           },
+          {
+            "fr": "Merci, bonne journée.",
+            "translation": "Dank u, nog een fijne dag."
+          }
+        ],
+        "category": "basics",
+        "duration": 26,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/6iYqV5doyXA",
+        "poster": "https://i.ytimg.com/vi/6iYqV5doyXA/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYfyBBKCcwDw==&rs=AOn4CLBESCyOnSgf4taeZDuMnExsVGZSSQ",
+        "sourceUrl": "https://www.youtube.com/watch?v=6iYqV5doyXA",
+        "sourceTitle": "je commande au café à Paris ☕️🇫🇷 #learnfrench",
+        "authorName": "Français avec Nelly"
+      },
+      {
+        "id": "goodbyes",
+        "title": "Op verschillende manieren afscheid nemen",
+        "goal": "Ontdek korte uitdrukkingen om een Frans gesprek af te sluiten.",
+        "task": "Oefen een afscheid voor iemand die je morgen ziet en een voor iemand die je later weer ziet.",
+        "tip": "Au revoir is correct. Met de alternatieven pas je je afscheid aan de situatie aan.",
+        "phrases": [
           {
             "fr": "Au revoir.",
             "translation": "Tot ziens."
+          },
+          {
+            "fr": "À bientôt.",
+            "translation": "Tot binnenkort."
+          },
+          {
+            "fr": "À demain.",
+            "translation": "Tot morgen."
+          },
+          {
+            "fr": "Bonne journée.",
+            "translation": "Nog een fijne dag."
           }
         ],
         "category": "basics",
-        "duration": 750,
-        "provider": "vimeo",
-        "embedUrl": "https://player.vimeo.com/video/673498337?h=f706355069",
-        "poster": "https://i.vimeocdn.com/video/1364839503-90bb80462efd30f53098657e5db75cc62656f8f41165e70ac3cee336493386a2-d_295x166?region=us",
-        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-1/",
-        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 1)"
+        "duration": 23,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/p7ANAceV6aA",
+        "poster": "https://i.ytimg.com/vi/p7ANAceV6aA/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4Ad4EgAK4CIoCDAgAEAEYZSBQKEMwDw==&rs=AOn4CLCO-Sj7-QJOip-uBv0FWqsVcoLNFw",
+        "sourceUrl": "https://www.youtube.com/watch?v=p7ANAceV6aA",
+        "sourceTitle": "STOP saying \"Au revoir\" In French",
+        "authorName": "Français avec Nelly"
       },
       {
-        "id": "alphabet",
-        "title": "Het alfabet en spellen",
-        "goal": "Luister naar de Franse letters en oefen hoe je een naam zegt en spelt.",
-        "task": "Spel je voor- en achternaam. Schrijf lastige letters op en beluister ze opnieuw.",
-        "tip": "Spreek de letters niet automatisch uit zoals in het Nederlands. Luister eerst en zeg dan na.",
+        "id": "apologies",
+        "title": "Je verontschuldigen in het Frans",
+        "goal": "Luister naar verschillende verontschuldigingen en oefen de eenvoudigste uitdrukkingen.",
+        "task": "Stel je voor dat je iemand onderbreekt of te laat komt. Kies een passende verontschuldiging en zeg die hardop.",
+        "tip": "Begin met Pardon of Excusez-moi. Oefen daarna Je suis désolé(e) met een natuurlijke intonatie.",
         "phrases": [
           {
-            "fr": "Comment ça s’écrit ?",
-            "translation": "Hoe schrijf je dat?"
+            "fr": "Excusez-moi.",
+            "translation": "Neemt u mij niet kwalijk."
           },
           {
-            "fr": "Pouvez-vous épeler ?",
-            "translation": "Kunt u het spellen?"
+            "fr": "Je suis désolé(e).",
+            "translation": "Het spijt me."
           },
           {
-            "fr": "Je m’appelle…",
-            "translation": "Ik heet…"
+            "fr": "Pardon.",
+            "translation": "Pardon."
           },
           {
-            "fr": "Mon prénom est…",
-            "translation": "Mijn voornaam is…"
+            "fr": "C’est ma faute.",
+            "translation": "Het is mijn schuld."
           }
         ],
         "category": "basics",
-        "duration": 510,
-        "provider": "vimeo",
-        "embedUrl": "https://player.vimeo.com/video/673558969?h=7ccbcd527a",
-        "poster": "https://i.vimeocdn.com/video/1364961947-240080491efd1c95e0c405045143c23c23c66505e560b58903b538ff79382f30-d_295x166?region=us",
-        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-2/",
-        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 2)"
+        "duration": 57,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/5ZvzBwDpc4o",
+        "poster": "https://i.ytimg.com/vi/5ZvzBwDpc4o/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYTiBOKGUwDw==&rs=AOn4CLCGlteDmyXfTnBahxA38E1EvM3Zyg",
+        "sourceUrl": "https://www.youtube.com/watch?v=5ZvzBwDpc4o",
+        "sourceTitle": "Comment s’excuser en français ? #shorts",
+        "authorName": "Français avec Pierre Shorts"
       },
       {
-        "id": "sounds",
-        "title": "De klanken van het Frans",
-        "goal": "Ontdek het verband tussen klanken en spelling. Let op de mond van de docent en zeg langzaam na.",
-        "task": "Oefen tu/tout en rue/roue. Neem jezelf op en controleer of je twee verschillende klanken maakt.",
-        "tip": "Oefen per keer één klankenpaar. Let op je lippen voordat je sneller gaat spreken.",
+        "id": "saying-no",
+        "title": "Tip: nee zeggen",
+        "goal": "Bekijk verschillende manieren om nee te zeggen en let op de toon.",
+        "task": "Sla een uitnodiging beleefd af met Non, merci. Voeg daarna een korte zin toe.",
+        "tip": "Sommige antwoorden klinken veel stelliger dan andere. Gebruik in het begin Non, merci op een vriendelijke toon.",
         "phrases": [
           {
-            "fr": "tu / tout",
-            "translation": "jij / alles"
+            "fr": "Non, merci.",
+            "translation": "Nee, bedankt."
           },
           {
-            "fr": "rue / roue",
-            "translation": "straat / wiel"
+            "fr": "Pas aujourd’hui.",
+            "translation": "Vandaag niet."
           },
           {
-            "fr": "le / les",
-            "translation": "de of het / de, meervoud"
+            "fr": "Je préfère pas.",
+            "translation": "Liever niet."
           },
           {
-            "fr": "bon / bonne",
-            "translation": "goed, mannelijk / goed, vrouwelijk"
-          }
-        ],
-        "category": "basics",
-        "duration": 864,
-        "provider": "vimeo",
-        "embedUrl": "https://player.vimeo.com/video/673559796?h=9f6cdbfc18",
-        "poster": "https://i.vimeocdn.com/video/1364962474-b26017136cdf2c3364b34ffda4c662ec7f369ba8e2b5353e88e757fc34395712-d_295x166?region=us",
-        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-3/",
-        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 3)"
-      },
-      {
-        "id": "howareyou",
-        "title": "Vragen en vertellen hoe het gaat",
-        "goal": "Oefen eenvoudige vragen en antwoorden om een gesprek te beginnen.",
-        "task": "Groet de ander, vraag hoe het gaat, antwoord en stel de vraag terug.",
-        "tip": "Leer de vraag en het antwoord samen, zodat je de hele korte uitwisseling kunt voeren.",
-        "phrases": [
-          {
-            "fr": "Comment ça va ?",
-            "translation": "Hoe gaat het?"
-          },
-          {
-            "fr": "Ça va bien, merci.",
-            "translation": "Het gaat goed, dank je."
-          },
-          {
-            "fr": "Et vous ?",
-            "translation": "En met u?"
-          },
-          {
-            "fr": "Pas mal, merci.",
-            "translation": "Niet slecht, dank je."
-          }
-        ],
-        "category": "basics",
-        "duration": 602,
-        "provider": "vimeo",
-        "embedUrl": "https://player.vimeo.com/video/673559835?h=192d20965a",
-        "poster": "https://i.vimeocdn.com/video/1364963274-f31f4e784d5954c4b9eca43dc1f278fee1496c4ce3e752bb52bbcf72b8b4d29f-d_295x166?region=us",
-        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-5/",
-        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 5)"
-      },
-      {
-        "id": "introduce",
-        "title": "Jezelf voorstellen met eenvoudige zinnen",
-        "goal": "Leer je naam te zeggen en bouw een korte voorstelling op met persoonlijke informatie.",
-        "task": "Stel jezelf twintig seconden voor met je naam, woonplaats en nog één gegeven over jezelf.",
-        "tip": "Vervang de gegevens uit het voorbeeld door die van jezelf. Begin met twee zinnen en voeg later een derde toe.",
-        "phrases": [
-          {
-            "fr": "Je m’appelle…",
-            "translation": "Ik heet…"
-          },
-          {
-            "fr": "J’habite à…",
-            "translation": "Ik woon in…"
-          },
-          {
-            "fr": "Je suis…",
-            "translation": "Ik ben…"
-          },
-          {
-            "fr": "Enchanté(e).",
-            "translation": "Aangenaam."
-          }
-        ],
-        "category": "basics",
-        "duration": 684,
-        "provider": "vimeo",
-        "embedUrl": "https://player.vimeo.com/video/673562856?h=289d29f943",
-        "poster": "https://i.vimeocdn.com/video/1364968468-b7dfb7eacbfb8d9207c9217abee897529a47c88ed9c0528f0e31c5d3feec8a3d-d_295x166?region=us",
-        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-6/",
-        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 6)"
-      },
-      {
-        "id": "present",
-        "title": "Je eerste zinnen in de tegenwoordige tijd",
-        "goal": "Herken de persoonlijke voornaamwoorden en bekijk de tegenwoordige tijd in eenvoudige zinnen.",
-        "task": "Kies parler of habiter. Maak een zin met je en een met tu en zeg ze zonder te kijken.",
-        "tip": "Oefen het werkwoord in een korte zin, zodat je het meteen kunt gebruiken.",
-        "phrases": [
-          {
-            "fr": "Je parle français.",
-            "translation": "Ik spreek Frans."
-          },
-          {
-            "fr": "Tu habites ici.",
-            "translation": "Je woont hier."
-          },
-          {
-            "fr": "Elle travaille.",
-            "translation": "Zij werkt."
-          },
-          {
-            "fr": "Nous apprenons le français.",
-            "translation": "Wij leren Frans."
-          }
-        ],
-        "category": "basics",
-        "duration": 901,
-        "provider": "vimeo",
-        "embedUrl": "https://player.vimeo.com/video/673562868?h=83de323bbc",
-        "poster": "https://i.vimeocdn.com/video/1364968740-660b59defd42009e4b37c821aa1bbca67103170e9e64b245ca97802f0f1b651c-d_295x166?region=us",
-        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-7/",
-        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 7)"
-      },
-      {
-        "id": "mistakes",
-        "title": "Tips: vijf uitspraakfouten vermijden",
-        "goal": "Ontdek veelvoorkomende problemen met verbindingen tussen woorden, eindletters en neusklanken.",
-        "task": "Kies één moeilijkheid uit de les en oefen vijf voorbeelden voordat je verdergaat.",
-        "tip": "Ga terug naar de klankenles als een voorbeeld lastig is. Eén probleem gericht verbeteren is genoeg voor vandaag.",
-        "phrases": [
-          {
-            "fr": "les amis",
-            "translation": "de vrienden"
-          },
-          {
-            "fr": "les enfants",
-            "translation": "de kinderen"
-          },
-          {
-            "fr": "un bonbon",
-            "translation": "een snoepje"
-          },
-          {
-            "fr": "parler",
-            "translation": "spreken"
+            "fr": "Je ne peux pas.",
+            "translation": "Ik kan niet."
           }
         ],
         "category": "tips",
-        "duration": 698,
+        "duration": 21,
         "provider": "youtube",
-        "embedUrl": "https://www.youtube-nocookie.com/embed/gDwUE5lAGzw",
-        "poster": "https://i.ytimg.com/vi/gDwUE5lAGzw/maxresdefault.jpg",
-        "sourceUrl": "https://www.francaisavecpierre.com/5-erreurs-de-prononciation-a-eviter-en-francais/",
-        "sourceTitle": "Prononciation française : 5 erreurs à éviter 🤐 🇫🇷"
+        "embedUrl": "https://www.youtube-nocookie.com/embed/sdTK6H0YeKo",
+        "poster": "https://i.ytimg.com/vi/sdTK6H0YeKo/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYfyBFKDMwDw==&rs=AOn4CLBv9bzYfETLHPr2lt5AZfjDByxQyQ",
+        "sourceUrl": "https://www.youtube.com/watch?v=sdTK6H0YeKo",
+        "sourceTitle": "dire NON en français #speakfrench #learnfrench",
+        "authorName": "Français avec Nelly"
       },
       {
-        "id": "routine",
-        "title": "Tips: elke dag gericht oefenen",
-        "goal": "Ontdek hoe je woordenschat, luisteren, uitspraak en spreken kunt combineren.",
-        "task": "Plan tien minuten: luisteren, nazeggen en drie uitdrukkingen gebruiken in eigen zinnen.",
-        "tip": "Deze video met studietips vraagt wat meer luistervaardigheid. Gebruik de leerhulp om één concrete oefening te kiezen.",
+        "id": "word-gender",
+        "title": "Tip: het woordgeslacht onthouden",
+        "goal": "Let op de lidwoorden en op veelgemaakte fouten met het woordgeslacht.",
+        "task": "Schrijf vier nieuwe woorden op met un of une en lees ieder groepje als één geheel.",
+        "tip": "Het woordgeslacht kan anders zijn dan in het Nederlands. Leer het Franse lidwoord meteen met het woord.",
         "phrases": [
           {
-            "fr": "Je comprends.",
-            "translation": "Ik begrijp het."
+            "fr": "un problème",
+            "translation": "een probleem"
           },
           {
-            "fr": "Je ne comprends pas.",
-            "translation": "Ik begrijp het niet."
+            "fr": "une photo",
+            "translation": "een foto"
           },
           {
-            "fr": "Pouvez-vous répéter ?",
-            "translation": "Kunt u dat herhalen?"
+            "fr": "une personne",
+            "translation": "een persoon"
           },
           {
-            "fr": "Plus lentement, s’il vous plaît.",
-            "translation": "Langzamer, alstublieft."
+            "fr": "une vidéo",
+            "translation": "een video"
           }
         ],
         "category": "tips",
-        "duration": 775,
+        "duration": 48,
         "provider": "youtube",
-        "embedUrl": "https://www.youtube-nocookie.com/embed/SacO9mFFnhk",
-        "poster": "https://i.ytimg.com/vi/SacO9mFFnhk/maxresdefault.jpg",
-        "sourceUrl": "https://www.francaisavecpierre.com/parler-francais-rapidement/",
-        "sourceTitle": "Comment Parler Français Rapidement 🚀"
+        "embedUrl": "https://www.youtube-nocookie.com/embed/BJ2B6vkapm4",
+        "poster": "https://i.ytimg.com/vi/BJ2B6vkapm4/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYZSBWKE0wDw==&rs=AOn4CLD79H_WxHHYVc4qMQFJOddBEXplvg",
+        "sourceUrl": "https://www.youtube.com/watch?v=BJ2B6vkapm4",
+        "sourceTitle": "LES ERREURS DE GENRE !",
+        "authorName": "Français avec Nelly"
       },
       {
-        "id": "repeat",
-        "title": "Luisteren en nazeggen in alledaagse situaties",
-        "goal": "Oefen uitdrukkingen met een gesproken voorbeeld voor bijvoorbeeld een restaurant of hotel.",
-        "task": "Kies één situatie. Herhaal drie zinnen en speel daarna een dialoog na met eigen gegevens.",
-        "tip": "Pauzeer na iedere zin. Herhaal eerst het ritme en controleer daarna de betekenis. Werk in kleine delen.",
+        "id": "singular-plural-sounds",
+        "title": "Tip: enkelvoud en meervoud horen",
+        "goal": "Ontdek een uitspraakverschil: sommige woorden klinken anders in het enkelvoud en het meervoud.",
+        "task": "Luister naar het voorbeeld en zeg un os en des os na. Vergelijk de klanken voordat je sneller gaat spreken.",
+        "tip": "Leid de uitspraak niet alleen af uit de spelling. Luister en vergelijk enkelvoud en meervoud.",
         "phrases": [
           {
-            "fr": "Une table pour deux, s’il vous plaît.",
-            "translation": "Een tafel voor twee, alstublieft."
+            "fr": "un os",
+            "translation": "een bot"
           },
           {
-            "fr": "J’aimerais réserver une chambre.",
-            "translation": "Ik zou graag een kamer reserveren."
+            "fr": "des os",
+            "translation": "botten, meervoud"
           },
           {
-            "fr": "J’ai une réservation.",
-            "translation": "Ik heb een reservering."
+            "fr": "un œuf",
+            "translation": "een ei"
           },
           {
-            "fr": "Est-ce que le petit déjeuner est inclus ?",
-            "translation": "Is het ontbijt inbegrepen?"
+            "fr": "des œufs",
+            "translation": "eieren, meervoud"
           }
         ],
         "category": "tips",
-        "duration": 1050,
+        "duration": 37,
         "provider": "youtube",
-        "embedUrl": "https://www.youtube-nocookie.com/embed/zHrhNgGYgOY",
-        "poster": "https://i.ytimg.com/vi/zHrhNgGYgOY/maxresdefault.jpg",
-        "sourceUrl": "https://www.francaisavecpierre.com/ecoutez-et-repetez/",
-        "sourceTitle": "Écoutez et Répétez ces Phrases pour améliorer votre Expression Orale en Français !"
+        "embedUrl": "https://www.youtube-nocookie.com/embed/fGe4ruDBfPo",
+        "poster": "https://i.ytimg.com/vi/fGe4ruDBfPo/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AeQEgAK4CIoCDAgAEAEYZSBZKE8wDw==&rs=AOn4CLDiiqIRNI3qQYTg0BD58fETJAtZeQ",
+        "sourceUrl": "https://www.youtube.com/watch?v=fGe4ruDBfPo",
+        "sourceTitle": "French pronuncitation is tricky... listen",
+        "authorName": "Français avec Nelly"
       }
     ]
   }

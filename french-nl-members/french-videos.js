@@ -1,6 +1,6 @@
 (() => {
   const {ui, lessons} = APP_DATA.videoCourse;
-  const storageKey = `french-guided-practice-${document.documentElement.lang}-v2`;
+  const storageKey = `french-one-minute-practice-${document.documentElement.lang}-v3`;
   let activeId = lessons[0].id;
   let filter = 'all';
   let media = null;
@@ -45,17 +45,17 @@
         <div class="hero-card french-course-hero"><div class="hero-text">
           <p class="french-kicker">${esc(ui.kicker)}</p>
           <h1 id="page-heading" tabindex="-1">${esc(ui.title)}</h1><p>${esc(ui.intro)}</p>
-          <div class="french-facts"><span>${baseCount} ${esc(ui.basics)}</span><span>${tipCount} ${esc(ui.tips)}</span><span>${esc(ui.audio)}</span></div>
+          <div class="french-facts"><span>${baseCount} ${esc(ui.basics)}</span><span>${tipCount} ${esc(ui.tips)}</span><span>${esc(ui.maxDuration)}</span><span>${esc(ui.audio)}</span></div>
         </div></div>
         <section class="french-feature" aria-labelledby="french-lesson-title">
           <div class="french-feature-heading"><p class="french-kicker">${esc(ui[lesson.category])} · ${esc(ui.lesson)} ${index+1} / ${lessons.length}</p>
             <h2 id="french-lesson-title" tabindex="-1">${esc(lesson.title)}</h2><p>${esc(lesson.goal)}</p>
           </div>
           <div class="french-study-layout"><div class="french-watch">
-            <div class="french-video-frame"><button type="button" class="french-load-video" aria-label="${esc(ui.play)}: ${esc(lesson.title)}"><img src="${esc(lesson.poster)}" alt="" width="640" height="360" referrerpolicy="no-referrer"><span>${icon('play')}<strong>${esc(ui.play)}</strong></span></button></div>
+            <div class="french-video-frame is-portrait"><button type="button" class="french-load-video" aria-label="${esc(ui.play)}: ${esc(lesson.title)}"><img src="${esc(lesson.poster)}" alt="" width="640" height="360" referrerpolicy="no-referrer"><span>${icon('play')}<strong>${esc(ui.play)}</strong></span></button></div>
             <div class="french-player-tools"><span>${esc(ui.duration)} · ${clock(lesson.duration)}</span><a href="${esc(lesson.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(ui.openOriginal)} ↗</a></div>
             <p class="french-caption-help">${esc(ui.playerHelp)}</p>
-            <p class="french-teacher">${esc(ui.teacher)}: <a href="${esc(lesson.sourceUrl)}" target="_blank" rel="noopener noreferrer">Français avec Pierre</a></p>
+            <p class="french-teacher">${esc(ui.teacher)}: <a href="${esc(lesson.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(lesson.authorName)}</a></p>
           </div><aside class="french-method"><div class="french-method-icon">${icon('ear')}</div><h3>${esc(ui.method)}</h3><ol>${ui.methodSteps.map(step=>`<li>${esc(step)}</li>`).join('')}</ol><p class="french-tip">${esc(lesson.tip)}</p></aside></div>
           <div class="french-learning-content"><div class="french-vocabulary"><h3>${esc(ui.phrases)}</h3><p class="french-guide-help">${esc(ui.captions)}</p><dl>${lesson.phrases.map(phrase=>`<div><dt lang="fr">${esc(phrase.fr)}</dt><dd>${esc(phrase.translation)}</dd></div>`).join('')}</dl></div>
             <div class="french-practice"><span class="french-practice-icon">${icon('check')}</span><h3>${esc(ui.practice)}</h3><p>${esc(lesson.task)}</p><a href="#${esc(APP_DATA.config.booksRoute)}">${esc(ui.bookLink)} →</a></div>

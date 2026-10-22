@@ -83,3 +83,10 @@
 .french-filters button span{margin-left:.35rem;opacity:.85;font-size:.75rem}
 .french-lesson img{height:54px;object-fit:cover}
 @media(max-width:600px){.french-load-video strong{font-size:.82rem;padding:.5rem}.french-load-video svg{width:30px;height:30px;padding:8px}.french-lesson img{height:50px}.french-filters{gap:.45rem}.french-filters button{padding:.55rem .8rem}}
+
+/* Display complete vertical lessons without cropping the video or its controls. */
+.french-video-frame.is-portrait{aspect-ratio:9/16;width:min(100%,315px);margin-inline:auto}
+.french-video-frame.is-portrait iframe{aspect-ratio:9/16}
+.french-video-frame.is-portrait .french-load-video>img{object-fit:cover}
+.french-video-frame.is-portrait .french-load-video>span{flex-direction:column;gap:1rem}
+@media(max-width:600px){.french-video-frame.is-portrait{width:min(100%,290px)}}
