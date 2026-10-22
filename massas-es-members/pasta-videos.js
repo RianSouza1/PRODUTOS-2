@@ -39,8 +39,8 @@
       const longest = Math.max(...lessons.map(item => item.duration));
       page.innerHTML = `
         <div class="hero-card glass-panel pasta-video-hero"><div class="hero-text">
-          <p class="pasta-kicker">APRENDE COCINANDO</p><h1 id="page-heading" tabindex="-1">Técnicas de pasta, paso a paso</h1>
-          <p>Mira las manos, sigue cada paso y practica con tus recetarios. Demostraciones reales, con indicaciones en español y tiempo para observar cada gesto.</p>
+          <p class="pasta-kicker">APRENDE COCINANDO</p><h1 id="page-heading" tabindex="-1">Recetas y técnicas de pasta, paso a paso</h1>
+          <p>Empieza con recetas sencillas: prepara los ingredientes, observa las manos y sigue el orden hasta servir. Demostraciones reales, con indicaciones en español y etapas que puedes repetir.</p>
         </div><div class="pasta-facts"><span>${lessons.length} demostraciones</span><span>${shortest}–${longest} segundos</span><span>Sin diálogos · Sin sonido</span></div></div>
 
         <section class="pasta-feature" aria-labelledby="pasta-lesson-heading">

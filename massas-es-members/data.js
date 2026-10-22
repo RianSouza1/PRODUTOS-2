@@ -7,7 +7,7 @@ const APP_DATA = {
     "booksRoute": "libros",
     "supportRoute": "ayuda",
     "videosRoute": "videos",
-    "featuredVideo": "masa-fresca"
+    "featuredVideo": "ajo-aceite-principiantes"
   },
   "labels": {
     "member": "Área de miembros",
@@ -354,6 +354,181 @@ const APP_DATA = {
       ],
       "videoUrl": "assets/videos/salsa-puerros.mp4",
       "poster": "assets/videos/salsa-puerros.jpg"
+    },
+    {
+      "id": "ajo-aceite-principiantes",
+      "title": "Espaguetis con ajo y aceite, en una sartén",
+      "category": "Principiantes · Una sola sartén",
+      "description": "Prepara una ración desde cero: pica el ajo, cuece la pasta en la misma sartén y termina con una salsa ligera que se adhiera a los espaguetis.",
+      "preparation": "Mide todos los ingredientes antes de encender el fuego. Usa una sartén en la que quepan los espaguetis y ten un poco de agua caliente a mano para ajustar la cocción.",
+      "ingredients": [
+        "100 g de espaguetis finos de 1,4 mm",
+        "2 dientes de ajo",
+        "2 cucharadas de aceite de oliva: 1 al empezar y 1 al terminar",
+        "1 guindilla roja seca, sin semillas si buscas menos picante",
+        "350 ml de agua",
+        "1 cucharadita de caldo en polvo y sal al gusto"
+      ],
+      "measureNote": "Cantidades para 1 ración. Es una versión en una sartén con caldo, adaptada de la receta de Ryuji. Una cucharada equivale a 15 ml y una cucharadita a 5 ml.",
+      "realTime": "El vídeo resume los gestos. Cuece los espaguetis durante el tiempo que indique su envase: en la fuente se usan espaguetis de 5 minutos. Si el líquido se agota antes, añade agua caliente poco a poco.",
+      "result": "Pasta cocida a tu gusto, ajo dorado sin quemarse y una capa ligera de salsa brillante; no debe quedar un charco de aceite separado.",
+      "tip": "Vigila el ajo: basta con dorarlo suavemente. Mezcla con energía al final para unir el aceite con el agua que contiene el almidón de la pasta.",
+      "bookContext": "Complemento de los libros 1 y 2: cocción de la pasta y unión de una salsa sencilla.",
+      "creator": "Ryuji · 料理研究家リュウジのバズレシピ",
+      "sourceTitle": "Espaguetis con ajo y aceite en una sartén — receta de Ryuji",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%96%99%E7%90%86%E7%A0%94%E7%A9%B6%E5%AE%B6%E3%81%8C%E8%BE%BF%E3%82%8A%E7%9D%80%E3%81%84%E3%81%9F%E6%9C%80%E9%AB%98%E3%81%AE%E4%B8%80%E7%9A%BF%E3%80%90%E8%87%B3%E9%AB%98%E3%81%AE%E3%83%9A%E3%83%9A%E3%83%AD%E3%83%B3%E3%83%81%E3%83%BC%E3%83%8E%E3%80%91%E3%80%8ESpaghetti_aglio_e_olio_peperoncino%E3%80%8F.webm",
+      "licenseLabel": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "rightsNote": "Adaptación abreviada con atribución. Las cantidades proceden de la descripción de la receta original; no implica respaldo del autor.",
+      "changes": "Fragmentos seleccionados y reencuadrados para mostrar el gesto, audio retirado e indicaciones en español añadidas. Sin cambios de velocidad.",
+      "duration": 53,
+      "chapters": [
+        {
+          "at": 0,
+          "label": "Picar y empezar en frío",
+          "text": "Pela y pica los 2 dientes de ajo. Ponlos en la sartén con 1 cucharada de aceite antes de calentar."
+        },
+        {
+          "at": 11,
+          "label": "Dorar sin quemar",
+          "text": "Calienta y mueve el ajo hasta que esté ligeramente dorado. Añade la guindilla; no dejes que se queme."
+        },
+        {
+          "at": 20,
+          "label": "Añadir agua y condimentos",
+          "text": "Añade con cuidado 350 ml de agua, 1 cucharadita de caldo en polvo y sal al gusto. Lleva a ebullición."
+        },
+        {
+          "at": 29,
+          "label": "Cocer los espaguetis",
+          "text": "Introduce los 100 g de pasta y hunde las puntas a medida que se ablanden, sin forzarlas. Cuece y remueve según el tiempo del envase; añade un poco de agua caliente si hace falta."
+        },
+        {
+          "at": 39,
+          "label": "Ligar y servir",
+          "text": "Cuando la pasta esté cocida y quede poco líquido, añade la otra cucharada de aceite. Apaga el fuego, mezcla para ligar la salsa y sirve."
+        }
+      ],
+      "videoUrl": "assets/videos/ajo-aceite-principiantes.mp4",
+      "poster": "assets/videos/ajo-aceite-principiantes.jpg"
+    },
+    {
+      "id": "huevo-queso-principiantes",
+      "title": "Pasta cremosa con huevo y queso",
+      "category": "Principiantes · Cremosa sin nata",
+      "description": "Una receta sencilla para aprender a mezclar huevo y queso con la pasta, controlando el calor para conseguir una textura cremosa.",
+      "preparation": "Prepara un bol, una espátula y una sartén. Mide el agua y el queso. Bate el huevo con el queso antes de empezar a cocer la pasta.",
+      "ingredients": [
+        "100 g de espaguetis de 1,6 mm",
+        "1 huevo",
+        "35 g de queso rallado para fundir",
+        "350 ml de agua",
+        "½ cucharadita de caldo en polvo",
+        "1 cucharada de aceite de oliva",
+        "Una pizca de sal y pimienta negra al gusto"
+      ],
+      "measureNote": "Cantidades de la receta original para 1 ración. Esta versión usa queso para fundir y caldo; se presenta como pasta cremosa, sin atribuirle una receta italiana tradicional.",
+      "realTime": "Respeta el tiempo de cocción indicado en el envase. Retira la sartén del fuego antes de incorporar el huevo; después remueve con calor muy suave solo lo necesario para que la mezcla espese. La cocción real dura más que el montaje.",
+      "result": "Una salsa que envuelve los espaguetis y un queso fundido e integrado; sin grumos de huevo cuajado ni exceso de líquido en el fondo.",
+      "tip": "El paso clave es bajar el calor antes de añadir el huevo. Si la mezcla espesa demasiado al remover, afloja con una pequeña cantidad de agua caliente.",
+      "bookContext": "Complemento del libro 2: salsas cremosas y control del calor.",
+      "creator": "Ryuji · 料理研究家リュウジのバズレシピ",
+      "sourceTitle": "Pasta cremosa con huevo y queso — receta de Ryuji",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%81%93%E3%82%8C1%E7%9A%BF98%E5%86%86%E3%81%A7%E5%87%BA%E6%9D%A5%E3%81%BE%E3%81%99%E3%80%82%E6%A5%B5%E9%99%90%E3%81%BE%E3%81%A7%E7%84%A1%E9%A7%84%E3%82%92%E5%89%8A%E3%81%8E%E8%90%BD%E3%81%A8%E3%81%97%E3%81%9F%E7%A9%B6%E6%A5%B5%E3%81%AE%E3%81%A8%E3%82%8D%E3%81%A8%E3%82%8D%E3%82%AB%E3%83%AB%E3%83%9C%E3%83%8A%E3%83%BC%E3%83%A9%E3%80%90%E8%99%9A%E7%84%A1%E3%83%9C%E3%83%8A%E3%83%BC%E3%83%A9%E3%80%91.webm",
+      "licenseLabel": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "rightsNote": "Adaptación abreviada con atribución. Las cantidades proceden de la descripción de la receta original; no implica respaldo del autor.",
+      "changes": "Fragmentos seleccionados y reencuadrados para mostrar el gesto, audio retirado e indicaciones en español añadidas. Sin cambios de velocidad.",
+      "duration": 53,
+      "chapters": [
+        {
+          "at": 0,
+          "label": "Preparar la mezcla",
+          "text": "Casca 1 huevo en un bol y añade 35 g de queso rallado para fundir y pimienta negra. Bate hasta repartir bien los ingredientes."
+        },
+        {
+          "at": 15,
+          "label": "Preparar el líquido",
+          "text": "Calienta 350 ml de agua con 1 cucharada de aceite, ½ cucharadita de caldo en polvo y una pizca de sal. Lleva a ebullición."
+        },
+        {
+          "at": 23,
+          "label": "Cocer la pasta",
+          "text": "Añade 100 g de espaguetis. Húndelos poco a poco cuando se ablanden y remueve durante la cocción. Sigue el tiempo del envase y conserva un poco del líquido."
+        },
+        {
+          "at": 34,
+          "label": "Bajar el calor y añadir el huevo",
+          "text": "Aparta la sartén del fuego y deja que baje el calor antes de añadir la mezcla de huevo y queso. Remueve enseguida para repartirla por la pasta."
+        },
+        {
+          "at": 43,
+          "label": "Dar cremosidad y servir",
+          "text": "Si hace falta, vuelve a un fuego muy suave y remueve solo hasta que la salsa espese y el queso se funda. Evita que hierva con fuerza. Sirve y termina con pimienta."
+        }
+      ],
+      "videoUrl": "assets/videos/huevo-queso-principiantes.mp4",
+      "poster": "assets/videos/huevo-queso-principiantes.jpg"
+    },
+    {
+      "id": "tomate-verduras-principiantes",
+      "title": "Pasta fácil con verduras y salchichas",
+      "category": "Principiantes · Cortar, saltear y mezclar",
+      "description": "Desde los ingredientes en la tabla hasta el plato servido: aprende a cortar, saltear y envolver la pasta en una salsa de tomate tipo kétchup.",
+      "preparation": "Lava el pimiento, limpia los champiñones y prepara tabla, cuchillo, sartén y una olla para la pasta. Mide la salsa antes de empezar.",
+      "ingredients": [
+        "100 g de espaguetis",
+        "3 salchichas pequeñas, unos 50 g",
+        "¼ de cebolla, unos 50 g",
+        "2 champiñones, unos 50 g",
+        "1 pimiento verde pequeño",
+        "4 cucharadas de kétchup, unos 60 g",
+        "10 g de mantequilla",
+        "2 cucharaditas de aceite neutro",
+        "Sal y un poco de queso rallado para servir; perejil seco opcional"
+      ],
+      "measureNote": "Cantidades para 1 ración de pasta estilo napolitano japonés. La fuente utiliza kétchup: no es tomate triturado ni salsa de tomate sin condimentar.",
+      "realTime": "Saltea hasta dorar las salchichas y ablandar la cebolla. Cocina el kétchup removiendo para que espese sin quemarse. Cuece la pasta aparte según el envase y termina de mezclar en la sartén. Estos tiempos son reales, aparte del vídeo.",
+      "result": "Verduras cocinadas, salchichas doradas y espaguetis cubiertos de salsa de manera uniforme.",
+      "tip": "Prepara los cortes antes de encender el fuego. Si el kétchup salpica o se pega, baja el fuego y remueve; incorpora el pimiento al final para conservar algo de textura.",
+      "bookContext": "Complemento de los libros 1 y 2: preparación de ingredientes, salteado y mezcla final.",
+      "creator": "Ryuji · 料理研究家リュウジのバズレシピ",
+      "sourceTitle": "Japanese style pasta Napolitana — receta de Ryuji",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E3%81%93%E3%82%8C%E4%BB%A5%E4%B8%8A%E3%81%AE%E3%83%8A%E3%83%9D%E3%83%AA%E3%82%BF%E3%83%B3%E3%82%92%E5%83%95%E3%81%AF%E7%9F%A5%E3%82%89%E3%81%AA%E3%81%84%E2%80%A6%E3%80%90%E8%87%B3%E9%AB%98%E3%81%AE%E3%83%8A%E3%83%9D%E3%83%AA%E3%82%BF%E3%83%B3%E3%80%91%E3%80%8EJapanese_style_pasta_Napolitana%E3%80%8F.webm",
+      "licenseLabel": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/deed.es",
+      "rightsNote": "Adaptación abreviada con atribución. Las cantidades proceden de la descripción de la receta original; no implica respaldo del autor.",
+      "changes": "Fragmentos seleccionados y reencuadrados para mostrar el gesto, audio retirado e indicaciones en español añadidas. Sin cambios de velocidad.",
+      "duration": 61,
+      "chapters": [
+        {
+          "at": 0,
+          "label": "Cortar los ingredientes",
+          "text": "Corta las salchichas en rodajas y la cebolla y los champiñones en láminas. Retira las semillas del pimiento y córtalo en tiras."
+        },
+        {
+          "at": 15,
+          "label": "Saltear la base",
+          "text": "Calienta 2 cucharaditas de aceite. Dora las salchichas; añade la cebolla y los champiñones y cocina hasta que se ablanden."
+        },
+        {
+          "at": 24,
+          "label": "Cocinar la salsa",
+          "text": "Añade 60 g de kétchup y remueve hasta que se adhiera a los ingredientes. Baja el fuego si salpica y evita que se queme."
+        },
+        {
+          "at": 34,
+          "label": "Cocer la pasta aparte",
+          "text": "Pon a hervir una olla con agua y sal. Añade los 100 g de espaguetis y cuécelos siguiendo el tiempo del envase. Escurre cuando estén listos."
+        },
+        {
+          "at": 39,
+          "label": "Unir y servir",
+          "text": "Añade 10 g de mantequilla y el pimiento a la salsa. Cocina unos instantes; incorpora la pasta escurrida y mezcla para cubrirla. Sirve con un poco de queso rallado."
+        }
+      ],
+      "videoUrl": "assets/videos/tomate-verduras-principiantes.mp4",
+      "poster": "assets/videos/tomate-verduras-principiantes.jpg"
     }
   ]
 };
