@@ -157,10 +157,26 @@ const APP_DATA = {
         "Zatrzymaj film i powtórz zdanie na głos.",
         "Skorzystaj z pomocy i ułóż własny przykład."
       ],
-      "playerHelp": "Użyj przycisków odtwarzacza, aby zatrzymać film i zmienić prędkość, jeśli ta opcja jest dostępna. Jeśli film się nie uruchamia, otwórz oryginalną lekcję.",
+      "playerHelp": "Użyj przycisków pod filmem, aby zatrzymać, powtórzyć i zmienić dźwięk lub prędkość. Niżej znajdziesz francuskie przykłady z polskim znaczeniem.",
       "teacher": "Nauczyciel i źródło",
       "openOriginal": "Otwórz oryginalną lekcję",
-      "maxDuration": "Maksymalnie 1 minuta"
+      "maxDuration": "Maksymalnie 1 minuta",
+      "pause": "Pauza",
+      "replay": "Powtórz",
+      "soundOn": "Dźwięk włączony",
+      "soundOff": "Bez dźwięku",
+      "speed": "Prędkość",
+      "normal": "Oryginalna",
+      "slow": "Wolna",
+      "fullscreen": "Pełny ekran",
+      "exitFullscreen": "Zamknij pełny ekran",
+      "progressLabel": "Pozycja odtwarzania",
+      "loading": "Ładowanie filmu …",
+      "playing": "Posłuchaj, a następnie powtórz na głos.",
+      "paused": "Pauza. Możesz przeczytać pomoc, a potem kontynuować.",
+      "finished": "Film zakończony. Powtórz go lub wybierz kolejne ćwiczenie.",
+      "ready": "Naciśnij odtwarzanie, aby usłyszeć francuski dźwięk.",
+      "error": "Nie udało się uruchomić filmu. Możesz otworzyć oryginalne źródło przez link."
     },
     "maxDurationSeconds": 60,
     "lessons": [

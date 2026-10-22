@@ -157,10 +157,26 @@ const APP_DATA = {
         "Metti in pausa e ripeti una frase ad alta voce.",
         "Consulta la guida e crea un esempio tuo."
       ],
-      "playerHelp": "Usa i comandi del video per mettere in pausa e regolare la velocità, quando disponibile. Se il video non parte qui, apri la lezione originale.",
+      "playerHelp": "Usa i pulsanti sotto il video per mettere in pausa, ripetere e regolare audio e velocità. Più sotto trovi gli esempi in francese con il significato in italiano.",
       "teacher": "Insegnante e fonte",
       "openOriginal": "Apri la lezione originale",
-      "maxDuration": "Massimo 1 minuto"
+      "maxDuration": "Massimo 1 minuto",
+      "pause": "Pausa",
+      "replay": "Ripeti",
+      "soundOn": "Audio attivo",
+      "soundOff": "Senza audio",
+      "speed": "Velocità",
+      "normal": "Originale",
+      "slow": "Lenta",
+      "fullscreen": "Schermo intero",
+      "exitFullscreen": "Esci da schermo intero",
+      "progressLabel": "Posizione di riproduzione",
+      "loading": "Caricamento del video …",
+      "playing": "Ascolta e poi ripeti ad alta voce.",
+      "paused": "In pausa. Puoi leggere la guida e continuare dopo.",
+      "finished": "Video terminato. Ripetilo o scegli il prossimo esercizio.",
+      "ready": "Premi riproduci per ascoltare l’audio in francese.",
+      "error": "Non è stato possibile avviare il video. Puoi aprire la fonte originale tramite il link."
     },
     "maxDurationSeconds": 60,
     "lessons": [

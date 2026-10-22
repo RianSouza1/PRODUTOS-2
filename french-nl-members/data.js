@@ -157,10 +157,26 @@ const APP_DATA = {
         "Pauzeer en zeg een zin hardop na.",
         "Gebruik de leerhulp en maak een eigen voorbeeld."
       ],
-      "playerHelp": "Gebruik de videoknoppen om te pauzeren en, indien beschikbaar, de snelheid aan te passen. Start de video hier niet? Open dan de oorspronkelijke les.",
+      "playerHelp": "Gebruik de knoppen onder de video voor pauze, herhaling, geluid en snelheid. Daaronder staan Franse voorbeelden met hun Nederlandse betekenis.",
       "teacher": "Docent en bron",
       "openOriginal": "Oorspronkelijke les openen",
-      "maxDuration": "Maximaal 1 minuut"
+      "maxDuration": "Maximaal 1 minuut",
+      "pause": "Pauze",
+      "replay": "Herhalen",
+      "soundOn": "Geluid aan",
+      "soundOff": "Geluid uit",
+      "speed": "Snelheid",
+      "normal": "Origineel",
+      "slow": "Langzaam",
+      "fullscreen": "Volledig scherm",
+      "exitFullscreen": "Volledig scherm sluiten",
+      "progressLabel": "Afspeelpositie",
+      "loading": "De video wordt geladen …",
+      "playing": "Luister en zeg daarna hardop na.",
+      "paused": "Gepauzeerd. Je kunt de leerhulp lezen en daarna verdergaan.",
+      "finished": "De video is afgelopen. Herhaal hem of kies de volgende oefening.",
+      "ready": "Druk op afspelen om de Franse audio te horen.",
+      "error": "De video kon niet worden gestart. Je kunt de oorspronkelijke bron via de link openen."
     },
     "maxDurationSeconds": 60,
     "lessons": [

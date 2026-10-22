@@ -3,7 +3,7 @@
   const storageKey = `french-one-minute-practice-${document.documentElement.lang}-v3`;
   let activeId = lessons[0].id;
   let filter = 'all';
-  let media = null;
+  let playerCleanup = null;
   let practiced = new Set();
   try {
     const saved = JSON.parse(localStorage.getItem(storageKey) || '[]');
@@ -17,7 +17,7 @@
     arrow:'<path d="M4 12h16m-6-6 6 6-6 6"/>',
     ear:'<path d="M6 10a6 6 0 0 1 12 0c0 4-4 4-4 7a4 4 0 0 1-8 0M9 10a3 3 0 0 1 6 0c0 2-3 2-3 5"/>'
   }[name]}</svg>`;
-  const stop = () => { media?.remove(); media = null; };
+  const stop = () => { playerCleanup?.(); playerCleanup = null; };
 
   function render(root) {
     root.innerHTML = '<div class="page-view french-course" id="french-course"></div>';
@@ -52,7 +52,11 @@
             <h2 id="french-lesson-title" tabindex="-1">${esc(lesson.title)}</h2><p>${esc(lesson.goal)}</p>
           </div>
           <div class="french-study-layout"><div class="french-watch">
-            <div class="french-video-frame is-portrait"><button type="button" class="french-load-video" aria-label="${esc(ui.play)}: ${esc(lesson.title)}"><img src="${esc(lesson.poster)}" alt="" width="640" height="360" referrerpolicy="no-referrer"><span>${icon('play')}<strong>${esc(ui.play)}</strong></span></button></div>
+            <div class="french-video-frame is-portrait"><div class="french-brand-blur french-brand-blur--header" aria-hidden="true"></div><div class="french-brand-blur french-brand-blur--corner" aria-hidden="true"></div><div class="french-brand-blur french-brand-blur--footer" aria-hidden="true"></div><button type="button" class="french-load-video" aria-label="${esc(ui.play)}: ${esc(lesson.title)}"><img src="${esc(lesson.poster)}" alt="" width="640" height="360" referrerpolicy="no-referrer"><span>${icon('play')}<strong>${esc(ui.play)}</strong></span></button></div>
+            
+            <div class="french-clip-controls"><button type="button" data-clip-play aria-pressed="false">${esc(ui.play)}</button><button type="button" data-clip-replay>${esc(ui.replay)}</button><button type="button" data-clip-sound aria-pressed="true">${esc(ui.soundOn)}</button><button type="button" data-clip-fullscreen>${esc(ui.fullscreen)}</button><label>${esc(ui.speed)} <select data-clip-speed aria-label="${esc(ui.speed)}"><option value="1">1× · ${esc(ui.normal)}</option><option value="0.75">0,75× · ${esc(ui.slow)}</option></select></label></div>
+            <div class="french-clip-timeline"><input type="range" min="0" max="${lesson.duration}" step="0.1" value="0" data-clip-seek aria-label="${esc(ui.progressLabel)}" disabled><span data-clip-clock>0:00 / ${clock(lesson.duration)}</span></div>
+            <p class="french-clip-status" data-clip-status role="status" aria-live="polite">${esc(ui.ready)}</p>
             <div class="french-player-tools"><span>${esc(ui.duration)} · ${clock(lesson.duration)}</span><a href="${esc(lesson.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(ui.openOriginal)} ↗</a></div>
             <p class="french-caption-help">${esc(ui.playerHelp)}</p>
             <p class="french-teacher">${esc(ui.teacher)}: <a href="${esc(lesson.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(lesson.authorName)}</a></p>
@@ -68,28 +72,7 @@
           <div class="french-filters" role="group" aria-label="${esc(ui.filterLabel)}">${['all','basics','tips'].map(category=>`<button type="button" data-french-filter="${category}" aria-pressed="${filter === category}">${esc(ui[category])} <span>${category === 'all' ? lessons.length : category === 'basics' ? baseCount : tipCount}</span></button>`).join('')}</div>
           <div class="french-lesson-grid"></div>
         </section>`;
-      page.querySelector('.french-load-video').addEventListener('click',()=>{
-        const frame = document.createElement('iframe');
-        const url = new URL(lesson.embedUrl);
-        url.searchParams.set('autoplay','1');
-        if (lesson.provider === 'youtube') {
-          url.searchParams.set('hl',document.documentElement.lang);
-          url.searchParams.set('cc_lang_pref','fr');
-          url.searchParams.set('cc_load_policy','1');
-          url.searchParams.set('rel','0');
-          url.searchParams.set('playsinline','1');
-        } else {
-          url.searchParams.set('playsinline','1');
-          url.searchParams.set('dnt','1');
-        }
-        frame.src = url.toString();
-        frame.title = `${ui.play}: ${lesson.title}`;
-        frame.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media';
-        frame.allowFullscreen = true;
-        frame.referrerPolicy = 'strict-origin-when-cross-origin';
-        page.querySelector('.french-video-frame').replaceChildren(frame);
-        media = frame;
-      });
+      playerCleanup = FRENCH_CLIP_PLAYER.mount(page.querySelector('.french-watch'),lesson,ui);
       page.querySelector('.french-practice-toggle').addEventListener('click',event=>{
         practiced.has(lesson.id) ? practiced.delete(lesson.id) : practiced.add(lesson.id);
         try { localStorage.setItem(storageKey,JSON.stringify([...practiced])); } catch {}

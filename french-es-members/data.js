@@ -157,10 +157,26 @@ const APP_DATA = {
         "Pausa y repite una frase en voz alta.",
         "Consulta la guía y crea tu propio ejemplo."
       ],
-      "playerHelp": "Usa los controles del vídeo para pausar y ajustar la velocidad cuando esté disponible. Si no se reproduce aquí, abre la clase original.",
+      "playerHelp": "Usa los botones debajo del vídeo para pausar, repetir y ajustar el sonido y la velocidad. Más abajo encontrarás los ejemplos en francés y su significado en español.",
       "teacher": "Profesor y fuente",
       "openOriginal": "Abrir la clase original",
-      "maxDuration": "Máximo 1 minuto"
+      "maxDuration": "Máximo 1 minuto",
+      "pause": "Pausa",
+      "replay": "Repetir",
+      "soundOn": "Sonido activado",
+      "soundOff": "Sin sonido",
+      "speed": "Velocidad",
+      "normal": "Original",
+      "slow": "Lenta",
+      "fullscreen": "Pantalla completa",
+      "exitFullscreen": "Salir de pantalla completa",
+      "progressLabel": "Posición de reproducción",
+      "loading": "Cargando el vídeo …",
+      "playing": "Escucha y después repite en voz alta.",
+      "paused": "En pausa. Puedes leer la guía y continuar después.",
+      "finished": "Vídeo terminado. Repítelo o elige la siguiente práctica.",
+      "ready": "Pulsa reproducir para escuchar el audio en francés.",
+      "error": "No se ha podido iniciar el vídeo. Puedes abrir la fuente original mediante el enlace."
     },
     "maxDurationSeconds": 60,
     "lessons": [

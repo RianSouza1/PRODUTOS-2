@@ -7,7 +7,7 @@ Six everyday-language micro-lessons and three short tips. Original French speech
 ## Source and playback
 
 Teachers: Français avec Pierre / Français avec Pierre Shorts, and Français avec Nelly.
-The complete source videos use official YouTube embeds. No long lesson is shortened by playback parameters, no media is rehosted, and the original controls and attribution are retained.
+The complete source videos use official YouTube embeds. No long lesson is shortened by playback parameters, no media is rehosted, and source attribution is retained.
 The portrait player shows the entire video frame without cropping. A direct source link accompanies each video.
 No Creative Commons or redistribution license is claimed. Source identification is specific to the author of each video.
 
@@ -27,3 +27,10 @@ A maximum-one-minute badge and the individual source durations are visible on ev
 | saying-no | Français avec Nelly | dire NON en français #speakfrench #learnfrench | 21 s | https://www.youtube.com/watch?v=sdTK6H0YeKo |
 | word-gender | Français avec Nelly | LES ERREURS DE GENRE ! | 48 s | https://www.youtube.com/watch?v=BJ2B6vkapm4 |
 | singular-plural-sounds | Français avec Nelly | French pronuncitation is tricky... listen | 37 s | https://www.youtube.com/watch?v=fGe4ruDBfPo |
+
+## Requested interface blur
+
+The same nine complete videos (21–57 seconds) remain in place. No source video is downloaded, edited or rehosted.
+The page supplies localized playback, pause, replay, volume, speed, seeking and fullscreen controls through the IFrame API.
+Blur masks cover the player’s header identification throughout playback and pause, plus the lower-right identification area. A wider footer blur is shown on pause for the identification bar used by portrait videos. The video frame itself is not cropped.
+The end screen uses the lesson thumbnail and a replay action. Teacher credits and source links remain outside the video.

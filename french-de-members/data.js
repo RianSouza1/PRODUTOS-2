@@ -157,10 +157,26 @@ const APP_DATA = {
         "Pausiere und sprich einen Satz laut nach.",
         "Nutze die Lernhilfe und bilde ein eigenes Beispiel."
       ],
-      "playerHelp": "Mit den Videofunktionen kannst du pausieren und, sofern verfügbar, die Geschwindigkeit anpassen. Falls das Video hier nicht startet, öffne die Originallektion.",
+      "playerHelp": "Nutze die Tasten unter dem Video für Pause, Wiederholung, Ton und Tempo. Die französischen Beispiele mit deutscher Bedeutung stehen darunter.",
       "teacher": "Lehrkraft und Quelle",
       "openOriginal": "Originallektion öffnen",
-      "maxDuration": "Maximal 1 Minute"
+      "maxDuration": "Maximal 1 Minute",
+      "pause": "Pause",
+      "replay": "Wiederholen",
+      "soundOn": "Ton an",
+      "soundOff": "Ton aus",
+      "speed": "Tempo",
+      "normal": "Original",
+      "slow": "Langsam",
+      "fullscreen": "Vollbild",
+      "exitFullscreen": "Vollbild beenden",
+      "progressLabel": "Wiedergabeposition",
+      "loading": "Das Video wird geladen …",
+      "playing": "Höre zu und sprich anschließend nach.",
+      "paused": "Pausiert. Du kannst die Lernhilfe lesen und danach fortfahren.",
+      "finished": "Video beendet. Wiederhole es oder wähle die nächste Übung.",
+      "ready": "Drücke auf Wiedergabe, um den französischen Ton zu hören.",
+      "error": "Das Video konnte nicht gestartet werden. Du kannst die Originalquelle über den Link öffnen."
     },
     "maxDurationSeconds": 60,
     "lessons": [
