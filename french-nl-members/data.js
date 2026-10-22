@@ -68,7 +68,7 @@ const APP_DATA = {
       ]
     ],
     "videos": "Video’s",
-    "videosSubtitle": "Luister naar Frans en oefen je eerste zinnen"
+    "videosSubtitle": "Begeleide lessen, uitspraaktips en spreekoefeningen in het Frans"
   },
   "books": [
     {
@@ -123,235 +123,332 @@ const APP_DATA = {
   "videoCourse": {
     "ui": {
       "nav": "Video’s",
-      "subtitle": "Luister naar Frans en oefen je eerste zinnen",
-      "title": "Je eerste stappen in het Frans",
-      "intro": "Luister naar korte gesprekken, kijk naar de sprekers en oefen hardop. Bij elke opname vind je Nederlandse uitleg en Franse voorbeeldzinnen.",
-      "kicker": "LUISTER · BEGRIJP · SPREEK",
+      "subtitle": "Begeleide lessen, uitspraaktips en spreekoefeningen in het Frans",
+      "title": "Frans stap voor stap: lessen en tips",
+      "intro": "Begin met zes basislessen en ga daarna verder met drie video's vol tips en spreekoefeningen. De docenten leggen uit in het Frans; de Nederlandse leerhulp helpt je om zelf antwoorden te maken.",
+      "kicker": "LEREN · NAZEGGEN · TOEPASSEN",
       "lesson": "Les",
       "audio": "Oorspronkelijk Frans geluid",
       "beginner": "Om mee te beginnen",
-      "phrases": "Woorden en zinnen om te oefenen",
+      "phrases": "Oefenhulp · Frans en Nederlands",
       "practice": "Nu ben jij aan de beurt",
-      "method": "Zo oefen je",
-      "methodText": "Luister eerst. Lees daarna de uitleg en herhaal hardop. Begin op 0,75× en schakel later over naar 1×.",
-      "speed": "Snelheid",
-      "slow": "Langzaam",
-      "normal": "Origineel",
-      "replay": "Vanaf het begin luisteren",
-      "transcript": "Frans transcript",
-      "captions": "Onder de video vind je de Franse uitdrukkingen met hun Nederlandse betekenis.",
+      "method": "Jouw studiemoment",
+      "captions": "Voorbeelden om het onderwerp te oefenen. Deze leerhulp is geen transcript en geen volledige vertaling van de video.",
       "mark": "Markeren als geoefend",
       "marked": "Al geoefend",
       "next": "Volgende les",
       "restart": "Terug naar de eerste les",
-      "library": "Kies je volgende oefening",
+      "library": "Jouw leerroute",
       "progress": "lessen geoefend",
-      "source": "Bron en licentie",
-      "sourceText": "Français interactif · University of Texas at Austin / COERLL. Oorspronkelijke opnamen met Frans geluid. Nederlandse uitleg en eigen oefeningen zijn toegevoegd.",
+      "source": "Over deze lessen",
+      "sourceText": "Video's van Français avec Pierre, afgespeeld via de officiële spelers. De bronvermelding en oorspronkelijke bediening blijven behouden. De Nederlandse leerhulp en de opdrachten zijn een eigen aanvulling.",
       "original": "Oorspronkelijke bron",
-      "license": "CC BY 3.0",
       "bookLink": "Mijn boeken openen",
       "play": "Video afspelen",
-      "error": "De video kon niet worden geladen. Probeer het opnieuw.",
       "duration": "Oorspronkelijke duur",
-      "lessons": "korte video’s",
-      "ready": "Luister en probeer het daarna zelf te zeggen.",
-      "menu": "Videoles openen"
+      "lessons": "lessen en tips",
+      "menu": "Videoles openen",
+      "basics": "Basislessen",
+      "tips": "Tips en oefeningen",
+      "all": "Alles",
+      "filterLabel": "Video's filteren",
+      "methodSteps": [
+        "Bekijk een fragment en probeer de hoofdgedachte te begrijpen.",
+        "Pauzeer en zeg een zin hardop na.",
+        "Gebruik de leerhulp en maak een eigen voorbeeld."
+      ],
+      "playerHelp": "Gebruik de videoknoppen om te pauzeren en, indien beschikbaar, de snelheid aan te passen. Start de video hier niet? Open dan de oorspronkelijke les.",
+      "teacher": "Docent en bron",
+      "openOriginal": "Oorspronkelijke les openen"
     },
     "lessons": [
       {
-        "id": "introductions",
-        "title": "Groeten en jezelf voorstellen",
-        "goal": "Begrijp korte vragen over naam, herkomst en beroep. Begin met deze eenvoudige kennismaking met Virginie.",
-        "task": "Begroet iemand en zeg je naam en je woonplaats. Gebruik Je m’appelle… en Je suis de… .",
-        "tip": "Vous is de beleefde aanspreekvorm. Let op het verband tussen elke vraag en het antwoord.",
+        "id": "hello",
+        "title": "Groeten en iemand aanspreken",
+        "goal": "Leer de eerste begroetingen met voorgedane voorbeelden en uitleg voor beginners.",
+        "task": "Speel twee ontmoetingen na: één met een vriend en één met iemand die je niet kent.",
+        "tip": "Oefen eerst één begroeting en voeg daarna een vraag toe. Je hoeft niet de hele les in één keer te onthouden.",
         "phrases": [
           {
             "fr": "Bonjour.",
-            "translation": "Goedendag."
+            "translation": "Goedendag / Hallo."
           },
           {
-            "fr": "Comment vous appelez-vous ?",
-            "translation": "Hoe heet u?"
+            "fr": "Bonsoir.",
+            "translation": "Goedenavond, bij aankomst."
           },
           {
-            "fr": "Je m’appelle Virginie.",
-            "translation": "Ik heet Virginie."
+            "fr": "Salut.",
+            "translation": "Hoi, in een informele situatie."
           },
           {
-            "fr": "Je suis de Paris.",
-            "translation": "Ik kom uit Parijs."
-          },
-          {
-            "fr": "Je suis professeur.",
-            "translation": "Ik ben docente."
+            "fr": "Au revoir.",
+            "translation": "Tot ziens."
           }
         ],
-        "duration": 17.05,
-        "videoUrl": "assets/videos/introductions.mp4",
-        "poster": "assets/videos/introductions.jpg",
-        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-01-interviews-les-fran%C3%A7ais-%C3%A0-austin-virginie-je-me-pr%C3%A9sente/"
+        "category": "basics",
+        "duration": 750,
+        "provider": "vimeo",
+        "embedUrl": "https://player.vimeo.com/video/673498337?h=f706355069",
+        "poster": "https://i.vimeocdn.com/video/1364839503-90bb80462efd30f53098657e5db75cc62656f8f41165e70ac3cee336493386a2-d_295x166?region=us",
+        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-1/",
+        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 1)"
       },
       {
-        "id": "spelling",
-        "title": "Je naam spellen",
-        "goal": "Luister hoe Stéphanie haar achternaam spelt en vertelt waar ze vandaan komt.",
-        "task": "Schrijf je achternaam op en spel die langzaam in het Frans. Luister daarna opnieuw naar het voorbeeld.",
-        "tip": "In de video worden de twee letters L uitgesproken als deux L. Zo kun je herhaalde letters groeperen.",
+        "id": "alphabet",
+        "title": "Het alfabet en spellen",
+        "goal": "Luister naar de Franse letters en oefen hoe je een naam zegt en spelt.",
+        "task": "Spel je voor- en achternaam. Schrijf lastige letters op en beluister ze opnieuw.",
+        "tip": "Spreek de letters niet automatisch uit zoals in het Nederlands. Luister eerst en zeg dan na.",
         "phrases": [
           {
-            "fr": "Pouvez-vous épeler … ?",
-            "translation": "Kunt u … spellen?"
+            "fr": "Comment ça s’écrit ?",
+            "translation": "Hoe schrijf je dat?"
           },
           {
-            "fr": "Ça s’écrit P-E-L-L-E-T.",
-            "translation": "Je schrijft het P-E-L-L-E-T."
+            "fr": "Pouvez-vous épeler ?",
+            "translation": "Kunt u het spellen?"
           },
           {
-            "fr": "Vous êtes d’où ?",
-            "translation": "Waar komt u vandaan?"
+            "fr": "Je m’appelle…",
+            "translation": "Ik heet…"
           },
           {
-            "fr": "Je suis de Lyon.",
-            "translation": "Ik kom uit Lyon."
+            "fr": "Mon prénom est…",
+            "translation": "Mijn voornaam is…"
           }
         ],
-        "duration": 29.26,
-        "videoUrl": "assets/videos/spelling.mp4",
-        "poster": "assets/videos/spelling.jpg",
-        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-01-interviews-les-fran%C3%A7ais-%C3%A0-austin-st%C3%A9phanie-je-me-pr%C3%A9sente/"
+        "category": "basics",
+        "duration": 510,
+        "provider": "vimeo",
+        "embedUrl": "https://player.vimeo.com/video/673558969?h=7ccbcd527a",
+        "poster": "https://i.vimeocdn.com/video/1364961947-240080491efd1c95e0c405045143c23c23c66505e560b58903b538ff79382f30-d_295x166?region=us",
+        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-2/",
+        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 2)"
       },
       {
-        "id": "classroom",
-        "title": "Voorwerpen herkennen en benoemen",
-        "goal": "De docente wijst echte voorwerpen in een leslokaal aan. Koppel het Franse woord direct aan het voorwerp dat je ziet.",
-        "task": "Wijs drie voorwerpen om je heen aan en benoem ze met un of une.",
-        "tip": "Leer het zelfstandig naamwoord samen met het lidwoord: un livre, maar une chaise.",
+        "id": "sounds",
+        "title": "De klanken van het Frans",
+        "goal": "Ontdek het verband tussen klanken en spelling. Let op de mond van de docent en zeg langzaam na.",
+        "task": "Oefen tu/tout en rue/roue. Neem jezelf op en controleer of je twee verschillende klanken maakt.",
+        "tip": "Oefen per keer één klankenpaar. Let op je lippen voordat je sneller gaat spreken.",
         "phrases": [
           {
-            "fr": "C’est une salle de classe.",
-            "translation": "Dit is een leslokaal."
+            "fr": "tu / tout",
+            "translation": "jij / alles"
           },
           {
-            "fr": "un livre / un cahier",
-            "translation": "een boek / een schrift"
+            "fr": "rue / roue",
+            "translation": "straat / wiel"
           },
           {
-            "fr": "un stylo / un crayon",
-            "translation": "een pen / een potlood"
+            "fr": "le / les",
+            "translation": "de of het / de, meervoud"
           },
           {
-            "fr": "une porte / une fenêtre",
-            "translation": "een deur / een raam"
-          },
-          {
-            "fr": "une chaise / un bureau",
-            "translation": "een stoel / een bureau"
+            "fr": "bon / bonne",
+            "translation": "goed, mannelijk / goed, vrouwelijk"
           }
         ],
-        "duration": 95.22999999999999,
-        "videoUrl": "assets/videos/classroom.mp4",
-        "poster": "assets/videos/classroom.jpg",
-        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-01-vocabulaire-en-contexte-la-salle-de-classe/"
+        "category": "basics",
+        "duration": 864,
+        "provider": "vimeo",
+        "embedUrl": "https://player.vimeo.com/video/673559796?h=9f6cdbfc18",
+        "poster": "https://i.vimeocdn.com/video/1364962474-b26017136cdf2c3364b34ffda4c662ec7f369ba8e2b5353e88e757fc34395712-d_295x166?region=us",
+        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-3/",
+        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 3)"
       },
       {
-        "id": "fruits",
-        "title": "Fruit herkennen op de markt",
-        "goal": "Verbind de Franse fruitnamen die je hoort met de echte producten op de marktkraam. Richt je eerst op losse woorden.",
-        "task": "Kies drie soorten fruit en noem ze in het Frans. Dek daarna de Nederlandse betekenis af en herhaal de woorden.",
-        "tip": "Begin met de meest gebruikte namen. Je hoeft bij de eerste keer luisteren niet elk detail te begrijpen.",
+        "id": "howareyou",
+        "title": "Vragen en vertellen hoe het gaat",
+        "goal": "Oefen eenvoudige vragen en antwoorden om een gesprek te beginnen.",
+        "task": "Groet de ander, vraag hoe het gaat, antwoord en stel de vraag terug.",
+        "tip": "Leer de vraag en het antwoord samen, zodat je de hele korte uitwisseling kunt voeren.",
         "phrases": [
           {
-            "fr": "les bananes",
-            "translation": "de bananen"
+            "fr": "Comment ça va ?",
+            "translation": "Hoe gaat het?"
           },
           {
-            "fr": "les oranges",
-            "translation": "de sinaasappels"
+            "fr": "Ça va bien, merci.",
+            "translation": "Het gaat goed, dank je."
           },
           {
-            "fr": "les pommes",
-            "translation": "de appels"
+            "fr": "Et vous ?",
+            "translation": "En met u?"
           },
           {
-            "fr": "les pêches",
-            "translation": "de perziken"
-          },
-          {
-            "fr": "les melons",
-            "translation": "de meloenen"
+            "fr": "Pas mal, merci.",
+            "translation": "Niet slecht, dank je."
           }
         ],
-        "duration": 24.11,
-        "videoUrl": "assets/videos/fruits.mp4",
-        "poster": "assets/videos/fruits.jpg",
-        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-05-vocabulaire-en-contexte-au-march%C3%A9-les-fruits/"
+        "category": "basics",
+        "duration": 602,
+        "provider": "vimeo",
+        "embedUrl": "https://player.vimeo.com/video/673559835?h=192d20965a",
+        "poster": "https://i.vimeocdn.com/video/1364963274-f31f4e784d5954c4b9eca43dc1f278fee1496c4ce3e752bb52bbcf72b8b4d29f-d_295x166?region=us",
+        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-5/",
+        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 5)"
       },
       {
-        "id": "vegetables",
-        "title": "Groenten benoemen",
-        "goal": "Herken alledaagse groenten terwijl de verkoopster de producten aanwijst.",
-        "task": "Maak een boodschappenlijst met drie groenten in het Frans en lees die hardop.",
-        "tip": "Let op het meervoud met les. De hele woordgroep pommes de terre betekent aardappelen.",
+        "id": "introduce",
+        "title": "Jezelf voorstellen met eenvoudige zinnen",
+        "goal": "Leer je naam te zeggen en bouw een korte voorstelling op met persoonlijke informatie.",
+        "task": "Stel jezelf twintig seconden voor met je naam, woonplaats en nog één gegeven over jezelf.",
+        "tip": "Vervang de gegevens uit het voorbeeld door die van jezelf. Begin met twee zinnen en voeg later een derde toe.",
         "phrases": [
           {
-            "fr": "les carottes",
-            "translation": "de wortels"
+            "fr": "Je m’appelle…",
+            "translation": "Ik heet…"
           },
           {
-            "fr": "les oignons",
-            "translation": "de uien"
+            "fr": "J’habite à…",
+            "translation": "Ik woon in…"
           },
           {
-            "fr": "les pommes de terre",
-            "translation": "de aardappelen"
+            "fr": "Je suis…",
+            "translation": "Ik ben…"
           },
           {
-            "fr": "les courgettes",
-            "translation": "de courgettes"
-          },
-          {
-            "fr": "les tomates",
-            "translation": "de tomaten"
+            "fr": "Enchanté(e).",
+            "translation": "Aangenaam."
           }
         ],
-        "duration": 47.74,
-        "videoUrl": "assets/videos/vegetables.mp4",
-        "poster": "assets/videos/vegetables.jpg",
-        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-05-vocabulaire-en-contexte-au-march%C3%A9-les-l%C3%A9gumes/"
+        "category": "basics",
+        "duration": 684,
+        "provider": "vimeo",
+        "embedUrl": "https://player.vimeo.com/video/673562856?h=289d29f943",
+        "poster": "https://i.vimeocdn.com/video/1364968468-b7dfb7eacbfb8d9207c9217abee897529a47c88ed9c0528f0e31c5d3feec8a3d-d_295x166?region=us",
+        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-6/",
+        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 6)"
       },
       {
-        "id": "bakery",
-        "title": "Woorden voor de bakkerij",
-        "goal": "Ontdek eenvoudige productnamen in een echte bakkerij. Luister vooral naar baguette, croissant en pain au chocolat.",
-        "task": "Oefen een beleefd verzoek: Je voudrais une baguette, s’il vous plaît. Vervang daarna baguette door een ander product.",
-        "tip": "De video laat de producten zien. Gebruik de woorden daarna om zelf een eenvoudige bestelling te formuleren.",
+        "id": "present",
+        "title": "Je eerste zinnen in de tegenwoordige tijd",
+        "goal": "Herken de persoonlijke voornaamwoorden en bekijk de tegenwoordige tijd in eenvoudige zinnen.",
+        "task": "Kies parler of habiter. Maak een zin met je en een met tu en zeg ze zonder te kijken.",
+        "tip": "Oefen het werkwoord in een korte zin, zodat je het meteen kunt gebruiken.",
         "phrases": [
           {
-            "fr": "une baguette",
-            "translation": "een stokbrood"
+            "fr": "Je parle français.",
+            "translation": "Ik spreek Frans."
           },
           {
-            "fr": "un croissant",
-            "translation": "een croissant"
+            "fr": "Tu habites ici.",
+            "translation": "Je woont hier."
           },
           {
-            "fr": "un pain au chocolat",
-            "translation": "een chocoladebroodje"
+            "fr": "Elle travaille.",
+            "translation": "Zij werkt."
           },
           {
-            "fr": "du pain complet",
-            "translation": "volkorenbrood"
-          },
-          {
-            "fr": "une boulangerie",
-            "translation": "een bakkerij"
+            "fr": "Nous apprenons le français.",
+            "translation": "Wij leren Frans."
           }
         ],
-        "duration": 118.02000000000001,
-        "videoUrl": "assets/videos/bakery.mp4",
-        "poster": "assets/videos/bakery.jpg",
-        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-05-vocabulaire-en-contexte-une-boulangerie-p%C3%A2tisserie/"
+        "category": "basics",
+        "duration": 901,
+        "provider": "vimeo",
+        "embedUrl": "https://player.vimeo.com/video/673562868?h=83de323bbc",
+        "poster": "https://i.vimeocdn.com/video/1364968740-660b59defd42009e4b37c821aa1bbca67103170e9e64b245ca97802f0f1b651c-d_295x166?region=us",
+        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-7/",
+        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 7)"
+      },
+      {
+        "id": "mistakes",
+        "title": "Tips: vijf uitspraakfouten vermijden",
+        "goal": "Ontdek veelvoorkomende problemen met verbindingen tussen woorden, eindletters en neusklanken.",
+        "task": "Kies één moeilijkheid uit de les en oefen vijf voorbeelden voordat je verdergaat.",
+        "tip": "Ga terug naar de klankenles als een voorbeeld lastig is. Eén probleem gericht verbeteren is genoeg voor vandaag.",
+        "phrases": [
+          {
+            "fr": "les amis",
+            "translation": "de vrienden"
+          },
+          {
+            "fr": "les enfants",
+            "translation": "de kinderen"
+          },
+          {
+            "fr": "un bonbon",
+            "translation": "een snoepje"
+          },
+          {
+            "fr": "parler",
+            "translation": "spreken"
+          }
+        ],
+        "category": "tips",
+        "duration": 698,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/gDwUE5lAGzw",
+        "poster": "https://i.ytimg.com/vi/gDwUE5lAGzw/maxresdefault.jpg",
+        "sourceUrl": "https://www.francaisavecpierre.com/5-erreurs-de-prononciation-a-eviter-en-francais/",
+        "sourceTitle": "Prononciation française : 5 erreurs à éviter 🤐 🇫🇷"
+      },
+      {
+        "id": "routine",
+        "title": "Tips: elke dag gericht oefenen",
+        "goal": "Ontdek hoe je woordenschat, luisteren, uitspraak en spreken kunt combineren.",
+        "task": "Plan tien minuten: luisteren, nazeggen en drie uitdrukkingen gebruiken in eigen zinnen.",
+        "tip": "Deze video met studietips vraagt wat meer luistervaardigheid. Gebruik de leerhulp om één concrete oefening te kiezen.",
+        "phrases": [
+          {
+            "fr": "Je comprends.",
+            "translation": "Ik begrijp het."
+          },
+          {
+            "fr": "Je ne comprends pas.",
+            "translation": "Ik begrijp het niet."
+          },
+          {
+            "fr": "Pouvez-vous répéter ?",
+            "translation": "Kunt u dat herhalen?"
+          },
+          {
+            "fr": "Plus lentement, s’il vous plaît.",
+            "translation": "Langzamer, alstublieft."
+          }
+        ],
+        "category": "tips",
+        "duration": 775,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/SacO9mFFnhk",
+        "poster": "https://i.ytimg.com/vi/SacO9mFFnhk/maxresdefault.jpg",
+        "sourceUrl": "https://www.francaisavecpierre.com/parler-francais-rapidement/",
+        "sourceTitle": "Comment Parler Français Rapidement 🚀"
+      },
+      {
+        "id": "repeat",
+        "title": "Luisteren en nazeggen in alledaagse situaties",
+        "goal": "Oefen uitdrukkingen met een gesproken voorbeeld voor bijvoorbeeld een restaurant of hotel.",
+        "task": "Kies één situatie. Herhaal drie zinnen en speel daarna een dialoog na met eigen gegevens.",
+        "tip": "Pauzeer na iedere zin. Herhaal eerst het ritme en controleer daarna de betekenis. Werk in kleine delen.",
+        "phrases": [
+          {
+            "fr": "Une table pour deux, s’il vous plaît.",
+            "translation": "Een tafel voor twee, alstublieft."
+          },
+          {
+            "fr": "J’aimerais réserver une chambre.",
+            "translation": "Ik zou graag een kamer reserveren."
+          },
+          {
+            "fr": "J’ai une réservation.",
+            "translation": "Ik heb een reservering."
+          },
+          {
+            "fr": "Est-ce que le petit déjeuner est inclus ?",
+            "translation": "Is het ontbijt inbegrepen?"
+          }
+        ],
+        "category": "tips",
+        "duration": 1050,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/zHrhNgGYgOY",
+        "poster": "https://i.ytimg.com/vi/zHrhNgGYgOY/maxresdefault.jpg",
+        "sourceUrl": "https://www.francaisavecpierre.com/ecoutez-et-repetez/",
+        "sourceTitle": "Écoutez et Répétez ces Phrases pour améliorer votre Expression Orale en Français !"
       }
     ]
   }

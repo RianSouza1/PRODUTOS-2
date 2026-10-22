@@ -68,7 +68,7 @@ const APP_DATA = {
       ]
     ],
     "videos": "Wideo",
-    "videosSubtitle": "Słuchaj francuskiego i ćwicz pierwsze zdania"
+    "videosSubtitle": "Lekcje z wyjaśnieniami, wskazówki dotyczące wymowy i ćwiczenia ustne po francusku"
   },
   "books": [
     {
@@ -123,235 +123,332 @@ const APP_DATA = {
   "videoCourse": {
     "ui": {
       "nav": "Wideo",
-      "subtitle": "Słuchaj francuskiego i ćwicz pierwsze zdania",
-      "title": "Twoje pierwsze kroki po francusku",
-      "intro": "Słuchaj krótkich rozmów, obserwuj mówiące osoby i ćwicz na głos. Każdemu nagraniu towarzyszą polskie objaśnienia i francuskie zwroty.",
-      "kicker": "SŁUCHAJ · ROZUMIEJ · MÓW",
+      "subtitle": "Lekcje z wyjaśnieniami, wskazówki dotyczące wymowy i ćwiczenia ustne po francusku",
+      "title": "Francuski krok po kroku: lekcje i wskazówki",
+      "intro": "Zacznij od sześciu lekcji podstawowych, a następnie przejdź do trzech filmów ze wskazówkami i ćwiczeniami ustnymi. Nauczyciele wyjaśniają po francusku, a polska pomoc do nauki ułatwia tworzenie własnych odpowiedzi.",
+      "kicker": "UCZ SIĘ · POWTARZAJ · STOSUJ W PRAKTYCE",
       "lesson": "Lekcja",
       "audio": "Oryginalny dźwięk po francusku",
       "beginner": "Na dobry początek",
-      "phrases": "Słowa i zdania do ćwiczenia",
+      "phrases": "Pomoc do ćwiczeń · francuski i polski",
       "practice": "Teraz Twoja kolej",
-      "method": "Jak ćwiczyć",
-      "methodText": "Najpierw posłuchaj. Potem przeczytaj objaśnienia i powtórz na głos. Zacznij od 0,75×, a później przejdź do 1×.",
-      "speed": "Prędkość",
-      "slow": "Wolno",
-      "normal": "Oryginał",
-      "replay": "Słuchaj od początku",
-      "transcript": "Transkrypcja po francusku",
-      "captions": "Pod filmem znajdziesz francuskie zwroty wraz z ich polskim znaczeniem.",
+      "method": "Twoja sesja nauki",
+      "captions": "Przykłady do ćwiczenia tematu. Ta pomoc nie jest transkrypcją ani pełnym tłumaczeniem filmu.",
       "mark": "Oznacz jako przećwiczoną",
       "marked": "Już przećwiczona",
       "next": "Następna lekcja",
       "restart": "Wróć do pierwszej lekcji",
-      "library": "Wybierz następne ćwiczenie",
+      "library": "Twoja ścieżka nauki",
       "progress": "przećwiczonych lekcji",
-      "source": "Źródło i licencja",
-      "sourceText": "Français interactif · University of Texas at Austin / COERLL. Oryginalne nagrania z francuskim dźwiękiem. Dodano polskie objaśnienia i własne ćwiczenia.",
+      "source": "O tych lekcjach",
+      "sourceText": "Filmy Français avec Pierre są odtwarzane przez oficjalne odtwarzacze. Zachowano oznaczenie autora i oryginalne przyciski. Polska pomoc do nauki oraz zadania stanowią własne uzupełnienie.",
       "original": "Oryginalne źródło",
-      "license": "CC BY 3.0",
       "bookLink": "Otwórz moje książki",
       "play": "Odtwórz film",
-      "error": "Nie udało się wczytać filmu. Spróbuj ponownie.",
       "duration": "Oryginalny czas trwania",
-      "lessons": "krótkich filmów",
-      "ready": "Posłuchaj, a potem spróbuj powiedzieć to samodzielnie.",
-      "menu": "Otwórz lekcję wideo"
+      "lessons": "lekcje i wskazówki",
+      "menu": "Otwórz lekcję wideo",
+      "basics": "Lekcje podstawowe",
+      "tips": "Wskazówki i ćwiczenia",
+      "all": "Wszystkie",
+      "filterLabel": "Filtruj filmy",
+      "methodSteps": [
+        "Obejrzyj fragment i spróbuj zrozumieć główną myśl.",
+        "Zatrzymaj film i powtórz zdanie na głos.",
+        "Skorzystaj z pomocy i ułóż własny przykład."
+      ],
+      "playerHelp": "Użyj przycisków odtwarzacza, aby zatrzymać film i zmienić prędkość, jeśli ta opcja jest dostępna. Jeśli film się nie uruchamia, otwórz oryginalną lekcję.",
+      "teacher": "Nauczyciel i źródło",
+      "openOriginal": "Otwórz oryginalną lekcję"
     },
     "lessons": [
       {
-        "id": "introductions",
-        "title": "Powitanie i przedstawianie się",
-        "goal": "Zrozum krótkie pytania o imię, pochodzenie i zawód. Zacznij od prostego przedstawienia się Virginie.",
-        "task": "Przywitaj się i podaj swoje imię oraz miasto. Użyj Je m’appelle… i Je suis de… .",
-        "tip": "Vous to forma grzecznościowa. Zwróć uwagę, jak każde pytanie łączy się z odpowiedzią.",
+        "id": "hello",
+        "title": "Powitania i zwracanie się do innych",
+        "goal": "Poznaj pierwsze powitania dzięki przykładom i wyjaśnieniom dla początkujących.",
+        "task": "Odegraj dwa spotkania: z przyjacielem oraz z osobą, której nie znasz.",
+        "tip": "Najpierw przećwicz jedno powitanie, a potem dodaj pytanie. Nie musisz zapamiętywać całej lekcji naraz.",
         "phrases": [
           {
             "fr": "Bonjour.",
-            "translation": "Dzień dobry."
+            "translation": "Dzień dobry / Witam."
           },
           {
-            "fr": "Comment vous appelez-vous ?",
-            "translation": "Jak się Pan/Pani nazywa?"
+            "fr": "Bonsoir.",
+            "translation": "Dobry wieczór, na powitanie."
           },
           {
-            "fr": "Je m’appelle Virginie.",
-            "translation": "Nazywam się Virginie."
+            "fr": "Salut.",
+            "translation": "Cześć, w sytuacji nieformalnej."
           },
           {
-            "fr": "Je suis de Paris.",
-            "translation": "Jestem z Paryża."
-          },
-          {
-            "fr": "Je suis professeur.",
-            "translation": "Jestem nauczycielką."
+            "fr": "Au revoir.",
+            "translation": "Do widzenia."
           }
         ],
-        "duration": 17.05,
-        "videoUrl": "assets/videos/introductions.mp4",
-        "poster": "assets/videos/introductions.jpg",
-        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-01-interviews-les-fran%C3%A7ais-%C3%A0-austin-virginie-je-me-pr%C3%A9sente/"
+        "category": "basics",
+        "duration": 750,
+        "provider": "vimeo",
+        "embedUrl": "https://player.vimeo.com/video/673498337?h=f706355069",
+        "poster": "https://i.vimeocdn.com/video/1364839503-90bb80462efd30f53098657e5db75cc62656f8f41165e70ac3cee336493386a2-d_295x166?region=us",
+        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-1/",
+        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 1)"
       },
       {
-        "id": "spelling",
-        "title": "Literowanie nazwiska",
-        "goal": "Posłuchaj, jak Stéphanie literuje swoje nazwisko i mówi, skąd pochodzi.",
-        "task": "Zapisz swoje nazwisko i powoli przeliteruj je po francusku. Potem ponownie posłuchaj przykładu.",
-        "tip": "W filmie dwie litery L są wypowiadane jako deux L. W ten sposób można grupować powtarzające się litery.",
+        "id": "alphabet",
+        "title": "Alfabet i literowanie",
+        "goal": "Posłuchaj francuskich liter i przećwicz podawanie oraz literowanie imienia.",
+        "task": "Przeliteruj swoje imię i nazwisko. Zapisz trudne litery i posłuchaj ich ponownie.",
+        "tip": "Nie wymawiaj liter automatycznie po polsku. Najpierw posłuchaj wzoru, a potem powtórz.",
         "phrases": [
           {
-            "fr": "Pouvez-vous épeler … ?",
-            "translation": "Czy może Pan/Pani przeliterować …?"
+            "fr": "Comment ça s’écrit ?",
+            "translation": "Jak to się pisze?"
           },
           {
-            "fr": "Ça s’écrit P-E-L-L-E-T.",
-            "translation": "Pisze się P-E-L-L-E-T."
+            "fr": "Pouvez-vous épeler ?",
+            "translation": "Czy może Pan/Pani przeliterować?"
           },
           {
-            "fr": "Vous êtes d’où ?",
-            "translation": "Skąd Pan/Pani pochodzi?"
+            "fr": "Je m’appelle…",
+            "translation": "Nazywam się…"
           },
           {
-            "fr": "Je suis de Lyon.",
-            "translation": "Jestem z Lyonu."
+            "fr": "Mon prénom est…",
+            "translation": "Mam na imię…"
           }
         ],
-        "duration": 29.26,
-        "videoUrl": "assets/videos/spelling.mp4",
-        "poster": "assets/videos/spelling.jpg",
-        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-01-interviews-les-fran%C3%A7ais-%C3%A0-austin-st%C3%A9phanie-je-me-pr%C3%A9sente/"
+        "category": "basics",
+        "duration": 510,
+        "provider": "vimeo",
+        "embedUrl": "https://player.vimeo.com/video/673558969?h=7ccbcd527a",
+        "poster": "https://i.vimeocdn.com/video/1364961947-240080491efd1c95e0c405045143c23c23c66505e560b58903b538ff79382f30-d_295x166?region=us",
+        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-2/",
+        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 2)"
       },
       {
-        "id": "classroom",
-        "title": "Rozpoznawanie i nazywanie przedmiotów",
-        "goal": "Nauczycielka pokazuje prawdziwe przedmioty w sali. Połącz francuskie słowo bezpośrednio z tym, co widzisz.",
-        "task": "Wskaż trzy przedmioty wokół siebie i nazwij je z użyciem un albo une.",
-        "tip": "Ucz się rzeczownika razem z rodzajnikiem: un livre, ale une chaise.",
+        "id": "sounds",
+        "title": "Dźwięki języka francuskiego",
+        "goal": "Poznaj związek między dźwiękami a pisownią. Obserwuj usta nauczyciela i powtarzaj powoli.",
+        "task": "Przećwicz tu/tout oraz rue/roue. Nagraj się i sprawdź, czy wymawiasz dwa różne dźwięki.",
+        "tip": "Podczas jednej sesji ćwicz jedną parę dźwięków. Obserwuj ruch warg, zanim przyspieszysz.",
         "phrases": [
           {
-            "fr": "C’est une salle de classe.",
-            "translation": "To jest sala lekcyjna."
+            "fr": "tu / tout",
+            "translation": "ty / wszystko"
           },
           {
-            "fr": "un livre / un cahier",
-            "translation": "książka / zeszyt"
+            "fr": "rue / roue",
+            "translation": "ulica / koło"
           },
           {
-            "fr": "un stylo / un crayon",
-            "translation": "długopis / ołówek"
+            "fr": "le / les",
+            "translation": "rodzajnik w liczbie pojedynczej / mnogiej"
           },
           {
-            "fr": "une porte / une fenêtre",
-            "translation": "drzwi / okno"
-          },
-          {
-            "fr": "une chaise / un bureau",
-            "translation": "krzesło / biurko"
+            "fr": "bon / bonne",
+            "translation": "dobry, rodzaj męski / dobra, rodzaj żeński"
           }
         ],
-        "duration": 95.22999999999999,
-        "videoUrl": "assets/videos/classroom.mp4",
-        "poster": "assets/videos/classroom.jpg",
-        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-01-vocabulaire-en-contexte-la-salle-de-classe/"
+        "category": "basics",
+        "duration": 864,
+        "provider": "vimeo",
+        "embedUrl": "https://player.vimeo.com/video/673559796?h=9f6cdbfc18",
+        "poster": "https://i.vimeocdn.com/video/1364962474-b26017136cdf2c3364b34ffda4c662ec7f369ba8e2b5353e88e757fc34395712-d_295x166?region=us",
+        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-3/",
+        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 3)"
       },
       {
-        "id": "fruits",
-        "title": "Rozpoznawanie owoców na targu",
-        "goal": "Połącz francuskie nazwy owoców, które słyszysz, z prawdziwymi produktami na stoisku. Najpierw skup się na pojedynczych słowach.",
-        "task": "Wybierz trzy owoce i nazwij je po francusku. Potem zasłoń polskie znaczenia i powtórz słowa.",
-        "tip": "Zacznij od najczęstszych nazw. Za pierwszym razem nie musisz rozumieć każdego szczegółu nagrania.",
+        "id": "howareyou",
+        "title": "Pytanie o samopoczucie i odpowiedzi",
+        "goal": "Przećwicz proste pytania i odpowiedzi, od których można zacząć rozmowę.",
+        "task": "Przywitaj rozmówcę, zapytaj o samopoczucie, odpowiedz i odwzajemnij pytanie.",
+        "tip": "Ucz się pytania razem z odpowiedzią, aby móc odegrać całą krótką rozmowę.",
         "phrases": [
           {
-            "fr": "les bananes",
-            "translation": "banany"
+            "fr": "Comment ça va ?",
+            "translation": "Jak się masz?"
           },
           {
-            "fr": "les oranges",
-            "translation": "pomarańcze"
+            "fr": "Ça va bien, merci.",
+            "translation": "Mam się dobrze, dziękuję."
           },
           {
-            "fr": "les pommes",
-            "translation": "jabłka"
+            "fr": "Et vous ?",
+            "translation": "A Pan/Pani?"
           },
           {
-            "fr": "les pêches",
-            "translation": "brzoskwinie"
-          },
-          {
-            "fr": "les melons",
-            "translation": "melony"
+            "fr": "Pas mal, merci.",
+            "translation": "Nieźle, dziękuję."
           }
         ],
-        "duration": 24.11,
-        "videoUrl": "assets/videos/fruits.mp4",
-        "poster": "assets/videos/fruits.jpg",
-        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-05-vocabulaire-en-contexte-au-march%C3%A9-les-fruits/"
+        "category": "basics",
+        "duration": 602,
+        "provider": "vimeo",
+        "embedUrl": "https://player.vimeo.com/video/673559835?h=192d20965a",
+        "poster": "https://i.vimeocdn.com/video/1364963274-f31f4e784d5954c4b9eca43dc1f278fee1496c4ce3e752bb52bbcf72b8b4d29f-d_295x166?region=us",
+        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-5/",
+        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 5)"
       },
       {
-        "id": "vegetables",
-        "title": "Nazywanie warzyw",
-        "goal": "Rozpoznawaj codzienne warzywa, gdy sprzedawczyni pokazuje produkty.",
-        "task": "Przygotuj listę zakupów z trzema warzywami po francusku i przeczytaj ją na głos.",
-        "tip": "Zwróć uwagę na liczbę mnogą z les. Całe wyrażenie pommes de terre oznacza ziemniaki.",
+        "id": "introduce",
+        "title": "Przedstawianie się prostymi zdaniami",
+        "goal": "Naucz się podawać imię i tworzyć krótką wypowiedź o sobie.",
+        "task": "Przedstaw się w ciągu dwudziestu sekund: podaj imię, miasto i jeszcze jedną informację o sobie.",
+        "tip": "Zastąp dane z przykładu własnymi. Zacznij od dwóch zdań, a później dodaj trzecie.",
         "phrases": [
           {
-            "fr": "les carottes",
-            "translation": "marchewki"
+            "fr": "Je m’appelle…",
+            "translation": "Nazywam się…"
           },
           {
-            "fr": "les oignons",
-            "translation": "cebule"
+            "fr": "J’habite à…",
+            "translation": "Mieszkam w…"
           },
           {
-            "fr": "les pommes de terre",
-            "translation": "ziemniaki"
+            "fr": "Je suis…",
+            "translation": "Jestem…"
           },
           {
-            "fr": "les courgettes",
-            "translation": "cukinie"
-          },
-          {
-            "fr": "les tomates",
-            "translation": "pomidory"
+            "fr": "Enchanté(e).",
+            "translation": "Miło mi."
           }
         ],
-        "duration": 47.74,
-        "videoUrl": "assets/videos/vegetables.mp4",
-        "poster": "assets/videos/vegetables.jpg",
-        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-05-vocabulaire-en-contexte-au-march%C3%A9-les-l%C3%A9gumes/"
+        "category": "basics",
+        "duration": 684,
+        "provider": "vimeo",
+        "embedUrl": "https://player.vimeo.com/video/673562856?h=289d29f943",
+        "poster": "https://i.vimeocdn.com/video/1364968468-b7dfb7eacbfb8d9207c9217abee897529a47c88ed9c0528f0e31c5d3feec8a3d-d_295x166?region=us",
+        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-6/",
+        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 6)"
       },
       {
-        "id": "bakery",
-        "title": "Słownictwo w piekarni",
-        "goal": "Poznaj proste nazwy produktów w prawdziwej piekarni. Zwróć szczególną uwagę na baguette, croissant i pain au chocolat.",
-        "task": "Przećwicz uprzejmą prośbę: Je voudrais une baguette, s’il vous plaît. Potem zastąp baguette innym produktem.",
-        "tip": "Film przedstawia produkty. Następnie wykorzystaj słownictwo, aby ułożyć własne proste zamówienie.",
+        "id": "present",
+        "title": "Pierwsze zdania w czasie teraźniejszym",
+        "goal": "Rozpoznaj zaimki osobowe i zobacz, jak działa czas teraźniejszy w prostych zdaniach.",
+        "task": "Wybierz parler lub habiter. Ułóż zdanie z je i z tu, a następnie powiedz je bez czytania.",
+        "tip": "Ćwicz czasownik w krótkim zdaniu, aby od razu używać go w kontekście.",
         "phrases": [
           {
-            "fr": "une baguette",
-            "translation": "bagietka"
+            "fr": "Je parle français.",
+            "translation": "Mówię po francusku."
           },
           {
-            "fr": "un croissant",
-            "translation": "croissant"
+            "fr": "Tu habites ici.",
+            "translation": "Mieszkasz tutaj."
           },
           {
-            "fr": "un pain au chocolat",
-            "translation": "francuska bułeczka z czekoladą"
+            "fr": "Elle travaille.",
+            "translation": "Ona pracuje."
           },
           {
-            "fr": "du pain complet",
-            "translation": "chleb pełnoziarnisty"
-          },
-          {
-            "fr": "une boulangerie",
-            "translation": "piekarnia"
+            "fr": "Nous apprenons le français.",
+            "translation": "Uczymy się francuskiego."
           }
         ],
-        "duration": 118.02000000000001,
-        "videoUrl": "assets/videos/bakery.mp4",
-        "poster": "assets/videos/bakery.jpg",
-        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-05-vocabulaire-en-contexte-une-boulangerie-p%C3%A2tisserie/"
+        "category": "basics",
+        "duration": 901,
+        "provider": "vimeo",
+        "embedUrl": "https://player.vimeo.com/video/673562868?h=83de323bbc",
+        "poster": "https://i.vimeocdn.com/video/1364968740-660b59defd42009e4b37c821aa1bbca67103170e9e64b245ca97802f0f1b651c-d_295x166?region=us",
+        "sourceUrl": "https://www.francaisavecpierre.com/cours-debutants-lecon-7/",
+        "sourceTitle": "Cours de Français Gratuit pour Débutants (Leçon 7)"
+      },
+      {
+        "id": "mistakes",
+        "title": "Wskazówki: pięć błędów wymowy",
+        "goal": "Poznaj częste trudności związane z łączeniem słów, końcowymi literami i samogłoskami nosowymi.",
+        "task": "Wybierz jedną trudność z lekcji i przećwicz pięć przykładów, zanim przejdziesz dalej.",
+        "tip": "Jeśli przykład jest trudny, wróć do lekcji o dźwiękach. Na dziś wystarczy poprawić jeden konkretny element.",
+        "phrases": [
+          {
+            "fr": "les amis",
+            "translation": "przyjaciele"
+          },
+          {
+            "fr": "les enfants",
+            "translation": "dzieci"
+          },
+          {
+            "fr": "un bonbon",
+            "translation": "cukierek"
+          },
+          {
+            "fr": "parler",
+            "translation": "mówić"
+          }
+        ],
+        "category": "tips",
+        "duration": 698,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/gDwUE5lAGzw",
+        "poster": "https://i.ytimg.com/vi/gDwUE5lAGzw/maxresdefault.jpg",
+        "sourceUrl": "https://www.francaisavecpierre.com/5-erreurs-de-prononciation-a-eviter-en-francais/",
+        "sourceTitle": "Prononciation française : 5 erreurs à éviter 🤐 🇫🇷"
+      },
+      {
+        "id": "routine",
+        "title": "Wskazówki: zaplanuj codzienną praktykę",
+        "goal": "Dowiedz się, jak łączyć naukę słownictwa, słuchanie, wymowę i mówienie.",
+        "task": "Zaplanuj dziesięć minut: słuchaj, powtarzaj i użyj trzech wyrażeń we własnych zdaniach.",
+        "tip": "Ten film ze wskazówkami wymaga nieco lepszego rozumienia ze słuchu. Z pomocą opisu wybierz jedno konkretne ćwiczenie.",
+        "phrases": [
+          {
+            "fr": "Je comprends.",
+            "translation": "Rozumiem."
+          },
+          {
+            "fr": "Je ne comprends pas.",
+            "translation": "Nie rozumiem."
+          },
+          {
+            "fr": "Pouvez-vous répéter ?",
+            "translation": "Czy może Pan/Pani powtórzyć?"
+          },
+          {
+            "fr": "Plus lentement, s’il vous plaît.",
+            "translation": "Wolniej, proszę."
+          }
+        ],
+        "category": "tips",
+        "duration": 775,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/SacO9mFFnhk",
+        "poster": "https://i.ytimg.com/vi/SacO9mFFnhk/maxresdefault.jpg",
+        "sourceUrl": "https://www.francaisavecpierre.com/parler-francais-rapidement/",
+        "sourceTitle": "Comment Parler Français Rapidement 🚀"
+      },
+      {
+        "id": "repeat",
+        "title": "Słuchaj i powtarzaj w codziennych sytuacjach",
+        "goal": "Ćwicz wyrażenia z nagranym wzorem przydatne na przykład w restauracji lub hotelu.",
+        "task": "Wybierz jedną sytuację. Powtórz trzy zdania, a potem odegraj dialog z własnymi danymi.",
+        "tip": "Zatrzymuj film po każdym zdaniu. Najpierw powtórz rytm, a potem sprawdź znaczenie. Pracuj małymi partiami.",
+        "phrases": [
+          {
+            "fr": "Une table pour deux, s’il vous plaît.",
+            "translation": "Stolik dla dwóch osób, proszę."
+          },
+          {
+            "fr": "J’aimerais réserver une chambre.",
+            "translation": "Chciałbym/chciałabym zarezerwować pokój."
+          },
+          {
+            "fr": "J’ai une réservation.",
+            "translation": "Mam rezerwację."
+          },
+          {
+            "fr": "Est-ce que le petit déjeuner est inclus ?",
+            "translation": "Czy śniadanie jest wliczone w cenę?"
+          }
+        ],
+        "category": "tips",
+        "duration": 1050,
+        "provider": "youtube",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/zHrhNgGYgOY",
+        "poster": "https://i.ytimg.com/vi/zHrhNgGYgOY/maxresdefault.jpg",
+        "sourceUrl": "https://www.francaisavecpierre.com/ecoutez-et-repetez/",
+        "sourceTitle": "Écoutez et Répétez ces Phrases pour améliorer votre Expression Orale en Français !"
       }
     ]
   }

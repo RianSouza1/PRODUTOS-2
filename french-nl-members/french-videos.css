@@ -60,3 +60,26 @@
 @media(min-width:1024px){.bottom-tab-bar .tab-item{width:calc(100% - 2rem)}}
 @media(max-width:1100px){.french-study-layout{grid-template-columns:minmax(0,1fr)}.french-video-frame{max-width:560px;margin:0 auto}.french-method{padding:1rem}.french-method-icon{display:none}.french-learning-content{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:600px){.french-course-hero{padding:1.3rem}.french-feature-heading{padding:1.2rem}.french-feature-heading h2{font-size:1.35rem}.french-study-layout{padding:0 1rem}.french-learning-content{padding:1.2rem 1rem}.french-transcript,.french-source{margin-inline:1rem}.french-actions{padding:1rem}.french-actions button{flex:1;min-width:200px}.french-lesson-grid{grid-template-columns:minmax(0,1fr)}.french-lesson img{width:88px;height:66px}.french-facts{gap:.45rem}.french-player-tools{justify-content:space-between}}
+
+/* Guided lessons use the official source player without cropping its controls. */
+.french-video-frame{aspect-ratio:16/9;position:relative;max-width:none}
+.french-video-frame iframe{border:0;display:block;width:100%;height:100%;aspect-ratio:16/9;background:#090f17}
+.french-load-video{display:block;width:100%;height:100%;position:relative;border:0;background:#090f17;color:#fff;cursor:pointer;font:inherit;text-align:center}
+.french-load-video>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.french-load-video>span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:.65rem;background:linear-gradient(0deg,rgba(0,0,0,.5),rgba(0,0,0,.12));padding:1rem}
+.french-load-video svg{width:46px;height:46px;flex-shrink:0;border-radius:50%;background:rgba(20,28,40,.85);padding:10px;box-sizing:content-box}
+.french-load-video strong{font-size:1rem;background:rgba(20,28,40,.85);padding:.65rem 1rem;border-radius:10px;line-height:1.4}
+.french-load-video:hover>span{background:rgba(0,0,0,.3)}
+.french-course button:focus-visible,.french-course a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.french-player-tools a,.french-teacher a{color:var(--accent);line-height:1.6;text-underline-offset:3px}
+.french-player-tools{justify-content:space-between}
+.french-teacher{color:var(--text-muted);font-size:.78rem;line-height:1.6;margin-top:.7rem}
+.french-method ol{padding-left:1.2rem;color:var(--text-muted);font-size:.9rem;line-height:1.65}
+.french-method li+li{margin-top:.65rem}
+.french-guide-help{font-size:.78rem;line-height:1.6;color:var(--text-muted);margin-bottom:.8rem}
+.french-filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.1rem}
+.french-filters button{font:inherit;font-size:.85rem;border:1px solid var(--border-light);border-radius:30px;padding:.65rem 1rem;min-height:44px;background:var(--bg-card);color:var(--text-muted);cursor:pointer;line-height:1.5}
+.french-filters button[aria-pressed=true]{color:var(--accent);border-color:var(--accent);background:rgba(40,94,172,.14)}
+.french-filters button span{margin-left:.35rem;opacity:.85;font-size:.75rem}
+.french-lesson img{height:54px;object-fit:cover}
+@media(max-width:600px){.french-load-video strong{font-size:.82rem;padding:.5rem}.french-load-video svg{width:30px;height:30px;padding:8px}.french-lesson img{height:50px}.french-filters{gap:.45rem}.french-filters button{padding:.55rem .8rem}}

@@ -1,34 +1,30 @@
-# French beginner videos — source record
+# French learning: guided lessons and practical tips
 
-Educational selection for the German, Spanish, Italian, Dutch and Polish French-learning member areas. Six live-action recordings with original French speech. No animation or external platform player is used.
+Selection updated: 22 October 2026. Audio: original French.
+Six foundation lessons and three supplementary tips/practice videos.
+The previous University of Texas clips are no longer used by this course.
 
-## Author and permission
+## Source and playback
 
-Français interactif, University of Texas at Austin · Department of French and Italian / COERLL / LAITS. Copyright notice and **CC BY 3.0** link appear in the footer of the original source pages, including https://laits.utexas.edu/fi/map/ . The official help page permits educational use with a reference to the original site: https://laits.utexas.edu/fi/page/help-page/ .
+Teacher/source: Français avec Pierre. Every video uses the official Vimeo or YouTube embed discovered on the teacher’s public lesson page.
+Videos have not been downloaded, rehosted, cropped, or stripped of attribution. Original controls and identification are preserved.
+Do not apply the previous CC BY 3.0 attribution to these videos. No redistribution license is claimed.
+The page has a direct link to the official lesson beside every player as a fallback.
 
-License: https://creativecommons.org/licenses/by/3.0/
+## Learning support
 
-Original archives supplied by the publisher:
-- https://laits.utexas.edu/fi_media/zip/vid_01.zip
-- https://laits.utexas.edu/fi_media/zip/vid_05.zip
+Localized goals, practice prompts and bilingual phrase cards are our supplementary learning aids. They are not a transcript or full translated subtitles.
+Foundation lessons start from zero. Tips use more sustained French and are labeled separately.
+Durations below refer to complete source lessons, not shortened clips. A learner can work in small sections using pause/replay.
 
-## Selection
-
-| Lesson | Original file | Source page | Original duration |
+| Lesson | Source title | Duration | Official lesson |
 |---|---|---|---|
-| introductions | 01_int_vi_jemepres.mp4 | https://laits.utexas.edu/fi/fivideo/chapitre-01-interviews-les-fran%C3%A7ais-%C3%A0-austin-virginie-je-me-pr%C3%A9sente/ | 17.05 s |
-| spelling | 01_int_st_jemepres.mp4 | https://laits.utexas.edu/fi/fivideo/chapitre-01-interviews-les-fran%C3%A7ais-%C3%A0-austin-st%C3%A9phanie-je-me-pr%C3%A9sente/ | 29.26 s |
-| classroom | 01_voc_salle.mp4 | https://laits.utexas.edu/fi/fivideo/chapitre-01-vocabulaire-en-contexte-la-salle-de-classe/ | 95.23 s |
-| fruits | 05_voc_fruits.mp4 | https://laits.utexas.edu/fi/fivideo/chapitre-05-vocabulaire-en-contexte-au-march%C3%A9-les-fruits/ | 24.11 s |
-| vegetables | 05_voc_legumes.mp4 | https://laits.utexas.edu/fi/fivideo/chapitre-05-vocabulaire-en-contexte-au-march%C3%A9-les-l%C3%A9gumes/ | 47.74 s |
-| bakery | 05_voc_boul.mp4 | https://laits.utexas.edu/fi/fivideo/chapitre-05-vocabulaire-en-contexte-une-boulangerie-p%C3%A2tisserie/ | 118.02 s |
-
-## Editorial treatment
-
-- Original image and audio are retained without cuts, synthesis, noise replacement or baked-in translations. The MP4 container is remuxed for fast web playback; additional legacy data tracks are omitted and audio/video language metadata is set to French. Native recording resolution is retained (320 × 240); no HD claim or artificial upscaling is made.
-- Stills are taken from the recordings for lesson thumbnails.
-- Default playback is 0.75× with pitch preservation, with a 1× option. Playback starts only after user interaction. Full player audio, volume and fullscreen controls remain available.
-- Translated vocabulary, learning goals and original practice prompts are provided in the language of each member area. The vocabulary is supporting material, not a word-for-word transcript or translated subtitle track.
-- Automatic transcription was used during source review only. Unreliable automatic transcripts were rejected and are not published.
-- Video/source/licence credits remain accessible beneath each lesson. This reuse does not imply endorsement by the University or the recorded speakers.
-- The material is a short listening and vocabulary complement for beginners, not a complete or accredited A1 course.
+| hello | Cours de Français Gratuit pour Débutants (Leçon 1) | 12:30 | https://www.francaisavecpierre.com/cours-debutants-lecon-1/ |
+| alphabet | Cours de Français Gratuit pour Débutants (Leçon 2) | 8:30 | https://www.francaisavecpierre.com/cours-debutants-lecon-2/ |
+| sounds | Cours de Français Gratuit pour Débutants (Leçon 3) | 14:24 | https://www.francaisavecpierre.com/cours-debutants-lecon-3/ |
+| howareyou | Cours de Français Gratuit pour Débutants (Leçon 5) | 10:02 | https://www.francaisavecpierre.com/cours-debutants-lecon-5/ |
+| introduce | Cours de Français Gratuit pour Débutants (Leçon 6) | 11:24 | https://www.francaisavecpierre.com/cours-debutants-lecon-6/ |
+| present | Cours de Français Gratuit pour Débutants (Leçon 7) | 15:01 | https://www.francaisavecpierre.com/cours-debutants-lecon-7/ |
+| mistakes | Prononciation française : 5 erreurs à éviter 🤐 🇫🇷 | 11:38 | https://www.francaisavecpierre.com/5-erreurs-de-prononciation-a-eviter-en-francais/ |
+| routine | Comment Parler Français Rapidement 🚀 | 12:55 | https://www.francaisavecpierre.com/parler-francais-rapidement/ |
+| repeat | Écoutez et Répétez ces Phrases pour améliorer votre Expression Orale en Français ! | 17:30 | https://www.francaisavecpierre.com/ecoutez-et-repetez/ |
