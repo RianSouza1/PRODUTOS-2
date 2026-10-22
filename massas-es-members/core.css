@@ -1336,3 +1336,119 @@ a:focus-visible,button:focus-visible { outline:3px solid var(--accent); outline-
  .main-content { padding-bottom:3rem; }
 }
 @media (max-height:680px) { .pre-page-overlay { align-items:flex-start; } .pre-page-content { padding:1rem; } .pre-page-icon { font-size:3rem; margin-bottom:1rem; } }
+
+/* Short, silent pasta demonstrations. */
+.pasta-video-page { padding-bottom:1rem; }
+.pasta-video-hero { padding:1.6rem; margin-bottom:1.4rem; }
+.pasta-video-hero .hero-text h1 { font-size:clamp(1.65rem,3vw,2.3rem); margin:.4rem 0 .6rem; }
+.pasta-video-hero .hero-text p { font-size:.95rem; }
+.pasta-kicker { color:var(--accent)!important; font-size:.7rem!important; letter-spacing:.13em; font-weight:700; }
+.pasta-facts { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
+.pasta-facts span { padding:.4rem .65rem; border:1px solid var(--border-light); border-radius:100px; font-size:.75rem; color:var(--text-dark); background:rgba(0,0,0,.16); }
+.pasta-feature { border:1px solid var(--border-light); border-radius:20px; background:var(--bg-card); overflow:hidden; }
+.pasta-lesson-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; padding:1.5rem; }
+.pasta-category { font-size:.72rem; font-weight:600; color:var(--accent); margin-bottom:.45rem; }
+.pasta-lesson-heading h2 { font-size:clamp(1.3rem,2.4vw,1.7rem); line-height:1.3; margin-bottom:.55rem; }
+.pasta-lesson-heading > div > p:last-child { font-size:.9rem; color:var(--text-muted); line-height:1.6; }
+.pasta-duration { flex-shrink:0; padding:.4rem .65rem; border:1px solid var(--border-light); border-radius:100px; font-size:.8rem; color:var(--accent); white-space:nowrap; }
+.pasta-player { background:#0c100d; }
+.pasta-frame { position:relative; width:100%; aspect-ratio:16/9; background:#080b09; overflow:hidden; }
+.pasta-media { width:100%; height:100%; display:block; object-fit:contain; }
+.pasta-big-play { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); display:flex; align-items:center; gap:.7rem; padding:1rem 1.25rem; border:1px solid rgba(255,255,255,.35); border-radius:100px; background:rgba(20,26,21,.9); color:#fff; box-shadow:0 6px 35px rgba(0,0,0,.28); cursor:pointer; font:600 1rem var(--font-family); white-space:nowrap; }
+.pasta-big-play svg { width:22px; height:22px; fill:currentColor; }
+.pasta-silent-tag { position:absolute; top:.8rem; right:.8rem; color:#fff; background:rgba(0,0,0,.65); border:1px solid rgba(255,255,255,.15); border-radius:100px; font-size:.6rem; font-weight:700; letter-spacing:.08em; padding:.3rem .55rem; pointer-events:none; }
+.pasta-transport { padding:.85rem 1rem; border-top:1px solid var(--border-light); }
+.pasta-seek-row { display:flex; align-items:center; gap:.6rem; color:var(--text-muted); font-variant-numeric:tabular-nums; font-size:.75rem; }
+.pasta-seek-row input { flex:1; min-width:0; cursor:pointer; accent-color:var(--accent); height:24px; }
+.pasta-seek-row input:disabled { opacity:.5; cursor:default; }
+.pasta-control-row { display:flex; align-items:center; flex-wrap:wrap; gap:.45rem; margin-top:.55rem; }
+.pasta-control-row button,.pasta-speed { min-height:44px; display:flex; align-items:center; justify-content:center; gap:.45rem; padding:.5rem .7rem; border:1px solid var(--border-light); border-radius:10px; color:var(--text-dark); background:transparent; font:500 .8rem var(--font-family); }
+.pasta-control-row button { cursor:pointer; }
+.pasta-control-row button svg { width:17px; height:17px; }
+.pasta-control-row .pasta-play-toggle { background:var(--primary); border-color:var(--primary); color:#fff; }
+.pasta-speed { margin-left:auto; }
+.pasta-speed select { cursor:pointer; padding:.2rem; border:0; background:#222c24; color:var(--text-dark); font:inherit; }
+.pasta-play-status { font-size:.78rem; line-height:1.5; color:var(--text-muted); padding:.75rem 1.5rem; min-height:3rem; border-bottom:1px solid var(--border-light); }
+.pasta-guidance { padding:1.5rem; }
+.pasta-guidance h3 { font-size:1rem; margin-bottom:1rem; }
+.pasta-guidance ol { list-style:none; counter-reset:pasta-step; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; }
+.pasta-guidance li { counter-increment:pasta-step; font-size:.83rem; line-height:1.65; padding:.85rem; background:rgba(0,0,0,.12); border:1px solid var(--border-light); border-radius:12px; }
+.pasta-guidance li::before { content:counter(pasta-step); width:25px; height:25px; display:flex; align-items:center; justify-content:center; border-radius:50%; margin-bottom:.6rem; color:var(--accent); background:rgba(228,196,123,.1); font-weight:700; font-size:.75rem; }
+.pasta-tip { color:var(--text-muted); font-size:.85rem; line-height:1.65; margin-top:1rem; padding:.8rem 1rem; border-left:2px solid var(--accent); }
+.pasta-tip strong { color:var(--accent); display:block; margin-bottom:.25rem; font-size:.75rem; }
+.pasta-practice-row { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.75rem; margin-top:1.25rem; }
+.pasta-practice-row button { display:flex; align-items:center; justify-content:center; gap:.5rem; padding:.7rem .85rem; min-height:44px; border:1px solid var(--border-light); border-radius:10px; color:var(--text-dark); background:transparent; cursor:pointer; font:600 .8rem var(--font-family); }
+.pasta-practice-row svg { width:17px; height:17px; flex-shrink:0; }
+.pasta-mark-practice[aria-pressed="true"] { color:var(--accent); background:rgba(228,196,123,.1); border-color:var(--accent); }
+.pasta-practice-row .pasta-next { background:var(--primary); border-color:var(--primary); color:#fff; }
+.pasta-library { margin-top:2rem; }
+.pasta-library-heading { display:flex; align-items:flex-end; flex-wrap:wrap; justify-content:space-between; gap:.75rem; margin-bottom:1rem; }
+.pasta-library-heading h2 { font-size:1.35rem; margin-top:.4rem; }
+.pasta-practice-count { font-size:.75rem; color:var(--accent); }
+.pasta-lessons { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem; }
+.pasta-lesson-card { display:grid; grid-template-columns:80px minmax(0,1fr) 14px; gap:.8rem; align-items:center; width:100%; text-align:left; padding:.7rem; border:1px solid var(--border-light); border-radius:14px; background:var(--bg-card); color:var(--text-dark); cursor:pointer; font-family:var(--font-family); }
+.pasta-lesson-card img { width:80px; height:80px; object-fit:cover; border-radius:9px; background:#0c100d; }
+.pasta-lesson-card > svg { width:14px; height:14px; color:var(--accent); }
+.pasta-card-copy { display:flex; flex-direction:column; gap:.25rem; min-width:0; }
+.pasta-card-category { font-size:.6rem; color:var(--text-muted); line-height:1.5; }
+.pasta-card-copy strong { font-size:.8rem; line-height:1.4; font-weight:600; }
+.pasta-card-meta { font-size:.65rem; color:var(--accent); margin-top:.1rem; }
+.pasta-lesson-card.is-current { border-color:var(--accent); background:rgba(228,196,123,.08); }
+.pasta-lesson-card:hover { border-color:var(--accent); }
+.pasta-video-page button:focus-visible,.pasta-video-page input:focus-visible,.pasta-video-page select:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+.pasta-player:fullscreen { width:100vw; height:100vh; display:flex; flex-direction:column; justify-content:center; }
+.pasta-player:fullscreen .pasta-frame { flex:1; min-height:0; aspect-ratio:auto; }
+.pasta-player:fullscreen .pasta-transport { flex-shrink:0; }
+.tab-item { width:33.333%; }
+.pasta-preparation { margin:0; padding:0 1.5rem 1.2rem; color:var(--text-muted); font-size:.85rem; line-height:1.6; }
+.pasta-preparation strong { display:block; color:var(--accent); margin-bottom:.2rem; }
+.pasta-ingredients { margin:0 1.5rem 1.25rem; border:1px solid var(--border-light); border-radius:12px; padding:.8rem 1rem; color:var(--text-muted); font-size:.85rem; line-height:1.65; }
+.pasta-ingredients summary { cursor:pointer; color:var(--accent); font-weight:600; min-height:30px; }
+.pasta-ingredients p { margin-top:.75rem; }
+.pasta-ingredients ul { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:1.5rem; row-gap:.4rem; margin:.8rem 0 .8rem 1.1rem; }
+.pasta-recipe-time { border-top:1px solid var(--border-light); padding-top:.75rem; color:var(--text-dark); }
+.pasta-caption { padding:1rem 1.25rem; border-top:2px solid var(--accent); background:#152219; min-height:100px; }
+.pasta-caption > span { display:block; color:var(--accent); font-size:.7rem; font-weight:700; letter-spacing:.03em; margin-bottom:.35rem; }
+.pasta-caption p { color:#fff8ed; font-size:1rem; line-height:1.6; margin:0; max-width:75ch; }
+.pasta-chapter-hint { color:var(--text-muted); font-size:.8rem; line-height:1.5; margin:-.4rem 0 1rem; }
+.pasta-guidance li { padding:0; border:0; background:none; }
+.pasta-guidance li::before { display:none; }
+.pasta-guidance li button { width:100%; height:100%; padding:1rem; text-align:left; color:var(--text-muted); background:rgba(0,0,0,.12); border:1px solid var(--border-light); border-radius:12px; cursor:pointer; font:inherit; line-height:1.65; }
+.pasta-guidance li button[aria-current="step"] { background:rgba(228,196,123,.08); border-color:var(--accent); }
+.pasta-chapter-heading { display:flex; flex-wrap:wrap; justify-content:space-between; gap:.5rem; color:var(--text-dark); font-weight:600; margin-bottom:.55rem; }
+.pasta-chapter-heading > span { color:var(--accent); font-variant-numeric:tabular-nums; font-size:.75rem; }
+.pasta-result { margin-top:1.25rem; padding:1rem; border-radius:12px; background:#183c28; color:#e3f3e5; font-size:.87rem; line-height:1.65; }
+.pasta-result strong { display:block; color:#a9dfb7; margin-bottom:.25rem; }
+.pasta-source { margin-top:1.25rem; font-size:.75rem; color:var(--text-muted); line-height:1.7; }
+.pasta-source summary { cursor:pointer; padding:.5rem 0; }
+.pasta-source p { margin-top:.4rem; }
+.pasta-source a { color:var(--accent); text-decoration:underline; }
+.pasta-player:fullscreen .pasta-caption { flex-shrink:0; min-height:0; }
+@media (min-width:1024px) { .tab-item { width:calc(100% - 2rem); } }
+@media (max-width:600px) {
+ .pasta-video-hero { padding:1.2rem; }
+ .pasta-lesson-heading,.pasta-guidance { padding:1.15rem; }
+ .pasta-preparation { padding:0 1.15rem 1.1rem; }
+ .pasta-ingredients { margin:0 1.15rem 1.1rem; }
+ .pasta-ingredients ul { grid-template-columns:1fr; }
+ .pasta-caption { padding:.8rem 1rem; }
+ .pasta-caption p { font-size:.87rem; }
+ .pasta-lesson-heading { gap:.5rem; }
+ .pasta-duration { padding:.35rem .5rem; }
+ .pasta-guidance ol,.pasta-lessons { grid-template-columns:1fr; }
+ .pasta-guidance li { display:flex; align-items:flex-start; gap:.7rem; }
+ .pasta-guidance li::before { flex-shrink:0; margin:0; }
+ .pasta-control-row button,.pasta-speed { font-size:.72rem; padding:.5rem; }
+ .pasta-fullscreen span { display:none; }
+ .pasta-play-status { padding:.75rem 1.15rem; }
+ .pasta-practice-row { align-items:stretch; }
+ .pasta-practice-row button { flex:1; }
+ .tab-item span { font-size:.72rem; }
+}
+
+.pasta-player { background:#16130f; }
+.pasta-big-play { background:rgba(22,19,15,.94); }
+.pasta-caption { background:#2c241a; }
+.pasta-book-link { margin-top:1.25rem; color:var(--text-muted); font-size:.85rem; line-height:1.7; }
+.pasta-book-link a { display:block; color:var(--accent); text-decoration:underline; }
+.pasta-source p { overflow-wrap:anywhere; }
