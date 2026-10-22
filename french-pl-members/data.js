@@ -5,7 +5,8 @@ const APP_DATA = {
     "contactEmail": "trinityag01@gmail.com",
     "coverImage": "assets/covers/french_IMG1_pl.png",
     "booksRoute": "ksiazki",
-    "supportRoute": "pomoc"
+    "supportRoute": "pomoc",
+    "videosRoute": "videos"
   },
   "labels": {
     "brand": "Francuski od zera",
@@ -65,7 +66,9 @@ const APP_DATA = {
         "Czasowniki zwrotne i naturalne łączniki",
         "Wzorce do wielokrotnego użycia w spójnych wypowiedziach"
       ]
-    ]
+    ],
+    "videos": "Wideo",
+    "videosSubtitle": "Słuchaj francuskiego i ćwicz pierwsze zdania"
   },
   "books": [
     {
@@ -116,5 +119,240 @@ const APP_DATA = {
       "downloadUrl": "materials/FRANCES-3-PL.pdf",
       "coverImage": "assets/covers/french_IMG1_pl.png"
     }
-  ]
+  ],
+  "videoCourse": {
+    "ui": {
+      "nav": "Wideo",
+      "subtitle": "Słuchaj francuskiego i ćwicz pierwsze zdania",
+      "title": "Twoje pierwsze kroki po francusku",
+      "intro": "Słuchaj krótkich rozmów, obserwuj mówiące osoby i ćwicz na głos. Każdemu nagraniu towarzyszą polskie objaśnienia i francuskie zwroty.",
+      "kicker": "SŁUCHAJ · ROZUMIEJ · MÓW",
+      "lesson": "Lekcja",
+      "audio": "Oryginalny dźwięk po francusku",
+      "beginner": "Na dobry początek",
+      "phrases": "Słowa i zdania do ćwiczenia",
+      "practice": "Teraz Twoja kolej",
+      "method": "Jak ćwiczyć",
+      "methodText": "Najpierw posłuchaj. Potem przeczytaj objaśnienia i powtórz na głos. Zacznij od 0,75×, a później przejdź do 1×.",
+      "speed": "Prędkość",
+      "slow": "Wolno",
+      "normal": "Oryginał",
+      "replay": "Słuchaj od początku",
+      "transcript": "Transkrypcja po francusku",
+      "captions": "Pod filmem znajdziesz francuskie zwroty wraz z ich polskim znaczeniem.",
+      "mark": "Oznacz jako przećwiczoną",
+      "marked": "Już przećwiczona",
+      "next": "Następna lekcja",
+      "restart": "Wróć do pierwszej lekcji",
+      "library": "Wybierz następne ćwiczenie",
+      "progress": "przećwiczonych lekcji",
+      "source": "Źródło i licencja",
+      "sourceText": "Français interactif · University of Texas at Austin / COERLL. Oryginalne nagrania z francuskim dźwiękiem. Dodano polskie objaśnienia i własne ćwiczenia.",
+      "original": "Oryginalne źródło",
+      "license": "CC BY 3.0",
+      "bookLink": "Otwórz moje książki",
+      "play": "Odtwórz film",
+      "error": "Nie udało się wczytać filmu. Spróbuj ponownie.",
+      "duration": "Oryginalny czas trwania",
+      "lessons": "krótkich filmów",
+      "ready": "Posłuchaj, a potem spróbuj powiedzieć to samodzielnie.",
+      "menu": "Otwórz lekcję wideo"
+    },
+    "lessons": [
+      {
+        "id": "introductions",
+        "title": "Powitanie i przedstawianie się",
+        "goal": "Zrozum krótkie pytania o imię, pochodzenie i zawód. Zacznij od prostego przedstawienia się Virginie.",
+        "task": "Przywitaj się i podaj swoje imię oraz miasto. Użyj Je m’appelle… i Je suis de… .",
+        "tip": "Vous to forma grzecznościowa. Zwróć uwagę, jak każde pytanie łączy się z odpowiedzią.",
+        "phrases": [
+          {
+            "fr": "Bonjour.",
+            "translation": "Dzień dobry."
+          },
+          {
+            "fr": "Comment vous appelez-vous ?",
+            "translation": "Jak się Pan/Pani nazywa?"
+          },
+          {
+            "fr": "Je m’appelle Virginie.",
+            "translation": "Nazywam się Virginie."
+          },
+          {
+            "fr": "Je suis de Paris.",
+            "translation": "Jestem z Paryża."
+          },
+          {
+            "fr": "Je suis professeur.",
+            "translation": "Jestem nauczycielką."
+          }
+        ],
+        "duration": 17.05,
+        "videoUrl": "assets/videos/introductions.mp4",
+        "poster": "assets/videos/introductions.jpg",
+        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-01-interviews-les-fran%C3%A7ais-%C3%A0-austin-virginie-je-me-pr%C3%A9sente/"
+      },
+      {
+        "id": "spelling",
+        "title": "Literowanie nazwiska",
+        "goal": "Posłuchaj, jak Stéphanie literuje swoje nazwisko i mówi, skąd pochodzi.",
+        "task": "Zapisz swoje nazwisko i powoli przeliteruj je po francusku. Potem ponownie posłuchaj przykładu.",
+        "tip": "W filmie dwie litery L są wypowiadane jako deux L. W ten sposób można grupować powtarzające się litery.",
+        "phrases": [
+          {
+            "fr": "Pouvez-vous épeler … ?",
+            "translation": "Czy może Pan/Pani przeliterować …?"
+          },
+          {
+            "fr": "Ça s’écrit P-E-L-L-E-T.",
+            "translation": "Pisze się P-E-L-L-E-T."
+          },
+          {
+            "fr": "Vous êtes d’où ?",
+            "translation": "Skąd Pan/Pani pochodzi?"
+          },
+          {
+            "fr": "Je suis de Lyon.",
+            "translation": "Jestem z Lyonu."
+          }
+        ],
+        "duration": 29.26,
+        "videoUrl": "assets/videos/spelling.mp4",
+        "poster": "assets/videos/spelling.jpg",
+        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-01-interviews-les-fran%C3%A7ais-%C3%A0-austin-st%C3%A9phanie-je-me-pr%C3%A9sente/"
+      },
+      {
+        "id": "classroom",
+        "title": "Rozpoznawanie i nazywanie przedmiotów",
+        "goal": "Nauczycielka pokazuje prawdziwe przedmioty w sali. Połącz francuskie słowo bezpośrednio z tym, co widzisz.",
+        "task": "Wskaż trzy przedmioty wokół siebie i nazwij je z użyciem un albo une.",
+        "tip": "Ucz się rzeczownika razem z rodzajnikiem: un livre, ale une chaise.",
+        "phrases": [
+          {
+            "fr": "C’est une salle de classe.",
+            "translation": "To jest sala lekcyjna."
+          },
+          {
+            "fr": "un livre / un cahier",
+            "translation": "książka / zeszyt"
+          },
+          {
+            "fr": "un stylo / un crayon",
+            "translation": "długopis / ołówek"
+          },
+          {
+            "fr": "une porte / une fenêtre",
+            "translation": "drzwi / okno"
+          },
+          {
+            "fr": "une chaise / un bureau",
+            "translation": "krzesło / biurko"
+          }
+        ],
+        "duration": 95.22999999999999,
+        "videoUrl": "assets/videos/classroom.mp4",
+        "poster": "assets/videos/classroom.jpg",
+        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-01-vocabulaire-en-contexte-la-salle-de-classe/"
+      },
+      {
+        "id": "fruits",
+        "title": "Rozpoznawanie owoców na targu",
+        "goal": "Połącz francuskie nazwy owoców, które słyszysz, z prawdziwymi produktami na stoisku. Najpierw skup się na pojedynczych słowach.",
+        "task": "Wybierz trzy owoce i nazwij je po francusku. Potem zasłoń polskie znaczenia i powtórz słowa.",
+        "tip": "Zacznij od najczęstszych nazw. Za pierwszym razem nie musisz rozumieć każdego szczegółu nagrania.",
+        "phrases": [
+          {
+            "fr": "les bananes",
+            "translation": "banany"
+          },
+          {
+            "fr": "les oranges",
+            "translation": "pomarańcze"
+          },
+          {
+            "fr": "les pommes",
+            "translation": "jabłka"
+          },
+          {
+            "fr": "les pêches",
+            "translation": "brzoskwinie"
+          },
+          {
+            "fr": "les melons",
+            "translation": "melony"
+          }
+        ],
+        "duration": 24.11,
+        "videoUrl": "assets/videos/fruits.mp4",
+        "poster": "assets/videos/fruits.jpg",
+        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-05-vocabulaire-en-contexte-au-march%C3%A9-les-fruits/"
+      },
+      {
+        "id": "vegetables",
+        "title": "Nazywanie warzyw",
+        "goal": "Rozpoznawaj codzienne warzywa, gdy sprzedawczyni pokazuje produkty.",
+        "task": "Przygotuj listę zakupów z trzema warzywami po francusku i przeczytaj ją na głos.",
+        "tip": "Zwróć uwagę na liczbę mnogą z les. Całe wyrażenie pommes de terre oznacza ziemniaki.",
+        "phrases": [
+          {
+            "fr": "les carottes",
+            "translation": "marchewki"
+          },
+          {
+            "fr": "les oignons",
+            "translation": "cebule"
+          },
+          {
+            "fr": "les pommes de terre",
+            "translation": "ziemniaki"
+          },
+          {
+            "fr": "les courgettes",
+            "translation": "cukinie"
+          },
+          {
+            "fr": "les tomates",
+            "translation": "pomidory"
+          }
+        ],
+        "duration": 47.74,
+        "videoUrl": "assets/videos/vegetables.mp4",
+        "poster": "assets/videos/vegetables.jpg",
+        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-05-vocabulaire-en-contexte-au-march%C3%A9-les-l%C3%A9gumes/"
+      },
+      {
+        "id": "bakery",
+        "title": "Słownictwo w piekarni",
+        "goal": "Poznaj proste nazwy produktów w prawdziwej piekarni. Zwróć szczególną uwagę na baguette, croissant i pain au chocolat.",
+        "task": "Przećwicz uprzejmą prośbę: Je voudrais une baguette, s’il vous plaît. Potem zastąp baguette innym produktem.",
+        "tip": "Film przedstawia produkty. Następnie wykorzystaj słownictwo, aby ułożyć własne proste zamówienie.",
+        "phrases": [
+          {
+            "fr": "une baguette",
+            "translation": "bagietka"
+          },
+          {
+            "fr": "un croissant",
+            "translation": "croissant"
+          },
+          {
+            "fr": "un pain au chocolat",
+            "translation": "francuska bułeczka z czekoladą"
+          },
+          {
+            "fr": "du pain complet",
+            "translation": "chleb pełnoziarnisty"
+          },
+          {
+            "fr": "une boulangerie",
+            "translation": "piekarnia"
+          }
+        ],
+        "duration": 118.02000000000001,
+        "videoUrl": "assets/videos/bakery.mp4",
+        "poster": "assets/videos/bakery.jpg",
+        "sourceUrl": "https://laits.utexas.edu/fi/fivideo/chapitre-05-vocabulaire-en-contexte-une-boulangerie-p%C3%A2tisserie/"
+      }
+    ]
+  }
 };

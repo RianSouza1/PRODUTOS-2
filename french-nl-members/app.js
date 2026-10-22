@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const escape = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const text = key => escape(labels[key]);
   const paths = {
+    'play-circle':'<circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/>',
     'book-open':'<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
     'message-square':'<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
     'check-square':'<path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>',
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderHome() {
     return `<div class="page-view">${hero(text('welcome'), text('homeIntro'))}<div class="home-grid">
       <a href="#${config.booksRoute}" class="home-block glass-panel"><div class="home-block-icon">${icon('book-open')}</div><div><div class="home-block-title">${text('books')}</div><div class="home-block-subtitle">${text('booksSubtitle')}</div></div></a>
+      <a href="#videos" class="home-block glass-panel"><div class="home-block-icon">${icon('play-circle')}</div><div><div class="home-block-title">${text('videos')}</div><div class="home-block-subtitle">${text('videosSubtitle')}</div></div></a>
       <a href="#${config.supportRoute}" class="home-block glass-panel"><div class="home-block-icon">${icon('message-square')}</div><div><div class="home-block-title">${text('support')}</div><div class="home-block-subtitle">${text('supportSubtitle')}</div></div></a>
     </div></div>`;
   }
@@ -57,11 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
     try { hash = decodeURIComponent(window.location.hash.slice(1)); } catch { hash = ''; }
     const isBooks = hash === config.booksRoute || hash === 'books';
     const isSupport = hash === config.supportRoute || hash === 'support';
-    if (isBooks || isSupport) overlay.hidden = true;
-    root.innerHTML = isBooks ? renderBooks() : isSupport ? renderSupport() : renderHome();
+    const isVideos = hash === config.videosRoute;
+    window.FRENCH_VIDEOS?.pause();
+    if (isBooks || isSupport || isVideos) overlay.hidden = true;
+    if (isVideos) window.FRENCH_VIDEOS.render(root);
+    else root.innerHTML = isBooks ? renderBooks() : isSupport ? renderSupport() : renderHome();
     root.insertAdjacentHTML('beforeend', `<footer class="app-footer">&copy; 2026 ${escape(config.brandName)}. ${text('rights')}</footer>`);
-    nav.classList.toggle('hidden-on-home', !isBooks && !isSupport);
-    const route = isBooks ? config.booksRoute : isSupport ? config.supportRoute : '';
+    nav.classList.toggle('hidden-on-home', !isBooks && !isSupport && !isVideos);
+    const route = isBooks ? config.booksRoute : isSupport ? config.supportRoute : isVideos ? config.videosRoute : '';
     nav.querySelectorAll('.tab-item').forEach(tab => {
       const active = tab.getAttribute('href') === `#${route}`;
       tab.classList.toggle('active', active);
