@@ -49,10 +49,12 @@ const APP_DATA = {
         "Conseils sur les formes, la texture et la finition",
         "Ingrédients et préparation étape par étape"
       ],
-      "badgeText": "Livre 1 · 191 pages",
+      "badgeText": "Livre 1 / 3",
       "badgeColor": "#a92b2e",
       "downloadUrl": "materials/PASTA-1-FR.pdf",
-      "coverImage": "assets/covers/massas_IMG1_fr.png"
+      "coverImage": "assets/covers/massas_IMG1_fr.png",
+      "pageCount": 191,
+      "fileSizeLabel": "5,7 MB"
     },
     {
       "id": "b2",
@@ -63,10 +65,12 @@ const APP_DATA = {
         "Variantes à la tomate, à la crème, au fromage et au pesto",
         "Conseils pour les associations et l’assaisonnement"
       ],
-      "badgeText": "Livre 2 · 163 pages",
+      "badgeText": "Livre 2 / 3",
       "badgeColor": "#597042",
       "downloadUrl": "materials/PASTA-2-FR.pdf",
-      "coverImage": "assets/covers/massas_IMG1_fr.png"
+      "coverImage": "assets/covers/massas_IMG1_fr.png",
+      "pageCount": 163,
+      "fileSizeLabel": "5,7 MB"
     },
     {
       "id": "b3",
@@ -77,10 +81,12 @@ const APP_DATA = {
         "Montage des couches, temps et températures",
         "Conseils de préparation à l’avance et de conservation"
       ],
-      "badgeText": "Livre 3 · 162 pages",
+      "badgeText": "Livre 3 / 3",
       "badgeColor": "#9b7527",
       "downloadUrl": "materials/PASTA-3-FR.pdf",
-      "coverImage": "assets/covers/massas_IMG1_fr.png"
+      "coverImage": "assets/covers/massas_IMG1_fr.png",
+      "pageCount": 162,
+      "fileSizeLabel": "5,5 MB"
     }
   ]
 };

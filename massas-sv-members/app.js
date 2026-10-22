@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function renderBooks() {
     const cards = books.map(book => `<article class="premium-book-card">
-      <div class="premium-badge-wrapper"><span class="premium-badge" style="background-color:${book.badgeColor}">${escape(book.badgeText)}</span><span class="premium-format">${text('format')}</span></div>
+      <div class="premium-badge-wrapper"><span class="premium-badge" style="background-color:${book.badgeColor}">${escape(book.badgeText)}</span><span class="premium-format">PDF · ${book.pageCount} ${text('pagesUnit')} · ${escape(book.fileSizeLabel)}</span></div>
       <div class="premium-info"><h2 class="premium-title">${escape(book.title)}</h2><p class="premium-desc">${escape(book.description)}</p>
         <ul class="premium-checklist">${book.features.map(feature => `<li>${icon('check-square')}<span>${escape(feature)}</span></li>`).join('')}</ul>
         <div class="book-actions"><a href="${book.downloadUrl}" target="_blank" rel="noopener" class="premium-btn">${icon('book-open')}${text('read')}</a>
@@ -52,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
     </div></div>`;
   }
   function render() {
-    const hash = decodeURIComponent(window.location.hash.slice(1));
+    let hash = '';
+    try { hash = decodeURIComponent(window.location.hash.slice(1)); } catch { hash = ''; }
     const isBooks = hash === config.booksRoute || hash === 'books';
     const isSupport = hash === config.supportRoute || hash === 'support';
     if (isBooks || isSupport) overlay.hidden = true;

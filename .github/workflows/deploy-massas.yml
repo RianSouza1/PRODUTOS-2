@@ -12,6 +12,11 @@ on:
       - 'massas-it-members/**'
       - 'massas-pl-members/**'
       - 'massas-sv-members/**'
+      - 'massas-da-members/**'
+      - 'massas-es-members/**'
+      - 'massas-fi-members/**'
+      - 'massas-no-members/**'
+      - 'massas-cs-members/**'
   workflow_dispatch:
 
 permissions:
@@ -25,7 +30,7 @@ jobs:
   publish:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04-arm
-    timeout-minutes: 15
+    timeout-minutes: 25
     env:
       GIT_LFS_SKIP_SMUDGE: '1'
     steps:
@@ -41,13 +46,18 @@ jobs:
             massas-it-members
             massas-pl-members
             massas-sv-members
+            massas-da-members
+            massas-es-members
+            massas-fi-members
+            massas-no-members
+            massas-cs-members
 
       - name: Select member areas to publish
         id: areas
         shell: bash
         run: |
           set -euo pipefail
-          all_sources='massas-de-members massas-fr-members massas-nl-members massas-it-members massas-pl-members massas-sv-members'
+          all_sources='massas-de-members massas-fr-members massas-nl-members massas-it-members massas-pl-members massas-sv-members massas-da-members massas-es-members massas-fi-members massas-no-members massas-cs-members'
           before='${{ github.event.before }}'
           sources=''
           if [ '${{ github.event_name }}' = 'push' ] && [ -n "$before" ] && [[ ! "$before" =~ ^0+$ ]]; then
@@ -66,7 +76,7 @@ jobs:
 
       - name: Download the original PDF files
         shell: bash
-        timeout-minutes: 10
+        timeout-minutes: 15
         env:
           SOURCES: ${{ steps.areas.outputs.sources }}
         run: |
@@ -117,6 +127,11 @@ jobs:
               massas-it-members) destination='/var/www/skillvault.blog/massas-it-m' ;;
               massas-pl-members) destination='/var/www/skillvault.blog/massas-pl-m' ;;
               massas-sv-members) destination='/var/www/skillvault.blog/massas-sv-m' ;;
+              massas-da-members) destination='/var/www/skillvault.blog/massas-da-m' ;;
+              massas-es-members) destination='/var/www/skillvault.blog/massas-es-m' ;;
+              massas-fi-members) destination='/var/www/skillvault.blog/massas-fi-m' ;;
+              massas-no-members) destination='/var/www/skillvault.blog/massas-no-m' ;;
+              massas-cs-members) destination='/var/www/skillvault.blog/massas-cs-m' ;;
               *) exit 1 ;;
             esac
             archive="$RUNNER_TEMP/$source.tar.gz"
@@ -129,11 +144,11 @@ jobs:
           destination="$2"
           owner="$3"
           case "$destination" in
-            /var/www/skillvault.blog/massas-de-m|/var/www/skillvault.blog/massas-fr-m|/var/www/skillvault.blog/massas-nl-m|/var/www/skillvault.blog/massas-it-m|/var/www/skillvault.blog/massas-pl-m|/var/www/skillvault.blog/massas-sv-m) ;;
+            /var/www/skillvault.blog/massas-de-m|/var/www/skillvault.blog/massas-fr-m|/var/www/skillvault.blog/massas-nl-m|/var/www/skillvault.blog/massas-it-m|/var/www/skillvault.blog/massas-pl-m|/var/www/skillvault.blog/massas-sv-m|/var/www/skillvault.blog/massas-da-m|/var/www/skillvault.blog/massas-es-m|/var/www/skillvault.blog/massas-fi-m|/var/www/skillvault.blog/massas-no-m|/var/www/skillvault.blog/massas-cs-m) ;;
             *) exit 1 ;;
           esac
           case "$archive" in
-            /tmp/massas-de-members-*.tar.gz|/tmp/massas-fr-members-*.tar.gz|/tmp/massas-nl-members-*.tar.gz|/tmp/massas-it-members-*.tar.gz|/tmp/massas-pl-members-*.tar.gz|/tmp/massas-sv-members-*.tar.gz) ;;
+            /tmp/massas-de-members-*.tar.gz|/tmp/massas-fr-members-*.tar.gz|/tmp/massas-nl-members-*.tar.gz|/tmp/massas-it-members-*.tar.gz|/tmp/massas-pl-members-*.tar.gz|/tmp/massas-sv-members-*.tar.gz|/tmp/massas-da-members-*.tar.gz|/tmp/massas-es-members-*.tar.gz|/tmp/massas-fi-members-*.tar.gz|/tmp/massas-no-members-*.tar.gz|/tmp/massas-cs-members-*.tar.gz) ;;
             *) exit 1 ;;
           esac
           sudo mkdir -p "$destination"

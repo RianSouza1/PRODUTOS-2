@@ -49,10 +49,12 @@ const APP_DATA = {
         "Tips over pastavormen, textuur en afwerking",
         "Ingrediënten en bereiding stap voor stap"
       ],
-      "badgeText": "Boek 1 · 191 pagina’s",
+      "badgeText": "Boek 1 / 3",
       "badgeColor": "#a92b2e",
       "downloadUrl": "materials/PASTA-1-NL.pdf",
-      "coverImage": "assets/covers/massas_IMG1_nl.png"
+      "coverImage": "assets/covers/massas_IMG1_nl.png",
+      "pageCount": 191,
+      "fileSizeLabel": "5,6 MB"
     },
     {
       "id": "b2",
@@ -63,10 +65,12 @@ const APP_DATA = {
         "Varianten met tomaat, room, kaas en pesto",
         "Tips voor combineren en op smaak brengen"
       ],
-      "badgeText": "Boek 2 · 163 pagina’s",
+      "badgeText": "Boek 2 / 3",
       "badgeColor": "#597042",
       "downloadUrl": "materials/PASTA-2-NL.pdf",
-      "coverImage": "assets/covers/massas_IMG1_nl.png"
+      "coverImage": "assets/covers/massas_IMG1_nl.png",
+      "pageCount": 163,
+      "fileSizeLabel": "5,7 MB"
     },
     {
       "id": "b3",
@@ -77,10 +81,12 @@ const APP_DATA = {
         "Laagjes opbouwen, bereidingstijden en temperaturen",
         "Tips voor vooraf bereiden en bewaren"
       ],
-      "badgeText": "Boek 3 · 162 pagina’s",
+      "badgeText": "Boek 3 / 3",
       "badgeColor": "#9b7527",
       "downloadUrl": "materials/PASTA-3-NL.pdf",
-      "coverImage": "assets/covers/massas_IMG1_nl.png"
+      "coverImage": "assets/covers/massas_IMG1_nl.png",
+      "pageCount": 162,
+      "fileSizeLabel": "5,5 MB"
     }
   ]
 };

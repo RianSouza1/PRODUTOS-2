@@ -49,10 +49,12 @@ const APP_DATA = {
         "Tipps zu Pastaformen, Konsistenz und Vollendung",
         "Zutaten und Zubereitung Schritt für Schritt"
       ],
-      "badgeText": "Buch 1 · 191 Seiten",
+      "badgeText": "Buch 1 / 3",
       "badgeColor": "#a92b2e",
       "downloadUrl": "materials/PASTA-1-DE.pdf",
-      "coverImage": "assets/covers/massas_IMG1_de.png"
+      "coverImage": "assets/covers/massas_IMG1_de.png",
+      "pageCount": 191,
+      "fileSizeLabel": "5,6 MB"
     },
     {
       "id": "b2",
@@ -63,10 +65,12 @@ const APP_DATA = {
         "Tomaten-, Sahne-, Käse- und Pesto-Varianten",
         "Tipps zum Kombinieren und Abschmecken"
       ],
-      "badgeText": "Buch 2 · 163 Seiten",
+      "badgeText": "Buch 2 / 3",
       "badgeColor": "#597042",
       "downloadUrl": "materials/PASTA-2-DE.pdf",
-      "coverImage": "assets/covers/massas_IMG1_de.png"
+      "coverImage": "assets/covers/massas_IMG1_de.png",
+      "pageCount": 163,
+      "fileSizeLabel": "5,7 MB"
     },
     {
       "id": "b3",
@@ -77,10 +81,12 @@ const APP_DATA = {
         "Schichten, Garzeiten und Temperaturen",
         "Hinweise zum Vorbereiten und Aufbewahren"
       ],
-      "badgeText": "Buch 3 · 162 Seiten",
+      "badgeText": "Buch 3 / 3",
       "badgeColor": "#9b7527",
       "downloadUrl": "materials/PASTA-3-DE.pdf",
-      "coverImage": "assets/covers/massas_IMG1_de.png"
+      "coverImage": "assets/covers/massas_IMG1_de.png",
+      "pageCount": 162,
+      "fileSizeLabel": "5,5 MB"
     }
   ]
 };

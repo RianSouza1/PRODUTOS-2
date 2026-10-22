@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="da" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Din pastasamling: tre kogebøger med pasta, saucer, ovnpasta og lasagne, som du kan læse og hente som PDF.">
+  <title>Pastasamlingen — Medlemsområde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="core.css?v=massas-20261021-v2">
+</head>
+<body>
+  <div id="pre-page" class="pre-page-overlay">
+    <div class="pre-page-bg"></div>
+    <div class="pre-page-content">
+      <div class="pre-page-icon" aria-hidden="true">🍝</div>
+      <h1>Pastasamlingen</h1>
+      <p>Velkommen til din pastasamling. Udforsk dine tre kogebøger med pasta, saucer og ovnretter, og vælg din næste opskrift.</p>
+      <div class="pre-page-features"><span>📖 3 kogebøger som PDF</span><span>🍝 Pasta, saucer og lasagne</span><span>💬 Hjælp</span></div>
+      <button type="button" id="enter-members">Gå til mine kogebøger →</button>
+    </div>
+  </div>
+  <div class="app-container">
+    <header class="app-header"><div class="header-logo"><img src="assets/covers/massas_IMG1_da.png" alt="Den komplette pastasamling" id="brand-logo" width="32" height="32"><h1 id="brand-title">Pastasamlingen</h1></div></header>
+    <main id="app-root" class="main-content"><p class="loading-message" role="status">Dine kogebøger indlæses …</p></main>
+    <nav class="bottom-tab-bar" id="main-nav" aria-label="Medlemsområde">
+      <a href="#boger" class="tab-item"><span data-icon="book-open" aria-hidden="true"></span><span>Kogebøger</span></a>
+      <a href="#hjaelp" class="tab-item"><span data-icon="message-square" aria-hidden="true"></span><span>Hjælp</span></a>
+    </nav>
+  </div>
+  <noscript><div class="noscript-message"><h1>Pastasamlingen</h1><p>Aktivér JavaScript for at bruge medlemsområdet. Du kan også åbne dine PDF-filer direkte via disse links.</p><a href="materials/PASTA-1-DA.pdf">Den komplette pastakogebog</a><a href="materials/PASTA-2-DA.pdf">Kogebog med pastasaucer</a><a href="materials/PASTA-3-DA.pdf">Ovnpasta og lasagne</a><a href="mailto:trinityag01@gmail.com">Hjælp</a></div></noscript>
+  <script src="data.js?v=massas-20261021-v2"></script><script src="app.js?v=massas-20261021-v2"></script>
+</body>
+</html>

@@ -49,10 +49,12 @@ const APP_DATA = {
         "Wskazówki dotyczące kształtów, konsystencji i wykończenia",
         "Składniki i przygotowanie krok po kroku"
       ],
-      "badgeText": "Książka 1 · 191 str.",
+      "badgeText": "Książka 1 / 3",
       "badgeColor": "#a92b2e",
       "downloadUrl": "materials/PASTA-1-PL.pdf",
-      "coverImage": "assets/covers/massas_IMG1_pl.png"
+      "coverImage": "assets/covers/massas_IMG1_pl.png",
+      "pageCount": 191,
+      "fileSizeLabel": "5,7 MB"
     },
     {
       "id": "b2",
@@ -63,10 +65,12 @@ const APP_DATA = {
         "Warianty z pomidorami, śmietanką, serem i pesto",
         "Wskazówki dotyczące doboru i doprawiania"
       ],
-      "badgeText": "Książka 2 · 163 str.",
+      "badgeText": "Książka 2 / 3",
       "badgeColor": "#597042",
       "downloadUrl": "materials/PASTA-2-PL.pdf",
-      "coverImage": "assets/covers/massas_IMG1_pl.png"
+      "coverImage": "assets/covers/massas_IMG1_pl.png",
+      "pageCount": 163,
+      "fileSizeLabel": "5,7 MB"
     },
     {
       "id": "b3",
@@ -77,10 +81,12 @@ const APP_DATA = {
         "Układanie warstw, czasy i temperatury",
         "Wskazówki dotyczące przygotowania wcześniej i przechowywania"
       ],
-      "badgeText": "Książka 3 · 162 str.",
+      "badgeText": "Książka 3 / 3",
       "badgeColor": "#9b7527",
       "downloadUrl": "materials/PASTA-3-PL.pdf",
-      "coverImage": "assets/covers/massas_IMG1_pl.png"
+      "coverImage": "assets/covers/massas_IMG1_pl.png",
+      "pageCount": 162,
+      "fileSizeLabel": "5,5 MB"
     }
   ]
 };

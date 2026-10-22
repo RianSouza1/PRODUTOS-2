@@ -49,10 +49,12 @@ const APP_DATA = {
         "Tips om pastaformer, konsistens och avslutning",
         "Ingredienser och tillagning steg för steg"
       ],
-      "badgeText": "Bok 1 · 191 sidor",
+      "badgeText": "Bok 1 / 3",
       "badgeColor": "#a92b2e",
       "downloadUrl": "materials/PASTA-1-SV.pdf",
-      "coverImage": "assets/covers/massas_IMG1_sv.png"
+      "coverImage": "assets/covers/massas_IMG1_sv.png",
+      "pageCount": 191,
+      "fileSizeLabel": "5,6 MB"
     },
     {
       "id": "b2",
@@ -63,10 +65,12 @@ const APP_DATA = {
         "Varianter med tomat, grädde, ost och pesto",
         "Tips för kombinationer och smaksättning"
       ],
-      "badgeText": "Bok 2 · 163 sidor",
+      "badgeText": "Bok 2 / 3",
       "badgeColor": "#597042",
       "downloadUrl": "materials/PASTA-2-SV.pdf",
-      "coverImage": "assets/covers/massas_IMG1_sv.png"
+      "coverImage": "assets/covers/massas_IMG1_sv.png",
+      "pageCount": 163,
+      "fileSizeLabel": "5,7 MB"
     },
     {
       "id": "b3",
@@ -77,10 +81,12 @@ const APP_DATA = {
         "Bygga lager, tider och temperaturer",
         "Tips för förberedelser och förvaring"
       ],
-      "badgeText": "Bok 3 · 162 sidor",
+      "badgeText": "Bok 3 / 3",
       "badgeColor": "#9b7527",
       "downloadUrl": "materials/PASTA-3-SV.pdf",
-      "coverImage": "assets/covers/massas_IMG1_sv.png"
+      "coverImage": "assets/covers/massas_IMG1_sv.png",
+      "pageCount": 162,
+      "fileSizeLabel": "5,5 MB"
     }
   ]
 };

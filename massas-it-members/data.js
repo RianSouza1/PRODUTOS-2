@@ -49,10 +49,12 @@ const APP_DATA = {
         "Consigli su formati, consistenza e finitura",
         "Ingredienti e preparazione passo dopo passo"
       ],
-      "badgeText": "Libro 1 · 191 pagine",
+      "badgeText": "Libro 1 / 3",
       "badgeColor": "#a92b2e",
       "downloadUrl": "materials/PASTA-1-IT.pdf",
-      "coverImage": "assets/covers/massas_IMG1_it.png"
+      "coverImage": "assets/covers/massas_IMG1_it.png",
+      "pageCount": 191,
+      "fileSizeLabel": "5,6 MB"
     },
     {
       "id": "b2",
@@ -63,10 +65,12 @@ const APP_DATA = {
         "Varianti al pomodoro, panna, formaggio e pesto",
         "Consigli per gli abbinamenti e il condimento"
       ],
-      "badgeText": "Libro 2 · 163 pagine",
+      "badgeText": "Libro 2 / 3",
       "badgeColor": "#597042",
       "downloadUrl": "materials/PASTA-2-IT.pdf",
-      "coverImage": "assets/covers/massas_IMG1_it.png"
+      "coverImage": "assets/covers/massas_IMG1_it.png",
+      "pageCount": 163,
+      "fileSizeLabel": "5,7 MB"
     },
     {
       "id": "b3",
@@ -77,10 +81,12 @@ const APP_DATA = {
         "Composizione degli strati, tempi e temperature",
         "Consigli per preparare in anticipo e conservare"
       ],
-      "badgeText": "Libro 3 · 162 pagine",
+      "badgeText": "Libro 3 / 3",
       "badgeColor": "#9b7527",
       "downloadUrl": "materials/PASTA-3-IT.pdf",
-      "coverImage": "assets/covers/massas_IMG1_it.png"
+      "coverImage": "assets/covers/massas_IMG1_it.png",
+      "pageCount": 162,
+      "fileSizeLabel": "5,5 MB"
     }
   ]
 };
