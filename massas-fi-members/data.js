@@ -443,7 +443,7 @@ const APP_DATA = {
         {
           "at": 0,
           "label": "Hienonna ja aloita kylmänä",
-          "text": "Kuori ja hienonna 2 valkosipulinkynttä. Laita ne kylmälle pannulle 1 rkl:n öljyä kanssa."
+          "text": "Kuori ja hienonna 2 valkosipulinkynttä. Laita ne kylmälle pannulle ja lisää 1 rkl öljyä."
         },
         {
           "at": 11,
