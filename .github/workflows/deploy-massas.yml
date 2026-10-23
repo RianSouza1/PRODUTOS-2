@@ -57,7 +57,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          all_sources='massas-de-members massas-fr-members massas-nl-members massas-it-members massas-pl-members massas-sv-members massas-da-members massas-es-members massas-fi-members massas-no-members massas-cs-members'
+          # Publish shared video media in the Spanish area before its consumers.
+          all_sources='massas-es-members massas-de-members massas-fr-members massas-nl-members massas-it-members massas-pl-members massas-sv-members massas-da-members massas-fi-members massas-no-members massas-cs-members'
           before='${{ github.event.before }}'
           sources=''
           if [ '${{ github.event_name }}' = 'push' ] && [ -n "$before" ] && [[ ! "$before" =~ ^0+$ ]]; then
