@@ -16,6 +16,16 @@ on:
       - 'croche-pl-members/**'
       - 'croche-sv-members/**'
       - 'croche-cs-members/**'
+      - 'croche-bg-members/**'
+      - 'croche-hr-members/**'
+      - 'croche-sk-members/**'
+      - 'croche-sl-members/**'
+      - 'croche-fi-members/**'
+      - 'croche-el-members/**'
+      - 'croche-hu-members/**'
+      - 'croche-lt-members/**'
+      - 'croche-pt-members/**'
+      - 'croche-ro-members/**'
   workflow_dispatch:
 
 permissions:
@@ -29,7 +39,7 @@ jobs:
   publish:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04-arm
-    timeout-minutes: 15
+    timeout-minutes: 25
     env:
       GIT_LFS_SKIP_SMUDGE: '1'
     steps:
@@ -49,13 +59,23 @@ jobs:
             croche-pl-members
             croche-sv-members
             croche-cs-members
+            croche-bg-members
+            croche-hr-members
+            croche-sk-members
+            croche-sl-members
+            croche-fi-members
+            croche-el-members
+            croche-hu-members
+            croche-lt-members
+            croche-pt-members
+            croche-ro-members
 
       - name: Select member areas to publish
         id: areas
         shell: bash
         run: |
           set -euo pipefail
-          all_sources='croche-de-members croche-da-members croche-es-members croche-fr-members croche-nl-members croche-it-members croche-no-members croche-pl-members croche-sv-members croche-cs-members'
+          all_sources='croche-de-members croche-da-members croche-es-members croche-fr-members croche-nl-members croche-it-members croche-no-members croche-pl-members croche-sv-members croche-cs-members croche-bg-members croche-hr-members croche-sk-members croche-sl-members croche-fi-members croche-el-members croche-hu-members croche-lt-members croche-pt-members croche-ro-members'
           before='${{ github.event.before }}'
           sources=''
           if [ '${{ github.event_name }}' = 'push' ] && [ -n "$before" ] && [[ ! "$before" =~ ^0+$ ]]; then
@@ -74,7 +94,7 @@ jobs:
 
       - name: Download the original PDF files
         shell: bash
-        timeout-minutes: 10
+        timeout-minutes: 15
         env:
           SOURCES: ${{ steps.areas.outputs.sources }}
         run: |
@@ -86,7 +106,7 @@ jobs:
               echo "::error::Invalid LFS reference: $pdf"
               exit 1
             fi
-            curl --http1.1 --fail --location --silent --show-error --retry 3 --retry-all-errors --connect-timeout 15 --max-time 180 \
+            curl --http1.1 --fail --location --silent --show-error --retry 3 --retry-all-errors --connect-timeout 15 --max-time 300 \
               "https://media.githubusercontent.com/media/$GITHUB_REPOSITORY/$GITHUB_SHA/$pdf" \
               --output "$pdf.download"
             actual="$(shasum -a 256 "$pdf.download" | awk '{print $1}')"
@@ -129,6 +149,16 @@ jobs:
               croche-pl-members) destination='/var/www/skillvault.blog/croche-pl-m' ;;
               croche-sv-members) destination='/var/www/skillvault.blog/croche-sv-m' ;;
               croche-cs-members) destination='/var/www/skillvault.blog/croche-cs-m' ;;
+              croche-bg-members) destination='/var/www/skillvault.blog/croche-bg-m' ;;
+              croche-hr-members) destination='/var/www/skillvault.blog/croche-hr-m' ;;
+              croche-sk-members) destination='/var/www/skillvault.blog/croche-sk-m' ;;
+              croche-sl-members) destination='/var/www/skillvault.blog/croche-sl-m' ;;
+              croche-fi-members) destination='/var/www/skillvault.blog/croche-fi-m' ;;
+              croche-el-members) destination='/var/www/skillvault.blog/croche-el-m' ;;
+              croche-hu-members) destination='/var/www/skillvault.blog/croche-hu-m' ;;
+              croche-lt-members) destination='/var/www/skillvault.blog/croche-lt-m' ;;
+              croche-pt-members) destination='/var/www/skillvault.blog/croche-pt-m' ;;
+              croche-ro-members) destination='/var/www/skillvault.blog/croche-ro-m' ;;
               *) exit 1 ;;
             esac
             archive="$RUNNER_TEMP/$source.tar.gz"
@@ -141,11 +171,11 @@ jobs:
           destination="$2"
           owner="$3"
           case "$destination" in
-            /var/www/skillvault.blog/croche-de-m|/var/www/skillvault.blog/croche-da-m|/var/www/skillvault.blog/croche-es-m|/var/www/skillvault.blog/croche-fr-m|/var/www/skillvault.blog/croche-nl-m|/var/www/skillvault.blog/croche-it-m|/var/www/skillvault.blog/croche-no-m|/var/www/skillvault.blog/croche-pl-m|/var/www/skillvault.blog/croche-sv-m|/var/www/skillvault.blog/croche-cs-m) ;;
+            /var/www/skillvault.blog/croche-de-m|/var/www/skillvault.blog/croche-da-m|/var/www/skillvault.blog/croche-es-m|/var/www/skillvault.blog/croche-fr-m|/var/www/skillvault.blog/croche-nl-m|/var/www/skillvault.blog/croche-it-m|/var/www/skillvault.blog/croche-no-m|/var/www/skillvault.blog/croche-pl-m|/var/www/skillvault.blog/croche-sv-m|/var/www/skillvault.blog/croche-cs-m|/var/www/skillvault.blog/croche-bg-m|/var/www/skillvault.blog/croche-hr-m|/var/www/skillvault.blog/croche-sk-m|/var/www/skillvault.blog/croche-sl-m|/var/www/skillvault.blog/croche-fi-m|/var/www/skillvault.blog/croche-el-m|/var/www/skillvault.blog/croche-hu-m|/var/www/skillvault.blog/croche-lt-m|/var/www/skillvault.blog/croche-pt-m|/var/www/skillvault.blog/croche-ro-m) ;;
             *) exit 1 ;;
           esac
           case "$archive" in
-            /tmp/croche-de-members-*.tar.gz|/tmp/croche-da-members-*.tar.gz|/tmp/croche-es-members-*.tar.gz|/tmp/croche-fr-members-*.tar.gz|/tmp/croche-nl-members-*.tar.gz|/tmp/croche-it-members-*.tar.gz|/tmp/croche-no-members-*.tar.gz|/tmp/croche-pl-members-*.tar.gz|/tmp/croche-sv-members-*.tar.gz|/tmp/croche-cs-members-*.tar.gz) ;;
+            /tmp/croche-de-members-*.tar.gz|/tmp/croche-da-members-*.tar.gz|/tmp/croche-es-members-*.tar.gz|/tmp/croche-fr-members-*.tar.gz|/tmp/croche-nl-members-*.tar.gz|/tmp/croche-it-members-*.tar.gz|/tmp/croche-no-members-*.tar.gz|/tmp/croche-pl-members-*.tar.gz|/tmp/croche-sv-members-*.tar.gz|/tmp/croche-cs-members-*.tar.gz|/tmp/croche-bg-members-*.tar.gz|/tmp/croche-hr-members-*.tar.gz|/tmp/croche-sk-members-*.tar.gz|/tmp/croche-sl-members-*.tar.gz|/tmp/croche-fi-members-*.tar.gz|/tmp/croche-el-members-*.tar.gz|/tmp/croche-hu-members-*.tar.gz|/tmp/croche-lt-members-*.tar.gz|/tmp/croche-pt-members-*.tar.gz|/tmp/croche-ro-members-*.tar.gz) ;;
             *) exit 1 ;;
           esac
           sudo mkdir -p "$destination"
