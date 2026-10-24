@@ -91,8 +91,8 @@ const APP_DATA = {
   ],
   "videoUI": {
     "eyebrow": "HORGOLÁS LÉPÉSRŐL LÉPÉSRE",
-    "heading": "Figyeld a kezeket. Próbáld ki az öltést.",
-    "intro": "Nyolc rövid közeli felvétel valódi kezekkel, fonallal és horgolótűvel. Fedezd fel a hurkokat, a térbeli mintákat és a szép befejezéseket. Minden bemutató hang nélkül játszódik le.",
+    "heading": "Az első huroktól a saját munkáidig",
+    "intro": "Egyszerre egy lépés: olvasd el, nézd meg, majd próbáld ki. A videó minden lépés után megáll; te döntöd el, mikor folytatod. Kezdj 0,75× sebességgel, és ismételd szükség szerint.",
     "shortLessons": "rövid lecke",
     "noSound": "Hang nélkül",
     "closeUp": "Kezek közelről",
@@ -117,147 +117,320 @@ const APP_DATA = {
     "markPractice": "Megjelölés gyakoroltként",
     "practiced": "Gyakorolva",
     "practiceCount": "gyakorolt technika",
-    "choose": "Válaszd ki a következő technikát",
-    "note": "Készítsd elő a fonalat és a horgolótűt. Először figyelj, szükség esetén válassz 0,5× sebességet, és gyakorolj saját tempódban.",
+    "choose": "Kezdők gyakorlási útvonala",
+    "note": "Egyszerre egy lépés: olvasd el, nézd meg, majd próbáld ki. A videó minden lépés után megáll; te döntöd el, mikor folytatod. Kezdj 0,75× sebességgel, és ismételd szükség szerint.",
     "error": "A bemutató nem tölthető be. Nyomd meg az Ismétlés gombot, vagy válassz másik technikát.",
-    "fullscreen": "Teljes képernyő"
+    "fullscreen": "Teljes képernyő",
+    "relatedBooks": "Alkalmazd a könyvekkel",
+    "beforeStart": "Mielőtt elkezded",
+    "preparation": "Készíts elő sima, világos fonalat és a mintában megadott horgolótűt. A körökhöz legyen kéznél szemjelölő. Először nézd meg, majd ismételd meg próbadarabon.",
+    "step": "Lépés",
+    "of": "/",
+    "previousStep": "Előző lépés",
+    "nextStep": "Következő lépés",
+    "watchStep": "Nézd meg ezt a lépést",
+    "repeatStep": "Ismételd meg a lépést",
+    "yourTurn": "Most te következel",
+    "practicePrompt": "A videó megállt. Ismételd meg a mozdulatot a saját fonaladdal. Akkor lépj tovább, ha már biztosan megy.",
+    "stepReady": "Olvasd el az utasítást, majd nyomd meg a „Nézd meg ezt a lépést” gombot.",
+    "stepPlaying": "Csak ezt a mozdulatot figyeld.",
+    "stepPaused": "Szünet. Ismételd meg a mozdulatot a saját tempódban.",
+    "guidedNote": "Egyszerre egy lépés: olvasd el, nézd meg, majd próbáld ki. A videó minden lépés után megáll; te döntöd el, mikor folytatod. Kezdj 0,75× sebességgel, és ismételd szükség szerint.",
+    "stepProgress": "Az aktuális lépés haladása",
+    "fullExcerpt": "Teljes részlet"
   },
   "videos": [
     {
-      "id": "fresh-relief-two-colors",
-      "title": "Térbeli minta két színnel",
-      "category": "Textúra és szín",
-      "youtubeId": "-6avnfCNO-c",
-      "creator": "Knitting By Gözde",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 44,
-      "description": "A rózsaszín és szürke hurkok térbeli mintát alkotnak. Figyeld a beszúrás helyét, a hurkok felhúzását és a csoport lezárását.",
+      "id": "beginner-slip-knot",
+      "title": "Kezdőhurok szorítás nélkül",
+      "category": "Első lépések",
+      "description": "Készítsd elő az első hurkot a horgolótűn, mielőtt a könyvek mintáiba kezdesz.",
       "steps": [
-        "Keresd meg a bemutatott beszúrási helyet a meglévő mintában.",
-        "Egyenletesen húzd fel a hurkokat, hasonló magasságig.",
-        "Zárd le a csoportot a videó szerint, és hasonlítsd össze az előzővel."
+        "Keresztezd a fonalat, és formálj hurkot.",
+        "Húzd át a munkafonalat a hurkon.",
+        "Tedd a hurkot a tűre, és úgy igazítsd, hogy szorítás nélkül csússzon."
       ],
-      "tip": "Válassz 0,5× sebességet, és először egyetlen csoportot gyakorolj kis mintadarabon. A hurkok maradjanak lazák."
-    },
-    {
-      "id": "fresh-magic-ring",
-      "title": "Varázskör közelről",
-      "category": "Kezdés körben",
-      "youtubeId": "4eZkklGW0Uk",
-      "creator": "naztazia",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 10,
-      "description": "Nézd meg a kezdőhurkot, a körbe készülő első szemeket és a közép összehúzását.",
-      "steps": [
-        "Formázd meg a fonalhurkot, és fogd meg a rövid szálvéget.",
-        "Rögzítsd a hurkot, és horgold bele az útmutató szerinti szemeket.",
-        "Tartsd a szemeket, és húzd meg a rövid szálvéget a közép bezárásához."
-      ],
-      "tip": "A részlet nagyon rövid. Játszd le 0,5× sebességgel, és állítsd meg minden mozdulat után."
-    },
-    {
-      "id": "fresh-secure-chain",
-      "title": "Új fonal rögzítése kezdőhurokkal",
-      "category": "Fonal és láncszemek",
-      "youtubeId": "awksFMEElAM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 27,
-      "end": 54,
-      "description": "A kezdőhurok stabilan rögzíti az új fonalat. Figyeld, hogyan alakulnak ki az új láncszemek.",
-      "steps": [
-        "Készíts mozgatható kezdőhurkot az új fonallal.",
-        "Tedd a horgolótűre, és vezesd a fonalat a csatlakozáshoz.",
-        "Horgold meg a szükséges láncszemeket egyenletes fonalfeszítéssel."
-      ],
-      "tip": "A hurok csússzon a tűn. Ne húzd túl szorosra."
-    },
-    {
-      "id": "fresh-back-loop",
-      "title": "Bordás minta rövidpálcákkal",
-      "category": "A hátsó szál felismerése",
-      "youtubeId": "Q6WB45LdXHM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 5,
-      "end": 55,
-      "description": "A csak hátsó szálba öltött rövidpálcák bordás felületet adnak. Figyeld pontosan a tű beszúrását.",
-      "steps": [
-        "Keresd meg a következő szem tetejének két szálát.",
-        "Csak a hátsó szál alá szúrj, és készíts rövidpálcát.",
-        "Ismételd végig a soron, és fordítsd meg a munkát az útmutató szerint."
-      ],
-      "tip": "Hüvelyk- és mutatóujjal nyisd meg kissé a szem tetejét, hogy lásd a hátsó szálat."
-    },
-    {
-      "id": "fresh-combined-stitch",
-      "title": "Két pálcamagasság összekapcsolása",
-      "category": "Öltések kombinálása",
-      "youtubeId": "YRiWA90y5Ok",
-      "creator": "The Crochet Crowd",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 29,
-      "description": "A bemutató egy egyráhajtásos pálcát és egy félpálcát kapcsol össze. Figyeld az utolsó áthúzást.",
-      "steps": [
-        "Kövesd az egyráhajtásos pálca előkészítését a közös csoporthoz.",
-        "Készítsd el a bemutatott kapcsolást a félpálcával.",
-        "Zárd le a hurkokat a videó szerint, és ismételd mintadarabon."
-      ],
-      "tip": "Állítsd meg az utolsó áthúzás előtt, és hasonlítsd össze a tűdön lévő hurkokat a felvétellel."
-    },
-    {
-      "id": "fresh-contrast-border",
-      "title": "Kontrasztos szegély hurokcsoportokkal",
-      "category": "Díszítő szegélyek",
-      "youtubeId": "g06hLz5NTB4",
-      "creator": "Create by K",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 16,
-      "description": "A kék térbeli szegély kiemelkedik a szürke alapból. Kövesd a hurkok felhúzását és lezárását.",
-      "steps": [
-        "Keresd meg a bemutatott beszúrási helyet az előző sor szélén.",
-        "Húzd fel a hurkokat a felvétel szerint, egyenletesen lazán.",
-        "Zárd le a csoportot, és lépj a következő beszúrási helyre."
-      ],
-      "tip": "Az eltérő szín segít megkülönböztetni az új fonalat az alaptól. Ismételd 0,5× sebességgel."
-    },
-    {
-      "id": "fresh-mesh-arches",
-      "title": "Láncszemívek hálómintához",
-      "category": "Légies minták",
-      "youtubeId": "HDvVTgH8auk",
-      "creator": "Hilaria Fina",
+      "tip": "Ismételd meg háromszor. A kezdőcsomó nem számít láncszemnek.",
+      "youtubeId": "Hukpk2Ahkhs",
+      "start": 8,
+      "end": 40,
       "videoShape": "landscape",
-      "start": 120,
-      "end": 175,
-      "description": "Láncszemívek és kapcsolódási pontok hoznak létre nyitott szerkezetet az alapláncon.",
-      "steps": [
-        "Horgold meg a mintában előírt számú láncszemet.",
-        "Számold ki a beszúrás helyét az előkészített láncon.",
-        "Rögzítsd ott az ívet, és kezdd a következőt az útmutató szerint."
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-make-a-slip-knot-in-crocheting/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
       ],
-      "tip": "Beszúrás előtt számold meg a láncszemeket. Az egyforma ívek egyenletes hálót adnak."
+      "chapters": [
+        {
+          "start": 8,
+          "end": 13
+        },
+        {
+          "start": 13,
+          "end": 24
+        },
+        {
+          "start": 24,
+          "end": 40
+        }
+      ]
     },
     {
-      "id": "fresh-invisible-join",
-      "title": "Kör láthatatlan lezárása",
-      "category": "Szép befejezés",
-      "youtubeId": "PlESZRcZA5o",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 37,
-      "description": "Fonalvarró tűvel olyan utolsó szemet készíthetsz, amely beleillik a többi közé.",
+      "id": "beginner-chain",
+      "title": "Egyenletes láncszemek egymás után",
+      "category": "Első lépések",
+      "description": "Gyakorold a sorok és a kis akasztók alapját.",
       "steps": [
-        "Húzd ki a fonalvéget az utolsó hurokból, és fűzd fonalvarró tűbe.",
-        "Vezesd át a tűt a bemutatott szemrészeken az utolsó szem utánzásához.",
-        "Igazítsd a feszességet a szomszédos szemekhez, és rögzítsd a véget a hátoldalon."
+        "Kezdj egy hurokkal a tűn.",
+        "Hajtsd a fonalat a tűre, és húzd át a hurkon.",
+        "Készíts tíz láncszemet, majd számold meg a V alakú tetejüket."
       ],
-      "tip": "Óvatosan húzd meg. A zárószem legyen körülbelül akkora, mint a többi."
+      "tip": "Ne húzd túl szorosra: a következő sorban könnyen bele kell férnie a tűnek.",
+      "youtubeId": "vjq1BfTBG64",
+      "start": 8,
+      "end": 55,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-chain-stitch-crochet/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 19
+        },
+        {
+          "start": 19,
+          "end": 32
+        },
+        {
+          "start": 32,
+          "end": 55
+        }
+      ]
+    },
+    {
+      "id": "beginner-single",
+      "title": "Rövidpálca: az amigurumi alapja",
+      "category": "Alapöltések",
+      "description": "Figyeld a tű beszúrását és a két hurkot. Figurákhoz és kosarakhoz is használhatod.",
+      "steps": [
+        "Szúrd a tűt a megadott szembe.",
+        "Hajtsd rá a fonalat, és húzz fel egy hurkot: kettő van a tűn.",
+        "Újabb ráhajtással húzd át a fonalat mindkettőn."
+      ],
+      "tip": "Először kis próbadarabon gyakorold a mozdulatot.",
+      "youtubeId": "0F-dTBgMWCM",
+      "start": 8,
+      "end": 28,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 20
+        },
+        {
+          "start": 20,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 28
+        }
+      ]
+    },
+    {
+      "id": "beginner-magic-ring",
+      "title": "Varázskör: a közép előkészítése",
+      "category": "Amigurumi és karácsony",
+      "description": "Nézd meg az állítható kezdőhurok elkészítését a kör alakú munkákhoz.",
+      "steps": [
+        "A fonal végével formálj hurkot.",
+        "Vezesd bele a tűt, és húzd át a munkafonalat.",
+        "Rögzítsd a hurkot, a közepét hagyd nyitva a minta szemeinek."
+      ],
+      "tip": "Csak a PDF-ben megadott szemek elkészítése után húzd össze a közepét.",
+      "youtubeId": "PYy2dsYR-pc",
+      "start": 3,
+      "end": 50,
+      "videoShape": "landscape",
+      "creator": "Hilaria Fina",
+      "sourceUrl": "https://hilariafina.com/en/magic-ring-videotutorial/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 3,
+          "end": 18
+        },
+        {
+          "start": 18,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 50
+        }
+      ]
+    },
+    {
+      "id": "beginner-increase",
+      "title": "Szaporítás: két pálca egy szembe",
+      "category": "Formázás",
+      "description": "Figyelj meg két rövidpálcát ugyanabban az alapszemben. Ettől szélesedik a darab.",
+      "steps": [
+        "Horgolj rövidpálcát a kiválasztott szembe.",
+        "Szúrd a tűt ismét ugyanabba a szembe.",
+        "Készíts még egy rövidpálcát, és számold meg a két felső V-t."
+      ],
+      "tip": "Egy szaporítás egy szemmel növeli a számot. Kövesd a PDF ismétléseit.",
+      "youtubeId": "FDgRW6ZhAyQ",
+      "start": 8,
+      "end": 31,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 17
+        },
+        {
+          "start": 17,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 31
+        }
+      ]
+    },
+    {
+      "id": "beginner-invisible-decrease",
+      "title": "Láthatatlan fogyasztás két szemből",
+      "category": "Formázás",
+      "description": "Kövesd az elülső szálakat az amigurumi formáinak kevésbé feltűnő szűkítéséhez.",
+      "steps": [
+        "Vedd fel a következő szem elülső szálát.",
+        "Vedd fel az utána következő szem elülső szálát is.",
+        "Ráhajtással húzd át a fonalat mindkét elülső szálon, majd fejezd be a rövidpálcát."
+      ],
+      "tip": "Két szemből egy lesz. Számold meg őket, mielőtt folytatod a kört.",
+      "youtubeId": "osgxJ7qLJ9I",
+      "start": 8,
+      "end": 60,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/invisible-single-crochet-decrease/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 37
+        },
+        {
+          "start": 37,
+          "end": 60
+        }
+      ]
+    },
+    {
+      "id": "beginner-double",
+      "title": "Egyráhajtásos pálca: kettesével áthúzva",
+      "category": "Karácsony és otthon",
+      "description": "Gyakorold a magasabb pálcát a könyvek takarói és díszei előtt.",
+      "steps": [
+        "Hajts rá, és szúrd a tűt a szembe.",
+        "Ráhajtással húzz fel egy hurkot: három van a tűn.",
+        "Húzd át a fonalat két hurkon, majd a maradék kettőn."
+      ],
+      "tip": "A PDF-ek amerikai jelöléseit követjük: dc az egyráhajtásos pálca.",
+      "youtubeId": "gC9r2xoAtN4",
+      "start": 8,
+      "end": 37,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-crochet-the-double-crochet-stitch/",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 15
+        },
+        {
+          "start": 15,
+          "end": 26
+        },
+        {
+          "start": 26,
+          "end": 37
+        }
+      ]
+    },
+    {
+      "id": "beginner-slip-stitch",
+      "title": "Kúszószem: egyszerű összekapcsolás",
+      "category": "Összeillesztés és befejezés",
+      "description": "Figyeld az alacsony kapcsolószemet, amellyel magasság hozzáadása nélkül haladhatsz.",
+      "steps": [
+        "Szúrd a tűt a megadott szembe.",
+        "Fogd meg a munkafonalat.",
+        "Húzd át egyszerre a szemen és a tűn lévő hurkon."
+      ],
+      "tip": "Csak akkor zárd a kört, ha a minta kéri; spirális horgolásnál nem szükséges.",
+      "youtubeId": "exq2ZxyVKJ8",
+      "start": 10,
+      "end": 43,
+      "videoShape": "landscape",
+      "creator": "WeCrochet",
+      "sourceUrl": "https://www.crochet.com/learning-center/basic-stitches/slip-stitch",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 10,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 43
+        }
+      ]
     }
   ]
 };

@@ -1,30 +1,24 @@
-# Crochet member-area video collection
+# Häkelvideos
 
-Replaced on 2026-10-15 at the user’s request. All 13 previous DROPS lessons were removed from the active collection. None of their video IDs is retained.
+Ein Schritt nach dem anderen: lesen, anschauen und ausprobieren. Das Video hält nach jedem Schritt an; du bestimmst, wann es weitergeht. Beginne mit 0,75× und wiederhole nach Bedarf.
 
-Eight new filmed demonstrations show real hands using a crochet hook, yarn or finishing needle. Every selected passage is 10–55 seconds long. The member-area player permanently mutes audio and sets volume to zero; this does not claim that every original recording is silent.
+| Lektion | Source | Seconds | Practice windows |
+|---|---|---|---|
+| Anfangsschlinge ohne Festziehen | Joy of Motion Crochet · https://www.youtube.com/watch?v=Hukpk2Ahkhs · [creator tutorial](https://joyofmotioncrochet.com/how-to-make-a-slip-knot-in-crocheting/) | 8–40 (32 s) | 8–13, 13–24, 24–40 |
+| Gleichmäßige Luftmaschen, eine nach der anderen | Joy of Motion Crochet · https://www.youtube.com/watch?v=vjq1BfTBG64 · [creator tutorial](https://joyofmotioncrochet.com/how-to-chain-stitch-crochet/) | 8–55 (47 s) | 8–19, 19–32, 32–55 |
+| Feste Masche: die Amigurumi-Grundlage | Joy of Motion Crochet · https://www.youtube.com/watch?v=0F-dTBgMWCM · [creator tutorial](https://joyofmotioncrochet.com/single-crochet-stitch/) | 8–28 (20 s) | 8–20, 20–25, 25–28 |
+| Magischer Ring: die Mitte vorbereiten | Hilaria Fina · https://www.youtube.com/watch?v=PYy2dsYR-pc · [creator tutorial](https://hilariafina.com/en/magic-ring-videotutorial/) | 3–50 (47 s) | 3–18, 18–31, 31–50 |
+| Zunahme: zwei feste Maschen in eine Masche | Joy of Motion Crochet · https://www.youtube.com/watch?v=FDgRW6ZhAyQ · [creator tutorial](https://joyofmotioncrochet.com/single-crochet-stitch/) | 8–31 (23 s) | 8–17, 17–25, 25–31 |
+| Unsichtbare Abnahme aus zwei Maschen | Joy of Motion Crochet · https://www.youtube.com/watch?v=osgxJ7qLJ9I · [creator tutorial](https://joyofmotioncrochet.com/invisible-single-crochet-decrease/) | 8–60 (52 s) | 8–22, 22–37, 37–60 |
+| Stäbchen: durch jeweils zwei Schlingen | Joy of Motion Crochet · https://www.youtube.com/watch?v=gC9r2xoAtN4 · [creator tutorial](https://joyofmotioncrochet.com/how-to-crochet-the-double-crochet-stitch/) | 8–37 (29 s) | 8–15, 15–26, 26–37 |
+| Kettmasche: eine einfache Verbindung | WeCrochet · https://www.youtube.com/watch?v=exq2ZxyVKJ8 · [creator tutorial](https://www.crochet.com/learning-center/basic-stitches/slip-stitch) | 10–43 (33 s) | 10–22, 22–31, 31–43 |
 
-Original public creator embeds are used. No recordings are downloaded or rehosted. Creator marks baked into the source image remain part of the original recording.
+## Guided practice — 2026-10-24
 
-| Lesson | Creator | Original | Selected seconds | Length |
-|---|---|---|---|---|
-| Reliefstruktur in zwei Farben | Knitting By Gözde | https://www.youtube.com/watch?v=-6avnfCNO-c | 0–44 | 44 s |
-| Magischer Ring in Nahaufnahme | naztazia | https://www.youtube.com/watch?v=4eZkklGW0Uk | 0–10 | 10 s |
-| Neuen Faden mit einer Schlinge sichern | Hilaria Fina | https://www.youtube.com/watch?v=awksFMEElAM | 27–54 | 27 s |
-| Rippen aus festen Maschen | Hilaria Fina | https://www.youtube.com/watch?v=Q6WB45LdXHM | 5–55 | 50 s |
-| Zwei Maschenhöhen kombinieren | The Crochet Crowd | https://www.youtube.com/watch?v=YRiWA90y5Ok | 2–29 | 27 s |
-| Kontrastkante: Schlingen bündeln | Create by K | https://www.youtube.com/watch?v=g06hLz5NTB4 | 0–16 | 16 s |
-| Luftmaschenbögen für ein Netzmuster | Hilaria Fina | https://www.youtube.com/watch?v=HDvVTgH8auk | 120–175 | 55 s |
-| Eine Runde unsichtbar schließen | Hilaria Fina | https://www.youtube.com/watch?v=PlESZRcZA5o | 2–37 | 35 s |
+Replicated from croche-bg-members. Eight original public creator embeds, with the same three playback windows per lesson. Default speed 0.75×; playback pauses after each step. The learner chooses repeat, previous or next. Instructions, lesson titles, practice tips, controls and book links are localized.
 
-## Creator references
+No recording was downloaded or rehosted. Player audio is disabled; this is not a claim that the source upload is silent. Baked creator marks remain intact.
 
-- https://hilariafina.com/en/secure-chains/
-- https://hilariafina.com/en/single-crochet-through-back-loop/
-- https://hilariafina.com/en/mesh-crochet-stitch/
+Book 1: amigurumi foundations and shaping. Book 2: Christmas decorations, basic stitches and circular starts/joins. Book 3: home projects, chains, stitches and shaping. The links support technique practice; these creators are not claimed to demonstrate the exact projects in the supplied PDFs.
 
-The Crochet Crowd’s description for YRiWA90y5Ok explicitly identifies the recording as a demonstration with no sound. Its first technique chapter covers double crochet and half double crochet together from 0:02; the selected passage ends before the next chapter at 0:30.
-
-The presentation uses native portrait or landscape proportions, page controls for play/pause, repeat, fullscreen and 0.5×/0.75×/1× speed. The provider iframe is not interactive. A preview image covers loading and seeking until the selected passage is playing. Duration and progress refer to the selected passage.
-
-Previous practice marks remain in their original local-storage namespace. The replacement collection starts a separate practice record.
+Changes are prepared locally for review; they have not been published.

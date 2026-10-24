@@ -91,8 +91,8 @@ const APP_DATA = {
   ],
   "videoUI": {
     "eyebrow": "CROȘETAT PAS CU PAS",
-    "heading": "Privește mâinile. Încearcă ochiul.",
-    "intro": "Opt demonstrații scurte, de aproape, cu mâini reale, fir și croșetă. Descoperă bucle, modele în relief și finisaje îngrijite. Toate demonstrațiile sunt redate fără sunet.",
+    "heading": "De la prima buclă la proiectele tale",
+    "intro": "Câte un pas: citește, privește și încearcă. Videoclipul se oprește după fiecare pas; tu alegi când continui. Începe la 0,75× și repetă de câte ori ai nevoie.",
     "shortLessons": "lecții scurte",
     "noSound": "Fără sunet",
     "closeUp": "Mâini în prim-plan",
@@ -117,147 +117,320 @@ const APP_DATA = {
     "markPractice": "Marchează ca exersat",
     "practiced": "Exersat",
     "practiceCount": "tehnici exersate",
-    "choose": "Alege tehnica următoare",
-    "note": "Pregătește firul și croșeta. Privește mai întâi, alege 0,5× dacă ai nevoie și exersează în ritmul tău.",
+    "choose": "Parcursul tău de începător",
+    "note": "Câte un pas: citește, privește și încearcă. Videoclipul se oprește după fiecare pas; tu alegi când continui. Începe la 0,75× și repetă de câte ori ai nevoie.",
     "error": "Demonstrația nu s-a putut încărca. Apasă Repetă sau alege altă tehnică.",
-    "fullscreen": "Ecran complet"
+    "fullscreen": "Ecran complet",
+    "relatedBooks": "Aplică alături de cărți",
+    "beforeStart": "Înainte să începi",
+    "preparation": "Pregătește fir neted, deschis la culoare, și croșeta indicată în proiect. Pentru ture, ține un marcator la îndemână. Privește întâi, apoi repetă pe un eșantion.",
+    "step": "Pasul",
+    "of": "din",
+    "previousStep": "Pasul anterior",
+    "nextStep": "Pasul următor",
+    "watchStep": "Vezi acest pas",
+    "repeatStep": "Repetă acest pas",
+    "yourTurn": "Acum este rândul tău",
+    "practicePrompt": "Videoclipul s-a oprit. Repetă mișcarea cu firul tău. Continuă când te simți sigur.",
+    "stepReady": "Citește instrucțiunea și apasă „Vezi acest pas”.",
+    "stepPlaying": "Urmărește doar această mișcare.",
+    "stepPaused": "Pauză. Repetă mișcarea în ritmul tău.",
+    "guidedNote": "Câte un pas: citește, privește și încearcă. Videoclipul se oprește după fiecare pas; tu alegi când continui. Începe la 0,75× și repetă de câte ori ai nevoie.",
+    "stepProgress": "Progresul acestui pas",
+    "fullExcerpt": "Fragmentul complet"
   },
   "videos": [
     {
-      "id": "fresh-relief-two-colors",
-      "title": "Model în relief în două culori",
-      "category": "Textură și culoare",
-      "youtubeId": "-6avnfCNO-c",
-      "creator": "Knitting By Gözde",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 44,
-      "description": "Buclele roz și gri formează un relief. Urmărește locurile de introducere a croșetei, ridicarea buclelor și închiderea grupului.",
+      "id": "beginner-slip-knot",
+      "title": "Bucla inițială fără strângere",
+      "category": "Primii pași",
+      "description": "Pregătește prima buclă pe croșetă înainte să începi proiectele din cărți.",
       "steps": [
-        "Găsește locul de introducere arătat în structura existentă.",
-        "Ridică buclele uniform și păstrează o înălțime apropiată.",
-        "Închide grupul ca în videoclip și compară-l cu cel anterior."
+        "Încrucișează firul și formează o buclă.",
+        "Trage firul de lucru prin buclă.",
+        "Pune bucla pe croșetă și regleaz-o să alunece fără să o strângi."
       ],
-      "tip": "Alege 0,5× și exersează un singur grup pe un eșantion mic. Păstrează buclele lejere."
-    },
-    {
-      "id": "fresh-magic-ring",
-      "title": "Inelul magic de aproape",
-      "category": "Începutul în cerc",
-      "youtubeId": "4eZkklGW0Uk",
-      "creator": "naztazia",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 10,
-      "description": "Vezi bucla inițială, primele ochiuri în inel și strângerea centrului.",
-      "steps": [
-        "Formează bucla de fir și ține capătul scurt.",
-        "Fixează bucla și lucrează în inel ochiurile din instrucțiuni.",
-        "Ține ochiurile și trage capătul scurt pentru a închide centrul."
-      ],
-      "tip": "Fragmentul este foarte scurt. Redă la 0,5× și oprește după fiecare mișcare."
-    },
-    {
-      "id": "fresh-secure-chain",
-      "title": "Fixarea firului nou cu o buclă",
-      "category": "Fir și ochiuri de lanț",
-      "youtubeId": "awksFMEElAM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 27,
-      "end": 54,
-      "description": "Bucla inițială fixează ferm un fir nou. Urmărește formarea următoarelor ochiuri de lanț.",
-      "steps": [
-        "Formează o buclă inițială reglabilă cu firul nou.",
-        "Pune-o pe croșetă și adu firul la locul de îmbinare.",
-        "Lucrează ochiurile de lanț necesare cu tensiune uniformă."
-      ],
-      "tip": "Bucla trebuie să alunece pe croșetă. Nu o strânge prea tare."
-    },
-    {
-      "id": "fresh-back-loop",
-      "title": "Model elastic din piciorușe scurte",
-      "category": "Identificarea buclei din spate",
-      "youtubeId": "Q6WB45LdXHM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 5,
-      "end": 55,
-      "description": "Piciorușele scurte lucrate doar în bucla din spate creează striații. Observă locul exact unde intră croșeta.",
-      "steps": [
-        "Identifică cele două bucle din partea de sus a ochiului următor.",
-        "Introdu croșeta numai sub bucla din spate și lucrează un picioruș scurt.",
-        "Repetă de-a lungul rândului și întoarce lucrul conform instrucțiunilor."
-      ],
-      "tip": "Deschide ușor partea de sus a ochiului cu degetul mare și arătătorul, ca să vezi bucla din spate."
-    },
-    {
-      "id": "fresh-combined-stitch",
-      "title": "Combinarea a două înălțimi de ochiuri",
-      "category": "Combinarea ochiurilor",
-      "youtubeId": "YRiWA90y5Ok",
-      "creator": "The Crochet Crowd",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 29,
-      "description": "Demonstrația unește un picioruș dublu și unul semidublu într-un grup. Urmărește ultima trecere a firului.",
-      "steps": [
-        "Observă pregătirea piciorușului dublu pentru grupul comun.",
-        "Realizează legătura cu piciorușul semidublu așa cum este arătat.",
-        "Închide buclele ca în videoclip și repetă pe un eșantion."
-      ],
-      "tip": "Oprește înainte de ultima trecere și compară buclele de pe croșeta ta cu imaginea."
-    },
-    {
-      "id": "fresh-contrast-border",
-      "title": "Bordură contrastantă din grupuri de bucle",
-      "category": "Margini decorative",
-      "youtubeId": "g06hLz5NTB4",
-      "creator": "Create by K",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 16,
-      "description": "O bordură albastră în relief se evidențiază pe baza gri. Urmărește ridicarea și închiderea buclelor la margine.",
-      "steps": [
-        "Găsește locul de introducere arătat pe marginea rândului anterior.",
-        "Ridică buclele ca în prim-plan și ține-le la fel de lejere.",
-        "Închide grupul și continuă la următorul loc de introducere."
-      ],
-      "tip": "Culoarea contrastantă te ajută să deosebești firul nou de bază. Repetă la 0,5×."
-    },
-    {
-      "id": "fresh-mesh-arches",
-      "title": "Arcuri de lanț pentru model de plasă",
-      "category": "Modele aerisite",
-      "youtubeId": "HDvVTgH8auk",
-      "creator": "Hilaria Fina",
+      "tip": "Repetă de trei ori. Nodul inițial nu se numără ca ochi de lanț.",
+      "youtubeId": "Hukpk2Ahkhs",
+      "start": 8,
+      "end": 40,
       "videoShape": "landscape",
-      "start": 120,
-      "end": 175,
-      "description": "Arcurile de lanț și punctele de legătură creează o structură deschisă pe lanțul pregătit.",
-      "steps": [
-        "Lucrează numărul de ochiuri de lanț indicat în model.",
-        "Numără locul de introducere pe lanțul pregătit.",
-        "Fixează arcul acolo și începe următorul conform instrucțiunilor."
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-make-a-slip-knot-in-crocheting/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
       ],
-      "tip": "Numără ochiurile înainte de a introduce croșeta. Arcurile egale creează o plasă regulată."
+      "chapters": [
+        {
+          "start": 8,
+          "end": 13
+        },
+        {
+          "start": 13,
+          "end": 24
+        },
+        {
+          "start": 24,
+          "end": 40
+        }
+      ]
     },
     {
-      "id": "fresh-invisible-join",
-      "title": "Închiderea invizibilă a unui tur",
-      "category": "Finisaj îngrijit",
-      "youtubeId": "PlESZRcZA5o",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 37,
-      "description": "Cu un ac pentru fire se recreează ultimul ochi, astfel încât să se integreze printre celelalte.",
+      "id": "beginner-chain",
+      "title": "Ochiuri de lanț egale, unul câte unul",
+      "category": "Primii pași",
+      "description": "Exersează baza pentru rânduri și micile agățători ale proiectelor tale.",
       "steps": [
-        "Scoate capătul firului din ultima buclă și trece-l prin ac.",
-        "Condu acul prin părțile ochiurilor arătate pentru a recrea ultimul ochi.",
-        "Potrivește tensiunea cu ochiurile vecine și fixează capătul pe dos."
+        "Începe cu o buclă pe croșetă.",
+        "Ia firul pe croșetă și trage-l prin buclă.",
+        "Fă zece ochiuri de lanț și numără vârfurile în formă de V."
       ],
-      "tip": "Strânge cu grijă. Ochiul de îmbinare trebuie să aibă aproximativ aceeași mărime ca celelalte."
+      "tip": "Nu strânge lanțul: croșeta trebuie să intre ușor la rândul următor.",
+      "youtubeId": "vjq1BfTBG64",
+      "start": 8,
+      "end": 55,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-chain-stitch-crochet/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 19
+        },
+        {
+          "start": 19,
+          "end": 32
+        },
+        {
+          "start": 32,
+          "end": 55
+        }
+      ]
+    },
+    {
+      "id": "beginner-single",
+      "title": "Picioruș scurt: baza amigurumi",
+      "category": "Ochiuri de bază",
+      "description": "Urmărește introducerea croșetei și cele două bucle. Vei folosi baza la figurine și coșuri.",
+      "steps": [
+        "Introdu croșeta în ochiul indicat.",
+        "Ia firul și trage o buclă: sunt două pe croșetă.",
+        "Ia din nou firul și trece-l prin ambele bucle."
+      ],
+      "tip": "Exersează mai întâi mișcarea pe un eșantion mic.",
+      "youtubeId": "0F-dTBgMWCM",
+      "start": 8,
+      "end": 28,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 20
+        },
+        {
+          "start": 20,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 28
+        }
+      ]
+    },
+    {
+      "id": "beginner-magic-ring",
+      "title": "Inel magic: pregătirea centrului",
+      "category": "Amigurumi și Crăciun",
+      "description": "Vezi cum pregătești o buclă reglabilă pentru proiectele circulare.",
+      "steps": [
+        "Formează o buclă cu capătul firului.",
+        "Introdu croșeta și trage firul de lucru.",
+        "Fixează bucla și lasă centrul deschis pentru ochiurile modelului."
+      ],
+      "tip": "Strânge centrul numai după ce lucrezi ochiurile cerute în PDF.",
+      "youtubeId": "PYy2dsYR-pc",
+      "start": 3,
+      "end": 50,
+      "videoShape": "landscape",
+      "creator": "Hilaria Fina",
+      "sourceUrl": "https://hilariafina.com/en/magic-ring-videotutorial/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 3,
+          "end": 18
+        },
+        {
+          "start": 18,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 50
+        }
+      ]
+    },
+    {
+      "id": "beginner-increase",
+      "title": "Creștere: două piciorușe în același ochi",
+      "category": "Modelarea formei",
+      "description": "Observă două piciorușe scurte în aceeași bază. Așa se lărgește piesa.",
+      "steps": [
+        "Lucrează un picioruș scurt în ochiul ales.",
+        "Introdu din nou croșeta în același ochi.",
+        "Lucrează încă un picioruș scurt și numără cele două vârfuri."
+      ],
+      "tip": "O creștere adaugă un ochi la numărătoare. Urmează repetările din PDF.",
+      "youtubeId": "FDgRW6ZhAyQ",
+      "start": 8,
+      "end": 31,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 17
+        },
+        {
+          "start": 17,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 31
+        }
+      ]
+    },
+    {
+      "id": "beginner-invisible-decrease",
+      "title": "Scădere invizibilă din două ochiuri",
+      "category": "Modelarea formei",
+      "description": "Urmărește buclele din față pentru o îngustare mai discretă a formelor amigurumi.",
+      "steps": [
+        "Prinde numai bucla din față a următorului ochi.",
+        "Prinde și bucla din față a ochiului următor.",
+        "Ia firul, trece-l prin cele două bucle din față și termină piciorușul scurt."
+      ],
+      "tip": "Două ochiuri devin unul. Numără-le înainte să continui tura.",
+      "youtubeId": "osgxJ7qLJ9I",
+      "start": 8,
+      "end": 60,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/invisible-single-crochet-decrease/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 37
+        },
+        {
+          "start": 37,
+          "end": 60
+        }
+      ]
+    },
+    {
+      "id": "beginner-double",
+      "title": "Picioruș dublu: trecere prin câte două bucle",
+      "category": "Crăciun și casă",
+      "description": "Exersează un picioruș mai înalt înainte de păturile și decorațiunile din cărți.",
+      "steps": [
+        "Ia un jeteu și introdu croșeta în ochi.",
+        "Ia firul și trage o buclă: sunt trei pe croșetă.",
+        "Trece firul prin două bucle, apoi prin cele două rămase."
+      ],
+      "tip": "Folosim abrevierile americane din PDF: dc înseamnă picioruș dublu.",
+      "youtubeId": "gC9r2xoAtN4",
+      "start": 8,
+      "end": 37,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-crochet-the-double-crochet-stitch/",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 15
+        },
+        {
+          "start": 15,
+          "end": 26
+        },
+        {
+          "start": 26,
+          "end": 37
+        }
+      ]
+    },
+    {
+      "id": "beginner-slip-stitch",
+      "title": "Ochi alunecat: o îmbinare simplă",
+      "category": "Îmbinări și finisare",
+      "description": "Observă un ochi de îmbinare jos, util pentru deplasare fără a adăuga înălțime.",
+      "steps": [
+        "Introdu croșeta în ochiul indicat.",
+        "Prinde firul de lucru.",
+        "Trage-l dintr-o singură mișcare prin ochi și bucla de pe croșetă."
+      ],
+      "tip": "Închide tura doar când modelul o cere; lucrul în spirală nu necesită această îmbinare.",
+      "youtubeId": "exq2ZxyVKJ8",
+      "start": 10,
+      "end": 43,
+      "videoShape": "landscape",
+      "creator": "WeCrochet",
+      "sourceUrl": "https://www.crochet.com/learning-center/basic-stitches/slip-stitch",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 10,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 43
+        }
+      ]
     }
   ]
 };

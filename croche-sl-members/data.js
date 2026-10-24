@@ -91,8 +91,8 @@ const APP_DATA = {
   ],
   "videoUI": {
     "eyebrow": "KVAČKANJE KORAK ZA KORAKOM",
-    "heading": "Opazujte roke. Preizkusite petljo.",
-    "intro": "Osem kratkih bližnjih posnetkov pravih rok, preje in kvačke. Odkrijte zanke, reliefne vzorce in urejene zaključke. Vse demonstracije se predvajajo brez zvoka.",
+    "heading": "Od prve zanke do tvojih izdelkov",
+    "intro": "Po en korak: preberi, poglej in poskusi. Video se ustavi po vsakem koraku; ti odločiš, kdaj nadaljevati. Začni pri 0,75× in ponovi po potrebi.",
     "shortLessons": "kratkih lekcij",
     "noSound": "Brez zvoka",
     "closeUp": "Roke od blizu",
@@ -117,147 +117,320 @@ const APP_DATA = {
     "markPractice": "Označi kot vadeno",
     "practiced": "Vadeno",
     "practiceCount": "vadenih tehnik",
-    "choose": "Izberite naslednjo tehniko",
-    "note": "Pripravite prejo in kvačko. Najprej opazujte, po potrebi izberite 0,5× in vadite v svojem tempu.",
+    "choose": "Tvoja pot za začetnike",
+    "note": "Po en korak: preberi, poglej in poskusi. Video se ustavi po vsakem koraku; ti odločiš, kdaj nadaljevati. Začni pri 0,75× in ponovi po potrebi.",
     "error": "Demonstracije ni bilo mogoče naložiti. Pritisnite Ponovi ali izberite drugo tehniko.",
-    "fullscreen": "Celoten zaslon"
+    "fullscreen": "Celoten zaslon",
+    "relatedBooks": "Uporabi ob knjigah",
+    "beforeStart": "Pred začetkom",
+    "preparation": "Pripravi gladko svetlo prejo in kvačko, navedeno pri projektu. Za kroge imej pri roki označevalec. Najprej poglej, nato ponovi na vzorcu.",
+    "step": "Korak",
+    "of": "od",
+    "previousStep": "Prejšnji korak",
+    "nextStep": "Naslednji korak",
+    "watchStep": "Poglej ta korak",
+    "repeatStep": "Ponovi ta korak",
+    "yourTurn": "Zdaj si na vrsti ti",
+    "practicePrompt": "Video se je ustavil. Ponovi gib s svojo prejo. Nadaljuj, ko boš pripravljen.",
+    "stepReady": "Preberi navodilo in pritisni »Poglej ta korak«.",
+    "stepPlaying": "Opazuj samo ta gib.",
+    "stepPaused": "Premor. Gib ponovi v svojem ritmu.",
+    "guidedNote": "Po en korak: preberi, poglej in poskusi. Video se ustavi po vsakem koraku; ti odločiš, kdaj nadaljevati. Začni pri 0,75× in ponovi po potrebi.",
+    "stepProgress": "Napredek tega koraka",
+    "fullExcerpt": "Celoten posnetek"
   },
   "videos": [
     {
-      "id": "fresh-relief-two-colors",
-      "title": "Reliefni vzorec v dveh barvah",
-      "category": "Tekstura in barva",
-      "youtubeId": "-6avnfCNO-c",
-      "creator": "Knitting By Gözde",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 44,
-      "description": "Rožnate in sive zanke tvorijo relief. Opazujte vbode, zajemanje zank in zapiranje skupine.",
+      "id": "beginner-slip-knot",
+      "title": "Začetna zanka brez zategovanja",
+      "category": "Prvi koraki",
+      "description": "Pred projekti iz knjig pripravi prvo zanko na kvački.",
       "steps": [
-        "Poiščite prikazano mesto vboda v obstoječem vzorcu.",
-        "Zanke zajemajte enakomerno in ohranjajte podobno višino.",
-        "Skupino zaprite kot v posnetku in jo primerjajte s prejšnjo."
+        "Prekrižaj prejo in oblikuj zanko.",
+        "Delovno nit potegni skozi zanko.",
+        "Zanko namesti na kvačko in jo prilagodi, da drsi brez zategovanja."
       ],
-      "tip": "Izberite 0,5× in vadite eno skupino na majhnem vzorcu. Zanke naj bodo sproščene."
-    },
-    {
-      "id": "fresh-magic-ring",
-      "title": "Čarobni obroč od blizu",
-      "category": "Začetek v krogu",
-      "youtubeId": "4eZkklGW0Uk",
-      "creator": "naztazia",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 10,
-      "description": "Oglejte si zanko, prve petlje v obroču in zapiranje sredine.",
-      "steps": [
-        "Oblikujte zanko in držite kratki konec preje.",
-        "Zanko pritrdite in v obroč skvačkajte petlje po navodilih.",
-        "Držite petlje in povlecite kratki konec, da zaprete sredino."
-      ],
-      "tip": "Odlomek je zelo kratek. Predvajajte ga pri 0,5× in se ustavite po vsakem gibu."
-    },
-    {
-      "id": "fresh-secure-chain",
-      "title": "Pritrditev nove preje z zanko",
-      "category": "Preja in verižne petlje",
-      "youtubeId": "awksFMEElAM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 27,
-      "end": 54,
-      "description": "Začetna zanka omogoča trden začetek nove preje. Spremljajte nastanek naslednjih verižnih petelj.",
-      "steps": [
-        "Z novo prejo oblikujte premično začetno zanko.",
-        "Namestite jo na kvačko in prejo pripeljite do mesta spajanja.",
-        "Skvačkajte potrebne verižne petlje z enakomerno napetostjo."
-      ],
-      "tip": "Zanka mora drseti po kvački. Ne zategnite je preveč."
-    },
-    {
-      "id": "fresh-back-loop",
-      "title": "Rebrasti vzorec iz gostih petelj",
-      "category": "Prepoznavanje zadnje zanke",
-      "youtubeId": "Q6WB45LdXHM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 5,
-      "end": 55,
-      "description": "Goste petlje skozi zadnjo zanko ustvarijo rebrasto strukturo. Opazujte natančno mesto vboda.",
-      "steps": [
-        "Prepoznajte dve zanki na vrhu naslednje petlje.",
-        "Kvačko vbodite le pod zadnjo zanko in naredite gosto petljo.",
-        "Ponavljajte vzdolž vrste in obrnite delo po navodilih."
-      ],
-      "tip": "S palcem in kazalcem nekoliko odprite vrh petlje, da je zadnja zanka dobro vidna."
-    },
-    {
-      "id": "fresh-combined-stitch",
-      "title": "Povezovanje dveh višin petelj",
-      "category": "Kombiniranje petelj",
-      "youtubeId": "YRiWA90y5Ok",
-      "creator": "The Crochet Crowd",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 29,
-      "description": "Posnetek poveže šibično in polšibično petljo v skupno skupino. Opazujte zadnji poteg.",
-      "steps": [
-        "Spremljajte pripravo šibične petlje za skupno skupino.",
-        "Naredite prikazano povezavo s polšibično petljo.",
-        "Zanke zaprite kot v posnetku in ponovite na poskusnem vzorcu."
-      ],
-      "tip": "Ustavite se pred zadnjim potegom in primerjajte zanke na svoji kvački s posnetkom."
-    },
-    {
-      "id": "fresh-contrast-border",
-      "title": "Kontrastni rob s skupinami zank",
-      "category": "Okrasni robovi",
-      "youtubeId": "g06hLz5NTB4",
-      "creator": "Create by K",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 16,
-      "description": "Moder reliefni rob izstopa iz sive podlage. Spremljajte zajemanje in zapiranje zank ob robu.",
-      "steps": [
-        "Poiščite prikazano mesto vboda na robu prejšnje vrste.",
-        "Zanke zajemite kot v bližnjem posnetku in jih držite enakomerno sproščene.",
-        "Zaprite skupino in nadaljujte do naslednjega vboda."
-      ],
-      "tip": "Kontrastna barva pomaga ločiti novo prejo od podlage. Ponovite pri 0,5×."
-    },
-    {
-      "id": "fresh-mesh-arches",
-      "title": "Verižni loki za mrežast vzorec",
-      "category": "Zračni vzorci",
-      "youtubeId": "HDvVTgH8auk",
-      "creator": "Hilaria Fina",
+      "tip": "Ponovi trikrat. Začetni vozel se ne šteje kot verižna petlja.",
+      "youtubeId": "Hukpk2Ahkhs",
+      "start": 8,
+      "end": 40,
       "videoShape": "landscape",
-      "start": 120,
-      "end": 175,
-      "description": "Verižni loki in spojna mesta tvorijo odprto strukturo na pripravljeni verižici.",
-      "steps": [
-        "Skvačkajte število verižnih petelj iz navodil.",
-        "Odštejte mesto vboda v pripravljeni verižici.",
-        "Na tem mestu pritrdite lok in začnite naslednjega po navodilih."
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-make-a-slip-knot-in-crocheting/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
       ],
-      "tip": "Pred vbodom preštejte petlje. Enako veliki loki ustvarijo enakomerno mrežo."
+      "chapters": [
+        {
+          "start": 8,
+          "end": 13
+        },
+        {
+          "start": 13,
+          "end": 24
+        },
+        {
+          "start": 24,
+          "end": 40
+        }
+      ]
     },
     {
-      "id": "fresh-invisible-join",
-      "title": "Nevidno zaključevanje kroga",
-      "category": "Urejen zaključek",
-      "youtubeId": "PlESZRcZA5o",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 37,
-      "description": "Z iglo za prejo oblikujete zadnjo petljo, ki se zlije z drugimi.",
+      "id": "beginner-chain",
+      "title": "Enakomerne verižne petlje",
+      "category": "Prvi koraki",
+      "description": "Vadi osnovo za vrste in majhne zanke svojih izdelkov.",
       "steps": [
-        "Konec preje izvlecite iz zadnje zanke in ga vdenite v iglo.",
-        "Iglo vodite skozi prikazane dele petelj, da posnemate zadnjo petljo.",
-        "Napetost prilagodite sosednjim petljam in konec pritrdite na hrbtni strani."
+        "Začni z eno zanko na kvački.",
+        "Ovij nit in jo potegni skozi zanko.",
+        "Naredi deset verižnih petelj in preštej vrhove v obliki črke V."
       ],
-      "tip": "Zategujte previdno. Zaključna petlja naj bo približno enako velika kot druge."
+      "tip": "Verižice ne zateguj: kvačka mora v naslednji vrsti zlahka skozi.",
+      "youtubeId": "vjq1BfTBG64",
+      "start": 8,
+      "end": 55,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-chain-stitch-crochet/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 19
+        },
+        {
+          "start": 19,
+          "end": 32
+        },
+        {
+          "start": 32,
+          "end": 55
+        }
+      ]
+    },
+    {
+      "id": "beginner-single",
+      "title": "Gosta petlja: osnova amigurumija",
+      "category": "Osnovne petlje",
+      "description": "Opazuj vbod kvačke in dve zanki. To osnovo uporabi pri figuricah in košarah.",
+      "steps": [
+        "Kvačko vstavi v označeno petljo.",
+        "Zajemi nit in izvleci zanko: na kvački sta dve.",
+        "Znova zajemi nit in jo potegni skozi obe zanki."
+      ],
+      "tip": "Gib najprej vadi na majhnem vzorcu.",
+      "youtubeId": "0F-dTBgMWCM",
+      "start": 8,
+      "end": 28,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 20
+        },
+        {
+          "start": 20,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 28
+        }
+      ]
+    },
+    {
+      "id": "beginner-magic-ring",
+      "title": "Čarobni obroč: priprava sredine",
+      "category": "Amigurumi in božič",
+      "description": "Poglej, kako pripraviš nastavljivo zanko za krožne izdelke.",
+      "steps": [
+        "S koncem preje oblikuj zanko.",
+        "Vstavi kvačko in izvleci delovno nit.",
+        "Pritrdi zanko in pusti sredino odprto za petlje iz navodil."
+      ],
+      "tip": "Sredino zategni šele po petljah, ki jih določa PDF.",
+      "youtubeId": "PYy2dsYR-pc",
+      "start": 3,
+      "end": 50,
+      "videoShape": "landscape",
+      "creator": "Hilaria Fina",
+      "sourceUrl": "https://hilariafina.com/en/magic-ring-videotutorial/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 3,
+          "end": 18
+        },
+        {
+          "start": 18,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 50
+        }
+      ]
+    },
+    {
+      "id": "beginner-increase",
+      "title": "Dodajanje: dve petlji v isto osnovo",
+      "category": "Oblikovanje",
+      "description": "Opazuj dve gosti petlji v isti osnovi. Tako se del razširi.",
+      "steps": [
+        "Naredi gosto petljo v izbrano petljo.",
+        "Kvačko znova vstavi v isto petljo.",
+        "Naredi še eno gosto petljo in preštej dva vrhova."
+      ],
+      "tip": "Eno dodajanje poveča število za eno petljo. Upoštevaj ponovitve iz PDF-ja.",
+      "youtubeId": "FDgRW6ZhAyQ",
+      "start": 8,
+      "end": 31,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 17
+        },
+        {
+          "start": 17,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 31
+        }
+      ]
+    },
+    {
+      "id": "beginner-invisible-decrease",
+      "title": "Nevidno odvzemanje dveh petelj",
+      "category": "Oblikovanje",
+      "description": "Sledi sprednjima nitma za manj opazno oženje oblik amigurumija.",
+      "steps": [
+        "Zajemi le sprednjo nit naslednje petlje.",
+        "Zajemi še sprednjo nit naslednje petlje.",
+        "Zajemi delovno nit, jo potegni skozi obe sprednji niti in dokončaj gosto petljo."
+      ],
+      "tip": "Dve petlji postaneta ena. Pred nadaljevanjem kroga jih preštej.",
+      "youtubeId": "osgxJ7qLJ9I",
+      "start": 8,
+      "end": 60,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/invisible-single-crochet-decrease/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 37
+        },
+        {
+          "start": 37,
+          "end": 60
+        }
+      ]
+    },
+    {
+      "id": "beginner-double",
+      "title": "Šibična petlja: skozi dve zanki",
+      "category": "Božič in dom",
+      "description": "Vadi višjo petljo pred odejami in okraski iz knjig.",
+      "steps": [
+        "Ovij nit in vstavi kvačko v petljo.",
+        "Zajemi nit in izvleci zanko: na kvački so tri.",
+        "Nit potegni skozi dve zanki, nato še skozi preostali dve."
+      ],
+      "tip": "Uporabljamo ameriške oznake iz PDF-ja: dc pomeni šibično petljo.",
+      "youtubeId": "gC9r2xoAtN4",
+      "start": 8,
+      "end": 37,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-crochet-the-double-crochet-stitch/",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 15
+        },
+        {
+          "start": 15,
+          "end": 26
+        },
+        {
+          "start": 26,
+          "end": 37
+        }
+      ]
+    },
+    {
+      "id": "beginner-slip-stitch",
+      "title": "Polgosta petlja: preprost spoj",
+      "category": "Spajanje in zaključki",
+      "description": "Opazuj nizko spojno petljo za premik brez dodajanja višine.",
+      "steps": [
+        "Kvačko vstavi v označeno petljo.",
+        "Zajemi delovno nit.",
+        "Nit naenkrat potegni skozi petljo in zanko na kvački."
+      ],
+      "tip": "Krog skleni samo, ko to zahtevajo navodila; pri delu v spirali to ni potrebno.",
+      "youtubeId": "exq2ZxyVKJ8",
+      "start": 10,
+      "end": 43,
+      "videoShape": "landscape",
+      "creator": "WeCrochet",
+      "sourceUrl": "https://www.crochet.com/learning-center/basic-stitches/slip-stitch",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 10,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 43
+        }
+      ]
     }
   ]
 };

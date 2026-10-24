@@ -91,8 +91,8 @@ const APP_DATA = {
   ],
   "videoUI": {
     "eyebrow": "HEKLANJE KORAK PO KORAK",
-    "heading": "Promatrajte ruke. Isprobajte bod.",
-    "intro": "Osam kratkih snimki izbliza s pravim rukama, pređom i kukicom. Upoznajte petlje, reljefne uzorke i uredne završetke. Sve demonstracije reproduciraju se bez zvuka.",
+    "heading": "Od prve omče do tvojih projekata",
+    "intro": "Korak po korak: pročitaj, pogledaj i pokušaj. Video se zaustavlja nakon svakog koraka; ti odlučuješ kada nastaviti. Počni na 0,75× i ponavljaj koliko želiš.",
     "shortLessons": "kratkih lekcija",
     "noSound": "Bez zvuka",
     "closeUp": "Ruke izbliza",
@@ -117,147 +117,320 @@ const APP_DATA = {
     "markPractice": "Označi kao uvježbano",
     "practiced": "Uvježbano",
     "practiceCount": "uvježbanih tehnika",
-    "choose": "Odaberite sljedeću tehniku",
-    "note": "Pripremite pređu i kukicu. Najprije gledajte, po potrebi odaberite 0,5× i vježbajte vlastitim tempom.",
+    "choose": "Tvoj početnički put",
+    "note": "Korak po korak: pročitaj, pogledaj i pokušaj. Video se zaustavlja nakon svakog koraka; ti odlučuješ kada nastaviti. Počni na 0,75× i ponavljaj koliko želiš.",
     "error": "Demonstracija se ne može učitati. Pritisnite Ponovi ili odaberite drugu tehniku.",
-    "fullscreen": "Cijeli zaslon"
+    "fullscreen": "Cijeli zaslon",
+    "relatedBooks": "Primijeni uz knjige",
+    "beforeStart": "Prije početka",
+    "preparation": "Pripremi glatku svijetlu pređu i kukicu navedenu u projektu. Za krugove pripremi oznaku boda. Prvo pogledaj, zatim ponovi na uzorku.",
+    "step": "Korak",
+    "of": "od",
+    "previousStep": "Prethodni korak",
+    "nextStep": "Sljedeći korak",
+    "watchStep": "Pogledaj ovaj korak",
+    "repeatStep": "Ponovi ovaj korak",
+    "yourTurn": "Sada je tvoj red",
+    "practicePrompt": "Video je zaustavljen. Ponovi pokret svojom pređom. Nastavi kada budeš spreman.",
+    "stepReady": "Pročitaj uputu i pritisni „Pogledaj ovaj korak”.",
+    "stepPlaying": "Promatraj samo ovaj pokret.",
+    "stepPaused": "Pauza. Ponovi pokret vlastitim tempom.",
+    "guidedNote": "Korak po korak: pročitaj, pogledaj i pokušaj. Video se zaustavlja nakon svakog koraka; ti odlučuješ kada nastaviti. Počni na 0,75× i ponavljaj koliko želiš.",
+    "stepProgress": "Napredak ovog koraka",
+    "fullExcerpt": "Cijeli isječak"
   },
   "videos": [
     {
-      "id": "fresh-relief-two-colors",
-      "title": "Reljefni uzorak u dvije boje",
-      "category": "Tekstura i boja",
-      "youtubeId": "-6avnfCNO-c",
-      "creator": "Knitting By Gözde",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 44,
-      "description": "Ružičaste i sive petlje stvaraju reljef. Promatrajte mjesta uboda, izvlačenje petlji i zatvaranje skupine.",
+      "id": "beginner-slip-knot",
+      "title": "Početna omča bez zatezanja",
+      "category": "Prvi koraci",
+      "description": "Pripremi prvu omču na kukici prije početka projekata iz knjiga.",
       "steps": [
-        "Pronađite prikazano mjesto uboda na postojećem uzorku.",
-        "Izvlačite petlje ravnomjerno i držite ih na sličnoj visini.",
-        "Zatvorite skupinu kao na snimci i usporedite je s prethodnom."
+        "Prekriži nit i oblikuj petlju.",
+        "Provuci radnu nit kroz petlju.",
+        "Stavi omču na kukicu i namjesti je da klizi bez zatezanja."
       ],
-      "tip": "Odaberite 0,5× i uvježbajte jednu skupinu na malom uzorku. Petlje neka budu opuštene."
-    },
-    {
-      "id": "fresh-magic-ring",
-      "title": "Čarobni prsten izbliza",
-      "category": "Početak u krugu",
-      "youtubeId": "4eZkklGW0Uk",
-      "creator": "naztazia",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 10,
-      "description": "Pogledajte početnu petlju, prve bodove u prstenu i zatvaranje sredine.",
-      "steps": [
-        "Oblikujte petlju i pridržite kratki kraj pređe.",
-        "Učvrstite petlju i izradite bodove u prsten prema uputama.",
-        "Pridržite bodove i povucite kratki kraj kako biste zatvorili sredinu."
-      ],
-      "tip": "Isječak je vrlo kratak. Gledajte ga na 0,5× i zastanite nakon svakog pokreta."
-    },
-    {
-      "id": "fresh-secure-chain",
-      "title": "Učvrstite novu pređu početnom petljom",
-      "category": "Pređa i lančići",
-      "youtubeId": "awksFMEElAM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 27,
-      "end": 54,
-      "description": "Početna petlja omogućuje čvrst početak nove pređe. Pratite nastanak sljedećih lančića.",
-      "steps": [
-        "S novom pređom napravite pomičnu početnu petlju.",
-        "Stavite je na kukicu i dovedite pređu do mjesta spajanja.",
-        "Izradite potreban broj lančića uz ravnomjernu napetost."
-      ],
-      "tip": "Petlja treba kliziti po kukici. Nemojte je previše zategnuti."
-    },
-    {
-      "id": "fresh-back-loop",
-      "title": "Rebrasti uzorak niskim štapićima",
-      "category": "Prepoznavanje stražnje petlje",
-      "youtubeId": "Q6WB45LdXHM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 5,
-      "end": 55,
-      "description": "Niski štapići kroz stražnju petlju stvaraju rebrastu teksturu. Pratite položaj kukice.",
-      "steps": [
-        "Prepoznajte dvije petlje na vrhu sljedećeg boda.",
-        "Uvucite kukicu samo kroz stražnju petlju i izradite niski štapić.",
-        "Ponavljajte uzduž reda i okrenite rad prema uputama."
-      ],
-      "tip": "Palcem i kažiprstom lagano otvorite vrh boda kako biste vidjeli stražnju petlju."
-    },
-    {
-      "id": "fresh-combined-stitch",
-      "title": "Spojite dvije visine bodova",
-      "category": "Kombiniranje bodova",
-      "youtubeId": "YRiWA90y5Ok",
-      "creator": "The Crochet Crowd",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 29,
-      "description": "Snimka spaja visoki i poluvisoki štapić u zajedničku skupinu. Promatrajte završno provlačenje.",
-      "steps": [
-        "Pratite pripremu visokog štapića za zajedničku skupinu.",
-        "Izradite prikazani spoj s poluvisokim štapićem.",
-        "Zatvorite petlje kao na snimci i ponovite na probnom uzorku."
-      ],
-      "tip": "Zastanite prije završnog provlačenja i usporedite petlje na svojoj kukici sa snimkom."
-    },
-    {
-      "id": "fresh-contrast-border",
-      "title": "Kontrastni rub: grupiranje petlji",
-      "category": "Ukrasni rubovi",
-      "youtubeId": "g06hLz5NTB4",
-      "creator": "Create by K",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 16,
-      "description": "Plavi reljefni rub ističe se na sivoj podlozi. Pratite izvlačenje i zatvaranje petlji uz rub.",
-      "steps": [
-        "Pronađite prikazano mjesto uboda na rubu prethodnog reda.",
-        "Izvucite petlje kao na snimci i držite ih ravnomjerno opuštenima.",
-        "Zatvorite skupinu i prijeđite na sljedeće mjesto uboda."
-      ],
-      "tip": "Kontrastna boja pomaže razlikovati novu pređu od podloge. Ponovite na 0,5×."
-    },
-    {
-      "id": "fresh-mesh-arches",
-      "title": "Lukovi od lančića za mrežasti uzorak",
-      "category": "Prozračni uzorci",
-      "youtubeId": "HDvVTgH8auk",
-      "creator": "Hilaria Fina",
+      "tip": "Ponovi tri puta. Početni čvor ne broji se kao lančić.",
+      "youtubeId": "Hukpk2Ahkhs",
+      "start": 8,
+      "end": 40,
       "videoShape": "landscape",
-      "start": 120,
-      "end": 175,
-      "description": "Lukovi od lančića i spojna mjesta stvaraju otvoren uzorak na pripremljenom lančiću.",
-      "steps": [
-        "Izradite broj lančića naveden u uzorku.",
-        "Odbrojite mjesto uboda u pripremljenom lančiću.",
-        "Učvrstite luk na tom mjestu i nastavite sljedeći prema uputama."
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-make-a-slip-knot-in-crocheting/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
       ],
-      "tip": "Brojite lančiće prije uboda. Jednaki lukovi stvaraju pravilnu mrežu."
+      "chapters": [
+        {
+          "start": 8,
+          "end": 13
+        },
+        {
+          "start": 13,
+          "end": 24
+        },
+        {
+          "start": 24,
+          "end": 40
+        }
+      ]
     },
     {
-      "id": "fresh-invisible-join",
-      "title": "Nevidljivo zatvaranje kruga",
-      "category": "Uredan završetak",
-      "youtubeId": "PlESZRcZA5o",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 37,
-      "description": "Iglom za pređu oblikuje se završni bod koji se uklapa među ostale.",
+      "id": "beginner-chain",
+      "title": "Ravnomjerni lančići, jedan po jedan",
+      "category": "Prvi koraci",
+      "description": "Uvježbaj osnovu za redove i male petlje svojih projekata.",
       "steps": [
-        "Izvucite kraj pređe iz posljednje petlje i uvucite ga u iglu.",
-        "Provedite iglu kroz prikazane dijelove bodova kako biste oblikovali završni bod.",
-        "Uskladite napetost sa susjednim bodovima i učvrstite kraj na naličju."
+        "Počni jednom omčom na kukici.",
+        "Zahvati nit i provuci je kroz omču.",
+        "Napravi deset lančića i prebroji vrhove u obliku slova V."
       ],
-      "tip": "Zatežite pažljivo. Završni bod treba biti približno velik kao ostali."
+      "tip": "Ne zateži lančiće: kukica mora lako ulaziti u sljedećem redu.",
+      "youtubeId": "vjq1BfTBG64",
+      "start": 8,
+      "end": 55,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-chain-stitch-crochet/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 19
+        },
+        {
+          "start": 19,
+          "end": 32
+        },
+        {
+          "start": 32,
+          "end": 55
+        }
+      ]
+    },
+    {
+      "id": "beginner-single",
+      "title": "Čvrsti bod: osnova amigurumija",
+      "category": "Osnovni bodovi",
+      "description": "Prati ulazak kukice i dvije omče. Ova je osnova korisna za figurice i košare.",
+      "steps": [
+        "Umetni kukicu u označeni bod.",
+        "Zahvati nit i izvuci omču: sada su dvije na kukici.",
+        "Ponovno zahvati nit i provuci kroz obje omče."
+      ],
+      "tip": "Prvo uvježbaj pokret na malom uzorku.",
+      "youtubeId": "0F-dTBgMWCM",
+      "start": 8,
+      "end": 28,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 20
+        },
+        {
+          "start": 20,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 28
+        }
+      ]
+    },
+    {
+      "id": "beginner-magic-ring",
+      "title": "Čarobni krug: priprema središta",
+      "category": "Amigurumi i Božić",
+      "description": "Pogledaj kako pripremiti podesivu petlju za kružne projekte.",
+      "steps": [
+        "Oblikuj petlju krajem niti.",
+        "Umetni kukicu i izvuci radnu nit.",
+        "Učvrsti omču i ostavi središte otvoreno za bodove uzorka."
+      ],
+      "tip": "Središte zategni tek nakon što izradiš bodove navedene u PDF-u.",
+      "youtubeId": "PYy2dsYR-pc",
+      "start": 3,
+      "end": 50,
+      "videoShape": "landscape",
+      "creator": "Hilaria Fina",
+      "sourceUrl": "https://hilariafina.com/en/magic-ring-videotutorial/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 3,
+          "end": 18
+        },
+        {
+          "start": 18,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 50
+        }
+      ]
+    },
+    {
+      "id": "beginner-increase",
+      "title": "Povećanje: dva boda u isti bod",
+      "category": "Oblikovanje",
+      "description": "Promatraj dva čvrsta boda u istoj osnovi. Tako se dio proširuje.",
+      "steps": [
+        "Izradi čvrsti bod u odabrani bod.",
+        "Ponovno umetni kukicu u isti bod.",
+        "Izradi još jedan čvrsti bod i prebroji dva vrha."
+      ],
+      "tip": "Jedno povećanje dodaje jedan bod. Prati ponavljanja iz PDF-a.",
+      "youtubeId": "FDgRW6ZhAyQ",
+      "start": 8,
+      "end": 31,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 17
+        },
+        {
+          "start": 17,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 31
+        }
+      ]
+    },
+    {
+      "id": "beginner-invisible-decrease",
+      "title": "Nevidljivo smanjenje dvaju bodova",
+      "category": "Oblikovanje",
+      "description": "Prati prednje niti za manje uočljivo sužavanje oblika amigurumija.",
+      "steps": [
+        "Zahvati samo prednju nit sljedećeg boda.",
+        "Zahvati i prednju nit idućeg boda.",
+        "Zahvati radnu nit, provuci kroz obje prednje niti i dovrši čvrsti bod."
+      ],
+      "tip": "Dva boda postaju jedan. Prebroji bodove prije nastavka kruga.",
+      "youtubeId": "osgxJ7qLJ9I",
+      "start": 8,
+      "end": 60,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/invisible-single-crochet-decrease/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 37
+        },
+        {
+          "start": 37,
+          "end": 60
+        }
+      ]
+    },
+    {
+      "id": "beginner-double",
+      "title": "Šibica: provlačenje kroz dvije omče",
+      "category": "Božić i dom",
+      "description": "Uvježbaj viši bod prije izrade pokrivača i ukrasa iz knjiga.",
+      "steps": [
+        "Nabaci nit i umetni kukicu u bod.",
+        "Zahvati nit i izvuci omču: sada su tri na kukici.",
+        "Provuci nit kroz dvije omče, pa kroz preostale dvije."
+      ],
+      "tip": "Slijedimo američke oznake iz PDF-a: dc označava šibicu, odnosno visoki štapić.",
+      "youtubeId": "gC9r2xoAtN4",
+      "start": 8,
+      "end": 37,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-crochet-the-double-crochet-stitch/",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 15
+        },
+        {
+          "start": 15,
+          "end": 26
+        },
+        {
+          "start": 26,
+          "end": 37
+        }
+      ]
+    },
+    {
+      "id": "beginner-slip-stitch",
+      "title": "Klizni bod: jednostavno spajanje",
+      "category": "Spajanje i završeci",
+      "description": "Promatraj spojni bod male visine za pomicanje bez dodavanja novog reda.",
+      "steps": [
+        "Umetni kukicu u označeni bod.",
+        "Zahvati radnu nit.",
+        "Provuci je kroz bod i omču na kukici odjednom."
+      ],
+      "tip": "Zatvori krug samo kada uzorak to traži; pri radu u spirali to nije potrebno.",
+      "youtubeId": "exq2ZxyVKJ8",
+      "start": 10,
+      "end": 43,
+      "videoShape": "landscape",
+      "creator": "WeCrochet",
+      "sourceUrl": "https://www.crochet.com/learning-center/basic-stitches/slip-stitch",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 10,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 43
+        }
+      ]
     }
   ]
 };

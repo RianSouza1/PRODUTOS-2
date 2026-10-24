@@ -1427,3 +1427,32 @@ a:focus-visible,button:focus-visible { outline:3px solid var(--accent); outline-
 .crochet-video-frame[data-video-shape="landscape"]:-webkit-full-screen #crochet-player {
     width:min(100vw,calc(100dvh * 16 / 9)); left:50%; transform:translateX(-50%);
 }
+
+
+
+/* Beginner practice path and direct companion-book links. */
+.crochet-course-prep { margin:0 0 1.5rem; padding:1.1rem 1.25rem; border:1px solid var(--border-light); border-left:3px solid var(--accent); border-radius:12px; background:rgba(54,104,94,.12); }
+.crochet-course-prep h2 { font-size:1rem; line-height:1.5; margin-bottom:.35rem; }
+.crochet-course-prep p { color:var(--text-muted); font-size:.9rem; line-height:1.65; }
+.crochet-related-books { padding:1rem; margin:1rem 0 1.4rem; border-radius:12px; background:rgba(54,104,94,.17); border:1px solid var(--border-light); }
+.crochet-related-books h3 { font-size:.85rem; margin:0 0 .65rem!important; color:var(--text-muted); }
+.crochet-related-books>div { display:flex; flex-wrap:wrap; gap:.6rem; }
+.crochet-related-books a { display:inline-flex; align-items:center; gap:.5rem; min-height:42px; padding:.5rem .85rem; border:1px solid var(--border-light); border-radius:8px; color:var(--text-dark); text-decoration:none; font-size:.85rem; background:var(--bg-card); }
+.crochet-related-books a:hover { border-color:var(--accent); color:var(--accent); }
+
+/* Guided practice: one instruction, then a pause to try the movement. */
+.crochet-step-guide { padding:1rem 1.25rem 1.2rem; background:rgba(54,104,94,.19); border-top:1px solid var(--border-light); border-bottom:1px solid var(--border-light); }
+.crochet-step-top { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:.65rem; }
+#crochet-step-count { font-size:.82rem; color:var(--accent); line-height:1.5; }
+.crochet-step-dots { display:flex; gap:.4rem; }
+.crochet-step-dots button { width:42px; height:42px; border-radius:50%; border:1px solid var(--border-light); background:var(--bg-card); color:var(--text-muted); font:inherit; font-size:.85rem; cursor:pointer; }
+.crochet-step-dots button[aria-current="step"] { background:var(--primary); border-color:var(--accent); color:var(--text-dark); }
+#crochet-step-text { min-height:3.2em; font-size:1.02rem; line-height:1.6; font-weight:500; color:var(--text-dark); }
+.crochet-step-navigation { display:grid; grid-template-columns:1fr 1.25fr 1fr; gap:.5rem; padding:1rem 1.25rem .25rem; }
+.crochet-step-navigation button { min-height:48px; padding:.65rem .6rem; border:1px solid var(--border-light); border-radius:10px; color:var(--text-dark); background:transparent; font:inherit; font-size:.82rem; line-height:1.4; cursor:pointer; overflow-wrap:anywhere; }
+.crochet-step-navigation .crochet-play-button { background:var(--primary); border-color:var(--primary); color:white; }
+.crochet-step-navigation button:disabled { opacity:.4; cursor:default; }
+.crochet-ended>strong { color:var(--accent); font-size:.95rem; }
+.crochet-ended { display:block; }
+.crochet-ended p { margin:.4rem 0 0; }
+@media(max-width:400px) { .crochet-step-navigation { padding-inline:.75rem; gap:.35rem; } .crochet-step-navigation button { font-size:.75rem; padding:.55rem .4rem; } .crochet-step-guide { padding-inline:1rem; } }

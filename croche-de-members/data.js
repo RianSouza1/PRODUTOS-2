@@ -40,7 +40,7 @@ const APP_DATA = {
     "noscript": "Aktiviere JavaScript, um den Mitgliederbereich zu nutzen. Du kannst deine PDFs auch direkt über die folgenden Links öffnen.",
     "patternLabel": "Anleitungen Schritt für Schritt",
     "videos": "Häkelvideos",
-    "videosSubtitle": "Kurze Nahaufnahmen zum Anschauen und Mitmachen"
+    "videosSubtitle": "Grundtechniken mit Pausen zum Mitmachen"
   },
   "books": [
     {
@@ -88,25 +88,18 @@ const APP_DATA = {
   ],
   "videoUI": {
     "eyebrow": "HÄKELN SCHRITT FÜR SCHRITT",
-    "heading": "Schau auf die Hände. Probiere die Masche.",
-    "intro": "Acht kurze Nahaufnahmen mit echten Händen, Garn und Häkelnadel. Entdecke Schlingen, plastische Muster und saubere Abschlüsse. Alle Demonstrationen laufen ohne Ton.",
+    "heading": "Von der ersten Schlinge zu deinen Projekten",
     "shortLessons": "Kurzlektionen",
     "noSound": "Ohne Ton",
     "closeUp": "Hände in Nahaufnahme",
     "lesson": "Lektion",
     "seconds": "Sek.",
-    "excerpt": "Videoausschnitt",
     "play": "Abspielen",
     "pause": "Pause",
     "watch": "Technik ansehen",
     "replay": "Wiederholen",
     "speed": "Geschwindigkeit",
-    "progress": "Fortschritt der Kurzlektion",
-    "ready": "Bereit? Nimm dein Garn und deine Häkelnadel zur Hand.",
-    "loading": "Video wird geladen…",
-    "playing": "Schau auf den Faden und die Bewegung der Häkelnadel.",
-    "paused": "Pausiert — jetzt kannst du die Bewegung selbst ausprobieren.",
-    "finished": "Kurzlektion beendet. Probiere die Bewegung aus oder gehe zur nächsten Technik.",
+    "fullscreen": "Vollbild",
     "next": "Nächste Technik",
     "first": "Zur ersten Technik",
     "practice": "So übst du die Technik",
@@ -114,147 +107,327 @@ const APP_DATA = {
     "markPractice": "Als geübt markieren",
     "practiced": "Geübt",
     "practiceCount": "Techniken geübt",
-    "choose": "Wähle deine nächste Technik",
-    "note": "Lege Garn und Häkelnadel bereit. Schau zuerst zu, wähle bei Bedarf 0,5× und übe die gezeigte Bewegung in deinem Tempo.",
-    "error": "Die Demonstration konnte nicht geladen werden. Versuche es mit „Wiederholen“ erneut oder wähle eine andere Technik.",
-    "fullscreen": "Vollbild"
+    "choose": "Dein Lernweg für den Einstieg",
+    "relatedBooks": "Mit den Büchern anwenden",
+    "beforeStart": "Vor dem Start",
+    "ready": "Lege Garn und Häkelnadel bereit.",
+    "loading": "Video wird geladen…",
+    "playing": "Beobachte die Bewegung der Häkelnadel.",
+    "paused": "Pausiert. Probiere die Bewegung selbst aus.",
+    "finished": "Übe die Bewegung oder wähle die nächste Technik.",
+    "error": "Das Video konnte nicht geladen werden. Wiederhole den Versuch oder wähle eine andere Technik.",
+    "preparation": "Lege glattes, helles Garn und die im Projekt empfohlene Häkelnadel bereit. Halte für Runden einen Maschenmarkierer griffbereit. Schau zuerst zu und übe dann an einer Probe.",
+    "step": "Schritt",
+    "of": "von",
+    "previousStep": "Voriger Schritt",
+    "nextStep": "Nächster Schritt",
+    "watchStep": "Diesen Schritt ansehen",
+    "repeatStep": "Diesen Schritt wiederholen",
+    "yourTurn": "Jetzt bist du dran",
+    "practicePrompt": "Das Video hat angehalten. Übe die Bewegung mit deinem Garn. Gehe weiter, wenn du dich sicher fühlst.",
+    "stepReady": "Lies die Anweisung und wähle „Diesen Schritt ansehen“.",
+    "stepPlaying": "Beobachte nur diese Bewegung.",
+    "stepPaused": "Pausiert. Wiederhole die Bewegung in deinem Tempo.",
+    "guidedNote": "Ein Schritt nach dem anderen: lesen, anschauen und ausprobieren. Das Video hält nach jedem Schritt an; du bestimmst, wann es weitergeht. Beginne mit 0,75× und wiederhole nach Bedarf.",
+    "stepProgress": "Fortschritt dieses Schritts",
+    "fullExcerpt": "Gesamter Ausschnitt",
+    "intro": "Ein Schritt nach dem anderen: lesen, anschauen und ausprobieren. Das Video hält nach jedem Schritt an; du bestimmst, wann es weitergeht. Beginne mit 0,75× und wiederhole nach Bedarf.",
+    "note": "Ein Schritt nach dem anderen: lesen, anschauen und ausprobieren. Das Video hält nach jedem Schritt an; du bestimmst, wann es weitergeht. Beginne mit 0,75× und wiederhole nach Bedarf.",
+    "progress": "Fortschritt dieses Schritts",
+    "excerpt": "Gesamter Ausschnitt"
   },
   "videos": [
     {
-      "id": "fresh-relief-two-colors",
-      "title": "Reliefstruktur in zwei Farben",
-      "category": "Textur und Farbe",
-      "youtubeId": "-6avnfCNO-c",
-      "creator": "Knitting By Gözde",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 44,
-      "description": "Rosa und graue Schlingen bilden eine plastische Struktur. Die Nahaufnahme zeigt die Einstichstellen, das Aufnehmen der Schlingen und das Schließen der Gruppe.",
+      "id": "beginner-slip-knot",
+      "title": "Anfangsschlinge ohne Festziehen",
+      "category": "Erste Schritte",
+      "description": "Bereite die erste Schlinge auf der Häkelnadel vor, bevor du ein Buchprojekt beginnst.",
       "steps": [
-        "Suche die gezeigte Einstichstelle an der vorhandenen Maschenstruktur.",
-        "Nimm die Schlingen gleichmäßig auf und halte ihre Höhe möglichst gleich.",
-        "Schließe die Gruppe wie im Video und vergleiche die neue Struktur mit der vorherigen Gruppe."
+        "Kreuze den Faden und forme eine Schlaufe.",
+        "Ziehe den Arbeitsfaden durch die Schlaufe.",
+        "Lege die Schlinge auf die Nadel und passe sie so an, dass sie locker gleitet."
       ],
-      "tip": "Wähle zunächst 0,5×. Übe eine einzelne Gruppe an einer kleinen Probe und halte die Schlingen locker."
-    },
-    {
-      "id": "fresh-magic-ring",
-      "title": "Magischer Ring in Nahaufnahme",
-      "category": "Runder Anfang",
-      "youtubeId": "4eZkklGW0Uk",
-      "creator": "naztazia",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 10,
-      "description": "Sieh die Schlaufe, die ersten Maschen im Ring und das Zusammenziehen der Mitte. Der schnelle Überblick lässt sich beliebig wiederholen.",
-      "steps": [
-        "Lege die Fadenschlaufe an und halte das kurze Ende fest.",
-        "Sichere die Schlaufe und arbeite die Maschen deiner Anleitung in den Ring.",
-        "Halte die Maschen fest und ziehe am kurzen Fadenende, um die Mitte zu schließen."
-      ],
-      "tip": "Die Demonstration ist sehr kurz. Spiele sie mit 0,5× ab und pausiere nach jedem Handgriff."
-    },
-    {
-      "id": "fresh-secure-chain",
-      "title": "Neuen Faden mit einer Schlinge sichern",
-      "category": "Faden und Luftmaschen",
-      "youtubeId": "awksFMEElAM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 27,
-      "end": 54,
-      "description": "Beim Ansetzen eines neuen Fadens sorgt eine Anfangsschlinge für einen festen Beginn. Beobachte, wie daraus die nächsten Luftmaschen entstehen.",
-      "steps": [
-        "Forme mit dem neuen Faden eine bewegliche Anfangsschlinge.",
-        "Lege sie auf die Häkelnadel und führe den Faden an die Anschlussstelle.",
-        "Häkle die benötigten Luftmaschen mit gleichmäßiger Fadenspannung."
-      ],
-      "tip": "Die Schlinge soll auf der Nadel gleiten. Ziehe sie so an, dass sie sich noch leicht bewegen lässt."
-    },
-    {
-      "id": "fresh-back-loop",
-      "title": "Rippen aus festen Maschen",
-      "category": "Einstichstelle erkennen",
-      "youtubeId": "Q6WB45LdXHM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 5,
-      "end": 55,
-      "description": "Feste Maschen in der hinteren Maschenschlinge ergeben eine gerippte Struktur. Sieh genau hin, wo die Nadel unter den Maschenkopf geführt wird.",
-      "steps": [
-        "Erkenne die beiden Schlingen oben auf der nächsten Masche.",
-        "Stich nur unter die hintere Schlinge und häkle eine feste Masche.",
-        "Wiederhole die Einstichstelle entlang der Reihe und wende nach deiner Anleitung."
-      ],
-      "tip": "Halte den Maschenkopf mit Daumen und Zeigefinger leicht offen, damit die hintere Schlinge gut sichtbar bleibt."
-    },
-    {
-      "id": "fresh-combined-stitch",
-      "title": "Zwei Maschenhöhen kombinieren",
-      "category": "Maschen kombinieren",
-      "youtubeId": "YRiWA90y5Ok",
-      "creator": "The Crochet Crowd",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 29,
-      "description": "Die Demonstration verbindet Stäbchen und halbe Stäbchen in einer gemeinsamen Maschengruppe. Achte auf den Wechsel der Höhe und die letzte Durchziehbewegung.",
-      "steps": [
-        "Beobachte, wie das Stäbchen für die gemeinsame Gruppe vorbereitet wird.",
-        "Arbeite die im Video gezeigte Verbindung mit dem halben Stäbchen.",
-        "Schließe die Schlingen wie gezeigt und übe die Gruppe mehrmals an einer Probe."
-      ],
-      "tip": "Pausiere kurz vor dem letzten Durchziehen und vergleiche die Schlingen auf deiner Nadel mit der Nahaufnahme."
-    },
-    {
-      "id": "fresh-contrast-border",
-      "title": "Kontrastkante: Schlingen bündeln",
-      "category": "Dekorative Ränder",
-      "youtubeId": "g06hLz5NTB4",
-      "creator": "Create by K",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 16,
-      "description": "Eine blaue, plastische Kante hebt sich vom grauen Häkelstück ab. Folge den aufgenommenen Schlingen und ihrem Abschluss direkt am Rand.",
-      "steps": [
-        "Suche die gezeigte Einstichstelle am Rand der Vorreihe.",
-        "Nimm die Schlingen wie in der Nahaufnahme auf und halte sie gleichmäßig locker.",
-        "Schließe die Gruppe wie gezeigt und gehe zur nächsten Einstichstelle weiter."
-      ],
-      "tip": "Die Farbe hilft dir, den neuen Faden vom Untergrund zu unterscheiden. Wiederhole den Clip in 0,5×."
-    },
-    {
-      "id": "fresh-mesh-arches",
-      "title": "Luftmaschenbögen für ein Netzmuster",
-      "category": "Luftige Muster",
-      "youtubeId": "HDvVTgH8auk",
-      "creator": "Hilaria Fina",
+      "tip": "Wiederhole dreimal. Der Anfangsknoten zählt nicht als Luftmasche.",
+      "youtubeId": "Hukpk2Ahkhs",
+      "start": 8,
+      "end": 40,
       "videoShape": "landscape",
-      "start": 120,
-      "end": 175,
-      "description": "Aus Luftmaschenbögen und Verbindungspunkten entsteht eine offene Struktur. Der Ausschnitt zeigt die Handbewegung und das Einstechen in die vorbereitete Luftmaschenkette.",
-      "steps": [
-        "Arbeite die für dein Muster vorgesehene Anzahl Luftmaschen.",
-        "Zähle die Einstichstelle in der vorbereiteten Kette ab.",
-        "Verankere den Bogen an dieser Stelle und beginne den nächsten Bogen nach deiner Anleitung."
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-make-a-slip-knot-in-crocheting/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
       ],
-      "tip": "Zähle die Luftmaschen vor dem Einstechen. Gleich große Bögen ergeben ein regelmäßiges Netzmuster."
+      "chapters": [
+        {
+          "start": 8,
+          "end": 13
+        },
+        {
+          "start": 13,
+          "end": 24
+        },
+        {
+          "start": 24,
+          "end": 40
+        }
+      ]
     },
     {
-      "id": "fresh-invisible-join",
-      "title": "Eine Runde unsichtbar schließen",
-      "category": "Sauberer Abschluss",
-      "youtubeId": "PlESZRcZA5o",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 37,
-      "description": "Mit einer Wollnadel entsteht am Rundenende ein nachgebildeter Maschenkopf. Beobachte die Fadenführung und wie der Übergang in die übrigen Maschen passt.",
+      "id": "beginner-chain",
+      "title": "Gleichmäßige Luftmaschen, eine nach der anderen",
+      "category": "Erste Schritte",
+      "description": "Übe die Grundlage für Reihen und kleine Aufhängeschlaufen deiner Projekte.",
       "steps": [
-        "Ziehe das Fadenende aus der letzten Schlinge und fädle es in eine Wollnadel.",
-        "Führe die Nadel durch die gezeigten Maschenglieder, um den letzten Maschenkopf nachzubilden.",
-        "Passe die Fadenspannung an die Nachbarmaschen an und sichere das Ende auf der Rückseite."
+        "Beginne mit einer Schlinge auf der Nadel.",
+        "Hole den Faden und ziehe ihn durch die Schlinge.",
+        "Häkle zehn Luftmaschen und zähle die V-förmigen Oberseiten."
       ],
-      "tip": "Ziehe den Übergang vorsichtig an. Er soll ungefähr so groß wie die übrigen Maschenköpfe bleiben."
+      "tip": "Halte die Luftmaschenkette locker, damit du in der nächsten Reihe leicht einstechen kannst.",
+      "youtubeId": "vjq1BfTBG64",
+      "start": 8,
+      "end": 55,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-chain-stitch-crochet/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 19
+        },
+        {
+          "start": 19,
+          "end": 32
+        },
+        {
+          "start": 32,
+          "end": 55
+        }
+      ]
+    },
+    {
+      "id": "beginner-single",
+      "title": "Feste Masche: die Amigurumi-Grundlage",
+      "category": "Grundmaschen",
+      "description": "Beobachte das Einstechen und die beiden Schlingen. Diese Grundlage brauchst du für Figuren und Körbe.",
+      "steps": [
+        "Stich in die angegebene Masche ein.",
+        "Hole den Faden und ziehe eine Schlinge heraus: Zwei Schlingen liegen auf der Nadel.",
+        "Hole den Faden erneut und ziehe ihn durch beide Schlingen."
+      ],
+      "tip": "Übe die Bewegung zuerst an einer kleinen Probe.",
+      "youtubeId": "0F-dTBgMWCM",
+      "start": 8,
+      "end": 28,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 20
+        },
+        {
+          "start": 20,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 28
+        }
+      ]
+    },
+    {
+      "id": "beginner-magic-ring",
+      "title": "Magischer Ring: die Mitte vorbereiten",
+      "category": "Amigurumi und Weihnachten",
+      "description": "Sieh, wie du eine verstellbare Schlaufe für runde Projekte vorbereitest.",
+      "steps": [
+        "Forme mit dem Fadenende eine Schlaufe.",
+        "Führe die Nadel hinein und hole den Arbeitsfaden.",
+        "Sichere die Schlinge und lasse die Mitte für die Maschen der Anleitung offen."
+      ],
+      "tip": "Ziehe die Mitte erst zu, nachdem du die im PDF angegebenen Maschen gehäkelt hast.",
+      "youtubeId": "PYy2dsYR-pc",
+      "start": 3,
+      "end": 50,
+      "videoShape": "landscape",
+      "creator": "Hilaria Fina",
+      "sourceUrl": "https://hilariafina.com/en/magic-ring-videotutorial/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 3,
+          "end": 18
+        },
+        {
+          "start": 18,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 50
+        }
+      ]
+    },
+    {
+      "id": "beginner-increase",
+      "title": "Zunahme: zwei feste Maschen in eine Masche",
+      "category": "Formgebung",
+      "description": "Beobachte zwei feste Maschen in derselben Einstichstelle. So wird ein Teil breiter.",
+      "steps": [
+        "Häkle eine feste Masche in die gewählte Masche.",
+        "Stich erneut in dieselbe Masche ein.",
+        "Häkle eine zweite feste Masche und zähle die beiden Oberseiten."
+      ],
+      "tip": "Eine einfache Zunahme erhöht die Maschenzahl um eins. Beachte die Wiederholungen im PDF.",
+      "youtubeId": "FDgRW6ZhAyQ",
+      "start": 8,
+      "end": 31,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 17
+        },
+        {
+          "start": 17,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 31
+        }
+      ]
+    },
+    {
+      "id": "beginner-invisible-decrease",
+      "title": "Unsichtbare Abnahme aus zwei Maschen",
+      "category": "Formgebung",
+      "description": "Folge den vorderen Maschengliedern, um Amigurumi unauffällig schmaler zu formen.",
+      "steps": [
+        "Nimm nur das vordere Maschenglied der nächsten Masche auf.",
+        "Nimm auch das vordere Maschenglied der folgenden Masche auf.",
+        "Hole den Faden, ziehe ihn durch beide vorderen Maschenglieder und beende die feste Masche."
+      ],
+      "tip": "Aus zwei Maschen wird eine. Zähle vor dem Fortsetzen der Runde nach.",
+      "youtubeId": "osgxJ7qLJ9I",
+      "start": 8,
+      "end": 60,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/invisible-single-crochet-decrease/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 37
+        },
+        {
+          "start": 37,
+          "end": 60
+        }
+      ]
+    },
+    {
+      "id": "beginner-double",
+      "title": "Stäbchen: durch jeweils zwei Schlingen",
+      "category": "Weihnachten und Zuhause",
+      "description": "Übe eine höhere Masche vor den Decken und Dekorationen aus den Büchern.",
+      "steps": [
+        "Mache einen Umschlag und stich in die Masche ein.",
+        "Hole den Faden und ziehe eine Schlinge heraus: Drei Schlingen liegen auf der Nadel.",
+        "Ziehe den Faden durch zwei Schlingen und dann durch die übrigen zwei."
+      ],
+      "tip": "Wir folgen den amerikanischen Kürzeln der PDFs: dc bedeutet Stäbchen.",
+      "youtubeId": "gC9r2xoAtN4",
+      "start": 8,
+      "end": 37,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-crochet-the-double-crochet-stitch/",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 15
+        },
+        {
+          "start": 15,
+          "end": 26
+        },
+        {
+          "start": 26,
+          "end": 37
+        }
+      ]
+    },
+    {
+      "id": "beginner-slip-stitch",
+      "title": "Kettmasche: eine einfache Verbindung",
+      "category": "Verbinden und Abschließen",
+      "description": "Beobachte eine flache Verbindungsmasche, mit der du ohne zusätzliche Höhe weiterarbeiten kannst.",
+      "steps": [
+        "Stich in die angegebene Masche ein.",
+        "Hole den Arbeitsfaden.",
+        "Ziehe ihn in einem Zug durch die Masche und die Schlinge auf der Nadel."
+      ],
+      "tip": "Schließe eine Runde nur, wenn die Anleitung es verlangt; Spiralrunden brauchen diese Verbindung nicht.",
+      "youtubeId": "exq2ZxyVKJ8",
+      "start": 10,
+      "end": 43,
+      "videoShape": "landscape",
+      "creator": "WeCrochet",
+      "sourceUrl": "https://www.crochet.com/learning-center/basic-stitches/slip-stitch",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 10,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 43
+        }
+      ]
     }
   ]
 };

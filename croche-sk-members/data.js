@@ -91,8 +91,8 @@ const APP_DATA = {
   ],
   "videoUI": {
     "eyebrow": "HÁČKOVANIE KROK ZA KROKOM",
-    "heading": "Sleduj ruky. Vyskúšaj očko.",
-    "intro": "Osem krátkych detailných záberov skutočných rúk, priadze a háčika. Objav slučky, plastické vzory a čisté zakončenia. Všetky ukážky sa prehrávajú bez zvuku.",
+    "heading": "Od prvého očka k tvojim projektom",
+    "intro": "Jeden krok naraz: prečítaj, sleduj a vyskúšaj. Video sa po každom kroku zastaví; ty rozhodneš, kedy pokračovať. Začni pri 0,75× a opakuj podľa potreby.",
     "shortLessons": "krátkych lekcií",
     "noSound": "Bez zvuku",
     "closeUp": "Ruky v detaile",
@@ -117,147 +117,320 @@ const APP_DATA = {
     "markPractice": "Označiť ako precvičené",
     "practiced": "Precvičené",
     "practiceCount": "precvičených techník",
-    "choose": "Vyber si ďalšiu techniku",
-    "note": "Priprav si priadzu a háčik. Najprv sleduj, podľa potreby zvoľ 0,5× a precvičuj pohyb vlastným tempom.",
+    "choose": "Tvoja cesta pre začiatočníkov",
+    "note": "Jeden krok naraz: prečítaj, sleduj a vyskúšaj. Video sa po každom kroku zastaví; ty rozhodneš, kedy pokračovať. Začni pri 0,75× a opakuj podľa potreby.",
     "error": "Ukážku sa nepodarilo načítať. Stlač Zopakovať alebo vyber inú techniku.",
-    "fullscreen": "Celá obrazovka"
+    "fullscreen": "Celá obrazovka",
+    "relatedBooks": "Použitie s knihami",
+    "beforeStart": "Pred začiatkom",
+    "preparation": "Priprav si hladkú svetlú priadzu a háčik uvedený v projekte. Na kruhové rady maj poruke označovač. Najprv sleduj, potom opakuj na vzorke.",
+    "step": "Krok",
+    "of": "z",
+    "previousStep": "Predchádzajúci krok",
+    "nextStep": "Ďalší krok",
+    "watchStep": "Pozrieť tento krok",
+    "repeatStep": "Zopakovať tento krok",
+    "yourTurn": "Teraz si na rade ty",
+    "practicePrompt": "Video sa zastavilo. Zopakuj pohyb s vlastnou priadzou. Pokračuj, keď sa budeš cítiť isto.",
+    "stepReady": "Prečítaj si pokyn a stlač „Pozrieť tento krok“.",
+    "stepPlaying": "Sleduj iba tento pohyb.",
+    "stepPaused": "Pozastavené. Pohyb si zopakuj vlastným tempom.",
+    "guidedNote": "Jeden krok naraz: prečítaj, sleduj a vyskúšaj. Video sa po každom kroku zastaví; ty rozhodneš, kedy pokračovať. Začni pri 0,75× a opakuj podľa potreby.",
+    "stepProgress": "Priebeh tohto kroku",
+    "fullExcerpt": "Celá ukážka"
   },
   "videos": [
     {
-      "id": "fresh-relief-two-colors",
-      "title": "Plastický vzor v dvoch farbách",
-      "category": "Štruktúra a farba",
-      "youtubeId": "-6avnfCNO-c",
-      "creator": "Knitting By Gözde",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 44,
-      "description": "Ružové a sivé slučky vytvárajú plastickú štruktúru. Sleduj vpichovanie, naberanie slučiek a uzavretie skupiny.",
+      "id": "beginner-slip-knot",
+      "title": "Začiatočné očko bez uťahovania",
+      "category": "Prvé kroky",
+      "description": "Priprav si prvé očko na háčiku pred projektmi z kníh.",
       "steps": [
-        "Nájdi zobrazené miesto vpichu v existujúcom vzore.",
-        "Naberaj slučky rovnomerne a udržuj podobnú výšku.",
-        "Uzavri skupinu podľa videa a porovnaj ju s predchádzajúcou."
+        "Prekríž priadzu a vytvor slučku.",
+        "Pretiahni pracovnú priadzu slučkou.",
+        "Nasaď očko na háčik a uprav ho, aby sa posúvalo bez uťahovania."
       ],
-      "tip": "Vyber 0,5× a precvič jednu skupinu na malej vzorke. Slučky nechaj voľné."
-    },
-    {
-      "id": "fresh-magic-ring",
-      "title": "Magický krúžok v detaile",
-      "category": "Začiatok do kruhu",
-      "youtubeId": "4eZkklGW0Uk",
-      "creator": "naztazia",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 10,
-      "description": "Pozri si slučku, prvé očká do krúžku a stiahnutie stredu.",
-      "steps": [
-        "Vytvor slučku a pridrž krátky koniec priadze.",
-        "Zaisti slučku a uháčkuj do krúžku očká podľa návodu.",
-        "Pridrž očká a potiahni krátky koniec, aby sa stred uzavrel."
-      ],
-      "tip": "Ukážka je veľmi krátka. Prehrávaj ju pri 0,5× a zastav po každom pohybe."
-    },
-    {
-      "id": "fresh-secure-chain",
-      "title": "Zaistenie novej priadze slučkou",
-      "category": "Priadza a retiazkové očká",
-      "youtubeId": "awksFMEElAM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 27,
-      "end": 54,
-      "description": "Začiatočná slučka zabezpečí pevné pripojenie novej priadze. Sleduj vznik ďalších retiazkových očiek.",
-      "steps": [
-        "Z novej priadze vytvor pohyblivú začiatočnú slučku.",
-        "Nasaď ju na háčik a prilož priadzu k miestu pripojenia.",
-        "Uháčkuj potrebné retiazkové očká s rovnomerným napätím."
-      ],
-      "tip": "Slučka má po háčiku kĺzať. Neuťahuj ju príliš."
-    },
-    {
-      "id": "fresh-back-loop",
-      "title": "Rebrovanie z krátkych stĺpikov",
-      "category": "Rozpoznanie zadnej nitky",
-      "youtubeId": "Q6WB45LdXHM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 5,
-      "end": 55,
-      "description": "Krátke stĺpiky za zadnú nitku vytvárajú rebrovaný vzor. Sleduj presné miesto vpichu.",
-      "steps": [
-        "Rozpoznaj dve nitky v hornej časti nasledujúceho očka.",
-        "Vpichni iba pod zadnú nitku a uháčkuj krátky stĺpik.",
-        "Opakuj pozdĺž radu a otoč prácu podľa návodu."
-      ],
-      "tip": "Palcom a ukazovákom mierne otvor vrch očka, aby bolo zadnú nitku dobre vidieť."
-    },
-    {
-      "id": "fresh-combined-stitch",
-      "title": "Spojenie dvoch výšok stĺpikov",
-      "category": "Kombinovanie očiek",
-      "youtubeId": "YRiWA90y5Ok",
-      "creator": "The Crochet Crowd",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 29,
-      "description": "Ukážka spája dlhý a polodlhý stĺpik do spoločnej skupiny. Sleduj záverečné pretiahnutie.",
-      "steps": [
-        "Pozoruj prípravu dlhého stĺpika do spoločnej skupiny.",
-        "Vytvor zobrazené spojenie s polodlhým stĺpikom.",
-        "Uzavri slučky podľa videa a opakuj na skúšobnej vzorke."
-      ],
-      "tip": "Zastav pred posledným pretiahnutím a porovnaj slučky na svojom háčiku so záberom."
-    },
-    {
-      "id": "fresh-contrast-border",
-      "title": "Kontrastný okraj zo skupín slučiek",
-      "category": "Ozdobné okraje",
-      "youtubeId": "g06hLz5NTB4",
-      "creator": "Create by K",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 16,
-      "description": "Modrý plastický okraj vystupuje zo sivej plochy. Sleduj naberanie a uzavretie slučiek pri okraji.",
-      "steps": [
-        "Nájdi zobrazené miesto vpichu na okraji predchádzajúceho radu.",
-        "Naber slučky podľa detailu a nechaj ich rovnomerne voľné.",
-        "Uzavri skupinu a pokračuj na ďalšie miesto vpichu."
-      ],
-      "tip": "Kontrastná farba pomáha odlíšiť novú priadzu od podkladu. Zopakuj pri 0,5×."
-    },
-    {
-      "id": "fresh-mesh-arches",
-      "title": "Retiazkové oblúčiky pre sieťovaný vzor",
-      "category": "Vzdušné vzory",
-      "youtubeId": "HDvVTgH8auk",
-      "creator": "Hilaria Fina",
+      "tip": "Zopakuj trikrát. Začiatočný uzol sa nepočíta ako retiazkové očko.",
+      "youtubeId": "Hukpk2Ahkhs",
+      "start": 8,
+      "end": 40,
       "videoShape": "landscape",
-      "start": 120,
-      "end": 175,
-      "description": "Retiazkové oblúčiky a spojovacie body vytvárajú otvorenú štruktúru na pripravenej retiazke.",
-      "steps": [
-        "Uháčkuj počet retiazkových očiek uvedený v návode.",
-        "Odpočítaj miesto vpichu v pripravenej retiazke.",
-        "Upevni tam oblúčik a začni ďalší podľa návodu."
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-make-a-slip-knot-in-crocheting/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
       ],
-      "tip": "Pred vpichnutím spočítaj očká. Rovnako veľké oblúčiky vytvárajú pravidelnú sieť."
+      "chapters": [
+        {
+          "start": 8,
+          "end": 13
+        },
+        {
+          "start": 13,
+          "end": 24
+        },
+        {
+          "start": 24,
+          "end": 40
+        }
+      ]
     },
     {
-      "id": "fresh-invisible-join",
-      "title": "Neviditeľné uzavretie kola",
-      "category": "Čisté zakončenie",
-      "youtubeId": "PlESZRcZA5o",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 37,
-      "description": "Ihlou na priadzu vytvoríš posledné očko, ktoré zapadne medzi ostatné.",
+      "id": "beginner-chain",
+      "title": "Rovnomerné retiazkové očká",
+      "category": "Prvé kroky",
+      "description": "Precvič si základ pre riadky a malé pútka svojich projektov.",
       "steps": [
-        "Vytiahni koniec priadze z poslednej slučky a navleč ho do ihly.",
-        "Veď ihlu cez zobrazené časti očiek a napodobni posledné očko.",
-        "Prispôsob napätie susedným očkám a zaisti koniec na rubovej strane."
+        "Začni jedným očkom na háčiku.",
+        "Nahoď a pretiahni priadzu očkom.",
+        "Uháčkuj desať retiazkových očiek a spočítaj vrcholy v tvare V."
       ],
-      "tip": "Uťahuj opatrne. Posledné očko má byť približne rovnako veľké ako ostatné."
+      "tip": "Retiazku neuťahuj: háčik musí v ďalšom riadku ľahko prejsť.",
+      "youtubeId": "vjq1BfTBG64",
+      "start": 8,
+      "end": 55,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-chain-stitch-crochet/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 19
+        },
+        {
+          "start": 19,
+          "end": 32
+        },
+        {
+          "start": 32,
+          "end": 55
+        }
+      ]
+    },
+    {
+      "id": "beginner-single",
+      "title": "Krátky stĺpik: základ amigurumi",
+      "category": "Základné očká",
+      "description": "Sleduj vpichnutie háčika a dve očká. Tento základ využiješ pri figúrkach a košíkoch.",
+      "steps": [
+        "Vpichni háčik do určeného očka.",
+        "Nahoď a vytiahni slučku: na háčiku sú dve očká.",
+        "Znova nahoď a pretiahni cez obe očká."
+      ],
+      "tip": "Najprv si pohyb precvič na malej vzorke.",
+      "youtubeId": "0F-dTBgMWCM",
+      "start": 8,
+      "end": 28,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 20
+        },
+        {
+          "start": 20,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 28
+        }
+      ]
+    },
+    {
+      "id": "beginner-magic-ring",
+      "title": "Magický krúžok: príprava stredu",
+      "category": "Amigurumi a Vianoce",
+      "description": "Pozri si prípravu nastaviteľnej slučky pre kruhové projekty.",
+      "steps": [
+        "Z konca priadze vytvor slučku.",
+        "Vlož háčik a vytiahni pracovnú priadzu.",
+        "Zaisti očko a nechaj stred otvorený pre očká podľa návodu."
+      ],
+      "tip": "Stred stiahni až po uháčkovaní očiek uvedených v PDF.",
+      "youtubeId": "PYy2dsYR-pc",
+      "start": 3,
+      "end": 50,
+      "videoShape": "landscape",
+      "creator": "Hilaria Fina",
+      "sourceUrl": "https://hilariafina.com/en/magic-ring-videotutorial/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 3,
+          "end": 18
+        },
+        {
+          "start": 18,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 50
+        }
+      ]
+    },
+    {
+      "id": "beginner-increase",
+      "title": "Pridávanie: dva stĺpiky do jedného očka",
+      "category": "Tvarovanie",
+      "description": "Sleduj dva krátke stĺpiky do rovnakého základu. Takto sa diel rozširuje.",
+      "steps": [
+        "Uháčkuj krátky stĺpik do vybraného očka.",
+        "Znova vpichni háčik do toho istého očka.",
+        "Uháčkuj ďalší krátky stĺpik a spočítaj dva vrcholy."
+      ],
+      "tip": "Jedno pridanie zvýši počet o jedno očko. Dodrž opakovania z PDF.",
+      "youtubeId": "FDgRW6ZhAyQ",
+      "start": 8,
+      "end": 31,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 17
+        },
+        {
+          "start": 17,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 31
+        }
+      ]
+    },
+    {
+      "id": "beginner-invisible-decrease",
+      "title": "Neviditeľné uberanie dvoch očiek",
+      "category": "Tvarovanie",
+      "description": "Sleduj predné nite pre nenápadné zužovanie tvarov amigurumi.",
+      "steps": [
+        "Naber len prednú niť nasledujúceho očka.",
+        "Naber aj prednú niť ďalšieho očka.",
+        "Nahoď, pretiahni cez obe predné nite a dokonči krátky stĺpik."
+      ],
+      "tip": "Z dvoch očiek vznikne jedno. Pred pokračovaním ich prepočítaj.",
+      "youtubeId": "osgxJ7qLJ9I",
+      "start": 8,
+      "end": 60,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/invisible-single-crochet-decrease/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 37
+        },
+        {
+          "start": 37,
+          "end": 60
+        }
+      ]
+    },
+    {
+      "id": "beginner-double",
+      "title": "Dlhý stĺpik: pretiahni po dvoch",
+      "category": "Vianoce a domov",
+      "description": "Precvič si vyšší stĺpik pred dekami a dekoráciami z kníh.",
+      "steps": [
+        "Nahoď a vpichni háčik do očka.",
+        "Nahoď a vytiahni slučku: na háčiku sú tri očká.",
+        "Pretiahni cez dve očká a potom cez zvyšné dve."
+      ],
+      "tip": "Používame americké označenia z PDF: dc znamená dlhý stĺpik.",
+      "youtubeId": "gC9r2xoAtN4",
+      "start": 8,
+      "end": 37,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-crochet-the-double-crochet-stitch/",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 15
+        },
+        {
+          "start": 15,
+          "end": 26
+        },
+        {
+          "start": 26,
+          "end": 37
+        }
+      ]
+    },
+    {
+      "id": "beginner-slip-stitch",
+      "title": "Pevné očko: jednoduché spojenie",
+      "category": "Spájanie a dokončenie",
+      "description": "Sleduj nízke spojovacie očko na posun bez pridávania výšky.",
+      "steps": [
+        "Vpichni háčik do určeného očka.",
+        "Zachyť pracovnú priadzu.",
+        "Pretiahni ju očkom aj slučkou na háčiku naraz."
+      ],
+      "tip": "Kruh uzatvor len podľa návodu; pri háčkovaní v špirále to nie je potrebné.",
+      "youtubeId": "exq2ZxyVKJ8",
+      "start": 10,
+      "end": 43,
+      "videoShape": "landscape",
+      "creator": "WeCrochet",
+      "sourceUrl": "https://www.crochet.com/learning-center/basic-stitches/slip-stitch",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 10,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 43
+        }
+      ]
     }
   ]
 };

@@ -91,8 +91,8 @@ const APP_DATA = {
   ],
   "videoUI": {
     "eyebrow": "VIRKKAUSTA VAIHE VAIHEELTA",
-    "heading": "Katso käsiä. Kokeile silmukkaa.",
-    "intro": "Kahdeksan lyhyttä lähikuvaa oikeista käsistä, langasta ja virkkuukoukusta. Tutustu silmukoihin, kohokuvioihin ja siisteihin viimeistelyihin. Kaikki esitykset toistetaan ilman ääntä.",
+    "heading": "Ensimmäisestä silmukasta omiin töihin",
+    "intro": "Vaihe kerrallaan: lue, katso ja kokeile. Video pysähtyy jokaisen vaiheen jälkeen; päätät itse, milloin jatkat. Aloita nopeudella 0,75× ja toista tarpeen mukaan.",
     "shortLessons": "lyhyttä oppituntia",
     "noSound": "Ei ääntä",
     "closeUp": "Kädet lähikuvassa",
@@ -117,147 +117,320 @@ const APP_DATA = {
     "markPractice": "Merkitse harjoitelluksi",
     "practiced": "Harjoiteltu",
     "practiceCount": "harjoiteltua tekniikkaa",
-    "choose": "Valitse seuraava tekniikka",
-    "note": "Ota lanka ja virkkuukoukku esiin. Katso ensin, valitse tarvittaessa 0,5× ja harjoittele omaan tahtiisi.",
+    "choose": "Aloittelijan harjoituspolku",
+    "note": "Vaihe kerrallaan: lue, katso ja kokeile. Video pysähtyy jokaisen vaiheen jälkeen; päätät itse, milloin jatkat. Aloita nopeudella 0,75× ja toista tarpeen mukaan.",
     "error": "Esitystä ei voitu ladata. Paina Aloita alusta tai valitse toinen tekniikka.",
-    "fullscreen": "Koko näyttö"
+    "fullscreen": "Koko näyttö",
+    "relatedBooks": "Hyödynnä kirjojen kanssa",
+    "beforeStart": "Ennen aloittamista",
+    "preparation": "Varaa sileää vaaleaa lankaa ja työn ohjeen mukainen koukku. Pidä silmukkamerkki lähellä pyörövirkkausta varten. Katso ensin ja toista sitten mallitilkulla.",
+    "step": "Vaihe",
+    "of": "/",
+    "previousStep": "Edellinen vaihe",
+    "nextStep": "Seuraava vaihe",
+    "watchStep": "Katso tämä vaihe",
+    "repeatStep": "Toista tämä vaihe",
+    "yourTurn": "Nyt on sinun vuorosi",
+    "practicePrompt": "Video pysähtyi. Toista liike omalla langallasi. Jatka, kun tunnet olosi varmaksi.",
+    "stepReady": "Lue ohje ja paina ”Katso tämä vaihe”.",
+    "stepPlaying": "Seuraa vain tätä liikettä.",
+    "stepPaused": "Tauko. Toista liike omaan tahtiisi.",
+    "guidedNote": "Vaihe kerrallaan: lue, katso ja kokeile. Video pysähtyy jokaisen vaiheen jälkeen; päätät itse, milloin jatkat. Aloita nopeudella 0,75× ja toista tarpeen mukaan.",
+    "stepProgress": "Tämän vaiheen edistyminen",
+    "fullExcerpt": "Koko katkelma"
   },
   "videos": [
     {
-      "id": "fresh-relief-two-colors",
-      "title": "Kohokuvio kahdella värillä",
-      "category": "Pinta ja väri",
-      "youtubeId": "-6avnfCNO-c",
-      "creator": "Knitting By Gözde",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 44,
-      "description": "Vaaleanpunaiset ja harmaat silmukat muodostavat kohokuvion. Katso koukun pistokohtia, lenkkien nostamista ja ryhmän sulkemista.",
+      "id": "beginner-slip-knot",
+      "title": "Aloitussilmukka kiristämättä",
+      "category": "Ensiaskeleet",
+      "description": "Valmistele ensimmäinen silmukka koukulle ennen kirjojen töitä.",
       "steps": [
-        "Etsi näytetty pistokohta olemassa olevasta kuviosta.",
-        "Nosta lenkit tasaisesti ja pidä niiden korkeus samanlaisena.",
-        "Sulje ryhmä videon mukaan ja vertaa edelliseen ryhmään."
+        "Risti lanka ja muodosta lenkki.",
+        "Vedä työskentelylanka lenkin läpi.",
+        "Aseta silmukka koukulle ja säädä niin, että se liukuu kiristämättä."
       ],
-      "tip": "Valitse 0,5× ja harjoittele yhtä ryhmää pienellä tilkulla. Pidä lenkit löysinä."
-    },
-    {
-      "id": "fresh-magic-ring",
-      "title": "Taikarengas lähikuvassa",
-      "category": "Aloitus renkaaseen",
-      "youtubeId": "4eZkklGW0Uk",
-      "creator": "naztazia",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 10,
-      "description": "Katso aloituslenkkiä, renkaan ensimmäisiä silmukoita ja keskustan kiristämistä.",
-      "steps": [
-        "Muodosta lankalenkki ja pidä lyhyestä langanpäästä kiinni.",
-        "Varmista lenkki ja virkkaa renkaaseen ohjeesi silmukat.",
-        "Pidä silmukoista kiinni ja vedä lyhyestä päästä sulkeaksesi keskustan."
-      ],
-      "tip": "Ote on hyvin lyhyt. Toista nopeudella 0,5× ja pysäytä jokaisen liikkeen jälkeen."
-    },
-    {
-      "id": "fresh-secure-chain",
-      "title": "Uuden langan kiinnitys aloitussilmukalla",
-      "category": "Lanka ja ketjusilmukat",
-      "youtubeId": "awksFMEElAM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 27,
-      "end": 54,
-      "description": "Aloitussilmukka tekee uuden langan aloituksesta tukevan. Seuraa seuraavien ketjusilmukoiden syntymistä.",
-      "steps": [
-        "Tee uudella langalla säädettävä aloitussilmukka.",
-        "Aseta se koukulle ja vie lanka liitoskohtaan.",
-        "Virkkaa tarvittavat ketjusilmukat tasaisella kireydellä."
-      ],
-      "tip": "Silmukan tulee liukua koukulla. Älä kiristä sitä liikaa."
-    },
-    {
-      "id": "fresh-back-loop",
-      "title": "Uurrepinta kiinteillä silmukoilla",
-      "category": "Takareunan tunnistaminen",
-      "youtubeId": "Q6WB45LdXHM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 5,
-      "end": 55,
-      "description": "Kiinteät silmukat vain takareunaan luovat uurteisen pinnan. Katso tarkasti, mihin koukku pistetään.",
-      "steps": [
-        "Tunnista seuraavan silmukan yläreunan kaksi lenkkiä.",
-        "Pistä koukku vain takimmaisen lenkin alle ja virkkaa kiinteä silmukka.",
-        "Toista kerroksen loppuun ja käännä työ ohjeen mukaan."
-      ],
-      "tip": "Avaa silmukan yläreunaa kevyesti peukalolla ja etusormella, jotta takareuna näkyy."
-    },
-    {
-      "id": "fresh-combined-stitch",
-      "title": "Kahden silmukkakorkeuden yhdistäminen",
-      "category": "Silmukoiden yhdistely",
-      "youtubeId": "YRiWA90y5Ok",
-      "creator": "The Crochet Crowd",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 29,
-      "description": "Esityksessä pylväs ja puolipylväs yhdistetään samaan ryhmään. Katso viimeistä läpivetoa.",
-      "steps": [
-        "Seuraa pylvään valmistelua yhteistä ryhmää varten.",
-        "Tee näytetty yhdistäminen puolipylvään kanssa.",
-        "Sulje lenkit videon mukaan ja toista mallitilkulla."
-      ],
-      "tip": "Pysäytä ennen viimeistä läpivetoa ja vertaa koukkusi lenkkejä lähikuvaan."
-    },
-    {
-      "id": "fresh-contrast-border",
-      "title": "Kontrastireuna: lenkkien ryhmittely",
-      "category": "Koristeelliset reunat",
-      "youtubeId": "g06hLz5NTB4",
-      "creator": "Create by K",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 16,
-      "description": "Sininen kohoreuna erottuu harmaasta pohjasta. Seuraa lenkkien nostamista ja sulkemista reunassa.",
-      "steps": [
-        "Etsi näytetty pistokohta edellisen kerroksen reunasta.",
-        "Nosta lenkit lähikuvan mukaan ja pidä ne tasaisen löysinä.",
-        "Sulje ryhmä ja siirry seuraavaan pistokohtaan."
-      ],
-      "tip": "Kontrastiväri auttaa erottamaan uuden langan pohjasta. Toista nopeudella 0,5×."
-    },
-    {
-      "id": "fresh-mesh-arches",
-      "title": "Ketjusilmukkakaaret verkkokuvioksi",
-      "category": "Ilmavat kuviot",
-      "youtubeId": "HDvVTgH8auk",
-      "creator": "Hilaria Fina",
+      "tip": "Toista kolme kertaa. Aloitussolmua ei lasketa ketjusilmukaksi.",
+      "youtubeId": "Hukpk2Ahkhs",
+      "start": 8,
+      "end": 40,
       "videoShape": "landscape",
-      "start": 120,
-      "end": 175,
-      "description": "Ketjusilmukkakaaret ja kiinnityskohdat muodostavat avointa pintaa valmiiseen aloitusketjuun.",
-      "steps": [
-        "Virkkaa ohjeesi mukainen määrä ketjusilmukoita.",
-        "Laske pistokohta valmiista aloitusketjusta.",
-        "Kiinnitä kaari siihen ja aloita seuraava ohjeen mukaan."
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-make-a-slip-knot-in-crocheting/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
       ],
-      "tip": "Laske ketjusilmukat ennen pistämistä. Samankokoiset kaaret tekevät tasaisen verkon."
+      "chapters": [
+        {
+          "start": 8,
+          "end": 13
+        },
+        {
+          "start": 13,
+          "end": 24
+        },
+        {
+          "start": 24,
+          "end": 40
+        }
+      ]
     },
     {
-      "id": "fresh-invisible-join",
-      "title": "Kerros kiinni näkymättömästi",
-      "category": "Siisti viimeistely",
-      "youtubeId": "PlESZRcZA5o",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 37,
-      "description": "Lankaneulalla muodostetaan viimeinen silmukan yläreuna, joka sulautuu muihin silmukoihin.",
+      "id": "beginner-chain",
+      "title": "Tasaiset ketjusilmukat yksi kerrallaan",
+      "category": "Ensiaskeleet",
+      "description": "Harjoittele kerrosten ja pienten ripustuslenkkien perustaa.",
       "steps": [
-        "Vedä langanpää viimeisen lenkin läpi ja pujota se lankaneulaan.",
-        "Vie neula näytettyjen silmukanosien läpi jäljitelläksesi viimeistä silmukkaa.",
-        "Säädä kireys viereisten silmukoiden mukaiseksi ja päättele nurjalle puolelle."
+        "Aloita yhdellä silmukalla koukulla.",
+        "Ota langankierto ja vedä lanka silmukan läpi.",
+        "Virkkaa kymmenen ketjusilmukkaa ja laske V:n muotoiset yläosat."
       ],
-      "tip": "Kiristä varovasti. Liitoskohdan tulee olla suunnilleen samankokoinen kuin muiden silmukoiden."
+      "tip": "Älä kiristä ketjua: koukun täytyy mahtua siihen seuraavalla kerroksella.",
+      "youtubeId": "vjq1BfTBG64",
+      "start": 8,
+      "end": 55,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-chain-stitch-crochet/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 19
+        },
+        {
+          "start": 19,
+          "end": 32
+        },
+        {
+          "start": 32,
+          "end": 55
+        }
+      ]
+    },
+    {
+      "id": "beginner-single",
+      "title": "Kiinteä silmukka: amigurumin perusta",
+      "category": "Perussilmukat",
+      "description": "Seuraa koukun pistämistä ja kahta silmukkaa. Tätä perustaa käytät hahmoissa ja koreissa.",
+      "steps": [
+        "Pistä koukku ohjeen osoittamaan silmukkaan.",
+        "Ota langankierto ja vedä lenkki: koukulla on kaksi silmukkaa.",
+        "Ota uusi langankierto ja vedä molempien läpi."
+      ],
+      "tip": "Harjoittele liikettä ensin pienellä mallitilkulla.",
+      "youtubeId": "0F-dTBgMWCM",
+      "start": 8,
+      "end": 28,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 20
+        },
+        {
+          "start": 20,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 28
+        }
+      ]
+    },
+    {
+      "id": "beginner-magic-ring",
+      "title": "Taikarengas: keskustan valmistelu",
+      "category": "Amigurumi ja joulu",
+      "description": "Katso, miten säädettävä lankalenkki valmistellaan pyöreiden töiden aloitukseen.",
+      "steps": [
+        "Muodosta langanpäästä lenkki.",
+        "Työnnä koukku lenkkiin ja vedä työskentelylanka läpi.",
+        "Kiinnitä silmukka ja jätä keskusta avoimeksi ohjeen silmukoille."
+      ],
+      "tip": "Kiristä keskusta vasta, kun olet virkannut PDF-ohjeen määräämät silmukat.",
+      "youtubeId": "PYy2dsYR-pc",
+      "start": 3,
+      "end": 50,
+      "videoShape": "landscape",
+      "creator": "Hilaria Fina",
+      "sourceUrl": "https://hilariafina.com/en/magic-ring-videotutorial/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 3,
+          "end": 18
+        },
+        {
+          "start": 18,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 50
+        }
+      ]
+    },
+    {
+      "id": "beginner-increase",
+      "title": "Lisäys: kaksi silmukkaa samaan kohtaan",
+      "category": "Muotoilu",
+      "description": "Seuraa kahta kiinteää silmukkaa samassa pohjasilmukassa. Näin työ levenee.",
+      "steps": [
+        "Virkkaa kiinteä silmukka valittuun kohtaan.",
+        "Pistä koukku uudelleen samaan pohjasilmukkaan.",
+        "Virkkaa toinen kiinteä silmukka ja laske kaksi yläosaa."
+      ],
+      "tip": "Yksi lisäys kasvattaa silmukkamäärää yhdellä. Noudata PDF-ohjeen toistoja.",
+      "youtubeId": "FDgRW6ZhAyQ",
+      "start": 8,
+      "end": 31,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 17
+        },
+        {
+          "start": 17,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 31
+        }
+      ]
+    },
+    {
+      "id": "beginner-invisible-decrease",
+      "title": "Näkymätön kavennus kahdesta silmukasta",
+      "category": "Muotoilu",
+      "description": "Seuraa etureunoja, kun kavennat amigurumin muotoja huomaamattomasti.",
+      "steps": [
+        "Poimi seuraavan silmukan etureuna.",
+        "Poimi myös sitä seuraavan silmukan etureuna.",
+        "Ota langankierto, vedä molempien etureunojen läpi ja viimeistele kiinteä silmukka."
+      ],
+      "tip": "Kahdesta silmukasta tulee yksi. Laske silmukat ennen jatkamista.",
+      "youtubeId": "osgxJ7qLJ9I",
+      "start": 8,
+      "end": 60,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/invisible-single-crochet-decrease/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 37
+        },
+        {
+          "start": 37,
+          "end": 60
+        }
+      ]
+    },
+    {
+      "id": "beginner-double",
+      "title": "Pylväs: vedä kahden silmukan läpi",
+      "category": "Joulu ja koti",
+      "description": "Harjoittele korkeampaa silmukkaa ennen kirjojen peittoja ja koristeita.",
+      "steps": [
+        "Ota langankierto ja pistä koukku silmukkaan.",
+        "Ota langankierto ja vedä lenkki: koukulla on kolme silmukkaa.",
+        "Vedä lanka kahden silmukan läpi ja sitten jäljellä olevien kahden läpi."
+      ],
+      "tip": "Noudatamme PDF-ohjeiden amerikkalaisia lyhenteitä: dc tarkoittaa pylvästä.",
+      "youtubeId": "gC9r2xoAtN4",
+      "start": 8,
+      "end": 37,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-crochet-the-double-crochet-stitch/",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 15
+        },
+        {
+          "start": 15,
+          "end": 26
+        },
+        {
+          "start": 26,
+          "end": 37
+        }
+      ]
+    },
+    {
+      "id": "beginner-slip-stitch",
+      "title": "Piilosilmukka: yksinkertainen liitos",
+      "category": "Liittäminen ja viimeistely",
+      "description": "Seuraa matalaa liitossilmukkaa, jolla siirryt lisäämättä korkeutta.",
+      "steps": [
+        "Pistä koukku ohjeen osoittamaan silmukkaan.",
+        "Ota työskentelylanka koukulle.",
+        "Vedä se samalla kertaa pohjasilmukan ja koukulla olevan silmukan läpi."
+      ],
+      "tip": "Sulje kerros vain ohjeen niin pyytäessä; spiraalissa liitosta ei tarvita.",
+      "youtubeId": "exq2ZxyVKJ8",
+      "start": 10,
+      "end": 43,
+      "videoShape": "landscape",
+      "creator": "WeCrochet",
+      "sourceUrl": "https://www.crochet.com/learning-center/basic-stitches/slip-stitch",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 10,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 43
+        }
+      ]
     }
   ]
 };

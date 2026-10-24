@@ -91,8 +91,8 @@ const APP_DATA = {
   ],
   "videoUI": {
     "eyebrow": "NĖRIMAS ŽINGSNIS PO ŽINGSNIO",
-    "heading": "Stebėkite rankas. Išbandykite kilpą.",
-    "intro": "Aštuoni trumpi stambaus plano įrašai su tikromis rankomis, siūlais ir vąšeliu. Atraskite kilpas, reljefinius raštus ir tvarkingą užbaigimą. Visos demonstracijos rodomos be garso.",
+    "heading": "Nuo pirmos kilpos iki savo darbų",
+    "intro": "Po vieną žingsnį: perskaitykite, pažiūrėkite ir pabandykite. Vaizdas sustoja po kiekvieno žingsnio; patys sprendžiate, kada tęsti. Pradėkite 0,75× greičiu ir kartokite pagal poreikį.",
     "shortLessons": "trumpos pamokos",
     "noSound": "Be garso",
     "closeUp": "Rankos stambiu planu",
@@ -117,147 +117,320 @@ const APP_DATA = {
     "markPractice": "Pažymėti kaip praktikuotą",
     "practiced": "Praktikuota",
     "practiceCount": "praktikuotų technikų",
-    "choose": "Pasirinkite kitą techniką",
-    "note": "Pasiruoškite siūlus ir vąšelį. Pirmiausia žiūrėkite, prireikus rinkitės 0,5× ir praktikuokite savo tempu.",
+    "choose": "Pradedančiojo mokymosi kelias",
+    "note": "Po vieną žingsnį: perskaitykite, pažiūrėkite ir pabandykite. Vaizdas sustoja po kiekvieno žingsnio; patys sprendžiate, kada tęsti. Pradėkite 0,75× greičiu ir kartokite pagal poreikį.",
     "error": "Demonstracijos įkelti nepavyko. Spauskite Pakartoti arba pasirinkite kitą techniką.",
-    "fullscreen": "Visas ekranas"
+    "fullscreen": "Visas ekranas",
+    "relatedBooks": "Pritaikykite su knygomis",
+    "beforeStart": "Prieš pradėdami",
+    "preparation": "Pasiruoškite lygių šviesių siūlų ir projekte nurodytą vąšelį. Neriant ratu pravers akių žymeklis. Pirmiausia pažiūrėkite, paskui pakartokite su pavyzdėliu.",
+    "step": "Žingsnis",
+    "of": "iš",
+    "previousStep": "Ankstesnis žingsnis",
+    "nextStep": "Kitas žingsnis",
+    "watchStep": "Žiūrėti šį žingsnį",
+    "repeatStep": "Pakartoti šį žingsnį",
+    "yourTurn": "Dabar jūsų eilė",
+    "practicePrompt": "Vaizdo įrašas sustojo. Pakartokite judesį su savo siūlu. Tęskite, kai jausitės užtikrintai.",
+    "stepReady": "Perskaitykite nurodymą ir spauskite „Žiūrėti šį žingsnį“.",
+    "stepPlaying": "Stebėkite tik šį judesį.",
+    "stepPaused": "Pristabdyta. Pakartokite judesį savo tempu.",
+    "guidedNote": "Po vieną žingsnį: perskaitykite, pažiūrėkite ir pabandykite. Vaizdas sustoja po kiekvieno žingsnio; patys sprendžiate, kada tęsti. Pradėkite 0,75× greičiu ir kartokite pagal poreikį.",
+    "stepProgress": "Šio žingsnio eiga",
+    "fullExcerpt": "Visa ištrauka"
   },
   "videos": [
     {
-      "id": "fresh-relief-two-colors",
-      "title": "Reljefinis raštas dviem spalvomis",
-      "category": "Tekstūra ir spalva",
-      "youtubeId": "-6avnfCNO-c",
-      "creator": "Knitting By Gözde",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 44,
-      "description": "Rožinės ir pilkos kilpos kuria reljefą. Stebėkite vąšelio įdūrimo vietas, kilpų ištraukimą ir grupės užbaigimą.",
+      "id": "beginner-slip-knot",
+      "title": "Pradinė kilpa nesuveržiant",
+      "category": "Pirmieji žingsniai",
+      "description": "Prieš pradėdami knygų projektus paruoškite pirmą kilpą ant vąšelio.",
       "steps": [
-        "Raskite parodytą įdūrimo vietą jau nunertame rašte.",
-        "Tolygiai ištraukite kilpas ir palaikykite panašų jų aukštį.",
-        "Užbaikite grupę kaip įraše ir palyginkite su ankstesne."
+        "Sukryžiuokite siūlą ir suformuokite kilpą.",
+        "Ištraukite darbinį siūlą per kilpą.",
+        "Uždėkite kilpą ant vąšelio ir sureguliuokite, kad ji slystų neveržiant."
       ],
-      "tip": "Pasirinkite 0,5× ir vieną grupę praktikuokite mažame mėginėlyje. Kilpas laikykite laisvas."
-    },
-    {
-      "id": "fresh-magic-ring",
-      "title": "Stebuklingas žiedas iš arti",
-      "category": "Nėrimo ratu pradžia",
-      "youtubeId": "4eZkklGW0Uk",
-      "creator": "naztazia",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 10,
-      "description": "Pamatykite pradinę kilpą, pirmuosius stulpelius žiede ir jo vidurio sutraukimą.",
-      "steps": [
-        "Suformuokite siūlo kilpą ir laikykite trumpąjį galą.",
-        "Užfiksuokite kilpą ir nerkite į žiedą pagal aprašymą.",
-        "Prilaikykite nunertus stulpelius ir patraukite trumpą galą, kad vidurys užsivertų."
-      ],
-      "tip": "Ištrauka labai trumpa. Žiūrėkite 0,5× greičiu ir sustokite po kiekvieno judesio."
-    },
-    {
-      "id": "fresh-secure-chain",
-      "title": "Naujo siūlo tvirtinimas pradine kilpa",
-      "category": "Siūlas ir pynelė",
-      "youtubeId": "awksFMEElAM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 27,
-      "end": 54,
-      "description": "Pradinė kilpa tvirtai prijungia naują siūlą. Stebėkite, kaip formuojamos kitos pynelės akys.",
-      "steps": [
-        "Iš naujo siūlo padarykite reguliuojamą pradinę kilpą.",
-        "Uždėkite ją ant vąšelio ir nuveskite siūlą prie prijungimo vietos.",
-        "Nerkite reikiamą pynelės akių skaičių vienodai įtempdami siūlą."
-      ],
-      "tip": "Kilpa turi slankioti vąšeliu. Neužveržkite jos per stipriai."
-    },
-    {
-      "id": "fresh-back-loop",
-      "title": "Rumbuotas raštas žemais stulpeliais",
-      "category": "Galinės kilpos atpažinimas",
-      "youtubeId": "Q6WB45LdXHM",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 5,
-      "end": 55,
-      "description": "Žemi stulpeliai į galinę kilpą sukuria rumbuotą paviršių. Stebėkite tikslią įdūrimo vietą.",
-      "steps": [
-        "Atpažinkite dvi kilpas kitos akies viršuje.",
-        "Įdurkite tik po galine kilpa ir nerkite žemą stulpelį.",
-        "Kartokite per visą eilę ir apsukite darbą pagal aprašymą."
-      ],
-      "tip": "Nykščiu ir smiliumi lengvai praverkite akies viršų, kad galinė kilpa gerai matytųsi."
-    },
-    {
-      "id": "fresh-combined-stitch",
-      "title": "Dviejų stulpelių aukščių derinimas",
-      "category": "Stulpelių derinimas",
-      "youtubeId": "YRiWA90y5Ok",
-      "creator": "The Crochet Crowd",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 29,
-      "description": "Demonstracijoje stulpelis su užmetimu ir pusinis stulpelis sujungiami į grupę. Stebėkite paskutinį pertraukimą.",
-      "steps": [
-        "Stebėkite stulpelio su užmetimu paruošimą bendrai grupei.",
-        "Atlikite parodytą sujungimą su pusiniu stulpeliu.",
-        "Užbaikite kilpas kaip įraše ir kartokite mėginėlyje."
-      ],
-      "tip": "Sustabdykite prieš paskutinį pertraukimą ir palyginkite kilpas ant savo vąšelio su vaizdu."
-    },
-    {
-      "id": "fresh-contrast-border",
-      "title": "Kontrastingas kraštas iš kilpų grupių",
-      "category": "Dekoratyviniai kraštai",
-      "youtubeId": "g06hLz5NTB4",
-      "creator": "Create by K",
-      "videoShape": "portrait",
-      "start": 0,
-      "end": 16,
-      "description": "Mėlynas reljefinis kraštas išsiskiria pilkame pagrinde. Sekite kilpų ištraukimą ir užbaigimą.",
-      "steps": [
-        "Raskite parodytą įdūrimo vietą ankstesnės eilės krašte.",
-        "Ištraukite kilpas kaip parodyta ir laikykite jas vienodai laisvas.",
-        "Užbaikite grupę ir pereikite prie kitos įdūrimo vietos."
-      ],
-      "tip": "Kontrastinga spalva padeda atskirti naują siūlą nuo pagrindo. Kartokite 0,5× greičiu."
-    },
-    {
-      "id": "fresh-mesh-arches",
-      "title": "Pynelės lankai tinkliniam raštui",
-      "category": "Ažūriniai raštai",
-      "youtubeId": "HDvVTgH8auk",
-      "creator": "Hilaria Fina",
+      "tip": "Pakartokite tris kartus. Pradinis mazgas neskaičiuojamas kaip pynelės akis.",
+      "youtubeId": "Hukpk2Ahkhs",
+      "start": 8,
+      "end": 40,
       "videoShape": "landscape",
-      "start": 120,
-      "end": 175,
-      "description": "Pynelės lankai ir tvirtinimo taškai kuria atvirą raštą paruoštoje pynelėje.",
-      "steps": [
-        "Nunerkite aprašyme nurodytą pynelės akių skaičių.",
-        "Atskaičiuokite įdūrimo vietą paruoštoje pynelėje.",
-        "Ten pritvirtinkite lanką ir pradėkite kitą pagal aprašymą."
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-make-a-slip-knot-in-crocheting/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
       ],
-      "tip": "Prieš įdurdami suskaičiuokite akis. Vienodi lankai sudaro taisyklingą tinklą."
+      "chapters": [
+        {
+          "start": 8,
+          "end": 13
+        },
+        {
+          "start": 13,
+          "end": 24
+        },
+        {
+          "start": 24,
+          "end": 40
+        }
+      ]
     },
     {
-      "id": "fresh-invisible-join",
-      "title": "Nematomas rato užbaigimas",
-      "category": "Tvarkingas užbaigimas",
-      "youtubeId": "PlESZRcZA5o",
-      "creator": "Hilaria Fina",
-      "videoShape": "portrait",
-      "start": 2,
-      "end": 37,
-      "description": "Siūlų adata suformuojama paskutinė akis, kuri susilieja su kitomis.",
+      "id": "beginner-chain",
+      "title": "Vienodos pynelės akys",
+      "category": "Pirmieji žingsniai",
+      "description": "Pasimokykite eilių ir mažų pakabinimo kilpelių pagrindo.",
       "steps": [
-        "Ištraukite siūlo galą iš paskutinės kilpos ir įverkite į adatą.",
-        "Veskite adatą pro parodytas akių dalis, imituodami paskutinę akį.",
-        "Įtempimą priderinkite prie gretimų akių ir užtvirtinkite galą blogojoje pusėje."
+        "Pradėkite viena kilpa ant vąšelio.",
+        "Užkabinkite siūlą ir ištraukite per kilpą.",
+        "Nunerkite dešimt pynelės akių ir suskaičiuokite V formos viršūnes."
       ],
-      "tip": "Veržkite atsargiai. Jungiamoji akis turi būti maždaug tokio dydžio kaip kitos."
+      "tip": "Neveržkite pynelės: kitoje eilėje vąšelis turi lengvai pralįsti.",
+      "youtubeId": "vjq1BfTBG64",
+      "start": 8,
+      "end": 55,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-chain-stitch-crochet/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 19
+        },
+        {
+          "start": 19,
+          "end": 32
+        },
+        {
+          "start": 32,
+          "end": 55
+        }
+      ]
+    },
+    {
+      "id": "beginner-single",
+      "title": "Žemas stulpelis: amigurumi pagrindas",
+      "category": "Pagrindinės akys",
+      "description": "Stebėkite vąšelio įdūrimą ir dvi kilpas. Šį pagrindą naudosite figūrėlėms ir krepšeliams.",
+      "steps": [
+        "Įdurkite vąšelį į nurodytą akį.",
+        "Užkabinkite siūlą ir ištraukite kilpą: ant vąšelio yra dvi.",
+        "Vėl užkabinkite siūlą ir ištraukite per abi kilpas."
+      ],
+      "tip": "Pirmiausia pasipraktikuokite su mažu pavyzdėliu.",
+      "youtubeId": "0F-dTBgMWCM",
+      "start": 8,
+      "end": 28,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 20
+        },
+        {
+          "start": 20,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 28
+        }
+      ]
+    },
+    {
+      "id": "beginner-magic-ring",
+      "title": "Magiškas žiedas: centro paruošimas",
+      "category": "Amigurumi ir Kalėdos",
+      "description": "Pažiūrėkite, kaip paruošti reguliuojamą kilpą apskritiems darbams.",
+      "steps": [
+        "Iš siūlo galo suformuokite žiedą.",
+        "Įkiškite vąšelį ir ištraukite darbinį siūlą.",
+        "Pritvirtinkite kilpą, o centrą palikite atvirą schemos akims."
+      ],
+      "tip": "Centrą sutraukite tik nunėrę PDF nurodytas akis.",
+      "youtubeId": "PYy2dsYR-pc",
+      "start": 3,
+      "end": 50,
+      "videoShape": "landscape",
+      "creator": "Hilaria Fina",
+      "sourceUrl": "https://hilariafina.com/en/magic-ring-videotutorial/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 3,
+          "end": 18
+        },
+        {
+          "start": 18,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 50
+        }
+      ]
+    },
+    {
+      "id": "beginner-increase",
+      "title": "Platinimas: du stulpeliai į tą pačią akį",
+      "category": "Formavimas",
+      "description": "Stebėkite du žemus stulpelius tame pačiame pagrinde. Taip detalė platėja.",
+      "steps": [
+        "Nunerkite žemą stulpelį į pasirinktą akį.",
+        "Vėl įdurkite vąšelį į tą pačią akį.",
+        "Nunerkite antrą žemą stulpelį ir suskaičiuokite dvi viršūnes."
+      ],
+      "tip": "Vienas platinimas prideda vieną akį. Laikykitės PDF kartojimų.",
+      "youtubeId": "FDgRW6ZhAyQ",
+      "start": 8,
+      "end": 31,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/single-crochet-stitch/",
+      "bookIds": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 17
+        },
+        {
+          "start": 17,
+          "end": 25
+        },
+        {
+          "start": 25,
+          "end": 31
+        }
+      ]
+    },
+    {
+      "id": "beginner-invisible-decrease",
+      "title": "Nematomas dviejų akių siaurinimas",
+      "category": "Formavimas",
+      "description": "Sekite priekines gijas, kad amigurumi forma siaurėtų mažiau pastebimai.",
+      "steps": [
+        "Paimkite tik priekinę kitos akies giją.",
+        "Paimkite ir po jos esančios akies priekinę giją.",
+        "Užkabinkite siūlą, ištraukite per abi priekines gijas ir užbaikite žemą stulpelį."
+      ],
+      "tip": "Iš dviejų akių lieka viena. Prieš tęsdami ratą jas suskaičiuokite.",
+      "youtubeId": "osgxJ7qLJ9I",
+      "start": 8,
+      "end": 60,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/invisible-single-crochet-decrease/",
+      "bookIds": [
+        "b1",
+        "b2"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 37
+        },
+        {
+          "start": 37,
+          "end": 60
+        }
+      ]
+    },
+    {
+      "id": "beginner-double",
+      "title": "Stulpelis su užmetimu: per dvi kilpas",
+      "category": "Kalėdos ir namai",
+      "description": "Pasimokykite aukštesnio stulpelio prieš knygų pledus ir puošmenas.",
+      "steps": [
+        "Užmeskite siūlą ir įdurkite vąšelį į akį.",
+        "Užkabinkite siūlą ir ištraukite kilpą: ant vąšelio yra trys.",
+        "Ištraukite siūlą per dvi kilpas, paskui per likusias dvi."
+      ],
+      "tip": "Naudojame PDF amerikietiškas santrumpas: dc yra stulpelis su vienu užmetimu.",
+      "youtubeId": "gC9r2xoAtN4",
+      "start": 8,
+      "end": 37,
+      "videoShape": "landscape",
+      "creator": "Joy of Motion Crochet",
+      "sourceUrl": "https://joyofmotioncrochet.com/how-to-crochet-the-double-crochet-stitch/",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 8,
+          "end": 15
+        },
+        {
+          "start": 15,
+          "end": 26
+        },
+        {
+          "start": 26,
+          "end": 37
+        }
+      ]
+    },
+    {
+      "id": "beginner-slip-stitch",
+      "title": "Jungiamoji akis: paprastas sujungimas",
+      "category": "Sujungimas ir apdaila",
+      "description": "Stebėkite žemą jungiamąją akį, leidžiančią judėti nepridedant aukščio.",
+      "steps": [
+        "Įdurkite vąšelį į nurodytą akį.",
+        "Užkabinkite darbinį siūlą.",
+        "Vienu judesiu ištraukite jį per akį ir kilpą ant vąšelio."
+      ],
+      "tip": "Ratą užbaikite sujungimu tik tada, kai to prašo schema; neriant spirale jo nereikia.",
+      "youtubeId": "exq2ZxyVKJ8",
+      "start": 10,
+      "end": 43,
+      "videoShape": "landscape",
+      "creator": "WeCrochet",
+      "sourceUrl": "https://www.crochet.com/learning-center/basic-stitches/slip-stitch",
+      "bookIds": [
+        "b2",
+        "b3"
+      ],
+      "chapters": [
+        {
+          "start": 10,
+          "end": 22
+        },
+        {
+          "start": 22,
+          "end": 31
+        },
+        {
+          "start": 31,
+          "end": 43
+        }
+      ]
     }
   ]
 };

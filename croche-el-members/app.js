@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try { hash = decodeURIComponent(window.location.hash.slice(1)); } catch { hash = ''; }
     const isBooks = hash === config.booksRoute || hash === 'books';
     const isSupport = hash === config.supportRoute || hash === 'support';
-    const isVideos = hash === config.videosRoute || hash === 'video';
+    const isVideos = hash === config.videosRoute || hash === 'videos' || hash === 'video';
     window.CROCHET_VIDEOS.pause();
     if (isBooks || isSupport || isVideos) overlay.hidden = true;
     if (isVideos) window.CROCHET_VIDEOS.render();
