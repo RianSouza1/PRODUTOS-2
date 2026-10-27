@@ -11,6 +11,16 @@ on:
       - 'adult-coloring-nl-members/**'
       - 'adult-coloring-it-members/**'
       - 'adult-coloring-fr-members/**'
+      - 'adult-coloring-da-members/**'
+      - 'adult-coloring-es-members/**'
+      - 'adult-coloring-fi-members/**'
+      - 'adult-coloring-el-members/**'
+      - 'adult-coloring-hu-members/**'
+      - 'adult-coloring-no-members/**'
+      - 'adult-coloring-pl-members/**'
+      - 'adult-coloring-pt-members/**'
+      - 'adult-coloring-ro-members/**'
+      - 'adult-coloring-cs-members/**'
   workflow_dispatch:
 
 permissions:
@@ -24,7 +34,7 @@ jobs:
   publish:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04-arm
-    timeout-minutes: 15
+    timeout-minutes: 25
     env:
       GIT_LFS_SKIP_SMUDGE: '1'
     steps:
@@ -39,13 +49,23 @@ jobs:
             adult-coloring-nl-members
             adult-coloring-it-members
             adult-coloring-fr-members
+            adult-coloring-da-members
+            adult-coloring-es-members
+            adult-coloring-fi-members
+            adult-coloring-el-members
+            adult-coloring-hu-members
+            adult-coloring-no-members
+            adult-coloring-pl-members
+            adult-coloring-pt-members
+            adult-coloring-ro-members
+            adult-coloring-cs-members
 
       - name: Select member areas to publish
         id: areas
         shell: bash
         run: |
           set -euo pipefail
-          all_sources='adult-coloring-sv-members adult-coloring-de-members adult-coloring-nl-members adult-coloring-it-members adult-coloring-fr-members'
+          all_sources='adult-coloring-sv-members adult-coloring-de-members adult-coloring-nl-members adult-coloring-it-members adult-coloring-fr-members adult-coloring-da-members adult-coloring-es-members adult-coloring-fi-members adult-coloring-el-members adult-coloring-hu-members adult-coloring-no-members adult-coloring-pl-members adult-coloring-pt-members adult-coloring-ro-members adult-coloring-cs-members'
           before='${{ github.event.before }}'
           sources=''
           if [ '${{ github.event_name }}' = 'push' ] && [ -n "$before" ] && [[ ! "$before" =~ ^0+$ ]]; then
@@ -64,7 +84,7 @@ jobs:
 
       - name: Download the original PDF files
         shell: bash
-        timeout-minutes: 6
+        timeout-minutes: 12
         env:
           SOURCES: ${{ steps.areas.outputs.sources }}
         run: |
@@ -114,6 +134,16 @@ jobs:
               adult-coloring-nl-members) destination='/var/www/skillvault.blog/adult-coloring-nl-m' ;;
               adult-coloring-it-members) destination='/var/www/skillvault.blog/adult-coloring-it-m' ;;
               adult-coloring-fr-members) destination='/var/www/skillvault.blog/adult-coloring-fr-m' ;;
+              adult-coloring-da-members) destination='/var/www/skillvault.blog/adult-coloring-da-m' ;;
+              adult-coloring-es-members) destination='/var/www/skillvault.blog/adult-coloring-es-m' ;;
+              adult-coloring-fi-members) destination='/var/www/skillvault.blog/adult-coloring-fi-m' ;;
+              adult-coloring-el-members) destination='/var/www/skillvault.blog/adult-coloring-el-m' ;;
+              adult-coloring-hu-members) destination='/var/www/skillvault.blog/adult-coloring-hu-m' ;;
+              adult-coloring-no-members) destination='/var/www/skillvault.blog/adult-coloring-no-m' ;;
+              adult-coloring-pl-members) destination='/var/www/skillvault.blog/adult-coloring-pl-m' ;;
+              adult-coloring-pt-members) destination='/var/www/skillvault.blog/adult-coloring-pt-m' ;;
+              adult-coloring-ro-members) destination='/var/www/skillvault.blog/adult-coloring-ro-m' ;;
+              adult-coloring-cs-members) destination='/var/www/skillvault.blog/adult-coloring-cs-m' ;;
               *) exit 1 ;;
             esac
             archive="$RUNNER_TEMP/$source.tar.gz"
@@ -126,11 +156,11 @@ jobs:
           destination="$2"
           owner="$3"
           case "$destination" in
-            /var/www/skillvault.blog/adult-coloring-sv-m|/var/www/skillvault.blog/adult-coloring-de-m|/var/www/skillvault.blog/adult-coloring-nl-m|/var/www/skillvault.blog/adult-coloring-it-m|/var/www/skillvault.blog/adult-coloring-fr-m) ;;
+            /var/www/skillvault.blog/adult-coloring-sv-m|/var/www/skillvault.blog/adult-coloring-de-m|/var/www/skillvault.blog/adult-coloring-nl-m|/var/www/skillvault.blog/adult-coloring-it-m|/var/www/skillvault.blog/adult-coloring-fr-m|/var/www/skillvault.blog/adult-coloring-da-m|/var/www/skillvault.blog/adult-coloring-es-m|/var/www/skillvault.blog/adult-coloring-fi-m|/var/www/skillvault.blog/adult-coloring-el-m|/var/www/skillvault.blog/adult-coloring-hu-m|/var/www/skillvault.blog/adult-coloring-no-m|/var/www/skillvault.blog/adult-coloring-pl-m|/var/www/skillvault.blog/adult-coloring-pt-m|/var/www/skillvault.blog/adult-coloring-ro-m|/var/www/skillvault.blog/adult-coloring-cs-m) ;;
             *) exit 1 ;;
           esac
           case "$archive" in
-            /tmp/adult-coloring-sv-members-*.tar.gz|/tmp/adult-coloring-de-members-*.tar.gz|/tmp/adult-coloring-nl-members-*.tar.gz|/tmp/adult-coloring-it-members-*.tar.gz|/tmp/adult-coloring-fr-members-*.tar.gz) ;;
+            /tmp/adult-coloring-sv-members-*.tar.gz|/tmp/adult-coloring-de-members-*.tar.gz|/tmp/adult-coloring-nl-members-*.tar.gz|/tmp/adult-coloring-it-members-*.tar.gz|/tmp/adult-coloring-fr-members-*.tar.gz|/tmp/adult-coloring-da-members-*.tar.gz|/tmp/adult-coloring-es-members-*.tar.gz|/tmp/adult-coloring-fi-members-*.tar.gz|/tmp/adult-coloring-el-members-*.tar.gz|/tmp/adult-coloring-hu-members-*.tar.gz|/tmp/adult-coloring-no-members-*.tar.gz|/tmp/adult-coloring-pl-members-*.tar.gz|/tmp/adult-coloring-pt-members-*.tar.gz|/tmp/adult-coloring-ro-members-*.tar.gz|/tmp/adult-coloring-cs-members-*.tar.gz) ;;
             *) exit 1 ;;
           esac
           sudo mkdir -p "$destination"
