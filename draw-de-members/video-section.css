@@ -1,0 +1,121 @@
+/* Filmed drawing techniques. */
+
+.tab-item { width:33.333%; }
+.draw-eyebrow { color:var(--primary)!important; font-size:.75rem!important; font-weight:600; letter-spacing:.07em; line-height:1.6; margin-bottom:.55rem; }
+.draw-hero-tags,.draw-lesson-tags { display:flex; gap:.55rem; flex-wrap:wrap; margin-top:1rem; }
+.draw-hero-tags span,.draw-lesson-tags span { border:1px solid var(--border-light); border-radius:100px; padding:.35rem .7rem; color:var(--text-muted); background:rgba(255,255,255,.03); font-size:.75rem; line-height:1.5; }
+.draw-lesson-layout { display:grid; gap:1.5rem; align-items:start; }
+.draw-lesson-card { min-width:0; border:1px solid var(--border-light); background:var(--bg-card); border-radius:20px; overflow:hidden; }
+.draw-lesson-heading { padding:1.5rem; }
+.draw-lesson-heading h2 { font-size:1.5rem; line-height:1.4; }
+.draw-video-frame { position:relative; width:100%; aspect-ratio:16/9; min-height:200px; background:#0a1011; }
+.draw-video-frame iframe,.draw-video-frame #draw-player { display:block; width:100%; height:100%; position:absolute; inset:0; border:0; }
+.draw-poster { position:absolute; inset:0; width:100%; height:100%; border:0; padding:0; background:#0a1011; cursor:pointer; color:#fff; font:inherit; }
+.draw-poster img { display:block; width:100%; height:100%; object-fit:contain; }
+.draw-poster::after { content:''; position:absolute; inset:0; background:linear-gradient(0deg,rgba(0,0,0,.65),transparent 65%); }
+.draw-poster-action { position:absolute; z-index:1; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:1rem; text-shadow:0 2px 8px #000; }
+.draw-poster-action svg { width:64px; height:64px; padding:18px; border-radius:50%; background:var(--primary); color:#fff; box-shadow:0 5px 30px rgba(0,0,0,.4); }
+.draw-playback-controls { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; padding:1rem 1.25rem .5rem; }
+.draw-playback-controls button,.draw-ended button,.draw-practice-button { min-height:44px; padding:.65rem .8rem; border:1px solid var(--border-light); border-radius:10px; color:var(--text-dark); background:transparent; font:inherit; font-size:.85rem; cursor:pointer; }
+.draw-playback-controls .draw-play-button,.draw-ended button { background:var(--primary); border-color:var(--primary); color:#fff; }
+.draw-playback-controls button:disabled { opacity:.5; cursor:wait; }
+.draw-speed-buttons { display:flex; gap:.4rem; margin-left:auto; }
+.draw-speed-buttons button[aria-pressed="true"] { background:var(--primary-light); border-color:var(--primary); }
+.draw-progress-wrap { padding:.75rem 1.25rem 1rem; }
+.draw-progress-wrap progress { display:block; width:100%; height:6px; border:0; border-radius:100px; overflow:hidden; accent-color:var(--primary); background:var(--bg-main); }
+.draw-progress-wrap progress::-webkit-progress-bar { background:var(--bg-main); }
+.draw-progress-wrap progress::-webkit-progress-value { background:var(--primary); }
+#draw-status { min-height:2.8em; color:var(--text-muted); font-size:.8rem; line-height:1.5; margin-top:.7rem; }
+.draw-ended { display:flex; flex-wrap:wrap; align-items:center; gap:1rem; margin:0 1.25rem 1.25rem; padding:1rem; border:1px solid var(--border-light); border-radius:12px; background:var(--primary-light); }
+.draw-ended p { flex:1; min-width:180px; font-size:.85rem; line-height:1.6; }
+.draw-lesson-details { padding:1.5rem; border-top:1px solid var(--border-light); }
+.draw-lesson-details>p { color:var(--text-muted); line-height:1.7; font-size:.95rem; }
+.draw-lesson-details h3 { font-size:1.05rem; margin:1.5rem 0 .75rem; }
+.draw-lesson-details ol { padding-left:1.3rem; }
+.draw-lesson-details li { font-size:.9rem; line-height:1.7; padding:.25rem 0 .25rem .25rem; }
+.draw-lesson-details .draw-tip { padding:1rem; background:var(--bg-main); border-radius:10px; font-size:.85rem; margin:1.25rem 0; }
+.draw-practice-button.done { border-color:var(--primary); background:var(--primary-light); }
+.draw-lesson-details .draw-source { font-size:.72rem; line-height:1.6; margin-top:1.25rem; }
+.draw-source a { color:var(--primary); }
+.draw-library { min-width:0; }
+.draw-library-heading { margin-bottom:1rem; }
+.draw-library-heading h2 { font-size:1.15rem; line-height:1.5; }
+.draw-library-heading p { color:var(--text-muted); font-size:.8rem; margin-top:.35rem; }
+.draw-lesson-list { display:grid; gap:.65rem; }
+.draw-lesson-choice { display:flex; align-items:center; width:100%; gap:.8rem; border:1px solid var(--border-light); border-radius:12px; background:var(--bg-card); padding:.75rem; color:var(--text-dark); text-align:left; font:inherit; cursor:pointer; }
+.draw-lesson-choice.selected { background:#213043; border-color:var(--primary); }
+.draw-lesson-choice img { width:80px; height:60px; object-fit:contain; border-radius:8px; flex-shrink:0; }
+.draw-choice-copy { flex:1; min-width:0; display:flex; flex-direction:column; gap:.2rem; }
+.draw-choice-copy strong { font-size:.88rem; line-height:1.35; }
+.draw-choice-copy>span { font-size:.7rem; color:var(--text-muted); line-height:1.4; }
+.draw-choice-copy .draw-choice-number { color:var(--primary); }
+.draw-lesson-choice>svg { width:18px; height:18px; color:var(--primary); flex-shrink:0; }
+.draw-library-note { font-size:.75rem; color:var(--text-muted); line-height:1.7; margin-top:1.5rem; }
+@media (min-width:760px) { .draw-lesson-layout { grid-template-columns:minmax(0,1.65fr) minmax(250px,1fr); } .draw-library { position:sticky; top:0; } .draw-lesson-list { max-height:calc(100dvh - 240px); overflow-y:auto; padding:2px 6px 2px 2px; } }
+@media (min-width:1024px) { .tab-item { width:calc(100% - 2rem); } }
+@media (max-width:400px) { .draw-playback-controls { padding:1rem .75rem .5rem; } .draw-speed-buttons { margin-left:0; } .draw-lesson-choice img { width:60px; height:50px; } }
+@media (max-width:759px) { .draw-videos-view .hero-card { padding:1.5rem; margin-bottom:1.25rem; } .draw-videos-view .hero-text h1 { font-size:1.6rem; } .draw-videos-view .draw-eyebrow { font-size:.7rem!important; letter-spacing:.04em; } .draw-lesson-heading { padding:1.25rem; } .draw-lesson-heading h2 { font-size:1.3rem; } }
+
+.draw-videos-view [hidden] { display:none!important; }
+.draw-videos-view { overflow-wrap:anywhere; }
+.draw-lesson-layout>* { min-width:0; }
+.draw-lesson-choice img { background:#fff; }
+.draw-poster { background:#fff; }
+.draw-source a { overflow-wrap:anywhere; }
+
+/* Keep this video section static: the filmed person provides the movement. */
+.draw-videos-view, .draw-videos-view *, .draw-videos-view *::before, .draw-videos-view *::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
+.pre-page-overlay[hidden] { display:none!important; }
+
+.draw-video-frame { aspect-ratio:4/5; min-height:320px; max-height:620px; }
+.draw-videos-view .hero-card { display:block; }
+.draw-videos-view .hero-text { max-width:none; }
+
+/* Keep labels readable against the existing blue drawing theme. */
+.draw-videos-view .draw-eyebrow { color:#a8d8ff!important; }
+.draw-videos-view .hero-card .draw-eyebrow { color:#fff!important; }
+.draw-hero-tags span { color:#fff; background:rgba(0,0,0,.12); border-color:rgba(255,255,255,.3); }
+.draw-choice-copy .draw-choice-number,.draw-lesson-choice>svg,.draw-source a { color:#a8d8ff; }
+
+/* Focus the visible aperture on the filmed technique. Page controls remain
+   outside the aperture; the original embedded player is still used. */
+.draw-video-frame { overflow:hidden; isolation:isolate; }
+.draw-video-frame #draw-player {
+    inset:auto; left:-100px; top:-110px;
+    width:calc(100% + 200px); height:calc(100% + 220px);
+    pointer-events:none;
+}
+.draw-video-frame:fullscreen,.draw-video-frame:-webkit-full-screen {
+    width:100vw; height:100dvh; min-height:0; max-height:none;
+    aspect-ratio:auto; border-radius:0; background:#000;
+}
+
+/* Match each new recording's native shape so hands and drawing stay visible. */
+.draw-video-frame[data-video-shape="portrait"] {
+    width:min(100%, 349px); aspect-ratio:9/16; min-height:0; max-height:none; margin-inline:auto;
+}
+.draw-video-frame[data-video-shape="landscape"] {
+    aspect-ratio:16/9; min-height:0; max-height:none;
+}
+.draw-video-frame[data-video-shape="portrait"] #draw-player,
+.draw-video-frame[data-video-shape="landscape"] #draw-player {
+    left:0; top:-110px; width:100%; height:calc(100% + 220px);
+}
+.draw-video-frame[data-video-shape="portrait"]:fullscreen,
+.draw-video-frame[data-video-shape="portrait"]:-webkit-full-screen,
+.draw-video-frame[data-video-shape="landscape"]:fullscreen,
+.draw-video-frame[data-video-shape="landscape"]:-webkit-full-screen {
+    width:100vw; height:100dvh; aspect-ratio:auto; margin:0;
+}
+.draw-video-frame[data-video-shape="portrait"]:fullscreen #draw-player,
+.draw-video-frame[data-video-shape="portrait"]:-webkit-full-screen #draw-player {
+    width:min(100vw, calc(100dvh * 9 / 16)); left:50%; transform:translateX(-50%);
+}
+.draw-video-frame[data-video-shape="landscape"]:fullscreen #draw-player,
+.draw-video-frame[data-video-shape="landscape"]:-webkit-full-screen #draw-player {
+    width:min(100vw, calc(100dvh * 16 / 9)); left:50%; transform:translateX(-50%);
+}
+
+/* Keep only the drawing visible while the player skips a presentation shot. */
+.draw-cut-cover { position:absolute; inset:0; z-index:2; background:#0a1011; pointer-events:none; }
+.draw-cut-cover img { width:100%; height:100%; display:block; object-fit:contain; }
