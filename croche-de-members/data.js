@@ -6,20 +6,21 @@ const APP_DATA = {
     "coverImage": "assets/covers/cro_IMG1_de.png",
     "booksRoute": "buecher",
     "supportRoute": "hilfe",
-    "videosRoute": "videos"
+    "videosRoute": "videos",
+    "supplementsRoute": "zusatzmaterial"
   },
   "labels": {
     "member": "Mitgliederbereich",
-    "meta": "Deine Häkelkollektion: drei Bücher über Amigurumi, Weihnachtshäkeln und Wohnaccessoires zum Lesen und Herunterladen als PDF.",
-    "intro": "Dein Zugang ist bestätigt. Entdecke deine drei Häkelbücher und beginne mit kleinen Tieren, Weihnachtsdekorationen oder gemütlichen Projekten für dein Zuhause.",
+    "meta": "Deine Häkelkollektion: drei Häkelbücher und drei zusätzliche illustrierte PDFs zu Amigurumi, Weihnachten und Wohndekoration.",
+    "intro": "Dein Zugang ist bestätigt. Entdecke deine drei Häkelbücher und drei zusätzliche illustrierte PDFs mit Anleitungen für Amigurumi, Weihnachten und ein gemütliches Zuhause.",
     "enter": "Zu meinen Häkelbüchern",
     "books": "Häkelbücher",
     "support": "Hilfe",
     "welcome": "Willkommen in deinem Mitgliederbereich!",
     "homeIntro": "Was möchtest du heute häkeln?",
     "materials": "Deine Häkelbücher",
-    "materialsIntro": "Öffne ein PDF, um die Anleitungen zu lesen, oder lade die Bücher herunter, damit du sie beim Häkeln griffbereit hast.",
-    "booksSubtitle": "Drei Bücher über Amigurumi, Weihnachten und Wohndekoration",
+    "materialsIntro": "Lies deine drei Häkelbücher und entdecke die drei zusätzlichen illustrierten Anleitungsbücher. Öffne die Anleitungen oder lade die PDFs zum Häkeln herunter.",
+    "booksSubtitle": "Drei Häkelbücher und drei zusätzliche illustrierte Anleitungsbücher",
     "supportSubtitle": "Hilfe beim Zugang und Herunterladen",
     "read": "Buch öffnen",
     "download": "PDF herunterladen",
@@ -33,14 +34,21 @@ const APP_DATA = {
     "subject": "Hilfe zur Häkelkollektion",
     "emailBody": "Hallo! Ich brauche Hilfe mit dem Mitgliederbereich meiner Häkelkollektion.\n\nMein Name: ",
     "empty": "Derzeit sind keine Häkelbücher verfügbar.",
-    "pdfLabel": "3 Häkelbücher als PDF",
+    "pdfLabel": "6 PDF-Dateien",
     "bookLabel": "Buch",
     "pagesUnit": "Seiten",
     "loading": "Deine Häkelbücher werden geladen…",
     "noscript": "Aktiviere JavaScript, um den Mitgliederbereich zu nutzen. Du kannst deine PDFs auch direkt über die folgenden Links öffnen.",
     "patternLabel": "Anleitungen Schritt für Schritt",
     "videos": "Häkelvideos",
-    "videosSubtitle": "Grundtechniken mit Pausen zum Mitmachen"
+    "videosSubtitle": "Grundtechniken mit Pausen zum Mitmachen",
+    "coreBooksHeading": "Deine drei Häkelbücher",
+    "supplementsHeading": "Zusätzliche Häkelanleitungen",
+    "supplementsIntro": "Drei zusätzliche PDFs mit jeweils 60 Seiten: illustrierte Anleitungen, Maschenzahlen und Hinweise zum Zusammensetzen und Fertigstellen.",
+    "supplementsBannerTitle": "Neu: drei illustrierte Anleitungsbücher",
+    "supplementsBannerIntro": "Entdecke neue Projekte für Amigurumi, Weihnachten und dein Zuhause.",
+    "supplementsJump": "Zu den zusätzlichen Anleitungen",
+    "supplementsKicker": "ZUSÄTZLICHE HÄKELPROJEKTE"
   },
   "books": [
     {
@@ -84,6 +92,63 @@ const APP_DATA = {
       "badgeColor": "#6c5484",
       "downloadUrl": "materials/CROCHE-3-DE.pdf",
       "coverImage": "assets/covers/cro_IMG1_de.png"
+    },
+    {
+      "id": "b4",
+      "title": "Zauberhaftes Amigurumi-Häkeln — zusätzliche illustrierte Anleitungen",
+      "description": "52 Amigurumi-Anleitungen mit Materiallisten, Maschenzahlen für jede Runde und Abbildungen zum Aufbau und Zusammensetzen. Übe die Grundtechniken und häkle Tiere, Figuren und Fantasiefreunde.",
+      "features": [
+        "Tiere, Figuren und kleine Anhänger",
+        "Anleitungen Runde für Runde",
+        "Tipps zum Füllen und Zusammensetzen"
+      ],
+      "badgeText": "Zusatz 1 / 3",
+      "badgeColor": "#397366",
+      "downloadUrl": "materials/CROCHE-EXTRA-1-DE.pdf",
+      "coverImage": "assets/covers/croche-extra-1-de.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "25,3 MB",
+      "coverWidth": 387,
+      "coverHeight": 548
+    },
+    {
+      "id": "b5",
+      "title": "Gemütliches Weihnachtshäkeln — zusätzliche illustrierte Anleitungen",
+      "description": "84 Weihnachtsprojekte mit Anleitungen für jede Runde oder Reihe, Farb- und Garnangaben sowie Abbildungen. Häkle unter anderem Anhänger, Sterne, Weihnachtsstrümpfe, Girlanden und Geschenke.",
+      "features": [
+        "Ornamente, Strümpfe und Weihnachtsfiguren",
+        "Kleine Geschenke zum Selbermachen",
+        "Grundtechniken und schrittweise Anleitungen"
+      ],
+      "badgeText": "Zusatz 2 / 3",
+      "badgeColor": "#a54158",
+      "downloadUrl": "materials/CROCHE-EXTRA-2-DE.pdf",
+      "coverImage": "assets/covers/croche-extra-2-de.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "21,6 MB",
+      "coverWidth": 387,
+      "coverHeight": 548
+    },
+    {
+      "id": "b6",
+      "title": "Gemütliches Häkeln für Zuhause — zusätzliche illustrierte Anleitungen",
+      "description": "52 Projekte für ein gemütliches Zuhause: Decken, Kissen, Körbe, Tischdekoration und Aufbewahrung. Mit Maßen, Maschenproben, Zeichnungen und Hinweisen zum Zusammensetzen und Fertigstellen.",
+      "features": [
+        "Decken, Körbe, Kissen und Dekoration",
+        "Hinweise zu Maßen und Maschenprobe",
+        "Tipps für Form, Fertigstellung und Pflege"
+      ],
+      "badgeText": "Zusatz 3 / 3",
+      "badgeColor": "#6c5484",
+      "downloadUrl": "materials/CROCHE-EXTRA-3-DE.pdf",
+      "coverImage": "assets/covers/croche-extra-3-de.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "12,7 MB",
+      "coverWidth": 387,
+      "coverHeight": 548
     }
   ],
   "videoUI": {

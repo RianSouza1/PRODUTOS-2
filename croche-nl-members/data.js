@@ -6,20 +6,21 @@ const APP_DATA = {
     "coverImage": "assets/covers/cro_IMG1_nl.png",
     "booksRoute": "boeken",
     "supportRoute": "hulp",
-    "videosRoute": "videos"
+    "videosRoute": "videos",
+    "supplementsRoute": "aanvullend"
   },
   "labels": {
     "member": "Ledenomgeving",
-    "meta": "Je haakcollectie: drie boeken over amigurumi, kersthaakwerk en woonaccessoires om te lezen en als PDF te downloaden.",
-    "intro": "Je toegang is bevestigd. Ontdek je drie haakboeken en begin met kleine dieren, kerstversieringen of gezellige projecten voor je huis.",
+    "meta": "Je haakcollectie: drie haakboeken en drie extra geïllustreerde PDF’s over amigurumi, kerst en woondecoratie.",
+    "intro": "Je toegang is bevestigd. Ontdek je drie haakboeken en drie aanvullende geïllustreerde PDF’s met patronen voor amigurumi, kerst en een knus thuis.",
     "enter": "Naar mijn haakboeken",
     "books": "Haakboeken",
     "support": "Hulp",
     "welcome": "Welkom in je ledenomgeving!",
     "homeIntro": "Wat wil je vandaag haken?",
     "materials": "Je haakboeken",
-    "materialsIntro": "Open een PDF om de instructies te lezen of download de boeken, zodat je ze tijdens het haken bij de hand hebt.",
-    "booksSubtitle": "Drie boeken over amigurumi, kerst en woondecoratie",
+    "materialsIntro": "Lees je drie haakboeken en ontdek de drie extra geïllustreerde patroonboeken. Open de instructies of download de PDF’s om tijdens het haken te gebruiken.",
+    "booksSubtitle": "Drie haakboeken en drie extra boeken met geïllustreerde patronen",
     "supportSubtitle": "Hulp bij toegang en downloaden",
     "read": "Boek openen",
     "download": "PDF downloaden",
@@ -33,14 +34,21 @@ const APP_DATA = {
     "subject": "Hulp bij de haakcollectie",
     "emailBody": "Hallo! Ik heb hulp nodig met de ledenomgeving van mijn haakcollectie.\n\nMijn naam: ",
     "empty": "Er zijn momenteel geen haakboeken beschikbaar.",
-    "pdfLabel": "3 haakboeken in PDF",
+    "pdfLabel": "6 PDF-bestanden",
     "bookLabel": "Boek",
     "pagesUnit": "pagina’s",
     "loading": "Je haakboeken worden geladen…",
     "noscript": "Schakel JavaScript in om de ledenomgeving te gebruiken. Je kunt je PDF’s ook rechtstreeks openen via de onderstaande links.",
     "patternLabel": "Instructies stap voor stap",
     "videos": "Video’s",
-    "videosSubtitle": "Basistechnieken met pauzes om te oefenen"
+    "videosSubtitle": "Basistechnieken met pauzes om te oefenen",
+    "coreBooksHeading": "Je drie haakboeken",
+    "supplementsHeading": "Aanvullende haakpatronen",
+    "supplementsIntro": "Drie extra PDF’s van elk 60 pagina’s, met geïllustreerde patronen, steekaantallen en aanwijzingen voor het in elkaar zetten en afwerken.",
+    "supplementsBannerTitle": "Nieuw: drie geïllustreerde patroonboeken",
+    "supplementsBannerIntro": "Kies nieuwe projecten voor amigurumi, kerst en woondecoratie.",
+    "supplementsJump": "Naar de extra patronen",
+    "supplementsKicker": "EXTRA HAAKPATRONEN"
   },
   "books": [
     {
@@ -84,6 +92,63 @@ const APP_DATA = {
       "badgeColor": "#6c5484",
       "downloadUrl": "materials/CROCHE-3-NL.pdf",
       "coverImage": "assets/covers/cro_IMG1_nl.png"
+    },
+    {
+      "id": "b4",
+      "title": "Amigurumi haken — extra geïllustreerde patronen",
+      "description": "52 amigurumipatronen met materialenlijsten, steekaantallen per toer en illustraties voor de opbouw en montage. Oefen de basistechnieken en maak dieren, figuren en fantasievriendjes.",
+      "features": [
+        "Dieren, figuren en kleine sleutelhangers",
+        "Instructies toer voor toer",
+        "Tips voor het vullen en in elkaar zetten"
+      ],
+      "badgeText": "Extra 1 / 3",
+      "badgeColor": "#397366",
+      "downloadUrl": "materials/CROCHE-EXTRA-1-NL.pdf",
+      "coverImage": "assets/covers/croche-extra-1-nl.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "25,3 MB",
+      "coverWidth": 387,
+      "coverHeight": 548
+    },
+    {
+      "id": "b5",
+      "title": "Kersthaakwerk — extra geïllustreerde patronen",
+      "description": "84 kerstprojecten met instructies per toer of rij, kleur- en garenoverzichten en illustraties. Maak onder meer hangers, sterren, kerstsokken, slingers en zelfgemaakte cadeaus.",
+      "features": [
+        "Ornamenten, kousen en kerstfiguren",
+        "Kleine zelfgemaakte cadeaus",
+        "Basistechnieken en stapsgewijze instructies"
+      ],
+      "badgeText": "Extra 2 / 3",
+      "badgeColor": "#a54158",
+      "downloadUrl": "materials/CROCHE-EXTRA-2-NL.pdf",
+      "coverImage": "assets/covers/croche-extra-2-nl.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "21,5 MB",
+      "coverWidth": 387,
+      "coverHeight": 548
+    },
+    {
+      "id": "b6",
+      "title": "Haken voor een knus thuis — extra geïllustreerde patronen",
+      "description": "52 projecten voor een knus huis: dekens, kussens, manden, tafeldecoratie en opbergers. Met maten, stekenverhouding, schema’s en aanwijzingen voor montage en afwerking.",
+      "features": [
+        "Dekens, manden, kussens en decoratie",
+        "Uitleg over maten en steekverhouding",
+        "Tips voor de vorm, afwerking en verzorging"
+      ],
+      "badgeText": "Extra 3 / 3",
+      "badgeColor": "#6c5484",
+      "downloadUrl": "materials/CROCHE-EXTRA-3-NL.pdf",
+      "coverImage": "assets/covers/croche-extra-3-nl.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "12,6 MB",
+      "coverWidth": 387,
+      "coverHeight": 548
     }
   ],
   "videoUI": {

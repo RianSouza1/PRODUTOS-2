@@ -6,20 +6,21 @@ const APP_DATA = {
     "coverImage": "assets/covers/cro_IMG1_fr.png",
     "booksRoute": "livres",
     "supportRoute": "assistance",
-    "videosRoute": "videos"
+    "videosRoute": "videos",
+    "supplementsRoute": "complements"
   },
   "labels": {
     "member": "Espace membres",
-    "meta": "Votre collection de crochet : trois livres d’amigurumi, de crochet de Noël et de décoration pour la maison à lire et à télécharger en PDF.",
-    "intro": "Votre accès est confirmé. Découvrez vos trois livres de crochet et commencez par de petits animaux, des décorations de Noël ou des projets douillets pour la maison.",
+    "meta": "Votre collection de crochet : trois livres et trois PDF illustrés supplémentaires sur les amigurumis, Noël et la décoration intérieure.",
+    "intro": "Votre accès est confirmé. Découvrez vos trois livres de crochet et trois PDF illustrés supplémentaires avec des modèles d’amigurumis, de Noël et de décoration pour la maison.",
     "enter": "Accéder à mes livres",
     "books": "Livres de crochet",
     "support": "Assistance",
     "welcome": "Bienvenue dans votre espace membres !",
     "homeIntro": "Qu’avez-vous envie de crocheter aujourd’hui ?",
     "materials": "Vos livres de crochet",
-    "materialsIntro": "Ouvrez un PDF pour lire les explications ou téléchargez les livres pour les garder à portée de main pendant vos créations.",
-    "booksSubtitle": "Trois livres d’amigurumi, de Noël et de décoration",
+    "materialsIntro": "Lisez vos trois livres de crochet et découvrez les trois recueils de modèles illustrés supplémentaires. Ouvrez les instructions ou téléchargez les PDF pour crocheter.",
+    "booksSubtitle": "Trois livres de crochet et trois recueils de modèles illustrés supplémentaires",
     "supportSubtitle": "Aide pour l’accès et le téléchargement",
     "read": "Ouvrir le livre",
     "download": "Télécharger le PDF",
@@ -33,14 +34,21 @@ const APP_DATA = {
     "subject": "Assistance pour la collection de crochet",
     "emailBody": "Bonjour ! J’ai besoin d’aide avec l’espace membres de ma collection de crochet.\n\nMon nom : ",
     "empty": "Aucun livre de crochet n’est disponible pour le moment.",
-    "pdfLabel": "3 livres de crochet en PDF",
+    "pdfLabel": "6 fichiers PDF",
     "bookLabel": "Livre",
     "pagesUnit": "pages",
     "loading": "Chargement de vos livres…",
     "noscript": "Activez JavaScript pour utiliser l’espace membres. Vous pouvez aussi ouvrir directement vos PDF grâce aux liens ci-dessous.",
     "patternLabel": "Explications pas à pas",
     "videos": "Vidéos",
-    "videosSubtitle": "Les bases avec des pauses pour pratiquer"
+    "videosSubtitle": "Les bases avec des pauses pour pratiquer",
+    "coreBooksHeading": "Vos trois livres de crochet",
+    "supplementsHeading": "Modèles de crochet complémentaires",
+    "supplementsIntro": "Trois PDF supplémentaires de 60 pages chacun, avec des modèles illustrés, des nombres de mailles et des explications pour l’assemblage et les finitions.",
+    "supplementsBannerTitle": "Nouveau : trois recueils de modèles illustrés",
+    "supplementsBannerIntro": "Choisissez de nouveaux projets d’amigurumis, de Noël et de décoration intérieure.",
+    "supplementsJump": "Voir les modèles supplémentaires",
+    "supplementsKicker": "MODÈLES SUPPLÉMENTAIRES"
   },
   "books": [
     {
@@ -84,6 +92,63 @@ const APP_DATA = {
       "badgeColor": "#6c5484",
       "downloadUrl": "materials/CROCHE-3-FR.pdf",
       "coverImage": "assets/covers/cro_IMG1_fr.png"
+    },
+    {
+      "id": "b4",
+      "title": "L’amigurumi au crochet — modèles illustrés supplémentaires",
+      "description": "52 modèles d’amigurumis avec listes de matériel, nombres de mailles à chaque tour et illustrations pour la construction et l’assemblage. Révisez les bases et réalisez des animaux, des personnages et des créatures imaginaires.",
+      "features": [
+        "Animaux, personnages et petits porte-clés",
+        "Explications détaillées tour par tour",
+        "Conseils de rembourrage et d’assemblage"
+      ],
+      "badgeText": "Supplément 1 / 3",
+      "badgeColor": "#397366",
+      "downloadUrl": "materials/CROCHE-EXTRA-1-FR.pdf",
+      "coverImage": "assets/covers/croche-extra-1-fr.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "25,3 Mo",
+      "coverWidth": 387,
+      "coverHeight": 548
+    },
+    {
+      "id": "b5",
+      "title": "Noël au crochet — modèles illustrés supplémentaires",
+      "description": "84 projets de Noël avec instructions tour par tour ou rang par rang, couleurs, quantités de fil et illustrations. Réalisez des décorations à suspendre, des étoiles, des chaussettes, des guirlandes et des cadeaux.",
+      "features": [
+        "Ornements, chaussettes et figurines de Noël",
+        "Petits cadeaux à réaliser soi-même",
+        "Techniques de base et explications pas à pas"
+      ],
+      "badgeText": "Supplément 2 / 3",
+      "badgeColor": "#a54158",
+      "downloadUrl": "materials/CROCHE-EXTRA-2-FR.pdf",
+      "coverImage": "assets/covers/croche-extra-2-fr.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "21,6 Mo",
+      "coverWidth": 387,
+      "coverHeight": 548
+    },
+    {
+      "id": "b6",
+      "title": "Le crochet douillet à la maison — modèles illustrés supplémentaires",
+      "description": "52 projets pour une maison douillette : couvertures, coussins, paniers, décoration de table et rangements. Avec dimensions, échantillons, schémas et conseils d’assemblage et de finition.",
+      "features": [
+        "Plaids, paniers, coussins et décoration",
+        "Conseils sur les dimensions et l’échantillon",
+        "Astuces pour la forme, les finitions et l’entretien"
+      ],
+      "badgeText": "Supplément 3 / 3",
+      "badgeColor": "#6c5484",
+      "downloadUrl": "materials/CROCHE-EXTRA-3-FR.pdf",
+      "coverImage": "assets/covers/croche-extra-3-fr.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "12,6 Mo",
+      "coverWidth": 387,
+      "coverHeight": 548
     }
   ],
   "videoUI": {

@@ -6,20 +6,21 @@ const APP_DATA = {
     "coverImage": "assets/covers/cro_IMG1_sv.png",
     "booksRoute": "bocker",
     "supportRoute": "hjalp",
-    "videosRoute": "filmer"
+    "videosRoute": "filmer",
+    "supplementsRoute": "extramaterial"
   },
   "labels": {
     "member": "Medlemsområde",
-    "meta": "Din virkboksamling: tre böcker om amigurumi, julvirkning och heminredning att läsa och ladda ner som PDF.",
-    "intro": "Din tillgång är bekräftad. Upptäck dina tre virkböcker och börja med små djur, juldekorationer eller mysiga projekt för ditt hem.",
+    "meta": "Din virksamling: tre virkböcker och tre extra illustrerade PDF-filer om amigurumi, julvirkning och heminredning.",
+    "intro": "Din tillgång är bekräftad. Upptäck dina tre virkböcker och tre extra illustrerade PDF-filer med mönster för amigurumi, julen och ett mysigt hem.",
     "enter": "Till mina virkböcker",
     "books": "Virkböcker",
     "support": "Hjälp",
     "welcome": "Välkommen till ditt medlemsområde!",
     "homeIntro": "Vad vill du virka idag?",
     "materials": "Dina virkböcker",
-    "materialsIntro": "Öppna en PDF för att läsa beskrivningarna eller ladda ner böckerna så att du har dem till hands när du virkar.",
-    "booksSubtitle": "Tre böcker om amigurumi, jul och heminredning",
+    "materialsIntro": "Läs dina tre virkböcker och upptäck de tre extra böckerna med illustrerade mönster. Öppna instruktionerna eller ladda ner PDF-filerna för att ha dem till hands när du virkar.",
+    "booksSubtitle": "Tre virkböcker och tre extra böcker med illustrerade mönster",
     "supportSubtitle": "Hjälp med tillgång och nedladdning",
     "read": "Öppna boken",
     "download": "Ladda ner PDF",
@@ -33,14 +34,21 @@ const APP_DATA = {
     "subject": "Hjälp med virkboksamlingen",
     "emailBody": "Hej! Jag behöver hjälp med medlemsområdet för min virkboksamling.\n\nMitt namn: ",
     "empty": "Det finns inga virkböcker tillgängliga just nu.",
-    "pdfLabel": "3 virkböcker i PDF",
+    "pdfLabel": "6 PDF-filer",
     "bookLabel": "Bok",
     "pagesUnit": "sidor",
     "loading": "Dina virkböcker laddas…",
     "noscript": "Aktivera JavaScript för att använda medlemsområdet. Du kan också öppna dina PDF-filer direkt via länkarna nedan.",
     "patternLabel": "Beskrivningar steg för steg",
     "videos": "Filmer",
-    "videosSubtitle": "Grundtekniker med pauser för att öva"
+    "videosSubtitle": "Grundtekniker med pauser för att öva",
+    "coreBooksHeading": "Dina tre virkböcker",
+    "supplementsHeading": "Extra virkmönster",
+    "supplementsIntro": "Tre extra PDF-filer med 60 sidor vardera: illustrerade mönster, maskantal och instruktioner för montering och avslutning.",
+    "supplementsBannerTitle": "Nytt: tre böcker med illustrerade mönster",
+    "supplementsBannerIntro": "Välj nya projekt för amigurumi, julen och heminredning.",
+    "supplementsJump": "Till de extra mönstren",
+    "supplementsKicker": "EXTRA VIRKMÖNSTER"
   },
   "books": [
     {
@@ -84,6 +92,63 @@ const APP_DATA = {
       "badgeColor": "#6c5484",
       "downloadUrl": "materials/CROCHE-3-SV.pdf",
       "coverImage": "assets/covers/cro_IMG1_sv.png"
+    },
+    {
+      "id": "b4",
+      "title": "Amigurumi med virknål — extra illustrerade mönster",
+      "description": "52 amigurumimönster med materiallistor, maskantal för varje varv och bilder för uppbyggnad och montering. Repetera grunderna och virka djur, figurer och fantasikompisar.",
+      "features": [
+        "Djur, figurer och små nyckelringar",
+        "Beskrivningar varv för varv",
+        "Tips om fyllning och montering"
+      ],
+      "badgeText": "Extra 1 / 3",
+      "badgeColor": "#397366",
+      "downloadUrl": "materials/CROCHE-EXTRA-1-SV.pdf",
+      "coverImage": "assets/covers/croche-extra-1-sv.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "25,2 MB",
+      "coverWidth": 387,
+      "coverHeight": 548
+    },
+    {
+      "id": "b5",
+      "title": "Julvirkning — extra illustrerade mönster",
+      "description": "84 julprojekt med instruktioner varv för varv eller rad för rad, färger, garnmängder och bilder. Virka bland annat hängen, stjärnor, julstrumpor, girlanger och handgjorda presenter.",
+      "features": [
+        "Dekorationer, strumpor och julfigurer",
+        "Små handgjorda gåvor",
+        "Grundtekniker och beskrivningar steg för steg"
+      ],
+      "badgeText": "Extra 2 / 3",
+      "badgeColor": "#a54158",
+      "downloadUrl": "materials/CROCHE-EXTRA-2-SV.pdf",
+      "coverImage": "assets/covers/croche-extra-2-sv.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "21,6 MB",
+      "coverWidth": 387,
+      "coverHeight": 548
+    },
+    {
+      "id": "b6",
+      "title": "Virkning för ett mysigt hem — extra illustrerade mönster",
+      "description": "52 projekt för ett mysigt hem: filtar, kuddar, korgar, bordsdekorationer och förvaring. Med mått, virkfasthet, diagram och instruktioner för montering och avslutning.",
+      "features": [
+        "Filtar, korgar, kuddar och dekoration",
+        "Vägledning om mått och virkfasthet",
+        "Tips om form, avslutning och skötsel"
+      ],
+      "badgeText": "Extra 3 / 3",
+      "badgeColor": "#6c5484",
+      "downloadUrl": "materials/CROCHE-EXTRA-3-SV.pdf",
+      "coverImage": "assets/covers/croche-extra-3-sv.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "12,6 MB",
+      "coverWidth": 387,
+      "coverHeight": 548
     }
   ],
   "videoUI": {

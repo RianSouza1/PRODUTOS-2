@@ -6,20 +6,21 @@ const APP_DATA = {
     "coverImage": "assets/covers/cro_IMG1_it.png",
     "booksRoute": "libri",
     "supportRoute": "assistenza",
-    "videosRoute": "video"
+    "videosRoute": "video",
+    "supplementsRoute": "materiali-extra"
   },
   "labels": {
     "member": "Area membri",
-    "meta": "La tua collezione all’uncinetto: tre libri di amigurumi, uncinetto natalizio e decorazioni per la casa da leggere e scaricare in PDF.",
-    "intro": "Il tuo accesso è confermato. Scopri i tuoi tre libri all’uncinetto e inizia con piccoli animali, decorazioni natalizie o progetti accoglienti per la tua casa.",
+    "meta": "La tua collezione di uncinetto: tre libri e tre PDF illustrati aggiuntivi su amigurumi, Natale e decorazioni per la casa.",
+    "intro": "Il tuo accesso è confermato. Scopri i tuoi tre libri di uncinetto e tre PDF illustrati aggiuntivi con schemi per amigurumi, Natale e una casa accogliente.",
     "enter": "Accedi ai miei libri",
     "books": "Libri all’uncinetto",
     "support": "Assistenza",
     "welcome": "Benvenuto nella tua area membri!",
     "homeIntro": "Che cosa vuoi creare all’uncinetto oggi?",
     "materials": "I tuoi libri all’uncinetto",
-    "materialsIntro": "Apri un PDF per leggere le istruzioni oppure scarica i libri per averli a portata di mano mentre lavori all’uncinetto.",
-    "booksSubtitle": "Tre libri di amigurumi, Natale e decorazioni per la casa",
+    "materialsIntro": "Leggi i tuoi tre libri di uncinetto e scopri i tre volumi aggiuntivi di schemi illustrati. Apri le istruzioni o scarica i PDF per consultarli mentre lavori.",
+    "booksSubtitle": "Tre libri di uncinetto e tre volumi aggiuntivi di schemi illustrati",
     "supportSubtitle": "Aiuto per l’accesso e il download",
     "read": "Apri il libro",
     "download": "Scarica il PDF",
@@ -33,14 +34,21 @@ const APP_DATA = {
     "subject": "Assistenza per la collezione all’uncinetto",
     "emailBody": "Buongiorno! Ho bisogno di aiuto con l’area membri della mia collezione all’uncinetto.\n\nIl mio nome: ",
     "empty": "Al momento non ci sono libri all’uncinetto disponibili.",
-    "pdfLabel": "3 libri all’uncinetto in PDF",
+    "pdfLabel": "6 file PDF",
     "bookLabel": "Libro",
     "pagesUnit": "pagine",
     "loading": "Caricamento dei tuoi libri…",
     "noscript": "Attiva JavaScript per utilizzare l’area membri. Puoi anche aprire direttamente i PDF dai link qui sotto.",
     "patternLabel": "Istruzioni passo dopo passo",
     "videos": "Video",
-    "videosSubtitle": "Le basi con pause per esercitarti"
+    "videosSubtitle": "Le basi con pause per esercitarti",
+    "coreBooksHeading": "I tuoi tre libri di uncinetto",
+    "supplementsHeading": "Schemi aggiuntivi per l’uncinetto",
+    "supplementsIntro": "Tre PDF aggiuntivi di 60 pagine ciascuno, con schemi illustrati, conteggi delle maglie e istruzioni per il montaggio e le rifiniture.",
+    "supplementsBannerTitle": "Novità: tre volumi di schemi illustrati",
+    "supplementsBannerIntro": "Scegli nuovi progetti per amigurumi, Natale e decorazioni per la casa.",
+    "supplementsJump": "Vai agli schemi aggiuntivi",
+    "supplementsKicker": "SCHEMI AGGIUNTIVI"
   },
   "books": [
     {
@@ -84,6 +92,63 @@ const APP_DATA = {
       "badgeColor": "#6c5484",
       "downloadUrl": "materials/CROCHE-3-IT.pdf",
       "coverImage": "assets/covers/cro_IMG1_it.png"
+    },
+    {
+      "id": "b4",
+      "title": "L’amigurumi all’uncinetto — schemi illustrati aggiuntivi",
+      "description": "52 schemi di amigurumi con elenchi dei materiali, conteggi delle maglie per ogni giro e illustrazioni per la costruzione e il montaggio. Ripassa le basi e crea animali, personaggi e amici di fantasia.",
+      "features": [
+        "Animali, personaggi e piccoli portachiavi",
+        "Istruzioni dettagliate giro per giro",
+        "Consigli per l’imbottitura e l’assemblaggio"
+      ],
+      "badgeText": "Extra 1 / 3",
+      "badgeColor": "#397366",
+      "downloadUrl": "materials/CROCHE-EXTRA-1-IT.pdf",
+      "coverImage": "assets/covers/croche-extra-1-it.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "25,2 MB",
+      "coverWidth": 387,
+      "coverHeight": 548
+    },
+    {
+      "id": "b5",
+      "title": "Natale all’uncinetto — schemi illustrati aggiuntivi",
+      "description": "84 progetti natalizi con istruzioni giro per giro o riga per riga, colori, quantità di filato e illustrazioni. Realizza decorazioni da appendere, stelle, calze, ghirlande e regali fatti a mano.",
+      "features": [
+        "Ornamenti, calze e personaggi natalizi",
+        "Piccoli regali da realizzare a mano",
+        "Tecniche di base e istruzioni passo dopo passo"
+      ],
+      "badgeText": "Extra 2 / 3",
+      "badgeColor": "#a54158",
+      "downloadUrl": "materials/CROCHE-EXTRA-2-IT.pdf",
+      "coverImage": "assets/covers/croche-extra-2-it.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "21,6 MB",
+      "coverWidth": 387,
+      "coverHeight": 548
+    },
+    {
+      "id": "b6",
+      "title": "L’uncinetto accogliente in casa — schemi illustrati aggiuntivi",
+      "description": "52 progetti per una casa accogliente: coperte, cuscini, cesti, decorazioni per la tavola e organizer. Con misure, campioni, schemi e indicazioni per il montaggio e le rifiniture.",
+      "features": [
+        "Plaid, cestini, cuscini e decorazioni",
+        "Indicazioni sulle misure e sul campione",
+        "Consigli per la forma, le finiture e la cura"
+      ],
+      "badgeText": "Extra 3 / 3",
+      "badgeColor": "#6c5484",
+      "downloadUrl": "materials/CROCHE-EXTRA-3-IT.pdf",
+      "coverImage": "assets/covers/croche-extra-3-it.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "12,6 MB",
+      "coverWidth": 387,
+      "coverHeight": 548
     }
   ],
   "videoUI": {

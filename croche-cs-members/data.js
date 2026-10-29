@@ -6,20 +6,21 @@ const APP_DATA = {
     "coverImage": "assets/covers/cro_IMG1_cs.png",
     "booksRoute": "knihy",
     "supportRoute": "pomoc",
-    "videosRoute": "videa"
+    "videosRoute": "videa",
+    "supplementsRoute": "doplnky"
   },
   "labels": {
     "member": "Členská sekce",
-    "meta": "Vaše sbírka háčkování: tři knihy o amigurumi, vánočním háčkování a bytových dekoracích ke čtení a stažení v PDF.",
-    "intro": "Váš přístup je potvrzen. Objevte své tři knihy o háčkování a začněte malými zvířátky, vánočními ozdobami nebo útulnými projekty pro domov.",
+    "meta": "Vaše sbírka háčkování: tři knihy a tři další ilustrované soubory PDF o amigurumi, vánočním háčkování a bytových dekoracích.",
+    "intro": "Váš přístup je potvrzen. Objevte své tři knihy o háčkování a tři další ilustrované soubory PDF s návody na amigurumi, vánoční dekorace a útulný domov.",
     "enter": "Přejít k mým knihám",
     "books": "Knihy o háčkování",
     "support": "Pomoc",
     "welcome": "Vítejte ve své členské sekci!",
     "homeIntro": "Co si dnes chcete uháčkovat?",
     "materials": "Vaše knihy o háčkování",
-    "materialsIntro": "Otevřete PDF a přečtěte si návody, nebo si knihy stáhněte, abyste je měli při háčkování po ruce.",
-    "booksSubtitle": "Tři knihy o amigurumi, Vánocích a bytových dekoracích",
+    "materialsIntro": "Přečtěte si své tři knihy o háčkování a prohlédněte si tři další knihy s ilustrovanými návody. Pokyny můžete otevřít nebo si soubory PDF stáhnout a používat při háčkování.",
+    "booksSubtitle": "Tři knihy o háčkování a tři další knihy s ilustrovanými návody",
     "supportSubtitle": "Pomoc s přístupem a stahováním",
     "read": "Otevřít knihu",
     "download": "Stáhnout PDF",
@@ -33,14 +34,21 @@ const APP_DATA = {
     "subject": "Pomoc se sbírkou knih o háčkování",
     "emailBody": "Dobrý den! Potřebuji pomoc s členskou sekcí své sbírky knih o háčkování.\n\nMoje jméno: ",
     "empty": "Momentálně nejsou dostupné žádné knihy o háčkování.",
-    "pdfLabel": "3 knihy o háčkování v PDF",
+    "pdfLabel": "6 souborů PDF",
     "bookLabel": "Kniha",
     "pagesUnit": "str.",
     "loading": "Načítání vašich knih…",
     "noscript": "Pro používání členské sekce zapněte JavaScript. Soubory PDF můžete také otevřít přímo pomocí odkazů níže.",
     "patternLabel": "Návody krok za krokem",
     "videos": "Videa",
-    "videosSubtitle": "Základní techniky s pauzami na procvičení"
+    "videosSubtitle": "Základní techniky s pauzami na procvičení",
+    "coreBooksHeading": "Vaše tři knihy o háčkování",
+    "supplementsHeading": "Doplňkové návody k háčkování",
+    "supplementsIntro": "Tři další soubory PDF, každý o 60 stranách, s ilustrovanými návody, počty oček a pokyny pro sestavení a dokončení.",
+    "supplementsBannerTitle": "Novinka: tři knihy s ilustrovanými návody",
+    "supplementsBannerIntro": "Vyberte si nové projekty amigurumi, vánočních a bytových dekorací.",
+    "supplementsJump": "Přejít na doplňkové návody",
+    "supplementsKicker": "DOPLŇKOVÉ NÁVODY"
   },
   "books": [
     {
@@ -84,6 +92,63 @@ const APP_DATA = {
       "badgeColor": "#6c5484",
       "downloadUrl": "materials/CROCHE-3-CS.pdf",
       "coverImage": "assets/covers/cro_IMG1_cs.png"
+    },
+    {
+      "id": "b4",
+      "title": "Amigurumi s háčkem — doplňkové ilustrované návody",
+      "description": "52 návodů na amigurumi se seznamy materiálů, počty oček v každém kole a obrázky pro vytvoření a sestavení dílů. Zopakujte si základy a uháčkujte zvířátka, postavičky a pohádkové kamarády.",
+      "features": [
+        "Zvířátka, figurky a malé přívěsky na klíče",
+        "Podrobné návody po jednotlivých kruhových řadách",
+        "Tipy na vycpávání a sestavování"
+      ],
+      "badgeText": "Doplněk 1 / 3",
+      "badgeColor": "#397366",
+      "downloadUrl": "materials/CROCHE-EXTRA-1-CS.pdf",
+      "coverImage": "assets/covers/croche-extra-1-cs.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "25,4 MB",
+      "coverWidth": 387,
+      "coverHeight": 548
+    },
+    {
+      "id": "b5",
+      "title": "Vánoční háčkování — doplňkové ilustrované návody",
+      "description": "84 vánočních projektů s návody kolo po kole nebo řadu po řadě, barvami, množstvím příze a obrázky. Uháčkujte ozdoby, hvězdy, punčochy, girlandy a ručně vyrobené dárky.",
+      "features": [
+        "Ozdoby, punčochy a vánoční figurky",
+        "Malé ručně vyráběné dárky",
+        "Základní techniky a návody krok za krokem"
+      ],
+      "badgeText": "Doplněk 2 / 3",
+      "badgeColor": "#a54158",
+      "downloadUrl": "materials/CROCHE-EXTRA-2-CS.pdf",
+      "coverImage": "assets/covers/croche-extra-2-cs.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "21,6 MB",
+      "coverWidth": 387,
+      "coverHeight": 548
+    },
+    {
+      "id": "b6",
+      "title": "Háčkování pro útulný domov — doplňkové ilustrované návody",
+      "description": "52 projektů pro útulný domov: deky, polštáře, košíky, dekorace na stůl a organizéry. S rozměry, vzorky, schématy a pokyny pro sestavení a dokončení.",
+      "features": [
+        "Deky, košíky, polštáře a dekorace",
+        "Pokyny k rozměrům a zkušebnímu vzorku",
+        "Tipy na tvar, dokončení a péči"
+      ],
+      "badgeText": "Doplněk 3 / 3",
+      "badgeColor": "#6c5484",
+      "downloadUrl": "materials/CROCHE-EXTRA-3-CS.pdf",
+      "coverImage": "assets/covers/croche-extra-3-cs.png",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "12,7 MB",
+      "coverWidth": 387,
+      "coverHeight": 548
     }
   ],
   "videoUI": {
