@@ -34,17 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
     </div></div>`;
   }
   function renderBooks() {
-    const cards = books.map(book => `<article class="premium-book-card">
+    const card = book => `<article class="premium-book-card ${book.section === 'supplement' ? 'supplement-book-card' : ''}">
       <div class="premium-badge-wrapper"><span class="premium-badge" style="background-color:${book.badgeColor}">${escape(book.badgeText)}</span><span class="premium-format">PDF · ${book.pageCount} ${text('pagesUnit')} · ${escape(book.fileSizeLabel)}</span></div>
+      ${book.section === 'supplement' ? `<div class="supplement-book-cover"><img src="${escape(book.coverImage)}" alt="${escape(book.title)}" width="417" height="590" loading="lazy" decoding="async"></div>` : ''}
       <div class="premium-info"><h2 class="premium-title">${escape(book.title)}</h2><p class="premium-desc">${escape(book.description)}</p>
         <ul class="premium-checklist">${book.features.map(feature => `<li>${icon('check-square')}<span>${escape(feature)}</span></li>`).join('')}</ul>
         <div class="book-actions"><a href="${book.downloadUrl}" target="_blank" rel="noopener" class="premium-btn">${icon('book-open')}${text('read')}</a>
         <a href="${book.downloadUrl}" download class="premium-btn secondary-download">${icon('download')}${text('download')}</a></div>
-      </div></article>`).join('');
+      </div></article>`;
+    const coreBooks = books.filter(book => book.section !== 'supplement');
+    const supplements = books.filter(book => book.section === 'supplement');
     return `<div class="page-view">${hero(text('materials'), text('materialsIntro'))}
+      ${supplements.length ? `<aside class="materials-update"><div><h2>${text('supplementsBannerTitle')}</h2><p>${text('supplementsBannerIntro')}</p></div><a href="#${config.supplementsRoute}">${text('supplementsJump')} ↓</a></aside>` : ''}
       <div class="collection-cover"><img src="${config.coverImage}" alt="${escape(config.collectionName)}" width="1254" height="1254"><p>${escape(config.collectionName)}</p></div>
       <p class="file-note">${text('largeFile')}</p>
-      <div class="list-container">${cards || `<p>${text('empty')}</p>`}</div></div>`;
+      <h2 class="materials-section-title">${text('coreBooksHeading')}</h2>
+      <div class="list-container">${coreBooks.map(card).join('') || `<p>${text('empty')}</p>`}</div>
+      ${supplements.length ? `<section class="supplement-section" id="extra-lesmateriaal" aria-labelledby="supplements-heading"><p class="supplements-kicker">${text('supplementsKicker')}</p><h2 id="supplements-heading">${text('supplementsHeading')}</h2><p class="supplements-intro">${text('supplementsIntro')}</p><div class="list-container">${supplements.map(card).join('')}</div></section>` : ''}
+      </div>`;
   }
   function renderSupport() {
     const mail = `mailto:${config.contactEmail}?subject=${encodeURIComponent(labels.subject)}&body=${encodeURIComponent(labels.emailBody)}`;
@@ -57,7 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function render() {
     let hash = '';
     try { hash = decodeURIComponent(window.location.hash.slice(1)); } catch { hash = ''; }
-    const isBooks = hash === config.booksRoute || hash === 'books';
+    const isSupplements = hash === config.supplementsRoute;
+    const isBooks = hash === config.booksRoute || hash === 'books' || isSupplements;
     const isSupport = hash === config.supportRoute || hash === 'support';
     const isVideos = hash === config.videosRoute;
     window.FRENCH_VIDEOS?.pause();
@@ -73,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (active) tab.setAttribute('aria-current','page'); else tab.removeAttribute('aria-current');
     });
     root.scrollTo(0, 0);
+    if (isSupplements) requestAnimationFrame(() => document.getElementById('extra-lesmateriaal')?.scrollIntoView({block:'start'}));
   }
   window.addEventListener('hashchange', render);
   render();

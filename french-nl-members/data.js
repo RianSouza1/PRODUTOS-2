@@ -6,7 +6,8 @@ const APP_DATA = {
     "coverImage": "assets/covers/french_IMG1_nl.png",
     "booksRoute": "boeken",
     "supportRoute": "hulp",
-    "videosRoute": "videos"
+    "videosRoute": "videos",
+    "supplementsRoute": "aanvullend"
   },
   "labels": {
     "brand": "Frans vanaf nul",
@@ -17,12 +18,12 @@ const APP_DATA = {
     "support": "Hulp",
     "intro": "Leer de basis, oefen alledaagse gesprekken en druk je steeds natuurlijker uit in het Frans.",
     "enter": "Naar het lesmateriaal",
-    "bundle": "3 PDF-boeken",
+    "bundle": "6 PDF-bestanden",
     "welcome": "Welkom bij je cursus Frans",
-    "homeIntro": "Je drie boeken begeleiden je van de eerste zinnen tot natuurlijke gesprekken. Begin met boek 1 en leer in je eigen tempo.",
+    "homeIntro": "Je drie cursusboeken en drie aanvullende geïllustreerde PDF-boeken helpen je om stap voor stap Frans te leren. Begin bij de basis en oefen in je eigen tempo.",
     "materials": "Je Franse bibliotheek",
-    "materialsIntro": "Begin bij de basis, oefen gesprekken en breid je uitdrukkingsmogelijkheden uit. Hier kun je alle drie de boeken lezen of downloaden.",
-    "booksSubtitle": "De basis, alledaagse gesprekken en vloeiender spreken",
+    "materialsIntro": "Lees je drie cursusboeken en oefen verder met drie aanvullende geïllustreerde PDF-boeken. Alle zes bestanden kun je hier openen of downloaden.",
+    "booksSubtitle": "Drie cursusboeken en drie geïllustreerde aanvullingen",
     "supportSubtitle": "Vragen over je toegang of het lesmateriaal",
     "read": "Nu lezen",
     "download": "PDF downloaden",
@@ -68,7 +69,14 @@ const APP_DATA = {
       ]
     ],
     "videos": "Video’s",
-    "videosSubtitle": "Video's tot één minuut, nuttige woorden en uitspraaktips"
+    "videosSubtitle": "Video's tot één minuut, nuttige woorden en uitspraaktips",
+    "coreBooksHeading": "Je drie cursusboeken",
+    "supplementsHeading": "Aanvullend lesmateriaal",
+    "supplementsIntro": "Drie geïllustreerde boeken van elk 60 pagina’s. Herhaal de basis, oefen herkenbare gesprekken en bouw natuurlijke Franse zinnen met Nederlandse uitleg en antwoorden bij de oefeningen.",
+    "supplementsBannerTitle": "Nieuw: drie geïllustreerde PDF-boeken",
+    "supplementsBannerIntro": "Extra oefeningen, kleurcodes, dialogen en voorbeelden om verder te oefenen met dezelfde onderwerpen.",
+    "supplementsJump": "Naar het extra lesmateriaal",
+    "supplementsKicker": "EXTRA OEFENMATERIAAL"
   },
   "books": [
     {
@@ -118,6 +126,57 @@ const APP_DATA = {
       "fileSizeLabel": "2,2 MB",
       "downloadUrl": "materials/FRANCES-3-NL.pdf",
       "coverImage": "assets/covers/french_IMG1_nl.png"
+    },
+    {
+      "id": "b4",
+      "title": "Frans vanaf nul — geïllustreerd oefenboek",
+      "description": "Herhaal de basis van het Frans met afbeeldingen, kleurcodes en heldere uitleg in het Nederlands. Oefen uitspraak, grammatica en zinsbouw met korte opdrachten en antwoorden.",
+      "features": [
+        "Uitspraak, woordenschat en zinsbouw met kleurcodes",
+        "Korte oefeningen met antwoorden om zelf te controleren",
+        "Een dagelijkse oefenroutine met lezen, schrijven en hardop spreken"
+      ],
+      "badgeText": "Extra 1 / 3 · Basis",
+      "badgeColor": "#285eac",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "4,1 MB",
+      "downloadUrl": "materials/FRENCH-1-NL.pdf",
+      "coverImage": "assets/covers/french-extra-1-nl.png"
+    },
+    {
+      "id": "b5",
+      "title": "Alledaagse Franse gesprekken — geïllustreerd oefenboek",
+      "description": "Oefen praktische situaties met Franse dialogen en Nederlandse vertalingen. Wissel woorden om, speel beide rollen en leer hoe je beleefd om uitleg of herhaling vraagt.",
+      "features": [
+        "Dialogen voor reizen, werk, winkelen en sociale situaties",
+        "Nuttige basiszinnen en het verschil tussen tu en vous",
+        "Rollenspellen, variaties en korte opdrachten met antwoorden"
+      ],
+      "badgeText": "Extra 2 / 3 · Gesprekken",
+      "badgeColor": "#9d293b",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "5,3 MB",
+      "downloadUrl": "materials/FRENCH-2-NL.pdf",
+      "coverImage": "assets/covers/french-extra-2-nl.png"
+    },
+    {
+      "id": "b6",
+      "title": "Vloeiend Frans — geïllustreerd oefenboek",
+      "description": "Leer Franse uitdrukkingen als herbruikbare bouwstenen. Ontdek hoe je woord-voor-woordvertalingen vermijdt en met patronen, voorzetsels en verbindingswoorden natuurlijker spreekt.",
+      "features": [
+        "Vaste uitdrukkingen en werkwoorden met voorzetsels",
+        "Voorbeeldzinnen, Nederlandse betekenissen en veelgemaakte fouten",
+        "Variatie-oefeningen en eigen zinnen om actief te oefenen"
+      ],
+      "badgeText": "Extra 3 / 3 · Natuurlijk spreken",
+      "badgeColor": "#356746",
+      "section": "supplement",
+      "pageCount": 60,
+      "fileSizeLabel": "4,1 MB",
+      "downloadUrl": "materials/FRENCH-3-NL.pdf",
+      "coverImage": "assets/covers/french-extra-3-nl.png"
     }
   ],
   "videoCourse": {

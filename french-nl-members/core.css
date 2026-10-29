@@ -1321,3 +1321,22 @@ a:focus-visible, button:focus-visible { outline:3px solid var(--primary-hover); 
 .no-script a { color:var(--accent); display:block; padding:.4rem; }
 @media(min-width:1024px) { .main-content { padding-bottom:3rem; } .tab-item { width:calc(100% - 2rem); } }
 @media(max-width:600px) { .hero-text h1 { font-size:1.7rem; } .collection-cover { padding:1rem; } .premium-title { font-size:1.3rem; } }
+
+/* Three supplementary illustrated Dutch books, alongside the original course. */
+.materials-update { display:flex;align-items:center;justify-content:space-between;gap:1.25rem;flex-wrap:wrap;padding:1.25rem 1.5rem;margin:0 0 2rem;border:1px solid #e2c38c55;border-radius:16px;background:linear-gradient(120deg,#24446b55,#61422633); }
+.materials-update h2 { font-size:1.05rem;line-height:1.5;color:var(--accent);margin-bottom:.4rem; }
+.materials-update p { font-size:.88rem;line-height:1.65;color:var(--text-muted); }
+.materials-update>div { flex:1;min-width:220px; }
+.materials-update>a { display:flex;align-items:center;justify-content:center;min-height:44px;padding:.75rem 1rem;border:1px solid #e2c38c66;border-radius:100px;color:var(--accent);font-size:.85rem;text-decoration:none; }
+.materials-section-title { font-size:1.3rem;margin:0 0 1.25rem;line-height:1.5; }
+.supplement-section { padding-top:1.5rem;scroll-margin-top:1.5rem; }
+.supplements-kicker { font-size:.72rem;font-weight:600;letter-spacing:.08em;color:var(--accent);margin:0 0 .5rem; }
+.supplement-section>h2 { font-size:1.65rem;line-height:1.4;margin:0 0 .6rem; }
+.supplements-intro { color:var(--text-muted);font-size:.95rem;line-height:1.7;max-width:850px;margin:0 0 1.5rem; }
+.supplement-book-card { display:grid;grid-template-columns:140px minmax(0,1fr);column-gap:1.5rem;align-items:start; }
+.supplement-book-card>.premium-badge-wrapper { grid-column:1/-1; }
+.supplement-book-cover img { display:block;width:100%;height:auto;border-radius:8px;border:1px solid #e2c38c44; }
+.supplement-book-card .premium-title { font-size:1.35rem; }
+.supplement-book-card .premium-info { min-width:0; }
+.supplement-book-card .premium-checklist { margin-bottom:.75rem; }
+@media(max-width:640px) { .supplement-book-card { grid-template-columns:minmax(0,1fr); } .supplement-book-cover { max-width:160px;margin:0 auto 1.5rem; } .supplement-section>h2 { font-size:1.4rem; } .materials-update { padding:1rem; } }
