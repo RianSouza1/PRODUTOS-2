@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta name="description" content="Dein Mitgliederbereich für Trockenmischungen und Vorratsküche: das Hauptkochbuch und zwei Bonusbücher zum Lesen und Herunterladen.">
+  <title>Trockenmischungen &amp; Vorratsküche – Mitgliederbereich</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <link rel="stylesheet" href="core.css?v=drymix-de-20261028-v1">
+</head>
+<body>
+  <div id="pre-page" class="pre-page-overlay">
+    <div class="pre-page-bg"></div>
+    <div class="pre-page-content">
+      <div class="pre-page-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="16" y="19" width="32" height="36" rx="7"/><path d="M20 19v-7h24v7M16 29h32M24 38h16M24 45h11" stroke-linecap="round"/></svg></div>
+      <h1>Deine Vorratsküche beginnt hier</h1>
+      <p>Dein Zugang ist bestätigt.<br>Entdecke dein Trockenmischungen-Kochbuch und die beiden Bonusbücher für preiswerte Gerichte und selbstgemachte Küchen-Basics.</p>
+      <div class="pre-page-features"><span>📖 Hauptbuch + 2 Boni</span><span>⬇ PDFs zum Herunterladen</span><span>💬 Hilfe im Mitgliederbereich</span></div>
+      <button type="button" id="enter-members">Zu meinen Büchern →</button>
+    </div>
+  </div>
+  <div class="app-container">
+    <header class="app-header"><div class="header-logo"><img src="assets/covers/dry_IMG1_de.png" alt="Trockenmischungen-Vorratskochbuch mit zwei Bonusbüchern" id="brand-logo"><h1 id="brand-title">Trockenmischungen &amp; Vorratsküche</h1></div></header>
+    <main id="app-root" class="main-content" tabindex="-1"><p class="loading-message" role="status">Deine Bücher werden geladen …</p></main>
+    <nav class="bottom-tab-bar" id="main-nav" aria-label="Mitgliederbereich">
+      <a href="#buecher" class="tab-item"><i data-lucide="book-open" aria-hidden="true"></i><span>Bücher &amp; Boni</span></a>
+      <a href="#hilfe" class="tab-item"><i data-lucide="message-square" aria-hidden="true"></i><span>Hilfe</span></a>
+    </nav>
+  </div>
+  <noscript><div class="noscript-materials"><h1>Deine Bücher für die Vorratsküche</h1><p>Aktiviere JavaScript für den Mitgliederbereich oder öffne deine PDFs direkt:</p><a href="materials/DRY-1-DE.pdf">Das große Vorratskammer-Kochbuch</a><a href="materials/DRY-2-DE.pdf">Das preiswerte Vorratsgerichte-Kochbuch</a><a href="materials/DRY-3-DE.pdf">Das Vorratskammer-Kochbuch für Selbstgemachtes</a></div></noscript>
+  <script src="data.js?v=drymix-de-20261028-v1" defer></script>
+  <script src="app.js?v=drymix-de-20261028-v1" defer></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+name: Publish Drymix German
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/deploy-drymix-de.yml'
+      - 'drymix-de-members/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-drymix-de
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 25
+    env:
+      GIT_LFS_SKIP_SMUDGE: '1'
+    steps:
+      - name: Checkout German member area
+        uses: actions/checkout@v4
+        with:
+          lfs: false
+          fetch-depth: 1
+          sparse-checkout: drymix-de-members
+
+      - name: Download original German PDFs
+        shell: bash
+        timeout-minutes: 15
+        run: |
+          set -euo pipefail
+          for pdf in drymix-de-members/materials/*.pdf; do
+            expected="$(awk '$1 == "oid" { sub(/^sha256:/, "", $2); print $2 }' "$pdf")"
+            if [[ ! "$expected" =~ ^[a-f0-9]{64}$ ]]; then
+              echo "::error::Invalid LFS reference: $pdf"
+              exit 1
+            fi
+            curl --http1.1 --fail --location --silent --show-error --retry 3 --retry-all-errors --connect-timeout 15 --max-time 300 \
+              "https://media.githubusercontent.com/media/$GITHUB_REPOSITORY/$GITHUB_SHA/$pdf" \
+              --output "$pdf.download"
+            actual="$(shasum -a 256 "$pdf.download" | awk '{print $1}')"
+            if [ "$actual" != "$expected" ] || [ "$(head -c 5 "$pdf.download")" != '%PDF-' ]; then
+              echo "::error::Original PDF integrity check failed: $pdf"
+              exit 1
+            fi
+            mv "$pdf.download" "$pdf"
+          done
+
+      - name: Publish German member area using SSH
+        shell: bash
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USERNAME: ${{ secrets.VPS_USERNAME }}
+          VPS_SECRET: ${{ secrets.VPS_SECRET }}
+        run: |
+          set -euo pipefail
+          [[ "$VPS_HOST" =~ ^[a-zA-Z0-9.:-]+$ ]]
+          [[ "$VPS_USERNAME" =~ ^[a-zA-Z_][a-zA-Z0-9_-]*$ ]]
+          ssh_dir="$(mktemp -d "$RUNNER_TEMP/member-ssh.XXXXXX")"
+          trap 'rm -f "$ssh_dir/key" "$ssh_dir/known_hosts"' EXIT
+          printf '%s\n' "$VPS_SECRET" | tr -d '\r' > "$ssh_dir/key"
+          chmod 600 "$ssh_dir/key"
+          ssh-keyscan -T 20 -H "$VPS_HOST" > "$ssh_dir/known_hosts" 2>/dev/null
+          ssh_options=(-i "$ssh_dir/key" -o BatchMode=yes -o ConnectTimeout=30 -o StrictHostKeyChecking=yes -o "UserKnownHostsFile=$ssh_dir/known_hosts")
+          remote="$VPS_USERNAME@$VPS_HOST"
+          archive="$RUNNER_TEMP/drymix-de-members.tar.gz"
+          remote_archive="/tmp/drymix-de-members-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT.tar.gz"
+          destination='/var/www/skillvault.blog/drymix-de-m'
+          COPYFILE_DISABLE=1 tar -czf "$archive" -C drymix-de-members .
+          scp "${ssh_options[@]}" "$archive" "$remote:$remote_archive"
+          ssh "${ssh_options[@]}" "$remote" bash -s -- "$remote_archive" "$destination" "$VPS_USERNAME" <<'REMOTE'
+          set -euo pipefail
+          archive="$1"
+          destination="$2"
+          owner="$3"
+          [ "$destination" = '/var/www/skillvault.blog/drymix-de-m' ] || exit 1
+          case "$archive" in
+            /tmp/drymix-de-members-*.tar.gz) ;;
+            *) exit 1 ;;
+          esac
+          sudo mkdir -p "$destination"
+          sudo tar -xzf "$archive" -C "$destination"
+          sudo chown -R "$owner:$(id -gn "$owner")" "$destination"
+          sudo find "$destination" -type d -exec chmod 755 {} +
+          sudo find "$destination" -type f -exec chmod 644 {} +
+          rm -f "$archive"
+          REMOTE
