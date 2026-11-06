@@ -16,6 +16,7 @@ on:
       - 'ingles-el-members/**'
       - 'ingles-he-members/**'
       - 'ingles-nl-members/**'
+      - 'ingles-sv-members/**'
   workflow_dispatch:
 
 permissions:
@@ -49,13 +50,14 @@ jobs:
             ingles-el-members
             ingles-he-members
             ingles-nl-members
+            ingles-sv-members
 
       - name: Select member areas to publish
         id: areas
         shell: bash
         run: |
           set -euo pipefail
-          all_sources='ingles-de-members ingles-hr-members ingles-da-members ingles-sk-members ingles-sl-members ingles-es-members ingles-fr-members ingles-el-members ingles-he-members ingles-nl-members'
+          all_sources='ingles-de-members ingles-hr-members ingles-da-members ingles-sk-members ingles-sl-members ingles-es-members ingles-fr-members ingles-el-members ingles-he-members ingles-nl-members ingles-sv-members'
           before='${{ github.event.before }}'
           sources=''
           if [ '${{ github.event_name }}' = 'push' ] && [ -n "$before" ] && [[ ! "$before" =~ ^0+$ ]]; then
@@ -129,6 +131,7 @@ jobs:
               ingles-el-members) destination='/var/www/skillvault.blog/ingles-el-m' ;;
               ingles-he-members) destination='/var/www/skillvault.blog/ingles-he-m' ;;
               ingles-nl-members) destination='/var/www/skillvault.blog/ingles-nl-m' ;;
+              ingles-sv-members) destination='/var/www/skillvault.blog/ingles-sv-m' ;;
               *) exit 1 ;;
             esac
             archive="$RUNNER_TEMP/$source.tar.gz"
@@ -141,11 +144,11 @@ jobs:
           destination="$2"
           owner="$3"
           case "$destination" in
-            /var/www/skillvault.blog/ingles-de-m|/var/www/skillvault.blog/ingles-hr-m|/var/www/skillvault.blog/ingles-da-m|/var/www/skillvault.blog/ingles-sk-m|/var/www/skillvault.blog/ingles-sl-m|/var/www/skillvault.blog/ingles-es-m|/var/www/skillvault.blog/ingles-fr-m|/var/www/skillvault.blog/ingles-el-m|/var/www/skillvault.blog/ingles-he-m|/var/www/skillvault.blog/ingles-nl-m) ;;
+            /var/www/skillvault.blog/ingles-de-m|/var/www/skillvault.blog/ingles-hr-m|/var/www/skillvault.blog/ingles-da-m|/var/www/skillvault.blog/ingles-sk-m|/var/www/skillvault.blog/ingles-sl-m|/var/www/skillvault.blog/ingles-es-m|/var/www/skillvault.blog/ingles-fr-m|/var/www/skillvault.blog/ingles-el-m|/var/www/skillvault.blog/ingles-he-m|/var/www/skillvault.blog/ingles-nl-m|/var/www/skillvault.blog/ingles-sv-m) ;;
             *) exit 1 ;;
           esac
           case "$archive" in
-            /tmp/ingles-de-members-*.tar.gz|/tmp/ingles-hr-members-*.tar.gz|/tmp/ingles-da-members-*.tar.gz|/tmp/ingles-sk-members-*.tar.gz|/tmp/ingles-sl-members-*.tar.gz|/tmp/ingles-es-members-*.tar.gz|/tmp/ingles-fr-members-*.tar.gz|/tmp/ingles-el-members-*.tar.gz|/tmp/ingles-he-members-*.tar.gz|/tmp/ingles-nl-members-*.tar.gz) ;;
+            /tmp/ingles-de-members-*.tar.gz|/tmp/ingles-hr-members-*.tar.gz|/tmp/ingles-da-members-*.tar.gz|/tmp/ingles-sk-members-*.tar.gz|/tmp/ingles-sl-members-*.tar.gz|/tmp/ingles-es-members-*.tar.gz|/tmp/ingles-fr-members-*.tar.gz|/tmp/ingles-el-members-*.tar.gz|/tmp/ingles-he-members-*.tar.gz|/tmp/ingles-nl-members-*.tar.gz|/tmp/ingles-sv-members-*.tar.gz) ;;
             *) exit 1 ;;
           esac
           sudo mkdir -p "$destination"
