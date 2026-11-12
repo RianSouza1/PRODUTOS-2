@@ -6,10 +6,12 @@
   <meta name="description" content="Tre bøker med forklaringer på norsk og eksempler på spansk. Les dem i nettleseren eller last dem ned som PDF.">
   <title>Spansk for nybegynnere – Medlemsområde</title>
   <link rel="icon" href="assets/covers/spanish_IMG1_no.png" type="image/png">
+  <link rel="preconnect" href="https://i.ytimg.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="core.css?v=spanish-20261111-v1">
+  <link rel="stylesheet" href="spanish-videos.css?v=spanish-guided-all-20261112-v4">
 </head>
 <body>
   <div id="pre-page" class="pre-page-overlay" aria-label="Medlemsområde">
@@ -18,7 +20,7 @@
       <img class="pre-page-cover" src="assets/covers/spanish_IMG1_no.png" alt="Den komplette spansksamlingen for nybegynnere">
       <h1>Spansk for nybegynnere</h1>
       <p>Begynn med det grunnleggende, øv på hverdagssamtaler og styrk grammatikken og ordforrådet ditt.</p>
-      <div class="pre-page-features"><span>3 lærebøker som PDF</span></div>
+      <div class="pre-page-features"><span>3 lærebøker som PDF</span><span data-video-badge>8 videoer · 19–39 sekunder</span></div>
       <button type="button" id="enter-members">Åpne læremateriellet mitt →</button>
     </div>
   </div>
@@ -27,11 +29,14 @@
     <main id="app-root" class="main-content"><p class="loading-message" role="status">Laster inn læremateriellet ditt…</p></main>
     <nav class="bottom-tab-bar" id="main-nav" aria-label="Medlemsområde">
       <a href="#boker" class="tab-item"><i data-lucide="book-open" aria-hidden="true"></i><span>Læremateriell</span></a>
+      <a href="#videoer" class="tab-item"><i data-lucide="play-square" aria-hidden="true"></i><span>Videoer</span></a>
       <a href="#hjelp" class="tab-item"><i data-lucide="message-square" aria-hidden="true"></i><span>Hjelp</span></a>
     </nav>
   </div>
   <noscript><section class="no-js-library"><h1>Spanskbøkene dine</h1><p>Aktiver JavaScript for å bruke medlemsområdet, eller åpne bøkene direkte via lenkene nedenfor.</p><ul><li><a href="materials/SPANISH-1-NO.pdf">Spansk på en enkel måte for nybegynnere</a></li><li><a href="materials/SPANISH-2-NO.pdf">Snakk spansk i hverdagssituasjoner</a></li><li><a href="materials/SPANISH-3-NO.pdf">Spansk – øvingsbok i grammatikk og ordforråd</a></li></ul><p><a href="mailto:trinityag01@gmail.com">Send en e-post</a></p></section></noscript>
-  <script src="data.js?v=spanish-20261111-v1" defer></script>
-  <script src="app.js?v=spanish-20261111-v1" defer></script>
+  <script src="data.js?v=spanish-guided-all-20261112-v4" defer></script>
+  <script src="spanish-player.js?v=spanish-guided-all-20261112-v4" defer></script>
+  <script src="spanish-videos.js?v=spanish-guided-all-20261112-v4" defer></script>
+  <script src="app.js?v=spanish-guided-all-20261112-v4" defer></script>
 </body>
 </html>

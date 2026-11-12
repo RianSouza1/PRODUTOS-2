@@ -1,0 +1,109 @@
+(() => {
+  const {ui, lessons} = APP_DATA.videoCourse;
+  const storageKey = `spanish-one-minute-practice-${document.documentElement.lang}-v3`;
+  let activeId = lessons[0].id;
+  let filter = 'all';
+  let playerCleanup = null;
+  let practiced = new Set();
+  try {
+    const saved = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    if (Array.isArray(saved)) practiced = new Set(saved.filter(id => lessons.some(lesson => lesson.id === id)));
+  } catch { /* Practice tracking is optional. */ }
+  const esc = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const clock = duration => `${Math.floor(duration/60)}:${String(Math.floor(duration%60)).padStart(2,'0')}`;
+  const icon = name => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${{
+    play:'<path d="m9 5 11 7-11 7z"/>',
+    check:'<path d="m5 12 4 4L19 6"/>',
+    arrow:'<path d="M4 12h16m-6-6 6 6-6 6"/>',
+    ear:'<path d="M6 10a6 6 0 0 1 12 0c0 4-4 4-4 7a4 4 0 0 1-8 0M9 10a3 3 0 0 1 6 0c0 2-3 2-3 5"/>'
+  }[name]}</svg>`;
+  const stop = () => { playerCleanup?.(); playerCleanup = null; };
+
+  function render(root) {
+    root.innerHTML = '<div class="page-view spanish-course" id="spanish-course"></div>';
+    const page = root.querySelector('#spanish-course');
+    function choose(id) {
+      stop();
+      activeId = id;
+      draw();
+      root.scrollTo(0,0);
+      page.querySelector('#spanish-lesson-title').focus({preventScroll:true});
+    }
+    function drawLibrary() {
+      const grid = page.querySelector('.spanish-lesson-grid');
+      grid.innerHTML = lessons.filter(item => filter === 'all' || item.category === filter).map(item => `<button type="button" class="spanish-lesson${item.id === activeId ? ' is-current' : ''}" data-spanish-lesson="${esc(item.id)}" aria-pressed="${item.id === activeId}" aria-label="${esc(ui.menu)}: ${esc(item.title)}">
+        <img src="${esc(item.poster)}" width="128" height="72" alt="" loading="lazy" referrerpolicy="no-referrer"><span><span class="spanish-lesson-number">${esc(ui[item.category])} · ${clock(item.duration)}</span><strong>${esc(item.title)}</strong><span class="spanish-lesson-status">${esc(practiced.has(item.id) ? ui.marked : ui.audio)}</span></span>${icon('play')}</button>`).join('');
+      grid.querySelectorAll('[data-spanish-lesson]').forEach(button => button.addEventListener('click',() => choose(button.dataset.spanishLesson)));
+      page.querySelectorAll('[data-spanish-filter]').forEach(button => button.setAttribute('aria-pressed',button.dataset.spanishFilter === filter));
+    }
+    function draw() {
+      const index = Math.max(0,lessons.findIndex(lesson => lesson.id === activeId));
+      const lesson = lessons[index];
+      const baseCount = lessons.filter(item => item.category === 'basics').length;
+      const tipCount = lessons.length-baseCount;
+      page.innerHTML = `
+        <div class="hero-card spanish-course-hero"><div class="hero-text">
+          <p class="spanish-kicker">${esc(ui.kicker)}</p>
+          <h1 id="page-heading" tabindex="-1">${esc(ui.title)}</h1><p>${esc(ui.intro)}</p>
+          <div class="spanish-facts"><span>${baseCount} ${esc(ui.basics)}</span><span>${tipCount} ${esc(ui.tips)}</span><span>${esc(ui.maxDuration)}</span><span>${esc(ui.audio)}</span></div>
+        </div></div>
+        <section class="spanish-feature" aria-labelledby="spanish-lesson-title">
+          <div class="spanish-feature-heading"><p class="spanish-kicker">${esc(ui[lesson.category])} · ${esc(ui.lesson)} ${index+1} / ${lessons.length}</p>
+            <h2 id="spanish-lesson-title" tabindex="-1">${esc(lesson.title)}</h2><p>${esc(lesson.goal)}</p>
+          </div>
+          <div class="spanish-study-layout"><div class="spanish-watch">
+            <div class="spanish-video-frame is-portrait"><div class="spanish-brand-blur spanish-brand-blur--header" aria-hidden="true"></div><div class="spanish-brand-blur spanish-brand-blur--footer" aria-hidden="true"></div><button type="button" class="spanish-load-video" aria-label="${esc(ui.play)}: ${esc(lesson.title)}"><img src="${esc(lesson.poster)}" alt="" width="640" height="360" referrerpolicy="no-referrer"><span>${icon('play')}<strong>${esc(ui.play)}</strong></span></button></div>
+
+            <div class="spanish-clip-controls"><button type="button" data-clip-play aria-pressed="false">${esc(ui.play)}</button><button type="button" data-clip-replay>${esc(ui.replay)}</button><button type="button" data-clip-sound aria-pressed="true">${esc(ui.soundOn)}</button><button type="button" data-clip-fullscreen>${esc(ui.fullscreen)}</button><label>${esc(ui.speed)} <select data-clip-speed aria-label="${esc(ui.speed)}"><option value="1">1× · ${esc(ui.normal)}</option><option value="0.75">0,75× · ${esc(ui.slow)}</option></select></label></div>
+            <div class="spanish-clip-timeline"><input type="range" min="0" max="${lesson.duration}" step="0.1" value="0" data-clip-seek aria-label="${esc(ui.progressLabel)}" disabled><span data-clip-clock>0:00 / ${clock(lesson.duration)}</span></div>
+            <p class="spanish-clip-status" data-clip-status role="status" aria-live="polite">${esc(ui.ready)}</p>
+            <div class="spanish-player-tools"><span>${esc(ui.duration)} · ${clock(lesson.duration)}</span><a href="${esc(lesson.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(ui.openOriginal)} ↗</a></div>
+            <p class="spanish-caption-help">${esc(ui.playerHelp)}</p>
+
+          </div><aside class="spanish-method"><div class="spanish-method-icon">${icon('ear')}</div><h3>${esc(ui.method)}</h3><ol>${ui.methodSteps.map(step=>`<li>${esc(step)}</li>`).join('')}</ol><p class="spanish-tip">${esc(lesson.tip)}</p></aside></div>
+          <div class="spanish-learning-content"><div class="spanish-vocabulary"><h3>${esc(ui.phrases)}</h3><p class="spanish-guide-help">${esc(ui.captions)}</p><dl>${lesson.phrases.map(phrase=>`<div><dt lang="es">${esc(phrase.es)}</dt><dd>${esc(phrase.translation)}</dd></div>`).join('')}</dl></div>
+            <div class="spanish-practice"><span class="spanish-practice-icon">${icon('check')}</span><h3>${esc(ui.practice)}</h3><p>${esc(lesson.task)}</p>
+              <fieldset class="spanish-quiz"><legend>${esc(ui.quizTitle)}: ${esc(lesson.quiz.question)}</legend>
+                <div class="spanish-quiz-options">${lesson.quiz.options.map((option,i)=>`<button type="button" lang="${esc(lesson.quiz.language || 'es')}" data-quiz-answer="${i}" aria-pressed="false">${esc(option)}</button>`).join('')}</div>
+                <p class="spanish-quiz-feedback" aria-live="polite" data-quiz-feedback></p>
+              </fieldset>
+              <a class="spanish-book-link" href="${esc(lesson.bookUrl)}" target="_blank" rel="noopener">${esc(ui.bookLink)}: ${esc(lesson.bookReference)} ↗</a>
+              <a href="#${esc(APP_DATA.config.booksRoute)}">${esc(ui.bookLibrary)} →</a></div>
+          </div>
+          <details class="spanish-source"><summary>${esc(ui.source)}</summary><p>${esc(ui.sourceText)} <a href="${esc(lesson.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(lesson.authorName)}</a>.</p></details>
+          <div class="spanish-actions"><button type="button" class="spanish-practice-toggle" aria-pressed="${practiced.has(lesson.id)}">${icon('check')}<span>${esc(practiced.has(lesson.id) ? ui.marked : ui.mark)}</span></button>
+            <button type="button" class="spanish-next">${esc(index === lessons.length-1 ? ui.restart : ui.next)}${icon('arrow')}</button></div>
+        </section>
+        <section class="spanish-library" aria-labelledby="spanish-library-heading"><div class="spanish-library-heading"><h2 id="spanish-library-heading">${esc(ui.library)}</h2><span data-practice-count>${practiced.size} / ${lessons.length} ${esc(ui.progress)}</span></div>
+          <div class="spanish-filters" role="group" aria-label="${esc(ui.filterLabel)}">${['all','basics','tips'].map(category=>`<button type="button" data-spanish-filter="${category}" aria-pressed="${filter === category}">${esc(ui[category])} <span>${category === 'all' ? lessons.length : category === 'basics' ? baseCount : tipCount}</span></button>`).join('')}</div>
+          <div class="spanish-lesson-grid"></div>
+        </section>`;
+      playerCleanup = SPANISH_CLIP_PLAYER.mount(page.querySelector('.spanish-watch'),lesson,ui);
+      page.querySelectorAll('[data-quiz-answer]').forEach(button=>button.addEventListener('click',()=>{
+        const correct = Number(button.dataset.quizAnswer) === lesson.quiz.answer;
+        page.querySelectorAll('[data-quiz-answer]').forEach(option=>{
+          option.setAttribute('aria-pressed',String(option === button));
+          option.classList.remove('is-correct','is-wrong');
+        });
+        button.classList.add(correct ? 'is-correct' : 'is-wrong');
+        const feedback = page.querySelector('[data-quiz-feedback]');
+        feedback.textContent = correct ? ui.quizCorrect : ui.quizRetry;
+        feedback.dataset.result = correct ? 'correct' : 'retry';
+      }));
+      page.querySelector('.spanish-practice-toggle').addEventListener('click',event=>{
+        practiced.has(lesson.id) ? practiced.delete(lesson.id) : practiced.add(lesson.id);
+        try { localStorage.setItem(storageKey,JSON.stringify([...practiced])); } catch {}
+        const done = practiced.has(lesson.id);
+        event.currentTarget.setAttribute('aria-pressed',done);
+        event.currentTarget.querySelector('span').textContent = done ? ui.marked : ui.mark;
+        page.querySelector('[data-practice-count]').textContent = `${practiced.size} / ${lessons.length} ${ui.progress}`;
+        drawLibrary();
+      });
+      page.querySelector('.spanish-next').addEventListener('click',()=>choose(lessons[(index+1)%lessons.length].id));
+      page.querySelectorAll('[data-spanish-filter]').forEach(button=>button.addEventListener('click',()=>{filter=button.dataset.spanishFilter;drawLibrary();}));
+      drawLibrary();
+    }
+    draw();
+  }
+  window.SPANISH_VIDEOS = {render,stop};
+})();

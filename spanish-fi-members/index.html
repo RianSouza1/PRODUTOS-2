@@ -6,10 +6,12 @@
   <meta name="description" content="Kolme kirjaa, joissa on suomenkieliset selitykset ja espanjankieliset esimerkit. Lue selaimessa tai lataa PDF-tiedostoina.">
   <title>Espanjaa aloittelijoille – Jäsensivu</title>
   <link rel="icon" href="assets/covers/spanish_IMG1_fi.png" type="image/png">
+  <link rel="preconnect" href="https://i.ytimg.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="core.css?v=spanish-20261111-v1">
+  <link rel="stylesheet" href="spanish-videos.css?v=spanish-guided-all-20261112-v4">
 </head>
 <body>
   <div id="pre-page" class="pre-page-overlay" aria-label="Jäsensivu">
@@ -18,7 +20,7 @@
       <img class="pre-page-cover" src="assets/covers/spanish_IMG1_fi.png" alt="Aloittelijan kattava espanjan kokoelma">
       <h1>Espanjaa aloittelijoille</h1>
       <p>Aloita perusteista, harjoittele arjen keskusteluja ja vahvista kielioppia sekä sanavarastoa.</p>
-      <div class="pre-page-features"><span>3 oppikirjaa PDF-muodossa</span></div>
+      <div class="pre-page-features"><span>3 oppikirjaa PDF-muodossa</span><span data-video-badge>8 videota · 19–39 sekuntia</span></div>
       <button type="button" id="enter-members">Avaa oppimateriaalit →</button>
     </div>
   </div>
@@ -27,11 +29,14 @@
     <main id="app-root" class="main-content"><p class="loading-message" role="status">Oppimateriaaleja ladataan…</p></main>
     <nav class="bottom-tab-bar" id="main-nav" aria-label="Jäsensivu">
       <a href="#kirjat" class="tab-item"><i data-lucide="book-open" aria-hidden="true"></i><span>Oppimateriaalit</span></a>
+      <a href="#videot" class="tab-item"><i data-lucide="play-square" aria-hidden="true"></i><span>Videot</span></a>
       <a href="#tuki" class="tab-item"><i data-lucide="message-square" aria-hidden="true"></i><span>Tuki</span></a>
     </nav>
   </div>
   <noscript><section class="no-js-library"><h1>Espanjan oppikirjasi</h1><p>Ota JavaScript käyttöön jäsensivua varten tai avaa kirjat suoraan alla olevista linkeistä.</p><ul><li><a href="materials/SPANISH-1-FI.pdf">Helppoa espanjaa aloittelijoille</a></li><li><a href="materials/SPANISH-2-FI.pdf">Puhu espanjaa arjen tilanteissa</a></li><li><a href="materials/SPANISH-3-FI.pdf">Espanjan kieliopin ja sanaston harjoituskirja</a></li></ul><p><a href="mailto:trinityag01@gmail.com">Lähetä sähköpostia</a></p></section></noscript>
-  <script src="data.js?v=spanish-20261111-v1" defer></script>
-  <script src="app.js?v=spanish-20261111-v1" defer></script>
+  <script src="data.js?v=spanish-guided-all-20261112-v4" defer></script>
+  <script src="spanish-player.js?v=spanish-guided-all-20261112-v4" defer></script>
+  <script src="spanish-videos.js?v=spanish-guided-all-20261112-v4" defer></script>
+  <script src="app.js?v=spanish-guided-all-20261112-v4" defer></script>
 </body>
 </html>

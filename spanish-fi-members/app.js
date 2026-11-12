@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const text = key => escape(labels[key]);
   document.getElementById('brand-title').textContent = config.brandName;
   const paths = {
+    'play-square': '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="m10 8 6 4-6 4z"/>',
     'book-open': '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
     'message-square': '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
     'check-square': '<path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>',
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderHome() {
     return `<div class="page-view">${hero(text('welcome'), text('homeIntro'))}<div class="home-grid">
       <a href="#${config.booksRoute}" class="home-block glass-panel"><div class="home-block-icon"><i data-lucide="book-open"></i></div><div><div class="home-block-title">${text('books')}</div><div class="home-block-subtitle">${text('booksSubtitle')}</div></div></a>
+      <a href="#${config.videosRoute}" class="home-block glass-panel"><div class="home-block-icon"><i data-lucide="play-square"></i></div><div><div class="home-block-title">${text('videos')}</div><div class="home-block-subtitle">${text('videosSubtitle')}</div></div></a>
       <a href="#${config.supportRoute}" class="home-block glass-panel"><div class="home-block-icon"><i data-lucide="message-square"></i></div><div><div class="home-block-title">${text('support')}</div><div class="home-block-subtitle">${text('supportSubtitle')}</div></div></a>
     </div></div>`;
   }
@@ -57,13 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function render() {
+    window.SPANISH_VIDEOS?.stop();
     const hash = window.location.hash.slice(1);
     const isBooks = hash === config.booksRoute;
     const isSupport = hash === config.supportRoute;
-    if (isBooks || isSupport) document.getElementById('pre-page').hidden = true;
-    root.innerHTML = isBooks ? renderBooks() : isSupport ? renderSupport() : renderHome();
+    const isVideos = hash === config.videosRoute;
+    if (isBooks || isSupport || isVideos) document.getElementById('pre-page').hidden = true;
+    if (isVideos) { root.innerHTML = ''; window.SPANISH_VIDEOS.render(root); }
+    else root.innerHTML = isBooks ? renderBooks() : isSupport ? renderSupport() : renderHome();
     root.insertAdjacentHTML('beforeend', `<footer class="app-footer">&copy; 2026 ${escape(config.brandName)}. ${text('rights')}</footer>`);
-    nav.classList.toggle('hidden-on-home', !isBooks && !isSupport);
+    nav.classList.toggle('hidden-on-home', !isBooks && !isSupport && !isVideos);
     document.querySelectorAll('.tab-item').forEach(tab => {
       const active = tab.getAttribute('href') === `#${hash}`;
       tab.classList.toggle('active', active);
