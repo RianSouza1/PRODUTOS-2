@@ -4,15 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#123e32">
-  <meta name="description" content="Dein Mitgliederbereich für die neue Imkerkollektion: drei Bücher von Daniel Westbrook, kurze Praxisvideos und deine persönliche Lesebibliothek.">
+  <meta name="description" content="Dein Mitgliederbereich für die neue Imkerkollektion: drei Bücher von Daniel Westbrook und deine persönliche Lesebibliothek.">
   <title>Imkern für Anfänger · Dein Mitgliederbereich</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20261118-bibliothek">
-  <link rel="stylesheet" href="videos.css?v=20261118-praxis">
-  <script type="module" src="app.js?v=20261118-praxis"></script>
+  <link rel="stylesheet" href="welcome.css?v=20261118-willkommen">
+  <script type="module" src="app.js?v=20261118-willkommen"></script>
 </head>
-<body>
-  <a class="skip-link" href="#main">Zum Inhalt</a>
+<body data-screen="welcome">
   <svg class="icon-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
     <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10H3Z"/><path d="M9 20v-7h6v7"/></symbol>
     <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v16M12 5C8 2 4 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-2-1-6-2-10 1Z"/></symbol>
@@ -23,9 +22,41 @@
     <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
     <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 3C8 2 2 8 5 16c8 5 15-1 15-13ZM5 20l10-11"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
-    <symbol id="i-video" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m10 8 6 4-6 4Z"/></symbol>
   </defs></svg>
 
+  <section id="welcome-screen" class="welcome-screen" aria-labelledby="welcome-title" role="main">
+    <svg class="welcome-honeycomb" viewBox="0 0 420 480" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1"><path d="m210 10 70 40v80l-70 40-70-40V50Zm140 0 70 40v80l-70 40-70-40V50ZM140 130l70 40v80l-70 40-70-40v-80Zm140 0 70 40v80l-70 40-70-40v-80Zm140 0 70 40v80l-70 40-70-40v-80ZM70 250l70 40v80l-70 40-70-40v-80Zm140 0 70 40v80l-70 40-70-40v-80Zm140 0 70 40v80l-70 40-70-40v-80ZM140 370l70 40v80l-70 40-70-40v-80Zm140 0 70 40v80l-70 40-70-40v-80Z"/></g></svg>
+    <header class="welcome-header">
+      <a class="welcome-brand" href="#willkommen" aria-label="Imkern für Anfänger – Willkommen">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 3 18 10v22L24 45 6 35V13Z"/><path d="M16 19c-9-11-11 7 5 5m11-5c9-11 11 7-5 5"/><ellipse cx="24" cy="26" rx="5" ry="10"/><path d="M19 24h10m-10 5h10m-7-13-3-4m7 4 3-4"/></svg>
+        <span>Imkern<small>FÜR ANFÄNGER</small></span>
+      </a>
+      <span class="welcome-edition">DEUTSCHE AUSGABE<span>Die Imkerkollektion · 2026</span></span>
+    </header>
+    <div class="welcome-layout">
+      <div class="welcome-art">
+        <div class="welcome-art-panel">
+          <span class="welcome-art-label">DIE KOLLEKTION VON DANIEL WESTBROOK</span>
+          <img src="assets/collection.png" alt="Die drei Bücher der Imkerkollektion: Bienenhaltung für Einsteiger, Imkern im Garten leicht gemacht und Met herstellen für Einsteiger" width="1254" height="1254" fetchpriority="high">
+          <span class="welcome-art-caption">Verstehen. Beobachten. Wachsen.</span>
+        </div>
+        <span class="welcome-art-note"><svg aria-hidden="true"><use href="#i-leaf"/></svg>Vom ersten Bienenvolk bis zum eigenen Honig.</span>
+      </div>
+      <div class="welcome-copy">
+        <span class="welcome-eyebrow">DEIN MITGLIEDERBEREICH</span>
+        <h1 id="welcome-title" tabindex="-1">Deine Zeit<br>mit den Bienen<br><em>beginnt hier.</em></h1>
+        <p class="welcome-intro">Schön, dass du da bist. Entdecke die Welt der Bienen – mit Wissen, das dich vom ersten Schritt an begleitet.</p>
+        <div class="welcome-collection"><span>DEINE PERSÖNLICHE BIBLIOTHEK</span><p>Die Grundlagen verstehen. Im eigenen Garten imkern. Die Kunst der Metbereitung entdecken.</p></div>
+        <a class="welcome-enter" href="#start"><svg aria-hidden="true"><use href="#i-book"/></svg>Mitgliederbereich betreten</a>
+        <p class="welcome-access">Alle drei Bücher direkt lesen oder als PDF herunterladen.</p>
+        <dl class="welcome-facts"><div><dt>3</dt><dd>Bücher</dd></div><div><dt>180</dt><dd>Seiten Wissen</dd></div><div><dt>Dein Tempo</dt><dd>Für Einsteiger</dd></div></dl>
+      </div>
+    </div>
+    <footer class="welcome-footer"><span>Dein Wissen. Dein eigener Bienenstand.</span><a href="mailto:trinityag01@gmail.com?subject=Hilfe%20zur%20Imkerkollektion%20%28Deutsch%29"><svg aria-hidden="true"><use href="#i-mail"/></svg>Fragen zum Zugang?</a></footer>
+  </section>
+
+  <div id="member-area" hidden>
+  <a class="skip-link" href="#main">Zum Inhalt</a>
   <aside class="sidebar" aria-label="Mitgliederbereich">
     <a class="brand" href="#start" aria-label="Imkern für Anfänger – Übersicht">
       <span class="brand-seal" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="m24 3 18 10v22L24 45 6 35V13Z"/><path d="M16 19c-9-11-11 7 5 5m11-5c9-11 11 7-5 5"/><ellipse cx="24" cy="26" rx="5" ry="10"/><path d="M19 24h10m-10 5h10m-7-13-3-4m7 4 3-4"/></svg></span>
@@ -35,7 +66,6 @@
     <nav class="main-nav">
       <a href="#start" data-route="start"><svg><use href="#i-home"/></svg><span>Übersicht</span></a>
       <a href="#bibliothek" data-route="bibliothek"><svg><use href="#i-book"/></svg><span>Bücher</span><span class="nav-count">3</span></a>
-      <a href="#videos" data-route="videos"><svg><use href="#i-video"/></svg><span>Videos</span></a>
       <a href="#hilfe" data-route="hilfe"><svg><use href="#i-help"/></svg><span>Hilfe</span></a>
     </nav>
     <div class="sidebar-footer"><span class="edition">DEUTSCHE AUSGABE · 2026</span><p>Dein Wissen.<br>Dein eigener Bienenstand.</p><span>Daniel Westbrook</span></div>
@@ -52,12 +82,10 @@
       <div class="resume-card"><div class="resume-icon"><svg><use href="#i-book"/></svg></div><div><span class="eyebrow" id="resume-kicker">DEIN ERSTER SCHRITT</span><h2 id="resume-title">Lerne dein Bienenvolk kennen</h2><p id="resume-description">Beginne mit den Grundlagen – ganz ohne Vorwissen.</p></div><button class="button dark" id="resume-button">Jetzt loslesen</button></div>
       <div class="section-heading"><div><span class="eyebrow">ALLES AN EINEM ORT</span><h2>Deine Bibliothek</h2></div><a href="#bibliothek" class="text-link">Bücher & Kapitel</a></div>
       <div id="home-books" class="book-grid"></div>
-      <div class="video-discover"><img src="assets/videos/stockmeissel.jpg" alt="Nahaufnahme: Hände lösen ein Rähmchen mit dem Stockmeißel" width="240" height="135" loading="lazy"><div><span class="eyebrow">WISSEN IN BEWEGUNG</span><h2>Die Handgriffe sehen.</h2><p>Kurze Vorführungen mit echten Händen und deutschen Anleitungen – Schritt für Schritt und ohne Ton.</p></div><a href="#videos" class="button dark">Praxisvideos ansehen</a></div>
     </section>
 
     <section id="view-bibliothek" class="view" hidden aria-labelledby="library-title"><div class="page-intro"><span class="eyebrow">DEIN NACHSCHLAGEWERK</span><h1 id="library-title">Wissen, das bleibt.</h1><p>Lies direkt hier weiter oder lade die Original-PDFs herunter. Über die Kapitel gelangst du sofort zur passenden Stelle.</p></div><div id="library-books" class="library-list"></div><div class="section-heading"><div><span class="eyebrow">FÜR SPÄTER GESPEICHERT</span><h2>Deine Lesezeichen</h2></div></div><div id="saved-bookmarks" class="bookmark-grid"></div></section>
 
-    <section id="view-videos" class="view" hidden aria-labelledby="videos-title"><div class="page-intro"><span class="eyebrow">VOM LESEN ZUM VERSTEHEN</span><h1 id="videos-title">Handgriffe, die du siehst.</h1><p>Echte Handgriffe und deutsche Anleitungen. Passend zu deinen Büchern, Schritt für Schritt in deinem Tempo.</p></div><div id="video-content"><p class="notice" role="status">Die Praxisvideos werden geladen …</p></div></section>
 
 
     <section id="view-hilfe" class="view" hidden aria-labelledby="help-title"><div class="page-intro"><span class="eyebrow">WIR HELFEN DIR WEITER</span><h1 id="help-title">Gut zu wissen.</h1><p>Alles zur Bibliothek, zum Lesen und zu deinen gespeicherten Inhalten.</p></div><div class="help-layout"><div class="faq">
@@ -66,8 +94,6 @@
       <details><summary>Wo werden Notizen und Lesezeichen gespeichert?</summary><p>Nur in diesem Browser auf diesem Gerät. Es gibt keine Synchronisation mit anderen Geräten. Wenn du Browserdaten löschst oder privat surfst, können gespeicherte Inhalte verloren gehen. Du kannst deine Notizen als Textdatei sichern.</p><button class="button outline" id="export-notes">Notizen exportieren</button></details>
       <details><summary>Das Buch lädt nicht. Was kann ich tun?</summary><p>Die PDFs sind zwischen 10 und 15 MB groß. Bei einer langsamen Verbindung kann das Laden einen Moment dauern. Im Lesemodus kannst du das Original-PDF auch in einem neuen Tab öffnen oder herunterladen.</p></details>
       <details><summary>Wie funktioniert die Suche?</summary><p>Suche nach einem Begriff wie „Rähmchen“, „Stockkarte“ oder „Gärung“. Die Suche durchsucht alle 180 Seiten. Mit einem Klick auf einen Treffer öffnest du die entsprechende Buchseite.</p><button class="button outline" data-open-search>Suche öffnen</button></details>
-      <details><summary>Wie nutze ich die Praxisvideos?</summary><p>Wähle eine Vorführung und starte die Wiedergabe. Im Modus „Schritt für Schritt“ hält das Video nach jedem Schritt an. Mit „Nächsten Schritt ansehen“ geht es weiter. Du kannst jeden Schritt wiederholen, das Tempo verringern oder das passende Buchkapitel öffnen.</p><a href="#videos" class="text-link">Zu den Praxisvideos</a></details>
-      <details><summary>Bildnachweise der Praxisvideos</summary><p>Originalaufnahmen: Preston Keres, USDA/FPAC, 2021. Die Aufnahmen zeigen Katy Ehmann und Charlie Harris bei der Arbeit am Bienenstand. Das Ausgangsmaterial ist gemeinfrei. Für diese Bibliothek wurden Ausschnitte ausgewählt, teilweise verlangsamt, ohne Ton exportiert und mit eigenen deutschen Lernhinweisen ergänzt.</p><a href="https://www.flickr.com/photos/usdagov/sets/72157719407585451" target="_blank" rel="noopener" class="text-link">Originalaufnahmen und Bildnachweis</a></details>
     </div><div class="contact-card"><svg><use href="#i-mail"/></svg><h2>Noch eine Frage?</h2><p>Wenn du Hilfe beim Zugriff auf deine Materialien brauchst, schreibe uns.</p><a class="button dark" href="mailto:trinityag01@gmail.com?subject=Hilfe%20zur%20Imkerkollektion%20%28Deutsch%29">Support kontaktieren</a><span>trinityag01@gmail.com</span></div></div></section>
     <footer class="page-footer"><span>Imkern für Anfänger · Daniel Westbrook</span><span>Mitgliederbereich · Deutsche Ausgabe 2026</span></footer>
   </main>
@@ -76,6 +102,7 @@
 
   <dialog id="reader-dialog" class="reader-dialog" aria-labelledby="reader-title"><div class="reader-top"><div><span class="eyebrow">DEINE LESEZEIT</span><h2 id="reader-title">Buch öffnen</h2></div><button class="icon-button" id="reader-close" aria-label="Lesemodus schließen"><svg><use href="#i-close"/></svg></button></div><div class="reader-toolbar"><div class="page-controls"><button class="button compact outline" id="page-prev">Zurück</button><label>Seite <input id="page-number" type="number" min="1" max="60" value="1" aria-label="Seitennummer"> <span>/ 60</span></label><button class="button compact outline" id="page-next">Weiter</button></div><div class="reader-tools"><label class="sr-only" for="reader-zoom">Vergrößerung</label><select id="reader-zoom"><option value="1">Seitenbreite</option><option value="1.25">125 %</option><option value="1.5">150 %</option></select><button class="button compact outline" id="reader-mark"><svg><use href="#i-mark"/></svg><span>Lesezeichen</span></button><button class="button compact outline" id="reader-panel-toggle" aria-expanded="false" aria-controls="reader-panel">Inhalt & Notizen</button></div></div><div class="reader-body"><div class="reader-pages" id="reader-pages"><div id="reader-status" class="reader-status" role="status">Dein Buch wird geladen …</div><canvas id="pdf-canvas" aria-label="Buchseite"></canvas><details id="page-text-details" class="page-text-details"><summary>Seitentext anzeigen</summary><div id="page-text"></div></details></div><aside id="reader-panel" class="reader-panel"><div class="reader-panel-heading"><h3>In diesem Buch</h3><button class="icon-button" id="panel-close" aria-label="Inhalt und Notizen schließen"><svg><use href="#i-close"/></svg></button></div><nav id="reader-chapters" aria-label="Buchkapitel"></nav><div class="reader-note"><label for="page-note">Deine Notiz zu dieser Seite</label><textarea id="page-note" rows="4" maxlength="4000" placeholder="Was möchtest du dir merken?"></textarea><span>Automatisch auf diesem Gerät gespeichert.</span></div><div class="reader-original"><a id="reader-original" target="_blank" rel="noopener">Original-PDF öffnen</a><a id="reader-download" download><svg><use href="#i-download"/></svg>PDF herunterladen</a></div></aside></div></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </div>
   <noscript><div class="noscript">Bitte aktiviere JavaScript für die Bibliothek. Deine Bücher kannst du auch direkt öffnen: <a href="materials/buch-1.pdf">Buch 1</a>, <a href="materials/buch-2.pdf">Buch 2</a>, <a href="materials/buch-3.pdf">Buch 3</a>.</div></noscript>
 </body>
 </html>

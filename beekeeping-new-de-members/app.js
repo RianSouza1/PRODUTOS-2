@@ -1,5 +1,3 @@
-import { createVideoSection } from './videos.js?v=20261118-praxis';
-
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const icon = name => `<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
@@ -54,12 +52,22 @@ function renderBookmarks() {
 }
 
 function route() {
-  let name = location.hash.slice(1);
-  if (!['start','bibliothek','videos','hilfe'].includes(name)) name = 'start';
+  let name = location.hash.slice(1) || 'willkommen';
+  if (!['willkommen','start','bibliothek','hilfe'].includes(name)) name = 'start';
+  const welcome = name === 'willkommen';
+  const previousScreen = document.body.dataset.screen;
+  $('#welcome-screen').hidden = !welcome;
+  $('#member-area').hidden = welcome;
+  document.body.dataset.screen = welcome ? 'welcome' : 'members';
+  if (welcome) {
+    if (previousScreen === 'members') $('#welcome-title').focus({preventScroll:true});
+    window.scrollTo({top:0,behavior:'instant'});
+    return;
+  }
   $$('.view').forEach(node => node.hidden = node.id !== `view-${name}`);
   $$('.main-nav a').forEach(link => link.dataset.route === name ? link.setAttribute('aria-current','page') : link.removeAttribute('aria-current'));
-  $('#page-label').textContent = {start:'Schön, dass du da bist.',bibliothek:'Deine Bücher. Jederzeit griffbereit.',videos:'Handgriffe sehen und verstehen.',hilfe:'Deine Fragen, einfach beantwortet.'}[name];
-  if (name === 'videos') videoSection.activate(); else videoSection.pause();
+  $('#page-label').textContent = {start:'Schön, dass du da bist.',bibliothek:'Deine Bücher. Jederzeit griffbereit.',hilfe:'Deine Fragen, einfach beantwortet.'}[name];
+  if (previousScreen === 'welcome') $('#main').focus({preventScroll:true});
   window.scrollTo({top:0,behavior:'instant'});
 }
 
@@ -72,7 +80,6 @@ async function getIndex() {
   return searchPromise;
 }
 function openSearch() {
-  videoSection.pause();
   $('#search-dialog').showModal();
   $('#search-input').focus();
 }
@@ -108,7 +115,6 @@ async function closeDocument() {
 }
 async function openBook(id,page) {
   if (!library) return;
-  videoSection.pause();
   const book = bookById(id);
   if (!book) return;
   $('#search-dialog').close();
@@ -229,8 +235,6 @@ function exportNotes() {
   setTimeout(() => URL.revokeObjectURL(url),3000);
 }
 
-const videoSection = createVideoSection($('#video-content'));
-
 document.addEventListener('click',event => {
   const readerLink = event.target.closest('[data-read]');
   if (readerLink) {
@@ -290,6 +294,7 @@ $('#export-notes').addEventListener('click',exportNotes);
 window.addEventListener('hashchange',route);
 window.addEventListener('resize',() => { clearTimeout(resizeTimer); resizeTimer=setTimeout(() => { if ($('#reader-dialog').open && pdfDocument) renderPage(currentPage); },200); });
 document.addEventListener('keydown',event => {
+  if ($('#member-area').hidden) return;
   const input = event.target.closest('input,textarea,select,[contenteditable]');
   if (input || event.ctrlKey || event.metaKey || event.altKey) return;
   if (event.key === '/' && !$('#reader-dialog').open) { event.preventDefault(); openSearch(); }
@@ -299,6 +304,7 @@ document.addEventListener('keydown',event => {
   }
 });
 
+route();
 try {
   const response = await fetch('assets/library.json');
   if (!response.ok) throw new Error('library');
