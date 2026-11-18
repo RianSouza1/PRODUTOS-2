@@ -6,11 +6,10 @@ const STORAGE_KEY = 'beekeeping-new-de-v1';
 let library, searchIndex, searchPromise, pdfModule, currentBook, currentPage = 1;
 let loadingTask, pdfDocument, renderTask, renderVersion = 0, readerVersion = 0;
 let toastTimer, searchTimer, resizeTimer, storageWarningShown = false;
-let state = {done: [], last: null, marks: [], notes: {}};
+let state = {last: null, marks: [], notes: {}};
 try {
   const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
   if (saved && typeof saved === 'object') {
-    state.done = Array.isArray(saved.done) ? [...new Set(saved.done.filter(id => Number.isInteger(id) && id >= 1 && id <= 10))] : [];
     const validPosition = item => item && [1,2,3].includes(item.book) && Number.isInteger(item.page) && item.page >= 1 && item.page <= 60;
     state.last = validPosition(saved.last) ? {book: saved.last.book, page: saved.last.page} : null;
     state.marks = Array.isArray(saved.marks) ? saved.marks.filter(validPosition).slice(0,180).map(({book,page}) => ({book,page})) : [];
@@ -38,11 +37,7 @@ function renderBooks() {
   $('#home-books').innerHTML = library.books.map(book => `<article class="book-card"><div class="book-art" data-book="${book.id}"><img src="assets/book-${book.id}.png" alt="Buchcover: ${escapeHTML(book.title)}" width="581" height="752" loading="lazy"></div><div class="book-body"><span class="book-category">${book.category}</span><h3>${book.title}</h3><p>${book.description}</p><div class="book-meta"><span>60 Seiten</span><span>PDF · ${book.size}</span></div><div class="book-actions"><button class="button dark" data-read="${book.id}" data-page="2">Buch lesen</button><a class="download-icon" href="materials/buch-${book.id}.pdf" download="${book.title}.pdf" aria-label="${book.title}: PDF herunterladen">${icon('download')}</a></div></div></article>`).join('');
   $('#library-books').innerHTML = library.books.map(book => `<article class="library-book"><div class="book-art" data-book="${book.id}"><img src="assets/book-${book.id}.png" alt="Buchcover: ${escapeHTML(book.title)}" width="581" height="752" loading="lazy"></div><div class="library-content"><span class="book-category">${book.category}</span><h2>${book.title}</h2><p>${book.description}</p><div class="book-meta"><span>Daniel Westbrook</span><span>60 Seiten</span><span>${book.size}</span></div><div class="book-actions"><button class="button dark" data-read="${book.id}" data-page="2">${icon('book')}Im Lesemodus öffnen</button><a class="button outline" href="materials/buch-${book.id}.pdf" download="${book.title}.pdf">${icon('download')}PDF herunterladen</a></div><details class="chapters-details"><summary>Kapitel direkt öffnen</summary><div class="chapter-list">${book.chapters.map(([page,title]) => `<button data-read="${book.id}" data-page="${page}">${title}<span>S. ${page}</span></button>`).join('')}</div></details></div></article>`).join('');
 }
-function renderProgress() {
-  const count = state.done.length;
-  $$('[data-progress-bar]').forEach(node => node.style.width = `${count * 10}%`);
-  $$('[data-progress-label]').forEach(node => node.textContent = `${count} von 10 Etappen abgeschlossen`);
-  $('#path-percent').textContent = `${count * 10} %`;
+function renderResume() {
   if (state.last) {
     $('#resume-kicker').textContent = 'DEINE LETZTE LESESTELLE';
     $('#resume-title').textContent = bookById(state.last.book).title;
@@ -52,19 +47,16 @@ function renderProgress() {
     $('#resume-button').textContent = 'Jetzt loslesen';
   }
 }
-function renderPath() {
-  $('#path-steps').innerHTML = library.books.map(book => `<section class="path-group"><h2><span>${book.category}</span>${book.short}</h2>${library.steps.filter(step => step.book === book.id).map(step => `<article class="path-step ${state.done.includes(step.id) ? 'completed' : ''}"><label class="step-check"><input type="checkbox" data-step="${step.id}" ${state.done.includes(step.id) ? 'checked' : ''} aria-label="${escapeHTML(step.title)} als abgeschlossen markieren">${icon('check')}</label><div class="step-description"><h3>${step.title}</h3><p>${step.description}</p><small>${book.title} · S. ${step.page}–${step.end}</small></div><button class="button outline compact" data-read="${step.book}" data-page="${step.page}">Kapitel lesen</button></article>`).join('')}</section>`).join('');
-}
 function renderBookmarks() {
   $('#saved-bookmarks').innerHTML = state.marks.length ? state.marks.map(mark => `<div class="saved-item"><button data-read="${mark.book}" data-page="${mark.page}">${icon('mark')}<span><strong>${bookById(mark.book).title}</strong><small>Seite ${mark.page}</small></span></button><button class="icon-button" data-remove-mark="${mark.book}-${mark.page}" aria-label="Lesezeichen entfernen: ${escapeHTML(bookById(mark.book).title)}, Seite ${mark.page}">${icon('close')}</button></div>`).join('') : `<div class="empty-state">${icon('mark')}<p>Hier findest du deine gespeicherten Seiten. Setze im Lesemodus ein Lesezeichen, um wichtige Stellen schnell wiederzufinden.</p></div>`;
 }
 
 function route() {
   let name = location.hash.slice(1);
-  if (!['start','bibliothek','lernweg','hilfe'].includes(name)) name = 'start';
+  if (!['start','bibliothek','hilfe'].includes(name)) name = 'start';
   $$('.view').forEach(node => node.hidden = node.id !== `view-${name}`);
   $$('.main-nav a').forEach(link => link.dataset.route === name ? link.setAttribute('aria-current','page') : link.removeAttribute('aria-current'));
-  $('#page-label').textContent = {start:'Schön, dass du da bist.',bibliothek:'Deine Bücher. Jederzeit griffbereit.',lernweg:'Jede Etappe bringt dich weiter.',hilfe:'Deine Fragen, einfach beantwortet.'}[name];
+  $('#page-label').textContent = {start:'Schön, dass du da bist.',bibliothek:'Deine Bücher. Jederzeit griffbereit.',hilfe:'Deine Fragen, einfach beantwortet.'}[name];
   window.scrollTo({top:0,behavior:'instant'});
 }
 
@@ -203,7 +195,7 @@ async function renderPage(requestedPage) {
     state.last = {book:book.id,page:pageNumber};
     persist();
     updateMarkButton();
-    renderProgress();
+    renderResume();
   } catch (error) {
     if (version !== renderVersion || error?.name === 'RenderingCancelledException') return;
     $('#reader-status').hidden = false;
@@ -245,15 +237,6 @@ document.addEventListener('click',event => {
     const [book,page] = remove.dataset.removeMark.split('-').map(Number);
     state.marks = state.marks.filter(mark => mark.book !== book || mark.page !== page);
     persist(); renderBookmarks(); updateMarkButton(); toast('Lesezeichen entfernt.');
-  }
-});
-document.addEventListener('change',event => {
-  if (event.target.matches('[data-step]')) {
-    const id = Number(event.target.dataset.step);
-    state.done = event.target.checked ? [...new Set([...state.done,id])] : state.done.filter(item => item !== id);
-    event.target.closest('.path-step').classList.toggle('completed',event.target.checked);
-    persist(); renderProgress();
-    toast(event.target.checked ? 'Etappe abgeschlossen. Gut gemacht!' : 'Etappe wieder geöffnet.');
   }
 });
 $('#resume-button').addEventListener('click',() => openBook(state.last?.book || 1,state.last?.page || 3));
@@ -313,7 +296,7 @@ try {
   const response = await fetch('assets/library.json');
   if (!response.ok) throw new Error('library');
   library = await response.json();
-  renderBooks(); renderPath(); renderProgress(); renderBookmarks(); route();
+  renderBooks(); renderResume(); renderBookmarks(); route();
 } catch {
   $('#load-error').hidden = false;
 }
