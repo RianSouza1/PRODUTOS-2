@@ -1,3 +1,5 @@
+import { createVideoSection } from './videos.js?v=20261118-praxis';
+
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const icon = name => `<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
@@ -53,10 +55,11 @@ function renderBookmarks() {
 
 function route() {
   let name = location.hash.slice(1);
-  if (!['start','bibliothek','hilfe'].includes(name)) name = 'start';
+  if (!['start','bibliothek','videos','hilfe'].includes(name)) name = 'start';
   $$('.view').forEach(node => node.hidden = node.id !== `view-${name}`);
   $$('.main-nav a').forEach(link => link.dataset.route === name ? link.setAttribute('aria-current','page') : link.removeAttribute('aria-current'));
-  $('#page-label').textContent = {start:'Schön, dass du da bist.',bibliothek:'Deine Bücher. Jederzeit griffbereit.',hilfe:'Deine Fragen, einfach beantwortet.'}[name];
+  $('#page-label').textContent = {start:'Schön, dass du da bist.',bibliothek:'Deine Bücher. Jederzeit griffbereit.',videos:'Handgriffe sehen und verstehen.',hilfe:'Deine Fragen, einfach beantwortet.'}[name];
+  if (name === 'videos') videoSection.activate(); else videoSection.pause();
   window.scrollTo({top:0,behavior:'instant'});
 }
 
@@ -69,6 +72,7 @@ async function getIndex() {
   return searchPromise;
 }
 function openSearch() {
+  videoSection.pause();
   $('#search-dialog').showModal();
   $('#search-input').focus();
 }
@@ -104,6 +108,7 @@ async function closeDocument() {
 }
 async function openBook(id,page) {
   if (!library) return;
+  videoSection.pause();
   const book = bookById(id);
   if (!book) return;
   $('#search-dialog').close();
@@ -223,6 +228,8 @@ function exportNotes() {
   const link = document.createElement('a'); link.href=url; link.download='Meine-Imker-Notizen.txt'; link.click();
   setTimeout(() => URL.revokeObjectURL(url),3000);
 }
+
+const videoSection = createVideoSection($('#video-content'));
 
 document.addEventListener('click',event => {
   const readerLink = event.target.closest('[data-read]');
