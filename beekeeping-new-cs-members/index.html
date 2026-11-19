@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123e32">
+  <meta name="description" content="Tvá členská sekce nové včelařské kolekce: tři knihy Daniela Westbrooka a tvá osobní knihovna.">
+  <title>Včelaření pro začátečníky · Tvá členská sekce</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=beekeeping-new-cs-20261119-v1">
+  <link rel="stylesheet" href="welcome.css?v=beekeeping-new-cs-20261119-v1">
+  <script type="module" src="app.js?v=beekeeping-new-cs-20261119-v1"></script>
+</head>
+<body data-screen="welcome">
+  <svg class="icon-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10H3Z"/><path d="M9 20v-7h6v7"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v16M12 5C8 2 4 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-2-1-6-2-10 1Z"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 5m0 3h.01"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="i-mark" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 3C8 2 2 8 5 16c8 5 15-1 15-13ZM5 20l10-11"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+  </defs></svg>
+
+  <section id="welcome-screen" class="welcome-screen" aria-labelledby="welcome-title" role="main">
+    <svg class="welcome-honeycomb" viewBox="0 0 420 480" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1"><path d="m210 10 70 40v80l-70 40-70-40V50Zm140 0 70 40v80l-70 40-70-40V50ZM140 130l70 40v80l-70 40-70-40v-80Zm140 0 70 40v80l-70 40-70-40v-80Zm140 0 70 40v80l-70 40-70-40v-80ZM70 250l70 40v80l-70 40-70-40v-80Zm140 0 70 40v80l-70 40-70-40v-80Zm140 0 70 40v80l-70 40-70-40v-80ZM140 370l70 40v80l-70 40-70-40v-80Zm140 0 70 40v80l-70 40-70-40v-80Z"/></g></svg>
+    <header class="welcome-header">
+      <a class="welcome-brand" href="#vitejte" aria-label="Včelaření pro začátečníky – Vítej">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 3 18 10v22L24 45 6 35V13Z"/><path d="M16 19c-9-11-11 7 5 5m11-5c9-11 11 7-5 5"/><ellipse cx="24" cy="26" rx="5" ry="10"/><path d="M19 24h10m-10 5h10m-7-13-3-4m7 4 3-4"/></svg>
+        <span>Včelaření<small>PRO ZAČÁTEČNÍKY</small></span>
+      </a>
+      <span class="welcome-edition">ČESKÉ VYDÁNÍ<span>Včelařská kolekce · 2026</span></span>
+    </header>
+    <div class="welcome-layout">
+      <div class="welcome-art">
+        <div class="welcome-art-panel">
+          <span class="welcome-art-label">KOLEKCE DANIELA WESTBROOKA</span>
+          <img src="assets/collection.png" alt="Tři knihy: Včelaření pro začátečníky, Zahradní včelaření snadno a jednoduše a Medovina doma pro začátečníky" width="1254" height="1254" fetchpriority="high">
+          <span class="welcome-art-caption">Pochopit. Pozorovat. Růst.</span>
+        </div>
+        <span class="welcome-art-note"><svg aria-hidden="true"><use href="#i-leaf"/></svg>Od prvního včelstva k vlastnímu medu.</span>
+      </div>
+      <div class="welcome-copy">
+        <span class="welcome-eyebrow">TVÁ ČLENSKÁ SEKCE</span>
+        <h1 id="welcome-title" tabindex="-1">Tvé dobrodružství<br>se včelami<br><em>začíná tady.</em></h1>
+        <p class="welcome-intro">Jsme rádi, že jsi tady. Objev svět včel se znalostmi, které tě provedou od prvního kroku.</p>
+        <div class="welcome-collection"><span>TVÁ OSOBNÍ KNIHOVNA</span><p>Pochop základy. Včelař na vlastní zahradě. Objev výrobu medoviny.</p></div>
+        <a class="welcome-enter" href="#prehled"><svg aria-hidden="true"><use href="#i-book"/></svg>Vstoupit do členské sekce</a>
+        <p class="welcome-access">Všechny tři knihy můžeš číst online nebo stáhnout jako PDF.</p>
+        <dl class="welcome-facts"><div><dt>3</dt><dd>Knihy</dd></div><div><dt>180</dt><dd>stran znalostí</dd></div><div><dt>Tvé tempo</dt><dd>Pro začátečníky</dd></div></dl>
+      </div>
+    </div>
+    <footer class="welcome-footer"><span>Tvé znalosti. Tvůj vlastní včelín.</span><a href="mailto:trinityag01@gmail.com?subject=Pomoc%20%C2%B7%20V%C4%8Dela%C5%99en%C3%AD"><svg aria-hidden="true"><use href="#i-mail"/></svg>Potřebuješ pomoc s přístupem?</a></footer>
+  </section>
+
+  <div id="member-area" hidden>
+  <a class="skip-link" href="#main">Přejít k obsahu</a>
+  <aside class="sidebar" aria-label="Členská sekce">
+    <a class="brand" href="#prehled" aria-label="Včelaření pro začátečníky – Přehled">
+      <span class="brand-seal" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="m24 3 18 10v22L24 45 6 35V13Z"/><path d="M16 19c-9-11-11 7 5 5m11-5c9-11 11 7-5 5"/><ellipse cx="24" cy="26" rx="5" ry="10"/><path d="M19 24h10m-10 5h10m-7-13-3-4m7 4 3-4"/></svg></span>
+      <span>Včelaření<small>PRO ZAČÁTEČNÍKY</small></span>
+    </a>
+    <div class="nav-caption">TVÁ ČLENSKÁ SEKCE</div>
+    <nav class="main-nav">
+      <a href="#prehled" data-route="start"><svg><use href="#i-home"/></svg><span>Přehled</span></a>
+      <a href="#knihovna" data-route="bibliothek"><svg><use href="#i-book"/></svg><span>Knihy</span><span class="nav-count">3</span></a>
+      <a href="#pomoc" data-route="hilfe"><svg><use href="#i-help"/></svg><span>Pomoc</span></a>
+    </nav>
+    <div class="sidebar-footer"><span class="edition">ČESKÉ VYDÁNÍ · 2026</span><p>Tvé znalosti.<br>Tvůj vlastní včelín.</p><span>Daniel Westbrook</span></div>
+  </aside>
+
+  <main id="main" tabindex="-1">
+    <header class="topbar"><div><span class="eyebrow">TVÁ VČELAŘSKÁ KOLEKCE</span><p id="page-label">Jsme rádi, že jsi tady.</p></div><button class="search-open" data-open-search><svg><use href="#i-search"/></svg><span>Hledat v knihách</span><kbd>/</kbd></button></header>
+    <div id="load-error" class="notice" hidden>Obsah se nepodařilo načíst. Obnov stránku.</div>
+    <section id="view-start" class="view" aria-labelledby="start-title">
+      <div class="hero">
+        <div class="hero-copy"><span class="hero-kicker"><span></span>TVÁ CESTA ZAČÍNÁ TADY</span><h1 id="start-title">Svět včel.<br><em>Tvůj nový začátek.</em></h1><p>Od prvních základů k vlastnímu zahradnímu včelínu. Objev své tři knihy a uč se vlastním tempem.</p><div class="hero-actions"><button class="button honey" data-read="1" data-page="2"><svg><use href="#i-book"/></svg>Začít od základů</button><a class="text-link" href="#knihovna">Prohlédnout všechny knihy</a></div><div class="hero-facts"><span><strong>3</strong> Knihy</span><span><strong>180</strong> stran znalostí</span><span><strong>2026</strong> Vydání</span></div></div>
+        <div class="hero-art"><img src="assets/collection.png" alt="Včelařská kolekce Daniela Westbrooka se třemi knihami v češtině" width="1254" height="1254" fetchpriority="high"><div class="art-caption"><svg><use href="#i-leaf"/></svg><span>Pochopit. Pozorovat. Růst.</span></div></div>
+      </div>
+      <div class="resume-card"><div class="resume-icon"><svg><use href="#i-book"/></svg></div><div><span class="eyebrow" id="resume-kicker">TVŮJ PRVNÍ KROK</span><h2 id="resume-title">Poznej své včelstvo</h2><p id="resume-description">Začni od základů, bez předchozích znalostí.</p></div><button class="button dark" id="resume-button">Začít číst</button></div>
+      <div class="section-heading"><div><span class="eyebrow">VŠE NA JEDNOM MÍSTĚ</span><h2>Tvá knihovna</h2></div><a href="#knihovna" class="text-link">Knihy a kapitoly</a></div>
+      <div id="home-books" class="book-grid"></div>
+    </section>
+
+    <section id="view-bibliothek" class="view" hidden aria-labelledby="library-title"><div class="page-intro"><span class="eyebrow">TVÁ PŘÍRUČKA</span><h1 id="library-title">Znalosti, které zůstávají.</h1><p>Pokračuj ve čtení tady nebo si stáhni původní PDF. Přes kapitoly se dostaneš přímo na správné místo.</p></div><div id="library-books" class="library-list"></div><div class="section-heading"><div><span class="eyebrow">ULOŽENO NA POZDĚJI</span><h2>Tvé záložky</h2></div></div><div id="saved-bookmarks" class="bookmark-grid"></div></section>
+
+
+
+    <section id="view-hilfe" class="view" hidden aria-labelledby="help-title"><div class="page-intro"><span class="eyebrow">RÁDI TI POMŮŽEME</span><h1 id="help-title">Co je dobré vědět.</h1><p>Vše o knihovně, čtení a uloženém obsahu.</p></div><div class="help-layout"><div class="faq">
+      <details open><summary>Jak nejlépe začít?</summary><p>Začni první knihou o základech včelaření. Potom objev zahradní včelaření a výrobu medoviny. V knihovně můžeš kdykoli otevřít přímo jednotlivé kapitoly.</p><a href="#knihovna" class="text-link">Přejít do knihovny</a></details>
+      <details><summary>Mohu číst knihy offline?</summary><p>Ano. Tlačítkem „Stáhnout PDF“ získáš původní knihu. Ulož si ji do zařízení a otevři v prohlížeči PDF. Samotná členská sekce vyžaduje připojení k internetu.</p></details>
+      <details><summary>Kde se ukládají poznámky a záložky?</summary><p>Pouze v tomto prohlížeči na tomto zařízení. Mezi zařízeními se nesynchronizují. Vymazání dat prohlížeče nebo anonymní režim může uložený obsah odstranit. Poznámky můžeš exportovat jako textový soubor.</p><button class="button outline" id="export-notes">Exportovat poznámky</button></details>
+      <details><summary>Kniha se nenačítá. Co mám dělat?</summary><p>Soubory PDF mají přibližně 10 až 15 MB. Při pomalém připojení může načítání chvíli trvat. Ve čtečce lze původní PDF také otevřít na nové kartě nebo stáhnout.</p></details>
+      <details><summary>Jak funguje vyhledávání?</summary><p>Hledej výraz jako „rámky“, „úl“ nebo „kvašení“. Vyhledávání prochází všech 180 stran. Kliknutím na výsledek otevřeš příslušnou stránku knihy.</p><button class="button outline" data-open-search>Otevřít vyhledávání</button></details>
+    </div><div class="contact-card"><svg><use href="#i-mail"/></svg><h2>Další otázka?</h2><p>Napiš nám, pokud potřebuješ pomoc s přístupem ke svým materiálům.</p><a class="button dark" href="mailto:trinityag01@gmail.com?subject=Pomoc%20%C2%B7%20V%C4%8Dela%C5%99en%C3%AD">Kontaktovat podporu</a><span>trinityag01@gmail.com</span></div></div></section>
+    <footer class="page-footer"><span>Včelaření pro začátečníky · Daniel Westbrook</span><span>Členská sekce · České vydání 2026</span></footer>
+  </main>
+
+  <dialog id="search-dialog" class="search-dialog" aria-labelledby="search-title"><div class="dialog-heading"><div><span class="eyebrow">CELÁ TVÁ KNIHOVNA</span><h2 id="search-title">Co chceš najít?</h2></div><button class="icon-button" data-close-search aria-label="Zavřít vyhledávání"><svg><use href="#i-close"/></svg></button></div><label class="search-field"><svg><use href="#i-search"/></svg><input id="search-input" type="search" placeholder="Například: stanoviště, plásty, medovina…" autocomplete="off" aria-label="Prohledat všechny knihy"></label><p id="search-status" class="search-status" aria-live="polite">Prohledej všech 180 stran svých tří knih.</p><div id="search-results" class="search-results"></div></dialog>
+
+  <dialog id="reader-dialog" class="reader-dialog" aria-labelledby="reader-title"><div class="reader-top"><div><span class="eyebrow">TVŮJ ČAS NA ČTENÍ</span><h2 id="reader-title">Otevřít knihu</h2></div><button class="icon-button" id="reader-close" aria-label="Zavřít čtečku"><svg><use href="#i-close"/></svg></button></div><div class="reader-toolbar"><div class="page-controls"><button class="button compact outline" id="page-prev">Předchozí</button><label>Strana <input id="page-number" type="number" min="1" max="60" value="1" aria-label="Číslo strany"> <span>/ 60</span></label><button class="button compact outline" id="page-next">Další</button></div><div class="reader-tools"><label class="sr-only" for="reader-zoom">Zvětšení</label><select id="reader-zoom"><option value="1">Šířka stránky</option><option value="1.25">125 %</option><option value="1.5">150 %</option></select><button class="button compact outline" id="reader-mark"><svg><use href="#i-mark"/></svg><span>Záložka</span></button><button class="button compact outline" id="reader-panel-toggle" aria-expanded="false" aria-controls="reader-panel">Obsah a poznámky</button></div></div><div class="reader-body"><div class="reader-pages" id="reader-pages"><div id="reader-status" class="reader-status" role="status">Kniha se načítá…</div><canvas id="pdf-canvas" aria-label="Stránka knihy"></canvas><details id="page-text-details" class="page-text-details"><summary>Zobrazit text stránky</summary><div id="page-text"></div></details></div><aside id="reader-panel" class="reader-panel"><div class="reader-panel-heading"><h3>V této knize</h3><button class="icon-button" id="panel-close" aria-label="Zavřít obsah a poznámky"><svg><use href="#i-close"/></svg></button></div><nav id="reader-chapters" aria-label="Kapitoly knihy"></nav><div class="reader-note"><label for="page-note">Tvá poznámka k této stránce</label><textarea id="page-note" rows="4" maxlength="4000" placeholder="Co si chceš zapamatovat?"></textarea><span>Automaticky uloženo na tomto zařízení.</span></div><div class="reader-original"><a id="reader-original" target="_blank" rel="noopener">Otevřít původní PDF</a><a id="reader-download" download><svg><use href="#i-download"/></svg>Stáhnout PDF</a></div></aside></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </div>
+  <noscript><div class="noscript">Pro knihovnu povol JavaScript. Knihy můžeš také otevřít přímo: <a href="materials/buch-1.pdf">Kniha 1</a>, <a href="materials/buch-2.pdf">Kniha 2</a>, <a href="materials/buch-3.pdf">Kniha 3</a>.</div></noscript>
+</body>
+</html>
