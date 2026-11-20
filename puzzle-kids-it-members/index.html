@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#6946ad">
+  <meta name="description" content="La tua collezione di Clara Morgan: labirinti, casi investigativi ed enigmi. Leggi i tre libri online o scarica i PDF.">
+  <title>Puzzle Kids · La tua biblioteca di enigmi</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=puzzle-kids-20261119-v1">
+  <script type="module" src="app.js?v=puzzle-kids-20261119-v1"></script>
+</head>
+<body>
+  <svg class="icon-defs" aria-hidden="true"><defs>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10H3Z"/><path d="M9 20v-7h6v7"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v16M12 5C8 2 4 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-2-1-6-2-10 1Z"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 5m0 3h.01"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="i-print" viewBox="0 0 24 24"><path d="M6 8V3h12v5M6 17H3V8h18v9h-3M6 14h12v7H6ZM17 11h1"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.8 6.2L21 12l-6.2 2.8L12 21l-2.8-6.2L3 12l6.2-2.8Z"/></symbol>
+  </defs></svg>
+  <section id="welcome" class="welcome" aria-labelledby="welcome-title">
+    <header class="welcome-header">
+      <a class="brand" href="#benvenuto" aria-label="Puzzle Kids"><span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Puzzle<span class="brand-kids">Kids</span><small>CLARA MORGAN</small></span></a>
+      <span class="edition">EDIZIONE ITALIANA</span>
+    </header>
+    <div class="welcome-layout">
+      <div class="welcome-copy"><span class="eyebrow">LA TUA COLLEZIONE DI ENIGMI</span><h1 id="welcome-title" tabindex="-1">Grandi avventure.<br><em>Per piccoli curiosi.</em></h1><p class="lead">Un viaggio nello spazio, un mistero da investigare o una visita al laboratorio degli enigmi? Scopri i tuoi tre libri di Clara Morgan e scegli la tua prima avventura.</p><a class="button primary enter" href="#inizio"><svg aria-hidden="true"><use href="#i-book"/></svg>Apri la mia biblioteca</a><p class="access-note">Leggi tutti e tre i libri qui oppure scaricali in PDF.</p><dl class="welcome-facts"><div><dt>3</dt><dd>Libri</dd></div><div><dt>180</dt><dd>pagine</dd></div><div><dt>PDF</dt><dd>da stampare</dd></div></dl></div>
+      <div class="collection-art"><span class="art-dot one" aria-hidden="true"></span><span class="art-dot two" aria-hidden="true"></span><img src="assets/collection.png" width="1254" height="1254" alt="I tre libri di Clara Morgan: Missione Labirinto, L’agenzia Occhio di Gufo e Il laboratorio degli enigmi" fetchpriority="high"><p><svg aria-hidden="true"><use href="#i-spark"/></svg>Scoprire, ragionare e divertirsi insieme.</p></div>
+    </div>
+    <footer class="welcome-footer"><span>La tua collezione di enigmi · Clara Morgan</span><a href="mailto:trinityag01@gmail.com?subject=Contatta%20l%E2%80%99assistenza%20%C2%B7%20Puzzle%20Kids">Ti serve aiuto con l’accesso?</a></footer>
+  </section>
+
+  <div id="app" hidden>
+    <a class="skip-link" href="#main">Vai al contenuto</a>
+    <aside class="sidebar" aria-label="La tua area riservata">
+      <a class="brand" href="#inizio" aria-label="Puzzle Kids"><span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Puzzle<span class="brand-kids">Kids</span><small>CLARA MORGAN</small></span></a>
+      <span class="nav-caption">La tua area riservata</span>
+      <nav class="main-nav"><a href="#inizio" data-route="home"><svg aria-hidden="true"><use href="#i-home"/></svg><span>Inizio</span></a><a href="#libri" data-route="books"><svg aria-hidden="true"><use href="#i-book"/></svg><span>Libri</span><small>3</small></a><a href="#assistenza" data-route="help"><svg aria-hidden="true"><use href="#i-help"/></svg><span>Assistenza</span></a></nav>
+      <div class="sidebar-note"><span class="mini-stars" aria-hidden="true">✦</span><p>Restare curiosi. Fare nuove scoperte.</p><span>EDIZIONE ITALIANA</span></div>
+    </aside>
+    <main id="main" tabindex="-1">
+      <header class="topbar"><div><span class="eyebrow">La tua area riservata</span><p>Che bello averti qui.</p></div><a class="small-link" href="#libri">La tua biblioteca <span>3</span></a></header>
+      <div class="notice" id="load-error" hidden role="status">Non è stato possibile caricare la biblioteca. Ricarica la pagina.</div>
+      <section id="view-home" class="view" aria-labelledby="home-title">
+        <div class="hero"><div class="hero-copy"><span class="eyebrow">PRONTI PER UNA NUOVA AVVENTURA?</span><h1 id="home-title">Ti aspetta un nuovo mondo di enigmi.</h1><p>Aiuta Milo e Beep ad attraversare i labirinti, segui gli indizi di Ollie o decifra i codici del laboratorio. Apri un libro e scopri le prime attività.</p><button class="button primary" data-read="1" data-page="2"><svg aria-hidden="true"><use href="#i-spark"/></svg>Inizia Missione Labirinto</button></div><div class="hero-image"><img src="assets/collection.png" width="1254" height="1254" alt="I tre libri di Clara Morgan: Missione Labirinto, L’agenzia Occhio di Gufo e Il laboratorio degli enigmi"></div></div>
+        <div class="resume" id="resume" hidden><div class="resume-symbol"><svg aria-hidden="true"><use href="#i-book"/></svg></div><div><span class="eyebrow">LA TUA ULTIMA LETTURA</span><h2 id="resume-title"></h2><p id="resume-page"></p></div><button class="button outline" id="resume-button">Continua a leggere</button></div>
+        <div class="section-heading"><div><span class="eyebrow">La tua collezione di enigmi</span><h2>Quale avventura scegli oggi?</h2></div><a class="small-link" href="#libri">Scopri tutti i libri</a></div>
+        <div class="book-grid" id="home-books"></div>
+        <section class="quick-guide" aria-labelledby="guide-title"><div class="section-heading"><div><span class="eyebrow">COMINCIARE È SEMPLICE</span><h2 id="guide-title">Un libro, una matita e una piccola sfida.</h2></div></div><div class="guide-grid"><article class="guide-card"><span aria-hidden="true">1</span><h3>Scegli un’avventura</h3><p>Comincia dai labirinti, dai casi investigativi o dalle sfide del laboratorio.</p></article><article class="guide-card"><span aria-hidden="true">2</span><h3>Leggi oppure stampa</h3><p>Leggi le istruzioni qui o apri il PDF originale e scegli le pagine da stampare.</p></article><article class="guide-card"><span aria-hidden="true">3</span><h3>Prova a risolvere</h3><p>Prendi una matita e affronta le sfide. Le soluzioni nel libro ti aiutano a controllare le risposte.</p></article></div></section>
+      </section>
+      <section id="view-books" class="view" hidden aria-labelledby="books-title"><div class="page-intro"><span class="eyebrow">La tua collezione di enigmi</span><h1 id="books-title">La tua biblioteca</h1><p>Qui trovi tutti e tre i libri originali. Leggili nell’area riservata oppure scarica i PDF per stampare le tue attività preferite.</p></div><div id="library-books" class="library-list"></div><div class="print-note"><svg aria-hidden="true"><use href="#i-print"/></svg><p>Per stampare, apri il PDF originale. Nel lettore PDF puoi scegliere le pagine e controllare l’anteprima di stampa.</p></div></section>
+      <section id="view-help" class="view" hidden aria-labelledby="help-title"><div class="page-intro"><span class="eyebrow">Assistenza</span><h1 id="help-title">Tutto quello che serve sapere.</h1><p>Aiuto per leggere, scaricare e stampare i tuoi libri.</p></div><div class="help-layout"><div class="faq"><details open><summary>Da dove comincio?</summary><p>Scegli un libro e premi «Leggi il libro». Le prime pagine presentano la storia e spiegano le attività. Puoi provare un altro libro quando vuoi.</p></details><details><summary>Come stampo una singola attività?</summary><p>Premi «Apri il PDF da stampare». Nella finestra di stampa del lettore PDF, seleziona le pagine e controlla l’anteprima. Puoi svolgere le attività stampate con una matita.</p></details><details><summary>Posso usare i libri senza internet?</summary><p>Sì. Scarica i PDF originali sul tuo dispositivo e aprili con un lettore PDF. L’area riservata richiede una connessione a internet.</p></details><details><summary>Viene salvata l’ultima pagina letta?</summary><p>L’ultima pagina aperta viene salvata solo in questo browser, su questo dispositivo. Non viene sincronizzata tra dispositivi. Cancellare i dati del browser o usare la navigazione privata può eliminarla.</p></details></div><aside class="support-card"><svg aria-hidden="true"><use href="#i-help"/></svg><h2>Ti serve aiuto con l’accesso?</h2><p>Ti aiutiamo se non riesci ad aprire o scaricare i tuoi libri.</p><a class="button primary" href="mailto:trinityag01@gmail.com?subject=Contatta%20l%E2%80%99assistenza%20%C2%B7%20Puzzle%20Kids">Contatta l’assistenza</a><span>trinityag01@gmail.com</span></aside></div></section>
+      <footer class="page-footer"><span>La tua collezione di enigmi · Clara Morgan</span><span>EDIZIONE ITALIANA</span></footer>
+    </main>
+  </div>
+  <dialog id="reader" class="reader" aria-labelledby="reader-title"><header class="reader-header"><div><span class="eyebrow">IL TUO LIBRO</span><h2 id="reader-title"></h2></div><button class="icon-button" id="reader-close" aria-label="Chiudi il lettore"><svg aria-hidden="true"><use href="#i-close"/></svg></button></header><div class="reader-toolbar"><div class="page-controls"><button class="button compact outline" id="previous">Precedente</button><label>Pagina <input type="number" id="page-number" min="1" max="60" value="2" aria-label="Numero di pagina"> / <span id="page-total">60</span></label><button class="button compact outline" id="next">Successiva</button></div><div class="reader-tools"><label class="sr-only" for="zoom">Ingrandimento</label><select id="zoom"><option value="1">Larghezza pagina</option><option value="1.25">125%</option><option value="1.5">150%</option></select><a class="button compact outline" id="reader-original" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-print"/></svg>Apri il PDF da stampare</a><a class="button compact primary" id="reader-download" download><svg aria-hidden="true"><use href="#i-download"/></svg>PDF</a></div></div><div class="reader-stage" id="reader-stage"><p id="reader-status" role="status">Caricamento del tuo libro…</p><canvas id="pdf-canvas" hidden aria-label="Pagina del libro"></canvas></div></dialog>
+  <noscript><div class="notice">Attiva JavaScript per usare la biblioteca. Puoi anche aprire direttamente i libri: <a href="materials/book-1.pdf">Libro 1</a> · <a href="materials/book-2.pdf">Libro 2</a> · <a href="materials/book-3.pdf">Libro 3</a></div></noscript>
+</body>
+</html>
